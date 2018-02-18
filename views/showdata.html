@@ -51,13 +51,11 @@ $(divid).load(urldata);}
               </nav>
             </div>
 	
-<!--div class="container">
 	<div id='showdata'> 
 	  <script type='text/javascript'>
-		$('#showdata').load('/system/showdata?procid=' + procid);
+		$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
 	  </script>
 	</div>
-</div-->
 <!--/ОбластьТело--> 
 
 <!--ОбластьУзел-->
@@ -75,7 +73,7 @@ $(divid).load(urldata);}
 <!--/ОбластьСвойство--> 
 
 <!--ОбластьКнопка-->
-<div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?sessid=.ПараметрИдСессии&amp;id=.ПараметрИдУзла&amp;mode=source')">.ПараметрНадписьНаКнопке</button></div>
+<div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопка--> 
 
 <!--ОбластьПриветствие-->
@@ -99,8 +97,8 @@ $(divid).load(urldata);}
 <!--/ОбластьПриветствие--> 
 
 <!--ОбластьПодвал-->
-<script src="/resource/popper.min.js"></script>
-<script src="/resource/bootstrap.min.js"></script>
+<!--script src="/resource/popper.min.js"></script-->
+<!--script src="/resource/bootstrap.min.js"></script-->
 <!--script src="/resource/custom.js"></script-->
 </body>
 </html>
