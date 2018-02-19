@@ -1,0 +1,105 @@
+<!--ОбластьШапка-->
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>OneScriptDB</title>
+<link rel="stylesheet" href="/resource/bootstrap.css" media="screen">
+<!--link rel="stylesheet" href="/resource/custom.min.css"-->
+<script src="/resource/jquery.min.js"></script>
+<script type='text/javascript'>
+var procid=.ПараметрИдПроцесса;
+function loaddata(divid, urldata){
+$(divid).load(urldata);}
+</script>
+
+<!--/ОбластьШапка-->
+
+<!--ОбластьТело-->
+<body>
+            <div class="bs-component">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+            </div>
+	
+	<div id='showdata'> 
+	  <script type='text/javascript'>
+		$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
+	  </script>
+	</div>
+<!--/ОбластьТело--> 
+
+<!--ОбластьУзел-->
+<div id='.ПараметрИдУзла'>
+<h4>.ПараметрИмяУзла</h4>
+<ul>
+.ПараметрСвойстваУзла
+<br/>.ПараметрДочернийУзел
+</ul>
+</div>
+<!--/ОбластьУзел--> 
+
+<!--ОбластьСвойство-->
+<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
+<!--/ОбластьСвойство--> 
+
+<!--ОбластьКнопка-->
+<div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопка--> 
+
+<!--ОбластьПриветствие-->
+
+    <div class="container">
+
+			<div class="bs-component">
+              <div class="jumbotron">
+                <h1 class="display-3">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </p>
+              </div>
+            </div>
+
+    </div>
+	
+<!--/ОбластьПриветствие--> 
+
+<!--ОбластьПодвал-->
+<!--script src="/resource/popper.min.js"></script-->
+<!--script src="/resource/bootstrap.min.js"></script-->
+<!--script src="/resource/custom.js"></script-->
+</body>
+</html>
+<!--/ОбластьПодвал-->
