@@ -50,31 +50,54 @@ $(divid).load(urldata);}
                 </div>
               </nav>
             </div>
-	
-	<div id='showdata'> 
-	  <script type='text/javascript'>
-		$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
-	  </script>
-	</div>
-<!--/ОбластьТело--> 
+
+  <div id='showdata'>
+    <script type='text/javascript'>
+  	$('#showdata').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=1_2_3');
+    </script>
+  </div>
+  <!--div id='showdata1'>
+    <script type='text/javascript'>
+  	$('#showdata1').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
+    </script>
+  </div-->
+
+<!--/ОбластьТело-->
+
 
 <!--ОбластьУзел-->
 <div id='.ПараметрИдУзла'>
-<h4>.ПараметрИмяУзла</h4>
+.ПараметрЗаголовокУзла
 <ul>
-.ПараметрСвойстваУзла
-<br/>.ПараметрДочернийУзел
+.ПараметрДочернийУзел
 </ul>
 </div>
-<!--/ОбластьУзел--> 
+<!--/ОбластьУзел-->
 
-<!--ОбластьСвойство-->
-<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
-<!--/ОбластьСвойство--> 
+<!--ОбластьЗаголовокУзла-->
+<div style='white-space: nowrap;'>.ПараметрИмяУзла.ПараметрСвойстваУзла</div>
+<!--/ОбластьЗаголовокУзла-->
+
+<!--ОбластьКнопкаСвойство-->
+<div id='.ПараметрИдУзла' style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаСвойство-->
+
+<!--ОбластьКнопкаИмя-->
+<div style='display: inline-block;'><button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаИмя-->
+
+<!--ОбластьКнопкаУзел-->
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаУзел-->
+
 
 <!--ОбластьКнопка-->
 <div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
-<!--/ОбластьКнопка--> 
+<!--/ОбластьКнопка-->
+
+<!--ОбластьСвойство-->
+<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
+<!--/ОбластьСвойство-->
 
 <!--ОбластьПриветствие-->
 
@@ -93,8 +116,8 @@ $(divid).load(urldata);}
             </div>
 
     </div>
-	
-<!--/ОбластьПриветствие--> 
+
+<!--/ОбластьПриветствие-->
 
 <!--ОбластьПодвал-->
 <!--script src="/resource/popper.min.js"></script-->
