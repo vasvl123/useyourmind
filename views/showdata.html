@@ -23,7 +23,7 @@ $(divid).load(urldata);}
 <body>
             <div class="bs-component">
               <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">OneScriptDB</a>
+                <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +40,7 @@ $(divid).load(urldata);}
                       <a class="nav-link" href="/tasks/stopserver">Stop</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://github.com/vasvl123/OneScriptDB">About</a>
+                      <a class="nav-link" href="" onclick="$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2')">About</a>
                     </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -53,14 +53,9 @@ $(divid).load(urldata);}
 
   <div id='showdata'>
     <script type='text/javascript'>
-  	$('#showdata').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=1_2_3');
+  	$('#showdata').load('/system/showdata?procid=' + procid + '&mode=design&data=struct&nodeid=1');
     </script>
   </div>
-  <!--div id='showdata1'>
-    <script type='text/javascript'>
-  	$('#showdata1').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
-    </script>
-  </div-->
 
 <!--/ОбластьТело-->
 
