@@ -30,17 +30,17 @@ $(divid).load(urldata);}
 
                 <div class="collapse navbar-collapse" id="navbarColor01">
                   <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="" onclick="$('#2').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2'); return false">Sample</a>
+                    </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="http://localhost:8888">Home<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="" onclick="$('#2').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/tasks/restartserver">Restart</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/tasks/stopserver">Stop</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="" onclick="$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2')">About</a>
                     </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -51,9 +51,9 @@ $(divid).load(urldata);}
               </nav>
             </div>
 
-  <div id='showdata'>
+  <div id='2'>
     <script type='text/javascript'>
-  	$('#showdata').load('/system/showdata?procid=' + procid + '&mode=design&data=struct&nodeid=1');
+  	$('#2').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen');
     </script>
   </div>
 
@@ -78,7 +78,7 @@ $(divid).load(urldata);}
 <!--/ОбластьКнопкаСвойство-->
 
 <!--ОбластьКнопкаИмя-->
-<div style='display: inline-block;'><button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаИмя-->
 
 <!--ОбластьКнопкаУзел-->
