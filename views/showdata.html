@@ -23,24 +23,24 @@ $(divid).load(urldata);}
 <body>
             <div class="bs-component">
               <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarColor01">
                   <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="" onclick="$('#2').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2'); return false">Sample</a>
+                    </li>
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="" onclick="$('#2').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
+                      <a class="nav-link" href="/tasks/restartserver">Restart</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">About</a>
+                      <a class="nav-link" href="/tasks/stopserver">Stop</a>
                     </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -50,31 +50,49 @@ $(divid).load(urldata);}
                 </div>
               </nav>
             </div>
-	
-	<div id='showdata'> 
-	  <script type='text/javascript'>
-		$('#showdata').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=1_2_3');
-	  </script>
-	</div>
-<!--/ОбластьТело--> 
+
+  <div id='2'>
+    <script type='text/javascript'>
+  	$('#2').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen');
+    </script>
+  </div>
+
+<!--/ОбластьТело-->
+
 
 <!--ОбластьУзел-->
 <div id='.ПараметрИдУзла'>
-<h4>.ПараметрИмяУзла</h4>
+.ПараметрЗаголовокУзла
 <ul>
-.ПараметрСвойстваУзла
-<br/>.ПараметрДочернийУзел
+.ПараметрДочернийУзел
 </ul>
 </div>
-<!--/ОбластьУзел--> 
+<!--/ОбластьУзел-->
 
-<!--ОбластьСвойство-->
-<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
-<!--/ОбластьСвойство--> 
+<!--ОбластьЗаголовокУзла-->
+<div style='white-space: nowrap;'>.ПараметрИмяУзла.ПараметрСвойстваУзла</div>
+<!--/ОбластьЗаголовокУзла-->
+
+<!--ОбластьКнопкаСвойство-->
+<div id='.ПараметрИдУзла' style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаСвойство-->
+
+<!--ОбластьКнопкаИмя-->
+<div style='display: inline-block;'><button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаИмя-->
+
+<!--ОбластьКнопкаУзел-->
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаУзел-->
+
 
 <!--ОбластьКнопка-->
 <div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
-<!--/ОбластьКнопка--> 
+<!--/ОбластьКнопка-->
+
+<!--ОбластьСвойство-->
+<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
+<!--/ОбластьСвойство-->
 
 <!--ОбластьПриветствие-->
 
@@ -93,8 +111,8 @@ $(divid).load(urldata);}
             </div>
 
     </div>
-	
-<!--/ОбластьПриветствие--> 
+
+<!--/ОбластьПриветствие-->
 
 <!--ОбластьПодвал-->
 <!--script src="/resource/popper.min.js"></script-->
