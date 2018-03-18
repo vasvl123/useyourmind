@@ -54,7 +54,7 @@ $(divid).load(urldata);}
   <!--ОбластьЗагрузитьУзел-->
   <div id='.ПараметрИдУзла'>
     <script type='text/javascript'>
-  	$('#.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=design&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
+  	$('#.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
     </script>
   </div>
   <!--/ОбластьЗагрузитьУзел-->
@@ -73,18 +73,18 @@ $(divid).load(urldata);}
 <!--ОбластьКнопкаИмяЗначение-->
 <div id='.ПараметрИдУзла' style='display: inline-block;'>
 <div class="btn-group" role="group" data-toggle="buttons">
-  <button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=namedit')">.ПараметрИмя</button>
-  <button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=valedit')">.ПараметрЗначение</button>
+  <button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=namedit')">.ПараметрИмя</button>
+  <button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=valedit')">.ПараметрЗначение</button>
 </div>
 </div>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаИмя-->
-<div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=valedit')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаИмя-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 
