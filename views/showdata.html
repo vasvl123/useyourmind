@@ -62,7 +62,7 @@ $(divid).load(urldata);}
 <!--/ОбластьТело-->
 
 <!--ОбластьУзел-->
-<div id='.ПараметрИдУзла'>
+<div id='d.ПараметрИдУзла'>
   <div style='white-space: nowrap;'>.ПараметрЗаголовокУзла</div>
 <ul>
 .ПараметрДочернийУзел
@@ -73,18 +73,18 @@ $(divid).load(urldata);}
 <!--ОбластьКнопкаИмяЗначение-->
 <div id='.ПараметрИдУзла' style='display: inline-block;'>
 <div class="btn-group" role="group" data-toggle="buttons">
-  <button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=namedit')">.ПараметрИмя</button>
-  <button type="button" class="btn btn-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=valedit')">.ПараметрЗначение</button>
+  <button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда1')">.ПараметрИмя</button>
+  <button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда2')">.ПараметрЗначение</button>
 </div>
 </div>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаИмя-->
-<div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=valedit')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаИмя-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 
