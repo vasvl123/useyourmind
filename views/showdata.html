@@ -71,13 +71,18 @@ $(divid).load(urldata);}
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<div id='.ПараметрИдУзла' style='display: inline-block;'>
+<div id='d.ПараметрИдУзла' style='display: inline-block;'>
 <div class="btn-group" role="group" data-toggle="buttons">
-  <button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда1')">.ПараметрИмя</button>
-  <button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда2')">.ПараметрЗначение</button>
+  <button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно1" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда1')">.ПараметрИмя</button>
+  .ПараметрИнструменты
+  <button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно2" .ПараметрВидимость onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда2')">.ПараметрЗначение</button>
 </div>
 </div>
 <!--/ОбластьКнопкаИмяЗначение-->
+
+<!--ОбластьКнопкаИнструменты-->
+<button type="button" class="btn btn-outline-secondary btn-sm .ПараметрНеактивно" .ПараметрВидимость onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьКнопкаИмя-->
 <div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
