@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/resource/bootstrap.css" media="screen">
 <!--link rel="stylesheet" href="/resource/custom.min.css"-->
 <script src="/resource/jquery.min.js"></script>
+<!--script src="/resource/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
 function loaddata(divid, urldata){
@@ -71,35 +72,58 @@ $(divid).load(urldata);}
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<div id='d.ПараметрИдУзла' style='display: inline-block;'>
-<div class="btn-group" role="group" data-toggle="buttons">
-  <button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно1" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда1')">.ПараметрИмя</button>
-  .ПараметрИнструменты
-  <button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно2" .ПараметрВидимость onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда2')">.ПараметрЗначение</button>
-</div>
-</div>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
+<!--ОбластьИмяЗначение-->
+<div id='d.ПараметрИдУзла' style='display: inline-block;'>
+<div class="btn-group" role="group" data-toggle="buttons">
+  .ПараметрИнструменты
+  .ПараметрИмя
+  .ПараметрЗначение
+  &nbsp;&nbsp;
+</div>
+</div>
+<!--/ОбластьИмяЗначение-->
+
+<!--ОбластьИзменитьИмяЗначение-->
+<div id='d.ПараметрИдУзла' style='display: inline-block;'>
+  <form onsubmit="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
+    <div class="input-group">
+    <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
+    <span class="input-group-btn">
+      <button class="btn btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+    </span>
+    </div>
+  </form>
+  <script type='text/javascript'>document.getElementById('i.ПараметрИдУзла').select()</script>
+</div>
+<!--/ОбластьИзменитьИмяЗначение-->
+
 <!--ОбластьКнопкаИнструменты-->
-<button type="button" title=".ПараметрПодсказка" class="btn btn-outline-secondary btn-sm .ПараметрНеактивно" .ПараметрВидимость onclick="loaddata('#d.ПараметрОбновитьУзел','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button id="b.ПараметрИдУзла" type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+<div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+.ПараметрМенюИнструменты
+</div>
 <!--/ОбластьКнопкаИнструменты-->
 
-<!--ОбластьКнопкаИмя-->
-<div style='display: inline-block;'><button type="button" class="btn btn-primary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
-<!--/ОбластьКнопкаИмя-->
+<!--ОбластьМенюИнструменты-->
+<a class="dropdown-item" href="" onclick="loaddata('#d.ПараметрОбновитьУзел','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<!--/ОбластьМенюИнструменты-->
+
+<!--ОбластьПросмотр-->
+<div id="v.ПараметрИдУзла">
+  .ПараметрПредставление
+</div>
+<!--/ОбластьПросмотр-->
+<script>
+  $("#v.ПараметрИдУзла").draggable();
+</script>
 
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
-
-
-<!--ОбластьКнопка-->
-<div id='.ПараметрИдУзла'><button type="button" class="btn btn-primary btn-sm" onclick="loaddata('#.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла')">.ПараметрНадписьНаКнопке</button></div>
-<!--/ОбластьКнопка-->
-
-<!--ОбластьСвойство-->
-<div id='.ПараметрИдУзла'><li>.ПараметрСвойство</li></div>
-<!--/ОбластьСвойство-->
 
 <!--ОбластьПриветствие-->
 
@@ -122,8 +146,8 @@ $(divid).load(urldata);}
 <!--/ОбластьПриветствие-->
 
 <!--ОбластьПодвал-->
-<!--script src="/resource/popper.min.js"></script-->
-<!--script src="/resource/bootstrap.min.js"></script-->
+<script src="/resource/popper.min.js"></script>
+<script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
 </body>
 </html>
