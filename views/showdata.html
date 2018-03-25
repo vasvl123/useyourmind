@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>OneScriptDB</title>
-<link rel="stylesheet" href="/resource/bootstrap.css" media="screen">
+<link rel="stylesheet" href="/resource/bootstrap-mod.css" media="screen">
 <!--link rel="stylesheet" href="/resource/custom.min.css"-->
 <script src="/resource/jquery.min.js"></script>
 <!--script src="/resource/jquery-ui.min.js"></script-->
@@ -22,35 +22,35 @@ $(divid).load(urldata);}
 
 <!--ОбластьТело-->
 <body>
-            <div class="bs-component">
-              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+    <div class="bs-component">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                      <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2'); return false">Sample</a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/tasks/restartserver">Restart</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/tasks/stopserver">Stop</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&data=slate&nodeid=2'); return false">Sample</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tasks/restartserver">Restart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tasks/stopserver">Stop</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
 
   <!--ОбластьЗагрузитьУзел-->
   <div id='.ПараметрИдУзла'>
@@ -92,8 +92,8 @@ $(divid).load(urldata);}
     <div class="input-group">
     <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-secondary btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-secondary btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
