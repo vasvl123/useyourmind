@@ -2000,10 +2000,10 @@ pre code {
   font-size: 0.9375rem;
   line-height: 1.5;
   color: #fff;
-  background-color: #3E4449;
+  background-color: #3A3F44;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid #313436;
+  border: 1px solid #000;
   border-radius: 0.25rem;
 }
 
@@ -2013,7 +2013,7 @@ pre code {
 }
 
 .form-control:focus {
-  background-color: #737B80;
+  background-color: #272B30;
   outline: none;
 }
 
