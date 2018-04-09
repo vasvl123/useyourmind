@@ -52,13 +52,13 @@ $(divid).load(urldata);}
       </nav>
     </div>
 
-  <!--ОбластьЗагрузитьУзел-->
-  <div id='.ПараметрИдУзла'>
-    <script type='text/javascript'>
-  	$('#.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
-    </script>
-  </div>
-  <!--/ОбластьЗагрузитьУзел-->
+    <!--ОбластьЗагрузитьУзел-->
+    <div id='.ПараметрИдУзла'>
+      <script type='text/javascript'>
+    	$('#.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
+      </script>
+    </div>
+    <!--/ОбластьЗагрузитьУзел-->
 
 <!--/ОбластьТело-->
 
@@ -115,6 +115,9 @@ $(divid).load(urldata);}
 <!--ОбластьПросмотр-->
 <div id="v.ПараметрИдУзла">
   .ПараметрПредставление
+  <script type='text/javascript'>
+  $('#v.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=modeview&nodeid=.ПараметрИдУзла&cmd=nodereload');
+  </script>
 </div>
 <!--/ОбластьПросмотр-->
 <script>
