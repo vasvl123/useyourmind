@@ -112,14 +112,21 @@ $(divid).load(urldata);}
 <a class="dropdown-item" href="" onclick="loaddata('#d.ПараметрОбновитьУзел','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
+<!--ОбластьУзелПросмотр-->
+<div id="v.ПараметрИдУзла">
+  .ПараметрПредставление
+</div>
+<!--/ОбластьУзелПросмотр-->
+
 <!--ОбластьПросмотр-->
 <div id="v.ПараметрИдУзла">
   .ПараметрПредставление
   <script type='text/javascript'>
-  $('#v.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=modeview&nodeid=.ПараметрИдУзла&cmd=nodereload');
+  $('#v.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=preview&nodeid=.ПараметрИдУзла&cmd=nodereload');
   </script>
 </div>
 <!--/ОбластьПросмотр-->
+
 <script>
   $("#v.ПараметрИдУзла").draggable();
 </script>
