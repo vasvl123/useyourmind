@@ -14,8 +14,22 @@
 <!--script src="/resource/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
-function loaddata(divid, urldata){
-$(divid).load(urldata);}
+function loaddata(urldata, loop=false){
+  var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
+  var xhr = new XHR();
+  xhr.open('GET', urldata, true);
+  xhr.onload = function() {
+    if (this.response) {
+        s=this.response.indexOf('id=')+4; e=this.response.indexOf('>',s)-1;
+        console.log(urldata);
+        console.log(this.response.substring(s,e));
+        el=document.getElementById(this.response.substring(s,e));
+        if (el) {el.innerHTML = this.response;}
+        if (loop) {loaddata(urldata, loop);}
+    }
+  }
+  xhr.send();
+}
 </script>
 
 <!--/ОбластьШапка-->
@@ -32,10 +46,10 @@ $(divid).load(urldata);}
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&mode=view&data=slate&nodeid=2'); return false">Sample</a>
+              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid=' + procid + '&mode=view&data=slate&nodeid=2'); return false">Sample</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#316').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/tasks/restartserver">Restart</a>
@@ -52,13 +66,13 @@ $(divid).load(urldata);}
       </nav>
     </div>
 
-    <!--ОбластьЗагрузитьУзел-->
-    <div id='.ПараметрИдУзла'>
-      <script type='text/javascript'>
-    	$('#.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
-      </script>
-    </div>
-    <!--/ОбластьЗагрузитьУзел-->
+<!--ОбластьЗагрузитьУзел-->
+  <div id='d.ПараметрИдУзла'>
+  <script type='text/javascript'>
+  loaddata('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
+  </script>
+  </div>
+ <!--/ОбластьЗагрузитьУзел-->
 
 <!--/ОбластьТело-->
 
@@ -72,7 +86,7 @@ $(divid).load(urldata);}
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -81,19 +95,18 @@ $(divid).load(urldata);}
   .ПараметрИнструменты
   .ПараметрИмя
   .ПараметрЗначение
-  &nbsp;&nbsp;
 </div>
 </div>
 <!--/ОбластьИмяЗначение-->
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div id='d.ПараметрИдУзла' style='display: inline-block;'>
-  <form onsubmit="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
+  <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
@@ -109,21 +122,12 @@ $(divid).load(urldata);}
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('#d.ПараметрОбновитьУзел','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
-
-<!--ОбластьУзелПросмотр-->
-<div id="v.ПараметрИдУзла">
-  .ПараметрПредставление
-</div>
-<!--/ОбластьУзелПросмотр-->
 
 <!--ОбластьПросмотр-->
 <div id="v.ПараметрИдУзла">
   .ПараметрПредставление
-  <script type='text/javascript'>
-  $('#v.ПараметрИдУзла').load('/system/showdata?procid=' + procid + '&mode=preview&nodeid=.ПараметрИдУзла&cmd=nodereload');
-  </script>
 </div>
 <!--/ОбластьПросмотр-->
 
@@ -132,7 +136,7 @@ $(divid).load(urldata);}
 </script>
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('#d.ПараметрИдУзла','/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьПриветствие-->
@@ -156,6 +160,11 @@ $(divid).load(urldata);}
 <!--/ОбластьПриветствие-->
 
 <!--ОбластьПодвал-->
+<div id="stat">
+</div>
+<script>
+loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
+</script>
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
