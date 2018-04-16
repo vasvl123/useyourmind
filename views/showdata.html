@@ -21,8 +21,6 @@ function loaddata(urldata, loop=false){
   xhr.onload = function() {
     if (this.response) {
         s=this.response.indexOf('id=')+4; e=this.response.indexOf('>',s)-1;
-        console.log(urldata);
-        console.log(this.response.substring(s,e));
         el=document.getElementById(this.response.substring(s,e));
         if (el) {el.innerHTML = this.response;}
         if (loop) {loaddata(urldata, loop);}
@@ -46,10 +44,10 @@ function loaddata(urldata, loop=false){
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid=' + procid + '&mode=view&data=slate&nodeid=2'); return false">Sample</a>
+              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2'); return false">Sample</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid=' + procid + '&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/tasks/restartserver">Restart</a>
@@ -66,15 +64,18 @@ function loaddata(urldata, loop=false){
       </nav>
     </div>
 
-<!--ОбластьЗагрузитьУзел-->
-  <div id='d.ПараметрИдУзла'>
-  <script type='text/javascript'>
-  loaddata('/system/showdata?procid=' + procid + '&mode=lisp&data=datalisp&nodeid=.ПараметрИдУзла&cmd=nodeopen');
-  </script>
-  </div>
- <!--/ОбластьЗагрузитьУзел-->
-
 <!--/ОбластьТело-->
+
+<!--ОбластьДанные-->
+<div id='data'>
+  <div id='d.ПараметрИдУзла'>
+    <script type='text/javascript'>
+        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=nodeopen');
+        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&cmd=domupdate', true);
+    </script>
+  </div>
+</div>
+ <!--/ОбластьДанные-->
 
 <!--ОбластьУзел-->
 <div id='d.ПараметрИдУзла'>
@@ -162,9 +163,6 @@ function loaddata(urldata, loop=false){
 <!--ОбластьПодвал-->
 <div id="stat">
 </div>
-<script>
-loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
-</script>
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
