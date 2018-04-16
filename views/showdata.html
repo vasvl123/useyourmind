@@ -35,36 +35,48 @@ function loaddata(urldata, loop=false){
 <!--ОбластьТело-->
 <body>
     <div class="bs-component">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
+        <div class="collapse navbar-collapse" id="navbar">
+
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2'); return false">Sample</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/tasks/restartserver">Restart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/tasks/stopserver">Stop</a>
-            </li>
+          .ПараметрВкладки
           </ul>
+
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group mr-2" role="group">
+                <div class="input-group">
+                  <input class="form-control form-control-sm" type="text" placeholder="Search">
+                  <span class="input-group-btn">
+                      <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
+                  </span>
+                </div>
+              </div>
+              <div class="btn-group mr-2" role="group">
+                <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/restartserver'">Restart</button>
+                <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/stopserver'">Stop</button>
+              </div>
+            </div>
           </form>
+
         </div>
       </nav>
     </div>
 
 <!--/ОбластьТело-->
+
+<li class="nav-item">
+  <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2'); return false">Sample</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
+</li>
+
 
 <!--ОбластьДанные-->
 <div id='data'>
@@ -106,8 +118,8 @@ function loaddata(urldata, loop=false){
     <div class="input-group">
     <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-primary btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>

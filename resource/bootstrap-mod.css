@@ -2000,10 +2000,10 @@ pre code {
   font-size: 0.9375rem;
   line-height: 1.5;
   color: #fff;
-  background-color: #272B30;
+  background-color: #313539;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid #000;
+  border: 1px solid #17191b;
   border-radius: 0.25rem;
 }
 
@@ -2013,7 +2013,7 @@ pre code {
 }
 
 .form-control:focus {
-  background-color: #3A3F44;
+  background-color: #484E55;
   outline: none;
 }
 
@@ -2950,15 +2950,15 @@ fieldset[disabled] a.btn {
 }
 
 .btn-outline-dark {
-  color: #272B30;
-  background-color: transparent;
+  color: #7a8288;
+  background-color: #313539;
   background-image: none;
   border-color: #272B30;
 }
 
 .btn-outline-dark:hover {
   color: #fff;
-  background-color: #272B30;
+  background-color: #52575C;
   border-color: #272B30;
 }
 
@@ -3853,10 +3853,7 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.32421875rem;
-  padding-bottom: 0.32421875rem;
-  margin-right: 1rem;
-  font-size: 1.171875rem;
+  font-size: 1rem;
   line-height: inherit;
   white-space: nowrap;
 }
@@ -8824,7 +8821,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .navbar-brand {
-  padding: 0.75rem 1rem calc(54px - 0.75rem - 30px);
+  padding: 0.5rem;
   margin-right: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
