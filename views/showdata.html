@@ -20,9 +20,15 @@ function loaddata(urldata, loop=false){
   xhr.open('GET', urldata, true);
   xhr.onload = function() {
     if (this.response) {
-        s=this.response.indexOf('id=')+4; e=this.response.indexOf('>',s)-1;
-        el=document.getElementById(this.response.substring(s,e));
-        if (el) {el.innerHTML = this.response;}
+        textid = this.response.substring(0,30);
+        s=textid.indexOf('id=');
+        if (s>0) {
+          s+=4; e=textid.indexOf('>',s)-1;
+          el=document.getElementById(textid.substring(s,e));
+          if (el) {el.innerHTML = this.response;}
+          el=document.getElementById('i'+textid.substring(s+1,e));
+          if (el) {el.select();}
+        }
         if (loop) {loaddata(urldata, loop);}
     }
   }
@@ -123,7 +129,6 @@ function loaddata(urldata, loop=false){
     </span>
     </div>
   </form>
-  <script type='text/javascript'>document.getElementById('i.ПараметрИдУзла').select()</script>
 </div>
 <!--/ОбластьИзменитьИмяЗначение-->
 
