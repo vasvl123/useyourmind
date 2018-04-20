@@ -134,6 +134,8 @@ body {
   color: #aaa;
   text-align: left;
   background-color: #272B30;
+  padding-top:50px;
+  padding-left:10px;
 }
 
 [tabindex="-1"]:focus {
@@ -3738,7 +3740,7 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -8806,7 +8808,6 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 .navbar .nav-link {
-  padding: 1rem;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }

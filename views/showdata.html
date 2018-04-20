@@ -25,7 +25,8 @@ function loaddata(urldata, loop=false){
         if (s>0) {
           s+=4; e=textid.indexOf('>',s)-1;
           el=document.getElementById(textid.substring(s,e));
-          if (el) {el.innerHTML = this.response;}
+          if (!el) {el=document.getElementById('data');}
+          el.innerHTML=this.response;
           el=document.getElementById('i'+textid.substring(s+1,e));
           if (el) {el.select();}
         }
@@ -36,18 +37,18 @@ function loaddata(urldata, loop=false){
 }
 </script>
 
+<body>
 <!--/ОбластьШапка-->
 
-<!--ОбластьТело-->
-<body>
-    <div class="bs-component">
+<!--ОбластьПанель-->
+    <div class="bs-component" id="navbar">
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbar">
+        <div class="collapse navbar-collapse">
 
           <ul class="navbar-nav mr-auto">
           .ПараметрВкладки
@@ -74,22 +75,40 @@ function loaddata(urldata, loop=false){
       </nav>
     </div>
 
-<!--/ОбластьТело-->
+<!--/ОбластьПанель-->
 
+<!--ОбластьВкладка-->
 <li class="nav-item">
-  <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2'); return false">Sample</a>
+  <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
 </li>
-<li class="nav-item">
-  <a class="nav-link" href="" onclick="$('#d316').load('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen'); return false">Source<span class="sr-only">(current)</span></a>
-</li>
+<!--/ОбластьВкладка-->
+
+<div id='data'>
+  <div id='2'>
+    <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
+    <br>
+    <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
+  </div>
+</div>
+
+<!--ОбластьНоваяСтраница-->
+<div id='data'>
+  <div id='d316'>
+    <script type='text/javascript'>
+        loaddata('/system/showdata?procid='+procid+'&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen&descr=newpage');
+        loaddata('/system/showdata?procid='+procid+'&mode=lisp&data=datalisp&cmd=domupdate', true);
+    </script>
+  </div>
+</div>
+<!--/ОбластьНоваяСтраница-->
 
 
 <!--ОбластьДанные-->
 <div id='data'>
   <div id='d.ПараметрИдУзла'>
     <script type='text/javascript'>
-        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=nodeopen');
         loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&cmd=domupdate', true);
+        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=nodeopen');
     </script>
   </div>
 </div>
