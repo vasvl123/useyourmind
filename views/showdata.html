@@ -22,97 +22,82 @@ function loaddata(urldata, loop=false){
     if (this.response) {
         textid = this.response.substring(0,30);
         s=textid.indexOf('id=');
-        if (s>0) {
-          s+=4; e=textid.indexOf('>',s)-1;
-          el=document.getElementById(textid.substring(s,e));
-          if (!el) {el=document.getElementById('data');}
-          el.innerHTML=this.response;
-          el=document.getElementById('i'+textid.substring(s+1,e));
-          if (el) {el.select();}
-        }
+        s+=4; e=textid.indexOf('>',s)-1;
+        el=document.getElementById(textid.substring(s,e));
+        if (el) {$(el).replaceWith(this.response);}
+        else {$('#data').innerHTML = this.response;}
         if (loop) {loaddata(urldata, loop);}
     }
   }
   xhr.send();
 }
+loaddata('/system/showdata?procid='+procid+'&tab=newpage');
+loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 </script>
 
 <body>
+<div id="navbar">
 <!--/ОбластьШапка-->
 
 <!--ОбластьПанель-->
-    <div class="bs-component" id="navbar">
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+<div id="navbar">
+  <div class="bs-component">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse">
 
-          <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
           .ПараметрВкладки
-          </ul>
+        </ul>
 
-          <form class="form-inline my-2 my-lg-0">
-            <div class="btn-toolbar" role="toolbar">
-              <div class="btn-group mr-2" role="group">
-                <div class="input-group">
-                  <input class="form-control form-control-sm" type="text" placeholder="Search">
-                  <span class="input-group-btn">
-                      <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
-                  </span>
-                </div>
-              </div>
-              <div class="btn-group mr-2" role="group">
-                <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/restartserver'">Restart</button>
-                <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/stopserver'">Stop</button>
+        <form class="form-inline my-2 my-lg-0">
+          <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group mr-2" role="group">
+              <div class="input-group">
+                <input class="form-control form-control-sm" type="text" placeholder="Search"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
+                </span>
               </div>
             </div>
-          </form>
+            <div class="btn-group mr-2" role="group">
+              <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/restartserver'">Restart</button>
+              <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/stopserver'">Stop</button>
+            </div>
+          </div>
+        </form>
 
-        </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+  </div>
+</div>
 
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
-<li class="nav-item">
-  <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
-</li>
+          <li class="nav-item .ПараметрАктивный">
+            <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
+          </li>
 <!--/ОбластьВкладка-->
 
-<div id='data'>
-  <div id='2'>
+
     <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
-    <br>
     <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
-  </div>
-</div>
+
 
 <!--ОбластьНоваяСтраница-->
 <div id='data'>
   <div id='d316'>
     <script type='text/javascript'>
-        loaddata('/system/showdata?procid='+procid+'&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen&descr=newpage');
-        loaddata('/system/showdata?procid='+procid+'&mode=lisp&data=datalisp&cmd=domupdate', true);
+        loaddata('/system/showdata?procid='+procid+'&tab=.ПараметрИдВкладки&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen&descr=newpage');
     </script>
   </div>
 </div>
 <!--/ОбластьНоваяСтраница-->
-
-
-<!--ОбластьДанные-->
-<div id='data'>
-  <div id='d.ПараметрИдУзла'>
-    <script type='text/javascript'>
-        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&cmd=domupdate', true);
-        loaddata('/system/showdata?procid='+procid+'&mode=.ПараметрРежим&data=.ПараметрДанные&nodeid=.ПараметрИдУзла&cmd=nodeopen');
-    </script>
-  </div>
-</div>
- <!--/ОбластьДанные-->
 
 <!--ОбластьУзел-->
 <div id='d.ПараметрИдУзла'>
@@ -124,7 +109,7 @@ function loaddata(urldata, loop=false){
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -143,11 +128,12 @@ function loaddata(urldata, loop=false){
     <div class="input-group">
     <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
+  <script type='text/javascript'>$('#i.ПараметрИдУзла').select()</script>
 </div>
 <!--/ОбластьИзменитьИмяЗначение-->
 
@@ -159,7 +145,7 @@ function loaddata(urldata, loop=false){
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьПросмотр-->
@@ -173,7 +159,7 @@ function loaddata(urldata, loop=false){
 </script>
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьПриветствие-->
@@ -197,8 +183,9 @@ function loaddata(urldata, loop=false){
 <!--/ОбластьПриветствие-->
 
 <!--ОбластьПодвал-->
-<div id="stat">
 </div>
+<div id='data'></div>
+<div id='stat'></div>
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
