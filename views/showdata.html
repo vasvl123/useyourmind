@@ -31,7 +31,7 @@ function loaddata(urldata, loop=false){
   }
   xhr.send();
 }
-loaddata('/system/showdata?procid='+procid+'&tab=newpage');
+loaddata('/system/showdata?procid='+procid+'&cmd=newtab');
 loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 </script>
 
@@ -80,24 +80,15 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
+            <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
           </li>
 <!--/ОбластьВкладка-->
 
 
     <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
     <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
+    loaddata('/system/showdata?procid='+procid+'&tab=.ПараметрИдВкладки&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
 
-
-<!--ОбластьНоваяСтраница-->
-<div id='data'>
-  <div id='d316'>
-    <script type='text/javascript'>
-        loaddata('/system/showdata?procid='+procid+'&tab=.ПараметрИдВкладки&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen&descr=newpage');
-    </script>
-  </div>
-</div>
-<!--/ОбластьНоваяСтраница-->
 
 <!--ОбластьУзел-->
 <div id='d.ПараметрИдУзла'>
