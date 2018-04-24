@@ -25,7 +25,7 @@ function loaddata(urldata, loop=false){
         s+=4; e=textid.indexOf('>',s)-1;
         el=document.getElementById(textid.substring(s,e));
         if (el) {$(el).replaceWith(this.response);}
-        else {$('#data').innerHTML = this.response;}
+        else {$('#data').replaceWith("<div id='data'>"+this.response+"</div>");}
         if (loop) {loaddata(urldata, loop);}
     }
   }
