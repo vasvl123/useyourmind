@@ -20,9 +20,10 @@ function loaddata(urldata, loop=false){
   xhr.open('GET', urldata, true);
   xhr.onload = function() {
     if (this.response) {
-        textid = this.response.substring(0,30);
+        textid = this.response.substring(0,100);
         s=textid.indexOf('id=');
         s+=4; e=textid.indexOf('>',s)-1;
+        console.log(textid.substring(s,e));
         el=document.getElementById(textid.substring(s,e));
         if (el) {$(el).replaceWith(this.response);}
         else {$('#data').replaceWith("<div id='data'>"+this.response+"</div>");}
@@ -104,7 +105,7 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
-<div id='d.ПараметрИдУзла' style='display: inline-block;'>
+<div style='display: inline-block;' id='d.ПараметрИдУзла'>
 <div class="btn-group" role="group" data-toggle="buttons">
   .ПараметрИнструменты
   .ПараметрИмя
@@ -114,17 +115,21 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <!--/ОбластьИмяЗначение-->
 
 <!--ОбластьИзменитьИмяЗначение-->
-<div id='d.ПараметрИдУзла' style='display: inline-block;'>
+<div style='display: inline-block;'>
   <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
-    <input class="form-control form-control-sm" value=".ПараметрИмяЗначение" id="i.ПараметрИдУзла" type="text" />
+    <input class="form-control form-control-sm" value="" id="i.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
       <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
       <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
-  <script type='text/javascript'>$('#i.ПараметрИдУзла').select()</script>
+  <script type='text/javascript'>
+  el = $('#i.ПараметрИдУзла');
+  el.select();
+  el[0].attributes.value.value = ".ПараметрИмяЗначение";
+  </script>
 </div>
 <!--/ОбластьИзменитьИмяЗначение-->
 
@@ -136,7 +141,7 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;loadnodeid=.ПараметрОбновитьУзел&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьПросмотр-->
