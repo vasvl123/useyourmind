@@ -14,7 +14,7 @@
 <!--script src="/resource/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
-function loaddata(urldata, loop=false){
+function loaddata(urldata, loop){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
   xhr.open('GET', urldata, true);
