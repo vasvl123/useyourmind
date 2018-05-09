@@ -118,15 +118,15 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <div style='display: inline-block;'>
   <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
-    <input class="form-control form-control-sm" value="" id="i.ПараметрИдУзла" type="text" />
+    <input class="form-control form-control-sm" value="" id=".ПараметрКоманда.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
       <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
   <script type='text/javascript'>
-  el = $('#i.ПараметрИдУзла');
+  el = $('#.ПараметрКоманда.ПараметрИдУзла');
   el.select();
   el[0].attributes.value.value = ".ПараметрИмяЗначение";
   </script>
