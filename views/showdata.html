@@ -76,12 +76,15 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
     </nav>
   </div>
 </div>
+<script type='text/javascript'>
+window.scrollTo(0,.ПараметрСкролл);
+</script>
 
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
+            <a class="nav-link" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;tab=.ПараметрВкладка&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd=.ПараметрКоманда'); return false">.ПараметрЗаголовок</a>
           </li>
 <!--/ОбластьВкладка-->
 
@@ -101,7 +104,7 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -116,12 +119,12 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['i.ПараметрИдУзла'].value)); return false;">
+  <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm" value="" id=".ПараметрКоманда.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
@@ -141,7 +144,7 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьПросмотр-->
@@ -155,7 +158,7 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 </script>
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьПриветствие-->
