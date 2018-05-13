@@ -14,16 +14,19 @@
 <!--script src="/resource/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
+var mode;
 function loaddata(urldata, loop){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
   xhr.open('GET', urldata, true);
   xhr.onload = function() {
     if (this.response) {
-        textid = this.response.substring(0,100);
+        // $(this.response).each(function(index, value) {
+        // if (this.id) {$('#'+this.id).replaceWith(this);}});
+        textid = this.response.substring(0,200);
         s=textid.indexOf('id=');
         s+=4; e=textid.indexOf('>',s)-1;
-        console.log(textid.substring(s,e));
+        //console.log(textid.substring(s,e));
         el=document.getElementById(textid.substring(s,e));
         if (el) {$(el).replaceWith(this.response);}
         else {$('#data').replaceWith("<div id='data'>"+this.response+"</div>");}
@@ -49,6 +52,13 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
         <span class="navbar-toggler-icon"></span>
       </button>
 
+      <div class="btn-group mr-2" role="group">
+        <button class="btn btn-outline-dark btn-sm b_view" type="button" onclick="m.hide(); loaddata('/system/showdata?procid='+procid+'&amp;mode=view&amp;cmd=chmode')">view</button>
+        <button class="btn btn-outline-dark btn-sm b_design" type="button" onclick="loaddata('/system/showdata?procid='+procid+'&amp;mode=design&amp;cmd=chmode')">design</button>
+        <button class="btn btn-outline-dark btn-sm b_node" type="button" onclick="m.hide(); loaddata('/system/showdata?procid='+procid+'&amp;mode=node&amp;cmd=chmode')">node</button>
+      </div>
+      <script>mode=".ПараметрРежим";$(".b_"+mode).addClass("active");</script>
+
       <div class="collapse navbar-collapse">
 
         <ul class="navbar-nav mr-auto">
@@ -57,14 +67,14 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
 
         <form class="form-inline my-2 my-lg-0">
           <div class="btn-toolbar" role="toolbar">
-            <div class="btn-group mr-2" role="group">
+            <!--div class="btn-group mr-2" role="group">
               <div class="input-group">
                 <input class="form-control form-control-sm" type="text" placeholder="Search"/>
                 <span class="input-group-btn">
                     <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
                 </span>
               </div>
-            </div>
+            </div-->
             <div class="btn-group mr-2" role="group">
               <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/restartserver'">Restart</button>
               <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/stopserver'">Stop</button>
@@ -76,10 +86,6 @@ loaddata('/system/showdata?procid='+procid+'&cmd=domupdate', true);
     </nav>
   </div>
 </div>
-<script type='text/javascript'>
-window.scrollTo(0,.ПараметрСкролл);
-</script>
-
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
@@ -88,9 +94,14 @@ window.scrollTo(0,.ПараметрСкролл);
           </li>
 <!--/ОбластьВкладка-->
 
+<!--ОбластьСкролл-->
+<script type='text/javascript'>
+window.scrollTo(0,.ПараметрСкролл);
+</script>
+<!--/ОбластьСкролл-->
 
     <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
-    <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=design&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
+    <a href="" onclick="loaddata('/system/showdata?procid='+procid+'&mode=node&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
     loaddata('/system/showdata?procid='+procid+'&tab=.ПараметрИдВкладки&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
 
 
@@ -104,7 +115,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -119,12 +130,12 @@ window.scrollTo(0,.ПараметрСкролл);
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
+  <form onsubmit="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm" value="" id=".ПараметрКоманда.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
@@ -137,14 +148,22 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьИзменитьИмяЗначение-->
 
 <!--ОбластьКнопкаИнструменты-->
-<button id="b.ПараметрИдУзла" type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+<div .ПараметрАтрибуты id=".ПараметрИдУзла">
+<button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
 .ПараметрМенюИнструменты
 </div>
+</div>
 <!--/ОбластьКнопкаИнструменты-->
 
+<!--ОбластьМеню-->
+<div id='designmenu' class="dropdown-menu" style="display: block;">
+.ПараметрМенюИнструменты
+</div>
+<!--/ОбластьМеню-->
+
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=.ПараметрРежим&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьПросмотр-->
@@ -158,7 +177,7 @@ window.scrollTo(0,.ПараметрСкролл);
 </script>
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=design&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/system/showdata?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьПриветствие-->
@@ -175,7 +194,7 @@ window.scrollTo(0,.ПараметрСкролл);
                   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </p>
               </div>
-            </div>
+      </div>
 
     </div>
 
@@ -184,7 +203,45 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--ОбластьПодвал-->
 </div>
 <div id='data'></div>
+<div id='designmenu' style="position:absolute;"></div>
 <div id='stat'></div>
+<script type='text/javascript'>
+var m=$('#designmenu');
+var designnode;
+m.toggle('fast');
+document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;
+function handler(event) {
+  if (mode != "design") {return false;}
+  el=event.target;
+  if (el.id) {
+    if (el.id=="designmenu"){
+      if (event.type == 'click') {m.hide(); designnode.style.outlineStyle ='none';}
+      return false;
+    }
+    if (event.type == 'mouseover') {
+      el.style.outlineStyle = "dashed";
+      el.style.outlineWidth = "1px";
+      el.style.outlineColor = "white";
+      m.hide();
+      if (designnode) {designnode.style.outlineStyle ='none'; designnode=undefined;}
+    }
+    if (event.type == 'click') {
+      designnode = el;
+      el.style.outlineStyle = "solid";
+      m.load("/system/showdata?procid="+procid+"&nodeid="+el.id+"&cmd=designmenu");
+      var ypos = event.pageY;
+    	var xpos = event.pageX-5;
+      m.css('top',ypos);
+      m.css('left',xpos);
+      m.show();
+    }
+    if (event.type == 'mouseout') {
+      $(el).bind("click", function(){});
+      if (el.style.outlineStyle == "dashed") {el.style.outlineStyle = "none";}
+    }
+  }
+}
+</script>
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
