@@ -41,6 +41,14 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
 <!--ОбластьПанель-->
 <div id="navbar">
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+      <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+      .ПараметрМенюИнструменты
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Restart</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Stop</a>
+    </div>
+
     <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="div.navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,10 +78,6 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
               </span>
             </div>
           </div-->
-          <div class="btn-group mr-2" role="group">
-            <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/restartserver'">Restart</button>
-            <button class="btn btn-outline-dark btn-sm" type="button" onclick="window.location.href='/tasks/stopserver'">Stop</button>
-          </div>
         </div>
       </form>
 
