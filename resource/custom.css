@@ -40,6 +40,13 @@ body {
   border-color: #757f89;
 }
 
+.btn-sm2, .btn-group-sm > .btn {
+  padding: 0.4rem 0.25rem;
+  font-size: 0.8203125rem;
+  line-height: 1;
+  border-radius: 0.2rem;
+}
+
 .nav-link {
   display: block;
   padding: 0.5rem 0.5rem;
@@ -51,7 +58,7 @@ body {
 
 .navbar-brand {
   display: inline-block;
-  font-size: 1rem;
+  font-size: 0.8203125rem;
   line-height: inherit;
   white-space: nowrap;
 }

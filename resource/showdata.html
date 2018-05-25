@@ -30,6 +30,12 @@ function loaddata(urldata, loop){
   }
   xhr.send();
 }
+
+function setmode(parmode){
+m.hide();
+loaddata('/showdata/?procid='+procid+'&mode='+parmode+'&scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&cmd=chmode');
+}
+
 loaddata('/showdata/main?procid='+procid+'&data=start&cmd=newtab');
 loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
 </script>
@@ -45,24 +51,19 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
     <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Restart</a>
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Stop</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/?procid='+procid+'&amp;cmd=savedata'); return false">Записать</a>
+      <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Перезапустить</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Завершить</a>
     </div>
 
-    <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
+    .ПараметрОбластьДизайнер
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="div.navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse navbarContent">
-
-      <div class="btn-group mr-2" role="group">
-        <button class="btn btn-outline-dark btn-sm b_view" type="button" onclick="m.hide(); loaddata('/showdata/?procid='+procid+'&amp;mode=view&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd=chmode')">view</button>
-        <button class="btn btn-outline-dark btn-sm b_design" type="button" onclick="startdesign(); loaddata('/showdata/?procid='+procid+'&amp;mode=design&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd=chmode')">design</button>
-        <button class="btn btn-outline-dark btn-sm b_node" type="button" onclick="m.hide(); loaddata('/showdata/?procid='+procid+'&amp;mode=node&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd=chmode')">node</button>
-      </div>
-      <script>mode=".ПараметрРежим";$(".b_"+mode).addClass("active");</script>
 
       <ul class="navbar-nav mr-auto">
         .ПараметрВкладки
@@ -101,6 +102,23 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
 window.scrollTo(0,.ПараметрСкролл);
 </script>
 <!--/ОбластьСкролл-->
+
+<!--ОбластьДизайнер-->
+<div class="btn-group mr-2 ml-2" role="group">
+  <button class="btn btn-outline-dark btn-sm2 b_view" type="button" onclick="setmode('view');">view</button>
+  <button class="btn btn-outline-dark btn-sm2 b_design" type="button" onclick="setmode('design');">design</button>
+  <button class="btn btn-outline-dark btn-sm2 b_node" type="button" onclick="setmode('node');">node</button>
+</div>
+<script>
+  mode=".ПараметрРежим";$(".b_"+mode).addClass("active");
+  document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;
+</script>
+<!--/ОбластьДизайнер-->
+
+<!--ОбластьБрэнд-->
+<a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
+<!--/ОбластьБрэнд-->
+
 
     <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
     <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=node&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
@@ -211,8 +229,6 @@ window.scrollTo(0,.ПараметрСкролл);
 var designnode;
 m=$("#designmenu");
 m.toggle('fast');
-
-function startdesign() {document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;}
 
 function handler(event) {
   if (mode != "design") {return false;}
