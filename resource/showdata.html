@@ -46,7 +46,7 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
     <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/.ПараметрБазаДанных?procid='+procid+'&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Записать</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/.ПараметрБазаДанных?procid='+procid+'&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Сохранить</a>
       <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Завершить</a>
@@ -121,7 +121,7 @@ window.scrollTo(0,.ПараметрСкролл);
 
 
 <!--ОбластьУзел-->
-<div id='d.ПараметрИдУзла'>
+<div id='.ПараметрИдУзла'>
   <div style='white-space: nowrap;'>.ПараметрЗаголовокУзла</div>
 <ul>
 .ПараметрДочернийУзел
@@ -134,7 +134,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
-<div style='display: inline-block;' id='d.ПараметрИдУзла'>
+<div style='display: inline-block;' id='.ПараметрИдУзла'>
 <div class="btn-group" role="group" data-toggle="buttons">
   .ПараметрИнструменты
   .ПараметрИмя
@@ -195,31 +195,21 @@ window.scrollTo(0,.ПараметрСкролл);
 <div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
-<!--ОбластьПриветствие-->
-
-    <div class="container">
-
-			<div class="bs-component">
-              <div class="jumbotron">
-                <h1 class="display-3">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <p class="lead">
-                  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </p>
-              </div>
-      </div>
-
-    </div>
-
-<!--/ОбластьПриветствие-->
+<!--ОбластьУведомление-->
+<div id='insert'>
+<script type='text/javascript'>
+Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
+</script>
+</div>
+<!--/ОбластьУведомление-->
 
 <!--ОбластьПодвал-->
 </div>
 <div id='data'></div>
-<div id='stat'></div>
+<div id='insert'></div>
+<div id='notifies'></div>
 <div id='designmenu' style='position:absolute;'></div>
+
 <script type='text/javascript'>
 var designnode;
 m=$("#designmenu");
@@ -262,6 +252,38 @@ function handler(event) {
   }
 }
 </script>
+
+<script type='text/javascript'>
+    Notify = {
+        TYPE_INFO: 0,
+        TYPE_SUCCESS: 1,
+        TYPE_WARNING: 2,
+        TYPE_DANGER: 3,
+
+        generate: function (aText, aOptHeader, aOptType_int) {
+            var lTypeIndexes = [this.TYPE_INFO, this.TYPE_SUCCESS, this.TYPE_WARNING, this.TYPE_DANGER];
+            var ltypes = ['alert-info', 'alert-success', 'alert-warning', 'alert-danger'];
+            var ltype = ltypes[this.TYPE_INFO];
+
+            if (aOptType_int !== undefined && lTypeIndexes.indexOf(aOptType_int) !== -1) {
+                ltype = ltypes[aOptType_int];
+            }
+
+            var lText = '';
+            if (aOptHeader) {
+                lText += "<p class='alert-heading'><b>"+aOptHeader+"</b></p>";
+            }
+            lText += "<p>"+aText+"</p>";
+            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' data-dismiss='alert'>&times;</button>"+lText+"</div>");
+
+            setTimeout(function () {
+                lNotify_e.alert('close');
+            }, 3500);
+            lNotify_e.appendTo($("#notifies"));
+        }
+    };
+</script>
+
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
 <!--script src="/resource/custom.js"></script-->
