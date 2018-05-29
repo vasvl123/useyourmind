@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="/resource/bootstrap.css" media="screen">
 <link rel="stylesheet" href="/resource/custom.css">
 <script src="/resource/jquery.min.js"></script>
-<!--script src="/resource/jquery-ui.min.js"></script-->
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
 var mode,m;
@@ -187,10 +186,6 @@ window.scrollTo(0,.ПараметрСкролл);
 </div>
 <!--/ОбластьПросмотр-->
 
-<script>
-  $("#v.ПараметрИдУзла").draggable();
-</script>
-
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
@@ -203,11 +198,31 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 </div>
 <!--/ОбластьУведомление-->
 
+<!--ОбластьРедактировать-->
+<div id="editor" class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Source Code</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+      <iframe style="height:100%; width:100%;"/>
+    </div>
+  </div>
+  <script src="/resource/jquery-ui.min.js"></script>
+  <script>
+    $("#editor").draggable();
+  </script>
+</div>
+<!--/ОбластьРедактировать-->
+
 <!--ОбластьПодвал-->
 </div>
+
 <div id='data'></div>
 <div id='insert'></div>
 <div id='notifies'></div>
+<div id='editor'></div>
 <div id='designmenu' style='position:absolute;'></div>
 
 <script type='text/javascript'>
@@ -286,7 +301,6 @@ function handler(event) {
 
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
-<!--script src="/resource/custom.js"></script-->
 </body>
 </html>
 <!--/ОбластьПодвал-->
