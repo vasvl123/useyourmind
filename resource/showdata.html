@@ -120,7 +120,7 @@ window.scrollTo(0,.ПараметрСкролл);
 
 
 <!--ОбластьУзел-->
-<div id='.ПараметрИдУзла'>
+<div id='d.ПараметрИдУзла'>
   <div style='white-space: nowrap;'>.ПараметрЗаголовокУзла</div>
 <ul>
 .ПараметрДочернийУзел
@@ -133,7 +133,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
-<div style='display: inline-block;' id='.ПараметрИдУзла'>
+<div style='display: inline-block;' id='d.ПараметрИдУзла'>
 <div class="btn-group" role="group" data-toggle="buttons">
   .ПараметрИнструменты
   .ПараметрИмя
@@ -162,7 +162,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьИзменитьИмяЗначение-->
 
 <!--ОбластьКнопкаИнструменты-->
-<div id=".ПараметрИдУзла">
+<div id="d.ПараметрИдУзла">
 <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
 <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
 .ПараметрМенюИнструменты
@@ -198,24 +198,23 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 </div>
 <!--/ОбластьУведомление-->
 
-<!--ОбластьРедактировать-->
-<div id="editor" class="modal-dialog modal-lg">
+<!--ОбластьОкно-->
+<div id='win' class="modal-dialog modal-lg">
   <div class="modal-content">
     <div class="modal-header">
-      <h4 class="modal-title">Source Code</h4>
+      <b class="modal-title">.ПараметрЗаголовокОкна</b>
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     </div>
     <div class="modal-body">
-      <div id="win">
-      </div>
+      .ПараметрСодержимоеОкна
     </div>
   </div>
   <script src="/resource/jquery-ui.min.js"></script>
   <script>
-    $("#editor").draggable();
+    $("#win").draggable();
   </script>
 </div>
-<!--/ОбластьРедактировать-->
+<!--/ОбластьОкно-->
 
 <!--ОбластьПодвал-->
 </div>
@@ -223,7 +222,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='data'></div>
 <div id='insert'></div>
 <div id='notifies'></div>
-<div id='editor'></div>
+<div id='win'></div>
 <div id='designmenu' style='position:absolute;'></div>
 
 <script type='text/javascript'>
