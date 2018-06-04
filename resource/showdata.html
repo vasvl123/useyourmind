@@ -30,8 +30,8 @@ function loaddata(urldata, loop){
   xhr.send();
 }
 
-loaddata('/showdata/main?procid='+procid+'&data=start&cmd=newtab');
-loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
+loaddata('/showdata/'+procid+'?cmd=loadpage');
+loaddata('/showdata/'+procid+'?cmd=domupdate', true);
 </script>
 
 <body>
@@ -45,7 +45,7 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
     <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/.ПараметрБазаДанных?procid='+procid+'&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Сохранить</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Сохранить</a>
       <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Завершить</a>
@@ -83,7 +83,7 @@ loaddata('/showdata/?procid='+procid+'&cmd=domupdate', true);
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/.ПараметрБазаДанных?procid=.ПараметрИдПроцесса&amp;data=.ПараметрИмяДанных&amp;tab=.ПараметрВкладка&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрЗаголовок.ПараметрКнопкаНаВкладке</a>
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;tab=.ПараметрВкладка&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрЗаголовок.ПараметрКнопкаНаВкладке</a>
           </li>
 <!--/ОбластьВкладка-->
 
@@ -116,7 +116,7 @@ window.scrollTo(0,.ПараметрСкролл);
 
     <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
     <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=node&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
-    loaddata('/showdata/?procid='+procid+'&tab=.ПараметрИдВкладки&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
+    loaddata('/showdata/?procid='+procid+'&tab=.ПараметрВкладка&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
 
 
 <!--ОбластьУзел-->
@@ -129,7 +129,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -144,12 +144,12 @@ window.scrollTo(0,.ПараметрСкролл);
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
+  <form onsubmit="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm" value="" id=".ПараметрКоманда.ПараметрИдУзла" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
@@ -177,7 +177,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьПросмотр-->
@@ -187,7 +187,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьПросмотр-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/?procid=.ПараметрИдПроцесса&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;mode=node&amp;nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьУведомление-->
@@ -232,7 +232,7 @@ m.toggle('fast');
 
 function setmode(parmode){
 m.hide();
-loaddata('/showdata/?procid='+procid+'&mode='+parmode+'&scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&cmd=chmode');
+loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&cmd=chmode');
 }
 
 function handler(event) {
@@ -253,7 +253,7 @@ function handler(event) {
     if (event.type == 'click') {
       designnode = el;
       el.style.outlineStyle = "solid";
-      m.load("/showdata/?procid="+procid+"&nodeid="+el.id+"&cmd=designmenu");
+      m.load("/showdata/"+procid+"?nodeid="+el.id+"&cmd=designmenu");
       var ypos = event.pageY;
     	var xpos = event.pageX-5;
       m.css('top',ypos);
