@@ -31,7 +31,7 @@ function loaddata(urldata, loop){
 }
 
 loaddata('/showdata/'+procid+'?cmd=loadpage');
-loaddata('/showdata/'+procid+'?cmd=domupdate', true);
+loaddata('/showdata/'+procid+'?domupdate=1', true);
 </script>
 
 <body>
@@ -215,7 +215,6 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
       .ПараметрСодержимоеОкна
     </div>
   </div>
-  <script src="/resource/jquery-ui.min.js"></script>
   <script>
     $("#win").draggable();
   </script>
@@ -307,6 +306,7 @@ function handler(event) {
 
 <script src="/resource/popper.min.js"></script>
 <script src="/resource/bootstrap.min.js"></script>
+<script src="/resource/jquery-ui.min.js"></script>
 </body>
 </html>
 <!--/ОбластьПодвал-->
