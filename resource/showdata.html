@@ -47,8 +47,8 @@ loaddata('/showdata/'+procid+'?cmd=domupdate', true);
       .ПараметрМенюИнструменты
       <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Сохранить</a>
       <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'">Перезапустить</a>
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'">Завершить</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
     </div>
 
     .ПараметрОбластьДизайнер
