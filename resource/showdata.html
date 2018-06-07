@@ -19,19 +19,19 @@ var btncmd='';
 function loaddata(urldata, loop){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
-  xhr.open('GET', urldata, true);
+  if (loop==undefined) {loop='';}
+  xhr.open('GET',urldata+loop,true);
   xhr.onload = function() {
     if (this.response) {
         $(this.response).each(function(index, value) {
         if (this.id) {$('#'+this.id).replaceWith(this);}});
-        if (loop) {loaddata(urldata, loop);}
+        if (loop!=undefined) {loaddata(urldata,loop+1);}
     }
   }
   xhr.send();
 }
 
-loaddata('/showdata/'+procid+'?cmd=loadpage');
-loaddata('/showdata/'+procid+'?domupdate=1', true);
+loaddata('/showdata/'+procid+'?domupdate=', 0);
 </script>
 
 <body>
@@ -169,17 +169,22 @@ window.scrollTo(0,.ПараметрСкролл);
 
 <!--ОбластьКнопкаИнструменты-->
 <div id=".ПараметрИдУзла">
-<button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
-<div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
-.ПараметрМенюИнструменты
-</div>
+<button type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'.ПараметрИдУзла');">☰</button>
 </div>
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМеню-->
-<div id='designmenu' class="dropdown-menu" style="display: block;">
+<div id='designmenu' class="dropdown-menu" style="position:absolute; display: block;">
 .ПараметрМенюИнструменты
+<script type='text/javascript'>
+  m=$("#designmenu");
+  m.css('top',ypos);
+  m.css('left',xpos);
+  m.show();
+  $(document).click(function(e){m.hide();e.stopPropagation();});
+</script>
 </div>
+
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
@@ -228,16 +233,24 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='insert'></div>
 <div id='notifies'></div>
 <div id='win'></div>
-<div id='designmenu' style='position:absolute;'></div>
+<div id='designmenu'></div>
 
 <script type='text/javascript'>
 var designnode;
+var ypos;
+var xpos;
+
 m=$("#designmenu");
-m.toggle('fast');
 
 function setmode(parmode){
 m.hide();
 loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&cmd=chmode');
+}
+
+function loadmenu(event,elid){
+  ypos = event.pageY;
+  xpos = event.pageX-5;
+  loaddata("/showdata/"+procid+"?nodeid="+elid+"&cmd=designmenu");
 }
 
 function handler(event) {
@@ -245,7 +258,7 @@ function handler(event) {
   el=event.target;
   if (el.id) {
     if (el.id=="designmenu"){
-      if (event.type == 'click') {m.hide(); designnode.style.outlineStyle ='none';}
+      if (event.type == 'click') {designnode.style.outlineStyle ='none';}
       return false;
     }
     if (event.type == 'mouseover') {
@@ -258,15 +271,9 @@ function handler(event) {
     if (event.type == 'click') {
       designnode = el;
       el.style.outlineStyle = "solid";
-      m.load("/showdata/"+procid+"?nodeid="+el.id+"&cmd=designmenu");
-      var ypos = event.pageY;
-    	var xpos = event.pageX-5;
-      m.css('top',ypos);
-      m.css('left',xpos);
-      m.show();
+      loadmenu(event,el.id);
     }
     if (event.type == 'mouseout') {
-      $(el).bind("click", function(){});
       if (el.style.outlineStyle == "dashed") {el.style.outlineStyle = "none";}
     }
   }
