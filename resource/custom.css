@@ -52,12 +52,20 @@ body {
   border-radius: 0.2rem;
 }
 
+.btn-sm3, .btn-group-sm > .btn {
+  padding: 0.15rem 0.35rem;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 0.2rem;
+}
+
 .nav-link {
   display: block;
   padding: 0.5rem 0.5rem;
 }
 
 .navbar {
+  border: 1px solid rgba(0, 0, 0, 0.8);
 	padding: 0 0.5rem;
 }
 
@@ -78,6 +86,16 @@ body {
   padding: 0.5rem 0.5rem;
   margin-right: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+	border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.modal-header {
+	padding: 5px;
+  background-color: #3A3F44;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #notifies {

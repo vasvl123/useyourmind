@@ -83,13 +83,13 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрЗаголовок.ПараметрКнопкаНаВкладке</a>
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрЗаголовок.ПараметрКнопкаНаВкладке</a>
           </li>
 <!--/ОбластьВкладка-->
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрКнопкаНаВкладке</a>
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрКнопкаНаВкладке</a>
           </li>
 <!--/ОбластьНоваяВкладка-->
 
@@ -215,14 +215,16 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <button class="btn btn btn-primary btn-sm3" style="color:grey;" type="button" onclick="loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
     </div>
     <div class="modal-body">
       .ПараметрСодержимоеОкна
     </div>
   </div>
-  <script>
-    $("#win").draggable();
+  <script type='text/javascript'>
+    w=$("#win");
+    w.css('top',scrolled()+50-w.offset().top);
+    w.draggable();
   </script>
 </div>
 <!--/ОбластьОкно-->
@@ -243,9 +245,13 @@ var xpos;
 
 m=$("#designmenu");
 
+function scrolled(){
+  return (window.pageYOffset || document.documentElement.scrollTop);
+}
+
 function setmode(parmode){
 m.hide();
-loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+(window.pageYOffset || document.documentElement.scrollTop)+'&cmd=chmode');
+loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+scrolled()+'&cmd=chmode');
 }
 
 function loadmenu(event,elid){
