@@ -45,7 +45,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
     <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;datafile=.ПараметрФайлДанных&amp;mode='+mode+'&amp;cmd=savedata'); return false">Сохранить</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?cmd=savedata'); return false">Сохранить</a>
       <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
@@ -205,6 +205,7 @@ window.scrollTo(0,.ПараметрСкролл);
 <div id='insert'>
 <script type='text/javascript'>
 Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
+.ПараметрКоманда
 </script>
 </div>
 <!--/ОбластьУведомление-->
