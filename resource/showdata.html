@@ -14,6 +14,8 @@
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
 var mode,tab,m;
+var mscroll = [];
+var mmode = [];
 var btncmd='';
 
 function loaddata(urldata, loop){
@@ -152,17 +154,17 @@ window.scrollTo(0,.ПараметрСкролл);
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value)); return false;">
+  <form onsubmit="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
     <div class="input-group">
-    <input class="form-control form-control-sm" value="" id=".ПараметрКоманда.ПараметрИдУзла" type="text" />
+    <input class="form-control form-control-sm" value="" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
-      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрКоманда.ПараметрИдУзла'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
       <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
     </span>
     </div>
   </form>
   <script type='text/javascript'>
-  el = $('#.ПараметрКоманда.ПараметрИдУзла');
+  el = $('#.ПараметрИдУзла.ПараметрКоманда');
   el.select();
   el[0].attributes.value.value = ".ПараметрИмяЗначение";
   </script>
@@ -252,18 +254,31 @@ function scrolled(){
 }
 
 function setmode(parmode){
+tabselect(tab, parmode)
 m.hide();
 loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+scrolled()+'&cmd=chmode');
 }
 
-function tabselect(stab){
+function tabselect(stab, smode){
   t=$("#"+tab+"_1");
+  mm=0;
   if (t) {
+    if (mode='node') {mm=1;}
+    mscroll[tab,m]=scrolled();
+    mmode[tab]=mode;
     t.hide();
   }
+  mm=0;
   st=$("#"+stab+"_1");
   if (st) {
     st.show();
+    if (smode!=undefined) {
+      mode=smode;
+    } else {
+      mode=mmode[stab];
+    }
+    if (mode='node') {mm=1;}
+    window.scrollTo(0,mscroll[stab,m]);
   }
   return stab;
 }
@@ -280,7 +295,7 @@ function handler(event) {
     if (event.type == 'click') {
       s=el.id.indexOf('_');
       t=el.id.substring(1,s-1);
-      if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+t+'&scrolled='+scrolled()+'&cmd=tabselect');}
+      if (t!=tab) {tabselect(t); loaddata('/showdata/'+procid+'?tab='+t+'&scrolled='+scrolled()+'&cmd=tabselect');}
     }
     if (mode != "design") {return false;}
     if (el.id=="designmenu"){
