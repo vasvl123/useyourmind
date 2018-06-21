@@ -13,7 +13,7 @@
 <script src="/resource/jquery.min.js"></script>
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
-var mode,m;
+var mode,tab,m;
 var btncmd='';
 
 function loaddata(urldata, loop){
@@ -78,24 +78,28 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
     </div>
   </nav>
+  <script type='text/javascript'>
+  tab='.ПараметрИдВкладки';
+  </script>
 </div>
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрЗаголовок.ПараметрКнопкаНаВкладке</a>
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect'; tab=tabselect('.ПараметрВкладка');} loaddata('/showdata/'+procid+'?tab='+tab+'&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">
+              .ПараметрЗаголовок
+              <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
+            </a>
           </li>
 <!--/ОбластьВкладка-->
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='.ПараметрКоманда';} loaddata('/showdata/'+procid+'?osdb=.ПараметрБазаДанных&amp;data=.ПараметрИмяДанных&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">.ПараметрКнопкаНаВкладке</a>
+            <a class="nav-link" href="" onclick=" tab=tabselect('.ПараметрВкладка'); $('#data').append('<div id='+tab+'_1 />'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;scrolled='+scrolled()+'&amp;cmd=newtab'); return false;">
+              <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
+            </a>
           </li>
 <!--/ОбластьНоваяВкладка-->
-
-<!--ОбластьКнопкаНаВкладке-->
-<button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='.ПараметрКоманда';">.ПараметрНадписьНаКнопке</button>
-<!--/ОбластьКнопкаНаВкладке-->
 
 <!--ОбластьСкролл-->
 <script type='text/javascript'>
@@ -120,8 +124,6 @@ window.scrollTo(0,.ПараметрСкролл);
 <!--/ОбластьБрэнд-->
 
 
-    <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=view&data=slate&nodeid=2&descr=sample'); return false">Sample</a>
-    <a href="" onclick="loaddata('/showdata/?procid='+procid+'&mode=node&data=slate&nodeid=2&cmd=nodeopen&descr=source'); return false">Source</a>
     loaddata('/showdata/?procid='+procid+'&tab=.ПараметрВкладка&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
 
 
@@ -254,6 +256,18 @@ m.hide();
 loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+scrolled()+'&cmd=chmode');
 }
 
+function tabselect(stab){
+  t=$("#"+tab+"_1");
+  if (t) {
+    t.hide();
+  }
+  st=$("#"+stab+"_1");
+  if (st) {
+    st.show();
+  }
+  return stab;
+}
+
 function loadmenu(event,elid){
   ypos = event.pageY;
   xpos = event.pageX-5;
@@ -261,9 +275,14 @@ function loadmenu(event,elid){
 }
 
 function handler(event) {
-  if (mode != "design") {return false;}
   el=event.target;
   if (el.id) {
+    if (event.type == 'click') {
+      s=el.id.indexOf('_');
+      t=el.id.substring(1,s-1);
+      if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+t+'&scrolled='+scrolled()+'&cmd=tabselect');}
+    }
+    if (mode != "design") {return false;}
     if (el.id=="designmenu"){
       if (event.type == 'click') {designnode.style.outlineStyle ='none';}
       return false;
