@@ -48,12 +48,14 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
       <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?cmd=savedata'); return false">Сохранить</a>
-      <a class="dropdown-item" href="" onclick="setmode('design'); return false">Дизайнер</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=view&amp;cmd=chmode'); return false">Просмотр</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=design&amp;cmd=chmode'); return false">Дизайнер</a>
+      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=struct&amp;cmd=chmode'); return false">Структура</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
     </div>
 
-    .ПараметрОбластьДизайнер
+    <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="div.navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -81,14 +83,16 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
     </div>
   </nav>
   <script type='text/javascript'>
-  tab='.ПараметрИдВкладки';
+    tab='.ПараметрИдВкладки';
+    mode='.ПараметрРежим';
+    if (mode='design') {document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;}
   </script>
 </div>
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect'; tab=tabselect('.ПараметрВкладка');} loaddata('/showdata/'+procid+'?tab='+tab+'&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect';} loaddata('/showdata/'+procid+'?tab='+tabselect('.ПараметрВкладка')+'&amp;cmd='+btncmd); btncmd = ''; return false;">
               .ПараметрЗаголовок
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
             </a>
@@ -97,33 +101,11 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick=" tab=tabselect('.ПараметрВкладка'); $('#data').append('<div id='+tab+'_1 />'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;scrolled='+scrolled()+'&amp;cmd=newtab'); return false;">
+            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка'); return false;">
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
             </a>
           </li>
 <!--/ОбластьНоваяВкладка-->
-
-<!--ОбластьСкролл-->
-<script type='text/javascript'>
-window.scrollTo(0,.ПараметрСкролл);
-</script>
-<!--/ОбластьСкролл-->
-
-<!--ОбластьДизайнер-->
-<div class="btn-group mr-2 ml-2" role="group">
-  <button class="btn btn-outline-dark btn-sm2 b_view" type="button" onclick="setmode('view');">view</button>
-  <button class="btn btn-outline-dark btn-sm2 b_design" type="button" onclick="setmode('design');">design</button>
-  <button class="btn btn-outline-dark btn-sm2 b_node" type="button" onclick="setmode('node');">node</button>
-</div>
-<script>
-  mode=".ПараметрРежим";$(".b_"+mode).addClass("active");
-  document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;
-</script>
-<!--/ОбластьДизайнер-->
-
-<!--ОбластьБрэнд-->
-<a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
-<!--/ОбластьБрэнд-->
 
 
     loaddata('/showdata/?procid='+procid+'&tab=.ПараметрВкладка&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
@@ -253,22 +235,18 @@ function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
-function setmode(parmode){
-tabselect(tab, parmode)
-m.hide();
-loaddata('/showdata/'+procid+'?mode='+parmode+'&scrolled='+scrolled()+'&cmd=chmode');
+function newtab(ntab){
+$('#data').append('<div id='+tabselect(ntab)+'_1 />');
+loaddata('/showdata/'+procid+'?osdb=main&data=start&cmd=newtab');
 }
 
 function tabselect(stab, smode){
   t=$("#"+tab+"_1");
-  mm=0;
   if (t) {
-    if (mode='node') {mm=1;}
-    mscroll[tab,m]=scrolled();
+    mscroll[tab]=scrolled();
     mmode[tab]=mode;
     t.hide();
   }
-  mm=0;
   st=$("#"+stab+"_1");
   if (st) {
     st.show();
@@ -277,8 +255,7 @@ function tabselect(stab, smode){
     } else {
       mode=mmode[stab];
     }
-    if (mode='node') {mm=1;}
-    window.scrollTo(0,mscroll[stab,m]);
+    window.scrollTo(0,mscroll[stab]);
   }
   return stab;
 }
