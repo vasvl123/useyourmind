@@ -48,9 +48,8 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
       <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
       .ПараметрМенюИнструменты
       <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?cmd=savedata'); return false">Сохранить</a>
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=view&amp;cmd=chmode'); return false">Просмотр</a>
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=design&amp;cmd=chmode'); return false">Дизайнер</a>
-      <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?mode=struct&amp;cmd=chmode'); return false">Структура</a>
+      <a class="dropdown-item" href="" onclick="mode='design'; loaddata('/showdata/'+procid+'?cmd=designmode'); document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler; return false">Дизайнер</a>
+      <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?cmd=edittab'); return false">Структура</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
     </div>
@@ -85,7 +84,6 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
   <script type='text/javascript'>
     tab='.ПараметрИдВкладки';
     mode='.ПараметрРежим';
-    if (mode='design') {document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;}
   </script>
 </div>
 <!--/ОбластьПанель-->
@@ -101,7 +99,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка'); return false;">
+            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
             </a>
           </li>
@@ -197,7 +195,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьУведомление-->
 
 <!--ОбластьОкно-->
-<div id='win' class="modal-dialog modal-lg">
+<div id='.ПараметрВкладка' class="modal-dialog modal-lg">
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
@@ -221,7 +219,6 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='data'></div>
 <div id='insert'></div>
 <div id='notifies'></div>
-<div id='win'></div>
 <div id='designmenu'></div>
 
 <script type='text/javascript'>
@@ -231,14 +228,9 @@ var xpos;
 
 m=$("#designmenu");
 
-function scrolled(){
-  return (window.pageYOffset || document.documentElement.scrollTop);
-}
+function scrolled(){return (window.pageYOffset || document.documentElement.scrollTop);}
 
-function newtab(ntab){
-$('#data').append('<div id='+tabselect(ntab)+'_1 />');
-loaddata('/showdata/'+procid+'?osdb=main&data=start&cmd=newtab');
-}
+function newtab(ntab){$('#data').append('<div id='+tabselect(ntab)+'_1 />');}
 
 function tabselect(stab, smode){
   t=$("#"+tab+"_1");
@@ -271,8 +263,10 @@ function handler(event) {
   if (el.id) {
     if (event.type == 'click') {
       s=el.id.indexOf('_');
-      t=el.id.substring(1,s-1);
-      if (t!=tab) {tabselect(t); loaddata('/showdata/'+procid+'?tab='+t+'&scrolled='+scrolled()+'&cmd=tabselect');}
+      if (s!=-1){
+        t=el.id.substring(1,s-1);
+        if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+tabselect(t)+'&cmd=tabselect');}
+      }
     }
     if (mode != "design") {return false;}
     if (el.id=="designmenu"){
