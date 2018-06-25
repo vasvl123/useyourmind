@@ -14,8 +14,7 @@
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
 var mode,tab,m;
-var mscroll = [];
-var mmode = [];
+var tabs={};
 var btncmd='';
 
 function loaddata(urldata, loop){
@@ -81,10 +80,11 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
     </div>
   </nav>
-  <script type='text/javascript'>
+  <!-- <script type='text/javascript'>
     tab='.ПараметрИдВкладки';
     mode='.ПараметрРежим';
-  </script>
+    tabs[tab].mode=mode;
+  </script> -->
 </div>
 <!--/ОбластьПанель-->
 
@@ -175,6 +175,10 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
+<!--ОбластьМенюРедактировать-->
+<a class="dropdown-item" href="" onclick="newtabwin('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
+<!--/ОбластьМенюРедактировать-->
+
 <!--ОбластьПросмотр-->
 <div id="v.ПараметрИдУзла">
   .ПараметрПредставление
@@ -195,7 +199,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьУведомление-->
 
 <!--ОбластьОкно-->
-<div id='.ПараметрВкладка' class="modal-dialog modal-lg">
+<div id='.ПараметрВкладка_0' class="modal-dialog modal-lg">
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
@@ -206,7 +210,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
     </div>
   </div>
   <script type='text/javascript'>
-    w=$("#win");
+    w=$("#.ПараметрВкладка_0");
     w.css('top',scrolled()+50-w.offset().top);
     w.draggable();
   </script>
@@ -230,26 +234,43 @@ m=$("#designmenu");
 
 function scrolled(){return (window.pageYOffset || document.documentElement.scrollTop);}
 
-function newtab(ntab){$('#data').append('<div id='+tabselect(ntab)+'_1 />');}
+function newtab(ntab){
+  tabs[ntab]={};
+  tabs[ntab].type="data";
+  tabselect(ntab);
+  $('#data').append('<div id='+tab+'_0><div id='+tab+'_1 /></div>');
+}
 
-function tabselect(stab, smode){
-  t=$("#"+tab+"_1");
-  if (t) {
-    mscroll[tab]=scrolled();
-    mmode[tab]=mode;
+function newtabwin(ntab){
+  tabs[ntab]={};
+  tabs[ntab].type="win";
+  tabs[ntab].mode="struct";
+  tab=ntab;
+  $('#data').append('<div id='+ntab+'_0/>');
+}
+
+function tabselect(stab){
+  if (tab!=undefined) {
+    if (tabs[tab].type=="data") {
+      tabs[tab].mode=mode;
+      tabs[tab].scroll=scrolled();
+    }
+  }
+  if (tabs[stab].type=="data") {
+    t=$("#"+tab+"_0");
     t.hide();
   }
-  st=$("#"+stab+"_1");
-  if (st) {
-    st.show();
-    if (smode!=undefined) {
-      mode=smode;
-    } else {
-      mode=mmode[stab];
-    }
-    window.scrollTo(0,mscroll[stab]);
+  st=$("#"+stab+"_0");
+  st.show();
+  if (tabs[stab].type=="data") {
+    window.scrollTo(0,tabs[stab].scroll);
   }
-  return stab;
+  if (tabs[stab].type=="win") {
+    st.css('top',scrolled()+50-st.offset().top);
+  }
+  mode=tabs[stab].mode;
+  tab=stab;
+  return tab;
 }
 
 function loadmenu(event,elid){
