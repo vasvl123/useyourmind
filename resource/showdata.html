@@ -48,7 +48,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
       .ПараметрМенюИнструменты
       <a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?cmd=savedata'); return false">Сохранить</a>
       <a class="dropdown-item" href="" onclick="mode='design'; loaddata('/showdata/'+procid+'?cmd=designmode'); document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler; return false">Дизайнер</a>
-      <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?cmd=edittab'); return false">Структура</a>
+      <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','data'); loaddata('/showdata/'+procid+'?cmd=edittab'); return false">Структура</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
       <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
     </div>
@@ -99,7 +99,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
+            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка','data'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
             </a>
           </li>
@@ -176,7 +176,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="newtabwin('.ПараметрВкладка'); loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
+<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
 <!--/ОбластьМенюРедактировать-->
 
 <!--ОбластьПросмотр-->
@@ -234,19 +234,12 @@ m=$("#designmenu");
 
 function scrolled(){return (window.pageYOffset || document.documentElement.scrollTop);}
 
-function newtab(ntab){
+function newtab(ntab,type){
   tabs[ntab]={};
-  tabs[ntab].type="data";
+  tabs[ntab].type=type;
+  tabs[ntab].mode='';
+  $('#data').append('<div id='+ntab+'_0><div id='+ntab+'_1 /></div>');
   tabselect(ntab);
-  $('#data').append('<div id='+tab+'_0><div id='+tab+'_1 /></div>');
-}
-
-function newtabwin(ntab){
-  tabs[ntab]={};
-  tabs[ntab].type="win";
-  tabs[ntab].mode="struct";
-  tab=ntab;
-  $('#data').append('<div id='+ntab+'_0/>');
 }
 
 function tabselect(stab){
