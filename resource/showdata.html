@@ -16,6 +16,7 @@ var procid=.ПараметрИдПроцесса;
 var mode,tab,m;
 var tabs={};
 var btncmd='';
+var data;
 
 function loaddata(urldata, loop){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
@@ -80,17 +81,16 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
     </div>
   </nav>
-  <!-- <script type='text/javascript'>
-    tab='.ПараметрИдВкладки';
-    mode='.ПараметрРежим';
-    tabs[tab].mode=mode;
-  </script> -->
+  <script type='text/javascript'>
+    tabselect('.ПараметрИдВкладки');
+    tabs[tab].mode='.ПараметрРежим';
+  </script>
 </div>
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect';} loaddata('/showdata/'+procid+'?tab='+tabselect('.ПараметрВкладка')+'&amp;cmd='+btncmd); btncmd = ''; return false;">
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect';} loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd = ''; return false;">
               .ПараметрЗаголовок
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
             </a>
@@ -211,7 +211,8 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
   </div>
   <script type='text/javascript'>
     w=$("#.ПараметрВкладка_0");
-    w.css('top',scrolled()+50-w.offset().top);
+    tabs[tab].ofs=w.offset().top;
+    w.css('top',scrolled()+50-tabs[tab].ofs);
     w.draggable();
   </script>
 </div>
@@ -221,6 +222,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 </div>
 
 <div id='data'></div>
+<div id='win'></div>
 <div id='insert'></div>
 <div id='notifies'></div>
 <div id='designmenu'></div>
@@ -238,31 +240,30 @@ function newtab(ntab,type){
   tabs[ntab]={};
   tabs[ntab].type=type;
   tabs[ntab].mode='';
-  $('#data').append('<div id='+ntab+'_0><div id='+ntab+'_1 /></div>');
-  tabselect(ntab);
+  tabs[ntab].ofs=0;
+  $('#'+type).append('<div id='+ntab+'_0><div id='+ntab+'_1 /></div>');
 }
 
 function tabselect(stab){
-  if (tab!=undefined) {
-    if (tabs[tab].type=="data") {
-      tabs[tab].mode=mode;
-      tabs[tab].scroll=scrolled();
-    }
+  if (data!=undefined) {
+    tabs[data].mode=mode;
+    tabs[data].scroll=scrolled();
   }
-  if (tabs[stab].type=="data") {
-    t=$("#"+tab+"_0");
-    t.hide();
-  }
-  st=$("#"+stab+"_0");
-  st.show();
-  if (tabs[stab].type=="data") {
-    window.scrollTo(0,tabs[stab].scroll);
-  }
-  if (tabs[stab].type=="win") {
-    st.css('top',scrolled()+50-st.offset().top);
-  }
-  mode=tabs[stab].mode;
   tab=stab;
+  if (tabs[tab].type=="data") {
+    t=$("#"+data+"_0");
+    t.hide();
+    data=tab;
+  }
+  t=$("#"+tab+"_0");
+  t.show();
+  if (tabs[tab].type=="data") {
+    window.scrollTo(0,tabs[tab].scroll);
+  }
+  if (tabs[tab].type=="win") {
+    t.css('top',scrolled()+50-tabs[tab].ofs);
+  }
+  mode=tabs[tab].mode;
   return tab;
 }
 
@@ -279,7 +280,7 @@ function handler(event) {
       s=el.id.indexOf('_');
       if (s!=-1){
         t=el.id.substring(1,s-1);
-        if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+tabselect(t)+'&cmd=tabselect');}
+        if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+t+'&cmd=tabselect');}
       }
     }
     if (mode != "design") {return false;}
