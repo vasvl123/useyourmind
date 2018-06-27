@@ -13,10 +13,9 @@
 <script src="/resource/jquery.min.js"></script>
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
-var mode,tab,m;
-var tabs={};
+var tab,m;
 var btncmd='';
-var data;
+var tabtype,mode;
 
 function loaddata(urldata, loop){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
@@ -82,15 +81,30 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
     </div>
   </nav>
   <script type='text/javascript'>
-    tabselect('.ПараметрИдВкладки');
-    tabs[tab].mode='.ПараметрРежим';
+    tabtype=".ПараметрТипВкладки";
+    mode=".ПараметрРежим";
+    if (tabtype!="win"){
+      if (tab!=undefined){
+        t=$("#"+tab+"_0");
+        t.hide();
+      }
+    }
+    tab=".ПараметрИдВкладки";
+    t=$("#"+tab+"_0");
+    t.show();
+    if (tabtype=="data") {
+      window.scrollTo(0,.ПараметрПрокрутка);
+    }
+    if (tabtype=="win") {
+      t.css('top',scrolled()+50-t[0].attributes.ofs);
+    }
   </script>
 </div>
 <!--/ОбластьПанель-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect';} loaddata('/showdata/'+procid+'?tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd = ''; return false;">
+            <a class="nav-link" href="" onclick="if(btncmd==''){btncmd='tabselect';} loaddata('/showdata/'+procid+'?ntab=.ПараметрВкладка&amp;tab='+tab+'&amp;mode='+mode+'&amp;scrolled='+scrolled()+'&amp;cmd='+btncmd); btncmd = ''; return false;">
               .ПараметрЗаголовок
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
             </a>
@@ -99,7 +113,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьНоваяВкладка-->
           <li class="nav-item">
-            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка','data'); loaddata('/showdata/'+procid+'?osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
+            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка','data'); loaddata('/showdata/'+procid+'?ntab=.ПараметрВкладка&amp;tab='+tab+'&amp;mode='+mode+'&amp;scrolled='+scrolled()+'&amp;osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
               <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
             </a>
           </li>
@@ -168,7 +182,6 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
   $(document).click(function(e){m.hide();e.stopPropagation();});
 </script>
 </div>
-
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
@@ -176,7 +189,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
+<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); loaddata('/showdata/'+procid+'?ntab=.ПараметрВкладка&amp;tab='+tab+'&amp;mode='+mode+'&amp;scrolled='+scrolled()+'&amp;nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
 <!--/ОбластьМенюРедактировать-->
 
 <!--ОбластьПросмотр-->
@@ -199,7 +212,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьУведомление-->
 
 <!--ОбластьОкно-->
-<div id='.ПараметрВкладка_0' class="modal-dialog modal-lg">
+<div id='.ПараметрВкладка_0' class="modal-dialog modal-lg ofs=0">
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
@@ -211,8 +224,8 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
   </div>
   <script type='text/javascript'>
     w=$("#.ПараметрВкладка_0");
-    tabs[tab].ofs=w.offset().top;
-    w.css('top',scrolled()+50-tabs[tab].ofs);
+    w[0].attributes.ofs=w.offset().top;
+    w.css('top',scrolled()+50-w[0].attributes.ofs);
     w.draggable();
   </script>
 </div>
@@ -236,35 +249,8 @@ m=$("#designmenu");
 
 function scrolled(){return (window.pageYOffset || document.documentElement.scrollTop);}
 
-function newtab(ntab,type){
-  tabs[ntab]={};
-  tabs[ntab].type=type;
-  tabs[ntab].mode='';
-  tabs[ntab].ofs=0;
-  $('#'+type).append('<div id='+ntab+'_0><div id='+ntab+'_1 /></div>');
-}
-
-function tabselect(stab){
-  if (data!=undefined) {
-    tabs[data].mode=mode;
-    tabs[data].scroll=scrolled();
-  }
-  tab=stab;
-  if (tabs[tab].type=="data") {
-    t=$("#"+data+"_0");
-    t.hide();
-    data=tab;
-  }
-  t=$("#"+tab+"_0");
-  t.show();
-  if (tabs[tab].type=="data") {
-    window.scrollTo(0,tabs[tab].scroll);
-  }
-  if (tabs[tab].type=="win") {
-    t.css('top',scrolled()+50-tabs[tab].ofs);
-  }
-  mode=tabs[tab].mode;
-  return tab;
+function newtab(ntab,tabtype){
+  $('#'+tabtype).append('<div id='+ntab+'_0 ofs=0><div id='+ntab+'_1 /></div>');
 }
 
 function loadmenu(event,elid){
@@ -280,7 +266,7 @@ function handler(event) {
       s=el.id.indexOf('_');
       if (s!=-1){
         t=el.id.substring(1,s-1);
-        if (t!=tab) {loaddata('/showdata/'+procid+'?tab='+t+'&cmd=tabselect');}
+        if (t!=tab) {loaddata('/showdata/'+procid+'?ntab='+t+'&cmd=tabselect');}
       }
     }
     if (mode != "design") {return false;}
