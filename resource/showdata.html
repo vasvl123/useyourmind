@@ -1,0 +1,379 @@
+<!--ОбластьШапка-->
+<!DOCTYPE html>
+<html lang="ru" xml:lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>OneScriptDB</title>
+<link rel="stylesheet" href="/resource/bootstrap.css" media="screen">
+<link rel="stylesheet" href="/resource/custom.css">
+<script src="/resource/jquery.min.js"></script>
+<script type='text/javascript'>
+var procid=.ПараметрИдПроцесса;
+var tab,datatab,wintab,m;
+var btncmd='tabselect';
+var tabtype,datamode,mode;
+
+function loaddata(urldata, loop){
+  var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
+  var xhr = new XHR();
+  if (loop==undefined) {loop='';}
+  xhr.open('GET',urldata+loop,true);
+  xhr.onload = function() {
+    if (this.response) {
+        $(this.response).each(function(index, value) {
+        if (this.id) {$('#'+this.id).replaceWith(this);}});
+        if (loop!=undefined) {loaddata(urldata,loop+1);}
+    }
+  }
+  xhr.send();
+}
+
+function sendcmd(cmd){
+  loaddata('/showdata/'+procid+'?datatab='+datatab+'&datamode='+datamode+'&scrolled='+scrolled()+'&'+cmd);
+}
+
+loaddata('/showdata/'+procid+'?domupdate=', 0);
+</script>
+
+<body>
+<div id="navbar">
+<!--/ОбластьШапка-->
+
+<!--ОбластьПанель-->
+<div id="navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+      <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+      .ПараметрМенюИнструменты
+      <a class="dropdown-item" href="" onclick="sendcmd('cmd=savedata'); return false">Сохранить</a>
+      <a class="dropdown-item" href="" onclick="sendcmd('cmd=designmode'); return false">Дизайнер</a>
+      <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('cmd=edittab'); return false">Структура</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
+      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
+    </div>
+
+    <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="div.navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbarContent">
+
+      <ul class="navbar-nav mr-auto">
+        .ПараметрВкладки
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <div class="btn-toolbar" role="toolbar">
+          <!--div class="btn-group mr-2" role="group">
+            <div class="input-group">
+              <input class="form-control form-control-sm" type="text" placeholder="Search"/>
+              <span class="input-group-btn">
+                  <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
+              </span>
+            </div>
+          </div-->
+        </div>
+      </form>
+
+    </div>
+  </nav>
+</div>
+<!--/ОбластьПанель-->
+
+<!--ОбластьСкрипт-->
+<div id="insert">
+  <script type='text/javascript'>
+    updata(".ПараметрТипВкладки",".ПараметрРежим",".ПараметрТекущиеДанные",".ПараметрТекущееОкно",".ПараметрРежДанных",".ПараметрИдВкладки",".ПараметрПрокрутка");
+  </script>
+</div>
+<!--/ОбластьСкрипт-->
+
+<!--ОбластьВкладка-->
+          <li class="nav-item .ПараметрАктивный">
+            <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
+              .ПараметрЗаголовок
+              <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
+            </a>
+          </li>
+<!--/ОбластьВкладка-->
+
+<!--ОбластьНоваяВкладка-->
+          <li class="nav-item">
+            <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('osdb=main&amp;data=start&amp;cmd=newtab'); return false;">
+              <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
+            </a>
+          </li>
+<!--/ОбластьНоваяВкладка-->
+
+
+    loaddata('/showdata/?procid='+procid+'&tab=.ПараметрВкладка&mode=lisp&data=datalisp&nodeid=316&cmd=nodeopen');
+
+
+<!--ОбластьУзел-->
+<div id='.ПараметрИдУзла'>
+  <div style='white-space: nowrap;'>.ПараметрЗаголовокУзла</div>
+<ul>
+.ПараметрДочернийУзел
+</ul>
+</div>
+<!--/ОбластьУзел-->
+
+<!--ОбластьКнопкаИмяЗначение-->
+<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<!--/ОбластьКнопкаИмяЗначение-->
+
+<!--ОбластьИмяЗначение-->
+<div style='display: inline-block;' id='.ПараметрИдУзла'>
+<div class="btn-group" role="group" data-toggle="buttons">
+  .ПараметрИнструменты
+  .ПараметрИмя
+  .ПараметрЗначение
+</div>
+</div>
+<!--/ОбластьИмяЗначение-->
+
+<!--ОбластьИзменитьИмяЗначение-->
+<div style='display: inline-block;'>
+  <form onsubmit="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
+    <div class="input-group">
+    <input class="form-control form-control-sm" value="" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
+    <span class="input-group-btn">
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+      <button class="btn btn-outline-dark btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+    </span>
+    </div>
+  </form>
+  <script type='text/javascript'>
+  el = $('#.ПараметрИдУзла.ПараметрКоманда');
+  el.select();
+  el[0].attributes.value.value = ".ПараметрИмяЗначение";
+  </script>
+</div>
+<!--/ОбластьИзменитьИмяЗначение-->
+
+<!--ОбластьКнопкаИнструменты-->
+<div id=".ПараметрИдУзла">
+<button type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'.ПараметрИдУзла');">☰</button>
+</div>
+<!--/ОбластьКнопкаИнструменты-->
+
+<!--ОбластьМеню-->
+<div id='designmenu' class="dropdown-menu" style="position:absolute; display: block;">
+.ПараметрМенюИнструменты
+<script type='text/javascript'>
+  m=$("#designmenu");
+  m.css('top',ypos);
+  m.css('left',xpos);
+  m.show();
+  $(document).click(function(e){m.hide();e.stopPropagation();});
+</script>
+</div>
+<!--/ОбластьМеню-->
+
+<!--ОбластьМенюИнструменты-->
+<a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
+<!--/ОбластьМенюИнструменты-->
+
+<!--ОбластьМенюРедактировать-->
+<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
+<!--/ОбластьМенюРедактировать-->
+
+<!--ОбластьПросмотр-->
+<div id="v.ПараметрИдУзла">
+  .ПараметрПредставление
+</div>
+<!--/ОбластьПросмотр-->
+
+<!--ОбластьКнопкаУзел-->
+<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<!--/ОбластьКнопкаУзел-->
+
+<!--ОбластьУведомление-->
+<div id='insert'>
+<script type='text/javascript'>
+Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
+.ПараметрКоманда
+</script>
+</div>
+<!--/ОбластьУведомление-->
+
+<!--ОбластьОкно-->
+<div id='.ПараметрВкладка_0' class="modal-dialog modal-lg ofs=0">
+  <div class="modal-content">
+    <div class="modal-header">
+      <b class="modal-title">.ПараметрЗаголовокОкна</b>
+      <button class="btn btn btn-primary btn-sm3" style="color:grey;" type="button" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    </div>
+    <div class="modal-body">
+      .ПараметрСодержимоеОкна
+    </div>
+  </div>
+</div>
+<!--/ОбластьОкно-->
+
+<!--ОбластьПодвал-->
+</div>
+
+<div id='data'></div>
+<div id='win'></div>
+<div id='insert'></div>
+<div id='notifies'></div>
+<div id='designmenu'></div>
+
+<script type='text/javascript'>
+var designnode;
+var ypos;
+var xpos;
+
+m=$("#designmenu");
+
+function scrolled(){
+  return (window.pageYOffset || document.documentElement.scrollTop);
+}
+
+function newtab(ntab,tabtype){
+  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_1 /></div>');
+}
+
+function tabselect(p_tabtype,p_tab,p_scroll){
+  if (p_tabtype=="data"){
+    if (datatab!=""){
+      t=$("#"+datatab+"_0");
+      t.hide();
+    }
+  }
+  if (wintab!=""){
+    t=$("#"+wintab+"_0");
+    t.css('top',0);
+    t.hide();
+  }
+  t=$("#"+p_tab+"_0");
+  t.show();
+  if (p_tabtype=="data") {
+    datatab=p_tab;
+    window.scrollTo(0,p_scroll);
+  }
+  if (p_tabtype=="win") {
+    wintab=p_tab;
+    t.css('top',scrolled()+50-t.offset().top);
+  }
+}
+
+function updata(p_tabtype,p_mode,p_datatab,p_wintab,p_datamode,p_tab,p_scroll){
+  tabtype=p_tabtype;
+  mode=p_mode;
+  if (mode=='design') {
+    document.body.onmouseover = document.body.onmouseout = document.body.onclick = handler;
+  }
+  if (tabtype=="data"){
+    if (datatab!=""){
+      t=$("#"+datatab+"_0");
+      t.hide();
+    }
+  }
+  if (wintab!=""){
+    t=$("#"+wintab+"_0");
+    t.css('top',0);
+    t.hide();
+  }
+  datatab=p_datatab;
+  wintab=p_wintab;
+  datamode=p_datamode;
+  tab=p_tab;
+  if (datatab!=""){
+    t=$("#"+datatab+"_0");
+    t.show();
+    window.scrollTo(0,p_scroll);
+  }
+  if (wintab!=""){
+    t=$("#"+wintab+"_0");
+    t.show();
+    t.css('top',scrolled()+50-t.offset().top);
+    t.draggable();
+  }
+}
+
+function loadmenu(event,elid){
+  ypos = event.pageY;
+  xpos = event.pageX-5;
+  loaddata("/showdata/"+procid+"?nodeid="+elid+"&cmd=designmenu");
+}
+
+function handler(event) {
+  el=event.target;
+  if (el.id) {
+    if (event.type == 'click') {
+      s=el.id.indexOf('_');
+      if (s!=-1){
+        t=el.id.substring(1,s-1);
+        if (t!=tab) {sendcmd('tab='+t+'&cmd=tabselect');}
+      }
+    }
+    if (mode != "design") {return false;}
+    if (el.id=="designmenu"){
+      if (event.type == 'click') {designnode.style.outlineStyle ='none';}
+      return false;
+    }
+    if (event.type == 'mouseover') {
+      el.style.outlineStyle = "dashed";
+      el.style.outlineWidth = "1px";
+      el.style.outlineColor = "white";
+      m.hide();
+      if (designnode) {designnode.style.outlineStyle ='none'; designnode=undefined;}
+    }
+    if (event.type == 'click') {
+      designnode = el;
+      el.style.outlineStyle = "solid";
+      loadmenu(event,el.id);
+    }
+    if (event.type == 'mouseout') {
+      if (el.style.outlineStyle == "dashed") {el.style.outlineStyle = "none";}
+    }
+  }
+}
+</script>
+
+<script type='text/javascript'>
+    Notify = {
+        TYPE_INFO: 0,
+        TYPE_SUCCESS: 1,
+        TYPE_WARNING: 2,
+        TYPE_DANGER: 3,
+
+        generate: function (aText, aOptHeader, aOptType_int) {
+            var lTypeIndexes = [this.TYPE_INFO, this.TYPE_SUCCESS, this.TYPE_WARNING, this.TYPE_DANGER];
+            var ltypes = ['alert-info', 'alert-success', 'alert-warning', 'alert-danger'];
+            var ltype = ltypes[this.TYPE_INFO];
+
+            if (aOptType_int !== undefined && lTypeIndexes.indexOf(aOptType_int) !== -1) {
+                ltype = ltypes[aOptType_int];
+            }
+
+            var lText = '';
+            if (aOptHeader) {
+                lText += "<p class='alert-heading'><b>"+aOptHeader+"</b></p>";
+            }
+            lText += "<p>"+aText+"</p>";
+            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' data-dismiss='alert'>&times;</button>"+lText+"</div>");
+
+            setTimeout(function () {
+                lNotify_e.alert('close');
+            }, 3500);
+            lNotify_e.appendTo($("#notifies"));
+        }
+    };
+</script>
+
+<script src="/resource/popper.min.js"></script>
+<script src="/resource/bootstrap.min.js"></script>
+<script src="/resource/jquery-ui.min.js"></script>
+</body>
+</html>
+<!--/ОбластьПодвал-->
