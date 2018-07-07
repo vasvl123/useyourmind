@@ -1,3 +1,5 @@
+![Logo](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb.png "OneScriptDB")
+
 # OneScriptDB
 Объектно-ориентированная система управления базами данных в среде OneScript
 
@@ -22,4 +24,4 @@
 2. Реализован минимальный функционал доступа к БД.
 3. Тестируется редактор интерфейса, наращивается его функциональность.
 
-Адрес тестового сервера: http://vasvl123.ddns.net/
+Адрес тестового сервера: http://vasvl123.ddns.net
