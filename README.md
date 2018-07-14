@@ -1,6 +1,9 @@
 ![Logo](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb.png "OneScriptDB")
 
 # OneScriptDB
+
+[![Join the chat at https://gitter.im/OneScriptDB/Lobby](https://badges.gitter.im/OneScriptDB/Lobby.svg)](https://gitter.im/OneScriptDB/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Объектно-ориентированная система управления базами данных в среде OneScript
 
 ## Цель проекта
