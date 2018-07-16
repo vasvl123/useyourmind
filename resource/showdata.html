@@ -47,18 +47,6 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <div id="navbar">
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
 
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
-      <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
-      .ПараметрМенюИнструменты
-      <a class="dropdown-item" href="" onclick="sendcmd('cmd=savedata'); return false">Сохранить</a>
-      <a class="dropdown-item" href="" onclick="sendcmd('cmd=designmode'); return false">Дизайнер</a>
-      <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('cmd=edittab'); return false">Структура</a>
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
-      <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
-    </div>
-
-    <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB">OneScriptDB</a>
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="div.navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -95,11 +83,29 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 </div>
 <!--/ОбластьСкрипт-->
 
+<!--ОбластьВкладка0-->
+          <li class="nav-item .ПараметрАктивный">
+            <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+              .ПараметрЗаголовок
+            </a>
+          </li>
+          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
+            .ПараметрМенюИнструменты
+            <a class="dropdown-item" href="" onclick="sendcmd('cmd=savedata'); return false">Сохранить</a>
+            <a class="dropdown-item" href="" onclick="sendcmd('cmd=designmode'); return false">Дизайнер</a>
+            <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('cmd=edittab'); return false">Структура</a>
+            <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
+            <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
+          </div>
+
+<!--/ОбластьВкладка0-->
+
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
             <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
               .ПараметрЗаголовок
-              <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
+              <button class="btn btn btn-outline-primary btn-sm" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
             </a>
           </li>
 <!--/ОбластьВкладка-->
@@ -365,6 +371,8 @@ function handler(event) {
             lNotify_e.appendTo($("#notifies"));
         }
     };
+
+  //newtab(0,'data');
 </script>
 
 <script src="/resource/popper.min.js"></script>
