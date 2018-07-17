@@ -13,7 +13,7 @@
 <script src="/resource/jquery.min.js"></script>
 <script type='text/javascript'>
 var procid=.ПараметрИдПроцесса;
-var tab,datatab,wintab,m;
+var tab,datatab,wintab;
 var btncmd='tabselect';
 var tabtype,datamode,mode;
 
@@ -85,21 +85,17 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьВкладка0-->
           <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
-              <button type="button" class="btn btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">☰</button>
+            <a class="nav-link" href="" onclick="if (btncmd=='mainmenu') {loadmenu(event,'cmd=mainmenu');} else {sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка');} btncmd='tabselect'; return false;">
+              <button title="Меню" type="button" class="btn btn-primary btn-sm" onclick="btncmd='mainmenu';">☰</button>
               .ПараметрЗаголовок
             </a>
           </li>
-          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;">
-            .ПараметрМенюИнструменты
-            <a class="dropdown-item" href="" onclick="sendcmd('cmd=savedata'); return false">Сохранить</a>
-            <a class="dropdown-item" href="" onclick="sendcmd('cmd=designmode'); return false">Дизайнер</a>
-            <a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('cmd=edittab'); return false">Структура</a>
-            <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
-            <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
-          </div>
-
 <!--/ОбластьВкладка0-->
+
+<!--ОбластьГлавноеМеню-->
+  <a class="dropdown-item" href="" onclick="window.location.href='/tasks/restartserver'; return false">Перезапустить</a>
+  <a class="dropdown-item" href="" onclick="window.location.href='/tasks/stopserver'; return false">Завершить</a>
+<!--/ОбластьГлавноеМеню-->
 
 <!--ОбластьВкладка-->
           <li class="nav-item .ПараметрАктивный">
@@ -162,15 +158,15 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьКнопкаИнструменты-->
 <div id=".ПараметрИдУзла">
-<button title=".ПараметрИдУзла" type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'.ПараметрИдУзла');">☰</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'nodeid=.ПараметрИдУзла&amp;cmd=designmenu');">☰</button>
 </div>
 <!--/ОбластьКнопкаИнструменты-->
 
 <!--ОбластьМеню-->
-<div id='designmenu' class="dropdown-menu" style="position:absolute; display: block;">
+<div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
 .ПараметрМенюИнструменты
 <script type='text/javascript'>
-  m=$("#designmenu");
+  m=$("#.ПараметрВидМеню");
   m.css('top',ypos);
   m.css('left',xpos);
   m.show();
@@ -180,11 +176,11 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); m.hide(); return false;">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=editwin'); m.hide(); return false;">Редактировать</a>
+<a class="dropdown-item" href="" onclick="newtab('.ПараметрВкладка','win'); sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=editwin'); return false;">Редактировать</a>
 <!--/ОбластьМенюРедактировать-->
 
 <!--ОбластьПросмотр-->
@@ -228,13 +224,12 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='insert'></div>
 <div id='notifies'></div>
 <div id='designmenu'></div>
+<div id='mainmenu'></div>
 
 <script type='text/javascript'>
 var designnode;
 var ypos;
 var xpos;
-
-m=$("#designmenu");
 
 function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -302,10 +297,10 @@ function updata(p_tabtype,p_mode,p_datatab,p_wintab,p_datamode,p_tab,p_scroll){
   }
 }
 
-function loadmenu(event,elid){
+function loadmenu(event,cmd){
   ypos = event.pageY;
   xpos = event.pageX-5;
-  loaddata("/showdata/"+procid+"?nodeid="+elid+"&cmd=designmenu");
+  sendcmd(cmd);
 }
 
 function handler(event) {
@@ -327,13 +322,12 @@ function handler(event) {
       el.style.outlineStyle = "dashed";
       el.style.outlineWidth = "1px";
       el.style.outlineColor = "white";
-      m.hide();
       if (designnode) {designnode.style.outlineStyle ='none'; designnode=undefined;}
     }
     if (event.type == 'click') {
       designnode = el;
       el.style.outlineStyle = "solid";
-      loadmenu(event,el.id);
+      loadmenu(event,'nodeid='+el.id+'&cmd=designmenu');
     }
     if (event.type == 'mouseout') {
       if (el.style.outlineStyle == "dashed") {el.style.outlineStyle = "none";}
