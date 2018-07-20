@@ -1,4 +1,4 @@
-![Logo](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb1.png "OneScriptDB")
+![Logo](https://github.com/vasvl123/OneScriptDB/blob/dev/resource/osdb1.png "OneScriptDB")
 
 # OneScriptDB
 Объектно-ориентированная система управления базами данных в среде OneScript
