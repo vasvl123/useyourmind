@@ -86,7 +86,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--ОбластьВкладка0-->
           <li class="nav-item .ПараметрАктивный">
             <a class="nav-link" style="padding-left: 0rem" href="" onclick="if (btncmd=='mainmenu') {loadmenu(event,'cmd=mainmenu');} else {sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка');} btncmd='tabselect'; return false;">
-              <button title="Меню" type="button" class="btn btn-primary btn-sm" onclick="btncmd='mainmenu';">☰</button>
+              <button title="Меню" type="button" class="btn btn-primary btn-sm" onclick="btncmd='mainmenu';" style="vertical-align: baseline;">☰</button>
               .ПараметрЗаголовок
             </a>
           </li>
@@ -101,7 +101,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
           <li class="nav-item .ПараметрАктивный">
             <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
               .ПараметрЗаголовок
-              <button class="btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
+              <button class="btn btn-outline-primary btn-sm2" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
             </a>
           </li>
 <!--/ОбластьВкладка-->
@@ -124,7 +124,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -158,7 +158,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьКнопкаИнструменты-->
 <div id=".ПараметрИдУзла">
-<button title=".ПараметрИдУзла" type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'nodeid=.ПараметрИдУзла&amp;cmd=designmenu');">☰</button>
+<button type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'nodeid=.ПараметрИдУзла&amp;cmd=designmenu');">☰</button>
 </div>
 <!--/ОбластьКнопкаИнструменты-->
 
