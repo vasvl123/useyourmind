@@ -8,7 +8,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>OneScriptDB</title>
-<link rel="stylesheet" href="/resource/style.css" media="screen">
+<link href="/resource/style.css" rel="stylesheet">
+<link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 <!--link rel="stylesheet" href="/resource/custom.css"-->
 <script src="/resource/jquery.min.js"></script>
 <script type='text/javascript'>
@@ -41,30 +42,79 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 
-<header id="navbar">
-<!--/ОбластьШапка-->
-
-<!--ОбластьПанель-->
 <header class="app-header navbar" id="navbar">
+
+  <a class="navbar-brand" href="#">
+    <img class="navbar-brand-full" src="/resource/osdb.png" width="110" height="37" alt="OneScriptDB Logo"/>
+    <img class="navbar-brand-minimized" src="/resource/osdb.png" alt="OneScriptDB Logo" width="55" height="18"/>
+  </a>
 
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
   <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="#">
-    <img class="navbar-brand-full" src="/resource/osdb1.png" width="89" height="25" alt="OneScriptDB Logo"/>
-    <img class="navbar-brand-minimized" src="/resource/osdb1.png" alt="OneScriptDB Logo" width="30" height="30"/>
-  </a>
-
-  <ul class="nav navbar-nav d-md-down-none">
-    .ПараметрВкладки
+  <ul class="nav navbar-nav d-md-down-none" id="tabs">
   </ul>
 
   <ul class="nav navbar-nav ml-auto">
   </ul>
 
 </header>
-<!--/ОбластьПанель-->
+
+<div class="app-body">
+
+<div class="sidebar">
+  <nav class="sidebar-nav ps ps--active-y">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="sendcmd('cmd=savedata'); return false"/>
+        <i class="nav-icon icon-folder"></i> Сохранить данные</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="sendcmd('cmd=designmode'); return false"/>
+        <i class="nav-icon icon-frame"></i> Режим редактора</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="sendcmd('cmd=edittab'); return false"/>
+        <i class="nav-icon icon-wrench"></i> Структура данных</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false"/>
+        <i class="nav-icon icon-loop"></i> Перезапустить</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="window.location.href='/tasks/stopserver'; return false"/>
+        <i class="nav-icon icon-ban"></i> Завершить</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<main class="main">
+
+<div class="container-fluid">
+
+<div id='data'></div>
+<div id='win'></div>
+
+</div>
+
+</main>
+
+<div id='insert'></div>
+<div id='notifies'></div>
+<div id='designmenu'></div>
+<div id='mainmenu'></div>
+
+</div>
+
+<!--/ОбластьШапка-->
+
+<!--ОбластьВкладки-->
+<ul class="nav navbar-nav d-md-down-none" id="tabs">
+  .ПараметрВкладки
+</ul>
+<!--/ОбластьВкладки-->
 
 <!--ОбластьСкрипт-->
 <div id="insert">
@@ -74,28 +124,19 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 </div>
 <!--/ОбластьСкрипт-->
 
-<!--ОбластьВкладка0-->
-    <li class="nav-item .ПараметрАктивный">
-      <a class="nav-link" style="padding-left: 0rem" href="" onclick="if (btncmd=='mainmenu') {loadmenu(event,'cmd=mainmenu');} else {sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка');} btncmd='tabselect'; return false;">
-        <button title="Меню" type="button" class="btn btn-primary btn-sm" onclick="btncmd='mainmenu';" style="vertical-align: baseline;">☰</button>
+<!--ОбластьВкладка-->
+    <li class="nav-item px-3 .ПараметрАктивный">
+      <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
         .ПараметрЗаголовок
+        <button class="btn btn-outline-primary btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
       </a>
     </li>
-<!--/ОбластьВкладка0-->
-
-<!--ОбластьВкладка-->
-          <li class="nav-item .ПараметрАктивный">
-            <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
-              .ПараметрЗаголовок
-              <button class="btn btn-outline-primary btn-sm2" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
-            </a>
-          </li>
 <!--/ОбластьВкладка-->
 
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
       <a class="nav-link" href="" onclick="newtab('.ПараметрВкладка','data'); sendcmd('cmd=newtab'); return false;">
-        <button class="btn btn btn-outline-primary btn-sm2" style="border-style: none; color:grey;" type="button">➕</button>
+        <button class="btn btn btn-outline-primary btn-sm" style="border-style: none; color:grey;" type="button">➕</button>
       </a>
     </li>
 <!--/ОбластьНоваяВкладка-->
@@ -110,7 +151,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-secondary btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -144,7 +185,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьКнопкаИнструменты-->
 <div id=".ПараметрИдУзла">
-<button type="button" class="btn btn-primary btn-sm" onclick="loadmenu(event,'nodeid=.ПараметрИдУзла&amp;cmd=designmenu');">☰</button>
+<button type="button" class="btn-outline-dark btn-sm" onclick="loadmenu(event,'nodeid=.ПараметрИдУзла&amp;cmd=designmenu');">☰</button>
 </div>
 <!--/ОбластьКнопкаИнструменты-->
 
@@ -203,54 +244,6 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьОкно-->
 
 <!--ОбластьПодвал-->
-</header>
-
-<div class="app-body">
-
-<div class="sidebar">
-  <nav class="sidebar-nav ps ps--active-y">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=savedata'); return false"/>
-        <i class="nav-icon icon-drop"></i> Сохранить данные</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=designmode'); return false"/>
-        <i class="nav-icon icon-drop"></i> Режим редактора</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=edittab'); return false"/>
-        <i class="nav-icon icon-drop"></i> Структура данных</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false"/>
-        <i class="nav-icon icon-drop"></i> Перезапустить</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/stopserver'; return false"/>
-        <i class="nav-icon icon-drop"></i> Завершить</a>
-      </li>
-    </ul>
-  </nav>
-</div>
-
-<main class="main">
-
-<div class="container-fluid">
-
-<div id='data'></div>
-<div id='win'></div>
-
-</div>
-
-</main>
-
-<div id='insert'></div>
-<div id='notifies'></div>
-<div id='designmenu'></div>
-<div id='mainmenu'></div>
-
-</div>
 
 <script type='text/javascript'>
 var designnode;
@@ -399,8 +392,6 @@ function handler(event) {
 <script src="/resource/bootstrap.min.js"></script>
 <script src="/resource/jquery-ui.min.js"></script>
 
-<!--script src="/resource/pace.min.js"></script-->
-<!--script src="/resource/perfect-scrollbar.min.js"></script-->
 <script src="/resource/coreui.min.js"></script>
 
 </body>
