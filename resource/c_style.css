@@ -18,6 +18,11 @@
 	background-color: #f0f3f5;
 }
 
+.btn-shadow {
+	border-bottom: 1px solid #757f89;
+	border-right: 1px solid #757f89;
+}
+
 #notifies {
     position:fixed;
     width:auto;

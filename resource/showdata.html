@@ -155,7 +155,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-secondary btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-secondary btn-shadow btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -175,8 +175,8 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
     <input class="form-control form-control-sm" value="" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
       <div class="btn-group" role="group" data-toggle="buttons">
-        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
-        <button class="btn btn-outline-secondary btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+        <button class="btn btn-secondary btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+        <button class="btn btn-secondary btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
       </div>
     </span>
     </div>
@@ -217,7 +217,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьПросмотр-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" class="btn btn-outline-secondary btn-sm" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-secondary btn-sm" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьУведомление-->
@@ -244,10 +244,10 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="card">
+<div id='.ПараметрВкладка_0' class="card text-white bg-secondary">
   <div class="card-header">
     <b class="modal-title">.ПараметрЗаголовокОкна</b>
-    <button class="btn btn btn-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    <button class="btn btn btn-outline-secondary btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
   </div>
   <div class="card-body">
     .ПараметрСодержимоеОкна
