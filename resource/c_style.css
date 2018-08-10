@@ -1,7 +1,3 @@
-.btn-outline-secondary {
-	color: #23282c;
-}
-
 .navbar-nav .active > .nav-link, .navbar-nav .active > .nav-link:hover {
 	border-bottom-style: solid;
 	border-bottom-color: #63c2de;
@@ -19,8 +15,15 @@
 }
 
 .btn-shadow {
-	border-bottom: 1px solid #757f89;
-	border-right: 1px solid #757f89;
+	background-color: #3a4248;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	color: white;
+}
+
+.btn-outline-dark:hover {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 }
 
 #notifies {
