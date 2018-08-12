@@ -33,10 +33,6 @@ function loaddata(urldata, loop){
   xhr.send();
 }
 
-function sendcmd(cmd){
-  loaddata('/showdata/'+procid+'?datatab='+datatab+'&scrolled='+scrolled()+'&'+cmd);
-}
-
 loaddata('/showdata/'+procid+'?domupdate=', 0);
 </script>
 
@@ -118,12 +114,17 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <ul class="nav navbar-nav d-md-down-none" id="tabs">
   .ПараметрВкладки
 </ul>
+<div id="insert">
+  <script type='text/javascript'>
+    mode=".ПараметрРежим";
+    tab=".ПараметрТекущаяВкладка";
+  </script>
+</div>
 <!--/ОбластьВкладки-->
 
 <!--ОбластьСкрипт-->
 <div id="insert">
   <script type='text/javascript'>
-    mode=".ПараметрРежим";
     tabselect(".ПараметрТипВкладки",".ПараметрИдВкладки",".ПараметрПрокрутка");
   </script>
 </div>
@@ -131,7 +132,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьВкладка-->
     <li class="nav-item px-2 .ПараметрАктивный">
-      <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); btncmd='tabselect'; return false;">
+      <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd='tabselect'; tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); return false;">
         .ПараметрЗаголовок
         <button class="btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
       </a>
@@ -194,7 +195,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
 .ПараметрМенюИнструменты
 <script type='text/javascript'>
-  m=$("#.ПараметрВидМеню");
+  var m=$("#.ПараметрВидМеню");
   m.css('top',ypos);
   m.css('left',xpos);
   m.show();
@@ -254,6 +255,11 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
     .ПараметрСодержимоеОкна
   </div>
 </div>
+<div id='insert'>
+  <script type='text/javascript'>
+    $("#.ПараметрВкладка_0").draggable();
+  </script>
+</div>
 <!--/ОбластьПанель-->
 
 
@@ -268,32 +274,39 @@ function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
+function sendcmd(cmd){
+  datascrolled=scrolled();
+  winscrolled="";
+  if (wintab!=""&&wintab!=undefined) {
+    var t=$("#"+wintab+"_0");
+    if(t.css("display")!="none"){
+      winscrolled=datascrolled-(t.offset().top-50);
+    }
+  }
+  loaddata('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+}
+
 function newtab(ntab,tabtype){
   $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_1 /></div>');
 }
 
 function tabselect(p_tabtype,p_tab,p_scroll){
-  if (p_tabtype=="data"){
-    if (datatab!=""){
-      t=$("#"+datatab+"_0");
-      t.hide();
+  var t=$("#"+p_tab+"_0");
+  if (p_tabtype=="data") {
+    if (datatab!=p_tab) {
+      $("#"+datatab+"_0").hide();
+      datatab=p_tab;
+      t.show();
+      window.scrollTo(0,p_scroll);
     }
   }
-  if (wintab!=""){
-    t=$("#"+wintab+"_0");
-    t.css('top',0);
-    t.hide();
-  }
-  t=$("#"+p_tab+"_0");
-  t.show();
-  if (p_tabtype=="data") {
-    datatab=p_tab;
-    window.scrollTo(0,p_scroll);
+  if (wintab!=p_tab) {
+    $("#"+wintab+"_0").css('top',0).hide();
   }
   if (p_tabtype=="win") {
     wintab=p_tab;
-    t.css('top',scrolled()+50-t.offset().top);
-    t.draggable();
+    t.show();
+    t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
   }
   tab=p_tab;
 }
@@ -305,13 +318,16 @@ function loadmenu(event,cmd){
 }
 
 function handler(event) {
-  el=event.target;
+  var el=event.target;
   if (el.id) {
     if (event.type == 'click') {
       s=el.id.indexOf('_');
       if (s!=-1){
         t=el.id.substring(1,s-1);
-        if (t!=tab) {sendcmd('tab='+t+'&cmd=tabselect');}
+        if (t!=tab) {
+          sendcmd('tab='+t+'&cmd=tabselect');
+          tabselect('data',t,scrolled());
+        }
       }
     }
     if (mode != "design") {return false;}
