@@ -63,7 +63,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
   <nav class="sidebar-nav ps ps--active-y">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=expldb'); return false"/>
+        <a class="nav-link" href="" onclick="sendcmd('osdb=&data=expldb&cmd=newtab'); return false"/>
         <i class="nav-icon icon-layers"></i> Базы данных</a>
       </li>
       <li class="nav-item">
@@ -275,8 +275,8 @@ function scrolled(){
 }
 
 function sendcmd(cmd){
-  datascrolled=scrolled();
-  winscrolled="";
+  var datascrolled=scrolled();
+  var winscrolled="";
   if (wintab!=""&&wintab!=undefined) {
     var t=$("#"+wintab+"_0");
     if(t.css("display")!="none"){
@@ -301,14 +301,14 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     }
   }
   if (wintab!=p_tab) {
-    $("#"+wintab+"_0").css('top',0).hide();
+    $("#"+wintab+"_0").hide().css('top',0);
   }
   if (p_tabtype=="win") {
     wintab=p_tab;
     t.show();
     t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
   }
-  tab=p_tab;
+  //tab=p_tab;
 }
 
 function loadmenu(event,cmd){
@@ -321,9 +321,9 @@ function handler(event) {
   var el=event.target;
   if (el.id) {
     if (event.type == 'click') {
-      s=el.id.indexOf('_');
+      var s=el.id.indexOf('_');
       if (s!=-1){
-        t=el.id.substring(1,s-1);
+        var t=el.id.substring(1,s-1);
         if (t!=tab) {
           sendcmd('tab='+t+'&cmd=tabselect');
           tabselect('data',t,scrolled());
