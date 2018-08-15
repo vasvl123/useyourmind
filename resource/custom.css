@@ -46,45 +46,30 @@ body {
 }
 
 .btn-sm2, .btn-group-sm > .btn {
-  padding: 0.4rem 0.25rem;
-  font-size: 0.8203125rem;
-  line-height: 1;
+  padding: 0.35rem 0.2rem;
+  font-size: 0.8rem;
   border-radius: 0.2rem;
 }
 
 .btn-sm3, .btn-group-sm > .btn {
-  padding: 0.15rem 0.35rem;
-  font-size: 1rem;
-  line-height: 1;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.8rem;
   border-radius: 0.2rem;
 }
 
 .nav-link {
   display: block;
-  padding: 0.5rem 0.5rem;
+  min-height: 2.3rem;
 }
 
 .navbar {
   border: 1px solid rgba(0, 0, 0, 0.8);
-	padding: 0 0.5rem;
-}
-
-.navbar-brand {
-  display: inline-block;
-  font-size: 0.8203125rem;
-  line-height: inherit;
-  white-space: nowrap;
+	padding: 0rem;
 }
 
 .navbar .nav-link {
-  padding: 0.5rem;
+  padding: 0.2rem;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.navbar-brand {
-  padding: 0.5rem 0.5rem;
-  margin-right: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 

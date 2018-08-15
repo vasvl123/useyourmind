@@ -1,0 +1,35 @@
+.navbar-nav .active > .nav-link, .navbar-nav .active > .nav-link:hover {
+	border-bottom-style: solid;
+	border-bottom-color: #63c2de;
+	border-bottom-width: 1px;
+}
+
+.dropdown-item {
+	padding: .25rem 1.5rem;
+}
+
+.modal-header {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: #f0f3f5;
+}
+
+.btn-shadow {
+	background-color: #3a4248;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	color: white;
+}
+
+.btn-outline-dark:hover {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#notifies {
+    position:fixed;
+    width:auto;
+    height:auto;
+    top:50px;
+    right:0px;
+}
