@@ -157,7 +157,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow btn-sm .ПараметрНеактивно" onclick="ypos=event.pageY; xpos=event.pageX-5; loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьИмяЗначение-->
@@ -177,8 +177,8 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
     <input class="form-control form-control-sm" value="" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
       <div class="btn-group" role="group" data-toggle="buttons">
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">✘</button>
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">✘</button>
       </div>
     </span>
     </div>
