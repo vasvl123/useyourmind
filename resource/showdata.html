@@ -63,27 +63,27 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
   <nav class="sidebar-nav ps ps--active-y">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('osdb=&data=expldb&cmd=newtab'); return false"/>
+        <a class="nav-link" href="" onclick="m_sendcmd('osdb=&data=expldb&cmd=newtab'); return false">
         <i class="nav-icon icon-layers"></i> Базы данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=savedata'); return false"/>
+        <a class="nav-link" href="" onclick="m_sendcmd('cmd=savedata'); return false">
         <i class="nav-icon icon-folder"></i> Сохранить данные</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('cmd=designmode'); return false"/>
-        <i class="nav-icon icon-frame"></i> Режим редактора</a>
+      <li class="nav-item" id="mode">
+        <a class="nav-link" href="" onclick="m_sendcmd('cmd=designmode'); return false">
+        <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="sendcmd('nodeid=1&amp;cmd=editwin'); return false;"/>
+        <a class="nav-link" href="" onclick="m_sendcmd('nodeid=1&amp;cmd=editwin'); return false;">
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false"/>
+        <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false">
         <i class="nav-icon icon-loop"></i> Перезапустить</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/stopserver'; return false"/>
+        <a class="nav-link" href="" onclick="window.location.href='/tasks/stopserver'; return false">
         <i class="nav-icon icon-ban"></i> Завершить</a>
       </li>
     </ul>
@@ -110,6 +110,20 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--/ОбластьШапка-->
 
+<!--ОбластьРежимПросмотр-->
+<li class="nav-item" id="mode">
+  <a class="nav-link" href="" onclick="m_sendcmd('cmd=designmode'); return false">
+  <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
+</li>
+<!--/ОбластьРежимПросмотр-->
+
+<!--ОбластьРежимРедактор-->
+<li class="nav-item" id="mode">
+  <a class="nav-link" href="" onclick="m_sendcmd('cmd=viewmode'); return false">
+  <i class="nav-icon icon-frame"></i> Режим: редактор</a>
+</li>
+<!--/ОбластьРежимРедактор-->
+
 <!--ОбластьВкладки-->
 <ul class="nav navbar-nav d-md-down-none" id="tabs">
   .ПараметрВкладки
@@ -132,7 +146,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьВкладка-->
     <li class="nav-item px-2 .ПараметрАктивный">
-      <a class="nav-link" href="" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd='tabselect'; tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); return false;">
+      <a class="nav-link" href="" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd='tabselect'; tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); return false;">
         .ПараметрЗаголовок
         <button class="btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
       </a>
@@ -141,7 +155,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
-      <a class="nav-link" href="" onclick="sendcmd('cmd=newtab'); return false;">
+      <a class="nav-link" href="" onclick="m_sendcmd('cmd=newtab'); return false;">
         <button class="btn btn btn-outline-light btn-sm" style="border-style: none; color:grey;" type="button">➕</button>
       </a>
     </li>
@@ -205,18 +219,12 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=editwin'); return false;">Редактировать</a>
+<a class="dropdown-item" href="" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=editwin'); return false;">Редактировать</a>
 <!--/ОбластьМенюРедактировать-->
-
-<!--ОбластьПросмотр-->
-<div id="v.ПараметрИдУзла">
-  .ПараметрПредставление
-</div>
-<!--/ОбластьПросмотр-->
 
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="loaddata('/showdata/'+procid+'?nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
@@ -236,7 +244,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
-      <button class="btn btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+      <button class="btn btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
     </div>
     <div class="modal-body">
       .ПараметрСодержимоеОкна
@@ -249,7 +257,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='.ПараметрВкладка_0' class="card text-white bg-dark" style="display:none">
   <div class="card-header">
     <b class="modal-title">.ПараметрЗаголовокОкна</b>
-    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
   </div>
   <div class="card-body">
     .ПараметрСодержимоеОкна
@@ -275,6 +283,7 @@ function scrolled(){
 }
 
 function sendcmd(cmd){
+  if (mode=="design") {return;}
   var datascrolled=scrolled();
   var winscrolled="";
   if (wintab!=""&&wintab!=undefined) {
@@ -283,6 +292,12 @@ function sendcmd(cmd){
       winscrolled=datascrolled-(t.offset().top-50);
     }
   }
+  loaddata('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+}
+
+function m_sendcmd(cmd){
+  var datascrolled=scrolled();
+  var winscrolled="";
   loaddata('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
 
@@ -314,7 +329,7 @@ function tabselect(p_tabtype,p_tab,p_scroll){
 function loadmenu(event,cmd){
   ypos = event.pageY;
   xpos = event.pageX-5;
-  sendcmd(cmd);
+  m_sendcmd(cmd);
 }
 
 function handler(event) {
@@ -325,12 +340,12 @@ function handler(event) {
       if (s!=-1){
         var t=el.id.substring(1,s-1);
         if (t!=tab) {
-          sendcmd('tab='+t+'&cmd=tabselect');
+          m_sendcmd('tab='+t+'&cmd=tabselect');
           tabselect('data',t,scrolled());
         }
       }
     }
-    if (mode != "design") {return false;}
+    if (mode!="design") {return;}
     if (el.id=="designmenu"){
       if (event.type == 'click') {designnode.style.outlineStyle ='none';}
       return false;
@@ -345,6 +360,7 @@ function handler(event) {
       designnode = el;
       el.style.outlineStyle = "solid";
       loadmenu(event,'nodeid='+el.id+'&cmd=designmenu');
+      return false;
     }
     if (event.type == 'mouseout') {
       if (el.style.outlineStyle == "dashed") {el.style.outlineStyle = "none";}
