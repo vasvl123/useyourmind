@@ -21,6 +21,20 @@
 	color: white;
 }
 
+.input-shadow {
+  color: #fff;
+  background-color: #3a4248;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	border-left-style: none;
+	border-top-style: none;
+}
+
+.input-shadow:focus {
+  color: #fff;
+  background-color: #484E55;
+}
+
 .btn-outline-dark:hover {
 	border-bottom: 1px solid black;
 	border-right: 1px solid black;
