@@ -79,7 +79,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
         <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="m_sendcmd('nodeid=1&amp;cmd=editwin'); return false;">
+        <a class="nav-link" href="" onclick="m_sendcmd('nodeid=1&amp;cmd=structwin'); return false;">
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
@@ -280,7 +280,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="card text-white bg-dark win" style="display:none">
+<div id='.ПараметрВкладка_.ПараметрИдУзла' class="card text-white bg-dark">
   <div class="card-header">
     <b class="modal-title">.ПараметрЗаголовокОкна</b>
     <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
@@ -327,14 +327,14 @@ function m_sendcmd(cmd){
   loaddata('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
 
-function newtab(ntab,tabtype){
-  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_1 /></div>');
+function newtab(ntab,tabtype,nodeid){
+  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;" class="'+tabtype+'"><div id='+ntab+'_'+nodeid+' /></div>');
 }
 
 function tabselect(p_tabtype,p_tab,p_scroll){
   var t=$("#"+p_tab+"_0");
   if (p_tabtype=="data") {
-    $(".win").hide().css('top',0);
+    $(".win").css('top',0).hide();
     if (datatab!=p_tab) {
       $("#"+datatab+"_0").hide();
       datatab=p_tab;
