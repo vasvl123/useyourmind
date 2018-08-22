@@ -33,7 +33,7 @@ function loaddata(urldata, loop){
   xhr.send();
 }
 
-loaddata('/showdata/'+procid+'?domupdate=', 0);
+loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 </script>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
@@ -143,6 +143,7 @@ loaddata('/showdata/'+procid+'?domupdate=', 0);
   <script type='text/javascript'>
     mode=".ПараметрРежим";
     tab=".ПараметрТекущаяВкладка";
+    document.title = ".ПараметрЗаголовокСтраницы";
   </script>
 </div>
 <!--/ОбластьВкладки-->
@@ -324,7 +325,7 @@ function m_sendcmd(cmd){
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
-  loaddata('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  loaddata('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
 
 function newtab(ntab,tabtype){
