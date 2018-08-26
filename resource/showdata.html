@@ -83,6 +83,10 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="" onclick="m_sendcmd('osdb=&data=log&cmd=newtab'); return false;">
+        <i class="nav-icon icon-calendar"></i> Журнал событий</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false">
         <i class="nav-icon icon-loop"></i> Перезапустить</a>
       </li>
@@ -184,7 +188,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; m_sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; m_sendcmd('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
