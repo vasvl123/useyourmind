@@ -332,8 +332,8 @@ function m_sendcmd(cmd){
   loaddata('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
 
-function newtab(ntab,tabtype){
-  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_1 /></div>');
+function newtab(ntab,tabtype,nodeid){
+  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
 }
 
 function tabselect(p_tabtype,p_tab,p_scroll){
