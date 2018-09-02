@@ -40,7 +40,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 
 <header class="app-header navbar" id="navbar">
 
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB/" title="Объектно-ориентированная система управления базами данных в среде OneScript">
     <img class="navbar-brand-full" src="/resource/osdb.png" width="110" height="37" alt="OneScriptDB Logo"/>
     <img class="navbar-brand-minimized" src="/resource/osdb.png" alt="OneScriptDB Logo" width="55" height="18"/>
   </a>
@@ -162,7 +162,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 
 <!--ОбластьВкладка-->
     <li class="nav-item px-2 .ПараметрАктивный">
-      <a class="nav-link" href="" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); btncmd='tabselect'; tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка'); return false;">
+      <a class="nav-link" title=".ПараметрБазаДанных" href="" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd='+btncmd); if(btncmd=='tabselect'){tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка')}else{btncmd='tabselect';} return false;">
         .ПараметрЗаголовок
         <button class="btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
       </a>
