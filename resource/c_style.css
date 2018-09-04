@@ -21,6 +21,13 @@
 	color: white;
 }
 
+.btn-shadow-s {
+	background-color: #77818f;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	color: white;
+}
+
 .input-shadow {
   color: #fff;
   background-color: #3a4248;
