@@ -41,7 +41,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 <header class="app-header navbar" id="navbar">
 
   <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB/" title="Объектно-ориентированная система управления базами данных в среде OneScript">
-    <img class="navbar-brand-full" src="/resource/osdb.png" width="110" height="37" alt="OneScriptDB Logo"/>
+    <img class="navbar-brand-full" src="/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
     <img class="navbar-brand-minimized" src="/resource/osdb.png" alt="OneScriptDB Logo" width="55" height="18"/>
   </a>
 
@@ -299,11 +299,25 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
     $("#.ПараметрВкладка_0").draggable();
   </script>
 </div>
-
 <!--/ОбластьПанель-->
+
+<!--ОбластьСтатус-->
+<div class="ml-auto" id="status">
+<span>.ПараметрСтатусСообщение</span>
+</div>
+<!--/ОбластьСтатус-->
 
 
 <!--ОбластьПодвал-->
+
+<footer class="app-footer">
+<div>
+<a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
+<span>© 2018 Vladimir Vasiliev.</span>
+</div>
+<div class="ml-auto" id="status">
+</div>
+</footer>
 
 <script type='text/javascript'>
 var designnode;
