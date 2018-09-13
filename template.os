@@ -1,3 +1,9 @@
+// MIT License
+// Copyright (c) 2018 Vladimir Vasiliev
+// https://github.com/vasvl123/OneScriptDB
+//
+//  Включает программный код https://github.com/nextkmv/vServer
+
 
 // Простой шаблонизатор
 Перем ТекстМакета Экспорт;

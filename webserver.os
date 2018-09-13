@@ -1,4 +1,8 @@
-// Сделано на основе https://github.com/nextkmv/vServer
+// MIT License
+// Copyright (c) 2018 Vladimir Vasiliev
+// https://github.com/vasvl123/OneScriptDB
+//
+// Включает программный код https://github.com/nextkmv/vServer
 
 
 Перем Хост, Порт, ПерезапуститьСервер, ОстановитьСервер;
