@@ -1,6 +1,9 @@
 ![Logo](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb.png "OneScriptDB")
 
 # OneScriptDB
+
+[![Join the chat at https://gitter.im/OneScriptDB/Lobby](https://badges.gitter.im/OneScriptDB/Lobby.svg)](https://gitter.im/OneScriptDB/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Объектно-ориентированная система управления базами данных в среде OneScript
 
 ## Цель проекта
@@ -21,4 +24,4 @@
 2. Доработка интерпретатора Lisp.
 3. Разработка подключаемых библиотек для основных элементов интерфейса.
 
-Адрес тестового сервера: http://vasvl123.ddns.net
+Адрес тестового сервера: http://vasvl123.github.io/OneScriptDB
