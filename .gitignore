@@ -2,3 +2,4 @@
 *.files/
 *.files/*
 !.files/
+*.log
