@@ -52,7 +52,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   <ul class="nav navbar-nav d-md-down-none" id="tabs">
   </ul>
 
-  <ul class="nav navbar-nav ml-auto">
+  <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
 
 </header>
@@ -151,6 +151,39 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   </script>
 </div>
 <!--/ОбластьВкладки-->
+
+<!--ОбластьГость-->
+<ul class="nav navbar-nav ml-auto" id="acc">
+  <li class="nav-item dropdown">
+    <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      .ПараметрСубъект
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-header text-center">
+          <strong>Учетная запись</strong>
+        </div>
+        <a class="dropdown-item" href="#"><i class="nav-icon icon-login"></i> Войти</a>
+        <a class="dropdown-item" href="#"><i class="nav-icon icon-home"></i> Регистрация</a>
+      </div>
+    </a>
+  </li>
+</ul>
+<!--/ОбластьГость-->
+
+<!--ОбластьСубъект-->
+<ul class="nav navbar-nav ml-auto" id="acc">
+  <li class="nav-item dropdown">
+    <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      .ПараметрСубъект
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-header text-center">
+          <strong>Учетная запись</strong>
+        </div>
+        <a class="dropdown-item" href="#"><i class="nav-icon icon-logout"></i> Выйти</a>
+      </div>
+    </a>
+  </li>
+</ul>
+<!--/ОбластьСубъект-->
 
 <!--ОбластьСкрипт-->
 <div id="insert">

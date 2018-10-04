@@ -7055,7 +7055,7 @@
 И	i	А	7056	С	7057
 И	class	З	nav-icon icon-grid
 И	Строка	З	Список /data/.files/
-И	div	А	7059	Д	7060
+И	div	А	7059	Д	7219
 И	class	З	card-body
 И	table	А	7061	Д	7062
 И	class	З	table table-responsive-sm
@@ -7202,3 +7202,44 @@
 И	З	З	Строка
 И	З	З	Таблица данные
 И	С	З	Шаблон файлы
+
+И	class	З	form-group
+И	input	А	7208
+И	id	З	newfilename	С	7209
+И	class	З	form-control	С	7210
+И	placeholder	З	Имя файла	С	7211
+И	type	З	text
+И	div	А	7221	Д	7243
+
+И	input	А	7215	С	7239
+И	id	З	newfilename	С	7216
+И	class	З	form-control	С	7217
+И	placeholder	З	Имя файла	С	7218
+И	type	З	text
+И	div	Д	7241	С	7237	А	7220
+И	class	З	form-group
+И	class	З	input-group
+
+И	class	З	input-group-append
+И	button	З	Создать новый файл	А	7225
+И	class	З	btn btn-secondary	С	7226
+И	type	З	button
+И	div	Д	7214	А	7228	С	7239
+И	class	З	col-sm-5
+И	span	А	7230	Д	7231
+И	class	З	input-group-append
+
+И	class	З	btn btn-secondary	С	7233
+И	type	З	button
+И	button	З	Создать	А	7235
+И	class	З	btn btn-outline-primary	С	7236
+И	type	З	button
+И	div	Д	7060	А	7238
+И	class	З	form-group
+И	span	Д	7234	А	7240
+И	class	З	input-group-append
+И	div	Д	7212	А	7242
+И	class	З	col-sm-5
+И	label	З	Новый файл	С	7214	А	7244
+И	class	З	col-md-3 col-form-label	С	7245
+И	for	З	newfilename
