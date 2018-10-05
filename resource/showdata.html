@@ -251,9 +251,9 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
     </div>
   </form>
   <script type='text/javascript'>
-    el = $('#.ПараметрИдУзла.ПараметрКоманда');
+    el = $('#.ПараметрИдУзла.ПараметрКоманда')[0];
     el.select();
-    el[0].value = decodeURIComponent(".ПараметрИмяЗначение");
+    el.value = decodeURIComponent(".ПараметрИмяЗначение");
   </script>
 </div>
 <!--/ОбластьИзменитьИмяЗначение-->
@@ -263,8 +263,9 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   <form>
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value))">Сохранить</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
   <script type='text/javascript'>
     $('#.ПараметрИдУзлаname')[0].value = decodeURIComponent(".ПараметрИмяУзла");
@@ -272,6 +273,17 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   </script>
 </div>
 <!--/ОбластьРедактироватьУзел-->
+
+<!--ОбластьЗагрузитьHTML-->
+<div id='.ПараметрИдУзлаimport'>
+  <form>
+    <textarea class="form-control form-control input-shadow" id="inputhtml" />
+    <div id="impdom"></div>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+  </form>
+</div>
+<!--/ОбластьЗагрузитьHTML-->
 
 <!--ОбластьМеню-->
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
@@ -377,6 +389,37 @@ function m_sendcmd(cmd){
   //   }
   // }
   loaddata('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+}
+
+function m_postcmd(cmd){
+  var datascrolled=scrolled();
+  var winscrolled="";
+  var url = '/showdata';
+  var param = 'procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST',url,true);
+  xhr.send(param);
+}
+
+function get_tree(root){
+  var res = '',
+      curr = root,
+      child_prop = 'firstElementChild',
+      next_prop = 'nextElementSibling';
+  while(curr){
+    res = res + curr.tagName;
+    if (curr[child_prop]){
+      res = res + get_tree(curr[child_prop]);
+    }
+    curr = curr[next_prop];
+  }
+  return res;
+}
+
+function impdom(htmltext){
+  node = $('#impdom')[0];
+  node.innerHTML = htmltext;
+  return get_tree(node);
 }
 
 function newtab(ntab,tabtype,nodeid){
