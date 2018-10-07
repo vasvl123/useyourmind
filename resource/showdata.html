@@ -279,7 +279,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   <form>
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>
 </div>
@@ -406,20 +406,32 @@ function get_tree(root){
       curr = root,
       child_prop = 'firstElementChild',
       next_prop = 'nextElementSibling';
+      attr_prop = 'attributes';
   while(curr){
-    res = res + curr.tagName;
+    res += "tagName" + "\t" + curr.tagName + "\n";
+    if (curr[attr_prop]){
+      res += "_at" + "\n";
+      attrs = curr[attr_prop];
+      for(var i = attrs.length - 1; i >= 0; i--){
+        res += "attrName" + "\t" + attrs[i].name + "\t" + "attrVal" + "\t" + attrs[i].value + "\n";}
+       res += "_rt" + "\n"
+    }
     if (curr[child_prop]){
-      res = res + get_tree(curr[child_prop]);
+      res += "_ch" + "\n" + get_tree(curr[child_prop]);
+    } else {
+      if (curr.innerText){
+        res += "_ch" + "\n" + "text" + "\t" + curr.innerText + "\n" + "_rt" + "\n";}
     }
     curr = curr[next_prop];
   }
+  res += "_rt" + "\n";
   return res;
 }
 
 function impdom(htmltext){
-  node = $('#impdom')[0];
+  var node = $('#impdom')[0];
   node.innerHTML = htmltext;
-  return get_tree(node);
+  return encodeURIComponent(get_tree(node['firstElementChild']));
 }
 
 function newtab(ntab,tabtype,nodeid){
