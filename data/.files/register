@@ -1,0 +1,164 @@
+﻿И	У	З	Корень	Д	2
+И	Э	З	Фронт	Д	83
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	DIV	А	84	Д	85
+И	class	З	row justify-content-center align-items-center
+И	DIV	А	86	Д	87
+И	class	З	col-md-6
+И	DIV	А	88	Д	89
+И	class	З	card mx-4
+И	DIV	А	90	Д	91
+И	class	З	card-body p-4
+И	H1	Д	92	С	93
+И	text	З	Регистрация
+И	P	А	94	Д	95	С	96
+И	class	З	text-muted
+И	text	З	Создать учетную запись
+И	DIV	А	97	Д	98	С	108
+И	class	З	input-group mb-3
+И	DIV	А	99	Д	100	С	104
+И	class	З	input-group-prepend
+И	SPAN	А	101	Д	102
+И	class	З	input-group-text
+И	I	А	103
+И	class	З	icon-user
+И	INPUT	А	107
+И	type	З	text
+И	placeholder	З	Имя	С	105
+И	class	З	form-control	С	106
+И	DIV	А	109	Д	110	С	119
+И	class	З	input-group mb-3
+И	DIV	А	111	Д	112	С	115
+И	class	З	input-group-prepend
+И	SPAN	А	113	Д	114
+И	class	З	input-group-text
+И	text	З	@
+И	INPUT	А	118
+И	type	З	text
+И	placeholder	З	Почта	С	116
+И	class	З	form-control	С	117
+И	DIV	А	120	Д	121	С	131
+И	class	З	input-group mb-3
+И	DIV	А	122	Д	123	С	127
+И	class	З	input-group-prepend
+И	SPAN	А	124	Д	125
+И	class	З	input-group-text
+И	I	А	126
+И	class	З	icon-lock
+И	INPUT	А	130
+И	type	З	password
+И	placeholder	З	Пароль	С	128
+И	class	З	form-control	С	129
+И	DIV	А	132	Д	133	С	143
+И	class	З	input-group mb-4
+И	DIV	А	134	Д	135	С	139
+И	class	З	input-group-prepend
+И	SPAN	А	136	Д	137
+И	class	З	input-group-text
+И	I	А	138
+И	class	З	icon-lock
+И	INPUT	А	142
+И	type	З	password
+И	placeholder	З	Пароль еще раз	С	140
+И	class	З	form-control	С	141
+И	BUTTON	А	145	Д	146
+И	type	З	button
+И	class	З	btn btn-block btn-success	С	144
+И	text	З	Создать учетную запись
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

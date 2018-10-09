@@ -62,4 +62,5 @@
     height:auto;
     top:50px;
     right:0px;
+		z-index: 15;
 }
