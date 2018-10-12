@@ -56,6 +56,12 @@
 	z-index: 5;
 }
 
+.input-group {
+	border-bottom: 1px solid #8f9ba6;
+	border-right: 1px solid #8f9ba6;
+	border-radius: .25rem;
+}
+
 #notifies {
     position:fixed;
     width:auto;

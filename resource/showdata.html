@@ -263,6 +263,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   <form>
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
+    <br/>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
@@ -279,6 +280,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
   <form>
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
+    <br/>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_sendcmd('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>

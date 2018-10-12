@@ -1,4 +1,4 @@
-﻿И	Узел	Д	5785	З	Корень
+﻿И	Узел	Д	7806	З	Корень
 
 
 
@@ -5060,7 +5060,7 @@
 
 
 
-И	Э	З	Фронт	Д	5071
+И	Э	З	Фронт	Д	7306
 
 
 
@@ -5068,9 +5068,9 @@
 
 
 
-И	h5	З	Контейнеры данных	С	5072
-И	p	С	5073
-И	Э	З	Список /data/main	С	7252	Д	7163
+
+И	p	С	7548
+
 
 И	class	З	card
 И	div	С	5081	А	5077	Д	5078
@@ -5332,7 +5332,7 @@
 
 
 
-И	Э	З	Список файлов	Д	7142
+
 
 И	class	З	card
 И	div	С	5343	А	5339	Д	5340
@@ -7055,7 +7055,7 @@
 И	i	А	7056	С	7057
 И	class	З	nav-icon icon-grid
 И	Строка	З	Список /data/.files/
-И	div	А	7059	Д	7251
+И	div	А	7059	Д	7237
 И	class	З	card-body
 И	table	А	7061	Д	7062
 И	class	З	table table-responsive-sm
@@ -7248,6 +7248,790 @@
 
 
 И	З	З	onclick
-И	form	Д	7219	С	7237
-И	h5	З	Файлы данных	С	7253
-И	p	С	5335
+
+
+
+
+И	div	А	7256	Д	7257
+И	class	З	form-group
+И	div	А	7258	Д	7259
+И	class	З	col-sm-7
+И	div	А	7260	Д	7301
+И	class	З	input-group
+
+
+
+И	input	А	7265	С	7269
+И	id	З	newfilename	С	7266
+И	class	З	form-control	С	7267
+И	placeholder	З	Имя файла	С	7268
+И	type	З	text
+И	span	А	7270	Д	7271
+И	class	З	input-group-append
+И	Узел	З	onclick	Д	7272	С	7273
+И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+И	button	З	Создать	А	7274
+И	class	З	btn btn-outline-primary	С	7275
+И	type	З	button	С	7276
+И	З	З	onclick
+
+И	div	А	7279	Д	7280
+И	class	З	form-group
+И	div	А	7281	Д	7282
+И	class	З	col-sm-7
+И	div	А	7283	Д	7284
+И	class	З	input-group
+И	label	З	Новый файл	А	7285	С	7287
+И	class	З	col-md-3 col-form-label	С	7286
+И	for	З	newfilename
+И	input	А	7288	С	7292
+И	id	З	newfilename	С	7289
+И	class	З	form-control	С	7290
+И	placeholder	З	Имя файла	С	7291
+И	type	З	text
+И	span	А	7293	Д	7294
+И	class	З	input-group-append
+И	Узел	З	onclick	Д	7295	С	7296
+И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+И	button	З	Создать	А	7297
+И	class	З	btn btn-outline-primary	С	7298
+И	type	З	button	С	7299
+И	З	З	onclick
+И	1	С	7261	Д	7301
+И	DIV	А	7302	Д	7303	С	7264
+И	class	З	input-group-prepend
+И	SPAN	А	7304	Д	7305
+И	class	З	input-group-text
+И	text	З	Новый контейнер
+И	div	С	5072	А	7307	Д	7308
+И	class	З	card
+И	div	А	7309	Д	7310	С	7314
+И	class	З	card-header
+И	i	А	7311	С	7312
+И	class	З	nav-icon icon-grid
+И	Строка	З	Контейнеры данных
+
+И	div	А	7315	Д	7523
+И	class	З	card-body
+И	Э	З	Список /data/main	Д	7317
+И	Узел	З	Имя базы данных	Д	7318	С	7319
+И	Строка	З	main
+И	К	З	Таблица базы данных
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	form	Д	7524	С	7845
+И	div	А	7525	Д	7526
+И	class	З	form-group
+И	div	А	7527	Д	7528
+И	class	З	col-sm-6
+И	div	А	7529	Д	7530
+И	class	З	input-group
+И	DIV	А	7531	Д	7532	С	7535
+И	class	З	input-group-prepend
+И	SPAN	А	7533	Д	7534
+И	class	З	input-group-text
+И	text	З	Новый контейнер
+И	input	А	7536	С	7540
+И	id	З	newfilename	С	7537
+И	class	З	form-control	С	7538
+И	placeholder	З	Имя файла	С	7539
+И	type	З	text
+И	span	А	7541	Д	7542
+И	class	З	input-group-append
+И	Узел	З	onclick	Д	7543	С	7544
+И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+И	button	З	Создать	А	7545
+И	class	З	btn btn-outline-secondary	С	7546
+И	type	З	button	С	7547
+И	З	З	onclick
+И	div	А	7550	Д	7551
+
+И	class	З	card
+И	div	А	7552	Д	7553	С	7556
+И	class	З	card-header
+И	i	А	7554	С	7555
+И	class	З	nav-icon icon-grid
+И	Строка	З	Файлы данных
+И	div	А	7557	Д	7559
+И	class	З	card-body
+
+И	form	Д	7560	С	7582
+И	div	А	7561	Д	7562
+И	class	З	form-group
+И	div	А	7563	Д	7564
+И	class	З	col-sm-6
+И	div	А	7565	Д	7799
+И	class	З	input-group
+
+
+
+И	input	А	7570	С	7574
+И	id	З	newfilename	С	7571
+И	class	З	form-control	С	7572
+И	placeholder	З	Имя файла	С	7573
+И	type	З	text
+И	span	А	7575	Д	7576
+И	class	З	input-group-append
+И	Узел	З	onclick	Д	7577	С	7578
+И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+И	button	З	Создать	А	7579
+И	class	З	btn btn-outline-secondary	С	7580
+И	type	З	button	С	7581
+И	З	З	onclick
+И	Э	З	Список файлов	Д	7583
+И	К	З	Файлы
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	DIV	А	7800	Д	7801	С	7569
+И	class	З	input-group-prepend
+И	SPAN	А	7802	Д	7803
+И	class	З	input-group-text
+И	text	З	Новый файл
+
+И	Строка
+И	Узел	З	Базы данных	Д	7807	С	5785
+И	Узел	З	Таблица файлы	Д	7808	С	7809
+И	Ф	З	СписокБаз
+И	Узел	З	Шаблон файлы	Д	7810	С	7821
+И	Узел	З	Файл	Д	7811	С	7813
+И	Атрибут	З	ИмяФайла	Д	7812
+И	З	З	Строка
+И	Узел	З	onclick	Д	7814	С	7817
+И	Строка	З	 onclick="sendcmd('osdb=&data=	С	7815
+И	З	З	Файл	С	7816
+И	Строка	З	&cmd=newtab'); return false;"
+И	a	А	7818	Д	7820
+И	З	З	onclick	С	7819
+И	href
+И	З	З	Файл
+И	div	А	7822	Д	7823
+И	class	З	card
+И	div	А	7824	Д	7825	С	7828
+И	class	З	card-header
+И	i	А	7826	С	7827
+И	class	З	nav-icon icon-grid
+И	Строка	З	Список контейнеров
+И	div	А	7829	Д	7830
+И	class	З	card-body
+И	div	А	7831	Д	7832
+И	class	З	form-group
+И	table	А	8035	Д	7834
+
+И	thead	Д	7835	С	7839
+И	tr	Д	7836
+И	th	З	Имя файла	С	7837
+И	th	З	Дата изменения	С	7838
+И	th	З	Размер
+И	tbody	Д	7840
+И	Ф	З	СписокВТаблицу	А	7841
+И	А	З	Список	Д	7842	С	7843
+И	З	З	Таблица файлы
+И	А	З	ИмяФайла	Д	7844
+И	С	З	Шаблон файлы
+И	К	З	Базы данных	С	7316
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	class	З	table table-striped table-hover table-bordered
+И	class	З	light-blue
+
