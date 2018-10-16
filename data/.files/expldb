@@ -1,4 +1,4 @@
-﻿И	Узел	Д	7806	З	Корень
+﻿И	Узел	Д	8095	З	Корень
 
 
 
@@ -5782,7 +5782,7 @@
 
 
 
-И	Узел	З	Таблица базы данных	С	7050	Д	7019
+И	Узел	З	Таблица базы данных	С	7050	Д	7160
 
 
 
@@ -7018,16 +7018,16 @@
 И	Первый	Д	7012
 И	div	А	7020	Д	7160
 И	class	З	card
-И	div	А	7022	Д	7023	С	7026
-И	class	З	card-header
-И	i	А	7024	С	7025
-И	class	З	nav-icon icon-grid
-И	Строка	З	Список /data/	С	7037
-И	div	А	7027	Д	7028
-И	class	З	card-body
-И	table	А	7029	Д	7030
-И	class	З	table table-responsive-sm
-И	thread	Д	7031	С	7039
+
+
+
+
+
+
+
+
+И	class	З	table table-striped table-hover table-bordered
+И	thead	Д	8069	С	7039
 И	tr	Д	7032
 И	th	З	Имя файла	С	7033
 И	th	З	Позиция данных	С	7034
@@ -7048,18 +7048,18 @@
 
 
 И	Узел	З	Файлы	С	5063	Д	7104
-И	div	А	7052	Д	7053
-И	class	З	card
-И	div	А	7054	Д	7055	С	7058
-И	class	З	card-header
-И	i	А	7056	С	7057
-И	class	З	nav-icon icon-grid
-И	Строка	З	Список /data/.files/
-И	div	А	7059	Д	7237
-И	class	З	card-body
-И	table	А	7061	Д	7062
-И	class	З	table table-responsive-sm
-И	thread	Д	7063	С	7067
+
+
+
+
+
+
+
+
+
+
+И	class	З	table table-striped table-hover table-bordered
+И	thead	Д	7063	С	7067
 И	tr	Д	7064
 И	th	З	Имя файла	С	7065
 И	th	З	Дата изменения	С	7066
@@ -7140,7 +7140,7 @@
 И	Ф	З	СписокДанных	А	7141
 И	ИмяБазыДанных	З	Имя базы данных
 И	К	З	Файлы
-И	Узел	З	Шаблон файлы	С	7051	Д	7148
+И	Узел	З	Шаблон файлы	С	8039	Д	7148
 И	a	Д	7145	А	7154
 И	З	З	Файл
 И	А	Д	7193	З	ИмяФайла
@@ -7162,7 +7162,7 @@
 И	А	З	БазаДанных	Д	7196
 И	Узел	З	Имя базы данных	Д	7164	С	7046
 И	Строка	З	main
-И	Узел	З	Шаблон файлы	Д	7197	С	7021
+И	Узел	З	Шаблон файлы	Д	7197	С	8074
 
 
 И	Ссылка	Д	7186
@@ -7234,8 +7234,8 @@
 И	button	З	Создать	А	7235
 И	class	З	btn btn-outline-primary	С	7236
 И	type	З	button	С	7250
-И	div	Д	7060	А	7238
-И	class	З	form-group
+
+
 И	span	Д	7246	А	7240
 И	class	З	input-group-append
 И	div	Д	7212	А	7242
@@ -7313,9 +7313,9 @@
 
 И	div	А	7315	Д	7523
 И	class	З	card-body
-И	Э	З	Список /data/main	Д	7317
+И	Э	З	Содержимое контейнера	Д	7317
 И	Узел	З	Имя базы данных	Д	7318	С	7319
-И	Строка	З	main
+И	З	З	data
 И	К	З	Таблица базы данных
 
 
@@ -7520,7 +7520,7 @@
 
 
 
-И	form	Д	7524	С	7845
+И	form	Д	7524	С	7845	А	8097
 И	div	А	7525	Д	7526
 И	class	З	form-group
 И	div	А	7527	Д	7528
@@ -7533,18 +7533,18 @@
 И	class	З	input-group-text
 И	text	З	Новый контейнер
 И	input	А	7536	С	7540
-И	id	З	newfilename	С	7537
+И	value	С	7537	Д	8101
 И	class	З	form-control	С	7538
 И	placeholder	З	Имя файла	С	7539
 И	type	З	text
-И	span	А	7541	Д	7542
+И	span	А	7541	Д	7544
 И	class	З	input-group-append
-И	Узел	З	onclick	Д	7543	С	7544
-И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+
+
 И	button	З	Создать	А	7545
 И	class	З	btn btn-outline-secondary	С	7546
-И	type	З	button	С	7547
-И	З	З	onclick
+И	type	З	submit
+
 И	div	А	7550	Д	7551
 
 И	class	З	card
@@ -7556,7 +7556,7 @@
 И	div	А	7557	Д	7559
 И	class	З	card-body
 
-И	form	Д	7560	С	7582
+И	form	Д	7560	С	7582	А	8098
 И	div	А	7561	Д	7562
 И	class	З	form-group
 И	div	А	7563	Д	7564
@@ -7567,18 +7567,18 @@
 
 
 И	input	А	7570	С	7574
-И	id	З	newfilename	С	7571
+И	value	С	7571	Д	8102
 И	class	З	form-control	С	7572
 И	placeholder	З	Имя файла	С	7573
 И	type	З	text
-И	span	А	7575	Д	7576
+И	span	А	7575	Д	7578
 И	class	З	input-group-append
-И	Узел	З	onclick	Д	7577	С	7578
-И	Строка	З	 onclick="sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;"
+
+
 И	button	З	Создать	А	7579
 И	class	З	btn btn-outline-secondary	С	7580
-И	type	З	button	С	7581
-И	З	З	onclick
+И	type	З	submit
+
 И	Э	З	Список файлов	Д	7583
 И	К	З	Файлы
 
@@ -7806,32 +7806,32 @@
 И	Узел	З	Базы данных	Д	7807	С	5785
 И	Узел	З	Таблица файлы	Д	7808	С	7809
 И	Ф	З	СписокБаз
-И	Узел	З	Шаблон файлы	Д	7810	С	7821
+И	Узел	З	Шаблон файлы	Д	7810	С	8055
 И	Узел	З	Файл	Д	7811	С	7813
 И	Атрибут	З	ИмяФайла	Д	7812
 И	З	З	Строка
 И	Узел	З	onclick	Д	7814	С	7817
 И	Строка	З	 onclick="sendcmd('osdb=&data=	С	7815
 И	З	З	Файл	С	7816
-И	Строка	З	&cmd=newtab'); return false;"
+И	Строка	З	&cmd=upddata'); return false;"
 И	a	А	7818	Д	7820
 И	З	З	onclick	С	7819
 И	href
 И	З	З	Файл
-И	div	А	7822	Д	7823
-И	class	З	card
-И	div	А	7824	Д	7825	С	7828
-И	class	З	card-header
-И	i	А	7826	С	7827
-И	class	З	nav-icon icon-grid
-И	Строка	З	Список контейнеров
-И	div	А	7829	Д	7830
-И	class	З	card-body
-И	div	А	7831	Д	7832
-И	class	З	form-group
-И	table	А	8035	Д	7834
 
-И	thead	Д	7835	С	7839
+
+
+
+
+
+
+
+
+
+
+
+
+И	thead	Д	8054	С	7839
 И	tr	Д	7836
 И	th	З	Имя файла	С	7837
 И	th	З	Дата изменения	С	7838
@@ -8035,3 +8035,68 @@
 И	class	З	table table-striped table-hover table-bordered
 И	class	З	light-blue
 
+
+И	table	А	8040	Д	8041
+И	class	З	table table-striped table-hover table-bordered
+И	thead	Д	8042	С	8046
+И	tr	Д	8043
+И	th	З	Имя файла	С	8044
+И	th	З	Дата изменения	С	8045
+И	th	З	Размер
+И	tbody	Д	8047
+И	Ф	З	СписокВТаблицу	А	8048
+И	А	З	Список	Д	8049	С	8050
+И	З	З	Таблица файлы
+И	А	З	ИмяФайла	Д	8051
+И	С	З	Шаблон файлы
+
+
+И	b	З	Список контейнеров	С	7835
+И	table	А	8056	Д	8057
+И	class	З	table table-striped table-hover table-bordered
+И	thead	Д	8058	С	8063
+И	h6	З	Список контейнеров	С	8059
+И	tr	Д	8060
+И	th	З	Имя контейнера	С	8061
+И	th	З	Дата изменения	С	8062
+И	th	З	Размер
+И	tbody	Д	8064
+И	Ф	З	СписокВТаблицу	А	8065
+И	А	З	Список	Д	8066	С	8067
+И	З	З	Таблица файлы
+И	А	З	ИмяФайла	Д	8068
+И	С	З	Шаблон файлы
+И	Строка	З	Содержимое 	С	8072
+
+И	З	З	Имя базы данных
+И	b	Д	8073	С	7031
+И	З	З	Имя базы данных
+И	table	А	8075	Д	8076
+И	class	З	table table-striped table-hover table-bordered
+И	thead	Д	8092	С	8085
+
+
+И	З	З	Имя базы данных
+И	tr	Д	8081
+И	th	З	Имя файла	С	8082
+И	th	З	Позиция данных	С	8083
+И	th	З	Дата изменения	С	8084
+И	th	З	Размер
+И	tbody	Д	8086
+И	Ф	З	СписокВТаблицу	А	8087
+И	А	З	Список	Д	8088	С	8089
+И	З	З	Таблица данные
+И	А	З	ИмяФайла	Д	8090
+И	С	З	Шаблон файлы
+
+И	h6	З	Содержимое 	С	8080	Д	8093
+И	b	Д	8094
+И	З	З	Имя базы данных
+И	У	З	data	С	8099	Д	8096
+И	Строка	З	main
+И	onsubmit	З	sendcmd('cmd=newbase&osdb='+encodeURIComponent(elements['newfilename'].value)); elements['newfilename'].value=''; return false;
+И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;
+И	У	З	Имя контейнера	С	7806	Д	8100
+И	Строка
+И	З	З	Имя контейнера
+И	З	З	Имя контейнера

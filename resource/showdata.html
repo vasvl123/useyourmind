@@ -28,6 +28,9 @@ function loaddata(urldata, loop){
         $(this.response).each(function(index, value) {
         if (this.id) {$('#'+this.id).replaceWith(this);}});
         if (loop!=undefined) {loaddata(urldata,loop+1);}
+        $('input').change(function() {
+          sendcmd('nodeid='+$(this).attr('id')+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));
+        });
     }
   }
   xhr.send();
