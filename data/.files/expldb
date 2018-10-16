@@ -1,4 +1,90 @@
 ﻿И	Узел	Д	8095	З	Корень
+И	p	З	1
+И	Э	З	Фронт	Д	4
+И	div	А	5	Д	6	С	44
+И	class	З	card
+И	div	А	7	Д	8	С	11
+И	class	З	card-header
+И	i	А	9	С	10
+И	class	З	nav-icon icon-grid
+И	Строка	З	Контейнеры данных
+И	div	А	12	Д	80
+И	class	З	card-body
+И	form	Д	15	С	39
+И	onsubmit	З	sendcmd('cmd=newbase&osdb='+encodeURIComponent(elements['newfilename'].value)); elements['newfilename'].value=''; return false;
+И	div	А	16	Д	17
+И	class	З	form-group
+И	div	А	18	Д	19
+И	class	З	col-sm-6
+И	div	А	20	Д	21
+И	class	З	input-group
+И	DIV	А	22	Д	23	С	26
+И	class	З	input-group-prepend
+И	SPAN	А	24	Д	25
+И	class	З	input-group-text
+И	text	З	Новый контейнер
+И	input	А	27	С	32
+И	А	З	Значение	Д	28	С	29
+И	З	З	Имя контейнера
+И	class	З	form-control	С	30
+И	placeholder	З	Имя файла	С	31
+И	type	З	text
+И	span	А	33	Д	34
+И	class	З	input-group-append
+И	button	З	Создать	А	35
+И	А	З	ПриНажатии	Д	36	С	37
+И	З	З	Создать новый контейнер
+И	class	З	btn btn-outline-secondary	С	38
+И	type	З	button
+И	К	З	Базы данных	С	40
+И	Э	З	Содержимое контейнера	Д	41
+И	Узел	З	Имя базы данных	Д	42	С	43
+И	З	З	data
+И	К	З	Таблица базы данных
+И	p	С	45
+И	div	А	46	Д	47
+И	class	З	card
+И	div	А	48	Д	49	С	52
+И	class	З	card-header
+И	i	А	50	С	51
+И	class	З	nav-icon icon-grid
+И	Строка	З	Файлы данных
+И	div	А	53	Д	54
+И	class	З	card-body
+И	form	А	55	Д	56	С	78
+И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;
+И	div	А	57	Д	58
+И	class	З	form-group
+И	div	А	59	Д	60
+И	class	З	col-sm-6
+И	div	А	61	Д	62
+И	class	З	input-group
+И	DIV	А	63	Д	64	С	67
+И	class	З	input-group-prepend
+И	SPAN	А	65	Д	66
+И	class	З	input-group-text
+И	text	З	Новый файл
+И	input	А	68	С	73
+И	value	Д	69	С	70
+И	З	З	Имя контейнера
+И	class	З	form-control	С	71
+И	placeholder	З	Имя файла	С	72
+И	type	З	text
+И	span	А	74	Д	75
+И	class	З	input-group-append
+И	button	З	Создать	А	76
+И	class	З	btn btn-outline-secondary	С	77
+И	type	З	submit
+И	Э	З	Список файлов	Д	79
+И	К	З	Файлы
+И	У	З	Имя контейнера	Д	81	С	82
+И	Строка
+И	У	З	Создать новый контейнер	С	13	Д	83
+И	Ф	З	НоваяБаза	А	84	С	86
+И	А	З	БазаДанных	Д	85
+И	З	З	Имя контейнера
+И	Пусть	З	Имя контейнера	Д	87
+И	Строка
 
 
 
@@ -4974,93 +5060,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-И	Э	З	Фронт	Д	7306
+И	Э	З	Фронт	Д	7306	С	2
 
 
 
@@ -7047,7 +7047,7 @@
 И	А	З	Список	С	7181	Д	7203
 
 
-И	Узел	З	Файлы	С	5063	Д	7104
+И	Узел	З	Файлы	С	3	Д	7104
 
 
 
@@ -8092,7 +8092,7 @@
 И	h6	З	Содержимое 	С	8080	Д	8093
 И	b	Д	8094
 И	З	З	Имя базы данных
-И	У	З	data	С	8099	Д	8096
+И	У	З	data	С	8104	Д	8096
 И	Строка	З	main
 И	onsubmit	З	sendcmd('cmd=newbase&osdb='+encodeURIComponent(elements['newfilename'].value)); elements['newfilename'].value=''; return false;
 И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;
