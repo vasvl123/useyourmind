@@ -7533,7 +7533,7 @@
 И	class	З	input-group-text
 И	text	З	Новый контейнер
 И	input	А	7536	С	7540
-И	value	С	7537	Д	8101
+И	А	С	7537	Д	8101	З	Значение
 И	class	З	form-control	С	7538
 И	placeholder	З	Имя файла	С	7539
 И	type	З	text
@@ -7541,9 +7541,9 @@
 И	class	З	input-group-append
 
 
-И	button	З	Создать	А	7545
+И	button	З	Создать	А	8105
 И	class	З	btn btn-outline-secondary	С	7546
-И	type	З	submit
+И	type	З	button
 
 И	div	А	7550	Д	7551
 
@@ -8096,7 +8096,11 @@
 И	Строка	З	main
 И	onsubmit	З	sendcmd('cmd=newbase&osdb='+encodeURIComponent(elements['newfilename'].value)); elements['newfilename'].value=''; return false;
 И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;
-И	У	З	Имя контейнера	С	7806	Д	8100
+И	У	З	Имя контейнера	С	8104	Д	8103
 И	Строка
 И	З	З	Имя контейнера
 И	З	З	Имя контейнера
+И	Строка
+И	У	З	Новый контейнер	С	7806
+И	А	З	ПриНажатии	С	7545	Д	8106
+И	З	З	Новый контейнер

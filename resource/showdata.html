@@ -29,8 +29,11 @@ function loaddata(urldata, loop){
         if (this.id) {$('#'+this.id).replaceWith(this);}});
         if (loop!=undefined) {loaddata(urldata,loop+1);}
         $('input').change(function() {
-          sendcmd('nodeid='+$(this).attr('id')+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));
-        });
+          var ni=$(this).attr('id');
+          if (ni!=undefined) {sendcmd('nodeid='+ni+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));}});
+        $('button').click(function() {
+          var ni=$(this).attr('id');
+          if (ni!=undefined) {sendcmd('nodeid='+ni+'&cmd=exec');}});
     }
   }
   xhr.send();
