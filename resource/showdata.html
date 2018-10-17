@@ -28,14 +28,14 @@ function loaddata(urldata, loop){
         $(this.response).each(function(index, value) {
         if (this.id) {$('#'+this.id).replaceWith(this);}});
         if (loop!=undefined) {loaddata(urldata,loop+1);}
-        $('input').change(function() {
-          console.log(1);
-          var ni=$(this).attr('id');
-          if (ni!=undefined&&mode=="view") {sendcmd('nodeid='+ni+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));}});
-        $('button').click(function() {
-          console.log(2);
-          var ni=$(this).attr('id');
-          if (ni!=undefined&&mode=="view") {sendcmd('nodeid='+ni+'&cmd=exec');}});
+        if (mode=="view") {
+          $('input').change(function() {
+            $.get('/showdata/?procid='+procid+'&nodeid='+$(this).attr('id')+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));
+          });
+          $('button').click(function() {
+            $.get('/showdata/?procid='+procid+'&nodeid='+$(this).attr('id')+'&cmd=exec');
+          });
+        }
     }
   }
   xhr.send();
@@ -398,7 +398,8 @@ function m_sendcmd(cmd){
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
-  loaddata('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  $.get('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  //loaddata('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
 
 function m_postcmd(cmd){
