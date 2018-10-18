@@ -378,8 +378,9 @@ function scrolled(){
 }
 
 function addcmd(el) {
-  if (el.tagName=='INPUT') {seq.push('nodeid='+el.id+'&cmd=updvalue&value='+encodeURIComponent(el.value));}
-  if (el.tagName=='BUTTON') {seq.push('nodeid='+el.id+'&cmd=buttonclick');}
+  if (el.tagName=='INPUT') {seq.push('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='BUTTON'||el.tagName=='A') {seq.push('nodeid='+el.id+'&cmd=onclick');}
+  return false;
 }
 
 function postcmd(cmd){
