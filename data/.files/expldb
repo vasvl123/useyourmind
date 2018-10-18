@@ -49,9 +49,9 @@
 И	i	А	50	С	51
 И	class	З	nav-icon icon-grid
 И	Строка	З	Файлы данных
-И	div	А	53	Д	54
+И	div	А	53	Д	88
 И	class	З	card-body
-И	form	А	55	Д	56	С	78
+И	form	Д	56	С	78
 И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;
 И	div	А	57	Д	58
 И	class	З	form-group
@@ -65,16 +65,16 @@
 И	class	З	input-group-text
 И	text	З	Новый файл
 И	input	А	68	С	73
-И	value	Д	69	С	70
-И	З	З	Имя контейнера
+И	А	Д	69	С	70	З	Значение
+И	З	З	Имя файла
 И	class	З	form-control	С	71
 И	placeholder	З	Имя файла	С	72
 И	type	З	text
 И	span	А	74	Д	75
 И	class	З	input-group-append
-И	button	З	Создать	А	76
+И	button	З	Создать	А	96
 И	class	З	btn btn-outline-secondary	С	77
-И	type	З	submit
+И	type	З	button
 И	Э	З	Список файлов	Д	79
 И	К	З	Файлы
 И	У	З	Имя контейнера	Д	81	С	82
@@ -85,16 +85,16 @@
 И	З	З	Имя контейнера
 И	Пусть	З	Имя контейнера	Д	87
 И	Строка
-
-
-
-
-
-
-
-
-
-
+И	У	З	Имя файла	Д	89	С	90
+И	Строка
+И	У	З	Создать новый файл	Д	91	С	54
+И	Ф	З	НовыйФайл	А	92	С	94
+И	А	З	ИмяФайла	Д	93
+И	З	З	Имя файла
+И	Пусть	З	Имя файла	Д	95
+И	Строка
+И	А	З	ПриНажатии	С	76	Д	97
+И	З	З	Создать новый файл
 
 
 
@@ -8092,7 +8092,7 @@
 И	h6	З	Содержимое 	С	8080	Д	8093
 И	b	Д	8094
 И	З	З	Имя базы данных
-И	У	З	data	С	8104	Д	8096
+И	У	З	data	С	7806	Д	8096
 И	Строка	З	main
 И	onsubmit	З	sendcmd('cmd=newbase&osdb='+encodeURIComponent(elements['newfilename'].value)); elements['newfilename'].value=''; return false;
 И	onsubmit	З	sendcmd('osdb=&cmd=newtab&data='+encodeURIComponent(elements['newfilename'].value)); return false;

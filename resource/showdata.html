@@ -26,17 +26,10 @@ function loaddata(urldata, loop){
   xhr.open('GET',urldata+loop,true);
   xhr.onload = function() {
     if (this.response) {
-        $(this.response).each(function(index, value) {
-        if (this.id) {$('#'+this.id).replaceWith(this);}});
-        if (loop!=undefined) {loaddata(urldata,loop+1);}
-        if (mode=="view") {
-          $('input').change(function() {
-            seq.push('nodeid='+$(this).attr('id')+'&cmd=updvalue&value='+encodeURIComponent($(this).val()));
-          });
-          $('button').click(function() {
-            seq.push('nodeid='+$(this).attr('id')+'&cmd=exec');
-          });
-        }
+      $(this.response).each(function(index, value) {
+        if (this.id) {$('#'+this.id).replaceWith(this);}
+      });
+      if (loop!=undefined) {loaddata(urldata,loop+1);}
     }
   }
   xhr.send();
@@ -290,7 +283,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="m_postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>
 </div>
@@ -384,7 +377,12 @@ function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
-function m_postcmd(cmd){
+function addcmd(el) {
+  if (el.tagName=='INPUT') {seq.push('nodeid='+el.id+'&cmd=updvalue&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='BUTTON') {seq.push('nodeid='+el.id+'&cmd=buttonclick');}
+}
+
+function postcmd(cmd){
   $.post('/showdata', 'procid='+procid+'&'+cmd);
 }
 
