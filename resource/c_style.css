@@ -53,6 +53,25 @@
 	border-right: 1px solid #73818f;
 	border-bottom: 1px solid #73818f;
 	opacity: .9;
+	z-index: 5;
+}
+
+.input-group {
+	border-bottom: 1px solid #8f9ba6;
+	border-right: 1px solid #8f9ba6;
+	border-radius: .25rem;
+}
+
+body {
+	line-height: 1rem;
+}
+
+thead {
+	line-height: .75rem;
+}
+
+tbody {
+	line-height: .5rem;
 }
 
 #notifies {
@@ -61,4 +80,5 @@
     height:auto;
     top:50px;
     right:0px;
+		z-index: 15;
 }
