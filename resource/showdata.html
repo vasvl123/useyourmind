@@ -73,6 +73,10 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
         <i class="nav-icon icon-layers"></i> Базы данных</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="" onclick="seq.push('osdb=&data=data&cmd=newtab'); return false">
+        <i class="nav-icon icon-book-open"></i> Работа с данными</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="" onclick="seq.push('cmd=savedata'); return false">
         <i class="nav-icon icon-folder"></i> Сохранить данные</a>
       </li>
@@ -380,6 +384,7 @@ function scrolled(){
 function addcmd(el) {
   if (el.tagName=='INPUT') {seq.push('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq.push('nodeid='+el.id+'&cmd=onclick');}
+  if (el.tagName=='FORM'||el.tagName=='A') {seq.push('nodeid='+el.id+'&cmd=onsubmit');}
   return false;
 }
 
