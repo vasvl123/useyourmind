@@ -245,7 +245,7 @@ loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="seq.push('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
+  <form onsubmit="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value));  seq_sendcmd(); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm input-shadow" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
