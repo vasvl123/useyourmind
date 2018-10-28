@@ -1,0 +1,74 @@
+﻿И	У	З	Корень	Д	72
+И	Э	З	Фронт	Д	72
+И	DIV	А	4	Д	5
+И	class	З	row justify-content-center
+И	DIV	А	6	Д	7
+И	class	З	col-md-8
+И	DIV	А	8	Д	9
+И	class	З	card-group
+И	DIV	А	10	Д	11	С	56
+И	class	З	card p-4
+И	DIV	А	12	Д	13
+И	class	З	card-body
+И	H1	Д	14	С	15
+И	text	З	Вход
+И	P	А	16	Д	17	С	18
+И	class	З	text-muted
+И	text	З	Войти в учетную запись
+И	DIV	А	19	Д	20	С	30
+И	class	З	input-group mb-3
+И	DIV	А	21	Д	22	С	26
+И	class	З	input-group-prepend
+И	SPAN	А	23	Д	24
+И	class	З	input-group-text
+И	I	А	25
+И	class	З	icon-user
+И	INPUT	А	29
+И	type	З	text
+И	placeholder	З	Имя	С	27
+И	class	З	form-control	С	28
+И	DIV	А	31	Д	32	С	42
+И	class	З	input-group mb-4
+И	DIV	А	33	Д	34	С	38
+И	class	З	input-group-prepend
+И	SPAN	А	35	Д	36
+И	class	З	input-group-text
+И	I	А	37
+И	class	З	icon-lock
+И	INPUT	А	41
+И	type	З	password
+И	placeholder	З	Пароль	С	39
+И	class	З	form-control	С	40
+И	DIV	А	43	Д	44
+И	class	З	row
+И	DIV	А	45	Д	46	С	50
+И	class	З	col-6
+И	BUTTON	А	48	Д	49
+И	type	З	button
+И	class	З	btn btn-primary px-4	С	47
+И	text	З	Войти
+И	DIV	А	51	Д	52
+И	class	З	col-6 text-right
+И	BUTTON	А	54	Д	55
+И	type	З	button
+И	class	З	btn btn-link px-0	С	53
+И	text	З	Забыли пароль?
+И	DIV	А	58	Д	59
+И	style	З	width:44%
+И	class	З	card text-white bg-primary py-5 d-md-down-none	С	57
+И	DIV	А	60	Д	61
+И	class	З	card-body text-center
+И	DIV	Д	62
+И	H2	Д	63	С	64
+И	text	З	Присоединиться
+И	P	Д	65	С	66
+И	text	З	Для участия в сообществе необходимо заполнить регистрационную форму.
+И	BUTTON	А	68	Д	69
+И	type	З	button
+И	class	З	btn btn-primary active mt-3	С	67
+И	text	З	Регистрация
+И	div	Д	74	А	71
+И	class	З	container
+И	Э	Д	70	А	73	З	body
+И	class	З	app flex-row align-items-center  pace-done
+И	Э	З	Фронт	Д	3

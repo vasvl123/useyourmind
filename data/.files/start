@@ -1,0 +1,21 @@
+﻿И	У	З	Корень	Д	2
+И	Э	З	Фронт	Д	3
+И	h3	С	18	Д	4
+И	a	З	OneScriptDB	А	11
+И	h5	Д	6	С	8
+И	a	З	Вход	А	7
+И	href	З	/login
+И	h5	Д	9
+И	a	З	Регистрация	А	10
+И	href	З	/register
+И	href	З	https://github.com/vasvl123/OneScriptDB
+И	a	З	Помощь	А	13
+И	href	З	/help
+
+
+И	a	З	Помощь	А	17
+И	href	З	/help
+И	h5	Д	19	С	21
+И	a	З	Платформа для разработки web-приложений в среде OneScript.	А	20
+И	href	З	/help
+И	p	С	5
