@@ -11,13 +11,58 @@
 <link href=".ПараметрХост/resource/style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+</head>
 <!--/ОбластьШапка-->
 
-<!--ОбластьМенюПанель-->
+<!--ОбластьПоказатьСтраницу-->
+<body class="app header-fixed">
+  <header class="app-header navbar navbar-expand-lg" id="navbar">
+
+    <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
+      <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
+      <img class="navbar-brand-minimized" src=".ПараметрХост/resource/osdb.png" alt="OneScriptDB Logo" width="55" height="18"/>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none" id="tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="/help">
+          Описание
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/vasvl123/OneScriptDB">
+          Исходный код
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://gitter.im/OneScriptDB/Lobby">
+          Общение
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto" id="acc">
+    </ul>
+
+  </header>
+
+  <div class="app-body">
+    <main class="main">
+      <div class="container-fluid my-4">
+        .ПараметрТекстСтраницы
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
+<!--/ОбластьПоказатьСтраницу-->
+
+<!--ОбластьПанельМенюОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <a class="navbar-brand" href="https://github.com/vasvl123/OneScriptDB/" title="Объектно-ориентированная система управления базами данных в среде OneScript">
+  <a class="navbar-brand" href="/admin" title="Платформа для разработки web-приложений в среде OneScript">
     <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
     <img class="navbar-brand-minimized" src=".ПараметрХост/resource/osdb.png" alt="OneScriptDB Logo" width="55" height="18"/>
   </a>
@@ -81,12 +126,12 @@
 
 <main class="main">
 
-<div class="container-fluid">
+  <div class="container-fluid">
 
-<div id='data' class="my-4"></div>
-<div id='win'></div>
+    <div id='data' class="my-4"></div>
+    <div id='win'></div>
 
-</div>
+  </div>
 
 </main>
 
@@ -96,7 +141,7 @@
 <div id='mainmenu'></div>
 
 </div>
-<!--/ОбластьМенюПанель-->
+<!--/ОбластьПанельМенюОкно-->
 
 <!--ОбластьРежимПросмотр-->
 <li class="nav-item" id="mode">
