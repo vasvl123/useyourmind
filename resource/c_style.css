@@ -66,12 +66,8 @@ body {
 	line-height: 1rem;
 }
 
-thead {
-	line-height: .75rem;
-}
-
-tbody {
-	line-height: .5rem;
+.app-footer {
+	flex: 0 0 40px;
 }
 
 #notifies {
