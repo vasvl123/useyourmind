@@ -94,31 +94,31 @@
   <nav class="sidebar-nav ps ps--active-y">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('osdb=&data=help&cmd=newtab'); return false;">
+        <a class="nav-link" href="" onclick="seq_add('osdb=&data=help&cmd=newtab'); return false;">
         <i class="nav-icon icon-book-open"></i> Помощь</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('osdb=&data=expldb&cmd=newtab'); return false">
+        <a class="nav-link" href="" onclick="seq_add('osdb=&data=expldb&cmd=newtab'); return false">
         <i class="nav-icon icon-layers"></i> Базы данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('osdb=&data=data&cmd=newtab'); return false">
+        <a class="nav-link" href="" onclick="seq_add('osdb=&data=data&cmd=newtab'); return false">
         <i class="nav-icon icon-book-open"></i> Работа с данными</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('cmd=savedata'); return false">
+        <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
         <i class="nav-icon icon-folder"></i> Сохранить данные</a>
       </li>
       <li class="nav-item" id="mode">
-        <a class="nav-link" href="" onclick="seq.push('cmd=designmode'); return false">
+        <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
         <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('nodeid=1&amp;cmd=structwin'); return false;">
+        <a class="nav-link" href="" onclick="seq_add('nodeid=1&amp;cmd=structwin'); return false;">
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq.push('osdb=&data=log&cmd=newtab'); return false;">
+        <a class="nav-link" href="" onclick="seq_add('osdb=&data=log&cmd=newtab'); return false;">
         <i class="nav-icon icon-calendar"></i> Журнал событий</a>
       </li>
       <li class="nav-item">
@@ -154,14 +154,14 @@
 
 <!--ОбластьРежимПросмотр-->
 <li class="nav-item" id="mode">
-  <a class="nav-link" href="" onclick="seq.push('cmd=designmode'); return false">
+  <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
   <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
 </li>
 <!--/ОбластьРежимПросмотр-->
 
 <!--ОбластьРежимРедактор-->
 <li class="nav-item" id="mode">
-  <a class="nav-link" href="" onclick="seq.push('cmd=viewmode'); return false">
+  <a class="nav-link" href="" onclick="seq_add('cmd=viewmode'); return false">
   <i class="nav-icon icon-frame"></i> Режим: редактор</a>
 </li>
 <!--/ОбластьРежимРедактор-->
@@ -229,7 +229,7 @@
 
 <!--ОбластьВкладка-->
     <li class="nav-item px-2 .ПараметрАктивный">
-      <a class="nav-link" title=".ПараметрБазаДанных" href="" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd='+btncmd); if(btncmd=='tabselect'){tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка')}else{btncmd='tabselect';} return false;">
+      <a class="nav-link" title=".ПараметрБазаДанных" href="" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd='+btncmd); if(btncmd=='tabselect'){tabselect('.ПараметрТипВкладки','.ПараметрИдВкладки','.ПараметрПрокрутка')}else{btncmd='tabselect';} return false;">
         .ПараметрЗаголовок
         <button class="btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="btncmd='tabclose';">✕</button>
       </a>
@@ -238,7 +238,7 @@
 
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
-      <a class="nav-link" href="" onclick="seq.push('cmd=newtab'); return false;">
+      <a class="nav-link" href="" onclick="seq_add('cmd=newtab'); return false;">
         <button class="btn btn btn-outline-light btn-sm" style="border-style: none; color:grey;" type="button">➕</button>
       </a>
     </li>
@@ -255,11 +255,11 @@
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq.push('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьИмяЗначение-->
@@ -273,13 +273,13 @@
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value));  seq_sendcmd(); return false;">
+  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value));  seq_sendcmd(); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm input-shadow" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
       <div class="btn-group" role="group" data-toggle="buttons">
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">✘</button>
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">✘</button>
       </div>
     </span>
     </div>
@@ -298,9 +298,9 @@
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
   <script type='text/javascript'>
     $('#.ПараметрИдУзлаname')[0].value = decodeURIComponent(".ПараметрИмяУзла");
@@ -316,7 +316,7 @@
     <div id="impdom"></div>
     <br/>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>
 </div>
 <!--/ОбластьЗагрузитьHTML-->
@@ -335,11 +335,11 @@
 <!--/ОбластьМеню-->
 
 <!--ОбластьМенюИнструменты-->
-<a class="dropdown-item" href="" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
+<a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="seq.push('nodeid=.ПараметрИдУзла&amp;cmd=editnode'); return false;">Редактировать</a>
+<a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=editnode'); return false;">Редактировать</a>
 <!--/ОбластьМенюРедактировать-->
 
 <!--ОбластьУведомление-->
@@ -356,7 +356,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
   <div class="modal-content">
     <div class="modal-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
-      <button class="btn btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+      <button class="btn btn btn-outline-light btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
     </div>
     <div class="modal-body">
       .ПараметрСодержимоеОкна
@@ -369,7 +369,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <div id='.ПараметрВкладка_0' class="card text-white bg-dark win" style="display:none">
   <div class="card-header">
     <b class="modal-title">.ПараметрЗаголовокОкна</b>
-    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq.push('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
   </div>
   <div class="card-body">
     .ПараметрСодержимоеОкна
@@ -409,13 +409,13 @@ var btncmd='tabselect';
 var mode;
 var seq=new Array();
 
-function loaddata(urldata, loop){
+function loaddata(){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
-  if (loop==undefined) {loop='';}
-  xhr.open('GET',urldata+loop,true);
+  var ms = new Date();
+  xhr.open('GET','/showdata/?procid='+procid+'&domupdate='+ms.getTime(),true);
   xhr.onload = function() {
-    if (loop!=undefined) {loaddata(urldata,loop+1);}
+    loaddata();
     if (this.response) {
       $(this.response).each(function(index, value) {
         if (this.id) {$('#'+this.id).replaceWith(this);}
@@ -425,16 +425,16 @@ function loaddata(urldata, loop){
   xhr.send();
 }
 
-loaddata('/showdata/?procid='+procid+'&domupdate=', 0);
+loaddata();
 
 function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
 function addcmd(el) {
-  if (el.tagName=='INPUT') {seq.push('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
-  if (el.tagName=='BUTTON'||el.tagName=='A') {seq.push('nodeid='+el.id+'&cmd=onclick');}
-  if (el.tagName=='FORM'||el.tagName=='A') {seq.push('nodeid='+el.id+'&cmd=onsubmit');}
+  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
+  if (el.tagName=='FORM'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
   return false;
 }
 
@@ -445,18 +445,22 @@ function postcmd(cmd){
   });
 }
 
+function seq_add(cmd) {
+  var datascrolled=scrolled();
+  var winscrolled="";
+  // if (wintab!=""&&wintab!=undefined) {
+  //   var t=$("#"+wintab+"_0");
+  //   if(t.css("display")!="none") {
+  //     winscrolled=datascrolled-(t.offset().top-50);
+  //   }
+  // }
+  seq.push('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+}
+
 function seq_sendcmd(){
   if(seq.length) {
-    var datascrolled=scrolled();
-    var winscrolled="";
-    // if (wintab!=""&&wintab!=undefined) {
-    //   var t=$("#"+wintab+"_0");
-    //   if(t.css("display")!="none") {
-    //     winscrolled=datascrolled-(t.offset().top-50);
-    //   }
-    // }
     $.ajax({
-      url: '/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+seq.shift(),
+      url: seq.shift(),
       complete: function(){
         seq_sendcmd();
       }
@@ -527,7 +531,7 @@ function tabselect(p_tabtype,p_tab,p_scroll){
 function loadmenu(event,cmd){
   ypos = event.pageY;
   xpos = event.pageX-5;
-  seq.push(cmd);
+  seq_add(cmd);
   seq_sendcmd();
 }
 
@@ -540,7 +544,7 @@ function handler(event) {
       if (s!=-1){
         var t=el.id.substring(0,s);
         if (t!=tab) {
-          seq.push('tab='+t+'&cmd=tabselect');
+          seq_add('tab='+t+'&cmd=tabselect');
           tabselect('data',t,scrolled());
         }
       }

@@ -1,4 +1,4 @@
-﻿И	У	З	Корень	Д	72
+﻿И	У	З	Корень	Д	74
 И	Э	З	Фронт	Д	72
 И	DIV	А	4	Д	5
 И	class	З	row justify-content-center
@@ -45,7 +45,7 @@
 И	class	З	col-6
 И	BUTTON	А	48	Д	49
 И	type	З	button
-И	class	З	btn btn-primary px-4	С	47
+И	class	З	btn btn-success px-4	С	47
 И	text	З	Войти
 И	DIV	А	51	Д	52
 И	class	З	col-6 text-right
@@ -55,7 +55,7 @@
 И	text	З	Забыли пароль?
 И	DIV	А	58	Д	59
 И	style	З	width:44%
-И	class	З	card text-white bg-primary py-5 d-md-down-none	С	57
+И	class	З	card bg-light py-5 d-md-down-none	С	57
 И	DIV	А	60	Д	61
 И	class	З	card-body text-center
 И	DIV	Д	62
@@ -65,10 +65,10 @@
 И	text	З	Для участия в сообществе необходимо заполнить регистрационную форму.
 И	BUTTON	А	68	Д	69
 И	type	З	button
-И	class	З	btn btn-primary active mt-3	С	67
+И	class	З	btn btn-primary mt-3	С	67
 И	text	З	Регистрация
 И	div	Д	74	А	71
 И	class	З	container
-И	Э	Д	70	А	73	З	body
+И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
 И	Э	З	Фронт	Д	3

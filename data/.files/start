@@ -8,7 +8,7 @@
 И	DIV	А	9	Д	10
 И	class	З	row justify-content-center
 И	DIV	А	11	Д	18
-И	class
+И	class	З	col-md-7
 И	a	З	Помощь	А	13
 И	href	З	/help
 
@@ -123,7 +123,7 @@
 И	class	З	navbar navbar-expand-lg navbar-dark	С	122
 
 
-И	H2	А	127	Д	128	С	56
+И	H3	А	127	Д	128	С	56
 И	class	З	mb-3 text-sm-nowrap
 И	text	З	Платформа для разработки web-приложений
 И	P	А	130	Д	131	С	133

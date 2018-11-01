@@ -3,3 +3,4 @@
 *.files/*
 !.files/
 *.log
+.vscode/*
