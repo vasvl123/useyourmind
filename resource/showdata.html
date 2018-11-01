@@ -415,11 +415,11 @@ function loaddata(urldata, loop){
   if (loop==undefined) {loop='';}
   xhr.open('GET',urldata+loop,true);
   xhr.onload = function() {
+    if (loop!=undefined) {loaddata(urldata,loop+1);}
     if (this.response) {
       $(this.response).each(function(index, value) {
         if (this.id) {$('#'+this.id).replaceWith(this);}
       });
-      if (loop!=undefined) {loaddata(urldata,loop+1);}
     }
   }
   xhr.send();
