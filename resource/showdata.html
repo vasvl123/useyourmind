@@ -42,9 +42,18 @@
     </ul>
 
     <ul class="nav navbar-nav ml-auto" id="acc">
+      <li class="nav-item dropdown">
+        <a class="nav-link nav-link" href="/login" role="button">
+          Гость
+        </a>
+      </li>
     </ul>
 
   </header>
+
+  <script type='text/javascript'>
+    var procid = '.ПараметрИдПроцесса';
+  </script>
 
   <div class="app-body">
     <main class="main">
@@ -95,7 +104,7 @@
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('osdb=&data=help&cmd=newtab'); return false;">
-        <i class="nav-icon icon-book-open"></i> Помощь</a>
+        <i class="nav-icon icon-question "></i> Помощь</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('osdb=&data=expldb&cmd=newtab'); return false">
@@ -103,7 +112,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('osdb=&data=data&cmd=newtab'); return false">
-        <i class="nav-icon icon-book-open"></i> Работа с данными</a>
+        <i class="nav-icon icon-docs"></i> Работа с данными</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
@@ -186,23 +195,6 @@
 </div>
 <!--/ОбластьВкладки-->
 
-<!--ОбластьГость-->
-<ul class="nav navbar-nav ml-auto" id="acc">
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      .ПараметрСубъект
-      <div class="dropdown-menu dropdown-menu-right">
-        <div class="dropdown-header text-center">
-          <strong>Учетная запись</strong>
-        </div>
-        <a class="dropdown-item" href="#"><i class="nav-icon icon-login"></i> Войти</a>
-        <a class="dropdown-item" href="#"><i class="nav-icon icon-home"></i> Регистрация</a>
-      </div>
-    </a>
-  </li>
-</ul>
-<!--/ОбластьГость-->
-
 <!--ОбластьСубъект-->
 <ul class="nav navbar-nav ml-auto" id="acc">
   <li class="nav-item dropdown">
@@ -273,7 +265,7 @@
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value));  seq_sendcmd(); return false;">
+  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm input-shadow" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
@@ -403,29 +395,11 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 var designnode;
 var ypos;
 var xpos;
-var procid=.ПараметрИдПроцесса;
+var procid='.ПараметрИдПроцесса';
 var tab,datatab,wintab;
 var btncmd='tabselect';
-var mode;
+var mode='';
 var seq=new Array();
-
-function loaddata(){
-  var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
-  var xhr = new XHR();
-  var ms = new Date();
-  xhr.open('GET','/showdata/?procid='+procid+'&domupdate='+ms.getTime(),true);
-  xhr.onload = function() {
-    loaddata();
-    if (this.response) {
-      $(this.response).each(function(index, value) {
-        if (this.id) {$('#'+this.id).replaceWith(this);}
-      });
-    }
-  }
-  xhr.send();
-}
-
-loaddata();
 
 function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -439,9 +413,9 @@ function addcmd(el) {
 }
 
 function postcmd(cmd){
-  fetch('/showdata', {
+  fetch('/showdata/'+procid, {
     method: 'POST',
-    body: 'procid='+procid+'&'+cmd
+    body: cmd
   });
 }
 
@@ -454,17 +428,30 @@ function seq_add(cmd) {
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
-  seq.push('/showdata/?procid='+procid+'&datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
 }
+
+seq_add('cmd=refresh');
+seq_sendcmd();
 
 function seq_sendcmd(){
   if(seq.length) {
-    $.ajax({
-      url: seq.shift(),
-      complete: function(){
-        seq_sendcmd();
+    var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
+    var xhr = new XHR();
+    xhr.open('GET',seq.shift(),true);
+    xhr.onload = function() {
+      seq_sendcmd();
+      if (this.response) {
+        $(this.response).each(function(index, value) {
+          if (this.id) {$('#'+this.id).replaceWith(this);}
+        });
       }
-    });
+    }
+    xhr.send();
+  } else {
+    setTimeout(() => {
+      seq_sendcmd();
+    }, 20);
   }
 }
 
@@ -532,11 +519,9 @@ function loadmenu(event,cmd){
   ypos = event.pageY;
   xpos = event.pageX-5;
   seq_add(cmd);
-  seq_sendcmd();
 }
 
 function handler(event) {
-  seq_sendcmd();
   var el=event.target;
   if (el.id) {
     if (event.type == 'click') {

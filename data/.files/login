@@ -8,14 +8,14 @@
 И	class	З	card-group
 И	DIV	А	10	Д	11	С	56
 И	class	З	card p-4
-И	DIV	А	12	Д	13
+И	DIV	А	12	Д	15
 И	class	З	card-body
-И	H1	Д	14	С	15
+И	H1	Д	14	С	76
 И	text	З	Вход
-И	P	А	16	Д	17	С	18
+И	script	С	75	А	30	З	    var ms = new Date();#xA    var uid = ms.getTime();#xA#xA    function getHash(str, algo = "SHA-256") {#xA      let strBuf = new TextEncoder('utf-8').encode(str);#xA      return crypto.subtle.digest(algo, strBuf)#xA        .then(hash => {#xA          window.hash = hash;#xA          let result = '';#xA          const view = new DataView(hash);#xA          for (let i = 0; i < hash.byteLength; i += 4) {#xA            result += ('00000000' + view.getUint32(i).toString(16)).slice(-8);#xA          }#xA          return result;#xA        });#xA    }#xA#xA    function add_el(f,n,v) {#xA      var tmp_el = document.createElement("input");#xA      tmp_el.name=n;#xA      tmp_el.type='hidden';#xA      tmp_el.value=v;#xA      f.appendChild(tmp_el);#xA    }#xA#xA    function send_auth(unm,pwd){#xA      getHash(pwd).then(function(hpwd) {#xA        getHash(procid+uid+hpwd).then(function(digest) {#xA          var tmp_form = document.createElement("form");#xA          tmp_form.method='post';#xA          tmp_form.action='/login';#xA          tmp_form.style.display='none';#xA          add_el(tmp_form,'procid',procid);#xA          add_el(tmp_form,'unm',unm);#xA          add_el(tmp_form,'pwd',digest);#xA          add_el(tmp_form,'uid',uid);#xA          add_el(tmp_form,'cmd','auth');#xA          document.getElementsByTagName('body')[0].appendChild(tmp_form);#xA          tmp_form.submit();#xA        });#xA      });#xA    }#xA
 И	class	З	text-muted
 И	text	З	Войти в учетную запись
-И	DIV	А	19	Д	20	С	30
+И	onclick	З	window.location.href='/register'	С	68
 И	class	З	input-group mb-3
 И	DIV	А	21	Д	22	С	26
 И	class	З	input-group-prepend
@@ -27,7 +27,7 @@
 И	type	З	text
 И	placeholder	З	Имя	С	27
 И	class	З	form-control	С	28
-И	DIV	А	31	Д	32	С	42
+И	type	З	text/javascript
 И	class	З	input-group mb-4
 И	DIV	А	33	Д	34	С	38
 И	class	З	input-group-prepend
@@ -39,7 +39,7 @@
 И	type	З	password
 И	placeholder	З	Пароль	С	39
 И	class	З	form-control	С	40
-И	DIV	А	43	Д	44
+
 И	class	З	row
 И	DIV	А	45	Д	46	С	50
 И	class	З	col-6
@@ -63,7 +63,7 @@
 И	text	З	Присоединиться
 И	P	Д	65	С	66
 И	text	З	Для участия в сообществе необходимо заполнить регистрационную форму.
-И	BUTTON	А	68	Д	69
+И	BUTTON	А	18	Д	69
 И	type	З	button
 И	class	З	btn btn-primary mt-3	С	67
 И	text	З	Регистрация
@@ -72,3 +72,48 @@
 И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
 И	Э	З	Фронт	Д	3
+И	form	Д	13	А	119
+И	P	А	77	Д	78	С	79
+И	class	З	text-muted
+И	text	З	Войти в учетную запись
+И	DIV	А	80	Д	81	С	91
+И	class	З	input-group mb-3
+И	DIV	А	82	Д	83	С	87
+И	class	З	input-group-prepend
+И	SPAN	А	84	Д	85
+И	class	З	input-group-text
+И	I	А	86
+И	class	З	icon-user
+И	INPUT	А	117
+И	class	З	form-control	С	89
+И	placeholder	З	Имя	С	90
+И	type	З	text
+И	DIV	А	92	Д	93	С	103
+И	class	З	input-group mb-4
+И	DIV	А	94	Д	95	С	99
+И	class	З	input-group-prepend
+И	SPAN	А	96	Д	97
+И	class	З	input-group-text
+И	I	А	98
+И	class	З	icon-lock
+И	INPUT	А	118
+И	class	З	form-control	С	101
+И	placeholder	З	Пароль	С	102
+И	type	З	password
+И	DIV	А	104	Д	105
+И	class	З	row
+И	DIV	А	106	Д	107	С	111
+И	class	З	col-6
+И	BUTTON	А	108	Д	110
+И	class	З	btn btn-success px-4	С	109
+И	type	З	submit
+И	text	З	Войти
+И	DIV	А	112	Д	113
+И	class	З	col-6 text-right
+И	BUTTON	А	114	Д	116
+И	class	З	btn btn-link px-0	С	115
+И	type	З	button
+И	text	З	Забыли пароль?
+И	id	З	unm	С	88
+И	id	З	pwd	С	100
+И	onsubmit	З	var unm=elements['unm'].value; var pwd=elements['pwd'].value; send_auth(unm,pwd); return false;
