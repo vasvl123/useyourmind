@@ -66,12 +66,31 @@ body {
 	line-height: 1rem;
 }
 
-thead {
-	line-height: .75rem;
+.app-footer {
+	flex: 0 0 40px;
 }
 
-tbody {
-	line-height: .5rem;
+	.docs-callout {
+	padding: 1.25rem;
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+	border: 1px solid #eee;
+	border-radius: .25rem;
+}
+
+.docs-callout-warning {
+	border-left-width: .20rem;
+	border-left-color: #ffc107;
+}
+
+.docs-callout-info {
+	border-left-width: .15rem;
+	border-left-color: #63c2de;
+}
+
+.docs-callout-danger {
+	border-left-width: .25rem;
+	border-left-color: #f86c6b;
 }
 
 #notifies {
