@@ -1,6 +1,6 @@
 ﻿И	У	З	Корень	Д	123
 И	Э	З	Фронт	Д	72
-И	DIV	А	4	Д	5
+И	DIV	А	4	Д	5	С	42
 И	class	З	row justify-content-center
 И	DIV	А	6	Д	7
 И	class	З	col-md-8
@@ -8,7 +8,7 @@
 И	class	З	card-group
 И	DIV	А	10	Д	11	С	56
 И	class	З	card p-4
-И	DIV	А	12	Д	42
+И	DIV	А	12	Д	15
 И	class	З	card-body
 И	H1	Д	14	С	76
 И	text	З	Вход
@@ -39,7 +39,7 @@
 И	type	З	password
 И	placeholder	З	Пароль	С	39
 И	class	З	form-control	С	40
-С	121	И	SCRIPT	А	120
+И	SCRIPT	А	121	С	151
 И	class	З	row
 И	DIV	А	45	Д	46	С	50
 И	class	З	col-6
@@ -118,13 +118,13 @@
 И	id	З	pwd	С	100
 И	onsubmit	З	var unm=elements['unm'].value; var pwd=elements['pwd'].value; send_auth(unm,pwd); return false;
 И	src	З	/resource/crypto-js/crypto-js.min.js
-С	15	И	SCRIPT	А	122
+И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	У	З	СтатусСубъекта	С	132	Д	124
 И	Строка
-И	О	З	Если	С	136	Д	129
+И	О	З	Если	С	103	Д	129
 И	DIV	А	142	Д	128
-
+И	src	З	/resource/crypto-js/crypto-js.min.js
 И	З	З	СтатусСубъекта
 И	О	З	НеРавно	С	126	Д	130
 И	З	З	СтатусСубъекта	С	131
@@ -133,18 +133,21 @@
 И	Строка
 И	value	Д	135
 И	З	З	unm
-И	О	З	Если	Д	137	С	103
-И	О	З	Равно	Д	138	С	143
-И	З	З	СтатусСубъекта	С	139
-И	Строка	З	Прошел авторизацию
+
+
+
+
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
 И	class	Д	145
-И	SCRIPT	А	144	З	setTimeout(function(){window.location.href = '/showdata/'+procid;}, 1000);
-И	type	З	text/javascript
+
+
 И	О	З	Если	Д	146
 И	О	З	Равно	Д	147	С	149
 И	З	З	СтатусСубъекта	С	148
 И	Строка	З	Прошел авторизацию
 И	Строка	З	docs-callout docs-callout-info	С	150
 И	Строка	З	docs-callout docs-callout-warning
+И	SCRIPT	А	153
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	src	З	/resource/crypto-js/enc-base64.min.js

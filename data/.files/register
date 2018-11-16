@@ -4,9 +4,9 @@
 И	Строка
 И	У	З	mail	Д	6	С	2
 И	Строка
-И	SCRIPT	А	8	С	9
+
 И	src	З	/resource/crypto-js/crypto-js.min.js
-И	SCRIPT	А	10	С	14
+
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	form	Д	96	А	12
 И	onsubmit	З	var unm=elements['unm'].value; var mail=elements['mail'].value; if (elements['pwd']) {var pwd=elements['pwd'].value; var pwd2=elements['pwd2'].value; var key=elements['key'].value; send_reg(unm,mail,pwd,pwd2,key);} else {send_reg(unm,mail,'','','');} return false;
@@ -50,7 +50,7 @@
 И	type	З	password
 И	BUTTON	А	52	Д	54
 И	class	З	btn btn-block btn-success	С	67
-И	О	З	Если	Д	68	С	215
+И	О	З	Если	Д	68	С	51
 И	text	З	Создать учетную запись
 И	У	З	ТекстСообщение	Д	56	С	213
 И	Строка
@@ -80,13 +80,13 @@
 И	class	З	input-group-text
 И	I	А	82
 И	class	З	icon-key
-И	DIV	А	84	Д	85
+И	DIV	А	84	Д	85	С	223
 И	class	З	row justify-content-center align-items-center
 И	DIV	А	86	Д	87
 И	class	З	col-md-6
 И	DIV	А	88	Д	89
 И	class	З	card mx-4
-И	DIV	А	90	Д	7
+И	DIV	А	90	Д	14
 И	class	З	card-body p-4
 И	H1	Д	92	С	93
 И	text	З	Регистрация
@@ -159,7 +159,7 @@
 И	placeholder	З	Секретный ключ	С	160
 И	type	З	password
 И	class
-
+И	src	З	/resource/crypto-js/crypto-js.min.js
 И	О	З	НеРавно	Д	164	С	170
 И	З	З	СтатусСубъекта	С	165
 И	Строка	З	ОтправленКлюч
@@ -212,10 +212,15 @@
 И	Строка
 И	У	З	ТекстСтатус	Д	214	С	211
 И	Строка
-И	О	З	Если	Д	217	С	51
+
 И	Строка	З	docs-callout docs-callout-warning
-И	О	З	Равно	Д	218	С	220
-И	З	З	ТекстСообщение	С	219
-И	Строка	З	Регистрация выполнена
-И	SCRIPT	З	setTimeout(function(){window.location.href = '/showdata/'+procid;}, 1000);	А	221
-И	type	З	text/javascript
+
+
+
+
+
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	SCRIPT	А	224	С	225
+И	src	З	/resource/crypto-js/crypto-js.min.js
+И	SCRIPT	А	226
+И	src	З	/resource/crypto-js/enc-base64.min.js
