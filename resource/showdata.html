@@ -251,12 +251,14 @@
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'>
+  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+</div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьИмяЗначение-->
 <div style='display: inline-block;' id='.ПараметрИдУзла'>
-  <div class="btn-group" role="group" data-toggle="buttons">
+  <div class="btn-group" role="group">
     .ПараметрИмя
     .ПараметрЗначение
   </div>
@@ -265,12 +267,12 @@
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
+  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent($('#.ПараметрИдУзла.ПараметрКоманда')[0].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm input-shadow" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
-      <div class="btn-group" role="group" data-toggle="buttons">
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="submit">✔</button>
         <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">✘</button>
       </div>
     </span>
@@ -290,7 +292,7 @@
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Сохранить</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
@@ -307,7 +309,7 @@
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom($('#inputhtml')[0].value))">Загрузить HTML</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>
 </div>
@@ -413,10 +415,11 @@ function addcmd(el) {
 }
 
 function postcmd(cmd){
-  fetch('/showdata/'+procid, {
-    method: 'POST',
-    body: cmd
-  });
+  $.ajax({
+	  type: 'POST',
+	  url: '/showdata/'+procid,
+	  data: cmd
+	});
 }
 
 function seq_add(cmd) {
@@ -448,11 +451,7 @@ function seq_sendcmd(){
       }
     }
     xhr.send();
-  } else {
-    setTimeout(() => {
-      seq_sendcmd();
-    }, 20);
-  }
+  } else {setTimeout(function(){seq_sendcmd()},20);}
 }
 
 function get_tree(root){
