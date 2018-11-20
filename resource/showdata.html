@@ -422,6 +422,7 @@ function postcmd(cmd){
 	  url: '/showdata/'+procid,
 	  data: cmd
 	});
+  seq_add('cmd=upddata');
 }
 
 function seq_add(cmd) {
