@@ -417,12 +417,17 @@ function addcmd(el) {
 }
 
 function postcmd(cmd){
-  $.ajax({
-	  type: 'POST',
-	  url: '/showdata/'+procid,
-	  data: cmd
-	});
-  seq_add('cmd=upddata');
+  var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
+  var xhr = new XHR();
+  xhr.open('POST','/showdata/'+procid,true);
+  xhr.onload = function() {
+    if (this.response) {
+      $(this.response).each(function(index, value) {
+        if (this.id) {$('#'+this.id).replaceWith(this);}
+      });
+    }
+  }
+  xhr.send(cmd);
 }
 
 function seq_add(cmd) {
