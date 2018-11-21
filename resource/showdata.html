@@ -547,6 +547,7 @@ function handler(event) {
       return false;
     }
     if (event.type == 'mouseover') {
+      $(el).attr('title', el.tagName);
       el.style.outlineStyle = "dashed";
       el.style.outlineWidth = "1px";
       el.style.outlineColor = "#63c2de";
