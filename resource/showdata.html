@@ -20,10 +20,9 @@
 
     <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
       <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-      <img class="navbar-brand-minimized" src=".ПараметрХост/resource/osdb.png" alt="OneScriptDB" width="55" height="18"/>
     </a>
 
-    <ul class="nav navbar-nav d-md-down-none" id="tabs">
+    <ul class="nav" id="tabs">
       <li class="nav-item">
         <a class="nav-link" href="/help">
           Описание
@@ -80,16 +79,19 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <a class="navbar-brand" href="/admin" title="Платформа для разработки web-приложений в среде OneScript">
+  <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
     <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-    <img class="navbar-brand-minimized" src=".ПараметрХост/resource/osdb.png" alt="OneScriptDB" width="55" height="18"/>
   </a>
 
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
-  <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav d-md-down-none" id="tabs">
+  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" data-toggle="sidebar-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
   </ul>
 
   <ul class="nav navbar-nav ml-auto" id="acc">
@@ -183,7 +185,7 @@
 <!--/ОбластьРежимСтруктура-->
 
 <!--ОбластьВкладки-->
-<ul class="nav navbar-nav d-md-down-none" id="tabs">
+<ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
   .ПараметрВкладки
 </ul>
 <div id="insert">
@@ -251,12 +253,14 @@
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
-<div style='display: inline-block;'><button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button></div>
+<div style='display: inline-block;'>
+  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+</div>
 <!--/ОбластьКнопкаУзел-->
 
 <!--ОбластьИмяЗначение-->
 <div style='display: inline-block;' id='.ПараметрИдУзла'>
-  <div class="btn-group" role="group" data-toggle="buttons">
+  <div class="btn-group" role="group">
     .ПараметрИмя
     .ПараметрЗначение
   </div>
@@ -265,12 +269,12 @@
 
 <!--ОбластьИзменитьИмяЗначение-->
 <div style='display: inline-block;'>
-  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value)); return false;">
+  <form onsubmit="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent($('#.ПараметрИдУзла.ПараметрКоманда')[0].value)); return false;">
     <div class="input-group">
     <input class="form-control form-control-sm input-shadow" id=".ПараметрИдУзла.ПараметрКоманда" type="text" />
     <span class="input-group-btn">
-      <div class="btn-group" role="group" data-toggle="buttons">
-        <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда&amp;valuedit='+encodeURIComponent(elements['.ПараметрИдУзла.ПараметрКоманда'].value))">✔</button>
+      <div class="btn-group" role="group">
+        <button class="btn btn-outline-dark btn-shadow btn-sm" type="submit">✔</button>
         <button class="btn btn-outline-dark btn-shadow btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">✘</button>
       </div>
     </span>
@@ -290,7 +294,7 @@
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent(elements['.ПараметрИдУзлаvalue'].value)+'&amp;name='+encodeURIComponent(elements['.ПараметрИдУзлаname'].value));">Сохранить</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Сохранить</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
@@ -307,7 +311,7 @@
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom(elements['inputhtml'].value))">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importhtml&amp;enc_value='+impdom($('#inputhtml')[0].value))">Загрузить HTML</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
   </form>
 </div>
@@ -408,15 +412,22 @@ function scrolled(){
 function addcmd(el) {
   if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
-  if (el.tagName=='FORM'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
+  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
   return false;
 }
 
 function postcmd(cmd){
-  fetch('/showdata/'+procid, {
-    method: 'POST',
-    body: cmd
-  });
+  var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
+  var xhr = new XHR();
+  xhr.open('POST','/showdata/'+procid,true);
+  xhr.onload = function() {
+    if (this.response) {
+      $(this.response).each(function(index, value) {
+        if (this.id) {$('#'+this.id).replaceWith(this);}
+      });
+    }
+  }
+  xhr.send(cmd);
 }
 
 function seq_add(cmd) {
@@ -448,11 +459,7 @@ function seq_sendcmd(){
       }
     }
     xhr.send();
-  } else {
-    setTimeout(() => {
-      seq_sendcmd();
-    }, 20);
-  }
+  } else {setTimeout(function(){seq_sendcmd()},20);}
 }
 
 function get_tree(root){
@@ -540,6 +547,7 @@ function handler(event) {
       return false;
     }
     if (event.type == 'mouseover') {
+      $(el).attr('title', el.tagName);
       el.style.outlineStyle = "dashed";
       el.style.outlineWidth = "1px";
       el.style.outlineColor = "#63c2de";
