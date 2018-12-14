@@ -413,7 +413,6 @@ function addcmd(el) {
   if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
   if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
-  return false;
 }
 
 function postcmd(cmd){
@@ -440,10 +439,11 @@ function seq_add(cmd) {
   //   }
   // }
   seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  setTimeout(function(){seq_sendcmd()},20);
 }
 
+seq_add('cmd=upddata');
 seq_add('cmd=refresh');
-seq_sendcmd();
 
 function seq_sendcmd(){
   if(seq.length) {
@@ -453,13 +453,14 @@ function seq_sendcmd(){
     xhr.onload = function() {
       seq_sendcmd();
       if (this.response) {
+        if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata'); setTimeout(function(){seq_sendcmd()},20);}
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
       }
     }
     xhr.send();
-  } else {setTimeout(function(){seq_sendcmd()},20);}
+  }
 }
 
 function get_tree(root){
