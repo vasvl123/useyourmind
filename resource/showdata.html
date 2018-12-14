@@ -410,9 +410,9 @@ function scrolled(){
 }
 
 function addcmd(el) {
-  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
-  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
+  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',50);}
 }
 
 function postcmd(cmd){
@@ -429,7 +429,7 @@ function postcmd(cmd){
   xhr.send(cmd);
 }
 
-function seq_add(cmd) {
+function seq_add(cmd,delay=5) {
   var datascrolled=scrolled();
   var winscrolled="";
   // if (wintab!=""&&wintab!=undefined) {
@@ -439,7 +439,7 @@ function seq_add(cmd) {
   //   }
   // }
   seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
-  setTimeout(function(){seq_sendcmd()},20);
+  setTimeout(function(){seq_sendcmd()},delay);
 }
 
 seq_add('cmd=upddata');
@@ -453,7 +453,7 @@ function seq_sendcmd(){
     xhr.onload = function() {
       seq_sendcmd();
       if (this.response) {
-        if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata'); setTimeout(function(){seq_sendcmd()},20);}
+        if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata'); seq_sendcmd();}
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
