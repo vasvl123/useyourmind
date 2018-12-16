@@ -470,6 +470,7 @@ function get_tree(root){
       next_prop = 'nextElementSibling';
       attr_prop = 'attributes';
   while(curr){
+    if (res == '') {res = '_ch' + "\n";}
     res += "tagName" + "\t" + curr.tagName + "\n";
     if (curr[attr_prop]){
       res += "_at" + "\n";
