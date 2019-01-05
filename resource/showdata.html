@@ -451,13 +451,13 @@ function seq_sendcmd(){
     var xhr = new XHR();
     xhr.open('GET',seq.shift(),true);
     xhr.onload = function() {
-      seq_sendcmd();
+      if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata')}
       if (this.response) {
-        if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata'); seq_sendcmd();}
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
       }
+      seq_sendcmd();
     }
     xhr.send();
   }
