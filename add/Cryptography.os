@@ -26,12 +26,12 @@ Function HMAC(Val SecretKey, Val Message, Val HashFunc) Export
 	EmptyBin = GetBinaryDataFromString("");
 	SecretKey = BinLeft(SecretKey, BlSz);
 
-	Ê0 = BinRightPad(SecretKey, BlSz, 0); // "0x00" vasvl123 передадим сразу количество
+	Ê0 = BinRightPad(SecretKey, BlSz, 0); // "0x00"
 
-	ipad = BinRightPad(EmptyBin, BlSz, 54); // "0x36" vasvl123 передадим сразу количество
+	ipad = BinRightPad(EmptyBin, BlSz, 54); // "0x36"
 	k_ipad = BinBitwiseXOR(Ê0, ipad);
 
-	opad = BinRightPad(EmptyBin, BlSz, 92); // "0x5C" vasvl123 передадим сразу количество
+	opad = BinRightPad(EmptyBin, BlSz, 92); // "0x5C"
 	k_opad = BinBitwiseXOR(Ê0, opad);
 
 	k_ipad_Message = BinConcat(k_ipad, Message);
@@ -53,41 +53,32 @@ EndProcedure
 
 Function BinLeft(Val BinaryData, Val CountOfBytes)
 
-	DataReader = New DataReader(BinaryData);
+	Buffer = GetBinaryDataBufferFromBinaryData(BinaryData);
+	If CountOfBytes > Buffer.Size Then
+		CountOfBytes = Buffer.Size;
+	EndIf;
+	Buffer1 = Buffer.Read(0, CountOfBytes);
 
-	MemoryStream = New MemoryStream();
-	DataWriter = New DataWriter(MemoryStream);
-
-	Buffer = DataReader.ReadIntoBinaryDataBuffer(CountOfBytes);
-	DataWriter.WriteBinaryDataBuffer(Buffer);
-
-	Return MemoryStream.CloseAndGetBinaryData();
+	Return GetBinaryDataFromBinaryDataBuffer(Buffer1);
 
 EndFunction
 
-Function BinRightPad(Val BinaryData, Val Length, Val PadByte) // Val HexString vasvl123 получили сразу количество
+Function BinRightPad(Val BinaryData, Val Length, Val PadByte)
 
-	// PadByte = NumberFromHexString(HexString);
+	Buffer = GetBinaryDataBufferFromBinaryData(BinaryData);
 
-	DataReader = New DataReader(BinaryData);
+	Buffer1Size = Length - Buffer.Size;
+	Buffer1 = New BinaryDataBuffer(Buffer1Size);
 
-	MemoryStream = New MemoryStream();
-	DataWriter = New DataWriter(MemoryStream);
-
-	Buffer = DataReader.ReadIntoBinaryDataBuffer(BinaryData.Size()); // vasvl123 требует количество хотя не должен
-	If Buffer.Size > 0 Then
-		DataWriter.WriteBinaryDataBuffer(Buffer);
-	EndIf;
-
-	For n = Buffer.Size + 1 To Length Do
-		DataWriter.WriteByte(PadByte);
+	For n = 0 To Buffer1Size - 1 Do
+		Buffer1.Set(n, PadByte);
 	EndDo;
 
-	Return MemoryStream.CloseAndGetBinaryData();
+	Return GetBinaryDataFromBinaryDataBuffer(Buffer.Concat(Buffer1));
 
 EndFunction
 
-// vasvl123 такая функция еще не реализована
+// такая функция еще не реализована
 Function WriteBitwiseXor(Buffer1, Start, Buffer2, Size)
 
 	For n = Start To Start + Size - 1 Do
@@ -101,22 +92,16 @@ Function BinBitwiseXOR(Val BinaryData1, Val BinaryData2)
 	MemoryStream = New MemoryStream();
 	DataWriter = New DataWriter(MemoryStream);
 
-	DataReader1 = New DataReader(BinaryData1);
-	DataReader2 = New DataReader(BinaryData2);
-
-	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer(BinaryData1.Size()); // vasvl123 требует количество хотя не должен
-	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer(BinaryData2.Size()); // vasvl123 требует количество хотя не должен
+	Buffer1 = GetBinaryDataBufferFromBinaryData(BinaryData1);
+	Buffer2 = GetBinaryDataBufferFromBinaryData(BinaryData2);
 
 	If Buffer1.Size > Buffer2.Size Then
-		WriteBitwiseXor(Buffer1, 0, Buffer2, Buffer2.Size); // vasvl123 вызвать свою функцию
-		DataWriter.WriteBinaryDataBuffer(Buffer1);
+		WriteBitwiseXor(Buffer1, 0, Buffer2, Buffer2.Size);
+		Return GetBinaryDataFromBinaryDataBuffer(Buffer1);
 	Else
-		WriteBitwiseXor(Buffer2, 0, Buffer1, Buffer1.Size); // vasvl123 вызвать свою функцию
-		DataWriter.WriteBinaryDataBuffer(Buffer2);
+		WriteBitwiseXor(Buffer2, 0, Buffer1, Buffer1.Size);
+		Return GetBinaryDataFromBinaryDataBuffer(Buffer2);
 	EndIf;
-
-	res = MemoryStream.CloseAndGetBinaryData();
-	Return res;
 
 EndFunction
 
@@ -128,29 +113,9 @@ EndFunction
 
 Function BinConcat(Val BinaryData1, Val BinaryData2)
 
-	MemoryStream = New MemoryStream();
-	DataWriter = New DataWriter(MemoryStream);
+	Buffer1 = GetBinaryDataBufferFromBinaryData(BinaryData1);
+	Buffer2 = GetBinaryDataBufferFromBinaryData(BinaryData2);
 
-	DataReader1 = New DataReader(BinaryData1);
-	DataReader2 = New DataReader(BinaryData2);
-
-	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer(BinaryData1.Size()); // vasvl123 требует количество хотя не должен
-	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer(BinaryData2.Size()); // vasvl123 требует количество хотя не должен
-
-	DataWriter.WriteBinaryDataBuffer(Buffer1);
-	DataWriter.WriteBinaryDataBuffer(Buffer2);
-
-	res = MemoryStream.CloseAndGetBinaryData();
-	Return res;
+	Return GetBinaryDataFromBinaryDataBuffer(Buffer1.Concat(Buffer2));
 
 EndFunction
-
-// HMAC
-	SecretKey = "key";
-	StringToSign = "The quick brown fox jumps over the lazy dog";
-	Signature = HMAC(
-		GetBinaryDataFromString(SecretKey),
-		GetBinaryDataFromString(StringToSign),
-		HashFunction.SHA256);
-
-	Сообщить(Signature);
