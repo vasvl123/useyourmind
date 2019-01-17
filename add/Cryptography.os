@@ -1,3 +1,5 @@
+// Источник https://github.com/pintov/1c-jwt/blob/master/src/Cryptography.bsl
+// Адаптировал vasvl123
 
 // Computes a Hash-based Message Authentication Code (HMAC)
 // RFC 2104 https://www.ietf.org/rfc/rfc2104.txt
@@ -24,12 +26,12 @@ Function HMAC(Val SecretKey, Val Message, Val HashFunc) Export
 	EmptyBin = GetBinaryDataFromString("");
 	SecretKey = BinLeft(SecretKey, BlSz);
 
-	Ê0 = BinRightPad(SecretKey, BlSz, 0); // "0x00"
+	Ê0 = BinRightPad(SecretKey, BlSz, 0); // "0x00" vasvl123 передадим сразу количество
 
-	ipad = BinRightPad(EmptyBin, BlSz, 54); // "0x36"
+	ipad = BinRightPad(EmptyBin, BlSz, 54); // "0x36" vasvl123 передадим сразу количество
 	k_ipad = BinBitwiseXOR(Ê0, ipad);
 
-	opad = BinRightPad(EmptyBin, BlSz, 92); // "0x5C"
+	opad = BinRightPad(EmptyBin, BlSz, 92); // "0x5C" vasvl123 передадим сразу количество
 	k_opad = BinBitwiseXOR(Ê0, opad);
 
 	k_ipad_Message = BinConcat(k_ipad, Message);
@@ -63,7 +65,7 @@ Function BinLeft(Val BinaryData, Val CountOfBytes)
 
 EndFunction
 
-Function BinRightPad(Val BinaryData, Val Length, Val PadByte) // Val HexString
+Function BinRightPad(Val BinaryData, Val Length, Val PadByte) // Val HexString vasvl123 получили сразу количество
 
 	// PadByte = NumberFromHexString(HexString);
 
@@ -72,7 +74,7 @@ Function BinRightPad(Val BinaryData, Val Length, Val PadByte) // Val HexString
 	MemoryStream = New MemoryStream();
 	DataWriter = New DataWriter(MemoryStream);
 
-	Buffer = DataReader.ReadIntoBinaryDataBuffer();
+	Buffer = DataReader.ReadIntoBinaryDataBuffer(BinaryData.Size()); // vasvl123 требует количество хотя не должен
 	If Buffer.Size > 0 Then
 		DataWriter.WriteBinaryDataBuffer(Buffer);
 	EndIf;
@@ -85,6 +87,15 @@ Function BinRightPad(Val BinaryData, Val Length, Val PadByte) // Val HexString
 
 EndFunction
 
+// vasvl123 такая функция еще не реализована
+Function WriteBitwiseXor(Buffer1, Start, Buffer2, Size)
+
+	For n = Start To Start + Size - 1 Do
+		Buffer1.Set(n, BitwiseXor(Buffer1.Get(n), Buffer2.Get(n)));
+	EndDo;
+
+EndFunction
+
 Function BinBitwiseXOR(Val BinaryData1, Val BinaryData2)
 
 	MemoryStream = New MemoryStream();
@@ -93,14 +104,14 @@ Function BinBitwiseXOR(Val BinaryData1, Val BinaryData2)
 	DataReader1 = New DataReader(BinaryData1);
 	DataReader2 = New DataReader(BinaryData2);
 
-	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer();
-	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer();
+	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer(BinaryData1.Size()); // vasvl123 требует количество хотя не должен
+	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer(BinaryData2.Size()); // vasvl123 требует количество хотя не должен
 
 	If Buffer1.Size > Buffer2.Size Then
-		Buffer1.WriteBitwiseXor(0, Buffer2, Buffer2.Size);
+		WriteBitwiseXor(Buffer1, 0, Buffer2, Buffer2.Size); // vasvl123 вызвать свою функцию
 		DataWriter.WriteBinaryDataBuffer(Buffer1);
 	Else
-		Buffer2.WriteBitwiseXor(0, Buffer1, Buffer1.Size);
+		WriteBitwiseXor(Buffer2, 0, Buffer1, Buffer1.Size); // vasvl123 вызвать свою функцию
 		DataWriter.WriteBinaryDataBuffer(Buffer2);
 	EndIf;
 
@@ -123,8 +134,8 @@ Function BinConcat(Val BinaryData1, Val BinaryData2)
 	DataReader1 = New DataReader(BinaryData1);
 	DataReader2 = New DataReader(BinaryData2);
 
-	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer();
-	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer();
+	Buffer1 = DataReader1.ReadIntoBinaryDataBuffer(BinaryData1.Size()); // vasvl123 требует количество хотя не должен
+	Buffer2 = DataReader2.ReadIntoBinaryDataBuffer(BinaryData2.Size()); // vasvl123 требует количество хотя не должен
 
 	DataWriter.WriteBinaryDataBuffer(Buffer1);
 	DataWriter.WriteBinaryDataBuffer(Buffer2);
@@ -141,3 +152,5 @@ EndFunction
 		GetBinaryDataFromString(SecretKey),
 		GetBinaryDataFromString(StringToSign),
 		HashFunction.SHA256);
+
+	Сообщить(Signature);
