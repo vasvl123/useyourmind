@@ -89,9 +89,6 @@ EndFunction
 
 Function BinBitwiseXOR(Val BinaryData1, Val BinaryData2)
 
-	MemoryStream = New MemoryStream();
-	DataWriter = New DataWriter(MemoryStream);
-
 	Buffer1 = GetBinaryDataBufferFromBinaryData(BinaryData1);
 	Buffer2 = GetBinaryDataBufferFromBinaryData(BinaryData2);
 
