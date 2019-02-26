@@ -1,5 +1,5 @@
 // MIT License
-// Copyright (c) 2018 Vladimir Vasiliev
+// Copyright (c) 2019 Vladimir Vasiliev
 // https://github.com/vasvl123/OneScriptDB
 //
 // Включает программный код https://github.com/nextkmv/vServer
@@ -280,7 +280,7 @@
 		ПараметрыЗапроса = Запрос.Заголовок.Получить(Метод + "Data");
 
 		Если ПараметрыЗапроса = Неопределено Тогда
-			Возврат Неопределено; 
+			Возврат Неопределено;
 		КонецЕсли;
 
 		Задача = Новый Структура;

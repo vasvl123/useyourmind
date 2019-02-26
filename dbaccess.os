@@ -1,5 +1,5 @@
 // MIT License
-// Copyright (c) 2018 Vladimir Vasiliev
+// Copyright (c) 2019 Vladimir Vasiliev
 // https://github.com/vasvl123/OneScriptDB
 
 
