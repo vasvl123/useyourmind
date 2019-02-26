@@ -65,9 +65,9 @@
   <footer class="app-footer">
   <div>
   <a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-  <span>© 2018 Vladimir Vasiliev.</span>
+  <span>© 2019 Vladimir Vasiliev.</span>
   </div>
-  <div class="ml-auto" id="status">
+  <div id="status">
   </div>
   </footer>
 
@@ -388,9 +388,9 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <footer class="app-footer">
 <div>
 <a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-<span>© 2018 Vladimir Vasiliev.</span>
+<span>© 2019 Vladimir Vasiliev.</span>
 </div>
-<div class="ml-auto" id="status">
+<div id="status">
 </div>
 </footer>
 
@@ -410,10 +410,9 @@ function scrolled(){
 }
 
 function addcmd(el) {
-  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
-  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit');}
-  return false;
+  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',50);}
 }
 
 function postcmd(cmd){
@@ -430,7 +429,7 @@ function postcmd(cmd){
   xhr.send(cmd);
 }
 
-function seq_add(cmd) {
+function seq_add(cmd,delay=5) {
   var datascrolled=scrolled();
   var winscrolled="";
   // if (wintab!=""&&wintab!=undefined) {
@@ -440,10 +439,11 @@ function seq_add(cmd) {
   //   }
   // }
   seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  setTimeout(function(){seq_sendcmd()},delay);
 }
 
+seq_add('cmd=upddata');
 seq_add('cmd=refresh');
-seq_sendcmd();
 
 function seq_sendcmd(){
   if(seq.length) {
@@ -451,15 +451,16 @@ function seq_sendcmd(){
     var xhr = new XHR();
     xhr.open('GET',seq.shift(),true);
     xhr.onload = function() {
-      seq_sendcmd();
+      if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata')}
       if (this.response) {
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
       }
+      seq_sendcmd();
     }
     xhr.send();
-  } else {setTimeout(function(){seq_sendcmd()},20);}
+  }
 }
 
 function get_tree(root){
@@ -469,6 +470,7 @@ function get_tree(root){
       next_prop = 'nextElementSibling';
       attr_prop = 'attributes';
   while(curr){
+    if (res == '') {res = '_ch' + "\n";}
     res += "tagName" + "\t" + curr.tagName + "\n";
     if (curr[attr_prop]){
       res += "_at" + "\n";
@@ -609,3 +611,7 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 </body>
 </html>
 <!--/ОбластьПодвал-->
+
+<!--ОбластьПеренаправить-->
+<div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
+<!--/ОбластьПеренаправить-->
