@@ -1,10 +1,10 @@
-﻿И	У	З	Корень	Д	55
-И	Э	З	Фронт	Д	83
+И	У	З	Корень	Д	55
+И	У	З	Фронт	Д	83	С	7
 И	У	З	unm	Д	4	С	5
 И	Строка
 И	У	З	mail	Д	6	С	2
 И	Строка
-
+И	З	З	Фронт
 И	src	З	/resource/crypto-js/crypto-js.min.js
 
 И	src	З	/resource/crypto-js/enc-base64.min.js
