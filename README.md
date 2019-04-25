@@ -1,14 +1,12 @@
 ![OneScriptDB](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb.png "OneScriptDB")
 
-# OneScriptDB
+# OneScriptDB - среда концептуального проектирования
 
 [![Join the chat at https://gitter.im/OneScriptDB/Lobby](https://badges.gitter.im/OneScriptDB/Lobby.svg)](https://gitter.im/OneScriptDB/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Платформа для разработки web-приложений в среде OneScript.
-
 ## Цель и задачи проекта
 
-Цель проекта - разработка системы управления знаниями, основанной на онтологической базе данных.
+Цель проекта - разработка концепции распределенного сообщества. Воплощение концепции в действующей модели программными средствами среды OneScriptDB.
 
 На текущий момент уже реализованы средства хранения, представления и управления структурами данных.
 Начата разработка средств интерпретации данных, представленных в формализованном виде (онтологии).
