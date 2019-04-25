@@ -2,5 +2,7 @@
 *.files/
 *.files/*
 !.files/
-*.log
+log.osdb
+users.osdb
+web.osdb
 .vscode/*
