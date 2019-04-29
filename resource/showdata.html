@@ -487,8 +487,8 @@ function seq_add(cmd,delay=5) {
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
-seq_add('cmd=upddata');
 seq_add('cmd=refresh');
+seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {
@@ -518,17 +518,15 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     $(".win").hide().css('top',0);
     if (datatab!=p_tab) {
       $("#"+datatab+"_0").hide();
-      datatab=p_tab;
       t.show();
       window.scrollTo(0,p_scroll);
     }
+    datatab=p_tab;
   }
   if (p_tabtype=="win") {
-    if (tab!=p_tab) {
-      if (t[0].offsetTop==0) {
-        t.show();
-        t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
-      }
+    if (t[0].offsetTop==0) {
+      t.show();
+      t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
     }
     wintab=p_tab;
   }
