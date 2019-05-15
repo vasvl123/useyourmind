@@ -1,4 +1,4 @@
-И	У	З	Корень	Д	123
+И	У	З	Корень	Д	123	А	137
 И	Э	З	Фронт	Д	72
 И	DIV	А	4	Д	5	С	42
 И	class	З	row justify-content-center
@@ -71,7 +71,7 @@
 И	class	З	container
 И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
-И	У	З	Фронт	Д	3	С	136
+И	У	З	Фронт	Д	3	А	136
 И	form	Д	13	А	119
 И	P	А	77	Д	78	С	79
 И	class	З	text-muted
@@ -133,8 +133,8 @@
 И	Строка
 И	value	Д	135
 И	З	З	unm
-И	З	З	Фронт
-
+И	Показать	З	Да
+И	Показать	З	Да
 
 
 И	DIV	А	141	Д	143
