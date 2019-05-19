@@ -14,67 +14,6 @@
 </head>
 <!--/ОбластьШапка-->
 
-<!--ОбластьПоказатьСтраницу-->
-<body class="app header-fixed">
-  <header class="app-header navbar navbar-expand-lg" id="navbar">
-
-    <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
-      <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-    </a>
-
-    <ul class="nav" id="tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="/help">
-          Описание
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/vasvl123/OneScriptDB">
-          Исходный код
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://gitter.im/OneScriptDB/Lobby">
-          Общение
-        </a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto" id="acc">
-      <li class="nav-item dropdown">
-        <a class="nav-link nav-link" href="/login" role="button">
-          Гость
-        </a>
-      </li>
-    </ul>
-
-  </header>
-
-  <script type='text/javascript'>
-    var procid = '.ПараметрИдПроцесса';
-  </script>
-
-  <div class="app-body">
-    <main class="main">
-      <div class="container-fluid my-4">
-        .ПараметрТекстСтраницы
-      </div>
-    </main>
-  </div>
-
-  <footer class="app-footer">
-  <div>
-  <a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-  <span>© 2019 Vladimir Vasiliev.</span>
-  </div>
-  <div id="status">
-  </div>
-  </footer>
-
-</body>
-</html>
-<!--/ОбластьПоказатьСтраницу-->
-
 <!--ОбластьПанельМенюОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
@@ -463,7 +402,7 @@ function addcmd(el) {
 function postcmd(cmd){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
-  xhr.open('POST','/showdata/'+procid,true);
+  xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
     if (this.response) {
       $(this.response).each(function(index, value) {
@@ -483,7 +422,7 @@ function seq_add(cmd,delay=5) {
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
-  seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
@@ -624,3 +563,7 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <!--ОбластьПеренаправить-->
 <div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
 <!--/ОбластьПеренаправить-->
+
+<!--ОбластьИзменитьАдрес-->
+<div id='insert'><script type='text/javascript'>history.pushState(null, null, '.ПараметрПуть');</script></div>
+<!--/ОбластьИзменитьАдрес-->

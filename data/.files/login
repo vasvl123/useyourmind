@@ -1,21 +1,21 @@
-И	У	З	Корень	Д	123	А	137
+И	У	З	Корень	Д	132	А	137
 И	Э	З	Фронт	Д	72
-И	DIV	А	4	Д	5	С	42
+И	DIV	А	4	Д	5
 И	class	З	row justify-content-center
 И	DIV	А	6	Д	7
 И	class	З	col-md-8
 И	DIV	А	8	Д	9
 И	class	З	card-group
-И	DIV	А	10	Д	11	С	56
+И	DIV	А	10	Д	176	С	56
 И	class	З	card p-4
-И	DIV	А	12	Д	15
-И	class	З	card-body
+И	FORM	А	178	Д	13
+
 И	H1	Д	14	С	76
 И	text	З	Вход
-И	script	С	75	А	30	З	    var ms = new Date();#xA    var uid = ms.getTime();#xA#xA    function add_el(f,n,v) {#xA      var tmp_el = document.createElement("input");#xA      tmp_el.name=n;#xA      tmp_el.type='hidden';#xA      tmp_el.value=v;#xA      f.appendChild(tmp_el);#xA    }#xA#xA    function send_auth(unm,pwd){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          var tmp_form = document.createElement("form");#xA          tmp_form.method='post';#xA          tmp_form.action='/login';#xA          tmp_form.style.display='none';#xA          add_el(tmp_form,'procid',procid);#xA          add_el(tmp_form,'unm',unm);#xA          add_el(tmp_form,'pwd',digest);#xA          add_el(tmp_form,'uid',uid);#xA          add_el(tmp_form,'cmd','auth');#xA          document.getElementsByTagName('body')[0].appendChild(tmp_form);#xA          tmp_form.submit();#xA    }#xA
+И	INPUT	А	165	С	163
 И	class	З	text-muted
 И	text	З	Войти в учетную запись
-И	onclick	З	window.location.href='/register'	С	68
+И	onclick	З	window.location.href='/showdata/register'	С	68
 И	class	З	input-group mb-3
 И	DIV	А	21	Д	22	С	26
 И	class	З	input-group-prepend
@@ -39,7 +39,7 @@
 И	type	З	password
 И	placeholder	З	Пароль	С	39
 И	class	З	form-control	С	40
-И	SCRIPT	А	121	С	151
+И	А	З	uid	Д	117	С	155
 И	class	З	row
 И	DIV	А	45	Д	46	С	50
 И	class	З	col-6
@@ -71,7 +71,7 @@
 И	class	З	container
 И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
-И	У	З	Фронт	Д	3	А	136
+И	У	З	Фронт	Д	3	А	136	С	159
 И	form	Д	13	А	119
 И	P	А	77	Д	78	С	79
 И	class	З	text-muted
@@ -84,7 +84,7 @@
 И	class	З	input-group-text
 И	I	А	86
 И	class	З	icon-user
-И	INPUT	А	117
+И	INPUT	А	88
 И	class	З	form-control	С	89
 И	placeholder	З	Имя	С	90
 И	type	З	text	С	134
@@ -96,7 +96,7 @@
 И	class	З	input-group-text
 И	I	А	98
 И	class	З	icon-lock
-И	INPUT	А	118
+И	INPUT	А	100
 И	class	З	form-control	С	101
 И	placeholder	З	Пароль	С	102
 И	type	З	password
@@ -105,8 +105,8 @@
 И	DIV	А	106	Д	107	С	111
 И	class	З	col-6
 И	BUTTON	А	108	Д	110
-И	class	З	btn btn-success px-4	С	109
-И	type	З	submit
+И	class	З	btn btn-success px-4	С	179
+
 И	text	З	Войти
 И	DIV	А	112	Д	113
 И	class	З	col-6 text-right
@@ -114,13 +114,13 @@
 И	class	З	btn btn-link px-0	С	115
 И	type	З	button
 И	text	З	Забыли пароль?
-И	id	З	unm	С	88
-И	id	З	pwd	С	100
+И	З	З	uid
+И	У	З	Результат авторизации	Д	170	С	123
 И	onsubmit	З	var unm=elements['unm'].value; var pwd=elements['pwd'].value; send_auth(unm,pwd); return false;
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	У	З	СтатусСубъекта	С	132	Д	124
+И	У	З	СтатусСубъекта	Д	138	С	74
 И	Строка
 И	О	З	Если	С	103	Д	129
 И	DIV	А	142	Д	128
@@ -129,18 +129,18 @@
 И	О	З	НеРавно	С	126	Д	130
 И	З	З	СтатусСубъекта	С	131
 И	Строка
-И	У	С	74	Д	133	З	unm
-И	Строка
-И	value	Д	135
+И	У	С	15	З	uid
+И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          seq_add('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          seq_add('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
+И	А	Д	135	З	Значение
 И	З	З	unm
 И	Показать	З	Да
 И	Показать	З	Да
-
-
+И	З	З	Результат авторизации
+И	У	З	pwd	С	151
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
 И	class	Д	145
-
+И	type	З	text/javascript
 
 И	О	З	Если	Д	146
 И	О	З	Равно	Д	147	С	149
@@ -148,6 +148,46 @@
 И	Строка	З	Прошел авторизацию
 И	Строка	З	docs-callout docs-callout-info	С	150
 И	Строка	З	docs-callout docs-callout-warning
-И	SCRIPT	А	153
+И	INPUT	А	164	С	184
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
+И	Ф	З	Авторизация	С	42
+И	А	З	unm	Д	156	С	157
+И	З	З	unm
+И	А	З	pwd	Д	158
+И	З	З	pwd
+И	SCRIPT	А	160	С	161
+И	src	З	/resource/crypto-js/crypto-js.min.js
+И	SCRIPT	А	162	С	133
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	У	З	unm	С	139
+И	type	З	hidden	С	168
+И	type	З	hidden	С	166
+И	А	З	Значение	Д	167
+И	З	З	uid
+И	А	З	Значение	Д	169
+И	З	З	pwd
+И	О	З	Если	Д	171
+И	О	З	ЕстьЗначение	С	192	Д	172
+И	З	З	pwd
+
+И	Строка
+Д	13	С	76
+И	DIV	Д	11	А	177
+И	class	З	card-body
+И	onsubmit	З	send_pwd();  return false;
+И	type	З	submit
+
+
+
+
+И	У	З	Выполнить	А	185	С	118
+И	Ф	З	Авторизация	С	186
+И	А	З	uid	Д	187	С	188
+И	З	З	uid
+И	А	З	unm	Д	189	С	190
+И	З	З	unm
+И	А	З	pwd	Д	191
+И	З	З	pwd
+И	З	З	Выполнить	С	174
+
