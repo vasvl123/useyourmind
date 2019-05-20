@@ -9,7 +9,7 @@
 И	DIV	А	10	Д	176	С	56
 И	class	З	card p-4
 И	FORM	А	178	Д	13
-
+И	Обновлять	З	Нет
 И	H1	Д	14	С	76
 И	text	З	Вход
 И	INPUT	А	165	С	163
@@ -106,7 +106,7 @@
 И	class	З	col-6
 И	BUTTON	А	108	Д	110
 И	class	З	btn btn-success px-4	С	179
-
+И	Строка	Д	192	С	174
 И	text	З	Войти
 И	DIV	А	112	Д	113
 И	class	З	col-6 text-right
@@ -115,12 +115,12 @@
 И	type	З	button
 И	text	З	Забыли пароль?
 И	З	З	uid
-И	У	З	Результат авторизации	Д	170	С	123
+И	У	З	СтатусСубъекта	Д	170	С	74
 И	onsubmit	З	var unm=elements['unm'].value; var pwd=elements['pwd'].value; send_auth(unm,pwd); return false;
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	У	З	СтатусСубъекта	Д	138	С	74
+
 И	Строка
 И	О	З	Если	С	103	Д	129
 И	DIV	А	142	Д	128
@@ -135,20 +135,20 @@
 И	З	З	unm
 И	Показать	З	Да
 И	Показать	З	Да
-И	З	З	Результат авторизации
+
 И	У	З	pwd	С	151
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
 И	class	Д	145
 И	type	З	text/javascript
-
+И	У	З	Выполнить	А	194	С	118
 И	О	З	Если	Д	146
 И	О	З	Равно	Д	147	С	149
 И	З	З	СтатусСубъекта	С	148
 И	Строка	З	Прошел авторизацию
 И	Строка	З	docs-callout docs-callout-info	С	150
 И	Строка	З	docs-callout docs-callout-warning
-И	INPUT	А	164	С	184
+И	INPUT	А	164	С	144
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	Ф	З	Авторизация	С	42
@@ -167,21 +167,21 @@
 И	З	З	uid
 И	А	З	Значение	Д	169
 И	З	З	pwd
-И	О	З	Если	Д	171
-И	О	З	ЕстьЗначение	С	192	Д	172
-И	З	З	pwd
-
+И	О	З	Если	Д	203
+И	О	З	Пустой	Д	202
+И	С	З	Выполнить
+И	Ф	З	Авторизация	С	180
 И	Строка
 Д	13	С	76
 И	DIV	Д	11	А	177
 И	class	З	card-body
 И	onsubmit	З	send_pwd();  return false;
 И	type	З	submit
-
-
-
-
-И	У	З	Выполнить	А	185	С	118
+И	А	З	uid	Д	181	С	182
+И	З	З	uid
+И	А	З	unm	Д	183	С	184
+И	З	З	unm
+И	А	З	pwd	Д	193
 И	Ф	З	Авторизация	С	186
 И	А	З	uid	Д	187	С	188
 И	З	З	uid
@@ -189,5 +189,20 @@
 И	З	З	unm
 И	А	З	pwd	Д	191
 И	З	З	pwd
-И	З	З	Выполнить	С	174
+И	З	З	Выполнить.ЗапросДанные.СтатусСубъекта	А	12	С	174
+И	З	З	pwd
+И	Ф	З	Авторизация	С	195
+И	А	З	uid	Д	196	С	197
+И	З	З	uid
+И	А	З	unm	Д	198	С	199
+И	З	З	unm
+И	А	З	pwd	Д	200
+И	З	З	pwd
+И	О	З	Не	Д	171
+И	Первый	Д	172
+И	О	З	И	Д	205	С	192
 
+И	О	З	Не	Д	206	С	201
+И	О	З	Пустой	Д	207
+И	Первый	Д	208
+И	С	З	pwd
