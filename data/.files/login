@@ -87,8 +87,8 @@
 И	INPUT	А	88
 И	class	З	form-control	С	89
 И	placeholder	З	Имя	С	90
-И	type	З	text	С	134
-И	DIV	А	92	Д	93	С	125
+И	type	З	text	С	123
+И	DIV	А	92	Д	93	С	135
 И	class	З	input-group mb-4
 И	DIV	А	94	Д	95	С	99
 И	class	З	input-group-prepend
@@ -120,9 +120,9 @@
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
-
+И	value	Д	134
 И	Строка
-И	О	З	Если	С	103	Д	129
+И	О	З	Если	Д	129
 И	DIV	А	142	Д	128
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	З	З	СтатусСубъекта
@@ -130,12 +130,12 @@
 И	З	З	СтатусСубъекта	С	131
 И	Строка
 И	У	С	15	З	uid
-И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          seq_add('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          seq_add('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
-И	А	Д	135	З	Значение
+И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          seq_add('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          seq_add('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          seq_add('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
 И	З	З	unm
+И	Узел	З	Статус	Д	125	С	103	А	138
 И	Показать	З	Да
 И	Показать	З	Да
-
+И	Показать	З	Да
 И	У	З	pwd	С	151
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
