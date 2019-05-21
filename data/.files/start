@@ -1,4 +1,4 @@
-И	У	З	Корень	Д	8
+И	У	З	Корень	Д	8	А	64
 С	67	И	H1	А	15	Д	24
 И	Э	З	body	А	4	Д	7
 И	class	З	app flex-row align-items-center  pace-done
@@ -61,7 +61,7 @@
 И	P	А	62	Д	63
 И	class	З	lead mb-4
 И	text	З	проект с открытым кодом на базе CoreUI и Bootstrap 4
-
+И	Показать	З	Да
 И	class	З	mb-3 text-sm-nowrap
 И	text	З	Платформа для разработки web-приложений
 И	H3	А	68	Д	69	С	44
