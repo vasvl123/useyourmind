@@ -229,7 +229,7 @@
 
 <!--ОбластьРедактироватьУзел-->
 <div id='.ПараметрИдУзлаedit'>
-  <form>
+  <form onsubmit="return false;">
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
@@ -291,7 +291,7 @@
       return encodeURIComponent(get_tree(node['firstElementChild']));
     }
   </script>
-  <form>
+  <form onsubmit="return false;">
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
     <br/>

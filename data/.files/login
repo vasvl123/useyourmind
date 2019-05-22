@@ -99,7 +99,7 @@
 И	INPUT	А	100
 И	class	З	form-control	С	101
 И	placeholder	З	Пароль	С	102
-И	type	З	password
+И	type	З	text
 И	DIV	А	104	Д	105
 И	class	З	row
 И	DIV	А	106	Д	107	С	111
@@ -205,4 +205,4 @@
 И	О	З	Не	Д	206	С	201
 И	О	З	Пустой	Д	207
 И	Первый	Д	208
-И	С	З	pwd
+И	С	З	uid

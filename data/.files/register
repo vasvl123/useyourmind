@@ -1,18 +1,18 @@
 И	У	З	Корень	Д	3	А	9
 И	У	З	Фронт	Д	83	С	215	А	177
-И	У	З	uid	С	14
-
+И	У	З	uid	С	6
+И	style
 И	У	З	mail	С	227
-
-И	У	З	ТекстСтатус	Д	13	С	55
+И	INPUT	А	57	С	14
+И	У	З	ТекстСтатус	Д	295	С	55
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	Показать	З	Да
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	form	Д	96	А	12
-И	onsubmit
-И	Строка
+И	onsubmit	З	send_reg(); return false;
+
 И	У	З	unm	С	15
-И	У	З	pwd	С	5
+И	У	З	pwd	С	240
 И	DIV	А	17	Д	18	С	60
 И	class	З	input-group mb-3
 И	DIV	А	19	Д	20	С	23
@@ -24,7 +24,7 @@
 И	class	З	form-control	С	25
 И	placeholder	З	Почта	С	26
 И	type	З	text	С	74
-И	А	Д	39	З	Значение
+И	value	Д	39
 И	class	З	input-group mb-3
 И	DIV	А	30	Д	31	С	35
 И	class	З	input-group-prepend
@@ -50,14 +50,14 @@
 И	type	З	password
 И	BUTTON	А	52	Д	54
 И	class	З	btn btn-block btn-success	С	67
-И	О	З	Если	Д	68	С	51
+И	Строка	С	267
 И	text	З	Создать учетную запись
-И	У	З	Этап	С	2
+И	У	З	Этап	С	2	Д	305
 И	Строка
-
+И	type	З	hidden	С	211
 И	id	З	pwd	С	36
 И	id	З	pwd2	С	48
-И	О	З	Если	Д	61	С	53
+И	О	З	Если	Д	61	С	166
 И	О	З	НеРавно	Д	62	С	64
 И	З	З	ТекстСообщение	С	63
 И	Строка
@@ -65,14 +65,14 @@
 И	class	Д	206
 И	З	З	ТекстСообщение
 И	type	З	submit
-И	О	З	Равно	Д	72	С	178
+И	О	З	Равно	Д	72	С	75
 И	О	З	Равно	Д	70
 И	З	З	СтатусСубъекта	С	71
 И	Строка	З	ОтправленКлюч
 И	З	З	Этап	С	73
 И	Строка	З	Подтверждение
-И	А	Д	205	З	Значение
-И	DIV	А	148	Д	166	С	179
+И	value	Д	205
+И	Строка	З	display:none	С	148
 И	class	З	input-group mb-3
 И	DIV	А	78	Д	79	С	108
 И	class	З	input-group-prepend
@@ -145,7 +145,7 @@
 И	class	З	btn btn-block btn-success	С	144
 И	text	З	Создать учетную запись
 И	type	З	password
-И	class	З	input-group mb-3
+И	Строка
 И	class	З	input-group mb-3	С	161
 И	DIV	А	151	Д	152	С	156
 И	class	З	input-group-prepend
@@ -163,19 +163,19 @@
 И	О	З	НеРавно	Д	164	С	170
 И	З	З	СтатусСубъекта	С	165
 И	Строка	З	ОтправленКлюч
-И	DIV	А	167	Д	168	С	173
-И	class	З	input-group-prepend
-И	SPAN	А	169	Д	171
-И	class	З	input-group-text
+И	div	А	167	Д	168	С	51
+И	style	Д	263
+И	DIV	А	169	Д	171	С	239
+И	class	З	input-group mb-3
 И	Строка	З	hiden
-И	I	А	172
-И	class	З	icon-key
-И	INPUT	А	174
+И	DIV	А	172	Д	173	С	213
+И	class	З	input-group-prepend
+И	SPAN	А	178	Д	188
 И	id	З	key	С	175
 И	class	З	form-control	С	176
 И	placeholder	З	Секретный ключ
 И	Показать	З	Да
-И	div	Д	75
+И	class	З	input-group-text
 И	DIV	А	180	Д	181	С	192
 И	class	З	input-group mb-3
 И	DIV	А	182	Д	183	С	187
@@ -184,8 +184,8 @@
 И	class	З	input-group-text
 И	I	А	186
 И	class	З	icon-lock
-И	INPUT	А	188
-И	id	З	pwd	С	189
+И	INPUT	А	189
+И	I	А	201
 И	class	З	form-control	С	190
 И	placeholder	З	Пароль	С	191
 И	type	З	password
@@ -197,8 +197,8 @@
 И	class	З	input-group-text
 И	I	А	199
 И	class	З	icon-lock
-И	INPUT	А	201
-И	id	З	pwd2	С	202
+И	INPUT	А	202
+И	class	З	icon-lock
 И	class	З	form-control	С	203
 И	placeholder	З	Пароль еще раз	С	204
 И	type	З	password
@@ -208,27 +208,102 @@
 И	З	З	ТекстСтатус	С	209
 И	Строка	З	Информация
 И	Строка	З	docs-callout docs-callout-info	С	216
-
-
-
+И	А	З	Значение	Д	212
+И	З	З	uid
+И	INPUT	А	225
 И	Строка
 И	SCRIPT	А	217	С	218
 И	Строка	З	docs-callout docs-callout-warning
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	SCRIPT	А	219	С	220
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	script	З	#xA  function base64ToArrayBuffer(base64) {#xA    var binary_string =  window.atob(base64);#xA    var len = binary_string.length;#xA    var bytes = new Uint8Array( len );#xA    for (var i = 0; i < len; i++) {#xA        bytes[i] = binary_string.charCodeAt(i);#xA    }#xA    return bytes;#xA  }#xA#xA  function vig_e(d,k) {#xA    var da = base64ToArrayBuffer(d);#xA    var ka = base64ToArrayBuffer(k);#xA    var r = '';#xA    for (var i = 0; i < 32; i++) {#xA      var j = da[i]+ka[i];#xA      if (j>255) {j=j-256;}#xA      r += String.fromCharCode(j);#xA    }#xA  return window.btoa(r);  #xA  }#xA#xA    function send_reg(unm,mail,pwd,pwd2,key){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA#xA          var unm=elements['unm'].value; #xAvar mail=elements['mail'].value; #xAif (elements['pwd']) #xA{var pwd=elements['pwd'].value; #xAvar pwd2=elements['pwd2'].value; #xAvar key=elements['key'].value; #xAsend_reg(unm,mail,pwd,pwd2,key);} #xAelse {send_reg(unm,mail,'','','');}#xA          #xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA#xA          var hpwd2 = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd2));#xA          var vpwd = vig_e(hpwd2,key);#xA#xA          var tmp_form = document.createElement("form");#xA          tmp_form.method='post';#xA          tmp_form.action='/register';#xA          tmp_form.style.display='none';#xA          add_el(tmp_form,'procid',procid);#xA          add_el(tmp_form,'unm',unm);#xA          add_el(tmp_form,'mail',mail);#xA          add_el(tmp_form,'uid',uid);#xA          add_el(tmp_form,'pwd',digest);#xA          add_el(tmp_form,'pwd2',vpwd);#xA          add_el(tmp_form,'cmd','reg');#xA          document.getElementsByTagName('body')[0].appendChild(tmp_form);#xA          tmp_form.submit();#xA    }#xA	А	221
+И	script	З	#xA  function base64ToArrayBuffer(base64) {#xA    var binary_string =  window.atob(base64);#xA    var len = binary_string.length;#xA    var bytes = new Uint8Array( len );#xA    for (var i = 0; i < len; i++) {#xA        bytes[i] = binary_string.charCodeAt(i);#xA    }#xA    return bytes;#xA  }#xA#xA  function vig_e(d,k) {#xA    var da = base64ToArrayBuffer(d);#xA    var ka = base64ToArrayBuffer(k);#xA    var r = '';#xA    for (var i = 0; i < 32; i++) {#xA      var j = da[i]+ka[i];#xA      if (j>255) {j=j-256;}#xA      r += String.fromCharCode(j);#xA    }#xA  return window.btoa(r);  #xA  }#xA#xA    function send_reg(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA#xA          seq_add('nodeid='+tab+'_6&cmd=onchange&value='+uid);#xA          var unm=$('#'+tab+'_104')[0].value; #xA          seq_add('nodeid='+tab+'_104&cmd=onchange&value='+unm);#xA          var mail=$('#'+tab+'_23')[0].value; #xA          seq_add('nodeid='+tab+'_23&cmd=onchange&value='+mail);#xA          var pwd=$('#'+tab+'_213')[0].value; #xA          var pwd2=$('#'+tab+'_259')[0].value; #xA          var key=$('#'+tab+'_273')[0].value; #xA          #xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA#xA          var hpwd2 = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd2));#xA          var vpwd = vig_e(hpwd2,key);#xA #xA          seq_add('nodeid='+tab+'_240&cmd=onchange&value='+digest);#xA          seq_add('nodeid='+tab+'_244&cmd=onchange&value='+vpwd);#xA #xA    }#xA	А	221
 И	type	З	text/javascript
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	У	З	ТекстСообщение	С	7
+И	У	З	ТекстСообщение	С	7	Д	290
 И	src	З	/resource/crypto-js/crypto-js.min.js
-
+И	class	З	form-control	С	235
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	У	З	Выполнить	А	228	С	223
+И	У	З	Выполнить	А	228	С	237
 И	Ф	З	Регистрация	С	229
 И	А	З	uid	Д	230	С	231
 И	З	З	uid
-И	А	З	unm	Д	232	С	233
+И	А	З	unm	Д	232	С	250
 И	З	З	unm
-И	А	З	pwd	Д	234
+И	А	З	pwd	Д	234	С	248
 И	З	З	pwd
+И	placeholder	З	Пароль	С	236
+И	type	З	text
+И	У	З	ЕстьРезультат	С	272	Д	268
+И	У	З	pwd2	С	244
+И	DIV	А	252	Д	253
+И	INPUT	А	241	С	238
+И	type	З	hidden	С	242
+И	А	З	Значение	Д	243
+И	З	З	pwd
+И	INPUT	А	245	С	5
+И	type	З	hidden	С	246
+И	А	З	Значение	Д	247
+И	З	З	pwd2
+И	А	З	pwd2	Д	249
+И	З	З	pwd
+И	А	З	mail	Д	251	С	233
+И	З	З	mail
+И	class	З	input-group mb-4
+И	DIV	А	254	Д	255	С	259
+И	class	З	input-group-prepend
+И	SPAN	А	256	Д	257
+И	class	З	input-group-text
+И	I	А	258
+И	class	З	icon-lock
+И	INPUT	А	260
+И	class	З	form-control	С	261
+И	placeholder	З	Пароль еще раз	С	262
+И	type	З	text
+И	О	З	Если	Д	264
+И	О	З	Равно	Д	265	С	53
+И	З	З	Этап	С	266
+И	Строка	З	Подтверждение
+И	Строка	З	display:none
+И	О	З	И	Д	277
+И	type	З	hidden	С	270
+И	А	З	Значение	Д	271
+И	З	З	pwd2
+И	У	З	key	С	273	Д	285
+И	INPUT	А	274	С	223
+И	type	З	hidden	С	275
+И	value	Д	276
+И	З	З	key
+И	О	З	Не	Д	278	С	281
+И	О	З	Пустой	Д	279
+И	Первый	Д	280
+И	С	З	uid
+И	О	З	Не	Д	282
+И	О	З	Пустой	Д	283
+И	Первый	Д	284
+И	С	З	Выполнить
+И	О	З	Если	Д	286
+И	З	З	ЕстьРезультат	С	287
+И	З	З	Выполнить.ЗапросДанные.key	С	288	А	289
+И	Строка
+И	Обновлять	З	Нет
+И	О	З	Если	Д	291
+И	З	З	ЕстьРезультат	С	292
+И	З	З	Выполнить.ЗапросДанные.ТекстСообщение	А	293	С	294
+И	Обновлять	З	Нет
+И	Строка
+И	О	З	Если	Д	296
+И	З	З	ЕстьРезультат	С	297
+И	З	З	Выполнить.ЗапросДанные.ТекстСтатус	А	298	С	299
+И	Обновлять	З	Нет
+И	Строка
+
+
+
+
+
+И	О	З	Если	Д	306
+И	З	З	ЕстьРезультат	С	307
+И	З	З	Выполнить.ЗапросДанные.Этап	А	308	С	309
+И	Обновлять	З	Нет
+И	Строка
