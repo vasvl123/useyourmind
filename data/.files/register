@@ -1,5 +1,5 @@
 И	У	З	Корень	Д	3	А	9
-И	У	З	Фронт	Д	83	С	215	А	177
+И	У	З	Фронт	Д	83	С	215	А	13
 И	У	З	uid	С	6
 И	style
 И	У	З	mail	С	227
@@ -10,7 +10,7 @@
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	form	Д	96	А	12
 И	onsubmit	З	send_reg(); return false;
-
+И	Показать	З	Да
 И	У	З	unm	С	15
 И	У	З	pwd	С	240
 И	DIV	А	17	Д	18	С	60
@@ -174,7 +174,7 @@
 И	id	З	key	С	175
 И	class	З	form-control	С	176
 И	placeholder	З	Секретный ключ
-И	Показать	З	Да
+
 И	class	З	input-group-text
 И	DIV	А	180	Д	181	С	192
 И	class	З	input-group mb-3
@@ -272,7 +272,7 @@
 И	У	З	key	С	273	Д	285
 И	INPUT	А	274	С	223
 И	type	З	hidden	С	275
-И	value	Д	276
+И	А	Д	276	З	Значение
 И	З	З	key
 И	О	З	Не	Д	278	С	281
 И	О	З	Пустой	Д	279
