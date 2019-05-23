@@ -130,7 +130,7 @@
 И	З	З	СтатусСубъекта	С	131
 И	Строка
 И	У	С	15	З	uid
-И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          seq_add('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          seq_add('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          seq_add('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
+И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          postcmd('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          postcmd('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
 И	З	З	unm
 И	Узел	З	Статус	Д	125	С	103	А	138
 И	Показать	З	Да
