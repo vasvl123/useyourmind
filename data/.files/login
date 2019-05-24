@@ -1,4 +1,4 @@
-И	У	З	Корень	Д	132	А	137
+И	У	З	Корень	Д	74	А	137
 И	Э	З	Фронт	Д	72
 И	DIV	А	4	Д	5
 И	class	З	row justify-content-center
@@ -12,7 +12,7 @@
 И	Обновлять	З	Нет
 И	H1	Д	14	С	76
 И	text	З	Вход
-И	INPUT	А	165	С	163
+И	Узел	З	Ид	Д	204	С	213	А	118
 И	class	З	text-muted
 И	text	З	Войти в учетную запись
 И	onclick	З	window.location.href='/showdata/register'	С	68
@@ -71,7 +71,7 @@
 И	class	З	container
 И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
-И	У	З	Фронт	Д	3	А	136	С	159
+И	У	З	Фронт	Д	204	А	136	С	159
 И	form	Д	13	А	119
 И	P	А	77	Д	78	С	79
 И	class	З	text-muted
@@ -115,7 +115,7 @@
 И	type	З	button
 И	text	З	Забыли пароль?
 И	З	З	uid
-И	У	З	СтатусСубъекта	Д	170	С	74
+И	Показать	З	Нет
 И	onsubmit	З	var unm=elements['unm'].value; var pwd=elements['pwd'].value; send_auth(unm,pwd); return false;
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	src	З	/resource/crypto-js/crypto-js.min.js
@@ -129,26 +129,26 @@
 И	О	З	НеРавно	С	126	Д	130
 И	З	З	СтатусСубъекта	С	131
 И	Строка
-И	У	С	15	З	uid
-И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          postcmd('nodeid='+tab+'_15&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          postcmd('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('nodeid='+tab+'_151&cmd=onchange&value='+digest);#xA    }#xA	А	143
+И	INPUT	А	139	С	213
+И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          postcmd('nodeid='+tab+'_132&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          postcmd('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('nodeid='+tab+'_215&cmd=onchange&value='+digest);#xA    }#xA	А	143
 И	З	З	unm
 И	Узел	З	Статус	Д	125	С	103	А	138
 И	Показать	З	Да
 И	Показать	З	Да
 И	Показать	З	Да
-И	У	З	pwd	С	151
+И	type	З	hidden	С	144
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
 И	class	Д	145
 И	type	З	text/javascript
-И	У	З	Выполнить	А	194	С	118
+И	А	З	Значение	Д	151
 И	О	З	Если	Д	146
 И	О	З	Равно	Д	147	С	149
 И	З	З	СтатусСубъекта	С	148
 И	Строка	З	Прошел авторизацию
 И	Строка	З	docs-callout docs-callout-info	С	150
 И	Строка	З	docs-callout docs-callout-warning
-И	INPUT	А	164	С	144
+И	З	З	uid
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	Ф	З	Авторизация	С	42
@@ -160,7 +160,7 @@
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	SCRIPT	А	162	С	133
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	У	З	unm	С	139
+
 И	type	З	hidden	С	168
 И	type	З	hidden	С	166
 И	А	З	Значение	Д	167
@@ -201,8 +201,40 @@
 И	О	З	Не	Д	171
 И	Первый	Д	172
 И	О	З	И	Д	205	С	192
-
+И	У	З	uid	С	132
 И	О	З	Не	Д	206	С	201
 И	О	З	Пустой	Д	207
 И	Первый	Д	208
 И	С	З	uid
+
+И	type	З	hidden	С	211
+И	А	З	Значение	Д	212
+И	З	З	uid
+И	У	З	unm	С	214
+И	У	З	pwd	С	215
+И	INPUT	А	216	С	219
+И	type	З	hidden	С	217
+И	А	З	Значение	Д	218
+И	З	З	pwd
+И	У	З	Выполнить	А	220	С	227
+И	Ф	З	Авторизация	С	221
+И	А	З	uid	Д	222	С	223
+И	З	З	uid
+И	А	З	unm	Д	224	С	225
+И	З	З	unm
+И	А	З	pwd	Д	226
+И	З	З	pwd
+И	У	З	СтатусСубъекта	Д	228	С	3
+И	О	З	Если	Д	229
+И	О	З	И	Д	230	С	238
+И	О	З	Не	Д	231	С	234
+И	О	З	Пустой	Д	232
+И	Первый	Д	233
+И	С	З	uid
+И	О	З	Не	Д	235
+И	О	З	Пустой	Д	236
+И	Первый	Д	237
+И	С	З	Выполнить
+И	З	З	Выполнить.ЗапросДанные.СтатусСубъекта	А	239	С	240
+И	Обновлять	З	Нет
+И	Строка
