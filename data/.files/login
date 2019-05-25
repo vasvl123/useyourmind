@@ -71,7 +71,7 @@
 И	class	З	container
 И	Э	Д	74	А	73	З	body
 И	class	З	app flex-row align-items-center  pace-done
-И	У	З	Фронт	Д	204	А	136	С	159
+И	У	З	Фронт	Д	219	А	136	С	159
 И	form	Д	13	А	119
 И	P	А	77	Д	78	С	79
 И	class	З	text-muted
@@ -129,26 +129,26 @@
 И	О	З	НеРавно	С	126	Д	130
 И	З	З	СтатусСубъекта	С	131
 И	Строка
-И	INPUT	А	139	С	213
-И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          postcmd('nodeid='+tab+'_132&cmd=onchange&value='+uid);#xA          unm = $('#'+tab+'_87')[0].value;#xA          postcmd('nodeid='+tab+'_87&cmd=onchange&value='+unm);#xA          pwd=$('#'+tab+'_99')[0].value;#xA          hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('nodeid='+tab+'_215&cmd=onchange&value='+digest);#xA    }#xA	А	143
+И	У	З	ЕстьРезультат	Д	139	С	227
+И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          var unm = $('#'+tab+'_87')[0].value;#xA          var pwd=$('#'+tab+'_99')[0].value;#xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('procid='+procid+'&nodeid='+tab+'_219&cmd=auth&uid='+uid+'&unm='+unm+'&pwd='+digest);#xA    }#xA	А	143
 И	З	З	unm
 И	Узел	З	Статус	Д	125	С	103	А	138
 И	Показать	З	Да
 И	Показать	З	Да
 И	Показать	З	Да
-И	type	З	hidden	С	144
+И	Узел	З	ЕстьРезультат	Д	151	С	227
 И	DIV	А	141	Д	143
 И	class	З	docs-callout docs-callout-warning
 И	class	Д	145
 И	type	З	text/javascript
-И	А	З	Значение	Д	151
+И	О	З	И	Д	151	С	213
 И	О	З	Если	Д	146
 И	О	З	Равно	Д	147	С	149
 И	З	З	СтатусСубъекта	С	148
 И	Строка	З	Прошел авторизацию
 И	Строка	З	docs-callout docs-callout-info	С	150
 И	Строка	З	docs-callout docs-callout-warning
-И	З	З	uid
+И	О	З	Не	Д	163
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	Ф	З	Авторизация	С	42
@@ -160,7 +160,7 @@
 И	src	З	/resource/crypto-js/crypto-js.min.js
 И	SCRIPT	А	162	С	133
 И	src	З	/resource/crypto-js/enc-base64.min.js
-
+И	О	З	Пустой	Д	204
 И	type	З	hidden	С	168
 И	type	З	hidden	С	166
 И	А	З	Значение	Д	167
@@ -201,40 +201,40 @@
 И	О	З	Не	Д	171
 И	Первый	Д	172
 И	О	З	И	Д	205	С	192
-И	У	З	uid	С	132
+И	Первый	Д	209
 И	О	З	Не	Д	206	С	201
 И	О	З	Пустой	Д	207
 И	Первый	Д	208
 И	С	З	uid
-
+И	С	З	Выполнить
 И	type	З	hidden	С	211
 И	А	З	Значение	Д	212
 И	З	З	uid
-И	У	З	unm	С	214
-И	У	З	pwd	С	215
-И	INPUT	А	216	С	219
-И	type	З	hidden	С	217
-И	А	З	Значение	Д	218
-И	З	З	pwd
-И	У	З	Выполнить	А	220	С	227
-И	Ф	З	Авторизация	С	221
-И	А	З	uid	Д	222	С	223
-И	З	З	uid
-И	А	З	unm	Д	224	С	225
-И	З	З	unm
-И	А	З	pwd	Д	226
-И	З	З	pwd
-И	У	З	СтатусСубъекта	Д	228	С	3
-И	О	З	Если	Д	229
-И	О	З	И	Д	230	С	238
-И	О	З	Не	Д	231	С	234
-И	О	З	Пустой	Д	232
-И	Первый	Д	233
-И	С	З	uid
-И	О	З	Не	Д	235
-И	О	З	Пустой	Д	236
-И	Первый	Д	237
-И	С	З	Выполнить
-И	З	З	Выполнить.ЗапросДанные.СтатусСубъекта	А	239	С	240
-И	Обновлять	З	Нет
+
+
+
+
+И	З	З	ЕстьРезультат	С	238
+
+И	У	З	Выполнить	С	139
+И	О	З	Если	Д	221
+И	З	З	ЕстьРезультат	С	222
+И	З	З	Выполнить.ЗапросДанные.СтатусСубъекта	С	223
+И	Строка
+И	У	З	unm	Д	225	С	3
+И	О	З	Если	Д	226
+И	З	З	ЕстьРезультат	С	229
+И	У	З	СтатусСубъекта	Д	228	С	224
+И	О	З	Если	Д	217
+И	З	З	Выполнить.ЗапросДанные.unm	С	230
+И	Строка
+
+
+
+
+
+
+
+И	З	З	Выполнить.ЗапросДанные.СтатусСубъекта	С	240
+
 И	Строка
