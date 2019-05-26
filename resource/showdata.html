@@ -14,67 +14,6 @@
 </head>
 <!--/ОбластьШапка-->
 
-<!--ОбластьПоказатьСтраницу-->
-<body class="app header-fixed">
-  <header class="app-header navbar navbar-expand-lg" id="navbar">
-
-    <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
-      <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-    </a>
-
-    <ul class="nav" id="tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="/help">
-          Описание
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/vasvl123/OneScriptDB">
-          Исходный код
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://gitter.im/OneScriptDB/Lobby">
-          Общение
-        </a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto" id="acc">
-      <li class="nav-item dropdown">
-        <a class="nav-link nav-link" href="/login" role="button">
-          Гость
-        </a>
-      </li>
-    </ul>
-
-  </header>
-
-  <script type='text/javascript'>
-    var procid = '.ПараметрИдПроцесса';
-  </script>
-
-  <div class="app-body">
-    <main class="main">
-      <div class="container-fluid my-4">
-        .ПараметрТекстСтраницы
-      </div>
-    </main>
-  </div>
-
-  <footer class="app-footer">
-  <div>
-  <a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-  <span>© 2019 Vladimir Vasiliev.</span>
-  </div>
-  <div id="status">
-  </div>
-  </footer>
-
-</body>
-</html>
-<!--/ОбластьПоказатьСтраницу-->
-
 <!--ОбластьПанельМенюОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
@@ -133,11 +72,11 @@
         <i class="nav-icon icon-calendar"></i> Журнал событий</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/restartserver'; return false">
+        <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">
         <i class="nav-icon icon-loop"></i> Перезапустить</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="window.location.href='/tasks/stopserver'; return false">
+        <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
         <i class="nav-icon icon-ban"></i> Завершить</a>
       </li>
     </ul>
@@ -290,7 +229,7 @@
 
 <!--ОбластьРедактироватьУзел-->
 <div id='.ПараметрИдУзлаedit'>
-  <form>
+  <form onsubmit="return false;">
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
@@ -307,7 +246,53 @@
 
 <!--ОбластьЗагрузитьHTML-->
 <div id='.ПараметрИдУзлаimport'>
-  <form>
+  <script>
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, 'g'), replacement);
+    };
+    function get_tree(root){
+      var res = '',
+          curr = root,
+          child_prop = 'firstChild',
+          next_prop = 'nextSibling';
+          attr_prop = 'attributes';
+      while(curr){
+        if (curr.nodeType == 3) {
+          var t = $.trim(curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '')); // срезает пробелы
+          //var t = curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '');
+          if (t != '') {
+            res += "text" + "\t" + t + "\n";
+          }
+        } else {
+          res += "tagName" + "\t" + curr.nodeName + "\n";
+          if (curr[attr_prop]){
+            res += "_at" + "\n";
+            attrs = curr[attr_prop];
+            for(var i = attrs.length - 1; i >= 0; i--){
+              res += "attrName" + "\t" + attrs[i].name + "\t" + "attrVal" + "\t" + attrs[i].value + "\n";
+            }
+            res += "_rt" + "\n"
+          }
+          if (curr[child_prop]){
+            var ch = get_tree(curr[child_prop]);
+            if (ch != '') {
+              res += '_ch' + "\n" + ch + "_rt" + "\n";
+            }
+          }
+        }
+        curr = curr[next_prop];
+      }
+      return res;
+    }
+    function impdom(htmltext){
+      var node = $('#impdom')[0];
+      node.innerHTML = htmltext;
+      console.log(get_tree(node['firstElementChild']));
+      return encodeURIComponent(get_tree(node['firstElementChild']));
+    }
+  </script>
+  <form onsubmit="return false;">
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
     <br/>
@@ -418,7 +403,7 @@ function addcmd(el) {
 function postcmd(cmd){
   var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
   var xhr = new XHR();
-  xhr.open('POST','/showdata/'+procid,true);
+  xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
     if (this.response) {
       $(this.response).each(function(index, value) {
@@ -438,12 +423,12 @@ function seq_add(cmd,delay=5) {
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
-  seq.push('/showdata/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
+  seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
-seq_add('cmd=upddata');
 seq_add('cmd=refresh');
+seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {
@@ -463,40 +448,6 @@ function seq_sendcmd(){
   }
 }
 
-function get_tree(root){
-  var res = '',
-      curr = root,
-      child_prop = 'firstElementChild',
-      next_prop = 'nextElementSibling';
-      attr_prop = 'attributes';
-  while(curr){
-    if (res == '') {res = '_ch' + "\n";}
-    res += "tagName" + "\t" + curr.tagName + "\n";
-    if (curr[attr_prop]){
-      res += "_at" + "\n";
-      attrs = curr[attr_prop];
-      for(var i = attrs.length - 1; i >= 0; i--){
-        res += "attrName" + "\t" + attrs[i].name + "\t" + "attrVal" + "\t" + attrs[i].value + "\n";}
-       res += "_rt" + "\n"
-    }
-    if (curr[child_prop]){
-      res += "_ch" + "\n" + get_tree(curr[child_prop]);
-    } else {
-      if (curr.innerText){
-        res += "_ch" + "\n" + "text" + "\t" + curr.innerText + "\n" + "_rt" + "\n";}
-    }
-    curr = curr[next_prop];
-  }
-  res += "_rt" + "\n";
-  return res;
-}
-
-function impdom(htmltext){
-  var node = $('#impdom')[0];
-  node.innerHTML = htmltext;
-  return encodeURIComponent(get_tree(node['firstElementChild']));
-}
-
 function newtab(ntab,tabtype,nodeid){
   $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
 }
@@ -507,17 +458,15 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     $(".win").hide().css('top',0);
     if (datatab!=p_tab) {
       $("#"+datatab+"_0").hide();
-      datatab=p_tab;
       t.show();
       window.scrollTo(0,p_scroll);
     }
+    datatab=p_tab;
   }
   if (p_tabtype=="win") {
-    if (tab!=p_tab) {
-      if (t[0].offsetTop==0) {
-        t.show();
-        t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
-      }
+    if (t[0].offsetTop==0) {
+      t.show();
+      t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
     }
     wintab=p_tab;
   }
@@ -615,3 +564,7 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <!--ОбластьПеренаправить-->
 <div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
 <!--/ОбластьПеренаправить-->
+
+<!--ОбластьИзменитьАдрес-->
+<div id='insert'><script type='text/javascript'>history.pushState(null, null, '.ПараметрПуть');</script></div>
+<!--/ОбластьИзменитьАдрес-->

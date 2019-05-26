@@ -1,18 +1,18 @@
-﻿И	У	З	Корень	Д	55
-И	Э	З	Фронт	Д	83
-И	У	З	unm	Д	4	С	5
-И	Строка
-И	У	З	mail	Д	6	С	2
-И	Строка
+И	У	З	Корень	Д	177	А	9
+И	У	З	ТекстСообщение	Д	3	С	359
+И	О	З	Если	Д	5
+И	style
+И	З	З	ЕстьРезультат	С	6
+И	З	З	Выполнить.ЗапросДанные.ТекстСообщение	С	14
 
 И	src	З	/resource/crypto-js/crypto-js.min.js
-
+И	Показать	З	Да
 И	src	З	/resource/crypto-js/enc-base64.min.js
 И	form	Д	96	А	12
-И	onsubmit	З	var unm=elements['unm'].value; var mail=elements['mail'].value; if (elements['pwd']) {var pwd=elements['pwd'].value; var pwd2=elements['pwd2'].value; var key=elements['key'].value; send_reg(unm,mail,pwd,pwd2,key);} else {send_reg(unm,mail,'','','');} return false;
-И	id	З	unm	С	107
-И	script	З	    var ms = new Date();#xA    var uid = ms.getTime();#xA#xA  function base64ToArrayBuffer(base64) {#xA    var binary_string =  window.atob(base64);#xA    var len = binary_string.length;#xA    var bytes = new Uint8Array( len );#xA    for (var i = 0; i < len; i++) {#xA        bytes[i] = binary_string.charCodeAt(i);#xA    }#xA    return bytes;#xA  }#xA#xA  function vig_e(d,k) {#xA    var da = base64ToArrayBuffer(d);#xA    var ka = base64ToArrayBuffer(k);#xA    var r = '';#xA    for (var i = 0; i < 32; i++) {#xA      var j = da[i]+ka[i];#xA      if (j>255) {j=j-256;}#xA      r += String.fromCharCode(j);#xA    }#xA  return window.btoa(r);  #xA  }#xA#xA    function add_el(f,n,v) {#xA      var tmp_el = document.createElement("input");#xA      tmp_el.name=n;#xA      tmp_el.type='hidden';#xA      tmp_el.value=v;#xA      f.appendChild(tmp_el);#xA    }#xA    function send_reg(unm,mail,pwd,pwd2,key){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          #xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA#xA          var hpwd2 = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd2));#xA          var vpwd = vig_e(hpwd2,key);#xA#xA          var tmp_form = document.createElement("form");#xA          tmp_form.method='post';#xA          tmp_form.action='/register';#xA          tmp_form.style.display='none';#xA          add_el(tmp_form,'procid',procid);#xA          add_el(tmp_form,'unm',unm);#xA          add_el(tmp_form,'mail',mail);#xA          add_el(tmp_form,'uid',uid);#xA          add_el(tmp_form,'pwd',digest);#xA          add_el(tmp_form,'pwd2',vpwd);#xA          add_el(tmp_form,'cmd','reg');#xA          document.getElementsByTagName('body')[0].appendChild(tmp_form);#xA          tmp_form.submit();#xA    }#xA	А	15	С	91
-И	type	З	text/javascript
+И	onsubmit	З	send_reg(); return false;
+И	Показать	З	Да
+И	Строка
+И	У	З	mail	Д	55	С	2
 И	DIV	А	17	Д	18	С	60
 И	class	З	input-group mb-3
 И	DIV	А	19	Д	20	С	23
@@ -20,7 +20,7 @@
 И	SPAN	А	21	Д	22
 И	class	З	input-group-text
 И	text	З	@
-И	INPUT	А	57
+И	INPUT	А	24
 И	class	З	form-control	С	25
 И	placeholder	З	Почта	С	26
 И	type	З	text	С	74
@@ -50,14 +50,14 @@
 И	type	З	password
 И	BUTTON	А	52	Д	54
 И	class	З	btn btn-block btn-success	С	67
-И	О	З	Если	Д	68	С	51
+И	Строка	С	267
 И	text	З	Создать учетную запись
-И	У	З	ТекстСообщение	Д	56	С	213
+И	О	З	Если	Д	223
 И	Строка
-И	id	З	mail	С	24
+И	type	З	hidden	С	211
 И	id	З	pwd	С	36
 И	id	З	pwd2	С	48
-И	О	З	Если	Д	61	С	53
+И	О	З	Если	Д	61	С	166
 И	О	З	НеРавно	Д	62	С	64
 И	З	З	ТекстСообщение	С	63
 И	Строка
@@ -65,14 +65,14 @@
 И	class	Д	206
 И	З	З	ТекстСообщение
 И	type	З	submit
-И	О	З	Равно	Д	72	С	178
+И	О	З	Равно	Д	72	С	75
 И	О	З	Равно	Д	70
 И	З	З	СтатусСубъекта	С	71
 И	Строка	З	ОтправленКлюч
 И	З	З	Этап	С	73
 И	Строка	З	Подтверждение
 И	value	Д	205
-И	DIV	А	148	Д	166	С	179
+И	Строка	З	display:none	С	148
 И	class	З	input-group mb-3
 И	DIV	А	78	Д	79	С	108
 И	class	З	input-group-prepend
@@ -80,13 +80,13 @@
 И	class	З	input-group-text
 И	I	А	82
 И	class	З	icon-key
-И	DIV	А	84	Д	85	С	223
+И	DIV	А	84	Д	85
 И	class	З	row justify-content-center align-items-center
 И	DIV	А	86	Д	87
 И	class	З	col-md-6
 И	DIV	А	88	Д	89
 И	class	З	card mx-4
-И	DIV	А	90	Д	14
+И	DIV	А	90	Д	91
 И	class	З	card-body p-4
 И	H1	Д	92	С	93
 И	text	З	Регистрация
@@ -101,7 +101,7 @@
 И	class	З	input-group-text
 И	I	А	103
 И	class	З	icon-user
-И	INPUT	А	13
+И	INPUT	А	107
 И	type	З	text	С	27
 И	placeholder	З	Имя	С	105
 И	class	З	form-control	С	106
@@ -145,7 +145,7 @@
 И	class	З	btn btn-block btn-success	С	144
 И	text	З	Создать учетную запись
 И	type	З	password
-И	class	З	input-group mb-3
+И	Строка
 И	class	З	input-group mb-3	С	161
 И	DIV	А	151	Д	152	С	156
 И	class	З	input-group-prepend
@@ -163,19 +163,19 @@
 И	О	З	НеРавно	Д	164	С	170
 И	З	З	СтатусСубъекта	С	165
 И	Строка	З	ОтправленКлюч
-И	DIV	А	167	Д	168	С	173
-И	class	З	input-group-prepend
-И	SPAN	А	169	Д	171
-И	class	З	input-group-text
+И	div	А	167	Д	168	С	51
+И	style	Д	263
+И	DIV	А	169	Д	171	С	239
+И	class	З	input-group mb-3
 И	Строка	З	hiden
-И	I	А	172
-И	class	З	icon-key
-И	INPUT	А	174
+И	DIV	А	172	Д	173	С	213
+И	class	З	input-group-prepend
+И	SPAN	А	178	Д	188
 И	id	З	key	С	175
 И	class	З	form-control	С	176
 И	placeholder	З	Секретный ключ
-
-И	div	Д	75
+И	Узел	З	Фронт	Д	321	С	215	А	464
+И	class	З	input-group-text
 И	DIV	А	180	Д	181	С	192
 И	class	З	input-group mb-3
 И	DIV	А	182	Д	183	С	187
@@ -184,8 +184,8 @@
 И	class	З	input-group-text
 И	I	А	186
 И	class	З	icon-lock
-И	INPUT	А	188
-И	id	З	pwd	С	189
+И	INPUT	А	189
+И	I	А	201
 И	class	З	form-control	С	190
 И	placeholder	З	Пароль	С	191
 И	type	З	password
@@ -197,8 +197,8 @@
 И	class	З	input-group-text
 И	I	А	199
 И	class	З	icon-lock
-И	INPUT	А	201
-И	id	З	pwd2	С	202
+И	INPUT	А	202
+И	class	З	icon-lock
 И	class	З	form-control	С	203
 И	placeholder	З	Пароль еще раз	С	204
 И	type	З	password
@@ -208,19 +208,257 @@
 И	З	З	ТекстСтатус	С	209
 И	Строка	З	Информация
 И	Строка	З	docs-callout docs-callout-info	С	216
-И	У	З	Этап	Д	212	С	3
+И	А	З	Значение	Д	212
+И	З	З	uid
+И	INPUT	А	225
 И	Строка
-И	У	З	ТекстСтатус	Д	214	С	211
-И	Строка
-
+И	SCRIPT	А	217	С	218
 И	Строка	З	docs-callout docs-callout-warning
-
-
-
-
-
-И	src	З	/resource/crypto-js/enc-base64.min.js
-И	SCRIPT	А	224	С	225
 И	src	З	/resource/crypto-js/crypto-js.min.js
-И	SCRIPT	А	226
+И	SCRIPT	А	219	С	220
 И	src	З	/resource/crypto-js/enc-base64.min.js
+И	script	З	#xA  function base64ToArrayBuffer(base64) {#xA    var binary_string =  window.atob(base64);#xA    var len = binary_string.length;#xA    var bytes = new Uint8Array( len );#xA    for (var i = 0; i < len; i++) {#xA        bytes[i] = binary_string.charCodeAt(i);#xA    }#xA    return bytes;#xA  }#xA#xA  function vig_e(d,k) {#xA    var da = base64ToArrayBuffer(d);#xA    var ka = base64ToArrayBuffer(k);#xA    var r = '';#xA    for (var i = 0; i < 32; i++) {#xA      var j = da[i]+ka[i];#xA      if (j>255) {j=j-256;}#xA      r += String.fromCharCode(j);#xA    }#xA  return window.btoa(r);  #xA  }#xA#xA    function send_reg(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA#xA          var unm=$('#'+tab+'_396')[0].value; #xA          var mail=$('#'+tab+'_409')[0].value; #xA          var pwd=$('#'+tab+'_444')[0].value; #xA          var pwd2=$('#'+tab+'_456')[0].value; #xA          var key=$('#'+tab+'_349')[0].value; #xA          #xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA#xA          var hpwd2 = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd2));#xA          var vpwd = vig_e(hpwd2,key);#xA     #xA          postcmd('procid='+procid+'&nodeid='+tab+'_321&cmd=reg&uid='+uid+'&unm='+unm+'&mail='+mail+'&pwd='+digest+'&pwd2='+vpwd);#xA    }#xA	А	221
+И	type	З	text/javascript
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	З	З	ЕстьРезультат	С	227
+И	src	З	/resource/crypto-js/crypto-js.min.js
+И	class	З	form-control	С	235
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	З	З	Выполнить.ЗапросДанные.mail	С	237
+И	Ф	З	Регистрация	С	229
+И	А	З	uid	Д	230	С	231
+И	З	З	uid
+И	А	З	unm	Д	232	С	250
+И	З	З	unm
+И	А	З	pwd	Д	234	С	248
+И	З	З	pwd
+И	placeholder	З	Пароль	С	236
+И	type	З	text
+И	Строка
+
+И	DIV	А	252	Д	253
+
+И	type	З	hidden	С	242
+И	А	З	Значение	Д	243
+И	З	З	pwd
+
+И	type	З	hidden	С	246
+И	А	З	Значение	Д	247
+И	З	З	pwd2
+И	А	З	pwd2	Д	249
+И	З	З	pwd2
+И	А	З	mail	Д	251	С	233
+И	З	З	mail
+И	class	З	input-group mb-4
+И	DIV	А	254	Д	255	С	259
+И	class	З	input-group-prepend
+И	SPAN	А	256	Д	257
+И	class	З	input-group-text
+И	I	А	258
+И	class	З	icon-lock
+И	INPUT	А	260
+И	class	З	form-control	С	261
+И	placeholder	З	Пароль еще раз	С	262
+И	type	З	text
+И	О	З	Если	Д	264
+И	О	З	Равно	Д	265	С	53
+И	З	З	Этап	С	266
+И	Строка	З	Подтверждение
+И	Строка	З	display:none
+И	О	З	И	Д	277
+И	type	З	hidden	С	270
+И	А	З	Значение	Д	271
+И	З	З	pwd2
+
+
+И	type	З	hidden	С	275
+И	А	Д	276	З	Значение
+И	З	З	key
+И	О	З	Не	Д	278	С	281
+И	О	З	Пустой	Д	279
+И	Первый	Д	280
+И	С	З	uid
+И	О	З	Не	Д	282
+И	О	З	Пустой	Д	283
+И	Первый	Д	284
+И	С	З	Выполнить
+И	О	З	Если	Д	286
+И	З	З	ЕстьРезультат	С	287
+И	З	З	Выполнить.ЗапросДанные.key	С	288	А	289
+И	Строка
+И	Обновлять	З	Нет
+И	О	З	Если	Д	291
+И	З	З	ЕстьРезультат	С	292
+И	З	З	Выполнить.ЗапросДанные.ТекстСообщение	А	293	С	294
+И	Обновлять	З	Нет
+И	Строка
+И	О	З	Если	Д	296
+И	З	З	ЕстьРезультат	С	297
+И	З	З	Выполнить.ЗапросДанные.ТекстСтатус	А	298	С	299
+И	Обновлять	З	Нет
+И	Строка
+
+
+
+
+
+И	О	З	Если	Д	306
+И	З	З	ЕстьРезультат	С	307
+И	З	З	Выполнить.ЗапросДанные.Этап	А	308	С	309
+И	Обновлять	З	Нет
+И	Строка
+
+
+
+
+
+
+
+
+
+
+
+И	У	З	Выполнить	С	333
+
+
+
+
+
+
+
+
+
+
+
+И	У	З	ЕстьРезультат	Д	339	С	343
+И	О	З	И	Д	339
+
+
+
+
+И	О	З	Не	Д	340
+И	О	З	Пустой	Д	341
+И	Первый	Д	342
+И	С	З	Выполнить
+И	У	З	key	Д	344	С	349
+И	О	З	Если	Д	345
+И	З	З	ЕстьРезультат	С	346
+И	З	З	Выполнить.ЗапросДанные.key	С	348
+
+И	Строка
+И	INPUT	А	350	С	353
+И	type	З	hidden	С	351
+И	А	З	Значение	Д	352
+И	З	З	key
+И	У	З	unm	Д	354	С	15
+И	О	З	Если	Д	355
+И	З	З	ЕстьРезультат	С	356
+И	З	З	Выполнить.ЗапросДанные.unm	С	358
+
+И	Строка
+И	У	З	ТекстСтатус	Д	360	С	365
+И	О	З	Если	Д	361
+И	З	З	ЕстьРезультат	С	362
+И	З	З	Выполнить.ЗапросДанные.ТекстСтатус	С	364
+
+И	Строка
+И	У	З	Этап	Д	366	С	373
+И	О	З	Если	Д	367
+И	З	З	ЕстьРезультат	С	368
+И	З	З	Выполнить.ЗапросДанные.Этап	С	370
+
+И	Строка
+И	У	З	Фронт	Д	373
+
+И	DIV	А	374	Д	375
+И	class	З	row justify-content-center align-items-center
+И	DIV	А	376	Д	377
+И	class	З	col-md-6
+И	DIV	А	378	Д	379
+И	class	З	card mx-4
+И	DIV	А	380	Д	381
+И	class	З	card-body p-4
+И	H1	Д	382	С	383
+И	text	З	Регистрация
+И	P	А	384	Д	385	С	386
+И	class	З	text-muted
+И	text	З	Создать учетную запись
+И	form	А	387	Д	388
+И	onsubmit	З	send_reg(); return false;
+И	DIV	А	389	Д	390	С	402
+И	class	З	input-group mb-3
+И	DIV	А	391	Д	392	С	396
+И	class	З	input-group-prepend
+И	SPAN	А	393	Д	394
+И	class	З	input-group-text
+И	I	А	395
+И	class	З	icon-user
+И	INPUT	А	397
+И	class	З	form-control	С	398
+И	placeholder	З	Имя	С	399
+И	type	З	text	С	400
+И	value	Д	401
+И	З	З	unm
+И	DIV	А	403	Д	404	С	415
+И	class	З	input-group mb-3
+И	DIV	А	405	Д	406	С	409
+И	class	З	input-group-prepend
+И	SPAN	А	407	Д	408
+И	class	З	input-group-text
+И	text	З	@
+И	INPUT	А	410
+И	class	З	form-control	С	411
+И	placeholder	З	Почта	С	412
+И	type	З	text	С	413
+И	value	Д	414
+И	З	З	mail
+И	О	З	Если	Д	416	С	428
+И	О	З	НеРавно	Д	417	С	419
+И	З	З	ТекстСообщение	С	418
+И	Строка
+И	DIV	А	420	Д	427
+И	class	Д	421
+И	О	З	Если	Д	422
+И	О	З	Равно	Д	423	С	425
+И	З	З	ТекстСтатус	С	424
+И	Строка	З	Информация
+И	Строка	З	docs-callout docs-callout-info	С	426
+И	Строка	З	docs-callout docs-callout-warning
+И	З	З	ТекстСообщение
+И	div	А	429	Д	436	С	460
+И	style	Д	430
+И	О	З	Если	Д	431
+И	О	З	Равно	Д	432	С	434
+И	З	З	Этап	С	433
+И	Строка	З	Подтверждение
+И	Строка	С	435
+И	Строка	З	display:none
+И	DIV	А	437	Д	438	С	448
+И	class	З	input-group mb-3
+И	DIV	А	439	Д	440	С	444
+И	class	З	input-group-prepend
+И	SPAN	А	441	Д	442
+И	class	З	input-group-text
+И	I	А	443
+И	class	З	icon-lock
+И	INPUT	А	445
+И	class	З	form-control	С	446
+И	placeholder	З	Пароль	С	447
+И	type	З	text
+И	DIV	А	449	Д	450
+И	class	З	input-group mb-4
+И	DIV	А	451	Д	452	С	456
+И	class	З	input-group-prepend
+И	SPAN	А	453	Д	454
+И	class	З	input-group-text
+И	I	А	455
+И	class	З	icon-lock
+И	INPUT	А	457
+И	class	З	form-control	С	458
+И	placeholder	З	Пароль еще раз	С	459
+И	type	З	text
+И	BUTTON	А	461	Д	463
+И	class	З	btn btn-block btn-success	С	462
+И	type	З	submit
+И	text	З	Создать учетную запись
+И	Показать	З	Да
