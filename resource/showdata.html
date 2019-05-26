@@ -259,7 +259,8 @@
           attr_prop = 'attributes';
       while(curr){
         if (curr.nodeType == 3) {
-          var t = $.trim(curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', ''));
+          var t = $.trim(curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '')); // срезает пробелы
+          //var t = curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '');
           if (t != '') {
             res += "text" + "\t" + t + "\n";
           }
