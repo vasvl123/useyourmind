@@ -1,7 +1,7 @@
+## Открытый, некоммерческий, исследовательский проект в области компьютерной лингвистики
+
 ![OneScriptDB](https://github.com/vasvl123/OneScriptDB/blob/master/resource/osdb.png "OneScriptDB")
 ## OneScriptDB - инструмент концептуального проектирования
-
-# Открытый, некоммерческий, исследовательский проект в области компьютерной лингвистики
 
 [![Join the chat at https://gitter.im/OneScriptDB/Lobby](https://badges.gitter.im/OneScriptDB/Lobby.svg)](https://gitter.im/OneScriptDB/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
