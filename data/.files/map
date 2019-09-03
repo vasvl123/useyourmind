@@ -1,17 +1,17 @@
 И	У	З	Корень	Д	8	А	3
-И	script	З	#x9#x9#x9import * as THREE from '/resource/tree/three.module.js';#xA#x9#x9#x9import { GUI } from '/resource/tree/dat.gui.module.js';#xA#x9#x9#x9import { MapControls } from '/resource/tree/OrbitControls.js';#xA#x9#x9#x9var camera, controls, scene, renderer;#xA#x9#x9#x9init();#xA#x9#x9#x9//render(); // remove when using next line for animation loop (requestAnimationFrame)#xA#x9#x9#x9animate();#xA#x9#x9#x9function init() {#xA#x9#x9#x9#x9scene = new THREE.Scene();#xA#x9#x9#x9#x9scene.background = new THREE.Color( 0xcccccc );#xA#x9#x9#x9#x9scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );#xA#x9#x9#x9#x9renderer = new THREE.WebGLRenderer( { antialias: true } );#xA#x9#x9#x9#x9renderer.setPixelRatio( window.devicePixelRatio );#xA#x9#x9#x9#x9var r = document.getElementById("tree"); console.log(r);#xA#x9#x9#x9#x9renderer.setSize( r.clientWidth, r.clientWidth/1.5 );#xA#x9#x9#x9#x9r.appendChild( renderer.domElement );#xA#x9#x9#x9#x9camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );#xA#x9#x9#x9#x9camera.position.set( 400, 200, 0 );#xA#x9#x9#x9#x9// controls#xA#x9#x9#x9#x9controls = new MapControls( camera, renderer.domElement );#xA#x9#x9#x9#x9//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)#xA#x9#x9#x9#x9controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled#xA#x9#x9#x9#x9controls.dampingFactor = 0.05;#xA#x9#x9#x9#x9controls.screenSpacePanning = false;#xA#x9#x9#x9#x9controls.minDistance = 100;#xA#x9#x9#x9#x9controls.maxDistance = 500;#xA#x9#x9#x9#x9controls.maxPolarAngle = Math.PI / 2;#xA#x9#x9#x9#x9// world#xA#x9#x9#x9#x9var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );#xA#x9#x9#x9#x9geometry.translate( 0, 0.5, 0 );#xA#x9#x9#x9#x9var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );#xA#x9#x9#x9#x9for ( var i = 0; i < 500; i ++ ) {#xA#x9#x9#x9#x9#x9var mesh = new THREE.Mesh( geometry, material );#xA#x9#x9#x9#x9#x9mesh.position.x = Math.random() * 1600 - 800;#xA#x9#x9#x9#x9#x9mesh.position.y = 0;#xA#x9#x9#x9#x9#x9mesh.position.z = Math.random() * 1600 - 800;#xA#x9#x9#x9#x9#x9mesh.scale.x = 20;#xA#x9#x9#x9#x9#x9mesh.scale.y = Math.random() * 80 + 10;#xA#x9#x9#x9#x9#x9mesh.scale.z = 20;#xA#x9#x9#x9#x9#x9mesh.updateMatrix();#xA#x9#x9#x9#x9#x9mesh.matrixAutoUpdate = false;#xA#x9#x9#x9#x9#x9scene.add( mesh );#xA#x9#x9#x9#x9}#xA#x9#x9#x9#x9// lights#xA#x9#x9#x9#x9var light = new THREE.DirectionalLight( 0xffffff );#xA#x9#x9#x9#x9light.position.set( 1, 1, 1 );#xA#x9#x9#x9#x9scene.add( light );#xA#x9#x9#x9#x9var light = new THREE.DirectionalLight( 0x002288 );#xA#x9#x9#x9#x9light.position.set( - 1, - 1, - 1 );#xA#x9#x9#x9#x9scene.add( light );#xA#x9#x9#x9#x9var light = new THREE.AmbientLight( 0x222222 );#xA#x9#x9#x9#x9scene.add( light );#xA#x9#x9#x9#x9//#xA#x9#x9#x9#x9window.addEventListener( 'resize', onWindowResize, false );#xA#x9#x9#x9#x9var gui = new GUI();#xA#x9#x9#x9#x9gui.add( controls, 'screenSpacePanning' );#xA#x9#x9#x9}#xA#x9#x9#x9function onWindowResize() {#xA#x9#x9#x9#x9camera.aspect = window.innerWidth / window.innerHeight;#xA#x9#x9#x9#x9camera.updateProjectionMatrix();#xA#x9#x9#x9#x9renderer.setSize( r.clientWidth, r.clientWidth/1.5 );#xA#x9#x9#x9#x9//renderer.setSize( window.innerWidth, window.innerHeight );#xA#x9#x9#x9}#xA#x9#x9#x9function animate() {#xA#x9#x9#x9#x9requestAnimationFrame( animate );#xA#x9#x9#x9#x9controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true#xA#x9#x9#x9#x9render();#xA#x9#x9#x9}#xA#x9#x9#x9function render() {#xA#x9#x9#x9#x9renderer.render( scene, camera );#xA#x9#x9#x9}	А	13
+
 И	Показать	З	Да
 И	DIV	А	5	Д	8
 И	class	З	row justify-content-center
 И	DIV	А	7	Д	8
 И	class	З	col-md-7
-И	DIV	А	14	Д	2
+И	iframe	А	14
 
 И	DIV	А	12	Д	2
 И	class	З	card p-4
 И	id	З	tree	С	11
-И	type	З	module
-И	id	З	tree
+
+И	src	З	/resource/tree.html
 
 
 
