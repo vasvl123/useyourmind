@@ -7,7 +7,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>tree</title>
-<body style="margin:0">
+<link rel="stylesheet" type="text/css" href="./tree.css">
+</head>
+<body>
     <div id="tree"><script type="module">
       import * as THREE from './tree/three.module.js';
 			import { GUI } from './tree/dat.gui.module.js';
@@ -22,12 +24,10 @@
 				scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
-        // var hw = window.parent.iframehw(document);
-        // var windowinnerWidth = hw[0];
-        // var windowinnerHeight = hw[1];
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        var windowinnerHeight = window.parent.iframeh(document);
+        renderer.setSize( window.innerWidth, windowinnerHeight );
         document.body.appendChild( renderer.domElement );
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / windowinnerHeight, 1, 1000 );
 				camera.position.set( 400, 200, 0 );
 				// controls
 				controls = new MapControls( camera, renderer.domElement );
@@ -74,7 +74,7 @@
         // var windowinnerHeight = hw[1];
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				//renderer.setSize( window.innerWidth, window.innerHeight );
 				render();
 			}
 			function animate() {

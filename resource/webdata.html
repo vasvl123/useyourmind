@@ -48,9 +48,7 @@
 
   <div class="app-body">
     <main class="main">
-      <div class="container-fluid my-4">
-        .ПараметрТекстСтраницы
-      </div>
+      .ПараметрТекстСтраницы
     </main>
   </div>
 
@@ -62,6 +60,22 @@
   <div id="status">
   </div>
   </footer>
+
+  <script>
+    function iframeh(d) {
+      var i, frames;
+      frames = document.getElementsByTagName("iframe");
+      for (i = 0; i < frames.length; ++i)
+      {
+        if (frames[i].contentWindow.document === d) {
+          var f = document.getElementsByTagName("footer");
+          var h = f[0].offsetTop - frames[i].offsetTop;
+          frames[i].height = h;
+          return h;
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
