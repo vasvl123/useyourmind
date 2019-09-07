@@ -1,0 +1,50 @@
+И	У	З	Корень	Д	8	А	3
+
+И	Показать	З	Да
+И	DIV	А	5	Д	8
+И	class	З	row justify-content-center
+И	DIV	А	7	Д	8
+И	class	З	col-md-7
+И	iframe	А	14
+
+И	DIV	А	12	Д	2
+И	class	З	card p-4
+И	id	З	tree	С	11
+
+И	src	З	/resource/tree.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
