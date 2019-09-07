@@ -399,6 +399,7 @@ function iframeh(d) {
       var f = document.getElementsByTagName("footer");
       var h = f[0].offsetTop - frames[i].offsetTop;
       frames[i].height = h;
+      frames[i].style.display = 'block';
       return h;
     }
   }
