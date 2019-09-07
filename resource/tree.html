@@ -11,25 +11,35 @@
 </head>
 <body>
     <div id="tree"><script type="module">
+
       import * as THREE from './tree/three.module.js';
 			import { GUI } from './tree/dat.gui.module.js';
 			import { MapControls } from './tree/OrbitControls.js';
-			var camera, controls, scene, renderer;
-			init();
+		  import { DragControls } from './tree/DragControls.js';
+
+      var camera, controls, scene, renderer;
+      var objects = [];
+
+      init();
 			render(); // remove when using next line for animation loop (requestAnimationFrame)
 			//animate();
-			function init() {
-				scene = new THREE.Scene();
+
+      function init() {
+
+        scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xcccccc );
 				scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
         var windowinnerHeight = window.parent.iframeh(document);
         renderer.setSize( window.innerWidth, windowinnerHeight );
         document.body.appendChild( renderer.domElement );
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / windowinnerHeight, 1, 1000 );
+
+        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / windowinnerHeight, 1, 1000 );
 				camera.position.set( 400, 200, 0 );
-				// controls
+
+        // controls
 				controls = new MapControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 				//controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
@@ -38,10 +48,12 @@
 				controls.minDistance = 100;
 				controls.maxDistance = 500;
 				controls.maxPolarAngle = Math.PI / 2;
-				// world
+
+        // world
 				var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
 				geometry.translate( 0, 0.5, 0 );
-				var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
+
+        var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
 				for ( var i = 0; i < 500; i ++ ) {
 					var mesh = new THREE.Mesh( geometry, material );
 					mesh.position.x = Math.random() * 1600 - 800;
@@ -50,11 +62,13 @@
 					mesh.scale.x = 20;
 					mesh.scale.y = Math.random() * 80 + 10;
 					mesh.scale.z = 20;
-					mesh.updateMatrix();
-					mesh.matrixAutoUpdate = false;
+					//mesh.updateMatrix();
+					//mesh.matrixAutoUpdate = false;
 					scene.add( mesh );
+          objects.push( mesh );
 				}
-				// lights
+
+        // lights
 				var light = new THREE.DirectionalLight( 0xffffff );
 				light.position.set( 1, 1, 1 );
 				scene.add( light );
@@ -63,26 +77,52 @@
 				scene.add( light );
 				var light = new THREE.AmbientLight( 0x222222 );
 				scene.add( light );
-				//
+
+        //
 				window.addEventListener( 'resize', onWindowResize, false );
-				var gui = new GUI();
+
+        // you may also want to add an mouse move event listener to render when moving objects
+        renderer.domElement.addEventListener("mousemove", function() {
+            renderer.render(scene, camera)
+        });
+
+        var gui = new GUI();
 				gui.add( controls, 'screenSpacePanning' );
+
+        var dragControls = new DragControls( objects, camera, renderer.domElement );
+        dragControls.addEventListener( 'dragstart', function () {
+					controls.enabled = false;
+				} );
+				dragControls.addEventListener( 'dragend', function () {
+					controls.enabled = true;
+				} );
+        dragControls.addEventListener( 'hoveron', function ( event ) {
+          event.object.material = new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } );
+				} );
+        dragControls.addEventListener( 'hoveroff', function ( event ) {
+          event.object.material = material;
+				} );
+
 			}
-			function onWindowResize() {
+
+      function onWindowResize() {
         var windowinnerHeight = window.parent.iframeh(document);
 				camera.aspect = window.innerWidth / windowinnerHeight;
 				camera.updateProjectionMatrix();
 				renderer.setSize( window.innerWidth, windowinnerHeight );
 				render();
 			}
-			function animate() {
+
+      function animate() {
 				requestAnimationFrame( animate );
 				controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
 				render();
 			}
-			function render() {
+
+      function render() {
 				renderer.render( scene, camera );
 			}
+
     </script>
   </div>
 
