@@ -69,12 +69,10 @@
 				gui.add( controls, 'screenSpacePanning' );
 			}
 			function onWindowResize() {
-        // var hw = window.parent.iframehw(document);
-        // var windowinnerWidth = hw[0];
-        // var windowinnerHeight = hw[1];
-				camera.aspect = window.innerWidth / window.innerHeight;
+        var windowinnerHeight = window.parent.iframeh(document);
+				camera.aspect = window.innerWidth / windowinnerHeight;
 				camera.updateProjectionMatrix();
-				//renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth, windowinnerHeight );
 				render();
 			}
 			function animate() {
