@@ -405,6 +405,22 @@ function iframeh(d) {
   }
 }
 
+function updifrm(oid,p) {
+  var ot = oid.slice(4,oid.indexOf('_'));
+  frames = document.getElementsByTagName("iframe");
+  for (i = 0; i < frames.length; ++i) {
+    var ft = frames[i].id;
+    ft = ft.slice(4,ft.indexOf('_'));
+    if (ft == ot) {
+      if (frames[i].contentWindow.upd) {
+        frames[i].contentWindow.upd(p);
+      } else {
+        setTimeout(function(){updifrm(oid,p)},500);
+      }
+    }
+  }
+}
+
 function scrolled(){
   return (window.pageYOffset || document.documentElement.scrollTop);
 }

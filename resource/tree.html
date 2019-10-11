@@ -17,7 +17,7 @@
 			import { MapControls } from './tree/OrbitControls.js';
 		  import { DragControls } from './tree/DragControls.js';
 
-      var camera, controls, scene, renderer;
+      var camera, controls, scene, renderer, geometry, material;
       var objects = [];
 
       init();
@@ -50,26 +50,26 @@
 				controls.maxPolarAngle = Math.PI / 2;
 
         // world
-				var geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
+				geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
 				geometry.translate( 0, 0.5, 0 );
 
         //var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
         //var material = new THREE.LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
 
-        for ( var i = 0; i < 500; i ++ ) {
-          var material = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff, transparent: true, opacity: 0.4});
-					var mesh = new THREE.Mesh( geometry, material ); //LineSegments
-					mesh.position.x = Math.random() * 1600 - 800;
-					mesh.position.y = 0;
-					mesh.position.z = Math.random() * 1600 - 800;
-					mesh.scale.x = 20;
-					mesh.scale.y = Math.random() * 80 + 10;
-					mesh.scale.z = 20;
-					//mesh.updateMatrix();
-					//mesh.matrixAutoUpdate = false;
-					scene.add( mesh );
-          objects.push( mesh );
-				}
+        // for ( var i = 0; i < 500; i ++ ) {
+        //   var material = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff, transparent: true, opacity: 0.4});
+				// 	var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+				// 	mesh.position.x = Math.random() * 1600 - 800;
+				// 	mesh.position.y = 0;
+				// 	mesh.position.z = Math.random() * 1600 - 800;
+				// 	mesh.scale.x = 20;
+				// 	mesh.scale.y = Math.random() * 80 + 10;
+				// 	mesh.scale.z = 20;
+				// 	//mesh.updateMatrix();
+				// 	//mesh.matrixAutoUpdate = false;
+				// 	scene.add( mesh );
+        //   objects.push( mesh );
+				// }
 
         // lights
 				var light = new THREE.DirectionalLight( 0xffffff );
@@ -100,6 +100,7 @@
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
+          material = event.object.material;
           event.object.material = new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } );
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
@@ -107,6 +108,22 @@
 				} );
 
 			}
+
+      window.upd = function(p) {
+        material = new THREE.MeshBasicMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
+				var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+				mesh.position.x = p.position_x;
+				mesh.position.y = p.position_y;
+				mesh.position.z = p.position_z;
+				mesh.scale.x = p.scale_x;
+				mesh.scale.y = p.scale_y;
+				mesh.scale.z = p.scale_z;
+				//mesh.updateMatrix();
+				//mesh.matrixAutoUpdate = false;
+				scene.add( mesh );
+        objects.push( mesh );
+        render();
+      }
 
       function onWindowResize() {
         var windowinnerHeight = window.parent.iframeh(document);
