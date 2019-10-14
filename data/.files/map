@@ -6,21 +6,21 @@
 И	DIV	А	7	Д	8
 И	class	З	col-md-7
 И	iframe	А	14	С	2
-И	Тип	З	Объекты.Кубик	С	13
+И	Тип	З	Объекты.Кубик
 И	DIV	А	12	Д	2
 И	class	З	card p-4
 И	id	З	tree	С	11
-И	Свойства	Д	15
+
 И	src	З	/resource/tree.html
-И	color	З	0x111111	С	16
-И	transparent	З	true	С	17
-И	opacity	З	0.5	С	18
-И	position_x	З	0	С	19
-И	position_y	З	0	С	20
-И	position_z	З	0	С	21
-И	scale_x	З	20	С	22
-И	scale_y	З	50	С	23
-И	scale_z	З	20
+
+
+
+
+
+
+
+
+
 
 
 

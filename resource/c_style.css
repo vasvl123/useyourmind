@@ -117,3 +117,22 @@ iframe {
 	display: none;
 	overflow: auto;
 }
+
+.aside-menu {
+	padding-top: 1rem;
+	padding-right: 2rem;
+	padding-left: 0.5rem;
+	padding-bottom: 2.5rem;
+  z-index: 1019;
+  width: 250px;
+  color: #f3f4f5;
+  background: #2f353a;
+  border-left: 1px solid #23282c;
+	overflow-y: scroll;
+	display: flex;
+	opacity: .9;
+}
+
+aside ul {
+	padding-left: 0;
+}

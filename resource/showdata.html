@@ -92,12 +92,16 @@
 
   </div>
 
+  <div id='insert'></div>
+  <div id='notifies'></div>
+  <div id='designmenu'></div>
+  <div id='mainmenu'></div>
+
 </main>
 
-<div id='insert'></div>
-<div id='notifies'></div>
-<div id='designmenu'></div>
-<div id='mainmenu'></div>
+<aside class="aside-menu">
+  <div id='prop'></div>
+</aside>
 
 </div>
 <!--/ОбластьПанельМенюОкно-->
@@ -188,7 +192,7 @@
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow .ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
@@ -385,7 +389,7 @@ var designnode;
 var ypos;
 var xpos;
 var procid='.ПараметрИдПроцесса';
-var tab,datatab,wintab;
+var tab,datatab,wintab,proptab;
 var btncmd='tabselect';
 var mode='';
 var seq=new Array();
@@ -501,6 +505,16 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     }
     wintab=p_tab;
   }
+  if (proptab) {
+    proptab.hide();
+  }
+  if (p_tabtype=="prop") {
+    t.show();
+    $("body").addClass("aside-menu-show");
+    proptab=t;
+  } else {
+    $("body").removeClass("aside-menu-show");
+  }
   tab=p_tab;
 }
 
@@ -585,7 +599,6 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <script src=".ПараметрХост/resource/popper.min.js"></script>
 <script src=".ПараметрХост/resource/bootstrap.min.js"></script>
 <script src=".ПараметрХост/resource/jquery-ui.min.js"></script>
-
 <script src=".ПараметрХост/resource/coreui.min.js"></script>
 
 </body>

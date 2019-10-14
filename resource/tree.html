@@ -17,7 +17,7 @@
 			import { MapControls } from './tree/OrbitControls.js';
 		  import { DragControls } from './tree/DragControls.js';
 
-      var camera, controls, scene, renderer, geometry, material;
+      var camera, controls, scene, renderer, geometry, material, sel_material;
       var objects = [];
 
       init();
@@ -52,6 +52,8 @@
         // world
 				geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
 				geometry.translate( 0, 0.5, 0 );
+
+        sel_material = new THREE.MeshLambertMaterial( { color: 0x55aaff } );
 
         //var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
         //var material = new THREE.LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
@@ -89,8 +91,8 @@
             renderer.render(scene, camera)
         });
 
-        var gui = new GUI();
-				gui.add( controls, 'screenSpacePanning' );
+        // var gui = new GUI();
+				// gui.add( controls, 'screenSpacePanning' );
 
         var dragControls = new DragControls( objects, camera, renderer.domElement );
         dragControls.addEventListener( 'dragstart', function () {
@@ -101,7 +103,7 @@
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
           material = event.object.material;
-          event.object.material = new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } );
+          event.object.material = sel_material;
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
           event.object.material = material;
@@ -109,19 +111,40 @@
 
 			}
 
+      function set_prop(o, p) {
+        if (p.type == 'box') {
+          o.pid = p.id;
+          o.material.color = new THREE.Color( p.color );
+          o.material.transparent = p.transparent;
+          o.material.opacity = p.opacity;
+          o.position.x = p.position_x;
+          o.position.y = p.position_y;
+          o.position.z = p.position_z;
+          o.scale.x = p.scale_x;
+          o.scale.y = p.scale_y;
+          o.scale.z = p.scale_z;
+        }
+      }
+
       window.upd = function(p) {
-        material = new THREE.MeshBasicMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
-				var mesh = new THREE.Mesh( geometry, material ); //LineSegments
-				mesh.position.x = p.position_x;
-				mesh.position.y = p.position_y;
-				mesh.position.z = p.position_z;
-				mesh.scale.x = p.scale_x;
-				mesh.scale.y = p.scale_y;
-				mesh.scale.z = p.scale_z;
-				//mesh.updateMatrix();
-				//mesh.matrixAutoUpdate = false;
-				scene.add( mesh );
-        objects.push( mesh );
+
+        objects.forEach(function(item) {
+          if (item.pid == p.id) { set_prop(item, p); p = undefined; }
+        });
+
+        if (p != undefined) {
+          if (p.type == 'box') {
+            material = new THREE.MeshLambertMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
+    				var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+
+            set_prop(mesh, p);
+    				//mesh.updateMatrix();
+    				//mesh.matrixAutoUpdate = false;
+    				scene.add( mesh );
+            objects.push( mesh );
+          }
+        }
+
         render();
       }
 
