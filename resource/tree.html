@@ -20,6 +20,9 @@
       var camera, controls, scene, renderer, geometry, material, sel_material;
       var objects = [];
 
+      var vertex = new THREE.Vector3();
+			var color = new THREE.Color();
+
       init();
 			render(); // remove when using next line for animation loop (requestAnimationFrame)
 			//animate();
@@ -52,6 +55,21 @@
         // world
 				geometry = new THREE.BoxBufferGeometry( 1, 1, 1 );
 				geometry.translate( 0, 0.5, 0 );
+
+        var ground = new THREE.Mesh(
+					new THREE.PlaneBufferGeometry( 2000, 2000 ),
+					new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false } )
+				);
+				ground.rotation.x = - Math.PI / 2;
+				ground.position.y = 0;
+				ground.receiveShadow = true;
+				scene.add( ground );
+
+        var grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
+				grid.material.opacity = 0.2;
+				grid.material.transparent = true;
+				grid.position.y = 0;
+				scene.add( grid );
 
         sel_material = new THREE.MeshLambertMaterial( { color: 0x55aaff } );
 
@@ -96,9 +114,10 @@
 
         var dragControls = new DragControls( objects, camera, renderer.domElement );
         dragControls.addEventListener( 'dragstart', function () {
-					controls.enabled = false;
+          controls.enabled = false;
 				} );
-				dragControls.addEventListener( 'dragend', function () {
+				dragControls.addEventListener( 'dragend', function ( event ) {
+          window.parent.showprop(event.object.pid, get_prop(event.object), document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
@@ -114,6 +133,7 @@
       function set_prop(o, p) {
         if (p.type == 'box') {
           o.pid = p.id;
+          o.ptype = p.type;
           o.material.color = new THREE.Color( p.color );
           o.material.transparent = p.transparent;
           o.material.opacity = p.opacity;
@@ -124,6 +144,23 @@
           o.scale.y = p.scale_y;
           o.scale.z = p.scale_z;
         }
+      }
+
+      function get_prop(o) {
+        var q = "";
+        if (o.ptype == 'box') {
+          q = "&id=" + o.pid +
+              "&color=" + o.material.color.getHex() +
+              "&transparent=" + o.material.transparent +
+              "&position_x=" + o.position.x +
+              "&opacity=" + o.material.opacity +
+              "&position_y=" + o.position.y +
+              "&scale_x=" + o.scale.x +
+              "&position_z=" + o.position.z +
+              "&scale_y=" + o.scale.y +
+              "&scale_z=" + o.scale.z;
+          }
+        return q;
       }
 
       window.upd = function(p) {
