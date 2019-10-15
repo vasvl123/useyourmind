@@ -192,7 +192,7 @@
 <!--/ОбластьУзел-->
 
 <!--ОбластьКнопкаИмяЗначение-->
-<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow .ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+<button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
 
 <!--ОбластьКнопкаУзел-->
@@ -425,7 +425,7 @@ function updifrm(oid,p) {
   }
 }
 
-function showprop(pid, p, d) {
+function nodeprop(pid, p, d) {
   var i, frames;
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i)
@@ -433,7 +433,7 @@ function showprop(pid, p, d) {
     if (frames[i].contentWindow.document === d) {
       var ft = frames[i].id;
       ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + pid + "&cmd=setprop&prop=" + encodeURIComponent(p);
+      q = "nodeid=" + ft + "_" + pid + "&cmd=nodeprop&prop=" + encodeURIComponent(p);
       seq_add(q);
     }
   }

@@ -117,7 +117,7 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.showprop(event.object.pid, get_prop(event.object), document);
+          window.parent.nodeprop(event.object.pid, get_prop(event.object), document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
@@ -149,8 +149,7 @@
       function get_prop(o) {
         var q = "";
         if (o.ptype == 'box') {
-          q = "&id=" + o.pid +
-              "&color=" + o.material.color.getHex() +
+          q = "color=" + o.material.color.getHexString() +
               "&transparent=" + o.material.transparent +
               "&position_x=" + o.position.x +
               "&opacity=" + o.material.opacity +
