@@ -31,7 +31,7 @@
 
         scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xcccccc );
-				scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+				scene.fog = new THREE.FogExp2( 0xcccccc, 0.001 );
 
         renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -149,15 +149,9 @@
       function get_prop(o) {
         var q = "";
         if (o.ptype == 'box') {
-          q = "color=" + o.material.color.getHexString() +
-              "&transparent=" + o.material.transparent +
-              "&position_x=" + o.position.x +
-              "&opacity=" + o.material.opacity +
-              "&position_y=" + o.position.y +
-              "&scale_x=" + o.scale.x +
-              "&position_z=" + o.position.z +
-              "&scale_y=" + o.scale.y +
-              "&scale_z=" + o.scale.z;
+          q = "position_x=" + o.position.round().x +
+              "&position_y=" + o.position.round().y +
+              "&position_z=" + o.position.round().z;
           }
         return q;
       }

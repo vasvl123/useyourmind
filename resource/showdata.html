@@ -36,6 +36,14 @@
   <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
 
+  <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
 </header>
 
 <div class="app-body">
@@ -389,7 +397,7 @@ var designnode;
 var ypos;
 var xpos;
 var procid='.ПараметрИдПроцесса';
-var tab,datatab,wintab,proptab;
+var tab,datatab,wintab;
 var btncmd='tabselect';
 var mode='';
 var seq=new Array();
@@ -498,7 +506,12 @@ function seq_sendcmd(){
 }
 
 function newtab(ntab,tabtype,nodeid){
-  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+  if (tabtype == "prop") {
+    $('#'+tabtype).append('<div id='+ntab+'_0"><div id='+ntab+'_'+nodeid+' /></div>');
+    showprop(ntab+"_0");
+  } else {
+    $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+  }
 }
 
 function tabselect(p_tabtype,p_tab,p_scroll){
@@ -519,17 +532,18 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     }
     wintab=p_tab;
   }
-  if (proptab) {
-    proptab.hide();
-  }
   if (p_tabtype=="prop") {
-    t.show();
-    $("body").addClass("aside-menu-show");
-    proptab=t;
   } else {
-    $("body").removeClass("aside-menu-show");
+    //$("body").removeClass("aside-menu-show");
+    tab=p_tab;
   }
-  tab=p_tab;
+}
+
+function showprop(p_tab) {
+  $("body").addClass("aside-menu-show");
+  var t = $("#"+p_tab);
+  var a = $("aside");
+  a.scrollTop(a.scrollTop()+t.position().top);
 }
 
 function loadmenu(event,cmd){
