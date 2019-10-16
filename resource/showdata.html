@@ -205,7 +205,7 @@
 
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'>
-  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 </div>
 <!--/ОбластьКнопкаУзел-->
 
@@ -433,7 +433,7 @@ function updifrm(oid,p) {
   }
 }
 
-function nodeprop(pid, p, d) {
+function nodeprop(pid, p, s, d) {
   var i, frames;
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i)
@@ -441,7 +441,7 @@ function nodeprop(pid, p, d) {
     if (frames[i].contentWindow.document === d) {
       var ft = frames[i].id;
       ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + pid + "&cmd=nodeprop&prop=" + encodeURIComponent(p);
+      q = "nodeid=" + ft + "_" + pid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
       seq_add(q);
     }
   }
@@ -507,8 +507,8 @@ function seq_sendcmd(){
 
 function newtab(ntab,tabtype,nodeid){
   if (tabtype == "prop") {
-    $('#'+tabtype).append('<div id='+ntab+'_0"><div id='+ntab+'_'+nodeid+' /></div>');
-    showprop(ntab+"_0");
+    $('#'+tabtype).append('<div id='+ntab+'_0><div id='+ntab+'_'+nodeid+' /></div>');
+    showprop("#"+ntab+"_0");
   } else {
     $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
   }
@@ -532,16 +532,12 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     }
     wintab=p_tab;
   }
-  if (p_tabtype=="prop") {
-  } else {
-    //$("body").removeClass("aside-menu-show");
-    tab=p_tab;
-  }
+  tab=p_tab;
 }
 
-function showprop(p_tab) {
+function showprop(ntab) {
   $("body").addClass("aside-menu-show");
-  var t = $("#"+p_tab);
+  var t = $(ntab);
   var a = $("aside");
   a.scrollTop(a.scrollTop()+t.position().top);
 }

@@ -17,10 +17,9 @@
 			import { MapControls } from './tree/OrbitControls.js';
 		  import { DragControls } from './tree/DragControls.js';
 
-      var camera, controls, scene, renderer, geometry, material, sel_material;
+      var camera, controls, scene, renderer, geometry, color;
       var objects = [];
 
-      var vertex = new THREE.Vector3();
 			var color = new THREE.Color();
 
       init();
@@ -71,26 +70,6 @@
 				grid.position.y = 0;
 				scene.add( grid );
 
-        sel_material = new THREE.MeshLambertMaterial( { color: 0x55aaff } );
-
-        //var material = new THREE.MeshPhongMaterial( { color: 0xffffff, flatShading: true } );
-        //var material = new THREE.LineBasicMaterial( { color: 0xffffff, transparent: true, opacity: 0.5 } );
-
-        // for ( var i = 0; i < 500; i ++ ) {
-        //   var material = new THREE.MeshBasicMaterial({color: Math.random() * 0xffffff, transparent: true, opacity: 0.4});
-				// 	var mesh = new THREE.Mesh( geometry, material ); //LineSegments
-				// 	mesh.position.x = Math.random() * 1600 - 800;
-				// 	mesh.position.y = 0;
-				// 	mesh.position.z = Math.random() * 1600 - 800;
-				// 	mesh.scale.x = 20;
-				// 	mesh.scale.y = Math.random() * 80 + 10;
-				// 	mesh.scale.z = 20;
-				// 	//mesh.updateMatrix();
-				// 	//mesh.matrixAutoUpdate = false;
-				// 	scene.add( mesh );
-        //   objects.push( mesh );
-				// }
-
         // lights
 				var light = new THREE.DirectionalLight( 0xffffff );
 				light.position.set( 1, 1, 1 );
@@ -117,15 +96,15 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.pid, get_prop(event.object), document);
+          window.parent.nodeprop(event.object.pid, get_prop(event.object), 'true', document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
-          material = event.object.material;
-          event.object.material = sel_material;
+          color = event.object.material.color;
+          event.object.material.color = new THREE.Color( 0xff0000 );
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
-          event.object.material = material;
+          event.object.material.color = color;
 				} );
 
 			}
@@ -164,7 +143,7 @@
 
         if (p != undefined) {
           if (p.type == 'box') {
-            material = new THREE.MeshLambertMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
+            var material = new THREE.MeshLambertMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
     				var mesh = new THREE.Mesh( geometry, material ); //LineSegments
 
             set_prop(mesh, p);
