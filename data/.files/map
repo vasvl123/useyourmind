@@ -9,42 +9,6 @@
 И	Тип	З	Объекты.Кубик
 И	DIV	А	12	Д	2
 И	class	З	card p-4
-И	id	З	tree	С	11
+И	id	З	three	С	11
 
-И	src	З	/resource/tree.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+И	src	З	/resource/three.html
