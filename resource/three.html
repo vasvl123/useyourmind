@@ -17,8 +17,10 @@
 			import { MapControls } from './three/OrbitControls.js';
 		  import { DragControls } from './three/DragControls.js';
 
-      var camera, controls, scene, renderer, geometry, color;
+      var camera, controls, scene, renderer, geometry;
+      var ttip, color, obj;
       var objects = [];
+      var posx, posy;
 
 			var color = new THREE.Color();
 
@@ -84,8 +86,8 @@
 				window.addEventListener( 'resize', onWindowResize, false );
 
         // you may also want to add an mouse move event listener to render when moving objects
-        renderer.domElement.addEventListener("mousemove", function() {
-            renderer.render(scene, camera)
+        renderer.domElement.addEventListener("mousemove", function( event ) {
+          mmove(event);
         });
 
         // var gui = new GUI();
@@ -93,6 +95,10 @@
 
         var dragControls = new DragControls( objects, camera, renderer.domElement );
         dragControls.addEventListener( 'dragstart', function () {
+          if (ttip) {
+            ttip.remove();
+            ttip = undefined;
+          }
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
@@ -100,12 +106,27 @@
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
+          if (obj) {
+            obj.material.color = color;
+          }
           color = event.object.material.color;
-          event.object.material.color = new THREE.Color( 0xff0000 );
+          obj = event.object;
+          if (ttip) {
+            ttip.remove();
+          }
+          ttip=window.parent.showtip(posx, posy, obj.pname);
+          obj.material.color = new THREE.Color( 0xff0000 );
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
-          event.object.material.color = color;
-				} );
+          if (obj) {
+            obj.material.color = color;
+            obj = undefined;
+          }
+          if (ttip) {
+            ttip.remove();
+            ttip = undefined;
+          }
+			} );
 
 			}
 
@@ -113,6 +134,7 @@
         if (p.type == 'box') {
           o.pid = p.id;
           o.ptype = p.type;
+          o.pname = p.name;
           o.material.color = new THREE.Color( p.color );
           o.material.transparent = p.transparent;
           o.material.opacity = p.opacity;
@@ -155,6 +177,12 @@
         }
 
         render();
+      }
+
+      function mmove(event) {
+        posx = event.clientX;
+        posy = event.clientY;
+        renderer.render(scene, camera);
       }
 
       function onWindowResize() {

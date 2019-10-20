@@ -18,9 +18,9 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
+  <!-- <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
     <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-  </a>
+  </a> -->
 
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
     <span class="navbar-toggler-icon"></span>
@@ -95,7 +95,7 @@
 
   <div class="container-fluid">
 
-    <div id='data' class="my-4"></div>
+    <div id='data'></div>
     <div id='win'></div>
 
   </div>
@@ -104,6 +104,13 @@
   <div id='notifies'></div>
   <div id='designmenu'></div>
   <div id='mainmenu'></div>
+
+  <div class="copyright">
+    <span>Powered by </span>
+    <a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
+    </div>
+    <div id="status">
+  </div>
 
 </main>
 
@@ -391,13 +398,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьСтатус-->
 
 <!--ОбластьПодвал-->
-<footer class="app-footer">
-<div>
-<a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-<span>© 2019 Vladimir Vasiliev.</span>
-</div>
-<div id="status">
-</div>
+<footer>
 </footer>
 
 <script src=".ПараметрХост/resource/jquery.min.js"></script>
@@ -428,6 +429,7 @@ function iframeh(d) {
 
 function updifrm(oid,p) {
   var ot = oid.slice(0,oid.indexOf('_'));
+  $("#"+ot+"_0").removeClass("my-4");
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i) {
     var ft = frames[i].id;
@@ -456,7 +458,12 @@ function nodeprop(pid, p, s, d) {
   }
 }
 
-function scrolled(){
+function showtip(xpos, ypos, tip) {
+  var tt = $('#mainmenu').append('<div class="badge badge-dark" style="z-index:1060; position:absolute; display: block; top:'+(ypos+25)+'px; left:'+(xpos+10)+'px;">'+tip+'</div>');
+  return tt[0].lastChild;
+}
+
+function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
@@ -519,7 +526,7 @@ function newtab(ntab,tabtype,nodeid){
     $('#'+tabtype).append('<div id='+ntab+'_0><div id='+ntab+'_'+nodeid+' /></div>');
     showprop("#"+ntab+"_0");
   } else {
-    $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+    $('#'+tabtype).append('<div id='+ntab+'_0 class="my-4" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
   }
 }
 
@@ -564,7 +571,7 @@ function handler(event) {
       var s=el.id.indexOf('_');
       if (s!=-1){
         var t=el.id.substring(0,s);
-        if (t!=tab) {
+        if (t!=tab&&t==datatab) {
           seq_add('tab='+t+'&cmd=tabselect');
           tabselect('data',t,scrolled());
         }

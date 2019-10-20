@@ -136,3 +136,9 @@ iframe {
 aside ul {
 	padding-left: 0;
 }
+
+.copyright {
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+}
