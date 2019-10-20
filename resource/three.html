@@ -102,7 +102,7 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.pid, get_prop(event.object), 'true', document);
+          window.parent.nodeprop(event.object.pfid, get_prop(event.object), 'true', document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
@@ -133,6 +133,7 @@
       function set_prop(o, p) {
         if (p.type == 'box') {
           o.pid = p.id;
+          o.pfid = p.fid;
           o.ptype = p.type;
           o.pname = p.name;
           o.material.color = new THREE.Color( p.color );
