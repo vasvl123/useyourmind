@@ -221,7 +221,7 @@
 
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'>
-  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+  <button type="button" class="btn btn-node btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 </div>
 <!--/ОбластьКнопкаУзел-->
 
@@ -444,7 +444,7 @@ function updifrm(oid,p) {
   }
 }
 
-function nodeprop(pid, p, s, d) {
+function nodeprop(pid, pfid, p, s, d) {
   var i, frames;
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i)
@@ -452,7 +452,7 @@ function nodeprop(pid, p, s, d) {
     if (frames[i].contentWindow.document === d) {
       var ft = frames[i].id;
       ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + pid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
+      q = "nodeid=" + ft + "_" + pid + "&propid=" + pfid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
       seq_add(q);
     }
   }

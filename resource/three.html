@@ -102,7 +102,7 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.pfid, get_prop(event.object), 'true', document);
+          window.parent.nodeprop(event.object.pid, event.object.pfid, get_prop(event.object), 'true', document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {

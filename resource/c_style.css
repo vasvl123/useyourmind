@@ -28,6 +28,12 @@
 	color: white;
 }
 
+.btn-node {
+	color: #73818f;
+	height: 1.75rem;
+	width: 1.75rem;
+}
+
 .input-shadow {
   color: #fff;
   background-color: #3a4248;
