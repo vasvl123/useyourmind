@@ -22,11 +22,11 @@
     <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
   </a> -->
 
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" data-toggle="sidebar-show">
+  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -36,11 +36,7 @@
   <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
 
-  <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+  <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -551,6 +547,15 @@ function tabselect(p_tabtype,p_tab,p_scroll){
   tab=p_tab;
 }
 
+function btn_bar(cl) {
+  b = $("body");
+  if (b.hasClass(cl)) {
+    b.removeClass(cl);
+  } else {
+    b.addClass(cl);
+  }
+}
+
 function showprop(ntab) {
   $("body").addClass("aside-menu-show");
   var t = $(ntab);
@@ -636,10 +641,10 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
     };
 </script>
 
-<script src=".ПараметрХост/resource/popper.min.js"></script>
-<script src=".ПараметрХост/resource/bootstrap.min.js"></script>
-<script src=".ПараметрХост/resource/jquery-ui.min.js"></script>
-<script src=".ПараметрХост/resource/coreui.min.js"></script>
+<!-- <script src=".ПараметрХост/resource/popper.min.js"></script> -->
+<!-- <script src=".ПараметрХост/resource/bootstrap.min.js"></script> -->
+<!-- <script src=".ПараметрХост/resource/jquery-ui.min.js"></script> -->
+<!-- <script src=".ПараметрХост/resource/coreui.min.js"></script> -->
 
 </body>
 </html>
