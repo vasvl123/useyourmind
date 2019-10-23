@@ -20,7 +20,9 @@
       var camera, controls, scene, renderer, geometry;
       var ttip, color, obj;
       var objects = [];
-      var posx, posy;
+
+      var raycaster = new THREE.Raycaster();
+      var mouse = new THREE.Vector2();
 
 			var color = new THREE.Color();
 
@@ -48,7 +50,8 @@
 				controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 				//controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
 				//controls.dampingFactor = 0.05;
-				controls.screenSpacePanning = false;
+        controls.enableKeys = true;
+        controls.screenSpacePanning = false;
 				controls.minDistance = 100;
 				controls.maxDistance = 500;
 				controls.maxPolarAngle = Math.PI / 2;
@@ -83,7 +86,8 @@
 				scene.add( light );
 
         //
-				window.addEventListener( 'resize', onWindowResize, false );
+        window.addEventListener( 'resize', onWindowResize, false );
+        window.addEventListener( 'click', onClick, false );
 
         // you may also want to add an mouse move event listener to render when moving objects
         renderer.domElement.addEventListener("mousemove", function( event ) {
@@ -94,44 +98,21 @@
 				// gui.add( controls, 'screenSpacePanning' );
 
         var dragControls = new DragControls( objects, camera, renderer.domElement );
-        dragControls.addEventListener( 'dragstart', function () {
-          if (ttip) {
-            ttip.remove();
-            ttip = undefined;
-          }
+        dragControls.addEventListener( 'dragstart', function ( event ) {
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.pid, event.object.pfid, get_prop(event.object), 'true', document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
-          if (obj) {
-            obj.material.color = color;
-          }
-          color = event.object.material.color;
-          obj = event.object;
-          if (ttip) {
-            ttip.remove();
-          }
-          ttip=window.parent.showtip(posx, posy, obj.pname);
-          obj.material.color = new THREE.Color( 0xff0000 );
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
-          if (obj) {
-            obj.material.color = color;
-            obj = undefined;
-          }
-          if (ttip) {
-            ttip.remove();
-            ttip = undefined;
-          }
-			} );
+			  } );
 
 			}
 
       function set_prop(o, p) {
-        if (p.type == 'box') {
+        if (p.type == 'box' || p.type == 'room') {
           o.pid = p.id;
           o.pfid = p.fid;
           o.ptype = p.type;
@@ -150,29 +131,32 @@
 
       function get_prop(o) {
         var q = "";
-        if (o.ptype == 'box') {
-          q = "position_x=" + o.position.round().x +
-              "&position_y=" + o.position.round().y +
-              "&position_z=" + o.position.round().z;
-          }
+        q = "position_x=" + o.position.round().x +
+            "&position_y=" + o.position.round().y +
+            "&position_z=" + o.position.round().z;
         return q;
       }
 
       window.upd = function(p) {
 
-        objects.forEach(function(item) {
+        scene.children.forEach(function(item) {
           if (item.pid == p.id) { set_prop(item, p); p = undefined; }
         });
 
         if (p != undefined) {
           if (p.type == 'box') {
-            var material = new THREE.MeshLambertMaterial({color: p.color, transparent: p.transparent, opacity: p.opacity});
-    				var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+            var material = new THREE.MeshPhongMaterial();
+          }
+          if (p.type == 'room') {
+            var material = new THREE.MeshPhongMaterial({side: THREE.BackSide});
+            var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+          }
 
-            set_prop(mesh, p);
-    				//mesh.updateMatrix();
-    				//mesh.matrixAutoUpdate = false;
-    				scene.add( mesh );
+          set_prop(mesh, p);
+  				//mesh.updateMatrix();
+  				//mesh.matrixAutoUpdate = false;
+  				scene.add( mesh );
+          if (p.type != 'room') {
             objects.push( mesh );
           }
         }
@@ -181,9 +165,43 @@
       }
 
       function mmove(event) {
-        posx = event.clientX;
-        posy = event.clientY;
+
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+      	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+        raycaster.setFromCamera( mouse, camera );
+      	var intersects = raycaster.intersectObjects( scene.children );
+
+        var selobj = undefined;
+
+        if ( intersects.length > 0 ) {
+          selobj = intersects[ 0 ].object;
+        }
+        if ( selobj != obj ) {
+          if (obj) {
+            obj.material.color = color;
+            obj = undefined;
+            if (ttip) {
+              ttip.remove();
+            }
+          }
+          if (selobj) {
+            if (selobj.pname) {
+              obj = selobj;
+              color = obj.material.color;
+              ttip=window.parent.showtip(event.clientX, event.clientY, obj.pname);
+              obj.material.color = new THREE.Color( 0xff0000 );
+            }
+          }
+        }
+
         renderer.render(scene, camera);
+      }
+
+      function onClick (event) {
+        if (obj) {
+          window.parent.nodeprop(obj.pid, obj.pfid, get_prop(obj), 'true', document);
+        }
       }
 
       function onWindowResize() {
