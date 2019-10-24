@@ -1,5 +1,5 @@
 И	У	З	Корень	Д	8	А	3
-И	Объект	З	Терминал	А	9
+И	Объект	З	Терминал	А	9	Д	29
 И	Показать	З	Да
 И	DIV	А	5	Д	8
 И	class	З	row justify-content-center
@@ -13,15 +13,33 @@
 И	Свойства	Д	15
 И	src	З	/resource/three.html
 И	Тип	З	Комната	С	16
-И	Описание	З	Главный терминал аэропорта	С	17
+И	Описание	З	Комната	С	17
 И	Форма	Д	18
 И	type	З	'room'	С	19
-И	color	З	0x555555	С	20
-И	transparent	З	true	С	21
-И	opacity	З	0.3	С	22
-И	position_x	З	0	С	23
-И	position_y	З	0	С	24
-И	position_z	З	0	С	25
-И	scale_x	З	100	С	26
-И	scale_y	З	100	С	27
-И	scale_z	З	100
+И	movable	З	false	С	20
+И	color	З	0x555555	С	21
+И	transparent	З	true	С	22
+И	opacity	З	0.3	С	23
+И	position_x	З	0	С	24
+И	position_y	З	1	С	25
+И	position_z	З	0	С	26
+И	scale_x	З	1000	С	27
+И	scale_y	З	500	С	28
+И	scale_z	З	1000
+И	Объект	З	Кубик	А	30
+И	Тип	З	Объекты.Предмет	С	31
+И	Свойства	Д	32
+И	Тип	З	Предмет	С	33
+И	Описание	З	Предмет	С	34
+И	Форма	Д	35
+И	type	З	'box'	С	36
+И	movable	З	true	С	37
+И	color	З	0x555555	С	38
+И	transparent	З	true	С	39
+И	opacity	З	0.3	С	40
+И	position_x	З	0	С	41
+И	position_y	З	0	С	42
+И	position_z	З	0	С	43
+И	scale_x	З	20	С	44
+И	scale_y	З	10	С	45
+И	scale_z	З	20

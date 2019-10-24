@@ -24,7 +24,15 @@
       var raycaster = new THREE.Raycaster();
       var mouse = new THREE.Vector2();
 
-			var color = new THREE.Color();
+      var moveForward = false;
+			var moveBackward = false;
+			var moveLeft = false;
+			var moveRight = false;
+			var canJump = false;
+
+      var prevTime = performance.now();
+			var velocity = new THREE.Vector3();
+			var direction = new THREE.Vector3();
 
       init();
 			render(); // remove when using next line for animation loop (requestAnimationFrame)
@@ -50,7 +58,6 @@
 				controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 				//controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
 				//controls.dampingFactor = 0.05;
-        controls.enableKeys = true;
         controls.screenSpacePanning = false;
 				controls.minDistance = 100;
 				controls.maxDistance = 500;
@@ -109,14 +116,65 @@
         dragControls.addEventListener( 'hoveroff', function ( event ) {
 			  } );
 
+        var onKeyDown = function ( event ) {
+					switch ( event.keyCode ) {
+						case 38: // up
+						case 87: // w
+							moveForward = true;
+							break;
+						case 37: // left
+						case 65: // a
+							moveLeft = true;
+							break;
+						case 40: // down
+						case 83: // s
+							moveBackward = true;
+							break;
+						case 39: // right
+						case 68: // d
+							moveRight = true;
+							break;
+						case 32: // space
+							if ( canJump === true ) velocity.y += 350;
+							canJump = false;
+							break;
+					}
+          render();
+				};
+
+				var onKeyUp = function ( event ) {
+					switch ( event.keyCode ) {
+						case 38: // up
+						case 87: // w
+							moveForward = false;
+							break;
+						case 37: // left
+						case 65: // a
+							moveLeft = false;
+							break;
+						case 40: // down
+						case 83: // s
+							moveBackward = false;
+							break;
+						case 39: // right
+						case 68: // d
+							moveRight = false;
+							break;
+					}
+				};
+
+        window.parent.document.addEventListener( 'keydown', onKeyDown, false );
+				window.parent.document.addEventListener( 'keyup', onKeyUp, false );
+
 			}
 
       function set_prop(o, p) {
         if (p.type == 'box' || p.type == 'room') {
-          o.pid = p.id;
-          o.pfid = p.fid;
-          o.ptype = p.type;
-          o.pname = p.name;
+          o.p_id = p.id;
+          o.p_fid = p.fid;
+          o.p_type = p.type;
+          o.p_movable = p.movable;
+          o.p_name = p.name;
           o.material.color = new THREE.Color( p.color );
           o.material.transparent = p.transparent;
           o.material.opacity = p.opacity;
@@ -139,8 +197,10 @@
 
       window.upd = function(p) {
 
-        scene.children.forEach(function(item) {
-          if (item.pid == p.id) { set_prop(item, p); p = undefined; }
+        scene.children.forEach( function(item) {
+          if (p) {
+            if (item.p_id == p.id) { set_prop(item, p); p = undefined; }
+          }
         });
 
         if (p != undefined) {
@@ -149,16 +209,13 @@
           }
           if (p.type == 'room') {
             var material = new THREE.MeshPhongMaterial({side: THREE.BackSide});
-            var mesh = new THREE.Mesh( geometry, material ); //LineSegments
           }
 
+          var mesh = new THREE.Mesh( geometry, material ); //LineSegments
           set_prop(mesh, p);
   				//mesh.updateMatrix();
   				//mesh.matrixAutoUpdate = false;
   				scene.add( mesh );
-          if (p.type != 'room') {
-            objects.push( mesh );
-          }
         }
 
         render();
@@ -166,31 +223,37 @@
 
       function mmove(event) {
 
-        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-      	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        if (controls.enabled) {
 
-        raycaster.setFromCamera( mouse, camera );
-      	var intersects = raycaster.intersectObjects( scene.children );
+          mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
-        var selobj = undefined;
+          raycaster.setFromCamera( mouse, camera );
+        	var intersects = raycaster.intersectObjects( scene.children );
 
-        if ( intersects.length > 0 ) {
-          selobj = intersects[ 0 ].object;
-        }
-        if ( selobj != obj ) {
-          if (obj) {
-            obj.material.color = color;
-            obj = undefined;
-            if (ttip) {
-              ttip.remove();
-            }
+          var selobj = undefined;
+
+          if ( intersects.length > 0 ) {
+            selobj = intersects[ 0 ].object;
           }
-          if (selobj) {
-            if (selobj.pname) {
-              obj = selobj;
-              color = obj.material.color;
-              ttip=window.parent.showtip(event.clientX, event.clientY, obj.pname);
-              obj.material.color = new THREE.Color( 0xff0000 );
+          if ( selobj != obj ) {
+            if (obj) {
+              obj.material.color = color;
+              obj = undefined;
+              if (ttip) {
+                ttip.remove();
+              }
+            }
+            if (selobj) {
+              if (selobj.p_name) {
+                obj = selobj;
+                color = obj.material.color;
+                ttip=window.parent.showtip(event.clientX, event.clientY, obj.p_name);
+                obj.material.color = new THREE.Color( color );
+                obj.material.color.r += 0.5;
+                obj.material.color.g += 0.5;
+                obj.material.color.b += 0.5;
+              }
             }
           }
         }
@@ -200,7 +263,10 @@
 
       function onClick (event) {
         if (obj) {
-          window.parent.nodeprop(obj.pid, obj.pfid, get_prop(obj), 'true', document);
+          if (obj.p_movable) {
+            objects.push( obj );
+          }
+          window.parent.nodeprop(obj.p_id, obj.p_fid, get_prop(obj), 'true', document);
         }
       }
 
@@ -219,6 +285,37 @@
 			}
 
       function render() {
+
+        // raycaster.setFromCamera( mouse, camera );
+        // raycaster.ray.origin.y -= 10;
+        // var intersects = raycaster.intersectObjects( scene.children );
+        // var onObject = intersects.length > 0;
+        //
+        // var time = performance.now();
+        // var delta = ( time - prevTime ) / 1000;
+        // velocity.x -= velocity.x * 10.0 * delta;
+        // velocity.z -= velocity.z * 10.0 * delta;
+        // velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+        // direction.z = Number( moveForward ) - Number( moveBackward );
+        // direction.x = Number( moveRight ) - Number( moveLeft );
+        // direction.normalize(); // this ensures consistent movements in all directions
+        // if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
+        // if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
+        // if ( onObject === true ) {
+        //   velocity.y = Math.max( 0, velocity.y );
+        //   canJump = true;
+        // }
+        //
+        // controls.object.position.x += ( - velocity.x * delta );
+        // controls.object.position.z += ( - velocity.z * delta );
+        // controls.object.position.y += ( velocity.y * delta ); // new behavior
+        // if ( controls.object.position.y < 10 ) {
+        //   velocity.y = 0;
+        //   controls.object.position.y = 10;
+        //   canJump = true;
+        // }
+        // prevTime = time;
+
 				renderer.render( scene, camera );
 			}
 

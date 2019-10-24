@@ -440,7 +440,7 @@ function updifrm(oid,p) {
   }
 }
 
-function nodeprop(pid, pfid, p, s, d) {
+function nodeprop(p_id, p_fid, p, s, d) {
   var i, frames;
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i)
@@ -448,14 +448,14 @@ function nodeprop(pid, pfid, p, s, d) {
     if (frames[i].contentWindow.document === d) {
       var ft = frames[i].id;
       ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + pid + "&propid=" + pfid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
+      q = "nodeid=" + ft + "_" + p_id + "&propid=" + p_fid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
       seq_add(q);
     }
   }
 }
 
 function showtip(xpos, ypos, tip) {
-  var tt = $('#mainmenu').append('<div class="badge badge-dark" style="z-index:1060; position:absolute; display: block; top:'+(ypos+25)+'px; left:'+(xpos+10)+'px;">'+tip+'</div>');
+  var tt = $('#'+datatab+'_0').append('<div class="badge badge-dark" style="z-index:1060; position:absolute; display: block; top:'+(ypos+25)+'px; left:'+(xpos+10)+'px;">'+tip+'</div>');
   return tt[0].lastChild;
 }
 
@@ -631,10 +631,10 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
                 lText += "<p class='alert-heading'><b>"+aOptHeader+"</b></p>";
             }
             lText += "<p>"+aText+"</p>";
-            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' data-dismiss='alert'>&times;</button>"+lText+"</div>");
+            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' onClick='this.parentNode.remove();'>&times;</button>"+lText+"</div>");
 
             setTimeout(function () {
-                lNotify_e.alert('close');
+                lNotify_e.remove();
             }, 3500);
             lNotify_e.appendTo($("#notifies"));
         }
@@ -643,7 +643,7 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 
 <!-- <script src=".ПараметрХост/resource/popper.min.js"></script> -->
 <!-- <script src=".ПараметрХост/resource/bootstrap.min.js"></script> -->
-<!-- <script src=".ПараметрХост/resource/jquery-ui.min.js"></script> -->
+<script src=".ПараметрХост/resource/jquery-ui.min.js"></script>
 <!-- <script src=".ПараметрХост/resource/coreui.min.js"></script> -->
 
 </body>
