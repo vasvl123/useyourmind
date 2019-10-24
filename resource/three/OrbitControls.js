@@ -1150,6 +1150,12 @@ var OrbitControls = function ( object, domElement ) {
 
 	this.update();
 
+	this.go = function (lf,fv) {
+		pan(0,fv);
+		rotateLeft(lf);
+		scope.update();
+	}
+
 };
 
 OrbitControls.prototype = Object.create( EventDispatcher.prototype );

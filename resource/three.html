@@ -30,9 +30,10 @@
 			var moveRight = false;
 			var canJump = false;
 
-      var prevTime = performance.now();
+      var prevTime;
 			var velocity = new THREE.Vector3();
 			var direction = new THREE.Vector3();
+      var anim = false;
 
       init();
 			render(); // remove when using next line for animation loop (requestAnimationFrame)
@@ -138,8 +139,10 @@
 							if ( canJump === true ) velocity.y += 350;
 							canJump = false;
 							break;
-					}
-          render();
+            default:
+              return;
+			    }
+          start_anim();
 				};
 
 				var onKeyUp = function ( event ) {
@@ -160,7 +163,7 @@
 						case 68: // d
 							moveRight = false;
 							break;
-					}
+          }
 				};
 
         window.parent.document.addEventListener( 'keydown', onKeyDown, false );
@@ -278,44 +281,55 @@
 				render();
 			}
 
+      function start_anim() {
+        if (!anim) {
+          anim = true;
+          prevTime = performance.now();
+          requestAnimationFrame( animate );
+        }
+      }
+
       function animate() {
-				requestAnimationFrame( animate );
-				controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
-				render();
+        if (anim) {
+          if (!(moveForward||moveBackward||moveRight||moveLeft)) {
+            anim = false;
+            return;
+          }
+          raycaster.setFromCamera( mouse, camera );
+          raycaster.ray.origin.y -= 10;
+          var intersects = raycaster.intersectObjects( scene.children );
+          var onObject = intersects.length > 0;
+
+          var time = performance.now();
+          var delta = ( time - prevTime ) / 1000;
+          velocity.x -= velocity.x * 10.0 * delta;
+          velocity.z -= velocity.z * 10.0 * delta;
+          velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+          direction.z = Number( moveForward ) - Number( moveBackward );
+          direction.x = Number( moveRight ) - Number( moveLeft );
+          direction.normalize(); // this ensures consistent movements in all directions
+          if ( moveForward || moveBackward ) velocity.z -= direction.z * 4000.0 * delta;
+          if ( moveLeft || moveRight ) velocity.x -= direction.x * 40.0 * delta;
+          if ( onObject === true ) {
+            velocity.y = Math.max( 0, velocity.y );
+            canJump = true;
+          }
+          controls.go ( - velocity.x * delta, - velocity.z * delta );
+          controls.object.position.y += ( velocity.y * delta ); // new behavior
+          if ( controls.object.position.y < 10 ) {
+            velocity.y = 0;
+            controls.object.position.y = 10;
+            canJump = true;
+          }
+          prevTime = time;
+
+          requestAnimationFrame( animate );
+				//controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+  				render();
+        }
 			}
 
       function render() {
-
-        // raycaster.setFromCamera( mouse, camera );
-        // raycaster.ray.origin.y -= 10;
-        // var intersects = raycaster.intersectObjects( scene.children );
-        // var onObject = intersects.length > 0;
-        //
-        // var time = performance.now();
-        // var delta = ( time - prevTime ) / 1000;
-        // velocity.x -= velocity.x * 10.0 * delta;
-        // velocity.z -= velocity.z * 10.0 * delta;
-        // velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
-        // direction.z = Number( moveForward ) - Number( moveBackward );
-        // direction.x = Number( moveRight ) - Number( moveLeft );
-        // direction.normalize(); // this ensures consistent movements in all directions
-        // if ( moveForward || moveBackward ) velocity.z -= direction.z * 400.0 * delta;
-        // if ( moveLeft || moveRight ) velocity.x -= direction.x * 400.0 * delta;
-        // if ( onObject === true ) {
-        //   velocity.y = Math.max( 0, velocity.y );
-        //   canJump = true;
-        // }
-        //
-        // controls.object.position.x += ( - velocity.x * delta );
-        // controls.object.position.z += ( - velocity.z * delta );
-        // controls.object.position.y += ( velocity.y * delta ); // new behavior
-        // if ( controls.object.position.y < 10 ) {
-        //   velocity.y = 0;
-        //   controls.object.position.y = 10;
-        //   canJump = true;
-        // }
-        // prevTime = time;
-
 				renderer.render( scene, camera );
 			}
 
