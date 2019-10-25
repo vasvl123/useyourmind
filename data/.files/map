@@ -1,5 +1,5 @@
 И	У	З	Корень	Д	8	А	3
-И	Объект	З	Терминал	А	9	Д	29
+И	Объект	З	Терминал	А	9	Д	29	С	46
 И	Показать	З	Да
 И	DIV	А	5	Д	8
 И	class	З	row justify-content-center
@@ -15,31 +15,51 @@
 И	Тип	З	Комната	С	16
 И	Описание	З	Комната	С	17
 И	Форма	Д	18
-И	type	З	'room'	С	19
-И	movable	З	false	С	20
-И	color	З	0x555555	С	21
-И	transparent	З	true	С	22
-И	opacity	З	0.3	С	23
-И	position_x	З	0	С	24
-И	position_y	З	1	С	25
-И	position_z	З	0	С	26
-И	scale_x	З	1000	С	27
-И	scale_y	З	500	С	28
-И	scale_z	З	1000
+И	form	З	'box'	С	19
+И	role	З	'room'	С	20
+И	movable	З	false	С	21
+И	color	З	0x555555	С	22
+И	transparent	З	true	С	23
+И	opacity	З	0.3	С	24
+И	position_x	З	0	С	25
+И	position_y	З	-1	С	26
+И	position_z	З	0	С	27
+И	scale_x	З	20	С	28
+И	scale_y	З	20	С	31
 И	Объект	З	Кубик	А	30
-И	Тип	З	Объекты.Предмет	С	31
-И	Свойства	Д	32
-И	Тип	З	Предмет	С	33
-И	Описание	З	Предмет	С	34
-И	Форма	Д	35
-И	type	З	'box'	С	36
-И	movable	З	true	С	37
-И	color	З	0x555555	С	38
-И	transparent	З	true	С	39
-И	opacity	З	0.3	С	40
-И	position_x	З	0	С	41
-И	position_y	З	0	С	42
-И	position_z	З	0	С	43
-И	scale_x	З	20	С	44
-И	scale_y	З	10	С	45
+И	Тип	З	Объекты.Предмет	С	32
 И	scale_z	З	20
+И	Свойства	Д	33
+И	Тип	З	Предмет	С	34
+И	Описание	З	Предмет	С	35
+И	Форма	Д	36
+И	form	З	'box'	С	37
+И	role	З	'thing'	С	38
+И	movable	З	true	С	39
+И	color	З	0x555555	С	40
+И	transparent	З	true	С	41
+И	opacity	З	0.3	С	42
+И	position_x	З	0	С	43
+И	position_y	З	0	С	44
+И	position_z	З	0	С	45
+И	scale_x	З	2	С	48
+И	Объект	З	Игрок	А	47
+И	Тип	З	Объекты.Субъект	С	50
+И	scale_y	З	2	С	49
+И	scale_z	З	2
+И	Свойства	Д	51
+И	Тип	З	Субъект	С	52
+И	Описание	З	Субъект	С	53
+И	Форма	Д	54
+И	form	З	'box'	С	55
+И	role	З	'player'	С	56
+И	movable	З	true	С	57
+И	color	З	0x555555	С	58
+И	transparent	З	true	С	59
+И	opacity	З	0.3	С	60
+И	position_x	З	0	С	61
+И	position_y	З	0	С	62
+И	position_z	З	0	С	63
+И	scale_x	З	1	С	64
+И	scale_y	З	2	С	65
+И	scale_z	З	1
