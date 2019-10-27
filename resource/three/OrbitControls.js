@@ -1174,8 +1174,8 @@ var MapControls = function ( object, domElement ) {
 
 	OrbitControls.call( this, object, domElement );
 
-	this.mouseButtons.LEFT = MOUSE.PAN;
-	this.mouseButtons.RIGHT = MOUSE.ROTATE;
+	this.mouseButtons.LEFT = MOUSE.ROTATE;
+	this.mouseButtons.RIGHT = MOUSE.PAN;
 
 	this.touches.ONE = TOUCH.PAN;
 	this.touches.TWO = TOUCH.DOLLY_ROTATE;

@@ -53,7 +53,6 @@
         document.body.appendChild( renderer.domElement );
 
         camera = new THREE.PerspectiveCamera( 60, window.innerWidth / windowinnerHeight, 1, 5000 );
-				camera.position.set( -25, 50, 100 );
 
         // controls
 				controls = new MapControls( camera, renderer.domElement );
@@ -65,6 +64,9 @@
 				controls.maxDistance = 2500;
 				//controls.maxPolarAngle = Math.PI / 2;
         controls.enableKeys = false;
+
+        controls.target.set( 0, 50, 0 );
+        controls.object.position.set( 0, 50, 100 );
 
         // world
 				geometry = new THREE.BoxBufferGeometry( 10, 10, 10 );
@@ -141,8 +143,8 @@
 							moveRight = true;
 							break;
 						case 32: // space
-							if ( canJump === true ) velocity.y += 350;
-							canJump = false;
+							// if ( canJump === true ) velocity.y += 350;
+							// canJump = false;
 							break;
             default:
               return;
@@ -174,6 +176,7 @@
         window.parent.document.addEventListener( 'keydown', onKeyDown, false );
 				window.parent.document.addEventListener( 'keyup', onKeyUp, false );
 
+        render();
 			}
 
       function set_prop(o, p) {
@@ -216,13 +219,17 @@
         });
 
         if (p != undefined) {
+          var g = geometry;
+          var material = new THREE.MeshLambertMaterial();
           if (p.form == 'box') {
             if (p.role == 'room') {
-              var material = new THREE.MeshLambertMaterial({side: THREE.BackSide});
-            } else
-              var material = new THREE.MeshLambertMaterial();
+              material = new THREE.MeshLambertMaterial({side: THREE.BackSide});
+            } else if (p.role == 'player') {
+              g = new THREE.CubeGeometry(10,10,10,1,1,1);
+              g.translate( 0, 5, 0 );
+            }
           }
-          var mesh = new THREE.Mesh( geometry, material ); //LineSegments
+          var mesh = new THREE.Mesh( g, material ); //LineSegments
           set_prop(mesh, p);
   				//mesh.updateMatrix();
   				//mesh.matrixAutoUpdate = false;
@@ -298,11 +305,6 @@
 
       function animate() {
         if (anim) {
-          // raycaster.setFromCamera( mouse, camera );
-          // raycaster.ray.origin.y -= 10;
-          // var intersects = raycaster.intersectObjects( scene.children );
-          // var onObject = intersects.length > 0;
-
           var time = performance.now();
           var delta = ( time - prevTime ) / 1000;
           velocity.x -= velocity.x * 10.0 * delta;
@@ -312,12 +314,29 @@
           direction.normalize(); // this ensures consistent movements in all directions
           if ( moveForward || moveBackward ) velocity.z -= direction.z * 4000.0 * delta;
           if ( moveLeft || moveRight ) velocity.x -= direction.x * 15.0 * delta;
+          direction.set(0,0,0);
+          direction.sub(controls.target);
           controls.go ( - velocity.x * delta, - velocity.z * delta );
+          direction.add(controls.target);
           prevTime = time;
+          if (player) {
+            // collision detection:
+            raycaster.set(player.position, direction.clone().normalize());
+            var intersects = raycaster.intersectObjects( scene.children );
+            var oy = false;
+            if ( intersects.length > 0 ) {
+              if (intersects[0].distance < Math.max(Math.abs(direction.x),Math.abs(direction.y))) {
+                oy = true;
+                controls.target.copy(player.position);
+              }
+            }
+            if (!oy) {
+              player.position.x = controls.target.x;
+              player.position.z = controls.target.z;
+            }
+          }
           if (Math.abs(velocity.x)+Math.abs(velocity.y)+Math.abs(velocity.z)<0.001) {
             if (player) {
-              player.position.x = controls.object.position.x;
-              player.position.z = controls.object.position.z;
               window.parent.nodeprop(player.p_id, player.p_fid, get_prop(player), 'false', document);
             }
             anim = false;
