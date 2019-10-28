@@ -415,10 +415,11 @@ function iframeh(d) {
   {
     if (frames[i].contentWindow.document === d) {
       var f = document.getElementsByTagName("footer");
-      var h = f[0].offsetTop - frames[i].offsetTop;
-      frames[i].height = h;
+      var h = document.getElementsByTagName("header");
+      var fh = f[0].offsetTop - h[0].offsetHeight;
+      frames[i].height = fh;
       frames[i].style.display = 'block';
-      return h;
+      return fh;
     }
   }
 }

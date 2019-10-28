@@ -98,7 +98,7 @@
 				scene.add( light );
 
         //
-        window.addEventListener( 'resize', onWindowResize, false );
+        window.parent.addEventListener( 'resize', onWindowResize, false );
         window.addEventListener( 'click', onClick, false );
 
         // you may also want to add an mouse move event listener to render when moving objects
@@ -199,6 +199,8 @@
         }
         if (o.p_role == 'player') {
           player = o;
+          controls.target.set( player.position.x, 50, player.position.z );
+          controls.object.position.set( player.position.x, 50, player.position.z + 100 );
         }
       }
 
@@ -223,10 +225,10 @@
           var material = new THREE.MeshLambertMaterial();
           if (p.form == 'box') {
             if (p.role == 'room') {
-              material = new THREE.MeshLambertMaterial({side: THREE.BackSide});
+              material.side = THREE.BackSide;
             } else if (p.role == 'player') {
-              g = new THREE.CubeGeometry(10,10,10,1,1,1);
-              g.translate( 0, 5, 0 );
+              // g = new THREE.CubeGeometry(10,10,10,1,1,1);
+              // g.translate( 0, 5, 0 );
             }
           }
           var mesh = new THREE.Mesh( g, material ); //LineSegments
@@ -325,7 +327,7 @@
             var intersects = raycaster.intersectObjects( scene.children );
             var oy = false;
             if ( intersects.length > 0 ) {
-              if (intersects[0].distance < Math.max(Math.abs(direction.x),Math.abs(direction.y))) {
+              if (intersects[0].distance < 3 + Math.max(Math.abs(direction.x),Math.abs(direction.y))) {
                 oy = true;
                 controls.target.copy(player.position);
               }
