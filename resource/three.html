@@ -117,6 +117,7 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
+          window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
@@ -200,7 +201,8 @@
         if (o.p_role == 'player') {
           player = o;
           controls.target.set( player.position.x, 50, player.position.z );
-          controls.object.position.set( player.position.x, 50, player.position.z + 100 );
+          controls.object.position.set( p.camera_x, p.camera_y, p.camera_z );
+          controls.update();
         }
       }
 
@@ -209,6 +211,11 @@
         q = "position_x=" + o.position.round().x +
             "&position_y=" + o.position.round().y +
             "&position_z=" + o.position.round().z;
+        if (o.p_role == 'player') {
+          q += "&camera_x=" + controls.object.position.round().x +
+               "&camera_y=" + controls.object.position.round().y +
+               "&camera_z=" + controls.object.position.round().z;
+        }
         return q;
       }
 
@@ -236,6 +243,9 @@
   				//mesh.updateMatrix();
   				//mesh.matrixAutoUpdate = false;
   				scene.add( mesh );
+          if (mesh.p_movable) {
+            objects.push( mesh );
+          }
         }
         render();
       }
@@ -282,10 +292,7 @@
 
       function onClick (event) {
         if (obj) {
-          if (obj.p_movable) {
-            objects.push( obj );
-          }
-          window.parent.nodeprop(obj.p_id, obj.p_fid, get_prop(obj), 'true', document);
+          window.parent.nodeprop(obj.p_id, obj.p_fid, '', 'true', document);
         }
       }
 

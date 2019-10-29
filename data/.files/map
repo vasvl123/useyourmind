@@ -57,9 +57,12 @@
 И	color	З	0x555555	С	58
 И	transparent	З	true	С	59
 И	opacity	З	0.3	С	60
-И	position_x	З	-544	С	61
-И	position_y	З	0	С	62
-И	position_z	З	823	С	63
+И	position_x	З	45	С	61
+И	position_y	З	2	С	62
+И	position_z	З	-16	С	63
 И	scale_x	З	1	С	64
 И	scale_y	З	2	С	65
-И	scale_z	З	1
+И	scale_z	З	1	С	66
+И	camera_x	З	15	С	67
+И	camera_y	З	79	С	68
+И	camera_z	З	96
