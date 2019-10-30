@@ -20,6 +20,7 @@
       var camera, controls, scene, renderer, geometry;
       var ttip, color, obj;
       var objects = [];
+      var mobjects = [];
 
       var raycaster = new THREE.Raycaster();
       var mouse = new THREE.Vector2();
@@ -112,7 +113,7 @@
         // var gui = new GUI();
 				// gui.add( controls, 'screenSpacePanning' );
 
-        var dragControls = new DragControls( objects, camera, renderer.domElement );
+        var dragControls = new DragControls( mobjects, camera, renderer.domElement );
         dragControls.addEventListener( 'dragstart', function ( event ) {
           controls.enabled = false;
 				} );
@@ -221,7 +222,7 @@
 
       window.upd = function(p) {
 
-        scene.children.forEach( function(item) {
+        objects.forEach( function(item) {
           if (p) {
             if (item.p_id == p.id) { set_prop(item, p); p = undefined; }
           }
@@ -243,8 +244,9 @@
   				//mesh.updateMatrix();
   				//mesh.matrixAutoUpdate = false;
   				scene.add( mesh );
+          objects.push( mesh );
           if (mesh.p_movable) {
-            objects.push( mesh );
+            mobjects.push( mesh );
           }
         }
         render();
@@ -258,7 +260,7 @@
         	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
           raycaster.setFromCamera( mouse, camera );
-        	var intersects = raycaster.intersectObjects( scene.children );
+        	var intersects = raycaster.intersectObjects( objects );
 
           var selobj = undefined;
 
@@ -331,7 +333,7 @@
           if (player) {
             // collision detection:
             raycaster.set(player.position, direction.clone().normalize());
-            var intersects = raycaster.intersectObjects( scene.children );
+            var intersects = raycaster.intersectObjects( objects );
             var oy = false;
             if ( intersects.length > 0 ) {
               if (intersects[0].distance < 3 + Math.max(Math.abs(direction.x),Math.abs(direction.y))) {
