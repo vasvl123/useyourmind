@@ -1,16 +1,16 @@
 И	У	З	Корень	Д	8	А	3
-И	Объект	З	Терминал	А	9	Д	29	С	46
+И	Объект	З	Терминал	А	9	Д	13	С	46
 И	Показать	З	Да
 И	DIV	А	5	Д	8
 И	class	З	row justify-content-center
 И	DIV	А	7	Д	8
 И	class	З	col-md-7
 И	iframe	А	14	С	2
-И	Тип	З	Объекты.Комната	С	13
+И	Тип	З	Объекты.Комната
 И	DIV	А	12	Д	2
 И	class	З	card p-4
 И	id	З	three	С	11
-И	Свойства	Д	15
+И	Свойства	Д	69	С	29
 И	src	З	/resource/three.html
 И	Тип	З	Комната	С	16
 И	Описание	З	Комната	С	17
@@ -26,10 +26,10 @@
 И	position_z	З	0	С	27
 И	scale_x	З	20	С	28
 И	scale_y	З	20	С	31
-И	Объект	З	Кубик	А	30
-И	Тип	З	Объекты.Предмет	С	32
+И	Объект	З	Кубик	А	30	Д	84
+И	Тип	З	Объекты.Предмет
 И	scale_z	З	20
-И	Свойства	Д	33
+
 И	Тип	З	Предмет	С	34
 И	Описание	З	Предмет	С	35
 И	Форма	Д	36
@@ -43,11 +43,11 @@
 И	position_y	З	3	С	44
 И	position_z	З	3	С	45
 И	scale_x	З	2	С	48
-И	Объект	З	Игрок	А	47
-И	Тип	З	Объекты.Субъект	С	50
+И	Объект	З	Игрок	А	47	Д	100
+И	Тип	З	Объекты.Субъект
 И	scale_y	З	2	С	49
 И	scale_z	З	2
-И	Свойства	Д	51
+
 И	Тип	З	Субъект	С	52
 И	Описание	З	Субъект	С	53
 И	Форма	Д	54
@@ -65,4 +65,54 @@
 И	scale_z	З	1	С	66
 И	camera_x	З	15	С	67
 И	camera_y	З	79	С	68
+И	camera_z	З	96
+И	Тип	З	Комната	С	70
+И	Описание	З	Комната	С	71
+И	Форма	Д	72
+И	form	З	'box'	С	73
+И	role	З	'room'	С	74
+И	movable	З	false	С	75
+И	color	З	0x555555	С	76
+И	transparent	З	true	С	77
+И	opacity	З	0.3	С	78
+И	position_x	З	0	С	79
+И	position_y	З	-1	С	80
+И	position_z	З	0	С	81
+И	scale_x	З	20	С	82
+И	scale_y	З	20	С	83
+И	scale_z	З	20
+И	Свойства	Д	85
+И	Тип	З	Предмет	С	86
+И	Описание	З	Предмет	С	87
+И	Форма	Д	88
+И	form	З	'box'	С	89
+И	role	З	'thing'	С	90
+И	movable	З	true	С	91
+И	color	З	0x555555	С	92
+И	transparent	З	true	С	93
+И	opacity	З	0.3	С	94
+И	position_x	З	8	С	95
+И	position_y	З	3	С	96
+И	position_z	З	3	С	97
+И	scale_x	З	2	С	98
+И	scale_y	З	2	С	99
+И	scale_z	З	2
+И	Свойства	Д	101
+И	Тип	З	Субъект	С	102
+И	Описание	З	Субъект	С	103
+И	Форма	Д	104
+И	form	З	'box'	С	105
+И	role	З	'player'	С	106
+И	movable	З	true	С	107
+И	color	З	0x555555	С	108
+И	transparent	З	true	С	109
+И	opacity	З	0.3	С	110
+И	position_x	З	45	С	111
+И	position_y	З	2	С	112
+И	position_z	З	-16	С	113
+И	scale_x	З	1	С	114
+И	scale_y	З	2	С	115
+И	scale_z	З	1	С	116
+И	camera_x	З	15	С	117
+И	camera_y	З	79	С	118
 И	camera_z	З	96
