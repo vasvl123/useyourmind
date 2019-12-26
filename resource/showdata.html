@@ -584,6 +584,7 @@ function handler(event) {
       }
     }
     if (mode!="design") {return;}
+    if ($('#'+datatab+'_0').find(el).length == 0) {return;}
     if (el.id=="designmenu"){
       if (event.type == 'click') {designnode.style.outlineStyle ='none';}
       return false;
