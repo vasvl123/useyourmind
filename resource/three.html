@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xml:lang="ru" lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>three</title>
+<link rel="stylesheet" type="text/css" href="./three.css">
+</head>
+<body>
+    <div id="three"><script type="module">
+
+      import * as THREE from './three/three.module.js';
+			// import { GUI } from './three/dat.gui.module.js';
+			import { MapControls } from './three/OrbitControls.js';
+		  import { DragControls } from './three/DragControls.js';
+
+      var camera, controls, scene, renderer, geometry;
+      var ttip, color, obj;
+      var objects = [];
+      var mobjects = [];
+
+      var raycaster = new THREE.Raycaster();
+      var mouse = new THREE.Vector2();
+
+      var moveForward = false;
+			var moveBackward = false;
+			var moveLeft = false;
+			var moveRight = false;
+
+      var prevTime;
+			var velocity = new THREE.Vector3();
+			var direction = new THREE.Vector3();
+      var anim = false;
+
+      var player;
+
+      init();
+			render(); // remove when using next line for animation loop (requestAnimationFrame)
+			//animate();
+
+      function init() {
+
+        scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xcccccc );
+				//scene.fog = new THREE.FogExp2( 0xcccccc, 0.001 );
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+        var windowinnerHeight = window.parent.iframeh(document);
+        renderer.setSize( window.innerWidth, windowinnerHeight );
+        document.body.appendChild( renderer.domElement );
+
+        camera = new THREE.PerspectiveCamera( 60, window.innerWidth / windowinnerHeight, 1, 5000 );
+
+        // controls
+				controls = new MapControls( camera, renderer.domElement );
+				//controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
+				//controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+				//controls.dampingFactor = 0.05;
+        controls.screenSpacePanning = false;
+				controls.minDistance = 1;
+				controls.maxDistance = 2500;
+				//controls.maxPolarAngle = Math.PI / 2;
+        controls.enableKeys = false;
+
+        controls.target.set( 0, 50, 0 );
+        controls.object.position.set( 0, 50, 100 );
+
+        // world
+				geometry = new THREE.BoxBufferGeometry( 10, 10, 10 );
+				geometry.translate( 0, 5, 0 );
+
+        // ground
+        var ground = new THREE.Mesh(
+					new THREE.PlaneBufferGeometry( 2000, 2000 ),
+					new THREE.MeshLambertMaterial( { color: 0xcccccc} )
+				);
+				ground.rotation.x = - Math.PI / 2;
+				ground.position.y = 0;
+				scene.add( ground );
+
+        var grid = new THREE.GridHelper( 2000, 20, 0x000000, 0x000000 );
+				grid.material.opacity = 0.2;
+				grid.material.transparent = true;
+				grid.position.y = 0;
+				scene.add( grid );
+
+        // lights
+				var light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 1, 1, 1 );
+				scene.add( light );
+				var light = new THREE.DirectionalLight( 0x002288 );
+				light.position.set( - 1, - 1, - 1 );
+				scene.add( light );
+				var light = new THREE.AmbientLight( 0x222222 );
+				scene.add( light );
+
+        //
+        window.parent.addEventListener( 'resize', onWindowResize, false );
+        window.addEventListener( 'click', onClick, false );
+
+        // you may also want to add an mouse move event listener to render when moving objects
+        renderer.domElement.addEventListener("mousemove", function( event ) {
+          mmove(event);
+        });
+        renderer.domElement.addEventListener("wheel", function( event ) {
+          renderer.render(scene, camera);
+        });
+
+        // var gui = new GUI();
+				// gui.add( controls, 'screenSpacePanning' );
+
+        var dragControls = new DragControls( mobjects, camera, renderer.domElement );
+        dragControls.addEventListener( 'dragstart', function ( event ) {
+          controls.enabled = false;
+				} );
+				dragControls.addEventListener( 'dragend', function ( event ) {
+          window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
+					controls.enabled = true;
+				} );
+        dragControls.addEventListener( 'hoveron', function ( event ) {
+				} );
+        dragControls.addEventListener( 'hoveroff', function ( event ) {
+			  } );
+
+        var onKeyDown = function ( event ) {
+					switch ( event.keyCode ) {
+						case 38: // up
+						case 87: // w
+							moveForward = true;
+							break;
+						case 37: // left
+						case 65: // a
+							moveLeft = true;
+							break;
+						case 40: // down
+						case 83: // s
+							moveBackward = true;
+							break;
+						case 39: // right
+						case 68: // d
+							moveRight = true;
+							break;
+						case 32: // space
+							// if ( canJump === true ) velocity.y += 350;
+							// canJump = false;
+							break;
+            default:
+              return;
+			    }
+          start_anim();
+				};
+
+				var onKeyUp = function ( event ) {
+					switch ( event.keyCode ) {
+						case 38: // up
+						case 87: // w
+							moveForward = false;
+							break;
+						case 37: // left
+						case 65: // a
+							moveLeft = false;
+							break;
+						case 40: // down
+						case 83: // s
+							moveBackward = false;
+							break;
+						case 39: // right
+						case 68: // d
+							moveRight = false;
+							break;
+          }
+				};
+
+        window.parent.document.addEventListener( 'keydown', onKeyDown, false );
+				window.parent.document.addEventListener( 'keyup', onKeyUp, false );
+
+        render();
+			}
+
+      function set_prop(o, p) {
+        if (p.form == 'box') {
+          o.p_id = p.id;
+          o.p_fid = p.fid;
+          o.p_form = p.form;
+          o.p_role = p.role;
+          o.p_movable = p.movable;
+          o.p_name = p.name;
+          o.material.color = new THREE.Color( p.color );
+          o.material.transparent = p.transparent;
+          o.material.opacity = p.opacity;
+          o.position.x = p.position_x;
+          o.position.y = p.position_y;
+          o.position.z = p.position_z;
+          o.scale.x = p.scale_x;
+          o.scale.y = p.scale_y;
+          o.scale.z = p.scale_z;
+        }
+        if (o.p_role == 'player') {
+          player = o;
+          controls.target.set( player.position.x, 50, player.position.z );
+          controls.object.position.set( p.camera_x, p.camera_y, p.camera_z );
+          controls.update();
+        }
+      }
+
+      function get_prop(o) {
+        var q = "";
+        q = "position_x=" + o.position.round().x +
+            "&position_y=" + o.position.round().y +
+            "&position_z=" + o.position.round().z;
+        if (o.p_role == 'player') {
+          q += "&camera_x=" + controls.object.position.round().x +
+               "&camera_y=" + controls.object.position.round().y +
+               "&camera_z=" + controls.object.position.round().z;
+        }
+        return q;
+      }
+
+      window.upd = function(p) {
+
+        objects.forEach( function(item) {
+          if (p) {
+            if (item.p_id == p.id) { set_prop(item, p); p = undefined; }
+          }
+        });
+
+        if (p != undefined) {
+          var g = geometry;
+          var material = new THREE.MeshLambertMaterial();
+          if (p.form == 'box') {
+            if (p.role == 'room') {
+              material.side = THREE.BackSide;
+            } else if (p.role == 'player') {
+              // g = new THREE.CubeGeometry(10,10,10,1,1,1);
+              // g.translate( 0, 5, 0 );
+            }
+          }
+          var mesh = new THREE.Mesh( g, material ); //LineSegments
+          set_prop(mesh, p);
+  				//mesh.updateMatrix();
+  				//mesh.matrixAutoUpdate = false;
+  				scene.add( mesh );
+          objects.push( mesh );
+          if (mesh.p_movable) {
+            mobjects.push( mesh );
+          }
+        }
+        render();
+      }
+
+      function mmove(event) {
+
+        if (controls.enabled) {
+
+          mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+          raycaster.setFromCamera( mouse, camera );
+        	var intersects = raycaster.intersectObjects( objects );
+
+          var selobj = undefined;
+
+          if ( intersects.length > 0 ) {
+            selobj = intersects[ 0 ].object;
+          }
+          if ( selobj != obj ) {
+            if (obj) {
+              obj.material.color = color;
+              obj = undefined;
+              if (ttip) {
+                ttip.remove();
+              }
+            }
+            if (selobj) {
+              if (selobj.p_name) {
+                obj = selobj;
+                color = obj.material.color;
+                ttip=window.parent.showtip(event.clientX, event.clientY, obj.p_name);
+                obj.material.color = new THREE.Color( color );
+                obj.material.color.r += 0.5;
+                obj.material.color.g += 0.5;
+                obj.material.color.b += 0.5;
+              }
+            }
+          }
+        }
+
+        renderer.render(scene, camera);
+      }
+
+      function onClick (event) {
+        if (obj) {
+          window.parent.nodeprop(obj.p_id, obj.p_fid, '', 'true', document);
+        }
+      }
+
+      function onWindowResize() {
+        var windowinnerHeight = window.parent.iframeh(document);
+				camera.aspect = window.innerWidth / windowinnerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, windowinnerHeight );
+				render();
+			}
+
+      function start_anim() {
+        if (!anim) {
+          anim = true;
+          prevTime = performance.now();
+          requestAnimationFrame( animate );
+        }
+      }
+
+      function animate() {
+        if (anim) {
+          var time = performance.now();
+          var delta = ( time - prevTime ) / 1000;
+          velocity.x -= velocity.x * 10.0 * delta;
+          velocity.z -= velocity.z * 10.0 * delta;
+          direction.z = Number( moveForward ) - Number( moveBackward );
+          direction.x = Number( moveRight ) - Number( moveLeft );
+          direction.normalize(); // this ensures consistent movements in all directions
+          if ( moveForward || moveBackward ) velocity.z -= direction.z * 4000.0 * delta;
+          if ( moveLeft || moveRight ) velocity.x -= direction.x * 15.0 * delta;
+          direction.set(0,0,0);
+          direction.sub(controls.target);
+          controls.go ( - velocity.x * delta, - velocity.z * delta );
+          direction.add(controls.target);
+          prevTime = time;
+          if (player) {
+            // collision detection:
+            raycaster.set(player.position, direction.clone().normalize());
+            var intersects = raycaster.intersectObjects( objects );
+            var oy = false;
+            if ( intersects.length > 0 ) {
+              if (intersects[0].distance < 3 + Math.max(Math.abs(direction.x),Math.abs(direction.y))) {
+                oy = true;
+                controls.target.copy(player.position);
+              }
+            }
+            if (!oy) {
+              player.position.x = controls.target.x;
+              player.position.z = controls.target.z;
+            }
+          }
+          if (Math.abs(velocity.x)+Math.abs(velocity.y)+Math.abs(velocity.z)<0.001) {
+            if (player) {
+              window.parent.nodeprop(player.p_id, player.p_fid, get_prop(player), 'false', document);
+            }
+            anim = false;
+            return;
+          }
+          requestAnimationFrame( animate );
+				  //controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+  				render();
+        }
+			}
+
+      function render() {
+				renderer.render( scene, camera );
+			}
+
+    </script>
+  </div>
+
+</body>
+</html>

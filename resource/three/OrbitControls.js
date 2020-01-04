@@ -1150,6 +1150,12 @@ var OrbitControls = function ( object, domElement ) {
 
 	this.update();
 
+	this.go = function (lf,fv) {
+		pan(0,fv);
+		rotateLeft(lf);
+		scope.update();
+	}
+
 };
 
 OrbitControls.prototype = Object.create( EventDispatcher.prototype );
@@ -1168,8 +1174,8 @@ var MapControls = function ( object, domElement ) {
 
 	OrbitControls.call( this, object, domElement );
 
-	this.mouseButtons.LEFT = MOUSE.PAN;
-	this.mouseButtons.RIGHT = MOUSE.ROTATE;
+	this.mouseButtons.LEFT = MOUSE.ROTATE;
+	this.mouseButtons.RIGHT = MOUSE.PAN;
 
 	this.touches.ONE = TOUCH.PAN;
 	this.touches.TWO = TOUCH.DOLLY_ROTATE;

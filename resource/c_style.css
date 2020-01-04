@@ -22,10 +22,16 @@
 }
 
 .btn-shadow-s {
-	background-color: #77818f;
+	background-color: #595f64;;
 	border-bottom: 1px solid #23282c;
 	border-right: 1px solid #23282c;
 	color: white;
+}
+
+.btn-node {
+	color: #73818f;
+	height: 1.75rem;
+	width: 1.75rem;
 }
 
 .input-shadow {
@@ -99,7 +105,7 @@ body {
     height:auto;
     top:50px;
     right:0px;
-		z-index: 15;
+		z-index: 2030;
 }
 
 @media(max-width:991.98px) {
@@ -116,4 +122,29 @@ iframe {
 	width: 100%;
 	display: none;
 	overflow: auto;
+}
+
+.aside-menu {
+	padding-top: 1rem;
+	padding-right: 2rem;
+	padding-left: 0.5rem;
+	padding-bottom: 2.5rem;
+  z-index: 1019;
+  width: 250px;
+  color: #f3f4f5;
+  background: #2f353a;
+  border-left: 1px solid #23282c;
+	overflow-y: scroll;
+	display: flex;
+	opacity: .9;
+}
+
+aside ul {
+	padding-left: 0;
+}
+
+.copyright {
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
 }

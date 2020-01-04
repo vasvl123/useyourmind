@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>OneScriptDB</title>
+<title>Разумное проектирование</title>
 <link href=".ПараметрХост/resource/style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -18,15 +18,15 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="OneScriptDB"/>
-  </a>
+  <!-- <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
+    <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="useyourmind"/>
+  </a> -->
 
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" data-toggle="sidebar-show">
+  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -35,6 +35,10 @@
 
   <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
+
+  <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
 </header>
 
@@ -87,17 +91,28 @@
 
   <div class="container-fluid">
 
-    <div id='data' class="my-4"></div>
+    <div id='data'></div>
     <div id='win'></div>
 
   </div>
 
+  <div id='insert'></div>
+  <div id='notifies'></div>
+  <div id='designmenu'></div>
+  <div id='mainmenu'></div>
+
+  <div class="copyright">
+    <span>Powered by </span>
+    <a href="https://github.com/vasvl123/useyourmind">useyourmind</a>
+    </div>
+    <div id="status">
+  </div>
+
 </main>
 
-<div id='insert'></div>
-<div id='notifies'></div>
-<div id='designmenu'></div>
-<div id='mainmenu'></div>
+<aside class="aside-menu">
+  <div id='prop'></div>
+</aside>
 
 </div>
 <!--/ОбластьПанельМенюОкно-->
@@ -169,6 +184,16 @@
     </li>
 <!--/ОбластьВкладка-->
 
+<!--ОбластьСвойство-->
+<div id=".ПараметрВкладка_0">
+
+  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">✕</button>
+  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin');">.ПараметрОбъект</button>
+
+  .ПараметрСвойство
+</div>
+<!--/ОбластьСвойство-->
+
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
       <a class="nav-link" href="" onclick="seq_add('cmd=newtab'); return false;">
@@ -176,7 +201,6 @@
       </a>
     </li>
 <!--/ОбластьНоваяВкладка-->
-
 
 <!--ОбластьУзел-->
 <div id='.ПараметрИдУзла'>
@@ -193,7 +217,7 @@
 
 <!--ОбластьКнопкаУзел-->
 <div style='display: inline-block;'>
-  <button type="button" style="color:#73818f;" class="btn btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+  <button type="button" class="btn btn-node btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 </div>
 <!--/ОбластьКнопкаУзел-->
 
@@ -370,13 +394,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьСтатус-->
 
 <!--ОбластьПодвал-->
-<footer class="app-footer">
-<div>
-<a href="https://github.com/vasvl123/OneScriptDB/">OneScriptDB</a>
-<span>© 2019 Vladimir Vasiliev.</span>
-</div>
-<div id="status">
-</div>
+<footer>
 </footer>
 
 <script src=".ПараметрХост/resource/jquery.min.js"></script>
@@ -397,14 +415,52 @@ function iframeh(d) {
   {
     if (frames[i].contentWindow.document === d) {
       var f = document.getElementsByTagName("footer");
-      var h = f[0].offsetTop - frames[i].offsetTop;
-      frames[i].height = h;
-      return h;
+      var h = document.getElementsByTagName("header");
+      var fh = f[0].offsetTop - h[0].offsetHeight;
+      frames[i].height = fh;
+      frames[i].style.display = 'block';
+      return fh;
     }
   }
 }
 
-function scrolled(){
+function updifrm(oid,p) {
+  var ot = oid.slice(0,oid.indexOf('_'));
+  $("#"+ot+"_0").removeClass("my-4");
+  frames = document.getElementsByTagName("iframe");
+  for (i = 0; i < frames.length; ++i) {
+    var ft = frames[i].id;
+    ft = ft.slice(0,ft.indexOf('_'));
+    if (ft == ot) {
+      if (frames[i].contentWindow.upd) {
+        frames[i].contentWindow.upd(p);
+      } else {
+        setTimeout(function(){updifrm(oid,p)},500);
+      }
+    }
+  }
+}
+
+function nodeprop(p_id, p_fid, p, s, d) {
+  var i, frames;
+  frames = document.getElementsByTagName("iframe");
+  for (i = 0; i < frames.length; ++i)
+  {
+    if (frames[i].contentWindow.document === d) {
+      var ft = frames[i].id;
+      ft = ft.slice(0,ft.indexOf('_'));
+      q = "nodeid=" + ft + "_" + p_id + "&propid=" + p_fid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
+      seq_add(q);
+    }
+  }
+}
+
+function showtip(xpos, ypos, tip) {
+  var tt = $('#'+datatab+'_0').append('<div class="badge badge-dark" style="z-index:1060; position:absolute; display: block; top:'+(ypos+25)+'px; left:'+(xpos+10)+'px;">'+tip+'</div>');
+  return tt[0].lastChild;
+}
+
+function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
@@ -463,7 +519,12 @@ function seq_sendcmd(){
 }
 
 function newtab(ntab,tabtype,nodeid){
-  $('#'+tabtype).append('<div id='+ntab+'_0 style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+  if (tabtype == "prop") {
+    $('#'+tabtype).append('<div id='+ntab+'_0><div id='+ntab+'_'+nodeid+' /></div>');
+    showprop("#"+ntab+"_0");
+  } else {
+    $('#'+tabtype).append('<div id='+ntab+'_0 class="my-4" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+  }
 }
 
 function tabselect(p_tabtype,p_tab,p_scroll){
@@ -487,6 +548,22 @@ function tabselect(p_tabtype,p_tab,p_scroll){
   tab=p_tab;
 }
 
+function btn_bar(cl) {
+  b = $("body");
+  if (b.hasClass(cl)) {
+    b.removeClass(cl);
+  } else {
+    b.addClass(cl);
+  }
+}
+
+function showprop(ntab) {
+  $("body").addClass("aside-menu-show");
+  var t = $(ntab);
+  var a = $("aside");
+  a.scrollTop(a.scrollTop()+t.position().top);
+}
+
 function loadmenu(event,cmd){
   ypos = event.pageY;
   xpos = event.pageX-5;
@@ -500,13 +577,14 @@ function handler(event) {
       var s=el.id.indexOf('_');
       if (s!=-1){
         var t=el.id.substring(0,s);
-        if (t!=tab) {
+        if (t!=tab&&t==datatab) {
           seq_add('tab='+t+'&cmd=tabselect');
           tabselect('data',t,scrolled());
         }
       }
     }
     if (mode!="design") {return;}
+    if ($('#'+datatab+'_0').find(el).length == 0) {return;}
     if (el.id=="designmenu"){
       if (event.type == 'click') {designnode.style.outlineStyle ='none';}
       return false;
@@ -555,21 +633,20 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
                 lText += "<p class='alert-heading'><b>"+aOptHeader+"</b></p>";
             }
             lText += "<p>"+aText+"</p>";
-            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' data-dismiss='alert'>&times;</button>"+lText+"</div>");
+            var lNotify_e = $("<div class='alert alert-dismissible "+ltype+"'><button type='button' class='close' onClick='this.parentNode.remove();'>&times;</button>"+lText+"</div>");
 
             setTimeout(function () {
-                lNotify_e.alert('close');
+                lNotify_e.remove();
             }, 3500);
             lNotify_e.appendTo($("#notifies"));
         }
     };
 </script>
 
-<script src=".ПараметрХост/resource/popper.min.js"></script>
-<script src=".ПараметрХост/resource/bootstrap.min.js"></script>
+<!-- <script src=".ПараметрХост/resource/popper.min.js"></script> -->
+<!-- <script src=".ПараметрХост/resource/bootstrap.min.js"></script> -->
 <script src=".ПараметрХост/resource/jquery-ui.min.js"></script>
-
-<script src=".ПараметрХост/resource/coreui.min.js"></script>
+<!-- <script src=".ПараметрХост/resource/coreui.min.js"></script> -->
 
 </body>
 </html>

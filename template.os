@@ -1,6 +1,6 @@
 // MIT License
-// Copyright (c) 2019 Vladimir Vasiliev
-// https://github.com/vasvl123/OneScriptDB
+// Copyright (c) 2020 vasvl123
+// https://github.com/vasvl123/useyourmind
 //
 //  Включает программный код https://github.com/nextkmv/vServer
 
