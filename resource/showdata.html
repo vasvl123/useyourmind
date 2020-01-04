@@ -18,8 +18,8 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <!-- <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="useyourmind"/>
+  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
+    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
   </a> -->
 
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
@@ -407,6 +407,7 @@ var tab,datatab,wintab;
 var btncmd='tabselect';
 var mode='';
 var seq=new Array();
+var aupd=true;
 
 function iframeh(d) {
   var i, frames;
@@ -506,7 +507,7 @@ function seq_sendcmd(){
     var xhr = new XHR();
     xhr.open('GET',seq.shift(),true);
     xhr.onload = function() {
-      if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata')}
+      if (this.responseURL.indexOf('cmd=upddata', 0) > 0 && aupd) {seq_add('cmd=upddata')}
       if (this.response) {
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
