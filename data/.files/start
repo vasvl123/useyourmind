@@ -1,5 +1,5 @@
 И	У	З	Корень	Д	8	А	64
-С	67	И	H1	А	15	Д	24
+С	44	И	H1	А	15	Д	24
 И	Э	З	body	А	4	Д	7
 И	class	З	app flex-row align-items-center  pace-done
 И	div	А	6	Д	7
@@ -11,7 +11,7 @@
 И	class	З	col-md-7
 И	a	З	Помощь	А	13
 И	href	З	/help
-И	P	А	46	Д	48	С	61
+
 И	class	З	mb-3 text-sm-nowrap
 И	a	З	Помощь	А	17
 И	href	З	/help
@@ -21,7 +21,7 @@
 И	class	З	card p-4
 И	TEXT	Д	24
 И	class	З	docs-callout docs-callout-warning
-И	text	З	OneScriptDB
+И	text	З	Разумное проектирование
 И	H5	А	26	Д	27	С	28
 И	id	З	jquery-incompatibility
 И	text	З	jQuery incompatibility
@@ -43,9 +43,9 @@
 И	text	З	display
 И	DIV	А	45	Д	70	С	136
 И	class	З	docs-callout docs-callout-warning
-И	class	З	lead mb-4
+
 И	STRONG	Д	48
-И	text	З	серверный рендеринг на языке OneScript
+
 
 И	class	З	nav-item
 И	A	А	52	Д	54
@@ -58,23 +58,23 @@
 И	STRONG	Д	59
 И	text	З	серверный рендеринг на языке OneScript
 И	text	З	управление данными через панель разработчика
-И	P	А	62	Д	63
-И	class	З	lead mb-4
-И	text	З	интерфейс на базе компонентов CoreUI и Bootstrap 4
+
+
+
 И	Показать	З	Да
 И	class	З	mb-3 text-sm-nowrap
 И	text	З	Платформа для разработки web-приложений
-И	H3	А	68	Д	69	С	44
-И	class	З	mb-3 text-sm-nowrap
-И	text	З	инструмент концептуального проектирования
+
+
+
 И	P	А	71	Д	72	С	78
 И	class	З	lead
 И	STRONG	Д	73
 И	text	З	проект с открытым исходным кодом
-И	P	А	75	Д	76	С	14
+И	P	А	75	Д	76
 И	class	З	lead
 И	STRONG	Д	77
-И	text	З	управление данными через панель разработчика
+И	text	З	управление через панель разработчика
 И	P	А	79	Д	80	С	74
 И	class	З	lead
 И	STRONG	Д	81
