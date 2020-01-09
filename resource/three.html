@@ -18,7 +18,7 @@
 		  import { DragControls } from './three/DragControls.js';
 
       var camera, controls, scene, renderer, geometry;
-      var ttip, color, obj;
+      var ttip, color, obj, sel, bm;
       var objects = [];
       var mobjects = [];
 
@@ -115,10 +115,17 @@
 
         var dragControls = new DragControls( mobjects, camera, renderer.domElement );
         dragControls.addEventListener( 'dragstart', function ( event ) {
+          direction.set(0,0,0);
+          direction.add(event.object.position);
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
+          direction.sub(event.object.position);
+          if (direction.round().x+direction.round().y+direction.round().z != 0) {
+            window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
+            sel.material.color = color;
+            sel = undefined;
+          }
 					controls.enabled = true;
 				} );
         dragControls.addEventListener( 'hoveron', function ( event ) {
@@ -269,7 +276,6 @@
           }
           if ( selobj != obj ) {
             if (obj) {
-              obj.material.color = color;
               obj = undefined;
               if (ttip) {
                 ttip.remove();
@@ -278,23 +284,28 @@
             if (selobj) {
               if (selobj.p_name) {
                 obj = selobj;
-                color = obj.material.color;
                 ttip=window.parent.showtip(event.clientX, event.clientY, obj.p_name);
-                obj.material.color = new THREE.Color( color );
-                obj.material.color.r += 0.5;
-                obj.material.color.g += 0.5;
-                obj.material.color.b += 0.5;
               }
             }
           }
         }
-
-        renderer.render(scene, camera);
+        render();
       }
 
       function onClick (event) {
-        if (obj) {
+        if (obj==sel) {
           window.parent.nodeprop(obj.p_id, obj.p_fid, '', 'true', document);
+        } else {
+          if (sel) {
+            sel.material.color = color;
+          }
+          sel = obj;
+          color = obj.material.color;
+          obj.material.color = new THREE.Color( color );
+          obj.material.color.r += 0.5;
+          obj.material.color.g += 0.5;
+          obj.material.color.b += 0.5;
+          render();
         }
       }
 

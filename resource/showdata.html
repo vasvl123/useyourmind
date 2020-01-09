@@ -72,6 +72,10 @@
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="" onclick="seq_add('nodeid=1&amp;cmd=findnode'); return false;">
+        <i class="nav-icon icon-magnifier"></i> Найти узел</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('osdb=&data=log&cmd=newtab'); return false;">
         <i class="nav-icon icon-calendar"></i> Журнал событий</a>
       </li>
@@ -268,7 +272,7 @@
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Применить</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Готово</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
@@ -278,6 +282,17 @@
   </script>
 </div>
 <!--/ОбластьРедактироватьУзел-->
+
+<!--ОбластьНайтиУзел-->
+<div id='.ПараметрИдУзлаfind'>
+  <form onsubmit="return false;">
+    <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаnumber" />
+    <br/>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;cmd=findnode');">Найти</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
+  </form>
+</div>
+<!--/ОбластьНайтиУзел-->
 
 <!--ОбластьЗагрузитьHTML-->
 <div id='.ПараметрИдУзлаimport'>
