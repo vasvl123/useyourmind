@@ -149,6 +149,16 @@ aside ul {
 	left: 5px;
 }
 
+.copyright a {
+	color: #ccc;
+	font-weight:bolder;
+}
+
 .app-body {
     background-image: url("/resource/bg.jpg") ;
+		background-color: #645fb3;
+}
+
+.sidebar {
+	opacity: .9;
 }
