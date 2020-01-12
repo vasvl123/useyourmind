@@ -106,11 +106,9 @@
   <div id='mainmenu'></div>
 
   <div class="copyright">
-    <span>Powered by</span>
-    <br>
-    <a href="https://github.com/vasvl123/useyourmind">useyourmind</a>
-    </div>
-    <div id="status">
+    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+  </div>
+  <div id="status">
   </div>
 
 </main>
@@ -289,13 +287,12 @@
   <form onsubmit="return false;">
     <div style='display: inline-block;'>
       <div class="btn-group" role="group">
-        <input class="form-control form-control input-shadow btn-sm" placeholder="Номер" id=".ПараметрИдУзлаnumber" />
-        <input class="form-control form-control input-shadow btn-sm" placeholder="Значение" id=".ПараметрИдУзлаvalue" />
+        <input class="form-control form-control input-shadow" placeholder="Номер" id=".ПараметрИдУзлаnumber" />
+        <input class="form-control form-control input-shadow" placeholder="Значение" id=".ПараметрИдУзлаvalue" />
+        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode');">Найти</button>
+        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
       </div>
     </div>
-    <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode');">Найти</button>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
   </form>
 </div>
 <!--/ОбластьНайтиУзел-->
@@ -399,19 +396,21 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="card text-white bg-dark win" style="display:none">
-  <div class="card-header">
-    <b class="modal-title">.ПараметрЗаголовокОкна</b>
-    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+<div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
+  <div class="card text-white bg-dark mw60">
+    <div class="card-header">
+      <b class="modal-title">.ПараметрЗаголовокОкна</b>
+      <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    </div>
+    <div class="card-body">
+      .ПараметрСодержимоеОкна
+    </div>
   </div>
-  <div class="card-body">
-    .ПараметрСодержимоеОкна
+  <div id='insert'>
+    <script type='text/javascript'>
+      $("#.ПараметрВкладка_0").draggable();
+    </script>
   </div>
-</div>
-<div id='insert'>
-  <script type='text/javascript'>
-    $("#.ПараметрВкладка_0").draggable();
-  </script>
 </div>
 <!--/ОбластьПанель-->
 

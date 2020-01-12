@@ -155,10 +155,22 @@ aside ul {
 }
 
 .app-body {
-    background-image: url("/resource/bg.jpg") ;
-		background-color: #645fb3;
+	background-image: url("/resource/bg.jpg") ;
+	background-color: #645fb3;
 }
 
 .sidebar {
 	opacity: .9;
+}
+
+.win {
+	position: relative;
+}
+
+.mw60 {
+	min-width: 60%;
+}
+
+.app-body .main {
+	min-width: auto;
 }
