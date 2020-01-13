@@ -125,6 +125,11 @@
         renderer.domElement.addEventListener("wheel", function( event ) {
           renderer.render(scene, camera);
         });
+        renderer.domElement.addEventListener("mouseleave", function( event ) {
+          if (ttip) {
+            ttip.remove();
+          }
+        });
 
         // var gui = new GUI();
 				// gui.add( controls, 'screenSpacePanning' );
@@ -298,6 +303,10 @@
                 ttip=window.parent.showtip(event.clientX, event.clientY, obj.p_name);
               }
             }
+          }
+        } else {
+          if (ttip) {
+            ttip.remove();
           }
         }
         render();
