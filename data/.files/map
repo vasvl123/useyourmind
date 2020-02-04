@@ -1,11 +1,11 @@
-И	У	З	Корень	Д	170	А	3
-
-И	Показать	З	Да
+И	О	З	Корень	Д	2
+И	Свойства.	З		С	46	Д	3
+И	Вид	З		Д	227
 И	DIV	А	5	Д	8
 И	class	З	row justify-content-center
 И	DIV	А	7	Д	8
 И	class	З	col-md-7
-И	iframe	А	14	С	47
+
 И	name	З	'Терминал'	С	72
 И	DIV	А	12	Д	2
 И	class	З	card p-4
@@ -43,8 +43,8 @@
 И	position_y	З	3	С	44
 И	position_z	З	3	С	45
 И	scale_x	З	2	С	48
+И	Объект	З	Комната	Д	69	С	204
 
-И	div	А	50	Д	69
 И	scale_y	З	2	С	49
 И	scale_z	З	2
 И	style	З	display: none
@@ -66,7 +66,7 @@
 И	camera_x	З	15	С	67
 И	camera_y	З	79	С	68
 И	camera_z	З	96
-И	Объект	З	Комната	Д	85	С	150
+И	Свойства.	З		Д	172	С	187
 И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	71
 И	Форма.	Д	9
 И	form	З	'box'	С	73
@@ -147,7 +147,7 @@
 И	scale_x	З	2	С	148
 И	scale_y	З	2	С	149
 И	scale_z	З	2
-И	Объект	З	Субъект	Д	151
+
 И	Свойства.	Д	152
 И	Описание	З	Игрок	С	153
 И	Форма.	Д	154
@@ -167,5 +167,64 @@
 И	camera_x	З	15	С	168
 И	camera_y	З	79	С	169
 И	camera_z	З	96
-И	script	А	171	С	8
+
 И	src	З	/resource/map.js
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	173
+И	Форма.	З		Д	174
+И	name	З	'Терминал'	С	175
+И	form	З	'box'	С	176
+И	role	З	'room'	С	177
+И	movable	З	false	С	178
+И	color	З	0x555555	С	179
+И	transparent	З	true	С	180
+И	opacity	З	0.3	С	181
+И	position_x	З	0	С	182
+И	position_y	З	-1	С	183
+И	position_z	З	0	С	184
+И	scale_x	З	20	С	185
+И	scale_y	З	20	С	186
+И	scale_z	З	20
+И	Объект	З	Предмет	Д	188
+И	Свойства.	З		Д	189
+И	Описание	З	Предмет	С	190
+И	Форма.	З		Д	191
+И	name	З	'Предмет'	С	192
+И	form	З	'box'	С	193
+И	role	З	'thing'	С	194
+И	movable	З	true	С	195
+И	color	З	0x555555	С	196
+И	transparent	З	true	С	197
+И	opacity	З	0.3	С	198
+И	position_x	З	8	С	199
+И	position_y	З	3	С	200
+И	position_z	З	3	С	201
+И	scale_x	З	2	С	202
+И	scale_y	З	2	С	203
+И	scale_z	З	2
+И	Объект	З	Субъект	Д	205
+И	Свойства.	З		Д	206
+И	Описание	З	Игрок	С	207
+И	Форма.	З		Д	208
+И	name	З	'Игрок'	С	209
+И	form	З	'box'	С	210
+И	role	З	'player'	С	211
+И	movable	З	true	С	212
+И	color	З	0x555555	С	213
+И	transparent	З	true	С	214
+И	opacity	З	0.3	С	215
+И	position_x	З	45	С	216
+И	position_y	З	2	С	217
+И	position_z	З	-16	С	218
+И	scale_x	З	1	С	219
+И	scale_y	З	2	С	220
+И	scale_z	З	1	С	221
+И	camera_x	З	15	С	222
+И	camera_y	З	79	С	223
+И	camera_z	З	96
+И	div	З		А	225	Д	226
+И	style	З	display: none
+И	Значение	З	Содержимое
+И	script	З		А	228	С	229
+И	src	З	/resource/map.js
+И	iframe	З		А	230	С	224
+И	src	З	/resource/three.html
