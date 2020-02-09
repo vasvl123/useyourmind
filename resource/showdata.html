@@ -187,16 +187,6 @@
     </li>
 <!--/ОбластьВкладка-->
 
-<!--ОбластьСвойство-->
-<div id=".ПараметрВкладка_0">
-
-  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">✕</button>
-  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin');">.ПараметрОбъект</button>
-
-  .ПараметрСвойство
-</div>
-<!--/ОбластьСвойство-->
-
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
       <a class="nav-link" href="" onclick="seq_add('cmd=newtab'); return false;">
@@ -234,6 +224,18 @@
   <button type="button" class="btn btn-node btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 </div>
 <!--/ОбластьКнопкаУзел-->
+
+<!--ОбластьИмяЗначениеСвойство-->
+<div style='display: inline-block;'>
+  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">✕</button>
+</div>
+<div style='display: inline-block;' id='.ПараметрИдУзла'>
+  <div class="btn-group" role="group">
+    <button title=".ПараметрИдУзла" type="button" class="btn btn-outline-light btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin')">.ПараметрНадписьИмя</button>
+    <button title=".ПараметрИдУзла" type="button" class="btn btn-outline-light btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin')">.ПараметрНадписьЗначение</button>
+  </div>
+</div>
+<!--/ОбластьИмяЗначениеСвойство-->
 
 <!--ОбластьИмяЗначение-->
 <div style='display: inline-block;' id='.ПараметрИдУзла'>
@@ -368,6 +370,10 @@
 </div>
 <!--/ОбластьМеню-->
 
+<!--ОбластьМенюЭлемент-->
+<a id=".ПараметрИдУзла" class="dropdown-item" href="" onclick="addcmd(this,event); return false;">.ПараметрПодсказка</a>
+<!--/ОбластьМенюЭлемент-->
+
 <!--ОбластьМенюИнструменты-->
 <a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
@@ -440,7 +446,9 @@ function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
-function addcmd(el) {
+function addcmd(el,ev) {
+  ypos = ev.pageY;
+  xpos = ev.pageX-5;
   if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
   if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',200);}

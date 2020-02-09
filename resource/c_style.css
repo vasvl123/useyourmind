@@ -139,8 +139,12 @@ iframe {
 	opacity: .9;
 }
 
+ul {
+	padding-left: 1.5rem;
+}
+
 aside ul {
-	padding-left: 0;
+	padding-left: .5rem;
 }
 
 .copyright {
