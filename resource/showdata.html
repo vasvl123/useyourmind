@@ -468,7 +468,7 @@ function postcmd(cmd){
   xhr.send(cmd);
 }
 
-function seq_add(cmd,delay=5) {
+function seq_add(cmd,delay=0) {
   var datascrolled=scrolled();
   var winscrolled="";
   // if (wintab!=""&&wintab!=undefined) {
@@ -496,7 +496,6 @@ function seq_sendcmd(){
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
       }
-      seq_sendcmd();
     }
     xhr.send();
   }
