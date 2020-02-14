@@ -1,0 +1,341 @@
+И	О	З	Корень	Д	2
+И	Свойства.	З		С	46
+И	src	З	/resource/three.html
+И	DIV	А	5	Д	8
+И	class	З	row justify-content-center
+И	DIV	А	7	Д	8
+И	class	З	col-md-7
+
+И	name	З	'Терминал'	С	72
+И	DIV	А	12	Д	2
+И	class	З	card p-4
+И	id	З	three	С	11
+И	Свойства.	Д	70	С	29
+И	src	З	/resource/three.html
+И	Тип	З	Комната	С	16
+И	Описание	З	Комната	С	17
+И	Форма.	Д	18
+И	form	З	'box'	С	19
+И	role	З	'room'	С	20
+И	movable	З	false	С	21
+И	color	З	0x555555	С	22
+И	transparent	З	true	С	23
+И	opacity	З	0.3	С	24
+И	position_x	З	0	С	25
+И	position_y	З	-1	С	26
+И	position_z	З	0	С	27
+И	scale_x	З	20	С	28
+И	scale_y	З	20	С	31
+И	Объект	З	Предмет	Д	84
+И	name	З	'Предмет'	С	88
+И	scale_z	З	20
+И	name	З	'Игрок'	С	104
+И	Тип	З	Предмет	С	34
+И	Описание	З	Предмет	С	35
+И	Форма.	Д	36
+И	form	З	'box'	С	37
+И	role	З	'thing'	С	38
+И	movable	З	true	С	39
+И	color	З	0x555555	С	40
+И	transparent	З	true	С	41
+И	opacity	З	0.3	С	42
+И	position_x	З	8	С	43
+И	position_y	З	3	С	44
+И	position_z	З	3	С	45
+И	scale_x	З	2	С	48
+И	script	З		А	204	С	227
+И	Свойства.	З		С	150
+И	scale_y	З	2	С	49
+И	scale_z	З	2
+И	style	З	display: none
+И	Тип	З	Субъект	С	52
+И	Описание	З	Субъект	С	53
+И	Форма.	Д	54
+И	form	З	'box'	С	55
+И	role	З	'player'	С	56
+И	movable	З	true	С	57
+И	color	З	0x555555	С	58
+И	transparent	З	true	С	59
+И	opacity	З	0.3	С	60
+И	position_x	З	45	С	61
+И	position_y	З	2	С	62
+И	position_z	З	-16	С	63
+И	scale_x	З	1	С	64
+И	scale_y	З	2	С	65
+И	scale_z	З	1	С	66
+И	camera_x	З	15	С	67
+И	camera_y	З	79	С	68
+И	camera_z	З	96
+И	Свойства.	З		Д	172	С	187
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	71
+И	Форма.	Д	9
+И	form	З	'box'	С	73
+И	role	З	'room'	С	74
+И	movable	З	false	С	75
+И	color	З	0x555555	С	76
+И	transparent	З	true	С	77
+И	opacity	З	0.3	С	78
+И	position_x	З	0	С	79
+И	position_y	З	-1	С	80
+И	position_z	З	0	С	81
+И	scale_x	З	20	С	82
+И	scale_y	З	20	С	83
+И	scale_z	З	20
+И	Свойства.	Д	86
+И	Свойства.	Д	101	С	133
+И	Описание	З	Предмет	С	87
+И	Форма.	Д	30
+И	form	З	'box'	С	89
+И	role	З	'thing'	С	90
+И	movable	З	true	С	91
+И	color	З	0x555555	С	92
+И	transparent	З	true	С	93
+И	opacity	З	0.3	С	94
+И	position_x	З	8	С	95
+И	position_y	З	3	С	96
+И	position_z	З	3	С	97
+И	scale_x	З	2	С	98
+И	scale_y	З	2	С	99
+И	scale_z	З	2
+И	Свойства.	Д	102
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	119
+И	Описание	З	Игрок	С	103
+И	Форма.	Д	32
+И	form	З	'box'	С	105
+И	role	З	'player'	С	106
+И	movable	З	true	С	107
+И	color	З	0x555555	С	108
+И	transparent	З	true	С	109
+И	opacity	З	0.3	С	110
+И	position_x	З	45	С	111
+И	position_y	З	2	С	112
+И	position_z	З	-16	С	113
+И	scale_x	З	1	С	114
+И	scale_y	З	2	С	115
+И	scale_z	З	1	С	116
+И	camera_x	З	15	С	117
+И	camera_y	З	79	С	118
+И	camera_z	З	96
+И	Форма.	Д	120
+И	name	З	'Терминал'	С	121
+И	form	З	'box'	С	122
+И	role	З	'room'	С	123
+И	movable	З	false	С	124
+И	color	З	0x555555	С	125
+И	transparent	З	true	С	126
+И	opacity	З	0.3	С	127
+И	position_x	З	0	С	128
+И	position_y	З	-1	С	129
+И	position_z	З	0	С	130
+И	scale_x	З	20	С	131
+И	scale_y	З	20	С	132
+И	scale_z	З	20
+И	Объект	З	Предмет	Д	134
+И	Свойства.	Д	135
+И	Описание	З	Предмет	С	136
+И	Форма.	Д	137
+И	name	З	'Предмет'	С	138
+И	form	З	'box'	С	139
+И	role	З	'thing'	С	140
+И	movable	З	true	С	141
+И	color	З	0x555555	С	142
+И	transparent	З	true	С	143
+И	opacity	З	0.3	С	144
+И	position_x	З	8	С	145
+И	position_y	З	3	С	146
+И	position_z	З	3	С	147
+И	scale_x	З	2	С	148
+И	scale_y	З	2	С	149
+И	scale_z	З	2
+И	Объект	З	Комната	Д	170	С	263
+И	Свойства.	Д	152
+И	Описание	З	Игрок	С	153
+И	Форма.	Д	154
+И	name	З	'Игрок'	С	155
+И	form	З	'box'	С	156
+И	role	З	'player'	С	157
+И	movable	З	true	С	158
+И	color	З	0x555555	С	159
+И	transparent	З	true	С	160
+И	opacity	З	0.3	С	161
+И	position_x	З	45	С	162
+И	position_y	З	2	С	163
+И	position_z	З	-16	С	164
+И	scale_x	З	1	С	165
+И	scale_y	З	2	С	166
+И	scale_z	З	1	С	167
+И	camera_x	З	15	С	168
+И	camera_y	З	79	С	169
+И	camera_z	З	96
+И	Свойства.	З		Д	231	С	246
+И	src	З	/resource/map.js
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	173
+И	Форма.	З		Д	174
+И	name	З	'Терминал'	С	175
+И	form	З	'box'	С	176
+И	role	З	'room'	С	177
+И	movable	З	false	С	178
+И	color	З	0x555555	С	179
+И	transparent	З	true	С	180
+И	opacity	З	0.3	С	181
+И	position_x	З	0	С	182
+И	position_y	З	-1	С	183
+И	position_z	З	0	С	184
+И	scale_x	З	20	С	185
+И	scale_y	З	20	С	186
+И	scale_z	З	20
+И	Объект	З	Предмет	Д	188
+И	Свойства.	З		Д	189
+И	Описание	З	Предмет	С	190
+И	Форма.	З		Д	191
+И	name	З	'Предмет'	С	192
+И	form	З	'box'	С	193
+И	role	З	'thing'	С	194
+И	movable	З	true	С	195
+И	color	З	0x555555	С	196
+И	transparent	З	true	С	197
+И	opacity	З	0.3	С	198
+И	position_x	З	8	С	199
+И	position_y	З	3	С	200
+И	position_z	З	3	С	201
+И	scale_x	З	2	С	202
+И	scale_y	З	2	С	203
+И	scale_z	З	2
+И	src	З	/resource/map.js
+И	Свойства.	З		Д	206
+И	Описание	З	Игрок	С	207
+И	Форма.	З		Д	208
+И	name	З	'Игрок'	С	209
+И	form	З	'box'	С	210
+И	role	З	'player'	С	211
+И	movable	З	true	С	212
+И	color	З	0x555555	С	213
+И	transparent	З	true	С	214
+И	opacity	З	0.3	С	215
+И	position_x	З	45	С	216
+И	position_y	З	2	С	217
+И	position_z	З	-16	С	218
+И	scale_x	З	1	С	219
+И	scale_y	З	2	С	220
+И	scale_z	З	1	С	221
+И	camera_x	З	15	С	222
+И	camera_y	З	79	С	223
+И	camera_z	З	96
+
+И	style	З	display: none
+И	Значение	З	Содержимое
+И	iframe	З		С	283	А	3
+И	src	З	/resource/map.js
+
+И	src	З	/resource/three.html
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	232
+И	Форма.	З		Д	233
+И	name	З	'Терминал'	С	234
+И	form	З	'box'	С	235
+И	role	З	'room'	С	236
+И	movable	З	false	С	237
+И	color	З	0x555555	С	238
+И	transparent	З	true	С	239
+И	opacity	З	0.3	С	240
+И	position_x	З	0	С	241
+И	position_y	З	-1	С	242
+И	position_z	З	0	С	243
+И	scale_x	З	20	С	244
+И	scale_y	З	20	С	245
+И	scale_z	З	20
+И	Объект	З	Предмет	Д	247
+И	Свойства.	З		Д	248
+И	Описание	З	Предмет	С	249
+И	Форма.	З		Д	250
+И	name	З	'Предмет'	С	251
+И	form	З	'box'	С	252
+И	role	З	'thing'	С	253
+И	movable	З	true	С	254
+И	color	З	0x555555	С	255
+И	transparent	З	true	С	256
+И	opacity	З	0.3	С	257
+И	position_x	З	8	С	258
+И	position_y	З	3	С	259
+И	position_z	З	3	С	260
+И	scale_x	З	2	С	261
+И	scale_y	З	2	С	262
+И	scale_z	З	2
+И	Объект	З	Субъект	Д	264
+И	Свойства.	З		Д	265
+И	Описание	З	Игрок	С	266
+И	Форма.	З		Д	267
+И	name	З	'Игрок'	С	268
+И	form	З	'box'	С	269
+И	role	З	'player'	С	270
+И	movable	З	true	С	271
+И	color	З	0x555555	С	272
+И	transparent	З	true	С	273
+И	opacity	З	0.3	С	274
+И	position_x	З	45	С	275
+И	position_y	З	2	С	276
+И	position_z	З	-16	С	277
+И	scale_x	З	1	С	278
+И	scale_y	З	2	С	279
+И	scale_z	З	1	С	280
+И	camera_x	З	15	С	281
+И	camera_y	З	79	С	282
+И	camera_z	З	96
+И	div	З		А	284	Д	286
+И	style	З	display: none
+
+И	О	З	Фронт	Д	287
+И	Свойства.	З		С	288
+И	Объект	З	Комната	Д	289	С	322
+И	Свойства.	З		Д	290	С	305
+И	Описание	З	Ты находишься в здании главного терминала аэропорта. К востоку видны билетные кассы;  центральный зал расположен к северу. 	С	291
+И	Форма.	З		Д	292
+И	name	З	'Терминал'	С	293
+И	form	З	'box'	С	294
+И	role	З	'room'	С	295
+И	movable	З	false	С	296
+И	color	З	0x555555	С	297
+И	transparent	З	true	С	298
+И	opacity	З	0.3	С	299
+И	position_x	З	0	С	300
+И	position_y	З	-1	С	301
+И	position_z	З	0	С	302
+И	scale_x	З	20	С	303
+И	scale_y	З	20	С	304
+И	scale_z	З	20
+И	Объект	З	Предмет	Д	306
+И	Свойства.	З		Д	307
+И	Описание	З	Предмет	С	308
+И	Форма.	З		Д	309
+И	name	З	'Предмет'	С	310
+И	form	З	'box'	С	311
+И	role	З	'thing'	С	312
+И	movable	З	true	С	313
+И	color	З	0x555555	С	314
+И	transparent	З	true	С	315
+И	opacity	З	0.3	С	316
+И	position_x	З	8	С	317
+И	position_y	З	3	С	318
+И	position_z	З	3	С	319
+И	scale_x	З	2	С	320
+И	scale_y	З	2	С	321
+И	scale_z	З	2
+И	Объект	З	Субъект	Д	323
+И	Свойства.	З		Д	324
+И	Описание	З	Игрок	С	325
+И	Форма.	З		Д	326
+И	name	З	'Игрок'	С	327
+И	form	З	'box'	С	328
+И	role	З	'player'	С	329
+И	movable	З	true	С	330
+И	color	З	0x555555	С	331
+И	transparent	З	true	С	332
+И	opacity	З	0.3	С	333
+И	position_x	З	45	С	334
+И	position_y	З	2	С	335
+И	position_z	З	-16	С	336
+И	scale_x	З	1	С	337
+И	scale_y	З	2	С	338
+И	scale_z	З	1	С	339
+И	camera_x	З	15	С	340
+И	camera_y	З	79	С	341
+И	camera_z	З	96

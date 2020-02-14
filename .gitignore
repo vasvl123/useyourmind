@@ -2,9 +2,9 @@
 *.files/
 *.files/*
 !.files/
-log.osdb
-users.osdb
+log.sdb
+users.sdb
 web.osdb
 .vscode/*
 Мед.os
-med
+med.sd
