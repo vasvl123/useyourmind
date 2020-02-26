@@ -451,7 +451,7 @@ function addcmd(el,ev) {
   xpos = ev.pageX-5;
   if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
-  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
+  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&text='+encodeURIComponent(el.textContent));}
   if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',200);}
 }
 
