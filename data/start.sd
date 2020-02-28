@@ -1,4 +1,4 @@
-И	У	З	Корень	Д	8	А	64
+И	О	З	Корень	Д	14
 С	44	И	H1	А	15	Д	24
 И	Э	З	body	А	4	Д	7
 И	class	З	app flex-row align-items-center  pace-done
@@ -8,10 +8,10 @@
 И	DIV	А	9	Д	10
 И	class	З	row justify-content-center
 И	DIV	А	11	Д	18
-И	class	З	col-md-7
+И	class	З	col-md-9
 И	a	З	Помощь	А	13
 И	href	З	/help
-
+И	Свойства.	З		С	8
 И	class	З	mb-3 text-sm-nowrap
 И	a	З	Помощь	А	17
 И	href	З	/help
@@ -61,7 +61,7 @@
 
 
 
-И	Показать	З	Да
+
 И	class	З	mb-3 text-sm-nowrap
 И	text	З	Платформа для разработки web-приложений
 

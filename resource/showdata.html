@@ -18,8 +18,8 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
-  <!-- <a class="navbar-brand" href="/" title="Платформа для разработки web-приложений в среде OneScript">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/osdb.png" width="110" height="37" alt="useyourmind"/>
+  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
+    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
   </a> -->
 
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
@@ -48,15 +48,15 @@
   <nav class="sidebar-nav ps ps--active-y">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('osdb=&data=help&cmd=newtab'); return false;">
+        <a class="nav-link" href="" onclick="seq_add('sdb=&data=help&cmd=newtab'); return false;">
         <i class="nav-icon icon-question "></i> Помощь</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('osdb=&data=expldb&cmd=newtab'); return false">
+        <a class="nav-link" href="" onclick="seq_add('sdb=&data=expldb&cmd=newtab'); return false">
         <i class="nav-icon icon-layers"></i> Базы данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('osdb=&data=data&cmd=newtab'); return false">
+        <a class="nav-link" href="" onclick="seq_add('sdb=&data=data&cmd=newtab'); return false">
         <i class="nav-icon icon-docs"></i> Работа с данными</a>
       </li>
       <li class="nav-item">
@@ -72,7 +72,11 @@
         <i class="nav-icon icon-wrench"></i> Структура данных</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('osdb=&data=log&cmd=newtab'); return false;">
+        <a class="nav-link" href="" onclick="seq_add('nodeid=1&amp;cmd=findnode'); return false;">
+        <i class="nav-icon icon-magnifier"></i> Найти узел</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="seq_add('sdb=&data=log&cmd=newtab'); return false;">
         <i class="nav-icon icon-calendar"></i> Журнал событий</a>
       </li>
       <li class="nav-item">
@@ -102,10 +106,9 @@
   <div id='mainmenu'></div>
 
   <div class="copyright">
-    <span>Powered by </span>
-    <a href="https://github.com/vasvl123/useyourmind">useyourmind</a>
-    </div>
-    <div id="status">
+    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+  </div>
+  <div id="status">
   </div>
 
 </main>
@@ -184,16 +187,6 @@
     </li>
 <!--/ОбластьВкладка-->
 
-<!--ОбластьСвойство-->
-<div id=".ПараметрВкладка_0">
-
-  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">✕</button>
-  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin');">.ПараметрОбъект</button>
-
-  .ПараметрСвойство
-</div>
-<!--/ОбластьСвойство-->
-
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
       <a class="nav-link" href="" onclick="seq_add('cmd=newtab'); return false;">
@@ -211,6 +204,17 @@
 </div>
 <!--/ОбластьУзел-->
 
+<!--ОбластьКнопкаРодитель-->
+<div id='.ПараметрИдУзла'>
+  <div style='white-space: nowrap;'>
+    <div style='display: inline-block;'>
+      <button type="button" class="btn btn-outline-dark btn-shadow" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
+    </div>
+  </div>
+.ПараметрДочернийУзел
+</div>
+<!--/ОбластьКнопкаРодитель-->
+
 <!--ОбластьКнопкаИмяЗначение-->
 <button title=".ПараметрИдУзла" type="button" class="btn btn-outline-dark btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="ypos=event.pageY; xpos=event.pageX-5; seq_add('nodeid=.ПараметрИдВкладки_.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 <!--/ОбластьКнопкаИмяЗначение-->
@@ -220,6 +224,18 @@
   <button type="button" class="btn btn-node btn-outline-dark btn-sm" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;show=true&amp;cmd=.ПараметрКоманда')">.ПараметрНадписьНаКнопке</button>
 </div>
 <!--/ОбластьКнопкаУзел-->
+
+<!--ОбластьИмяЗначениеСвойство-->
+<div style='display: inline-block;'>
+  <button class="btn btn-outline-light btn-sm" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">✕</button>
+</div>
+<div style='display: inline-block;' id='.ПараметрИдУзла'>
+  <div class="btn-group" role="group">
+    <button title=".ПараметрИдУзла" type="button" class="btn btn-outline-light btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin')">.ПараметрНадписьИмя</button>
+    <button title=".ПараметрИдУзла" type="button" class="btn btn-outline-light btn-shadow.ПараметрСистемныйУзел btn-sm" onclick="seq_add('nodeid=.ПараметрВкладка_.ПараметрИдУзла&amp;cmd=structwin')">.ПараметрНадписьЗначение</button>
+  </div>
+</div>
+<!--/ОбластьИмяЗначениеСвойство-->
 
 <!--ОбластьИмяЗначение-->
 <div style='display: inline-block;' id='.ПараметрИдУзла'>
@@ -257,8 +273,8 @@
     <input class="form-control form-control input-shadow" id=".ПараметрИдУзлаname" />
     <textarea class="form-control form-control input-shadow" id=".ПараметрИдУзлаvalue" />
     <br/>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Сохранить</button>
-    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Готово</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
   <script type='text/javascript'>
@@ -267,6 +283,21 @@
   </script>
 </div>
 <!--/ОбластьРедактироватьУзел-->
+
+<!--ОбластьНайтиУзел-->
+<div id='.ПараметрИдУзлаfind'>
+  <form onsubmit="return false;">
+    <div style='display: inline-block;'>
+      <div class="btn-group" role="group">
+        <input class="form-control form-control input-shadow" placeholder="Номер" id=".ПараметрИдУзлаnumber" />
+        <input class="form-control form-control input-shadow" placeholder="Значение" id=".ПараметрИдУзлаvalue" />
+        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode');">Найти</button>
+        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!--/ОбластьНайтиУзел-->
 
 <!--ОбластьЗагрузитьHTML-->
 <div id='.ПараметрИдУзлаimport'>
@@ -339,13 +370,13 @@
 </div>
 <!--/ОбластьМеню-->
 
+<!--ОбластьМенюЭлемент-->
+<a id=".ПараметрИдУзла" class="dropdown-item" href="" onclick="addcmd(this,event); return false;">.ПараметрПодсказка</a>
+<!--/ОбластьМенюЭлемент-->
+
 <!--ОбластьМенюИнструменты-->
 <a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
-
-<!--ОбластьМенюРедактировать-->
-<a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=editnode'); return false;">Редактировать</a>
-<!--/ОбластьМенюРедактировать-->
 
 <!--ОбластьУведомление-->
 <div id='insert'>
@@ -371,19 +402,21 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="card text-white bg-dark win" style="display:none">
-  <div class="card-header">
-    <b class="modal-title">.ПараметрЗаголовокОкна</b>
-    <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+<div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
+  <div class="card text-white bg-dark mw60">
+    <div class="card-header">
+      <b class="modal-title">.ПараметрЗаголовокОкна</b>
+      <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
+    </div>
+    <div class="card-body">
+      .ПараметрСодержимоеОкна
+    </div>
   </div>
-  <div class="card-body">
-    .ПараметрСодержимоеОкна
+  <div id='insert'>
+    <script type='text/javascript'>
+      $("#.ПараметрВкладка_0").draggable();
+    </script>
   </div>
-</div>
-<div id='insert'>
-  <script type='text/javascript'>
-    $("#.ПараметрВкладка_0").draggable();
-  </script>
 </div>
 <!--/ОбластьПанель-->
 
@@ -407,67 +440,19 @@ var tab,datatab,wintab;
 var btncmd='tabselect';
 var mode='';
 var seq=new Array();
-
-function iframeh(d) {
-  var i, frames;
-  frames = document.getElementsByTagName("iframe");
-  for (i = 0; i < frames.length; ++i)
-  {
-    if (frames[i].contentWindow.document === d) {
-      var f = document.getElementsByTagName("footer");
-      var h = document.getElementsByTagName("header");
-      var fh = f[0].offsetTop - h[0].offsetHeight;
-      frames[i].height = fh;
-      frames[i].style.display = 'block';
-      return fh;
-    }
-  }
-}
-
-function updifrm(oid,p) {
-  var ot = oid.slice(0,oid.indexOf('_'));
-  $("#"+ot+"_0").removeClass("my-4");
-  frames = document.getElementsByTagName("iframe");
-  for (i = 0; i < frames.length; ++i) {
-    var ft = frames[i].id;
-    ft = ft.slice(0,ft.indexOf('_'));
-    if (ft == ot) {
-      if (frames[i].contentWindow.upd) {
-        frames[i].contentWindow.upd(p);
-      } else {
-        setTimeout(function(){updifrm(oid,p)},500);
-      }
-    }
-  }
-}
-
-function nodeprop(p_id, p_fid, p, s, d) {
-  var i, frames;
-  frames = document.getElementsByTagName("iframe");
-  for (i = 0; i < frames.length; ++i)
-  {
-    if (frames[i].contentWindow.document === d) {
-      var ft = frames[i].id;
-      ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + p_id + "&propid=" + p_fid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
-      seq_add(q);
-    }
-  }
-}
-
-function showtip(xpos, ypos, tip) {
-  var tt = $('#'+datatab+'_0').append('<div class="badge badge-dark" style="z-index:1060; position:absolute; display: block; top:'+(ypos+25)+'px; left:'+(xpos+10)+'px;">'+tip+'</div>');
-  return tt[0].lastChild;
-}
+var aupd=true;
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
 
-function addcmd(el) {
-  if (el.tagName=='INPUT') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
-  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick');}
-  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',50);}
+function addcmd(el,ev) {
+  ypos = ev.pageY;
+  xpos = ev.pageX-5;
+  if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
+  if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
+  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&text='+encodeURIComponent(el.textContent));}
+  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',200);}
 }
 
 function postcmd(cmd){
@@ -484,7 +469,7 @@ function postcmd(cmd){
   xhr.send(cmd);
 }
 
-function seq_add(cmd,delay=5) {
+function seq_add(cmd,delay=0) {
   var datascrolled=scrolled();
   var winscrolled="";
   // if (wintab!=""&&wintab!=undefined) {
@@ -498,7 +483,7 @@ function seq_add(cmd,delay=5) {
 }
 
 seq_add('cmd=refresh');
-seq_add('cmd=upddata');
+//seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {
@@ -506,13 +491,12 @@ function seq_sendcmd(){
     var xhr = new XHR();
     xhr.open('GET',seq.shift(),true);
     xhr.onload = function() {
-      if (this.responseURL.indexOf('cmd=upddata', 0) > 0) {seq_add('cmd=upddata')}
       if (this.response) {
         $(this.response).each(function(index, value) {
           if (this.id) {$('#'+this.id).replaceWith(this);}
         });
+        //if (this.responseURL.indexOf('cmd=upddata', 0) > 0 && aupd) {seq_add('cmd=upddata')}
       }
-      seq_sendcmd();
     }
     xhr.send();
   }
@@ -651,6 +635,10 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 </body>
 </html>
 <!--/ОбластьПодвал-->
+
+<!--ОбластьОбновить-->
+<div id='insert'><script type='text/javascript'>seq_add('cmd=upddata');</script></div>
+<!--/ОбластьОбновить-->
 
 <!--ОбластьПеренаправить-->
 <div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>

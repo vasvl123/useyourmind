@@ -1,8 +1,9 @@
 
-*.files/
-*.files/*
-!.files/
-log.osdb
-users.osdb
-web.osdb
+.files/*
+data/user/*
+*.sdb
 .vscode/*
+*.dll
+*.exe
+Мед.os
+med.sd

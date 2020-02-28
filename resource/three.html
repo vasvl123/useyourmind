@@ -18,12 +18,13 @@
 		  import { DragControls } from './three/DragControls.js';
 
       var camera, controls, scene, renderer, geometry;
-      var ttip, color, obj;
+      var ttip, color, obj, sel, ensel;
       var objects = [];
       var mobjects = [];
 
       var raycaster = new THREE.Raycaster();
       var mouse = new THREE.Vector2();
+      var m = new THREE.Vector2();
 
       var moveForward = false;
 			var moveBackward = false;
@@ -98,16 +99,36 @@
 				var light = new THREE.AmbientLight( 0x222222 );
 				scene.add( light );
 
+        ensel=true;
+
         //
         window.parent.addEventListener( 'resize', onWindowResize, false );
-        window.addEventListener( 'click', onClick, false );
+        //window.addEventListener( 'click', onClick, false );
 
         // you may also want to add an mouse move event listener to render when moving objects
+        renderer.domElement.addEventListener("mousedown", function( event ) {
+          ensel=false;
+          m.set(event.clientX,event.clientY);
+        });
+        renderer.domElement.addEventListener("mouseup", function( event ) {
+          ensel=true;
+          m.sub(new THREE.Vector2(event.clientX,event.clientY));
+          if (m.round().x+m.round().y == 0) {
+            click();
+          } else {
+            window.parent.nodeprop(player.p_id, player.p_fid, get_prop(player), 'false', document);
+          }
+        });
         renderer.domElement.addEventListener("mousemove", function( event ) {
           mmove(event);
         });
         renderer.domElement.addEventListener("wheel", function( event ) {
           renderer.render(scene, camera);
+        });
+        renderer.domElement.addEventListener("mouseleave", function( event ) {
+          if (ttip) {
+            ttip.remove();
+          }
         });
 
         // var gui = new GUI();
@@ -118,9 +139,11 @@
           controls.enabled = false;
 				} );
 				dragControls.addEventListener( 'dragend', function ( event ) {
-          window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
 					controls.enabled = true;
-				} );
+          if (m.round().x+m.round().y != 0) {
+            window.parent.nodeprop(event.object.p_id, event.object.p_fid, get_prop(event.object), 'false', document);
+				  }
+        });
         dragControls.addEventListener( 'hoveron', function ( event ) {
 				} );
         dragControls.addEventListener( 'hoveroff', function ( event ) {
@@ -254,10 +277,10 @@
 
       function mmove(event) {
 
-        if (controls.enabled) {
+        if (controls.enabled&&ensel) {
 
           mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+          mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
           raycaster.setFromCamera( mouse, camera );
         	var intersects = raycaster.intersectObjects( objects );
@@ -269,7 +292,6 @@
           }
           if ( selobj != obj ) {
             if (obj) {
-              obj.material.color = color;
               obj = undefined;
               if (ttip) {
                 ttip.remove();
@@ -278,23 +300,32 @@
             if (selobj) {
               if (selobj.p_name) {
                 obj = selobj;
-                color = obj.material.color;
                 ttip=window.parent.showtip(event.clientX, event.clientY, obj.p_name);
-                obj.material.color = new THREE.Color( color );
-                obj.material.color.r += 0.5;
-                obj.material.color.g += 0.5;
-                obj.material.color.b += 0.5;
               }
             }
           }
+        } else {
+          if (ttip) {
+            ttip.remove();
+          }
         }
-
-        renderer.render(scene, camera);
+        render();
       }
 
-      function onClick (event) {
-        if (obj) {
+      function click () {
+        if (obj==sel) {
           window.parent.nodeprop(obj.p_id, obj.p_fid, '', 'true', document);
+        } else {
+          if (sel) {
+            sel.material.color = color;
+          }
+          sel = obj;
+          color = obj.material.color;
+          obj.material.color = new THREE.Color( color );
+          obj.material.color.r -= 0.2;
+          obj.material.color.g -= 0.2;
+          obj.material.color.b += 0.3;
+          render();
         }
       }
 
