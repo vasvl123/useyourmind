@@ -370,9 +370,22 @@
 </div>
 <!--/ОбластьМеню-->
 
-<button class="btn btn-outline-light" style="margin:1px 1px; border-color:grey"	onclick="addcmd(this,event); return false;" type="button">.ПараметрПодсказка</button>
+<!--ОбластьПоказатьМеню-->
+<div id='designmenu' class="" style="z-index:1060; position:absolute; display: block;">
+.ПараметрМенюИнструменты
+<script type='text/javascript'>
+  var t=$(".m.ПараметрИдУзла");
+  var m=$("#designmenu");
+  m.css('top',t.offset().top+t[0].clientHeight+3);
+  m.css('left',t.offset().left);
+  m.show();
+  $(document).click(function(e){m.hide();e.stopPropagation();});
+</script>
+</div>
+<!--/ОбластьПоказатьМеню-->
+
 <!--ОбластьМенюЭлемент-->
-<a id=".ПараметрИдУзла" class="dropdown-item" href="" onclick="addcmd(this,event); return false;">.ПараметрПодсказка</a>
+<button id=".ПараметрИдУзла" class="btn1 btn-.ПараметрКласс" style="border-color: white grey grey white"	onclick="addcmd(this,event); return false;" type="button">.ПараметрПодсказка</button><br>
 <!--/ОбластьМенюЭлемент-->
 
 <!--ОбластьМенюИнструменты-->
@@ -448,8 +461,8 @@ function scrolled() {
 }
 
 function addcmd(el,ev) {
-  ypos = ev.pageY;
-  xpos = ev.pageX-5;
+  // ypos = ev.pageY;
+  // xpos = ev.pageX-5;
   if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&text='+encodeURIComponent(el.textContent));}
@@ -484,7 +497,7 @@ function seq_add(cmd,delay=0) {
 }
 
 seq_add('cmd=refresh');
-//seq_add('cmd=upddata');
+seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {
