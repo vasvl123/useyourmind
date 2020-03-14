@@ -1,0 +1,308 @@
+И	О	З	Корень	Д	14
+С	44	И	H1	А	15	Д	24
+И	Э	З	body	А	4	Д	7
+И	class	З	app flex-row align-items-center  pace-done
+И	div	А	6	Д	7
+И	class	З	container
+И	Э	З	Фронт	Д	8
+И	DIV	А	9	Д	10
+И	class	З	row justify-content-center
+И	DIV	А	11	Д	18
+И	class	З	col-md-9
+И	a	З	Помощь	А	13
+И	href	З	/help
+И	Свойства.	З		С	8	Д	46
+И	class	З	mb-3 text-sm-nowrap
+И	a	З	Помощь	А	17
+И	href	З	/help
+И	DIV	А	19	Д	20
+И	class	З	card-group
+И	DIV	А	21	Д	118
+И	class	З	card p-4
+И	TEXT	Д	24
+И	class	З	docs-callout docs-callout-warning
+И	text	З	Легке програмування
+И	H5	А	26	Д	27	С	28
+И	id	З	jquery-incompatibility
+И	text	З	jQuery incompatibility
+И	P	Д	29
+И	CODE	А	30	Д	31	С	32
+И	class	З	highlighter-rouge
+И	text	З	[hidden]
+И	CODE	А	33	Д	34	С	35
+И	class	З	highlighter-rouge
+И	text	З	$(...).hide()
+И	CODE	А	36	Д	37	С	38
+И	class	З	highlighter-rouge
+И	text	З	$(...).show()
+И	CODE	А	39	Д	40	С	41
+И	class	З	highlighter-rouge
+И	text	З	[hidden]
+И	CODE	А	42	Д	43
+И	class	З	highlighter-rouge
+И	text	З	display
+И	DIV	А	45	Д	70	С	136
+И	class	З	docs-callout docs-callout-warning
+И	Заголовок	З	Легке програмування
+И	STRONG	Д	48
+
+
+И	class	З	nav-item
+И	A	А	52	Д	54
+И	class	З	nav-link	С	53
+И	href	З	/help
+И	text	З	Описание
+И	class	З	lead
+И	STRONG	Д	60
+И	class	З	lead
+И	STRONG	Д	59
+И	text	З	серверный рендеринг на языке OneScript
+И	text	З	управление данными через панель разработчика
+
+
+
+
+И	class	З	mb-3 text-sm-nowrap
+И	text	З	Платформа для разработки web-приложений
+
+
+
+И	P	А	71	Д	72	С	78
+И	class	З	lead
+И	STRONG	Д	73
+И	text	З	проект з відкритим вихідним кодом
+И	P	А	75	Д	76
+И	class	З	lead
+И	STRONG	Д	77
+И	text	З	власний фреймворк для веб-розробки
+И	P	А	79	Д	80	С	74
+И	class	З	lead
+И	STRONG	Д	81
+И	text	З	дозволяє створювати і виконувати текстові сценарії
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	DIV	А	119	Д	2
+И	class	З	card-body text-left
+
+
+И	style	З	background-color:#1ea6d6
+И	class	З	navbar navbar-expand-lg navbar-dark	С	122
+
+
+
+И	class	З	mb-3 text-sm-nowrap
+И	text	З	Платформа для разработки web-приложений
+
+И	class	З	lead
+И	STRONG	Д	132
+И	text	З	управление данными через панель разработчика
+
+И	class	З	lead mb-4
+И	text	З	проект с открытым кодом на базе CoreUI и Bootstrap 4
+И	DIV	А	137	Д	138
+И	class	З	flex-column flex-md-row lead mb-3 text-center
+И	A	А	162	Д	164	С	165
+И	DIV	А	141	Д	142
+И	id	З	navbarSupportedContent
+И	class	З	collapse navbar-collapse	С	140
+И	UL	А	143	Д	144
+И	class	З	navbar-nav
+И	LI	А	145	Д	146	С	150
+И	class	З	nav-item
+И	A	А	148	Д	149
+И	href	З	/
+И	class	З	nav-link active	С	147
+И	text	З	Исходный код
+И	LI	А	151	Д	152	С	156
+И	class	З	nav-item
+И	A	А	154	Д	155
+И	href	З	https://gitter.im/OneScriptDB/Lobby
+И	class	З	nav-link	С	153
+И	text	З	Общение
+И	LI	А	157	Д	158
+И	class	З	nav-item
+И	A	А	160	Д	161
+И	href	З	/help
+И	class	З	nav-link	С	159
+И	text	З	Помощь
+И	href	З	/showdata/login	С	163
+И	class	З	btn btn-lg btn-success mb-3 mb-md-0 mr-md-3
+И	text	З	Вхід
+И	A	А	166	Д	168
+И	href	З	/showdata/register	С	167
+И	class	З	btn btn-lg btn-primary mb-3 mb-md-0 mr-md-3
+И	text	З	Реєстрація
+
+
+
+
+
+
+И	class	З	navbar navbar-expand-lg navbar-dark	С	176
+И	style	З	background-color:#1ea6d6
+И	A	А	178	Д	181	С	187
+И	class	З	navbar-brand	С	179
+И	href	З	https://github.com/vasvl123/OneScriptDB/	С	180
+И	title	З	Объектно-ориентированная система управления базами данных в среде OneScript
+И	IMG	А	182
+И	class	З	navbar-brand-full	С	183
+И	src	З	/resource/osdb_i.png	С	184
+И	alt	З	OneScriptDB	С	185
+И	width	З	110	С	186
+И	height	З	37
+И	DIV	А	188	Д	190
+И	class	З	collapse navbar-collapse	С	189
+И	id	З	navbarSupportedContent
+И	UL	А	191	Д	192
+И	class	З	navbar-nav
+И	LI	А	193	Д	194	С	198
+И	class	З	nav-item
+И	A	А	195	Д	197
+И	class	З	nav-link active	С	196
+И	href	З	/
+И	text	З	Исходный код
+И	LI	А	199	Д	200	С	204
+И	class	З	nav-item
+И	A	А	201	Д	203
+И	class	З	nav-link	С	202
+И	href	З	https://gitter.im/OneScriptDB/Lobby
+И	text	З	Общение
+И	LI	А	205	Д	206
+И	class	З	nav-item
+И	A	А	207	Д	209
+И	class	З	nav-link	С	208
+И	href	З	/help
+И	text	З	Помощь
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+С	139	И	A	А	296	Д	297
+И	title	З	Объектно-ориентированная система управления базами данных в среде OneScript
+И	href	З	https://github.com/vasvl123/OneScriptDB/	С	294
+И	class	З	navbar-brand	С	295
+И	IMG	А	302
+И	height	З	37
+И	width	З	110	С	298
+И	alt	З	OneScriptDB	С	299
+И	src	З	/resource/osdb_i.png	С	300
+И	class	З	navbar-brand-full	С	301
+
+
+
+
+
+

@@ -39,7 +39,7 @@ function nodeprop(p_id, p_fid, p, s, d) {
     if (frames[i].contentWindow.document === d) {
       var ft = frames[i].id;
       ft = ft.slice(0,ft.indexOf('_'));
-      q = "nodeid=" + ft + "_" + p_id + "&propid=" + p_fid + "&cmd=nodeprop&show=" + s + "&prop=" + encodeURIComponent(p);
+      q = "nodeid=" + ft + "_" + p_id + "&propid=" + p_fid + "&cmd=nodeprop&show=" + s + "&prop=" + p;
       seq_add(q);
     }
   }

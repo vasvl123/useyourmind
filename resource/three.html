@@ -233,12 +233,12 @@
       function get_prop(o) {
         var q = "";
         q = "position_x=" + o.position.round().x +
-            "&position_y=" + o.position.round().y +
-            "&position_z=" + o.position.round().z;
+            ";position_y=" + o.position.round().y +
+            ";position_z=" + o.position.round().z;
         if (o.p_role == 'player') {
-          q += "&camera_x=" + controls.object.position.round().x +
-               "&camera_y=" + controls.object.position.round().y +
-               "&camera_z=" + controls.object.position.round().z;
+          q += ";camera_x=" + controls.object.position.round().x +
+               ";camera_y=" + controls.object.position.round().y +
+               ";camera_z=" + controls.object.position.round().z;
         }
         return q;
       }
