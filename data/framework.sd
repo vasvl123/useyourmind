@@ -21,7 +21,7 @@
 И	class	З	card p-4
 И	TEXT	Д	24
 И	class	З	docs-callout docs-callout-warning
-И	text	З	Легке програмування
+И	text	З	Розумне проектування
 И	H5	А	26	Д	27	С	28
 И	id	З	jquery-incompatibility
 И	text	З	jQuery incompatibility
@@ -43,7 +43,7 @@
 И	text	З	display
 И	DIV	А	45	Д	70	С	136
 И	class	З	docs-callout docs-callout-warning
-И	Заголовок	З	Легке програмування
+И	Заголовок	З	Розумне проектування
 И	STRONG	Д	48
 
 
@@ -74,11 +74,11 @@
 И	P	А	75	Д	76
 И	class	З	lead
 И	STRONG	Д	77
-И	text	З	власний фреймворк для веб-розробки
+И	text	З	онлайн інструмент розробника
 И	P	А	79	Д	80	С	74
 И	class	З	lead
 И	STRONG	Д	81
-И	text	З	дозволяє створювати і виконувати текстові сценарії
+И	text	З	формалізоване представлення знань
 
 
 

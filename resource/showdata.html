@@ -1,13 +1,14 @@
 <!--ОбластьШапка-->
 <!DOCTYPE html>
-<html lang="ru" xml:lang="ru">
+<html lang="ua" xml:lang="ua">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Разумное проектирование</title>
+<title>Розумне проектування</title>
+<link rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
 <link href=".ПараметрХост/resource/style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -190,7 +191,7 @@
 <!--ОбластьНоваяВкладка-->
     <li class="nav-item">
       <a class="nav-link" href="" onclick="seq_add('cmd=newtab'); return false;">
-        <button class="btn btn btn-outline-light btn-sm" style="border-style: none; color:grey;" type="button">➕</button>
+        <button class="btn btn-outline-light btn-sm" style="border-style: none; color:grey;" type="button">➕</button>
       </a>
     </li>
 <!--/ОбластьНоваяВкладка-->
@@ -370,8 +371,22 @@
 </div>
 <!--/ОбластьМеню-->
 
+<!--ОбластьПоказатьМеню-->
+<div id='designmenu' class="" style="z-index:1060; position:absolute; display: block;">
+.ПараметрМенюИнструменты
+<script type='text/javascript'>
+  var t=$(".m.ПараметрИдУзла");
+  var m=$("#designmenu");
+  m.css('top',t.offset().top+t[0].clientHeight+3);
+  m.css('left',t.offset().left);
+  m.show();
+  $(document).click(function(e){m.hide();e.stopPropagation();});
+</script>
+</div>
+<!--/ОбластьПоказатьМеню-->
+
 <!--ОбластьМенюЭлемент-->
-<a id=".ПараметрИдУзла" class="dropdown-item" href="" onclick="addcmd(this,event); return false;">.ПараметрПодсказка</a>
+<button id=".ПараметрИдУзла" class="btn1 btn-.ПараметрКласс" style="border-color: silver grey grey silver"	onclick="addcmd(this,event); return false;" type="button">.ПараметрПодсказка</button><br>
 <!--/ОбластьМенюЭлемент-->
 
 <!--ОбластьМенюИнструменты-->
@@ -447,8 +462,8 @@ function scrolled() {
 }
 
 function addcmd(el,ev) {
-  ypos = ev.pageY;
-  xpos = ev.pageX-5;
+  // ypos = ev.pageY;
+  // xpos = ev.pageX-5;
   if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&text='+encodeURIComponent(el.textContent));}
@@ -483,7 +498,7 @@ function seq_add(cmd,delay=0) {
 }
 
 seq_add('cmd=refresh');
-//seq_add('cmd=upddata');
+seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {

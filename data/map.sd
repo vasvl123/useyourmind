@@ -223,7 +223,7 @@
 И	camera_z	З	96
 
 И	style	З	display: none
-И	Значение	З	Содержимое
+И	П	З	Содержимое
 И	iframe	З		С	283	А	3
 И	src	З	/resource/map.js
 

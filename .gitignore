@@ -3,7 +3,6 @@
 data/user/*
 *.sdb
 .vscode/*
-*.dll
-*.exe
 Мед.os
 med.sd
+*.txt
