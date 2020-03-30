@@ -475,6 +475,8 @@ function seq_add(cmd,delay=0) {
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
+  b = $("body");
+  b.removeClass("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
