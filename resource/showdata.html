@@ -146,7 +146,7 @@
 <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
   .ПараметрВкладки
 </ul>
-<div id="insert">
+<div id="script">
   <script type='text/javascript'>
     mode=".ПараметрРежим";
     tab=".ПараметрТекущаяВкладка";
@@ -172,7 +172,7 @@
 <!--/ОбластьСубъект-->
 
 <!--ОбластьСкрипт-->
-<div id="insert">
+<div id="script">
   <script type='text/javascript'>
     tabselect(".ПараметрТипВкладки",".ПараметрИдВкладки",".ПараметрПрокрутка");
   </script>
@@ -260,6 +260,8 @@
     </span>
     </div>
   </form>
+</div>
+<div id="script">
   <script type='text/javascript'>
     el = $('#.ПараметрИдУзла.ПараметрКоманда')[0];
     el.select();
@@ -278,6 +280,8 @@
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
+</div>
+<div id="script">
   <script type='text/javascript'>
     $('#.ПараметрИдУзлаname')[0].value = decodeURIComponent(".ПараметрИмяУзла");
     $('#.ПараметрИдУзлаvalue')[0].value = decodeURIComponent(".ПараметрЗначениеУзла");
@@ -360,14 +364,16 @@
 
 <!--ОбластьМеню-->
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
-.ПараметрМенюИнструменты
-<script type='text/javascript'>
-  var m=$("#.ПараметрВидМеню");
-  m.css('top',ypos);
-  m.css('left',xpos);
-  m.show();
-  $(document).click(function(e){m.hide();e.stopPropagation();});
-</script>
+  .ПараметрМенюИнструменты
+</div>
+<div id="script">
+  <script type='text/javascript'>
+    var m=$("#.ПараметрВидМеню");
+    m.css('top',ypos);
+    m.css('left',xpos);
+    m.show();
+    $(document).click(function(e){m.hide();e.stopPropagation();});
+  </script>
 </div>
 <!--/ОбластьМеню-->
 
@@ -376,11 +382,11 @@
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьУведомление-->
-<div id='insert'>
-<script type='text/javascript'>
-Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
-.ПараметрКоманда
-</script>
+<div id='script'>
+  <script type='text/javascript'>
+  Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
+  .ПараметрКоманда
+  </script>
 </div>
 <!--/ОбластьУведомление-->
 
@@ -409,11 +415,11 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
       .ПараметрСодержимоеОкна
     </div>
   </div>
-  <div id='insert'>
-    <script type='text/javascript'>
-      $("#.ПараметрВкладка_0").draggable();
-    </script>
-  </div>
+</div>
+<div id='script'>
+  <script type='text/javascript'>
+    $("#.ПараметрВкладка_0").draggable();
+  </script>
 </div>
 <!--/ОбластьПанель-->
 
@@ -438,6 +444,7 @@ var btncmd='tabselect';
 var mode='';
 var seq=new Array();
 var aupd=true;
+var upddata;
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -488,13 +495,26 @@ function seq_sendcmd(){
   if(seq.length) {
     var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
     var xhr = new XHR();
-    xhr.open('GET',seq.shift(),true);
+    var url = seq.shift();
+    if (url.indexOf('cmd=upddata', 0) > 0 && aupd) {
+      upddata = xhr;
+    } else {
+    }
+    xhr.open('GET',url,true);
     xhr.onload = function() {
       if (this.response) {
         $(this.response).each(function(index, value) {
-          if (this.id) {$('#'+this.id).replaceWith(this);}
+          if (this.id) {
+            if (this.id == "script") {
+              eval($("script", this).text());
+            } else {
+              $('#'+this.id).replaceWith(this);
+            }
+          }
         });
-        //if (this.responseURL.indexOf('cmd=upddata', 0) > 0 && aupd) {seq_add('cmd=upddata')}
+      }
+      if (upddata.readyState==4) {
+        seq_add('cmd=upddata');
       }
     }
     xhr.send();
@@ -636,13 +656,13 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <!--/ОбластьПодвал-->
 
 <!--ОбластьОбновить-->
-<div id='insert'><script type='text/javascript'>seq_add('cmd=upddata');</script></div>
+<div id='script'><script type='text/javascript'>seq_add('cmd=upddata');</script></div>
 <!--/ОбластьОбновить-->
 
 <!--ОбластьПеренаправить-->
-<div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
+<div id='script'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
 <!--/ОбластьПеренаправить-->
 
 <!--ОбластьИзменитьАдрес-->
-<div id='insert'><script type='text/javascript'>history.pushState(null, null, '.ПараметрПуть');</script></div>
+<div id='script'><script type='text/javascript'>history.pushState(null, null, '.ПараметрПуть');</script></div>
 <!--/ОбластьИзменитьАдрес-->
