@@ -466,8 +466,17 @@ function postcmd(cmd){
   xhr.onload = function() {
     if (this.response) {
       $(this.response).each(function(index, value) {
-        if (this.id) {$('#'+this.id).replaceWith(this);}
+        if (this.id) {
+          if (this.id == "script") {
+            eval($("script", this).text());
+          } else {
+            $('#'+this.id).replaceWith(this);
+          }
+        }
       });
+      if (upddata.readyState==4) {
+        seq_add('cmd=upddata');
+      }
     }
   }
   xhr.send(cmd);
@@ -498,7 +507,6 @@ function seq_sendcmd(){
     var url = seq.shift();
     if (url.indexOf('cmd=upddata', 0) > 0 && aupd) {
       upddata = xhr;
-    } else {
     }
     xhr.open('GET',url,true);
     xhr.onload = function() {
