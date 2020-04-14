@@ -31,11 +31,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
-  </ul>
-
-  <ul class="nav navbar-nav ml-auto" id="acc">
-  </ul>
+  .ПараметрВкладки
 
   <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
@@ -96,8 +92,7 @@
 
   <div class="container-fluid">
 
-    <div id='data'></div>
-    <div id='win'></div>
+    .ПараметрСодержимое
 
   </div>
 
@@ -137,11 +132,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
-  </ul>
-
-  <ul class="nav navbar-nav ml-auto" id="acc">
-  </ul>
+  .ПараметрВкладки
 
 </header>
 
@@ -151,16 +142,24 @@
   <nav class="sidebar-nav ps ps--active-y">
     <ul class="nav">
       <li class="nav-item">
+        <a class="nav-link" href="/">
+        <i class="nav-icon icon-home "></i> Початок</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">
+        <i class="nav-icon icon-login "></i> Вхід</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/help">
         <i class="nav-icon icon-question "></i> Допомога</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
-        <i class="nav-icon icon-layers"></i> Вихідний код</a>
+        <i class="nav-icon icon-docs"></i> Вихідний код</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/useyourmind">
-        <i class="nav-icon icon-docs"></i> use your.mind</a>
+        <i class="nav-icon icon-layers"></i> use your.mind</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
@@ -174,8 +173,7 @@
 
   <div class="container-fluid">
 
-    <div id='data'></div>
-    <div id='win'></div>
+    .ПараметрСодержимое
 
   </div>
 
@@ -184,9 +182,6 @@
   <div id='designmenu'></div>
   <div id='mainmenu'></div>
 
-  <div class="copyright">
-    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
-  </div>
   <div id="status">
   </div>
 
@@ -227,7 +222,7 @@
 <script>
     mode=".ПараметрРежим";
     tab=".ПараметрТекущаяВкладка";
-    document.title = ".ПараметрЗаголовокСтраницы";
+    document.title = ".ПараметрЗаголовокСтраницы" + " - розумне проектування";
 </script>
 <!--/ОбластьВкладки-->
 
