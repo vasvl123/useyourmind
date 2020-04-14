@@ -121,6 +121,84 @@
 </div>
 <!--/ОбластьПанельМенюОкно-->
 
+<!--ОбластьПанельОкно-->
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+<header class="app-header navbar" id="navbar">
+
+  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
+    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
+  </a> -->
+
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
+  </ul>
+
+  <ul class="nav navbar-nav ml-auto" id="acc">
+  </ul>
+
+</header>
+
+<div class="app-body">
+
+<div class="sidebar">
+  <nav class="sidebar-nav ps ps--active-y">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/help">
+        <i class="nav-icon icon-question "></i> Допомога</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
+        <i class="nav-icon icon-layers"></i> Вихідний код</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/useyourmind">
+        <i class="nav-icon icon-docs"></i> use your.mind</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
+        <i class="nav-icon icon-ban"></i> Завершити</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<main class="main">
+
+  <div class="container-fluid">
+
+    <div id='data'></div>
+    <div id='win'></div>
+
+  </div>
+
+  <div id='insert'></div>
+  <div id='notifies'></div>
+  <div id='designmenu'></div>
+  <div id='mainmenu'></div>
+
+  <div class="copyright">
+    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+  </div>
+  <div id="status">
+  </div>
+
+</main>
+
+<aside class="aside-menu">
+  <div id='prop'></div>
+</aside>
+
+</div>
+<!--/ОбластьПанельОкно-->
+
 <!--ОбластьРежимПросмотр-->
 <li class="nav-item" id="mode">
   <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
@@ -506,7 +584,7 @@ function seq_add(cmd,delay=0) {
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
-seq_add('cmd=refresh');
+//seq_add('cmd=refresh');
 seq_add('cmd=upddata');
 
 function seq_sendcmd(){
