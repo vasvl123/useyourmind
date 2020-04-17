@@ -15,7 +15,7 @@
 </head>
 <!--/ОбластьШапка-->
 
-<!--ОбластьПанельМенюОкно-->
+<!--ОбластьПанельОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
@@ -45,162 +45,118 @@
 
 <div class="app-body">
 
-<div class="sidebar">
-  <nav class="sidebar-nav ps ps--active-y">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=help&cmd=newtab'); return false;">
-        <i class="nav-icon icon-question "></i> Помощь</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=expldb&cmd=newtab'); return false">
-        <i class="nav-icon icon-layers"></i> Базы данных</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=data&cmd=newtab'); return false">
-        <i class="nav-icon icon-docs"></i> Работа с данными</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
-        <i class="nav-icon icon-folder"></i> Сохранить данные</a>
-      </li>
-      <li class="nav-item" id="mode">
-        <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
-        <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=structwin'); return false;">
-        <i class="nav-icon icon-wrench"></i> Структура данных</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=findnode'); return false;">
-        <i class="nav-icon icon-magnifier"></i> Найти узел</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=log&cmd=newtab'); return false;">
-        <i class="nav-icon icon-calendar"></i> Журнал событий</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">
-        <i class="nav-icon icon-loop"></i> Перезапустить</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-        <i class="nav-icon icon-ban"></i> Завершить</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+  .ПараметрБокПанель
 
-<main class="main">
+  <main class="main">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    .ПараметрСодержимое
+      .ПараметрСодержимое
+
+    </div>
+
+    <div id='insert'></div>
+    <div id='notifies'></div>
+    <div id='designmenu'></div>
+    <div id='mainmenu'></div>
+
+    <div class="copyright" id="copyright">
+      <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+    </div>
+
+    <div id="status">
+    </div>
+
+  </main>
+
+  <aside class="aside-menu">
+    <div id='prop'></div>
+  </aside>
 
   </div>
-
-  <div id='insert'></div>
-  <div id='notifies'></div>
-  <div id='designmenu'></div>
-  <div id='mainmenu'></div>
-
-  <div class="copyright">
-    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
-  </div>
-  <div id="status">
-  </div>
-
-</main>
-
-<aside class="aside-menu">
-  <div id='prop'></div>
-</aside>
-
-</div>
-<!--/ОбластьПанельМенюОкно-->
-
-<!--ОбластьПанельОкно-->
-<body class="app header-fixed sidebar-fixed aside-menu-fixed">
-<header class="app-header navbar" id="navbar">
-
-  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
-  </a> -->
-
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <ul class="nav navbar-nav d-md-down" id="tabs">
-  </ul>
-
-  <ul class="nav navbar-nav ml-auto" id="acc">
-  </ul>
-
-</header>
-
-<div class="app-body">
-
-<div class="sidebar">
-  <nav class="sidebar-nav ps ps--active-y">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="/">
-        <i class="nav-icon icon-home "></i> Початок</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/login">
-        <i class="nav-icon icon-login "></i> Вхід</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/help">
-        <i class="nav-icon icon-question "></i> Допомога</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
-        <i class="nav-icon icon-docs"></i> Вихідний код</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/useyourmind">
-        <i class="nav-icon icon-layers"></i> use your.mind</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-        <i class="nav-icon icon-ban"></i> Завершити</a>
-      </li>
-    </ul>
-  </nav>
-</div>
-
-<main class="main">
-
-  <div class="container-fluid">
-
-    .ПараметрСодержимое
-
-  </div>
-
-  <div id='insert'></div>
-  <div id='notifies'></div>
-  <div id='designmenu'></div>
-  <div id='mainmenu'></div>
-
-  <div id="status">
-  </div>
-
-</main>
-
-<aside class="aside-menu">
-  <div id='prop'></div>
-</aside>
-
-</div>
 <!--/ОбластьПанельОкно-->
+
+<!--ОбластьПанельМеню1-->
+  <div class="sidebar" id="sidebar">
+    <nav class="sidebar-nav ps ps--active-y">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+          <i class="nav-icon icon-home "></i> Початок</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">
+          <i class="nav-icon icon-login "></i> Вхід</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/help">
+          <i class="nav-icon icon-question "></i> Допомога</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
+          <i class="nav-icon icon-docs"></i> Вихідний код</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/useyourmind">
+          <i class="nav-icon icon-layers"></i> use your.mind</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
+          <i class="nav-icon icon-ban"></i> Завершити</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<!--/ОбластьПанельМеню1-->
+
+<!--ОбластьПанельМеню2-->
+  <div class="sidebar" id="sidebar">
+    <nav class="sidebar-nav ps ps--active-y">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=help&cmd=newtab'); return false;">
+          <i class="nav-icon icon-question "></i> Помощь</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=expldb&cmd=newtab'); return false">
+          <i class="nav-icon icon-layers"></i> Базы данных</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=data&cmd=newtab'); return false">
+          <i class="nav-icon icon-docs"></i> Работа с данными</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
+          <i class="nav-icon icon-folder"></i> Сохранить данные</a>
+        </li>
+        <li class="nav-item" id="mode">
+          <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
+          <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=structwin'); return false;">
+          <i class="nav-icon icon-wrench"></i> Структура данных</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=findnode'); return false;">
+          <i class="nav-icon icon-magnifier"></i> Найти узел</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=log&cmd=newtab'); return false;">
+          <i class="nav-icon icon-calendar"></i> Журнал событий</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">
+          <i class="nav-icon icon-loop"></i> Перезапустить</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
+          <i class="nav-icon icon-ban"></i> Завершить</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+<!--/ОбластьПанельМеню2-->
 
 <!--ОбластьРежимПросмотр-->
 <li class="nav-item" id="mode">
@@ -534,7 +490,9 @@ function sendform(el){
     if (inputs[i].nodeName === "INPUT") {
       v = encodeURIComponent(inputs[i].value);
       if (inputs[i].type === "file") {
-        formData.append(inputs[i].name, inputs[i].files[0], v);
+        if (inputs[i].files.length > 0) {
+          formData.append(inputs[i].name, inputs[i].files[0], v);
+        }
       } else {
         formData.append(inputs[i].name, v);
       }
