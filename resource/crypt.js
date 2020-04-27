@@ -5,7 +5,7 @@ function send_pwd() {
   var pwd=$('#'+tab+'_416')[0].value;
   var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));
   var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));
-  postcmd('procid='+procid+'&nodeid='+tab+'_298&cmd=auth&uid='+uid+'&unm='+unm+'&pwd='+digest);
+  postcmd('procid='+procid+'&nodeid='+tab+'_298&cmd=auth&uid='+uid+'&unm='+encodeURIComponent(unm)+'&pwd='+digest);
 }
 
 function base64ToArrayBuffer(base64) {
@@ -46,5 +46,5 @@ function send_reg() {
   var hpwd2 = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd2));
   var vpwd = vig_e(hpwd2,key);
 
-  postcmd('procid='+procid+'&nodeid='+tab+'_14&cmd=reg&uid='+uid+'&unm='+unm+'&mail='+mail+'&pwd='+digest+'&pwd2='+vpwd);
+  postcmd('procid='+procid+'&nodeid='+tab+'_14&cmd=reg&uid='+uid+'&unm='+encodeURIComponent(unm)+'&mail='+encodeURIComponent(mail)+'&pwd='+digest+'&pwd2='+vpwd);
 }
