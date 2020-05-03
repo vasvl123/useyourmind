@@ -224,11 +224,11 @@
 	|*Вид
 	|	div
 	|		div	class=btn-group
-	|			button	class=btn btn-light btn-sm	А=ПриНажатии	type=button	role=fwd
+	|			button	class=btn btn-light btn-sm	А=ПриНажатии	type=button	role=bck
 	|				Строка: -
 	|			button	class=btn btn-light btn-sm	А=ПриНажатии	type=button	role=numpad
 	|				З: Начало
-	|			button	class=btn btn-light btn-sm	А=ПриНажатии	type=button	role=bck
+	|			button	class=btn btn-light btn-sm	А=ПриНажатии	type=button	role=fwd
 	|				Строка: +
 	|";
 КонецФункции
