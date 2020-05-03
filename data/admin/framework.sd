@@ -159,11 +159,11 @@
 И	href	З	/help
 И	class	З	nav-link	С	159
 И	text	З	Помощь
-И	href	З	/showdata/login	С	163
+И	href	З	/login	С	163
 И	class	З	btn btn-lg btn-success mb-3 mb-md-0 mr-md-3
 И	text	З	Вхід
 И	A	А	166	Д	168
-И	href	З	/showdata/register	С	167
+И	href	З	/register	С	167
 И	class	З	btn btn-lg btn-primary mb-3 mb-md-0 mr-md-3
 И	text	З	Реєстрація
 
