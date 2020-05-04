@@ -37,9 +37,9 @@
   <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
 
-  <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
+  <!-- <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
 </header>
 
@@ -60,9 +60,9 @@
     <div id='designmenu'></div>
     <div id='mainmenu'></div>
 
-    <div class="copyright" id="copyright">
+    <!-- <div class="copyright" id="copyright">
       <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
-    </div>
+    </div> -->
 
     <div id="status">
     </div>
@@ -190,7 +190,7 @@
 <script>
     mode=".ПараметрРежим";
     tab=".ПараметрТекущаяВкладка";
-    document.title = ".ПараметрЗаголовокСтраницы" + " - розумне проектування";
+    document.title = ".ПараметрЗаголовокСтраницы";
 </script>
 <!--/ОбластьВкладки-->
 
@@ -480,7 +480,7 @@ function scrolled() {
 function addcmd(el,ev) {
   // ypos = ev.pageY;
   // xpos = ev.pageX-5;
-  if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
+  if (el.tagName=='INPUT'&&el.type=="text"||el.tagName=='TEXTAREA') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
   if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
   if (el.tagName=='FORM') {sendform(el)}
