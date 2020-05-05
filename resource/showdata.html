@@ -486,6 +486,31 @@ function addcmd(el,ev) {
   if (el.tagName=='FORM') {sendform(el)}
 }
 
+function updom(d,s) {
+  if (d) {
+    var md = d.childNodes;
+    var ms = s.childNodes;
+    var eql=(md.length==ms.length);
+    if (!eql||!d.isEqualNode(s)) {
+      if (eql) {
+        for (var i = 0; i < md.length; i++) {
+          if (md[i].id) {
+            for (var j = 0; j < ms.length; j++) {
+              if (md[i].id == ms[j].id) {
+                updom(md[i],ms[j]);
+              }
+            }
+          }
+        }
+      }
+      if (!eql||!d.isEqualNode(s)) {
+        var e = s.cloneNode(true);
+        d.replaceWith(e);
+      }
+    }
+  }
+}
+
 function sendform(el){
   var v;
   var formData = new FormData();
@@ -573,7 +598,8 @@ function seq_sendcmd(){
             if (this.id) {
               var t = $("noscript", this);
               if (t.length==0){
-                $('#'+this.id).replaceWith(this);
+                updom($('#'+this.id)[0], this);
+                //$('#'+this.id).replaceWith(this);
               } else {
                 eval(t.text());
               }
