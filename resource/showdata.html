@@ -343,13 +343,8 @@
 </div>
 <!--/ОбластьНайтиУзел-->
 
-<!--ОбластьСкриптЗагрузитьHTML-->
-<script>
-  $.getScript("/resource/impdom.js");
-</script>
-<!--/ОбластьСкриптЗагрузитьHTML-->
-
 <!--ОбластьЗагрузитьHTML-->
+<script src='/resource/impdom.js'></script>
 <div id='.ПараметрИдУзлаimport'>
   <form onsubmit="return false;">
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
@@ -471,7 +466,10 @@ function updom(d,s) {
       }
       if (!eql||!d.isEqualNode(s)) {
         var e = s.cloneNode(true);
-        d.replaceWith(e);
+        $(d).replaceWith(e);
+        // $("noscript", e).each(function(index, value) {
+        //   eval(value.innerText);
+        // });
       }
     }
   }
@@ -508,16 +506,12 @@ function postcmd(cmd){
         seq_add('cmd=upddata');
       }
       $(this.response).each(function(index, value) {
-        if (this.tagName == "SCRIPT") {
-          eval(this.innerText);
+        if (value.tagName == "SCRIPT") {
+          eval(value.innerText);
         } else {
-          if (this.id) {
-            var t = $("noscript", this);
-            if (t.length==0){
-              $('#'+this.id).replaceWith(this);
-            } else {
-              eval(t.text());
-            }
+          if (value.id) {
+            //$('#'+value.id).replaceWith(value);
+            updom($('#'+value.id)[0], value);
           }
         }
       });
@@ -558,17 +552,12 @@ function seq_sendcmd(){
           seq_add('cmd=upddata');
         }
         $(this.response).each(function(index, value) {
-          if (this.tagName == "SCRIPT") {
-            eval(this.innerText);
+          if (value.tagName == "SCRIPT") {
+            eval(value.innerText);
           } else {
-            if (this.id) {
-              var t = $("noscript", this);
-              if (t.length==0){
-                updom($('#'+this.id)[0], this);
-                //$('#'+this.id).replaceWith(this);
-              } else {
-                eval(t.text());
-              }
+            if (value.id) {
+              //$('#'+value.id).replaceWith(value);
+              updom($('#'+value.id)[0], value);
             }
           }
         });
