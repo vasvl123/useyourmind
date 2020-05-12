@@ -108,9 +108,21 @@ body {
 		z-index: 2030;
 }
 
-@media(max-width:991.98px) {
+@media(max-width:576px) {
 	.app-header .navbar-brand {
 		display: none;
+	}
+	ul {
+		padding-left: .5rem;
+	}
+	.sidebar .nav-link {
+		padding: .5rem .5rem;
+	}
+	.main .container-fluid {
+		padding: 0 5px;
+	}
+	.card-body {
+		padding: .5rem;
 	}
 }
 
@@ -139,8 +151,10 @@ iframe {
 	opacity: .9;
 }
 
-ul {
-	padding-left: 1rem;
+@media(min-width:576px) {
+	ul {
+		padding-left: 1rem;
+	}
 }
 
 aside ul {
@@ -184,7 +198,7 @@ aside ul {
 	display: inline-block;
 	font-weight: 400;
 	text-align: center;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	vertical-align: middle;
 	-webkit-user-select: none;
 	-moz-user-select: none;

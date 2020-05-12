@@ -15,7 +15,7 @@
 </head>
 <!--/ОбластьШапка-->
 
-<!--ОбластьПанельМенюОкно-->
+<!--ОбластьПанельОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
 <header class="app-header navbar" id="navbar">
 
@@ -31,95 +31,136 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
+  <ul class="nav navbar-nav d-md-down" id="tabs">
   </ul>
 
   <ul class="nav navbar-nav ml-auto" id="acc">
   </ul>
 
-  <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
+  <!-- <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
 </header>
 
 <div class="app-body">
 
-<div class="sidebar">
-  <nav class="sidebar-nav ps ps--active-y">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdb=&data=help&cmd=newtab'); return false;">
-        <i class="nav-icon icon-question "></i> Помощь</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdb=&data=expldb&cmd=newtab'); return false">
-        <i class="nav-icon icon-layers"></i> Базы данных</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdb=&data=data&cmd=newtab'); return false">
-        <i class="nav-icon icon-docs"></i> Работа с данными</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
-        <i class="nav-icon icon-folder"></i> Сохранить данные</a>
-      </li>
-      <li class="nav-item" id="mode">
-        <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
-        <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('nodeid=1&amp;cmd=structwin'); return false;">
-        <i class="nav-icon icon-wrench"></i> Структура данных</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('nodeid=1&amp;cmd=findnode'); return false;">
-        <i class="nav-icon icon-magnifier"></i> Найти узел</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('sdb=&data=log&cmd=newtab'); return false;">
-        <i class="nav-icon icon-calendar"></i> Журнал событий</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">
-        <i class="nav-icon icon-loop"></i> Перезапустить</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-        <i class="nav-icon icon-ban"></i> Завершить</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+  .ПараметрБокПанель
 
-<main class="main">
+  <main class="main">
 
-  <div class="container-fluid">
+    <div class="container-fluid">
 
-    <div id='data'></div>
-    <div id='win'></div>
+      .ПараметрСодержимое
+
+    </div>
+
+    <div id='insert'></div>
+    <div id='notifies'></div>
+    <div id='designmenu'></div>
+    <div id='mainmenu'></div>
+
+    <!-- <div class="copyright" id="copyright">
+      <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+    </div> -->
+
+    <div id="status">
+    </div>
+
+  </main>
+
+  <aside class="aside-menu">
+    <div id='prop'></div>
+  </aside>
 
   </div>
+<!--/ОбластьПанельОкно-->
 
-  <div id='insert'></div>
-  <div id='notifies'></div>
-  <div id='designmenu'></div>
-  <div id='mainmenu'></div>
-
-  <div class="copyright">
-    <a href="https://github.com/vasvl123/useyourmind">use your.mind</a>
+<!--ОбластьПанельМеню1-->
+  <div class="sidebar" id="sidebar">
+    <nav class="sidebar-nav ps ps--active-y">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+          <i class="nav-icon icon-home "></i> Початок</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">
+          <i class="nav-icon icon-login "></i> Вхід</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/help">
+          <i class="nav-icon icon-question "></i> Допомога</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
+          <i class="nav-icon icon-docs"></i> Вихідний код</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/useyourmind">
+          <i class="nav-icon icon-layers"></i> use your.mind</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
+          <i class="nav-icon icon-ban"></i> Завершити</a>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <div id="status">
+<!--/ОбластьПанельМеню1-->
+
+<!--ОбластьПанельМеню2-->
+  <div class="sidebar" id="sidebar">
+    <nav class="sidebar-nav ps ps--active-y">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=help&cmd=newtab'); return false;">
+          <i class="nav-icon icon-question "></i> Помощь</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=expldb&cmd=newtab'); return false">
+          <i class="nav-icon icon-layers"></i> Базы данных</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=data&cmd=newtab'); return false">
+          <i class="nav-icon icon-docs"></i> Работа с данными</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=savedata'); return false">
+          <i class="nav-icon icon-folder"></i> Сохранить данные</a>
+        </li>
+        <li class="nav-item" id="mode">
+          <a class="nav-link" href="" onclick="seq_add('cmd=designmode'); return false">
+          <i class="nav-icon icon-frame"></i> Режим: просмотр</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=structwin'); return false;">
+          <i class="nav-icon icon-wrench"></i> Структура данных</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('nodeid=1&cmd=findnode'); return false;">
+          <i class="nav-icon icon-magnifier"></i> Найти узел</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=log&cmd=newtab'); return false;">
+          <i class="nav-icon icon-calendar"></i> Журнал событий</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">
+          <i class="nav-icon icon-loop"></i> Перезапустить</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
+          <i class="nav-icon icon-ban"></i> Завершить</a>
+        </li>
+      </ul>
+    </nav>
   </div>
+<!--/ОбластьПанельМеню2-->
 
-</main>
-
-<aside class="aside-menu">
-  <div id='prop'></div>
-</aside>
-
-</div>
-<!--/ОбластьПанельМенюОкно-->
+<!--ОбластьКартинка-->
+<img src="/procid/.ПараметрИдПроцесса?sdata=.ПараметрИстДанных&sdb=.ПараметрБазаДанных&data=.ПараметрИмяДанных&datapos=.ПараметрПозицияДанных&cmd=file" width="" height="" alt=""/>
+<!--/ОбластьКартинка-->
 
 <!--ОбластьРежимПросмотр-->
 <li class="nav-item" id="mode">
@@ -143,16 +184,14 @@
 <!--/ОбластьРежимСтруктура-->
 
 <!--ОбластьВкладки-->
-<ul class="nav navbar-nav navbar-nav d-md-down" id="tabs">
+<ul class="nav navbar-nav d-md-down" id="tabs">
   .ПараметрВкладки
 </ul>
-<div id="insert">
-  <script type='text/javascript'>
+<script>
     mode=".ПараметрРежим";
     tab=".ПараметрТекущаяВкладка";
     document.title = ".ПараметрЗаголовокСтраницы";
-  </script>
-</div>
+</script>
 <!--/ОбластьВкладки-->
 
 <!--ОбластьСубъект-->
@@ -172,11 +211,9 @@
 <!--/ОбластьСубъект-->
 
 <!--ОбластьСкрипт-->
-<div id="insert">
-  <script type='text/javascript'>
+<script>
     tabselect(".ПараметрТипВкладки",".ПараметрИдВкладки",".ПараметрПрокрутка");
-  </script>
-</div>
+</script>
 <!--/ОбластьСкрипт-->
 
 <!--ОбластьВкладка-->
@@ -260,13 +297,16 @@
     </span>
     </div>
   </form>
-  <script type='text/javascript'>
+</div>
+<!--/ОбластьИзменитьИмяЗначение-->
+
+<!--ОбластьСкриптИзменитьИмяЗначение-->
+<script>
     el = $('#.ПараметрИдУзла.ПараметрКоманда')[0];
     el.select();
     el.value = decodeURIComponent(".ПараметрИмяЗначение");
-  </script>
-</div>
-<!--/ОбластьИзменитьИмяЗначение-->
+</script>
+<!--/ОбластьСкриптИзменитьИмяЗначение-->
 
 <!--ОбластьРедактироватьУзел-->
 <div id='.ПараметрИдУзлаedit'>
@@ -278,12 +318,15 @@
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
   </form>
-  <script type='text/javascript'>
-    $('#.ПараметрИдУзлаname')[0].value = decodeURIComponent(".ПараметрИмяУзла");
-    $('#.ПараметрИдУзлаvalue')[0].value = decodeURIComponent(".ПараметрЗначениеУзла");
-  </script>
 </div>
 <!--/ОбластьРедактироватьУзел-->
+
+<!--ОбластьСкриптРедактироватьУзел-->
+<script>
+    $('#.ПараметрИдУзлаname')[0].value = decodeURIComponent(".ПараметрИмяУзла");
+    $('#.ПараметрИдУзлаvalue')[0].value = decodeURIComponent(".ПараметрЗначениеУзла");
+</script>
+<!--/ОбластьСкриптРедактироватьУзел-->
 
 <!--ОбластьНайтиУзел-->
 <div id='.ПараметрИдУзлаfind'>
@@ -301,53 +344,8 @@
 <!--/ОбластьНайтиУзел-->
 
 <!--ОбластьЗагрузитьHTML-->
+<script src='/resource/impdom.js'></script>
 <div id='.ПараметрИдУзлаimport'>
-  <script>
-    String.prototype.replaceAll = function(search, replacement) {
-        var target = this;
-        return target.replace(new RegExp(search, 'g'), replacement);
-    };
-    function get_tree(root){
-      var res = '',
-          curr = root,
-          child_prop = 'firstChild',
-          next_prop = 'nextSibling';
-          attr_prop = 'attributes';
-      while(curr){
-        if (curr.nodeType == 3) {
-          var t = $.trim(curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '')); // срезает пробелы
-          //var t = curr.nodeValue.replaceAll('\n ', '').replaceAll('\n', '');
-          if (t != '') {
-            res += "text" + "\t" + t + "\n";
-          }
-        } else {
-          res += "tagName" + "\t" + curr.nodeName + "\n";
-          if (curr[attr_prop]){
-            res += "_at" + "\n";
-            attrs = curr[attr_prop];
-            for(var i = attrs.length - 1; i >= 0; i--){
-              res += "attrName" + "\t" + attrs[i].name + "\t" + "attrVal" + "\t" + attrs[i].value + "\n";
-            }
-            res += "_rt" + "\n"
-          }
-          if (curr[child_prop]){
-            var ch = get_tree(curr[child_prop]);
-            if (ch != '') {
-              res += '_ch' + "\n" + ch + "_rt" + "\n";
-            }
-          }
-        }
-        curr = curr[next_prop];
-      }
-      return res;
-    }
-    function impdom(htmltext){
-      var node = $('#impdom')[0];
-      node.innerHTML = htmltext;
-      console.log(get_tree(node['firstElementChild']));
-      return encodeURIComponent(get_tree(node['firstElementChild']));
-    }
-  </script>
   <form onsubmit="return false;">
     <textarea class="form-control form-control input-shadow" id="inputhtml" />
     <div id="impdom"></div>
@@ -360,46 +358,26 @@
 
 <!--ОбластьМеню-->
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
-.ПараметрМенюИнструменты
-<script type='text/javascript'>
-  var m=$("#.ПараметрВидМеню");
-  m.css('top',ypos);
-  m.css('left',xpos);
-  m.show();
-  $(document).click(function(e){m.hide();e.stopPropagation();});
-</script>
+  .ПараметрМенюИнструменты
 </div>
+<script>
+    var m=$("#.ПараметрВидМеню");
+    m.css('top',ypos);
+    m.css('left',xpos);
+    m.show();
+    $(document).click(function(e){m.hide();e.stopPropagation();});
+</script>
 <!--/ОбластьМеню-->
-
-<!--ОбластьПоказатьМеню-->
-<div id='designmenu' class="" style="z-index:1060; position:absolute; display: block;">
-.ПараметрМенюИнструменты
-<script type='text/javascript'>
-  var t=$(".m.ПараметрИдУзла");
-  var m=$("#designmenu");
-  m.css('top',t.offset().top+t[0].clientHeight+3);
-  m.css('left',t.offset().left);
-  m.show();
-  $(document).click(function(e){m.hide();e.stopPropagation();});
-</script>
-</div>
-<!--/ОбластьПоказатьМеню-->
-
-<!--ОбластьМенюЭлемент-->
-<button id=".ПараметрИдУзла" class="btn1 btn-.ПараметрКласс" style="border-color: silver grey grey silver"	onclick="addcmd(this,event); return false;" type="button">.ПараметрПодсказка</button><br>
-<!--/ОбластьМенюЭлемент-->
 
 <!--ОбластьМенюИнструменты-->
 <a class="dropdown-item" href="" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=.ПараметрКоманда'); return false;">.ПараметрПодсказка</a>
 <!--/ОбластьМенюИнструменты-->
 
 <!--ОбластьУведомление-->
-<div id='insert'>
-<script type='text/javascript'>
-Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
-.ПараметрКоманда
+<script>
+  Notify.generate('.ПараметрТекстУведомления', '.ПараметрЗаголовокУведомления', .ПараметрТипУведомления);
+  .ПараметрКоманда
 </script>
-</div>
 <!--/ОбластьУведомление-->
 
 <!--ОбластьОкно-->
@@ -427,12 +405,10 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
       .ПараметрСодержимоеОкна
     </div>
   </div>
-  <div id='insert'>
-    <script type='text/javascript'>
-      $("#.ПараметрВкладка_0").draggable();
-    </script>
-  </div>
 </div>
+<script>
+    $("#.ПараметрВкладка_0").draggable();
+</script>
 <!--/ОбластьПанель-->
 
 <!--ОбластьСтатус-->
@@ -445,7 +421,7 @@ Notify.generate('.ПараметрТекстУведомления', '.Пара�
 <footer>
 </footer>
 
-<script src=".ПараметрХост/resource/jquery.min.js"></script>
+<script src=".ПараметрХост/resource/jquery-3.4.1.min.js"></script>
 <script type='text/javascript'>
 var designnode;
 var ypos;
@@ -456,6 +432,7 @@ var btncmd='tabselect';
 var mode='';
 var seq=new Array();
 var aupd=true;
+var upddata;
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -464,10 +441,59 @@ function scrolled() {
 function addcmd(el,ev) {
   // ypos = ev.pageY;
   // xpos = ev.pageX-5;
-  if (el.tagName=='INPUT'&&el.type=="text") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value),25);}
+  if (el.tagName=='INPUT'&&el.type=="text"||el.tagName=='TEXTAREA') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
-  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&text='+encodeURIComponent(el.textContent));}
-  if (el.tagName=='FORM') {seq_add('nodeid='+el.id+'&cmd=onsubmit',200);}
+  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
+  if (el.tagName=='FORM') {sendform(el)}
+}
+
+function updom(d,s) {
+  if (d) {
+    var md = d.childNodes;
+    var ms = s.childNodes;
+    var eql=(md.length==ms.length);
+    if (!eql||!d.isEqualNode(s)) {
+      if (eql) {
+        for (var i = 0; i < md.length; i++) {
+          if (md[i].id) {
+            for (var j = 0; j < ms.length; j++) {
+              if (md[i].id == ms[j].id) {
+                updom(md[i],ms[j]);
+              }
+            }
+          }
+        }
+      }
+      if (!eql||!d.isEqualNode(s)) {
+        var e = s.cloneNode(true);
+        $(d).replaceWith(e);
+        // $("noscript", e).each(function(index, value) {
+        //   eval(value.innerText);
+        // });
+      }
+    }
+  }
+}
+
+function sendform(el){
+  var v;
+  var formData = new FormData();
+  var inputs = el.elements;
+  for (i = 0; i < inputs.length; i++) {
+    if (inputs[i].nodeName === "INPUT") {
+      v = encodeURIComponent(inputs[i].value);
+      if (inputs[i].type === "file") {
+        if (inputs[i].files.length > 0) {
+          formData.append(inputs[i].name, inputs[i].files[0], v);
+        }
+      } else {
+        formData.append(inputs[i].name, v);
+      }
+    }
+  }
+  formData.append("nodeid", el.id);
+  formData.append("cmd", "onsubmit");
+  setTimeout(function(){postcmd(formData)},200);
 }
 
 function postcmd(cmd){
@@ -476,8 +502,18 @@ function postcmd(cmd){
   xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
     if (this.response) {
+      if (upddata.readyState==4) {
+        seq_add('cmd=upddata');
+      }
       $(this.response).each(function(index, value) {
-        if (this.id) {$('#'+this.id).replaceWith(this);}
+        if (value.tagName == "SCRIPT") {
+          eval(value.innerText);
+        } else {
+          if (value.id) {
+            //$('#'+value.id).replaceWith(value);
+            updom($('#'+value.id)[0], value);
+          }
+        }
       });
     }
   }
@@ -493,24 +529,38 @@ function seq_add(cmd,delay=0) {
   //     winscrolled=datascrolled-(t.offset().top-50);
   //   }
   // }
+  $("body").removeClass("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
-seq_add('cmd=refresh');
+//seq_add('cmd=refresh');
 seq_add('cmd=upddata');
 
 function seq_sendcmd(){
   if(seq.length) {
     var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
     var xhr = new XHR();
-    xhr.open('GET',seq.shift(),true);
+    var url = seq.shift();
+    if (url.indexOf('cmd=upddata', 0) > 0 && aupd) {
+      upddata = xhr;
+    }
+    xhr.open('GET',url,true);
     xhr.onload = function() {
       if (this.response) {
+        if (upddata.readyState==4) {
+          seq_add('cmd=upddata');
+        }
         $(this.response).each(function(index, value) {
-          if (this.id) {$('#'+this.id).replaceWith(this);}
+          if (value.tagName == "SCRIPT") {
+            eval(value.innerText);
+          } else {
+            if (value.id) {
+              //$('#'+value.id).replaceWith(value);
+              updom($('#'+value.id)[0], value);
+            }
+          }
         });
-        //if (this.responseURL.indexOf('cmd=upddata', 0) > 0 && aupd) {seq_add('cmd=upddata')}
       }
     }
     xhr.send();
@@ -652,13 +702,13 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <!--/ОбластьПодвал-->
 
 <!--ОбластьОбновить-->
-<div id='insert'><script type='text/javascript'>seq_add('cmd=upddata');</script></div>
+<script>seq_add('cmd=upddata');</script>
 <!--/ОбластьОбновить-->
 
 <!--ОбластьПеренаправить-->
-<div id='insert'><script type='text/javascript'>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script></div>
+<script>setTimeout(function(){window.location.href = '.ПараметрПуть';},.ПараметрПауза);</script>
 <!--/ОбластьПеренаправить-->
 
 <!--ОбластьИзменитьАдрес-->
-<div id='insert'><script type='text/javascript'>history.pushState(null, null, '.ПараметрПуть');</script></div>
+<script>history.pushState(null, null, '.ПараметрПуть');</script>
 <!--/ОбластьИзменитьАдрес-->

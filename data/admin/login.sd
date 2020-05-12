@@ -1,13 +1,13 @@
 И	О	З	Корень	Д	213
 
 И		З	Не	Д	11	С	159
-
-
-
-
-
-
-
+И	src	З	/resource/crypt.js
+И	div	З		Д	449	А	10
+И	SCRIPT	З		А	7	С	8
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	SCRIPT	З		А	9
+И	src	З	/resource/crypt.js
+И	id	З	script
 И		З	Пустой	Д	151
 
 
@@ -292,7 +292,7 @@
 
 
 И	Вид	З		Д	295
-И	П	З	Содержимое	С	449
+И	П	З	Содержимое	С	5
 И	О	З	Элемент форма	Д	297
 И	Свойства.	З		Д	298
 И	ЗапросДанные.	З		С	455
@@ -446,12 +446,12 @@
 И	class	З	btn btn-link px-0	С	447
 И	type	З	button
 И	text	З	Забыли пароль?
-И	SCRIPT	З		А	450	С	451
+И	SCRIPT	З		А	450	С	6
 И	src	З	/resource/crypto-js/crypto-js.min.js
-И	SCRIPT	З		А	452	С	453
+
 И	src	З	/resource/crypto-js/enc-base64.min.js
-И	script	З	    function send_pwd(){#xA          var ms = new Date();#xA          var uid = ms.getTime();#xA          var unm = $('#'+tab+'_402')[0].value;#xA          var pwd=$('#'+tab+'_416')[0].value;#xA          var hpwd = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(unm+pwd));#xA          var digest = CryptoJS.enc.Base64.stringify(CryptoJS.SHA256(procid+uid+hpwd));#xA          postcmd('procid='+procid+'&nodeid='+tab+'_298&cmd=auth&uid='+uid+'&unm='+unm+'&pwd='+digest);#xA    }#xA	А	454
-И	type	З	text/javascript
+
+
 И	ЕстьРезультат	З		С	470	Д	456
 И		З	Не	Д	457
 И		З	Пустой	Д	458
