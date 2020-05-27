@@ -23,11 +23,11 @@
     <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
   </a> -->
 
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
+  <button id="menubuton" class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
+  <button id="menubuton-sm" class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -43,7 +43,7 @@
 
 </header>
 
-<div class="app-body">
+<div id="app-body" class="app-body">
 
   .ПараметрБокПанель
 
@@ -166,6 +166,10 @@
 
 <!--ОбластьПанельНетМеню-->
 <div class="sidebar" id="sidebar">
+  <script>
+    document.getElementById("navbar").remove();
+    document.getElementById("app-body").style.marginTop = "0px";
+  </script>
 </div>
 <!--/ОбластьПанельНетМеню-->
 
