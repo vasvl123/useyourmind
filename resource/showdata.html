@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>.ПараметрЗаголовок</title>
-<link rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
+<link id="favicon" rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
 <link href=".ПараметрХост/resource/style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 </header>
 
-<div id="app-body" class="app-body">
+<div id="app-body">
 
   .ПараметрБокПанель
 
@@ -108,6 +108,7 @@
     </nav>
     <script>
       document.body.classList.add("sidebar-lg-show");
+      document.getElementById("app-body").classList.add("app-body");
     </script>
   </div>
 <!--/ОбластьПанельМеню1-->
@@ -160,6 +161,7 @@
     </nav>
     <script>
       document.body.classList.add("sidebar-lg-show");
+      document.getElementById("app-body").classList.add("app-body");
     </script>
   </div>
 <!--/ОбластьПанельМеню2-->
