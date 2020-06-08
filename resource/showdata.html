@@ -416,7 +416,7 @@
 
 <!--ОбластьПанель-->
 <div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
-  <div class="card text-white bg-dark mw60">
+  <div class="card text-white bg-dark mw60" style="opacity:.ПараметрПрозрачность">
     <div class="card-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
       <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
@@ -453,6 +453,7 @@ var mode='';
 var seq=new Array();
 var aupd=true;
 var upddata;
+var zi=5;
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -612,6 +613,7 @@ function tabselect(p_tabtype,p_tab,p_scroll){
       t.show();
       t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
     }
+    t.css('z-index', zi++);
     wintab=p_tab;
   }
   tab=p_tab;
