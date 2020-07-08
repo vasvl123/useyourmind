@@ -337,6 +337,7 @@
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Готово</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importtree');">Загрузить дерево</button>
   </form>
 </div>
 <!--/ОбластьРедактироватьУзел-->
@@ -375,6 +376,16 @@
   </form>
 </div>
 <!--/ОбластьЗагрузитьHTML-->
+
+<!--ОбластьЗагрузитьДерево-->
+<div id='.ПараметрИдУзлаimport'>
+  <form onsubmit="return false;">
+    <textarea class="form-control form-control input-shadow" id="inputtree" />
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importtree&amp;enc_value='+encodeURIComponent($('#inputtree')[0].value))">Загрузить дерево</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+  </form>
+</div>
+<!--/ОбластьЗагрузитьДерево-->
 
 <!--ОбластьМеню-->
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
