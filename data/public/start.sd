@@ -1,27 +1,27 @@
-И	О	З	Корень	Д	14
-С	44	И	H1	А	15	Д	24
+И	О	Д	14	З	Корень
+И	H1	Д	24	С	44	А	15
 И	Э	З	body	А	4	Д	7
 И	class	З	app flex-row align-items-center  pace-done
 И	div	А	6	Д	7
 И	class	З	container
 И	Э	З	Фронт	Д	8
-И	DIV	А	9	Д	10
+И	DIV	Д	10	А	9
 И	class	З	row justify-content-center
-И	DIV	А	11	Д	18
+И	DIV	Д	18	А	11
 И	class	З	col-md-9
 И	a	З	Помощь	А	13
 И	href	З	/help
-И	Свойства.	З		С	8	Д	46
+И	Свойства.	С	8	З	
 И	class	З	mb-3 text-sm-nowrap
 И	a	З	Помощь	А	17
 И	href	З	/help
-И	DIV	А	19	Д	20
+И	DIV	Д	20	А	19
 И	class	З	card-group
-И	DIV	А	21	Д	118
+И	DIV	Д	118	А	21
 И	class	З	card p-4
 И	TEXT	Д	24
 И	class	З	docs-callout docs-callout-warning
-И	text	З	Розумне проектування
+И	text	З	uascript.net
 И	H5	А	26	Д	27	С	28
 И	id	З	jquery-incompatibility
 И	text	З	jQuery incompatibility
@@ -41,9 +41,9 @@
 И	CODE	А	42	Д	43
 И	class	З	highlighter-rouge
 И	text	З	display
-И	DIV	А	45	Д	70	С	136
+И	DIV	Д	70	С	136	А	45
 И	class	З	docs-callout docs-callout-warning
-И	Заголовок	З	Розумне проектування
+
 И	STRONG	Д	48
 
 
@@ -67,18 +67,18 @@
 
 
 
-И	P	А	71	Д	72	С	78
+И	P	Д	72	С	78	А	71
 И	class	З	lead
 И	STRONG	Д	73
-И	text	З	проект з відкритим вихідним кодом
-И	P	А	75	Д	76
+И	text	З	платформа сообщества
+И	P	Д	76	А	75
 И	class	З	lead
 И	STRONG	Д	77
-И	text	З	онлайн інструмент розробника
-И	P	А	79	Д	80	С	74
+И	text	З	открытый исходный код
+И	P	Д	80	С	74	А	79
 И	class	З	lead
 И	STRONG	Д	81
-И	text	З	формалізоване представлення знань
+И	text	З	база знаний проектов
 
 
 
@@ -115,7 +115,7 @@
 
 
 
-И	DIV	А	119	Д	2
+И	DIV	Д	2	А	119
 И	class	З	card-body text-left
 
 
@@ -133,9 +133,9 @@
 
 И	class	З	lead mb-4
 И	text	З	проект с открытым кодом на базе CoreUI и Bootstrap 4
-И	DIV	А	137	Д	138
+И	DIV	Д	138	А	137
 И	class	З	flex-column flex-md-row lead mb-3 text-center
-И	A	А	162	Д	164	С	165
+И	A	Д	164	С	165	А	162
 И	DIV	А	141	Д	142
 И	id	З	navbarSupportedContent
 И	class	З	collapse navbar-collapse	С	140
@@ -159,13 +159,13 @@
 И	href	З	/help
 И	class	З	nav-link	С	159
 И	text	З	Помощь
-И	href	З	/login	С	163
+И	href	С	163	З	/login
 И	class	З	btn btn-lg btn-success mb-3 mb-md-0 mr-md-3
-И	text	З	Вхід
-И	A	А	166	Д	168
-И	href	З	/register	С	167
+И	text	З	Вход
+И	A	Д	168	А	166
+И	href	С	167	З	/register
 И	class	З	btn btn-lg btn-primary mb-3 mb-md-0 mr-md-3
-И	text	З	Реєстрація
+И	text	З	Регистрация
 
 
 
@@ -300,9 +300,3 @@
 И	alt	З	OneScriptDB	С	299
 И	src	З	/resource/osdb_i.png	С	300
 И	class	З	navbar-brand-full	С	301
-
-
-
-
-
-
