@@ -1,5 +1,5 @@
 И	О	Д	14	З	Корень
-И	H1	Д	24	С	44	А	15
+И	p	Д	24	С	44	А	15	З
 И	Э	З	body	А	4	Д	7
 И	class	З	app flex-row align-items-center  pace-done
 И	div	А	6	Д	7
@@ -8,20 +8,20 @@
 И	DIV	Д	10	А	9
 И	class	З	row justify-content-center
 И	DIV	Д	18	А	11
-И	class	З	col-md-9
+И	class	З	col-md-6
 И	a	З	Помощь	А	13
 И	href	З	/help
-И	Свойства.	С	8	З	
-И	class	З	mb-3 text-sm-nowrap
+И	Свойства.	С	8	З
+И	class	З	text-sm-nowrap text-center display-4 text-light
 И	a	З	Помощь	А	17
 И	href	З	/help
 И	DIV	Д	20	А	19
 И	class	З	card-group
 И	DIV	Д	118	А	21
-И	class	З	card p-4
+И	class	С	48	З	card p-4
 И	TEXT	Д	24
 И	class	З	docs-callout docs-callout-warning
-И	text	З	uascript.net
+И	text	З	Uascript.Net
 И	H5	А	26	Д	27	С	28
 И	id	З	jquery-incompatibility
 И	text	З	jQuery incompatibility
@@ -42,10 +42,10 @@
 И	class	З	highlighter-rouge
 И	text	З	display
 И	DIV	Д	70	С	136	А	45
-И	class	З	docs-callout docs-callout-warning
+И	class	З	docs-callout docs-callout-warning text-light
 
 И	STRONG	Д	48
-
+И	style	З	background-image: linear-gradient(rgba(230, 122, 213, 0.58), rgba(77, 85, 170, 0.9)),url(/resource/ra.jpg); background-size: cover;
 
 И	class	З	nav-item
 И	A	А	52	Д	54
