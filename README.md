@@ -1,27 +1,26 @@
-## Розумне проектування
+## Разумное проектирование
 
-Фреймворк для розробки веб-додатків
+Фреймворк для разработки веб-приложений
 
-Для запуску на своєму комп'ютері необхідно:
+Для локального запуска на своем компьютере необходимо:
 
-Завантажити останній реліз та розпакувати до себе на диск.
+Скачать последнюю версию useyourmind + Uascript: https://github.com/vasvl123/useyourmind/releases
 
-Під Windows:
+Под Windows:
 
-Встановити бібліотеку .Net версії не нижче 4.5
+Установить библиотеку .Net версии не ниже 4.5 - для Windows, а для linux mono-complete не ниже 5.2.
 
-Перейти в папку useyourmind і виконати команду:
+Перейти в папку useyourmind и выполнить команду: uascript starter.os
 
-uascript.exe starter.os
+Открыть в браузере ссылку: http://localhost:8888
 
-Під Linux:
+Под Linux:
 
-Встановити пакет mono-complete не нижче 5.2.
+Установить пакет mono-complete не ниже 5.2.
 
-Перейти в папку useyourmind и виконати команду:
+Перейти в папку useyourmind и выполнить команду: mono uascript starter.os
 
-mono uascript.exe starter.os
+Открыть в браузере ссылку: http://localhost:8888
 
-Відкрити в браузері сторінку: http://localhost:8888
 
-Сторінка проекту: https://uascript.net/framework
+Страница проекта: https://uascript.net/useyourmind
