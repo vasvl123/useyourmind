@@ -7,27 +7,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Розумне проектування</title>
-<link rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
+<title>.ПараметрЗаголовок</title>
+<link id="favicon" rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
 <link href=".ПараметрХост/resource/style.css" rel="stylesheet">
 <link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
-<link href=".ПараметрХост/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 </head>
 <!--/ОбластьШапка-->
 
 <!--ОбластьПанельОкно-->
-<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
 <header class="app-header navbar" id="navbar">
 
   <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
     <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
   </a> -->
 
-  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
+  <button id="menubuton" class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
+  <button id="menubuton-sm" class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -43,7 +42,7 @@
 
 </header>
 
-<div class="app-body">
+<div id="app-body">
 
   .ПараметрБокПанель
 
@@ -78,51 +77,53 @@
 
 <!--ОбластьПанельМеню1-->
   <div class="sidebar" id="sidebar">
+    <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <nav class="sidebar-nav ps ps--active-y">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="/">
-          <i class="nav-icon icon-home "></i> Початок</a>
+          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=start&cmd=newtab'); return false">
+          <i class="nav-icon icon-home "></i> Начало</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">
-          <i class="nav-icon icon-login "></i> Вхід</a>
+          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=login&cmd=newtab'); return false">
+          <i class="nav-icon icon-login "></i> Вход</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/help">
-          <i class="nav-icon icon-question "></i> Допомога</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
-          <i class="nav-icon icon-docs"></i> Вихідний код</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/useyourmind">
+          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=useyourmind&cmd=newtab'); return false">
           <i class="nav-icon icon-layers"></i> use your.mind</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
+          <i class="nav-icon icon-docs"></i> Исходный код</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-          <i class="nav-icon icon-ban"></i> Завершити</a>
+          <i class="nav-icon icon-ban"></i> Завершить</a>
         </li>
       </ul>
     </nav>
+    <script>
+      document.body.classList.add("sidebar-lg-show");
+      document.getElementById("app-body").classList.add("app-body");
+    </script>
   </div>
 <!--/ОбластьПанельМеню1-->
 
 <!--ОбластьПанельМеню2-->
   <div class="sidebar" id="sidebar">
+    <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <nav class="sidebar-nav ps ps--active-y">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=help&cmd=newtab'); return false;">
+          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=useyourmind&cmd=newtab'); return false;">
           <i class="nav-icon icon-question "></i> Помощь</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=expldb&cmd=newtab'); return false">
+          <a class="nav-link" href="" onclick="seq_add('sdata=&sdb=&data=expldb&cmd=newtab'); return false">
           <i class="nav-icon icon-layers"></i> Базы данных</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=data&cmd=newtab'); return false">
+          <a class="nav-link" href="" onclick="seq_add('sdata=&sdb=&data=data&cmd=newtab'); return false">
           <i class="nav-icon icon-docs"></i> Работа с данными</a>
         </li>
         <li class="nav-item">
@@ -142,7 +143,7 @@
           <i class="nav-icon icon-magnifier"></i> Найти узел</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=admin&sdb=&data=log&cmd=newtab'); return false;">
+          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=log&cmd=newtab'); return false;">
           <i class="nav-icon icon-calendar"></i> Журнал событий</a>
         </li>
         <li class="nav-item">
@@ -155,11 +156,26 @@
         </li>
       </ul>
     </nav>
+    <script>
+      document.body.classList.add("sidebar-lg-show");
+      document.getElementById("app-body").classList.add("app-body");
+    </script>
   </div>
 <!--/ОбластьПанельМеню2-->
 
+<!--ОбластьПанельНетМеню-->
+<div class="sidebar" id="sidebar">
+  <script>
+    document.getElementById("navbar").remove();
+    document.getElementById("app-body").style.marginTop = "0px";
+  </script>
+</div>
+<!--/ОбластьПанельНетМеню-->
+
 <!--ОбластьКартинка-->
-<img src="/procid/.ПараметрИдПроцесса?sdata=.ПараметрИстДанных&sdb=.ПараметрБазаДанных&data=.ПараметрИмяДанных&datapos=.ПараметрПозицияДанных&cmd=file" width="" height="" alt=""/>
+<a href="/procid/.ПараметрИдПроцесса?sdata=.ПараметрИстДанных&sdb=.ПараметрБазаДанных&data=.ПараметрИмяДанных&datapos=.ПараметрПозицияДанных&cmd=file" target="_blank">
+<img src="/procid/.ПараметрИдПроцесса?sdata=.ПараметрИстДанных&sdb=.ПараметрБазаДанных&data=.ПараметрИмяДанных&datapos=.ПараметрПозицияДанных&cmd=file" class="img-fluid" />
+</a>
 <!--/ОбластьКартинка-->
 
 <!--ОбластьРежимПросмотр-->
@@ -317,6 +333,7 @@
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=savenode&amp;value='+encodeURIComponent($('#.ПараметрИдУзлаvalue')[0].value)+'&amp;name='+encodeURIComponent($('#.ПараметрИдУзлаname')[0].value));">Готово</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
     <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importhtml');">Загрузить HTML</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('nodeid=.ПараметрИдУзла&amp;cmd=importtree');">Загрузить дерево</button>
   </form>
 </div>
 <!--/ОбластьРедактироватьУзел-->
@@ -355,6 +372,16 @@
   </form>
 </div>
 <!--/ОбластьЗагрузитьHTML-->
+
+<!--ОбластьЗагрузитьДерево-->
+<div id='.ПараметрИдУзлаimport'>
+  <form onsubmit="return false;">
+    <textarea class="form-control form-control input-shadow" id="inputtree" />
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="postcmd('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;attr=.ПараметрЭтоАтрибут&amp;cmd=importtree&amp;enc_value='+encodeURIComponent($('#inputtree')[0].value))">Загрузить дерево</button>
+    <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Закрыть</button>
+  </form>
+</div>
+<!--/ОбластьЗагрузитьДерево-->
 
 <!--ОбластьМеню-->
 <div id='.ПараметрВидМеню' class="dropdown-menu" style="z-index:1060; position:absolute; display: block;">
@@ -396,7 +423,7 @@
 
 <!--ОбластьПанель-->
 <div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
-  <div class="card text-white bg-dark mw60">
+  <div class="card text-white bg-dark mw60" style="opacity:.ПараметрПрозрачность">
     <div class="card-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
       <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
@@ -433,6 +460,7 @@ var mode='';
 var seq=new Array();
 var aupd=true;
 var upddata;
+var zi=5;
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -592,6 +620,7 @@ function tabselect(p_tabtype,p_tab,p_scroll){
       t.show();
       t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
     }
+    t.css('z-index', zi++);
     wintab=p_tab;
   }
   tab=p_tab;

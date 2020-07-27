@@ -1,0 +1,474 @@
+И	О	Д	213	З	Корень
+
+И		Д	11	С	159	З	Не
+И	src	З	/resource/crypt.js
+И	div	Д	449	А	10	З	
+И	SCRIPT	С	8	А	7	З	
+И	src	З	/resource/crypto-js/enc-base64.min.js
+И	SCRIPT	А	9	З	
+И	src	З	/resource/crypt.js
+И	id	З	script
+И		Д	151	З	Пустой
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	О	Д	214	З	Фронт
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И		Д	3	С	474	З	Если
+
+
+
+
+
+
+
+
+
+
+
+И	Значение	З	ЗапросДанные.unm
+
+
+
+
+
+
+
+И	Значение	С	161	З	ЗапросДанные.unm
+
+И	Строка
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	Свойства.	С	74	З	
+И	Свойства.	Д	294	С	296	З	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	Вид	Д	295	З	
+И	П	С	5	З	Содержимое
+И	О	Д	297	З	Элемент форма
+И	Свойства.	Д	298	З	
+И	ЗапросДанные.	С	455	З	
+И	Вид	Д	362	З	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	DIV	Д	364	А	363	З	
+И	class	З	row justify-content-center
+И	DIV	Д	366	А	365	З	
+И	class	З	col-md-8
+И	DIV	Д	368	А	367	З	
+И	class	З	card-group
+И	DIV	Д	370	С	372	А	369	З	
+И	class	З	card p-4
+И	DIV	Д	387	А	371	З	
+И	class	З	card-body
+И	DIV	Д	375	А	373	З	
+И	class	С	374	З	card bg-light py-5 d-md-down-none
+И	style	З	width:44%
+И	DIV	Д	377	А	376	З	
+И	class	З	card-body text-center
+И	DIV	Д	378	З	
+И	H2	Д	379	С	380	З	
+И	text	З	Присоединиться
+И	P	Д	381	С	382	З	
+И	text	З	Для участия в сообществе необходимо заполнить регистрационную форму.
+И	BUTTON	Д	386	А	383	З	
+И	onclick	С	384	З	window.location.href='/register'
+И	class	С	385	З	btn btn-primary mt-3
+И	type	З	button
+И	text	З	Регистрация
+И	FORM	Д	389	А	388	З	
+И	onsubmit	З	send_pwd();  return false;
+И	H1	Д	390	С	391	З	
+И	text	З	Вход
+И	P	Д	393	С	394	А	392	З	
+И	class	З	text-muted
+И	text	З	Войти в учетную запись
+И	DIV	Д	396	С	408	А	395	З	
+И	class	З	input-group mb-3
+И	DIV	Д	398	С	402	А	397	З	
+И	class	З	input-group-prepend
+И	SPAN	Д	400	А	399	З	
+И	class	З	input-group-text
+И	I	А	401	З	
+И	class	З	icon-user
+И	INPUT	А	403	З	
+И	class	С	404	З	form-control
+И	placeholder	С	405	З	Имя
+И	type	С	406	З	text
+И	value	Д	407	З	
+И	Значение	З	unm
+И	DIV	Д	410	С	422	А	409	З	
+И	class	З	input-group mb-4
+И	DIV	Д	412	С	416	А	411	З	
+И	class	З	input-group-prepend
+И	SPAN	Д	414	А	413	З	
+И	class	З	input-group-text
+И	I	А	415	З	
+И	class	З	icon-lock
+И	INPUT	А	417	З	
+И	class	С	418	З	form-control
+И	placeholder	С	419	З	Пароль
+И	type	З	text
+
+
+И		Д	423	С	435	З	Если
+И		Д	424	С	426	З	НеРавно
+И	Значение	С	425	З	СтатусСубъекта
+И	Строка
+И	DIV	Д	434	А	427	З	
+И	class	Д	428	З	
+И		Д	429	З	Если
+И		Д	430	С	432	З	Равно
+И	Значение	С	431	З	СтатусСубъекта
+И	Строка	З	Прошел авторизацию
+И	Строка	С	433	З	docs-callout docs-callout-info
+И	Строка	З	docs-callout docs-callout-warning
+И	Значение	З	СтатусСубъекта
+И	DIV	Д	437	А	436	З	
+И	class	З	row
+И	DIV	Д	439	С	443	А	438	З	
+И	class	З	col-6
+И	BUTTON	Д	442	А	440	З	
+И	class	С	441	З	btn btn-success px-4
+И	type	З	submit
+И	text	З	Войти
+И	DIV	Д	445	А	444	З	
+И	class	З	col-6 text-right
+И	BUTTON	Д	448	А	446	З	
+И	class	С	447	З	btn btn-link px-0
+И	type	З	button
+И	text	З	Забыли пароль?
+И	SCRIPT	С	6	А	450	З	
+И	src	З	/resource/crypto-js/crypto-js.min.js
+
+И	src	З	/resource/crypto-js/enc-base64.min.js
+
+
+И	ЕстьРезультат	Д	456	С	470	З	
+И		Д	457	З	Не
+И		Д	458	З	Пустой
+И	Первый	Д	459	З	
+И	Ссылка	З	ЗапросДанные
+И	СтатусСубъекта	Д	461	С	299	З	
+И		Д	462	З	Если
+И	Значение	С	463	З	ЕстьРезультат
+И	Значение	С	464	З	ЗапросДанные.СтатусСубъекта
+И	Строка
+
+
+
+
+
+И	unm	Д	471	С	460	З	
+И		Д	472	З	Если
+И	Значение	С	139	З	ЕстьРезультат
+
+И	Строка

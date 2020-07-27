@@ -3,6 +3,7 @@
 data/user/*
 *.sdb
 .vscode/*
-Мед.os
-med.sd
+Мед/*
+Мед*.os
+med*.sd
 *.txt
