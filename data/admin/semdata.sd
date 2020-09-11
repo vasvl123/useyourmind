@@ -1,11 +1,12 @@
 И	О	Д	2	З	Корень
 И	Свойства.	Д	3	З	
-И	Правила	Д	4	З	
+И	Правила	Д	4	С	12	З	
 И	NOUN,inan,femn sing,nomn	Д	5	С	6	З	ЧТО
 И	NOUN,inan,neut sing,gent	З	ЧЕГО
 И	INFN,perf,tran 	Д	7	С	8	З	ЧТО_СДЕЛАТЬ
 И	NOUN,inan,masc sing,accs	З	ЧТО
-И	NOUN,inan,femn sing,nomn	З	ЧТО	Д	9	С	10
+И	NOUN,inan,femn sing,nomn	Д	9	С	10	З	ЧТО
 И	VERB,impf,tran sing,3per,pres,indc	З	ЧТО_ДЕЛАЕТ
-И	VERB,impf,tran sing,3per,pres,indc	З	ЧТО_ДЕЛАЕТ	Д	11
+И	VERB,impf,tran sing,3per,pres,indc	Д	11	З	ЧТО_ДЕЛАЕТ
 И	INFN,perf,tran 	З	ЧТО_ДЕЛАТЬ
+И	Формы	З	
