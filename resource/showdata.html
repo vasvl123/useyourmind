@@ -529,10 +529,10 @@ function postcmd(cmd){
   var xhr = new XHR();
   xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
+    if (upddata.readyState==4) {
+      seq_add('cmd=upddata');
+    }
     if (this.response) {
-      if (upddata.readyState==4) {
-        seq_add('cmd=upddata');
-      }
       $(this.response).each(function(index, value) {
         if (value.tagName == "SCRIPT") {
           eval(value.innerText);
@@ -575,10 +575,10 @@ function seq_sendcmd(){
     }
     xhr.open('GET',url,true);
     xhr.onload = function() {
+      if (upddata.readyState==4) {
+        seq_add('cmd=upddata');
+      }
       if (this.response) {
-        if (upddata.readyState==4) {
-          seq_add('cmd=upddata');
-        }
         $(this.response).each(function(index, value) {
           if (value.tagName == "SCRIPT") {
             eval(value.innerText);
