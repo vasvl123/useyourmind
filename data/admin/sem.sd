@@ -1,0 +1,92 @@
+﻿И	О	З	Корень	Д	2
+И	Свойства.	З		С	3
+И	О	З	Сем.Предложение	С	13	А	4
+И	Текст	З	«Школа злословия» учит прикусить язык	С	5
+И	Грам	З		Д	6
+И	«	З	PNCT	С	7
+И	Школа	З	NOUN inan femn sing nomn	С	8
+И	злословия	З	NOUN inan neut sing gent	С	9
+И	»	З	PNCT	С	10
+И	учит	З	VERB impf tran sing 3per pres indc	С	11
+И	прикусить	З	INFN perf tran	С	12
+И	язык	З	NOUN inan masc sing accs
+И	О	З	Сем.Предложение	С	24	А	14
+И	Текст	З	Сохранится ли градус дискуссии в новом сезоне?	С	15
+И	Грам	З		Д	16
+И	Сохранится	З	VERB perf intr sing 3per futr indc	С	17
+И	ли	З	PRCL	С	18
+И	градус	З	NOUN inan masc sing nomn	С	19
+И	дискуссии	З	NOUN inan femn sing gent	С	20
+И	в	З	PREP	С	21
+И	новом	З	ADJF Qual masc sing loct	С	22
+И	сезоне	З	NOUN inan masc sing loct	С	23
+И	?	З	PNCT
+И	О	З	Сем.Предложение	С	42	А	25
+И	Текст	З	Великолепная «Школа злословия» вернулась в эфир после летних каникул в новом формате.	С	26
+И	Грам	З		Д	27
+И	Великолепная	З	ADJF Qual femn sing nomn	С	28
+И	«	З	PNCT	С	29
+И	Школа	З	NOUN inan femn sing nomn	С	30
+И	злословия	З	NOUN inan neut sing gent	С	31
+И	»	З	PNCT	С	32
+И	вернулась	З	VERB perf intr femn sing past indc	С	33
+И	в	З	PREP	С	34
+И	эфир	З	NOUN inan masc sing accs	С	35
+И	после	З	PREP	С	36
+И	летних	З	ADJF plur gent	С	37
+И	каникул	З	NOUN inan GNdr Pltm plur gent	С	38
+И	в	З	PREP	С	39
+И	новом	З	ADJF Qual masc sing loct	С	40
+И	формате	З	NOUN inan masc sing loct	С	41
+И	.	З	PNCT
+И	О	З	Сем.Предложение	С	55	А	43
+И	Текст	З	Потом проект переехал с «Культуры» на НТВ.	С	44
+И	Грам	З		Д	45
+И	Потом	З	ADVB	С	46
+И	проект	З	NOUN inan masc sing nomn	С	47
+И	переехал	З	VERB perf tran masc sing past indc	С	48
+И	с	З	PREP	С	49
+И	«	З	PNCT	С	50
+И	Культуры	З	NOUN inan femn sing gent	С	51
+И	»	З	PNCT	С	52
+И	на	З	PREP	С	53
+И	НТВ	З	NOUN inan neut Sgtm Fixd Abbr Orgn sing accs	С	54
+И	.	З	PNCT
+И	О	З	Сем.Предложение	А	56
+И	Текст	З	Это помимо явных перемен в виде тут же появившихся рекламных блоков, отсутствовавших на «Культуре», позволило, с одной стороны, расширить круг гостей, с другой – изменить тон разговора.	С	57
+И	Грам	З		Д	58
+И	Это	З	NPRO neut sing nomn	С	59
+И	помимо	З	PREP	С	60
+И	явных	З	ADJF Qual plur gent	С	61
+И	перемен	З	NOUN inan femn plur gent	С	62
+И	в	З	PREP	С	63
+И	виде	З	NOUN inan masc sing loc1	С	64
+И	тут	З	ADVB Dmns	С	65
+И	же	З	PRCL	С	66
+И	появившихся	З	PRTF perf intr past actv plur gent	С	67
+И	рекламных	З	ADJF Qual plur gent	С	68
+И	блоков	З	NOUN inan masc plur gent	С	69
+И	,	З	PNCT	С	70
+И	отсутствовавших	З	PRTF impf intr past actv plur gent	С	71
+И	на	З	PREP	С	72
+И	«	З	PNCT	С	73
+И	Культуре	З	NOUN inan femn sing loct	С	74
+И	»	З	PNCT	С	75
+И	,	З	PNCT	С	76
+И	позволило	З	VERB perf tran neut sing past indc	С	77
+И	,	З	PNCT	С	78
+И	с	З	PREP	С	79
+И	одной	З	ADJF Apro Anum femn sing gent	С	80
+И	стороны	З	NOUN inan femn sing gent	С	81
+И	,	З	PNCT	С	82
+И	расширить	З	INFN perf tran	С	83
+И	круг	З	NOUN inan masc sing accs	С	84
+И	гостей	З	NOUN anim masc plur gent	С	85
+И	,	З	PNCT	С	86
+И	с	З	PREP	С	87
+И	другой	З	ADJF Apro Subx femn sing gent	С	88
+И	–	З	PNCT	С	89
+И	изменить	З	INFN perf tran	С	90
+И	тон	З	NOUN inan masc sing accs	С	91
+И	разговора	З	NOUN inan masc sing gent	С	92
+И	.	З	PNCT
