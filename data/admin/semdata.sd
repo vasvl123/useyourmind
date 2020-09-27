@@ -1,12 +1,1499 @@
 И	О	Д	2	З	Корень
 И	Свойства.	Д	3	З	
-И	Правила	Д	4	С	12	З	
-И	NOUN,inan,femn sing,nomn	Д	5	С	6	З	ЧТО
-И	NOUN,inan,neut sing,gent	З	ЧЕГО
-И	INFN,perf,tran 	Д	7	С	8	З	ЧТО_СДЕЛАТЬ
-И	NOUN,inan,masc sing,accs	З	ЧТО
-И	NOUN,inan,femn sing,nomn	Д	9	С	10	З	ЧТО
-И	VERB,impf,tran sing,3per,pres,indc	З	ЧТО_ДЕЛАЕТ
-И	VERB,impf,tran sing,3per,pres,indc	Д	11	З	ЧТО_ДЕЛАЕТ
-И	INFN,perf,tran 	З	ЧТО_ДЕЛАТЬ
-И	Формы	З	
+И	Правила	Д	4	С	646	З	
+И	NOUN,inan,femn sing,nomn	Д	5	С	6	З	
+И	NOUN,inan,neut sing,gent	З	чего
+И	INFN,perf,tran 	Д	7	С	8	З	
+И	NOUN,inan,masc sing,accs	З	что
+И	NOUN,inan,femn sing,nomn	Д	9	С	10	З	
+И	VERB,impf,tran sing,3per,pres,indc	З	что делает
+И	VERB,impf,tran sing,3per,pres,indc	Д	11	С	606	З	
+И	INFN,perf,tran 	З	что делать
+И	СОХРАНИТСЯ	Д	491	С	98	З	
+И	ШКОЛА	З	NOUN,inan,femn sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut sing,gent	С	16	А	15
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut plur,nomn	С	18	А	17
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut plur,accs	С	20	А	19
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut sing,gent,V-ie	С	22	А	21
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut plur,nomn,V-ie	С	24	А	23
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	З	NOUN,inan,neut plur,accs,V-ie	А	25
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	УЧИТ	З	VERB,impf,tran sing,3per,pres,indc	А	27
+И	УЧУ	З	VERB,impf,tran sing,1per,pres,indc
+И	ПРИКУСИТЬ	З	INFN,perf,tran 
+И	ЯЗЫК	З	NOUN,anim,masc sing,nomn	С	30
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn	С	31
+И	ЯЗЫК	З	NOUN,inan,masc sing,accs	С	33	А	32
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn
+И	ЯЗЫК	З	NOUN,inan,masc sing,accs,Infr	С	35	А	34
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn
+И	ЯЗЫК	З	NOUN,anim,masc plur,gent	С	37	А	36
+И	ЯЗЫК	З	NOUN,anim,masc sing,nomn
+И	ЯЗЫК	З	NOUN,inan,masc plur,gent	С	39	А	38
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn
+И	ЯЗЫК	З	NOUN,inan,masc plur,gent,Coun	С	41	А	40
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn
+И	ЯЗЫК	З	NOUN,inan,masc plur,gent,Infr	С	43	А	42
+И	ЯЗЫК	З	NOUN,inan,masc sing,nomn
+И	ЯЗЫК	З	NOUN,anim,masc plur,accs	А	44
+И	ЯЗЫК	З	NOUN,anim,masc sing,nomn
+И	СОХРАНИТСЯ	З	VERB,perf,intr plur,3per,futr,indc	С	47	А	46
+И	СОХРАНИЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	СОХРАНИТСЯ	З	VERB,perf,intr sing,3per,futr,indc	А	48
+И	СОХРАНИЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ЛИ	З	CONJ 	С	50
+И	ЛИ	З	PRCL 	С	51
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn	С	52
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn	С	53
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,gent	С	55	А	54
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,datv	С	57	А	56
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,accs	С	59	А	58
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,ablt	С	61	А	60
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,loct	С	63	А	62
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,gent	С	65	А	64
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,datv	С	67	А	66
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,accs	С	69	А	68
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,ablt	С	71	А	70
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,loct	С	73	А	72
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,nomn	С	75	А	74
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,gent	С	77	А	76
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,datv	С	79	А	78
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,accs	С	81	А	80
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,ablt	С	83	А	82
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn plur,loct	А	84
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn	С	86
+И	ГРАДУС	З	NOUN,inan,masc sing,accs	С	88	А	87
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ГРАДУС	З	NOUN,inan,masc plur,gent	С	90	А	89
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ГРАДУС	З	NOUN,inan,masc plur,gent,Infr	А	91
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ДИСКУССИИ	З	NOUN,inan,femn sing,gent	С	94	А	93
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	З	NOUN,inan,femn sing,datv	С	96	А	95
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	З	NOUN,inan,femn sing,loct	С	98	А	97
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ЛИ	Д	495	С	99	З	
+И	ГРАДУС	Д	531	С	100	З	
+И	ДИСКУССИИ	Д	538	С	101	З	
+И	В	Д	550	С	102	З	
+И	НОВОМ	Д	596	С	103	З	
+И	СЕЗОНЕ	Д	602	С	608	З	
+И	В	З	PREP 	С	105
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn	С	106
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn	С	107
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn	С	108
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,gent	С	110	А	109
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,datv	С	112	А	111
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,accs	С	114	А	113
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,ablt	С	116	А	115
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,loct	С	118	А	117
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,nomn	С	120	А	119
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,gent	С	122	А	121
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,datv	С	124	А	123
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,accs	С	126	А	125
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,ablt	С	128	А	127
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr plur,loct	С	130	А	129
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent	С	132	А	131
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv	С	134	А	133
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs	С	136	А	135
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt	С	138	А	137
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct	С	140	А	139
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent	С	142	А	141
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv	С	144	А	143
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs	С	146	А	145
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt	С	148	А	147
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct	А	149
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	НОВОМ	З	NOUN,inan,neut sing,loct	С	152	А	151
+И	НОВОЕ	З	NOUN,inan,neut sing,nomn
+И	НОВОМ	З	ADJF,Qual masc,sing,loct	С	154	А	153
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НОВОМ	З	ADJF,Qual neut,sing,loct	А	155
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	СЕЗОНЕ	З	NOUN,inan,masc sing,loct	С	158	А	157
+И	СЕЗОН	З	NOUN,inan,masc sing,nomn
+И	СЕЗОНЕ	З	NOUN,inan,masc sing,loc1	А	159
+И	СЕЗОН	З	NOUN,inan,masc sing,nomn
+И	ВЕЛИКОЛЕПНАЯ	З	ADJF,Qual femn,sing,nomn	А	161
+И	ВЕЛИКОЛЕПНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ВЕРНУЛАСЬ	З	VERB,perf,intr femn,sing,past,indc	С	164	А	163
+И	ВЕРНУЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ВЕРНУЛАСЬ	З	VERB,perf,intr femn,sing,past,indc,Infr	А	165
+И	ВЕРНУЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ЭФИР	З	NOUN,inan,masc sing,nomn	С	167
+И	ЭФИР	З	NOUN,inan,masc sing,accs	С	169	А	168
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	З	NOUN,inan,masc plur,gent	С	171	А	170
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	З	NOUN,inan,masc plur,gent,Coun	С	173	А	172
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	З	NOUN,inan,masc plur,gent,Arch	С	175	А	174
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	З	NOUN,inan,masc sing,accs,Infr	С	177	А	176
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	З	NOUN,inan,masc plur,gent,Infr	А	178
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ПОСЛЕ	З	PREP 	С	180
+И	ПОСЛЕ	З	ADVB 	С	181
+И	ПОСЛЕ	З	NOUN,inan,masc sing,loct	С	183	А	182
+И	ПОСОЛ	З	NOUN,inan,masc sing,nomn
+И	ПОСЛЕ	З	NOUN,anim,masc sing,loct	С	185	А	184
+И	ПОСОЛ	З	NOUN,anim,masc sing,nomn
+И	ПОСЛЕ	З	NOUN,inan,masc sing,loc1	А	186
+И	ПОСОЛ	З	NOUN,inan,masc sing,nomn
+И	ЛЕТНИХ	З	ADJF plur,gent	С	189	А	188
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	З	ADJF anim,plur,accs	С	191	А	190
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	З	ADJF plur,loct	С	193	А	192
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	З	ADJF plur,gent,Infr	С	195	А	194
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	З	ADJF anim,plur,accs,Infr	С	197	А	196
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	З	ADJF plur,loct,Infr	А	198
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	КАНИКУЛ	З	NOUN,inan,GNdr,Pltm plur,gent	А	200
+И	КАНИКУЛЫ	З	NOUN,inan,GNdr,Pltm plur,nomn
+И	ФОРМАТЕ	З	NOUN,inan,masc sing,loct	С	203	А	202
+И	ФОРМАТ	З	NOUN,inan,masc sing,nomn
+И	ФОРМАТЕ	З	NOUN,inan,masc sing,loc1	А	204
+И	ФОРМАТ	З	NOUN,inan,masc sing,nomn
+И	ПОТОМ	З	ADVB 	С	206
+И	ПОТОМ	З	NOUN,inan,masc sing,ablt	А	207
+И	ПОТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn	С	209
+И	ПРОЕКТ	З	NOUN,inan,masc sing,accs	С	211	А	210
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc plur,gent,Coun	С	213	А	212
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc plur,gent,Infr	С	215	А	214
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc plur,gent	С	217	А	216
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc sing,gent,Infr	С	219	А	218
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc sing,datv,Infr	С	221	А	220
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc sing,ablt,Infr	С	223	А	222
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	З	NOUN,inan,masc sing,loct,Infr	А	224
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПЕРЕЕХАЛ	З	VERB,perf,tran masc,sing,past,indc
+И	С	З	PREP 	С	227
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn	С	228
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn	С	229
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn	С	230
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn	С	231
+И	С	З	PRCL 	С	232
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,gent	С	234	А	233
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,datv	С	236	А	235
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,accs	С	238	А	237
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,ablt	С	240	А	239
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,loct	С	242	А	241
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,nomn	С	244	А	243
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,gent	С	246	А	245
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,datv	С	248	А	247
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,accs	С	250	А	249
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,ablt	С	252	А	251
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr plur,loct	С	254	А	253
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,gent	С	256	А	255
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,datv	С	258	А	257
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,accs	С	260	А	259
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,ablt	С	262	А	261
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,loct	С	264	А	263
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,nomn	С	266	А	265
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,gent	С	268	А	267
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,datv	С	270	А	269
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,accs	С	272	А	271
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,ablt	С	274	А	273
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr plur,loct	С	276	А	275
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent	С	278	А	277
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv	С	280	А	279
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs	С	282	А	281
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt	С	284	А	283
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct	С	286	А	285
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent	С	288	А	287
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv	С	290	А	289
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs	С	292	А	291
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt	С	294	А	293
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct	А	295
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn sing,gent	С	298	А	297
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn plur,nomn	С	300	А	299
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn plur,accs	С	302	А	301
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn sing,gent,Infr	С	304	А	303
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn plur,nomn,Infr	С	306	А	305
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	З	NOUN,inan,femn plur,accs,Infr	А	307
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	НА	З	PREP 	С	309
+И	НА	З	INTJ 	С	310
+И	НА	З	PRCL 
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn	С	312
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,gent	С	314	А	313
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,datv	С	316	А	315
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,accs	С	318	А	317
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,ablt	С	320	А	319
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,loct	А	321
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	ЭТО	З	PRCL 	С	323
+И	ЭТО	З	NPRO,neut sing,nomn	С	324
+И	ЭТО	З	NPRO,neut sing,accs	С	326	А	325
+И	ЭТО	З	NPRO,neut sing,nomn
+И	ЭТО	З	ADJF,Subx,Apro,Anph neut,sing,nomn	С	328	А	327
+И	ЭТОТ	З	ADJF,Subx,Apro,Anph masc,sing,nomn
+И	ЭТО	З	ADJF,Subx,Apro,Anph neut,sing,accs	А	329
+И	ЭТОТ	З	ADJF,Subx,Apro,Anph masc,sing,nomn
+И	ПОМИМО	З	PREP 
+И	ЯВНЫХ	З	ADJF,Qual plur,gent	С	333	А	332
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ЯВНЫХ	З	ADJF,Qual anim,plur,accs	С	335	А	334
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ЯВНЫХ	З	ADJF,Qual plur,loct	А	336
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ПЕРЕМЕН	З	NOUN,inan,femn plur,gent	А	338
+И	ПЕРЕМЕНА	З	NOUN,inan,femn sing,nomn
+И	ВИДЕ	З	NOUN,inan,masc sing,loct	С	341	А	340
+И	ВИД	З	NOUN,inan,masc sing,nomn
+И	ВИДЕ	З	NOUN,inan,masc sing,loc1	А	342
+И	ВИД	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc sing,nomn	С	344
+И	ТУТ	З	ADVB,Dmns 	С	345
+И	ТУТ	З	NOUN,inan,masc sing,accs	С	347	А	346
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,femn plur,gent	С	349	А	348
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	З	NOUN,inan,masc plur,gent,Coun	С	351	А	350
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,femn plur,gent,Infr	С	353	А	352
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	З	NOUN,inan,femn plur,gent,Coun	С	355	А	354
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	З	NOUN,inan,masc plur,gent,Infr	С	357	А	356
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc plur,gent	С	359	А	358
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc sing,gent,Infr	С	361	А	360
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc sing,datv,Infr	С	363	А	362
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc sing,ablt,Infr	С	365	А	364
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	З	NOUN,inan,masc sing,loct,Infr	А	366
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ЖЕ	З	CONJ 	С	368
+И	ЖЕ	З	PRCL 
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv plur,gent	С	371	А	370
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv anim,plur,accs	С	373	А	372
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv plur,loct	С	375	А	374
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv plur,gent,Infr	С	377	А	376
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv anim,plur,accs,Infr	С	379	А	378
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	З	PRTF,perf,intr,past,actv plur,loct,Infr	А	380
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	РЕКЛАМНЫХ	З	ADJF,Qual plur,gent	С	383	А	382
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	РЕКЛАМНЫХ	З	ADJF,Qual anim,plur,accs	С	385	А	384
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	РЕКЛАМНЫХ	З	ADJF,Qual plur,loct	А	386
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЛОКОВ	З	NOUN,inan,masc plur,gent	С	389	А	388
+И	БЛОК	З	NOUN,inan,masc sing,nomn
+И	БЛОКОВ	З	NOUN,inan,masc plur,gent,Infr	А	390
+И	БЛОК	З	NOUN,inan,masc sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv plur,gent	С	393	А	392
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv anim,plur,accs	С	395	А	394
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv plur,loct	С	397	А	396
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv plur,gent,Infr	С	399	А	398
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv anim,plur,accs,Infr	С	401	А	400
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	З	PRTF,impf,intr,past,actv plur,loct,Infr	А	402
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	КУЛЬТУРЕ	З	NOUN,inan,femn sing,datv	С	405	А	404
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	З	NOUN,inan,femn sing,loct	С	407	А	406
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	З	NOUN,inan,femn sing,datv,Infr	С	409	А	408
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	З	NOUN,inan,femn sing,loct,Infr	А	410
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	ПОЗВОЛИЛО	З	VERB,perf,tran neut,sing,past,indc	А	412
+И	ПОЗВОЛИЛ	З	VERB,perf,tran masc,sing,past,indc
+И	ОДНОЙ	З	ADJF,Apro,Anum femn,sing,gent	С	415	А	414
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	З	ADJF,Apro,Anum femn,sing,datv	С	417	А	416
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	З	ADJF,Apro,Anum femn,sing,ablt	С	419	А	418
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	З	ADJF,Apro,Anum femn,sing,loct	А	420
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn sing,gent	С	423	А	422
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn plur,nomn	С	425	А	424
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn plur,accs	С	427	А	426
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn sing,gent,Infr	С	429	А	428
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn plur,nomn,Infr	С	431	А	430
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	З	NOUN,inan,femn plur,accs,Infr	А	432
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	РАСШИРИТЬ	З	INFN,perf,tran 
+И	КРУГ	З	NOUN,inan,masc sing,nomn	С	435
+И	КРУГ	З	NOUN,inan,masc sing,accs	С	437	А	436
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	КРУГ	З	NOUN,inan,masc plur,gent,Coun	С	439	А	438
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	КРУГ	З	NOUN,inan,masc plur,gent	А	440
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	ГОСТЕЙ	З	NOUN,anim,masc plur,gent	С	443	А	442
+И	ГОСТЬ	З	NOUN,anim,masc sing,nomn
+И	ГОСТЕЙ	З	NOUN,anim,masc plur,accs	С	445	А	444
+И	ГОСТЬ	З	NOUN,anim,masc sing,nomn
+И	ГОСТЕЙ	З	NOUN,anim,femn plur,gent	С	447	А	446
+И	ГОСТЬЯ	З	NOUN,anim,femn sing,nomn
+И	ГОСТЕЙ	З	NOUN,anim,femn plur,accs	А	448
+И	ГОСТЬЯ	З	NOUN,anim,femn sing,nomn
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn	С	450
+И	ДРУГОЙ	З	ADJF,Apro,Subx inan,masc,sing,accs	С	452	А	451
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	З	ADJF,Apro,Subx femn,sing,gent	С	454	А	453
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	З	ADJF,Apro,Subx femn,sing,datv	С	456	А	455
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	З	ADJF,Apro,Subx femn,sing,ablt	С	458	А	457
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	З	ADJF,Apro,Subx femn,sing,loct	А	459
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ИЗМЕНИТЬ	З	INFN,perf,tran 	С	461
+И	ИЗМЕНИТЬ	З	INFN,perf,intr 
+И	ТОН	З	NOUN,inan,masc sing,nomn	С	463
+И	ТОН	З	NOUN,inan,masc sing,accs	С	465	А	464
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	З	NOUN,inan,masc plur,gent,Coun	С	467	А	466
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	З	NOUN,inan,masc plur,gent,Infr	С	469	А	468
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	З	NOUN,inan,masc plur,gent	С	471	А	470
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	З	NOUN,inan,masc sing,datv,Infr	С	473	А	472
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	З	NOUN,inan,masc sing,loct,Infr	А	474
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	ADJS femn,sing	С	477	А	476
+И	РАЗГОВОРЕН	З	ADJS masc,sing
+И	РАЗГОВОРА	З	NOUN,inan,masc sing,gent	С	479	А	478
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc sing,gen1	С	481	А	480
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc plur,nomn,Infr	С	483	А	482
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc plur,accs,Infr	С	485	А	484
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc plur,nomn	С	487	А	486
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc plur,accs	С	489	А	488
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	З	NOUN,inan,masc sing,gent,Infr	А	490
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	СОХРАНИТСЯ	С	493	А	492	З	VERB,perf,intr plur,3per,futr,indc
+И	СОХРАНИЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	СОХРАНИТСЯ	А	494	З	VERB,perf,intr sing,3per,futr,indc
+И	СОХРАНИЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ЛИ	С	496	З	CONJ 
+И	ЛИ	С	497	З	PRCL 
+И	ЛИ	С	498	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	499	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	501	А	500	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,gent
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	503	А	502	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,datv
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	505	А	504	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,accs
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	507	А	506	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,ablt
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	509	А	508	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,loct
+И	ЛИ	З	NOUN,anim,masc,Sgtm,Fixd,Name sing,nomn
+И	ЛИ	С	511	А	510	З	NOUN,anim,ms-f,Fixd,Surn sing,gent
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	513	А	512	З	NOUN,anim,ms-f,Fixd,Surn sing,datv
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	515	А	514	З	NOUN,anim,ms-f,Fixd,Surn sing,accs
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	517	А	516	З	NOUN,anim,ms-f,Fixd,Surn sing,ablt
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	519	А	518	З	NOUN,anim,ms-f,Fixd,Surn sing,loct
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	521	А	520	З	NOUN,anim,ms-f,Fixd,Surn plur,nomn
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	523	А	522	З	NOUN,anim,ms-f,Fixd,Surn plur,gent
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	525	А	524	З	NOUN,anim,ms-f,Fixd,Surn plur,datv
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	527	А	526	З	NOUN,anim,ms-f,Fixd,Surn plur,accs
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	С	529	А	528	З	NOUN,anim,ms-f,Fixd,Surn plur,ablt
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ЛИ	А	530	З	NOUN,anim,ms-f,Fixd,Surn plur,loct
+И	ЛИ	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ГРАДУС	С	532	З	NOUN,inan,masc sing,nomn
+И	ГРАДУС	С	534	А	533	З	NOUN,inan,masc sing,accs
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ГРАДУС	С	536	А	535	З	NOUN,inan,masc plur,gent
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ГРАДУС	А	537	З	NOUN,inan,masc plur,gent,Infr
+И	ГРАДУС	З	NOUN,inan,masc sing,nomn
+И	ДИСКУССИИ	С	540	А	539	З	NOUN,inan,femn sing,gent
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	С	542	А	541	З	NOUN,inan,femn sing,datv
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	С	544	А	543	З	NOUN,inan,femn sing,loct
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	С	546	А	545	З	NOUN,inan,femn plur,nomn
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	С	548	А	547	З	NOUN,inan,femn plur,accs
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	ДИСКУССИИ	А	549	З	NOUN,inan,femn sing,gent,Infr
+И	ДИСКУССИЯ	З	NOUN,inan,femn sing,nomn
+И	В	С	551	З	PREP 
+И	В	С	552	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	553	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	554	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	С	556	А	555	З	NOUN,inan,masc,Fixd,Abbr sing,gent
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	558	А	557	З	NOUN,inan,masc,Fixd,Abbr sing,datv
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	560	А	559	З	NOUN,inan,masc,Fixd,Abbr sing,accs
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	562	А	561	З	NOUN,inan,masc,Fixd,Abbr sing,ablt
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	564	А	563	З	NOUN,inan,masc,Fixd,Abbr sing,loct
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	566	А	565	З	NOUN,inan,masc,Fixd,Abbr plur,nomn
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	568	А	567	З	NOUN,inan,masc,Fixd,Abbr plur,gent
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	570	А	569	З	NOUN,inan,masc,Fixd,Abbr plur,datv
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	572	А	571	З	NOUN,inan,masc,Fixd,Abbr plur,accs
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	574	А	573	З	NOUN,inan,masc,Fixd,Abbr plur,ablt
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	576	А	575	З	NOUN,inan,masc,Fixd,Abbr plur,loct
+И	В	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	В	С	578	А	577	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	580	А	579	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	582	А	581	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	584	А	583	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	586	А	585	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	В	С	588	А	587	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	С	590	А	589	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	С	592	А	591	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	С	594	А	593	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	В	А	595	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct
+И	В	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	НОВОМ	С	598	А	597	З	NOUN,inan,neut sing,loct
+И	НОВОЕ	З	NOUN,inan,neut sing,nomn
+И	НОВОМ	С	600	А	599	З	ADJF,Qual masc,sing,loct
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НОВОМ	А	601	З	ADJF,Qual neut,sing,loct
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	СЕЗОНЕ	С	604	А	603	З	NOUN,inan,masc sing,loct
+И	СЕЗОН	З	NOUN,inan,masc sing,nomn
+И	СЕЗОНЕ	А	605	З	NOUN,inan,masc sing,loc1
+И	СЕЗОН	З	NOUN,inan,masc sing,nomn
+И	NOUN,inan,masc sing,nomn	Д	607	С	676	З	
+И	NOUN,inan,femn sing,gent	З	чего
+И	ВЕЛИКОЛЕПНАЯ	Д	617	С	609	З	
+И	ШКОЛА	Д	619	С	610	З	
+И	ЗЛОСЛОВИЯ	Д	620	С	611	З	
+И	ВЕРНУЛАСЬ	Д	632	С	612	З	
+И	ЭФИР	Д	636	С	613	З	
+И	ПОСЛЕ	Д	650	С	614	З	
+И	ЛЕТНИХ	Д	658	С	615	З	
+И	КАНИКУЛ	Д	670	С	616	З	
+И	ФОРМАТЕ	Д	672	С	682	З	
+И	ВЕЛИКОЛЕПНАЯ	А	618	З	ADJF,Qual femn,sing,nomn
+И	ВЕЛИКОЛЕПНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ШКОЛА	З	NOUN,inan,femn sing,nomn
+И	ЗЛОСЛОВИЯ	С	622	А	621	З	NOUN,inan,neut sing,gent
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	С	624	А	623	З	NOUN,inan,neut plur,nomn
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	С	626	А	625	З	NOUN,inan,neut plur,accs
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	С	628	А	627	З	NOUN,inan,neut sing,gent,V-ie
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	С	630	А	629	З	NOUN,inan,neut plur,nomn,V-ie
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ЗЛОСЛОВИЯ	А	631	З	NOUN,inan,neut plur,accs,V-ie
+И	ЗЛОСЛОВИЕ	З	NOUN,inan,neut sing,nomn
+И	ВЕРНУЛАСЬ	С	634	А	633	З	VERB,perf,intr femn,sing,past,indc
+И	ВЕРНУЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ВЕРНУЛАСЬ	А	635	З	VERB,perf,intr femn,sing,past,indc,Infr
+И	ВЕРНУЛСЯ	З	VERB,perf,intr masc,sing,past,indc
+И	ЭФИР	С	637	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	С	639	А	638	З	NOUN,inan,masc sing,accs
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	С	641	А	640	З	NOUN,inan,masc plur,gent
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	С	643	А	642	З	NOUN,inan,masc plur,gent,Coun
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	С	645	А	644	З	NOUN,inan,masc plur,gent,Arch
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	С	648	А	647	З	NOUN,inan,masc sing,accs,Infr
+И	Формы	Д	12	З	
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ЭФИР	А	649	З	NOUN,inan,masc plur,gent,Infr
+И	ЭФИР	З	NOUN,inan,masc sing,nomn
+И	ПОСЛЕ	С	651	З	PREP 
+И	ПОСЛЕ	С	652	З	ADVB 
+И	ПОСЛЕ	С	654	А	653	З	NOUN,inan,masc sing,loct
+И	ПОСОЛ	З	NOUN,inan,masc sing,nomn
+И	ПОСЛЕ	С	656	А	655	З	NOUN,anim,masc sing,loct
+И	ПОСОЛ	З	NOUN,anim,masc sing,nomn
+И	ПОСЛЕ	А	657	З	NOUN,inan,masc sing,loc1
+И	ПОСОЛ	З	NOUN,inan,masc sing,nomn
+И	ЛЕТНИХ	С	660	А	659	З	ADJF plur,gent
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	С	662	А	661	З	ADJF anim,plur,accs
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	С	664	А	663	З	ADJF plur,loct
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	С	666	А	665	З	ADJF plur,gent,Infr
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	С	668	А	667	З	ADJF anim,plur,accs,Infr
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	ЛЕТНИХ	А	669	З	ADJF plur,loct,Infr
+И	ЛЕТНИЙ	З	ADJF masc,sing,nomn
+И	КАНИКУЛ	А	671	З	NOUN,inan,GNdr,Pltm plur,gent
+И	КАНИКУЛЫ	З	NOUN,inan,GNdr,Pltm plur,nomn
+И	ФОРМАТЕ	С	674	А	673	З	NOUN,inan,masc sing,loct
+И	ФОРМАТ	З	NOUN,inan,masc sing,nomn
+И	ФОРМАТЕ	А	675	З	NOUN,inan,masc sing,loc1
+И	ФОРМАТ	З	NOUN,inan,masc sing,nomn
+И	NOUN,inan,femn sing,nomn	Д	677	С	678	З	
+И	ADJF,Qual femn,sing,nomn	З	какая
+И	NOUN,inan,GNdr,Pltm plur,gent	Д	679	С	680	З	
+И	ADJF plur,gent	З	каких
+И	NOUN,inan,masc sing,loct	Д	681	С	806	З	
+И	ADJF,Qual masc,sing,loct	З	каком
+И	ПОТОМ	Д	689	С	683	З	
+И	ПРОЕКТ	Д	692	С	684	З	
+И	ПЕРЕЕХАЛ	Д	709	С	685	З	
+И	С	Д	710	С	686	З	
+И	КУЛЬТУРЫ	Д	780	С	687	З	
+И	НА	Д	792	С	688	З	
+И	НТВ	Д	795	С	808	З	
+И	ПОТОМ	С	690	З	ADVB 
+И	ПОТОМ	А	691	З	NOUN,inan,masc sing,ablt
+И	ПОТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	693	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	695	А	694	З	NOUN,inan,masc sing,accs
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	697	А	696	З	NOUN,inan,masc plur,gent,Coun
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	699	А	698	З	NOUN,inan,masc plur,gent,Infr
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	701	А	700	З	NOUN,inan,masc plur,gent
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	703	А	702	З	NOUN,inan,masc sing,gent,Infr
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	705	А	704	З	NOUN,inan,masc sing,datv,Infr
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	С	707	А	706	З	NOUN,inan,masc sing,ablt,Infr
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПРОЕКТ	А	708	З	NOUN,inan,masc sing,loct,Infr
+И	ПРОЕКТ	З	NOUN,inan,masc sing,nomn
+И	ПЕРЕЕХАЛ	З	VERB,perf,tran masc,sing,past,indc
+И	С	С	711	З	PREP 
+И	С	С	712	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	713	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	714	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	715	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	С	716	З	PRCL 
+И	С	С	718	А	717	З	NOUN,inan,femn,Fixd,Abbr sing,gent
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	720	А	719	З	NOUN,inan,femn,Fixd,Abbr sing,datv
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	722	А	721	З	NOUN,inan,femn,Fixd,Abbr sing,accs
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	724	А	723	З	NOUN,inan,femn,Fixd,Abbr sing,ablt
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	726	А	725	З	NOUN,inan,femn,Fixd,Abbr sing,loct
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	728	А	727	З	NOUN,inan,femn,Fixd,Abbr plur,nomn
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	730	А	729	З	NOUN,inan,femn,Fixd,Abbr plur,gent
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	732	А	731	З	NOUN,inan,femn,Fixd,Abbr plur,datv
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	734	А	733	З	NOUN,inan,femn,Fixd,Abbr plur,accs
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	736	А	735	З	NOUN,inan,femn,Fixd,Abbr plur,ablt
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	738	А	737	З	NOUN,inan,femn,Fixd,Abbr plur,loct
+И	С	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	С	С	740	А	739	З	NOUN,inan,neut,Fixd,Abbr sing,gent
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	742	А	741	З	NOUN,inan,neut,Fixd,Abbr sing,datv
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	744	А	743	З	NOUN,inan,neut,Fixd,Abbr sing,accs
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	746	А	745	З	NOUN,inan,neut,Fixd,Abbr sing,ablt
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	748	А	747	З	NOUN,inan,neut,Fixd,Abbr sing,loct
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	750	А	749	З	NOUN,inan,neut,Fixd,Abbr plur,nomn
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	752	А	751	З	NOUN,inan,neut,Fixd,Abbr plur,gent
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	754	А	753	З	NOUN,inan,neut,Fixd,Abbr plur,datv
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	756	А	755	З	NOUN,inan,neut,Fixd,Abbr plur,accs
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	758	А	757	З	NOUN,inan,neut,Fixd,Abbr plur,ablt
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	760	А	759	З	NOUN,inan,neut,Fixd,Abbr plur,loct
+И	С	З	NOUN,inan,neut,Fixd,Abbr sing,nomn
+И	С	С	762	А	761	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	764	А	763	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	766	А	765	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	768	А	767	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	770	А	769	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	С	С	772	А	771	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	С	774	А	773	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	С	776	А	775	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	С	778	А	777	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	С	А	779	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct
+И	С	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	КУЛЬТУРЫ	С	782	А	781	З	NOUN,inan,femn sing,gent
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	С	784	А	783	З	NOUN,inan,femn plur,nomn
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	С	786	А	785	З	NOUN,inan,femn plur,accs
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	С	788	А	787	З	NOUN,inan,femn sing,gent,Infr
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	С	790	А	789	З	NOUN,inan,femn plur,nomn,Infr
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЫ	А	791	З	NOUN,inan,femn plur,accs,Infr
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	НА	С	793	З	PREP 
+И	НА	С	794	З	INTJ 
+И	НА	З	PRCL 
+И	НТВ	С	796	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	С	798	А	797	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,gent
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	С	800	А	799	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,datv
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	С	802	А	801	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,accs
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	С	804	А	803	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,ablt
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	НТВ	А	805	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,loct
+И	НТВ	З	NOUN,inan,neut,Sgtm,Fixd,Abbr,Orgn sing,nomn
+И	NOUN,inan,masc sing,nomn	Д	807	С	999	З	
+И	VERB,perf,tran masc,sing,past,indc	З	что сделал
+И	ЭТО	Д	830	С	809	З	
+И	ПОМИМО	Д	838	С	810	З	
+И	ЯВНЫХ	Д	839	С	811	З	
+И	ПЕРЕМЕН	Д	845	С	812	З	
+И	ВИДЕ	Д	847	С	813	З	
+И	ТУТ	Д	851	С	814	З	
+И	ЖЕ	Д	875	С	815	З	
+И	ПОЯВИВШИХСЯ	Д	877	С	816	З	
+И	РЕКЛАМНЫХ	Д	889	С	817	З	
+И	БЛОКОВ	Д	895	С	818	З	
+И	ОТСУТСТВОВАВШИХ	Д	899	С	819	З	
+И	КУЛЬТУРЕ	Д	911	С	820	З	
+И	ПОЗВОЛИЛО	Д	919	С	821	З	
+И	ОДНОЙ	Д	921	С	822	З	
+И	СТОРОНЫ	Д	929	С	823	З	
+И	РАСШИРИТЬ	Д	941	С	824	З	
+И	КРУГ	Д	942	С	825	З	
+И	ГОСТЕЙ	Д	949	С	826	З	
+И	ДРУГОЙ	Д	957	С	827	З	
+И	ИЗМЕНИТЬ	Д	968	С	828	З	
+И	ТОН	Д	970	С	829	З	
+И	РАЗГОВОРА	Д	983	С	1007	З	
+И	ЭТО	С	831	З	PRCL 
+И	ЭТО	С	832	З	NPRO,neut sing,nomn
+И	ЭТО	С	834	А	833	З	NPRO,neut sing,accs
+И	ЭТО	З	NPRO,neut sing,nomn
+И	ЭТО	С	836	А	835	З	ADJF,Subx,Apro,Anph neut,sing,nomn
+И	ЭТОТ	З	ADJF,Subx,Apro,Anph masc,sing,nomn
+И	ЭТО	А	837	З	ADJF,Subx,Apro,Anph neut,sing,accs
+И	ЭТОТ	З	ADJF,Subx,Apro,Anph masc,sing,nomn
+И	ПОМИМО	З	PREP 
+И	ЯВНЫХ	С	841	А	840	З	ADJF,Qual plur,gent
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ЯВНЫХ	С	843	А	842	З	ADJF,Qual anim,plur,accs
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ЯВНЫХ	А	844	З	ADJF,Qual plur,loct
+И	ЯВНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ПЕРЕМЕН	А	846	З	NOUN,inan,femn plur,gent
+И	ПЕРЕМЕНА	З	NOUN,inan,femn sing,nomn
+И	ВИДЕ	С	849	А	848	З	NOUN,inan,masc sing,loct
+И	ВИД	З	NOUN,inan,masc sing,nomn
+И	ВИДЕ	А	850	З	NOUN,inan,masc sing,loc1
+И	ВИД	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	852	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	853	З	ADVB,Dmns 
+И	ТУТ	С	855	А	854	З	NOUN,inan,masc sing,accs
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	857	А	856	З	NOUN,inan,femn plur,gent
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	С	859	А	858	З	NOUN,inan,masc plur,gent,Coun
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	861	А	860	З	NOUN,inan,femn plur,gent,Infr
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	С	863	А	862	З	NOUN,inan,femn plur,gent,Coun
+И	ТУТА	З	NOUN,inan,femn sing,nomn
+И	ТУТ	С	865	А	864	З	NOUN,inan,masc plur,gent,Infr
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	867	А	866	З	NOUN,inan,masc plur,gent
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	869	А	868	З	NOUN,inan,masc sing,gent,Infr
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	871	А	870	З	NOUN,inan,masc sing,datv,Infr
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	С	873	А	872	З	NOUN,inan,masc sing,ablt,Infr
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ТУТ	А	874	З	NOUN,inan,masc sing,loct,Infr
+И	ТУТ	З	NOUN,inan,masc sing,nomn
+И	ЖЕ	С	876	З	CONJ 
+И	ЖЕ	З	PRCL 
+И	ПОЯВИВШИХСЯ	С	879	А	878	З	PRTF,perf,intr,past,actv plur,gent
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	С	881	А	880	З	PRTF,perf,intr,past,actv anim,plur,accs
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	С	883	А	882	З	PRTF,perf,intr,past,actv plur,loct
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	С	885	А	884	З	PRTF,perf,intr,past,actv plur,gent,Infr
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	С	887	А	886	З	PRTF,perf,intr,past,actv anim,plur,accs,Infr
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	ПОЯВИВШИХСЯ	А	888	З	PRTF,perf,intr,past,actv plur,loct,Infr
+И	ПОЯВИВШИЙСЯ	З	PRTF,perf,intr,past,actv masc,sing,nomn
+И	РЕКЛАМНЫХ	С	891	А	890	З	ADJF,Qual plur,gent
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	РЕКЛАМНЫХ	С	893	А	892	З	ADJF,Qual anim,plur,accs
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	РЕКЛАМНЫХ	А	894	З	ADJF,Qual plur,loct
+И	РЕКЛАМНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЛОКОВ	С	897	А	896	З	NOUN,inan,masc plur,gent
+И	БЛОК	З	NOUN,inan,masc sing,nomn
+И	БЛОКОВ	А	898	З	NOUN,inan,masc plur,gent,Infr
+И	БЛОК	З	NOUN,inan,masc sing,nomn
+И	ОТСУТСТВОВАВШИХ	С	901	А	900	З	PRTF,impf,intr,past,actv plur,gent
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	С	903	А	902	З	PRTF,impf,intr,past,actv anim,plur,accs
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	С	905	А	904	З	PRTF,impf,intr,past,actv plur,loct
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	С	907	А	906	З	PRTF,impf,intr,past,actv plur,gent,Infr
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	С	909	А	908	З	PRTF,impf,intr,past,actv anim,plur,accs,Infr
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	ОТСУТСТВОВАВШИХ	А	910	З	PRTF,impf,intr,past,actv plur,loct,Infr
+И	ОТСУТСТВОВАВШИЙ	З	PRTF,impf,intr,past,actv masc,sing,nomn
+И	КУЛЬТУРЕ	С	913	А	912	З	NOUN,inan,femn sing,datv
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	С	915	А	914	З	NOUN,inan,femn sing,loct
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	С	917	А	916	З	NOUN,inan,femn sing,datv,Infr
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	КУЛЬТУРЕ	А	918	З	NOUN,inan,femn sing,loct,Infr
+И	КУЛЬТУРА	З	NOUN,inan,femn sing,nomn
+И	ПОЗВОЛИЛО	А	920	З	VERB,perf,tran neut,sing,past,indc
+И	ПОЗВОЛИЛ	З	VERB,perf,tran masc,sing,past,indc
+И	ОДНОЙ	С	923	А	922	З	ADJF,Apro,Anum femn,sing,gent
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	С	925	А	924	З	ADJF,Apro,Anum femn,sing,datv
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	С	927	А	926	З	ADJF,Apro,Anum femn,sing,ablt
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	ОДНОЙ	А	928	З	ADJF,Apro,Anum femn,sing,loct
+И	ОДИН	З	ADJF,Apro,Anum masc,sing,nomn
+И	СТОРОНЫ	С	931	А	930	З	NOUN,inan,femn sing,gent
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	С	933	А	932	З	NOUN,inan,femn plur,nomn
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	С	935	А	934	З	NOUN,inan,femn plur,accs
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	С	937	А	936	З	NOUN,inan,femn sing,gent,Infr
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	С	939	А	938	З	NOUN,inan,femn plur,nomn,Infr
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	СТОРОНЫ	А	940	З	NOUN,inan,femn plur,accs,Infr
+И	СТОРОНА	З	NOUN,inan,femn sing,nomn
+И	РАСШИРИТЬ	З	INFN,perf,tran 
+И	КРУГ	С	943	З	NOUN,inan,masc sing,nomn
+И	КРУГ	С	945	А	944	З	NOUN,inan,masc sing,accs
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	КРУГ	С	947	А	946	З	NOUN,inan,masc plur,gent,Coun
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	КРУГ	А	948	З	NOUN,inan,masc plur,gent
+И	КРУГ	З	NOUN,inan,masc sing,nomn
+И	ГОСТЕЙ	С	951	А	950	З	NOUN,anim,masc plur,gent
+И	ГОСТЬ	З	NOUN,anim,masc sing,nomn
+И	ГОСТЕЙ	С	953	А	952	З	NOUN,anim,masc plur,accs
+И	ГОСТЬ	З	NOUN,anim,masc sing,nomn
+И	ГОСТЕЙ	С	955	А	954	З	NOUN,anim,femn plur,gent
+И	ГОСТЬЯ	З	NOUN,anim,femn sing,nomn
+И	ГОСТЕЙ	А	956	З	NOUN,anim,femn plur,accs
+И	ГОСТЬЯ	З	NOUN,anim,femn sing,nomn
+И	ДРУГОЙ	С	958	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	С	960	А	959	З	ADJF,Apro,Subx inan,masc,sing,accs
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	С	962	А	961	З	ADJF,Apro,Subx femn,sing,gent
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	С	964	А	963	З	ADJF,Apro,Subx femn,sing,datv
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	С	966	А	965	З	ADJF,Apro,Subx femn,sing,ablt
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ДРУГОЙ	А	967	З	ADJF,Apro,Subx femn,sing,loct
+И	ДРУГОЙ	З	ADJF,Apro,Subx masc,sing,nomn
+И	ИЗМЕНИТЬ	С	969	З	INFN,perf,tran 
+И	ИЗМЕНИТЬ	З	INFN,perf,intr 
+И	ТОН	С	971	З	NOUN,inan,masc sing,nomn
+И	ТОН	С	973	А	972	З	NOUN,inan,masc sing,accs
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	С	975	А	974	З	NOUN,inan,masc plur,gent,Coun
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	С	977	А	976	З	NOUN,inan,masc plur,gent,Infr
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	С	979	А	978	З	NOUN,inan,masc plur,gent
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	С	981	А	980	З	NOUN,inan,masc sing,datv,Infr
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	ТОН	А	982	З	NOUN,inan,masc sing,loct,Infr
+И	ТОН	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	985	А	984	З	ADJS femn,sing
+И	РАЗГОВОРЕН	З	ADJS masc,sing
+И	РАЗГОВОРА	С	987	А	986	З	NOUN,inan,masc sing,gent
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	989	А	988	З	NOUN,inan,masc sing,gen1
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	991	А	990	З	NOUN,inan,masc plur,nomn,Infr
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	993	А	992	З	NOUN,inan,masc plur,accs,Infr
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	995	А	994	З	NOUN,inan,masc plur,nomn
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	С	997	А	996	З	NOUN,inan,masc plur,accs
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	РАЗГОВОРА	А	998	З	NOUN,inan,masc sing,gent,Infr
+И	РАЗГОВОР	З	NOUN,inan,masc sing,nomn
+И	NOUN,inan,femn plur,gent	Д	1000	С	1001	З	
+И	ADJF,Qual plur,gent	З	каких
+И	NOUN,inan,masc plur,gent	Д	1002	С	1003	З	
+И	ADJF,Qual plur,gent	З	каких
+И	NOUN,inan,masc sing,accs	Д	1004	С	1005	З	
+И	NOUN,inan,masc sing,gent	З	чего
+И	NOUN,inan,masc sing,accs	Д	1006	С	1019	З	
+И	NOUN,anim,masc plur,gent	З	кого
+И	НАРОДНЫЕ	Д	1009	С	1008	З	
+И	ЛЮБИМЦЫ	Д	1017	С	1021	З	
+И	НАРОДНЫЕ	С	1011	А	1010	З	ADJF,Qual plur,nomn
+И	НАРОДНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НАРОДНЫЕ	С	1013	А	1012	З	ADJF,Qual inan,plur,accs
+И	НАРОДНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НАРОДНЫЕ	С	1015	А	1014	З	ADJF,Qual neut,sing,nomn
+И	НАРОДНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НАРОДНЫЕ	А	1016	З	ADJF,Qual neut,sing,accs
+И	НАРОДНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ЛЮБИМЦЫ	А	1018	З	NOUN,anim,masc plur,nomn
+И	ЛЮБИМЕЦ	З	NOUN,anim,masc sing,nomn
+И	NOUN,anim,masc plur,nomn	Д	1020	С	1250	З	
+И	ADJF,Qual plur,nomn	З	чьи
+И	ИЛИ	Д	1028	С	1022	З	
+И	УЧАСТНИЦА	Д	1031	С	1023	З	
+И	О	Д	1032	С	1024	З	
+И	П	Д	1104	С	1025	З	
+И	СТУДИИ	Д	1219	С	1026	З	
+И	ТАТЬЯНА	Д	1231	С	1027	З	
+И	ЛАЗАРЕВА	Д	1232	С	1237	З	
+И	ИЛИ	С	1029	З	CONJ 
+И	ИЛИ	А	1030	З	VERB,impf,intr plur,past,indc
+И	ИДУ	З	VERB,impf,intr sing,1per,pres,indc
+И	УЧАСТНИЦА	З	NOUN,anim,femn sing,nomn
+И	О	С	1033	З	PREP 
+И	О	С	1034	З	INTJ 
+И	О	С	1035	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1036	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1037	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1038	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	О	С	1040	А	1039	З	NOUN,inan,masc,Fixd,Abbr sing,gent
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1042	А	1041	З	NOUN,inan,masc,Fixd,Abbr sing,datv
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1044	А	1043	З	NOUN,inan,masc,Fixd,Abbr sing,accs
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1046	А	1045	З	NOUN,inan,masc,Fixd,Abbr sing,ablt
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1048	А	1047	З	NOUN,inan,masc,Fixd,Abbr sing,loct
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1050	А	1049	З	NOUN,inan,masc,Fixd,Abbr plur,nomn
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1052	А	1051	З	NOUN,inan,masc,Fixd,Abbr plur,gent
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1054	А	1053	З	NOUN,inan,masc,Fixd,Abbr plur,datv
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1056	А	1055	З	NOUN,inan,masc,Fixd,Abbr plur,accs
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1058	А	1057	З	NOUN,inan,masc,Fixd,Abbr plur,ablt
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1060	А	1059	З	NOUN,inan,masc,Fixd,Abbr plur,loct
+И	О	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	О	С	1062	А	1061	З	PRCL Infr,Dist
+И	ТО	З	PRCL 
+И	О	С	1064	А	1063	З	NOUN,inan,femn,Fixd,Abbr sing,gent
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1066	А	1065	З	NOUN,inan,femn,Fixd,Abbr sing,datv
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1068	А	1067	З	NOUN,inan,femn,Fixd,Abbr sing,accs
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1070	А	1069	З	NOUN,inan,femn,Fixd,Abbr sing,ablt
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1072	А	1071	З	NOUN,inan,femn,Fixd,Abbr sing,loct
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1074	А	1073	З	NOUN,inan,femn,Fixd,Abbr plur,nomn
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1076	А	1075	З	NOUN,inan,femn,Fixd,Abbr plur,gent
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1078	А	1077	З	NOUN,inan,femn,Fixd,Abbr plur,datv
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1080	А	1079	З	NOUN,inan,femn,Fixd,Abbr plur,accs
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1082	А	1081	З	NOUN,inan,femn,Fixd,Abbr plur,ablt
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1084	А	1083	З	NOUN,inan,femn,Fixd,Abbr plur,loct
+И	О	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	О	С	1086	А	1085	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1088	А	1087	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1090	А	1089	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1092	А	1091	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1094	А	1093	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	О	С	1096	А	1095	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	О	С	1098	А	1097	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	О	С	1100	А	1099	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	О	С	1102	А	1101	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	О	А	1103	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct
+И	О	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	С	1105	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1106	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1107	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1108	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1109	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	С	1111	А	1110	З	NOUN,inan,masc,Fixd,Abbr sing,gent
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1113	А	1112	З	NOUN,inan,masc,Fixd,Abbr sing,datv
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1115	А	1114	З	NOUN,inan,masc,Fixd,Abbr sing,accs
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1117	А	1116	З	NOUN,inan,masc,Fixd,Abbr sing,ablt
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1119	А	1118	З	NOUN,inan,masc,Fixd,Abbr sing,loct
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1121	А	1120	З	NOUN,inan,masc,Fixd,Abbr plur,nomn
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1123	А	1122	З	NOUN,inan,masc,Fixd,Abbr plur,gent
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1125	А	1124	З	NOUN,inan,masc,Fixd,Abbr plur,datv
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1127	А	1126	З	NOUN,inan,masc,Fixd,Abbr plur,accs
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1129	А	1128	З	NOUN,inan,masc,Fixd,Abbr plur,ablt
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1131	А	1130	З	NOUN,inan,masc,Fixd,Abbr plur,loct
+И	П	З	NOUN,inan,masc,Fixd,Abbr sing,nomn
+И	П	С	1133	А	1132	З	NOUN,inan,femn,Fixd,Abbr sing,gent
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1135	А	1134	З	NOUN,inan,femn,Fixd,Abbr sing,datv
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1137	А	1136	З	NOUN,inan,femn,Fixd,Abbr sing,accs
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1139	А	1138	З	NOUN,inan,femn,Fixd,Abbr sing,ablt
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1141	А	1140	З	NOUN,inan,femn,Fixd,Abbr sing,loct
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1143	А	1142	З	NOUN,inan,femn,Fixd,Abbr plur,nomn
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1145	А	1144	З	NOUN,inan,femn,Fixd,Abbr plur,gent
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1147	А	1146	З	NOUN,inan,femn,Fixd,Abbr plur,datv
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1149	А	1148	З	NOUN,inan,femn,Fixd,Abbr plur,accs
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1151	А	1150	З	NOUN,inan,femn,Fixd,Abbr plur,ablt
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1153	А	1152	З	NOUN,inan,femn,Fixd,Abbr plur,loct
+И	П	З	NOUN,inan,femn,Fixd,Abbr sing,nomn
+И	П	С	1155	А	1154	З	ADJF,Fixd,Abbr masc,sing,gent
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1157	А	1156	З	ADJF,Fixd,Abbr masc,sing,datv
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1159	А	1158	З	ADJF,Fixd,Abbr masc,sing,accs
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1161	А	1160	З	ADJF,Fixd,Abbr masc,sing,ablt
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1163	А	1162	З	ADJF,Fixd,Abbr masc,sing,loct
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1165	А	1164	З	ADJF,Fixd,Abbr femn,sing,nomn
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1167	А	1166	З	ADJF,Fixd,Abbr femn,sing,gent
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1169	А	1168	З	ADJF,Fixd,Abbr femn,sing,datv
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1171	А	1170	З	ADJF,Fixd,Abbr femn,sing,accs
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1173	А	1172	З	ADJF,Fixd,Abbr femn,sing,ablt
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1175	А	1174	З	ADJF,Fixd,Abbr femn,sing,loct
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1177	А	1176	З	ADJF,Fixd,Abbr neut,sing,nomn
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1179	А	1178	З	ADJF,Fixd,Abbr neut,sing,gent
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1181	А	1180	З	ADJF,Fixd,Abbr neut,sing,datv
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1183	А	1182	З	ADJF,Fixd,Abbr neut,sing,accs
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1185	А	1184	З	ADJF,Fixd,Abbr neut,sing,ablt
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1187	А	1186	З	ADJF,Fixd,Abbr neut,sing,loct
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1189	А	1188	З	ADJF,Fixd,Abbr plur,nomn
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1191	А	1190	З	ADJF,Fixd,Abbr plur,gent
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1193	А	1192	З	ADJF,Fixd,Abbr plur,datv
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1195	А	1194	З	ADJF,Fixd,Abbr plur,accs
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1197	А	1196	З	ADJF,Fixd,Abbr plur,ablt
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1199	А	1198	З	ADJF,Fixd,Abbr plur,loct
+И	П	З	ADJF,Fixd,Abbr masc,sing,nomn
+И	П	С	1201	А	1200	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,gent
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1203	А	1202	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,datv
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1205	А	1204	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,accs
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1207	А	1206	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,ablt
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1209	А	1208	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,loct
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Name,Init sing,nomn
+И	П	С	1211	А	1210	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,gent
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	С	1213	А	1212	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,datv
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	С	1215	А	1214	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,accs
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	С	1217	А	1216	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,ablt
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	П	А	1218	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,loct
+И	П	З	NOUN,anim,ms-f,Sgtm,Fixd,Abbr,Patr,Init sing,nomn
+И	СТУДИИ	С	1221	А	1220	З	NOUN,inan,femn sing,gent
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	СТУДИИ	С	1223	А	1222	З	NOUN,inan,femn sing,datv
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	СТУДИИ	С	1225	А	1224	З	NOUN,inan,femn sing,loct
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	СТУДИИ	С	1227	А	1226	З	NOUN,inan,femn plur,nomn
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	СТУДИИ	С	1229	А	1228	З	NOUN,inan,femn plur,accs
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	СТУДИИ	А	1230	З	NOUN,inan,femn sing,gent,Infr
+И	СТУДИЯ	З	NOUN,inan,femn sing,nomn
+И	ТАТЬЯНА	З	NOUN,anim,femn,Name sing,nomn
+И	ЛАЗАРЕВА	С	1233	З	NOUN,anim,femn,Sgtm,Surn sing,nomn
+И	ЛАЗАРЕВА	С	1235	А	1234	З	NOUN,anim,masc,Sgtm,Surn sing,gent
+И	ЛАЗАРЕВ	З	NOUN,anim,masc,Sgtm,Surn sing,nomn
+И	ЛАЗАРЕВА	А	1236	З	NOUN,anim,masc,Sgtm,Surn sing,accs
+И	ЛАЗАРЕВ	З	NOUN,anim,masc,Sgtm,Surn sing,nomn
+И	БЫСТРОТЕЧНЫЙ	Д	1239	С	1238	З	
+И	КИНОРОМАН	С	1252	З	
+И	БЫСТРОТЕЧНЫЙ	С	1240	З	ADJF,Qual masc,sing,nomn
+И	БЫСТРОТЕЧНЫЙ	С	1242	А	1241	З	ADJF,Qual inan,masc,sing,accs
+И	БЫСТРОТЕЧНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЫСТРОТЕЧНЫЙ	С	1244	А	1243	З	ADJF,Qual femn,sing,gent
+И	БЫСТРОТЕЧНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЫСТРОТЕЧНЫЙ	С	1246	А	1245	З	ADJF,Qual femn,sing,datv
+И	БЫСТРОТЕЧНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЫСТРОТЕЧНЫЙ	С	1248	А	1247	З	ADJF,Qual femn,sing,ablt
+И	БЫСТРОТЕЧНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	БЫСТРОТЕЧНЫЙ	А	1249	З	ADJF,Qual femn,sing,loct
+И	БЫСТРОТЕЧНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	UNKN	Д	1251	С	1327	З	
+И	ADJF,Qual masc,sing,nomn	З	какой
+И	ОТЕЧЕСТВЕННЫЕ	Д	1260	С	1253	З	
+И	КИНЕМАТОГРАФИСТЫ	Д	1276	С	1254	З	
+И	НЕ	Д	1290	С	1255	З	
+И	ОСТАВЛЯЮТ	Д	1291	С	1256	З	
+И	ПОПЫТОК	Д	1295	С	1257	З	
+И	СНИМАТЬ	Д	1299	С	1258	З	
+И	РОМАНТИЧЕСКОЕ	Д	1300	С	1259	З	
+И	КИНО	Д	1304	С	1333	З	
+И	ОТЕЧЕСТВЕННЫЕ	С	1262	А	1261	З	ADJF plur,nomn
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1264	А	1263	З	ADJF inan,plur,accs
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1266	А	1265	З	ADJF neut,sing,nomn
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1268	А	1267	З	ADJF neut,sing,accs
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1270	А	1269	З	ADJF neut,sing,nomn,Litr
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1272	А	1271	З	ADJF neut,sing,accs,Litr
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	С	1274	А	1273	З	ADJF plur,nomn,Infr
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	ОТЕЧЕСТВЕННЫЕ	А	1275	З	ADJF inan,plur,accs,Infr
+И	ОТЕЧЕСТВЕННЫЙ	З	ADJF masc,sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1278	А	1277	З	NOUN,anim,masc plur,nomn
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1280	А	1279	З	NOUN,anim,masc plur,gent
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1282	А	1281	З	NOUN,anim,masc plur,datv
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1284	А	1283	З	NOUN,anim,masc plur,accs
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1286	А	1285	З	NOUN,anim,masc plur,ablt
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	С	1288	А	1287	З	NOUN,anim,masc plur,loct
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	КИНЕМАТОГРАФИСТЫ	А	1289	З	NOUN,anim,masc plur,nomn,Infr
+И	КИНЕМАТОГРАФИСТ	З	NOUN,anim,masc sing,nomn
+И	НЕ	З	PRCL 
+И	ОСТАВЛЯЮТ	С	1293	А	1292	З	VERB,impf,tran plur,3per,pres,indc
+И	ОСТАВЛЯЮ	З	VERB,impf,tran sing,1per,pres,indc
+И	ОСТАВЛЯЮТ	А	1294	З	VERB,impf,tran plur,3per,pres,indc,Infr
+И	ОСТАВЛЯЮ	З	VERB,impf,tran sing,1per,pres,indc
+И	ПОПЫТОК	С	1297	А	1296	З	NOUN,inan,femn plur,gent
+И	ПОПЫТКА	З	NOUN,inan,femn sing,nomn
+И	ПОПЫТОК	А	1298	З	NOUN,inan,femn plur,gent,Infr
+И	ПОПЫТКА	З	NOUN,inan,femn sing,nomn
+И	СНИМАТЬ	З	INFN,impf,tran 
+И	РОМАНТИЧЕСКОЕ	С	1302	А	1301	З	ADJF neut,sing,nomn
+И	РОМАНТИЧЕСКИЙ	З	ADJF masc,sing,nomn
+И	РОМАНТИЧЕСКОЕ	А	1303	З	ADJF neut,sing,accs
+И	РОМАНТИЧЕСКИЙ	З	ADJF masc,sing,nomn
+И	КИНО	С	1305	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1307	А	1306	З	NOUN,inan,neut,Fixd sing,gent
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1309	А	1308	З	NOUN,inan,neut,Fixd sing,datv
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1311	А	1310	З	NOUN,inan,neut,Fixd sing,accs
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1313	А	1312	З	NOUN,inan,neut,Fixd sing,ablt
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1315	А	1314	З	NOUN,inan,neut,Fixd sing,loct
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1317	А	1316	З	NOUN,inan,neut,Fixd plur,nomn
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1319	А	1318	З	NOUN,inan,neut,Fixd plur,gent
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1321	А	1320	З	NOUN,inan,neut,Fixd plur,datv
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1323	А	1322	З	NOUN,inan,neut,Fixd plur,accs
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	С	1325	А	1324	З	NOUN,inan,neut,Fixd plur,ablt
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	КИНО	А	1326	З	NOUN,inan,neut,Fixd plur,loct
+И	КИНО	З	NOUN,inan,neut,Fixd sing,nomn
+И	VERB,impf,tran plur,3per,pres,indc	Д	1328	С	1329	З	
+И	NOUN,inan,femn plur,gent	З	чего
+И	VERB,impf,tran plur,3per,pres,indc	Д	1330	С	1331	З	
+И	PRCL	З	не
+И	NOUN,inan,neut,Fixd sing,accs	Д	1332	С	1349	З	
+И	ADJF neut,sing,accs	З	какое
+И	НЕСМОТРЯ	Д	1336	С	1334	З	
+И	ОТДЕЛЬНЫЕ	Д	1337	С	1335	З	
+И	ОБРАЗЦЫ	Д	1345	С	1351	З	
+И	НЕСМОТРЯ	З	PREP 
+И	ОТДЕЛЬНЫЕ	С	1339	А	1338	З	ADJF,Qual plur,nomn
+И	ОТДЕЛЬНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ОТДЕЛЬНЫЕ	С	1341	А	1340	З	ADJF,Qual inan,plur,accs
+И	ОТДЕЛЬНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ОТДЕЛЬНЫЕ	С	1343	А	1342	З	ADJF,Qual neut,sing,nomn
+И	ОТДЕЛЬНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ОТДЕЛЬНЫЕ	А	1344	З	ADJF,Qual neut,sing,accs
+И	ОТДЕЛЬНЫЙ	З	ADJF,Qual masc,sing,nomn
+И	ОБРАЗЦЫ	С	1347	А	1346	З	NOUN,inan,masc plur,nomn
+И	ОБРАЗЕЦ	З	NOUN,inan,masc sing,nomn
+И	ОБРАЗЦЫ	А	1348	З	NOUN,inan,masc plur,accs
+И	ОБРАЗЕЦ	З	NOUN,inan,masc sing,nomn
+И	NOUN,inan,masc plur,accs	Д	1350	С	1370	З	
+И	ADJF,Qual inan,plur,accs	З	какие
+И	РАССКАЖИ	Д	1354	С	1352	З	
+И	МНЕ	Д	1356	С	1353	З	
+И	ЛЮБВИ	Д	1360	С	1376	З	
+И	РАССКАЖИ	А	1355	З	VERB,perf,tran sing,impr,excl
+И	РАССКАЗАЛ	З	VERB,perf,tran masc,sing,past,indc
+И	МНЕ	С	1358	А	1357	З	NPRO,1per sing,datv
+И	Я	З	NPRO,1per sing,nomn
+И	МНЕ	А	1359	З	NPRO,1per sing,loct
+И	Я	З	NPRO,1per sing,nomn
+И	ЛЮБВИ	С	1362	А	1361	З	NOUN,inan,femn sing,gent
+И	ЛЮБОВЬ	З	NOUN,inan,femn sing,nomn
+И	ЛЮБВИ	С	1364	А	1363	З	NOUN,inan,femn sing,datv
+И	ЛЮБОВЬ	З	NOUN,inan,femn sing,nomn
+И	ЛЮБВИ	С	1366	А	1365	З	NOUN,inan,femn sing,loct
+И	ЛЮБОВЬ	З	NOUN,inan,femn sing,nomn
+И	ЛЮБВИ	С	1368	А	1367	З	NOUN,inan,femn plur,nomn
+И	ЛЮБОВЬ	З	NOUN,inan,femn sing,nomn
+И	ЛЮБВИ	А	1369	З	NOUN,inan,femn plur,accs
+И	ЛЮБОВЬ	З	NOUN,inan,femn sing,nomn
+И	VERB,perf,tran sing,impr,excl	Д	1371	С	1372	З	
+И	PREP	З	о чем
+И	VERB,perf,tran sing,impr,excl	Д	1373	С	1374	З	
+И	NPRO,1per sing,datv	З	кому
+И	PREP	Д	1375	С	1441	З	
+И	NOUN,inan,femn sing,loct	З	о
+И	ПРЕСЛОВУТЫЕ	Д	1384	С	1377	З	
+И	НОВЫХ	Д	1400	С	1378	З	
+И	РОМКОМОВ	Д	1410	С	1379	З	
+И	ЗАСЛУЖИВАЮТ	Д	1412	С	1380	З	
+И	ВНИМАНИЯ	Д	1416	С	1381	З	
+И	ИМЕННО	Д	1428	С	1382	З	
+И	СВОЕЙ	Д	1429	С	1383	З	
+И	ОТДЕЛЬНОСТЬЮ	Д	1437	С	1443	З	
+И	ПРЕСЛОВУТЫЕ	С	1386	А	1385	З	ADJF plur,nomn
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1388	А	1387	З	ADJF inan,plur,accs
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1390	А	1389	З	ADJF neut,sing,nomn
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1392	А	1391	З	ADJF neut,sing,accs
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1394	А	1393	З	ADJF neut,sing,nomn,Litr
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1396	А	1395	З	ADJF neut,sing,accs,Litr
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	С	1398	А	1397	З	ADJF plur,nomn,Infr
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	ПРЕСЛОВУТЫЕ	А	1399	З	ADJF inan,plur,accs,Infr
+И	ПРЕСЛОВУТЫЙ	З	ADJF masc,sing,nomn
+И	НОВЫХ	С	1402	А	1401	З	ADJF,Qual plur,gent
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НОВЫХ	С	1404	А	1403	З	ADJF,Qual anim,plur,accs
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НОВЫХ	С	1406	А	1405	З	ADJF,Qual plur,loct
+И	НОВЫЙ	З	ADJF,Qual masc,sing,nomn
+И	НОВЫХ	С	1408	А	1407	З	NOUN,inan,neut plur,gent
+И	НОВОЕ	З	NOUN,inan,neut sing,nomn
+И	НОВЫХ	А	1409	З	NOUN,inan,neut plur,loct
+И	НОВОЕ	З	NOUN,inan,neut sing,nomn
+И	РОМКОМОВ	А	1411	З	NOUN,inan,masc plur,gent
+И	РОМКОМ	З	NOUN,inan,masc sing,nomn
+И	ЗАСЛУЖИВАЮТ	С	1414	А	1413	З	VERB,impf,tran plur,3per,pres,indc
+И	ЗАСЛУЖИВАЮ	З	VERB,impf,tran sing,1per,pres,indc
+И	ЗАСЛУЖИВАЮТ	А	1415	З	VERB,impf,tran plur,3per,pres,indc,Infr
+И	ЗАСЛУЖИВАЮ	З	VERB,impf,tran sing,1per,pres,indc
+И	ВНИМАНИЯ	С	1418	А	1417	З	NOUN,inan,neut sing,gent
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ВНИМАНИЯ	С	1420	А	1419	З	NOUN,inan,neut plur,nomn
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ВНИМАНИЯ	С	1422	А	1421	З	NOUN,inan,neut plur,accs
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ВНИМАНИЯ	С	1424	А	1423	З	NOUN,inan,neut sing,gent,V-ie
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ВНИМАНИЯ	С	1426	А	1425	З	NOUN,inan,neut plur,nomn,V-ie
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ВНИМАНИЯ	А	1427	З	NOUN,inan,neut plur,accs,V-ie
+И	ВНИМАНИЕ	З	NOUN,inan,neut sing,nomn
+И	ИМЕННО	З	PRCL 
+И	СВОЕЙ	С	1431	А	1430	З	ADJF,Apro,Anph femn,sing,gent
+И	СВОЙ	З	ADJF,Apro,Anph masc,sing,nomn
+И	СВОЕЙ	С	1433	А	1432	З	ADJF,Apro,Anph femn,sing,datv
+И	СВОЙ	З	ADJF,Apro,Anph masc,sing,nomn
+И	СВОЕЙ	С	1435	А	1434	З	ADJF,Apro,Anph femn,sing,ablt
+И	СВОЙ	З	ADJF,Apro,Anph masc,sing,nomn
+И	СВОЕЙ	А	1436	З	ADJF,Apro,Anph femn,sing,loct
+И	СВОЙ	З	ADJF,Apro,Anph masc,sing,nomn
+И	ОТДЕЛЬНОСТЬЮ	С	1439	А	1438	З	NOUN,inan,femn sing,ablt
+И	ОТДЕЛЬНОСТЬ	З	NOUN,inan,femn sing,nomn
+И	ОТДЕЛЬНОСТЬЮ	А	1440	З	NOUN,inan,femn sing,ablt,Infr
+И	ОТДЕЛЬНОСТЬ	З	NOUN,inan,femn sing,nomn
+И	VERB,impf,tran plur,3per,pres,indc	Д	1442	С	1496	З	
+И	NOUN,inan,neut sing,gent	З	чего
+И	ПО	Д	1447	С	1444	З	
+И	УЛИЦАМ	Д	1482	С	1445	З	
+И	БРОДЯТ	Д	1486	С	1446	З	
+И	ФЕИ	Д	1488	З	
+И	ПО	С	1448	З	PREP 
+И	ПО	С	1449	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	ПО	С	1450	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1452	А	1451	З	NOUN,anim,ms-f,Fixd,Surn sing,gent
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1454	А	1453	З	NOUN,anim,ms-f,Fixd,Surn sing,datv
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1456	А	1455	З	NOUN,anim,ms-f,Fixd,Surn sing,accs
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1458	А	1457	З	NOUN,anim,ms-f,Fixd,Surn sing,ablt
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1460	А	1459	З	NOUN,anim,ms-f,Fixd,Surn sing,loct
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1462	А	1461	З	NOUN,anim,ms-f,Fixd,Surn plur,nomn
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1464	А	1463	З	NOUN,anim,ms-f,Fixd,Surn plur,gent
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1466	А	1465	З	NOUN,anim,ms-f,Fixd,Surn plur,datv
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1468	А	1467	З	NOUN,anim,ms-f,Fixd,Surn plur,accs
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1470	А	1469	З	NOUN,anim,ms-f,Fixd,Surn plur,ablt
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1472	А	1471	З	NOUN,anim,ms-f,Fixd,Surn plur,loct
+И	ПО	З	NOUN,anim,ms-f,Fixd,Surn sing,nomn
+И	ПО	С	1474	А	1473	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,gent
+И	ПО	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	ПО	С	1476	А	1475	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,datv
+И	ПО	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	ПО	С	1478	А	1477	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,accs
+И	ПО	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	ПО	С	1480	А	1479	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,ablt
+И	ПО	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	ПО	А	1481	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,loct
+И	ПО	З	NOUN,inan,neut,Sgtm,Fixd,Abbr sing,nomn
+И	УЛИЦАМ	С	1484	А	1483	З	NOUN,inan,femn plur,datv
+И	УЛИЦА	З	NOUN,inan,femn sing,nomn
+И	УЛИЦАМ	А	1485	З	NOUN,inan,femn plur,datv,Infr
+И	УЛИЦА	З	NOUN,inan,femn sing,nomn
+И	БРОДЯТ	А	1487	З	VERB,impf,intr plur,3per,pres,indc
+И	БРОЖУ	З	VERB,impf,intr sing,1per,pres,indc
+И	ФЕИ	С	1490	А	1489	З	NOUN,anim,femn sing,gent
+И	ФЕЯ	З	NOUN,anim,femn sing,nomn
+И	ФЕИ	С	1492	А	1491	З	NOUN,anim,femn sing,datv
+И	ФЕЯ	З	NOUN,anim,femn sing,nomn
+И	ФЕИ	С	1494	А	1493	З	NOUN,anim,femn sing,loct
+И	ФЕЯ	З	NOUN,anim,femn sing,nomn
+И	ФЕИ	А	1495	З	NOUN,anim,femn plur,nomn
+И	ФЕЯ	З	NOUN,anim,femn sing,nomn
+И	VERB,impf,intr plur,3per,pres,indc	Д	1497	С	1498	З	
+И	NOUN,anim,femn plur,nomn	З	кто
+И	PREP	З		Д	1499
+И	NOUN,inan,GNdr,Pltm plur,gent	З	чего
