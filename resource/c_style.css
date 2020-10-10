@@ -179,12 +179,13 @@ aside ul {
 	opacity: .9;
 }
 
-.win {
-	position: relative;
+.data {
+	margin-top:1.5rem!important
 }
 
-.mw60 {
-	min-width: 60%;
+.win {
+	position: absolute;
+	min-width: 50%;
 }
 
 .app-body .main {

@@ -319,7 +319,7 @@
 <!--ОбластьСкриптИзменитьИмяЗначение-->
 <script>
     el = $('#.ПараметрИдУзла.ПараметрКоманда')[0];
-    el.select();
+    el.focus();
     el.value = decodeURIComponent(".ПараметрИмяЗначение");
 </script>
 <!--/ОбластьСкриптИзменитьИмяЗначение-->
@@ -347,18 +347,25 @@
 
 <!--ОбластьНайтиУзел-->
 <div id='.ПараметрИдУзлаfind'>
-  <form onsubmit="return false;">
+  <form onsubmit="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode'); return false;">
     <div style='display: inline-block;'>
       <div class="btn-group" role="group">
         <input class="form-control form-control input-shadow" placeholder="Номер" id=".ПараметрИдУзлаnumber" />
         <input class="form-control form-control input-shadow" placeholder="Значение" id=".ПараметрИдУзлаvalue" />
-        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode');">Найти</button>
+        <button class="btn btn-outline-dark btn-shadow" type="submit">Найти</button>
         <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
       </div>
     </div>
   </form>
 </div>
 <!--/ОбластьНайтиУзел-->
+
+<!--ОбластьСкриптНайтиУзел-->
+<script>
+    el = $('#.ПараметрИдУзлаnumber')[0];
+    el.focus();
+</script>
+<!--/ОбластьСкриптНайтиУзел-->
 
 <!--ОбластьЗагрузитьHTML-->
 <script src='/resource/impdom.js'></script>
@@ -422,8 +429,8 @@
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
-  <div class="card text-white bg-dark mw60" style="opacity:.ПараметрПрозрачность">
+<div id='.ПараметрВкладка_0' class="win" style="display:none">
+  <div class="card text-white bg-dark" style="opacity:.ПараметрПрозрачность">
     <div class="card-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
       <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
@@ -551,12 +558,12 @@ function postcmd(cmd){
 function seq_add(cmd,delay=0) {
   var datascrolled=scrolled();
   var winscrolled="";
-  // if (wintab!=""&&wintab!=undefined) {
-  //   var t=$("#"+wintab+"_0");
-  //   if(t.css("display")!="none") {
-  //     winscrolled=datascrolled-(t.offset().top-50);
-  //   }
-  // }
+  if (wintab!=""&&wintab!=undefined) {
+    var t=$("#"+wintab+"_0");
+    if(t.css("display")!="none") {
+      winscrolled=datascrolled-(t.offset().top-75);
+    }
+  }
   $("body").removeClass("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
@@ -597,10 +604,10 @@ function seq_sendcmd(){
 
 function newtab(ntab,tabtype,nodeid){
   if (tabtype == "prop") {
-    $('#'+tabtype).append('<div id='+ntab+'_0><div id='+ntab+'_'+nodeid+' /></div>');
+    $('#'+tabtype).append('<div id="'+ntab+'_0"><div id='+ntab+'_'+nodeid+' /></div>');
     showprop("#"+ntab+"_0");
   } else {
-    $('#'+tabtype).append('<div id='+ntab+'_0 class="my-4" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+    $('#'+tabtype).append('<div id="'+ntab+'_0" class="'+tabtype+'" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
   }
 }
 
@@ -618,7 +625,7 @@ function tabselect(p_tabtype,p_tab,p_scroll){
   if (p_tabtype=="win") {
     if (t[0].offsetTop==0) {
       t.show();
-      t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
+      t.css('top',scrolled()-p_scroll);
     }
     t.css('z-index', zi++);
     wintab=p_tab;
