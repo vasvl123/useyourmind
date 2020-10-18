@@ -16,7 +16,9 @@ function iframeh(d) {
 
 function updifrm(oid,p) {
   var ot = oid.slice(0,oid.indexOf('_'));
-  document.getElementById(ot+"_0").classList.remove("my-4");
+  document.body.classList.remove("sidebar-lg-show");
+  document.body.classList.remove("sidebar-show");
+  document.getElementById(ot+"_0").classList.remove("data");
   frames = document.getElementsByTagName("iframe");
   for (i = 0; i < frames.length; ++i) {
     var ft = frames[i].id;

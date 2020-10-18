@@ -16,39 +16,48 @@
 
 <!--ОбластьПанельОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed">
-<header class="app-header navbar" id="navbar">
+<nav class="app-header navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 
-  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
-  </a> -->
+  <a class="navbar-brand" href="/">
+    <text>uascript.net</text>
+  </a>
 
-  <button id="menubuton" class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
+  <button id="menubuton" class="hidden sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button id="menubuton-sm" class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
+  <button id="menubuton-sm" class="hidden sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav d-md-down" id="tabs">
+  <ul class="navbar-nav mr-auto" id="tabs">
+    <li class="nav-item px-2">
+      <a class="nav-link" href="/useyourmind">use your.mind</a>
+    </li>
+    <li class="nav-item px-2">
+      <a class="nav-link" href="https://github.com/vasvl123/useyourmind">Исходный код</a>
+    </li>
   </ul>
 
   <ul class="nav navbar-nav ml-auto" id="acc">
+    <li class="nav-item px-2">
+      <a class="nav-link" href="/login">Вход</a>
+    </li>
   </ul>
 
   <!-- <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
   </button> -->
 
-</header>
+</nav>
 
-<div id="app-body">
+<div class="app-body" id="app-body">
 
   .ПараметрБокПанель
 
   <main class="main">
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="container">
 
       .ПараметрСодержимое
 
@@ -75,41 +84,7 @@
   </div>
 <!--/ОбластьПанельОкно-->
 
-<!--ОбластьПанельМеню1-->
-  <div class="sidebar" id="sidebar">
-    <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <nav class="sidebar-nav ps ps--active-y">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=start&cmd=newtab'); return false">
-          <i class="nav-icon icon-home "></i> Начало</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=login&cmd=newtab'); return false">
-          <i class="nav-icon icon-login "></i> Вход</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=useyourmind&cmd=newtab'); return false">
-          <i class="nav-icon icon-layers"></i> use your.mind</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
-          <i class="nav-icon icon-docs"></i> Исходный код</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-          <i class="nav-icon icon-ban"></i> Завершить</a>
-        </li>
-      </ul>
-    </nav>
-    <script>
-      document.body.classList.add("sidebar-lg-show");
-      document.getElementById("app-body").classList.add("app-body");
-    </script>
-  </div>
-<!--/ОбластьПанельМеню1-->
-
-<!--ОбластьПанельМеню2-->
+<!--ОбластьПанельМеню-->
   <div class="sidebar" id="sidebar">
     <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <nav class="sidebar-nav ps ps--active-y">
@@ -158,17 +133,15 @@
     </nav>
     <script>
       document.body.classList.add("sidebar-lg-show");
-      document.getElementById("app-body").classList.add("app-body");
+      document.body.classList.add("sidebar-show");
+      document.getElementById("menubuton").classList.remove("hidden");
+      document.getElementById("menubuton-sm").classList.remove("hidden");
     </script>
   </div>
-<!--/ОбластьПанельМеню2-->
+<!--/ОбластьПанельМеню-->
 
 <!--ОбластьПанельНетМеню-->
 <div class="sidebar" id="sidebar">
-  <script>
-    document.getElementById("navbar").remove();
-    document.getElementById("app-body").style.marginTop = "0px";
-  </script>
 </div>
 <!--/ОбластьПанельНетМеню-->
 
@@ -558,13 +531,13 @@ function postcmd(cmd){
 function seq_add(cmd,delay=0) {
   var datascrolled=scrolled();
   var winscrolled="";
-  if (wintab!=""&&wintab!=undefined) {
-    var t=$("#"+wintab+"_0");
-    if(t.css("display")!="none") {
-      winscrolled=datascrolled-(t.offset().top-75);
+  if (wintab) {
+    if (wintab==tab) {
+      var t=$("#"+wintab+"_0");
+      winscrolled=datascrolled-(t.offset().top-79);
     }
   }
-  $("body").removeClass("sidebar-show");
+  document.body.classList.remove("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
@@ -623,10 +596,8 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     datatab=p_tab;
   }
   if (p_tabtype=="win") {
-    if (t[0].offsetTop==0) {
-      t.show();
-      t.css('top',scrolled()-p_scroll);
-    }
+    t.show();
+    t.css('top',scrolled()-p_scroll);
     t.css('z-index', zi++);
     wintab=p_tab;
   }
@@ -643,7 +614,7 @@ function btn_bar(cl) {
 }
 
 function showprop(ntab) {
-  $("body").addClass("aside-menu-show");
+  document.body.classList.add("aside-menu-show");
   var t = $(ntab);
   var a = $("aside");
   a.scrollTop(a.scrollTop()+t.position().top);
