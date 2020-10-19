@@ -1,0 +1,27 @@
+И	О	Д	2	З	Корень
+И	Свойства.	С	3	З	
+И	div	Д	4	З	
+И	SCRIPT	С	6	А	5	З	
+И	src	З	/resource/record-live-audio.js
+И	P	Д	7	С	15	З	
+И	BUTTON	Д	10	С	11	А	9	З	
+И	disabled	З	
+И	id	С	8	З	record
+И	text	З	Record audio
+И	BUTTON	Д	14	А	13	З	
+И	disabled	З	
+И	id	С	12	З	stop
+И	text	З	Stop
+И	P	Д	16	С	19	З	
+И	AUDIO	А	18	З	
+И	controls	З	
+И	id	С	17	З	audio
+И	P	З		Д	24
+
+
+
+
+И	BUTTON	З		Д	27	А	25
+И	id	З	save	С	26
+И	disabled	З	
+И	text	З	Save
