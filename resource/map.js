@@ -5,7 +5,7 @@ function iframeh(d) {
   {
     if (frames[i].contentWindow.document === d) {
       var f = document.getElementsByTagName("footer");
-      var h = document.getElementsByTagName("header");
+      var h = document.getElementsByTagName("nav");
       var fh = f[0].offsetTop - h[0].offsetHeight;
       frames[i].height = fh;
       frames[i].style.display = 'block';
