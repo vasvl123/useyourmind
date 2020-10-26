@@ -323,6 +323,12 @@
 						Параметры.Вставить("cmd", "newtab");
 						Данные.Процесс.НоваяЗадача(Параметры, "Служебный");
 
+					ИначеЕсли ЗначениеКнопка = "conf" ИЛИ ЗначениеКнопка = "excl" Тогда
+
+						Биграммы = "";
+						Запрос = Новый Структура("Библиотека, Данные, Слова, Свойства, cmd", ЭтотОбъект, Данные, Биграммы, Свойства, "Биграммы");
+						Данные.Процесс.НоваяЗадача(Запрос, "Служебный");
+
 					КонецЕсли;
 
 				КонецЕсли;
@@ -626,8 +632,9 @@
 						мУзел.Добавить(тУзел);
 						Связь = "<button id='_" + дУзел.Код + "' type='button' class='text-left btn1 btn-secondary' onclick='addcmd(this,event); return false' role='rule_" + дУзел.Атрибут.Значение + "'>" + дУзел.Имя + "</button>";
 						Связь = Связь + "<button id='_" + тУзел.Код + "' type='button' class='text-left btn1 btn-light' onclick='addcmd(this,event); return false' role='token'>" + дУзел.Значение + "</button>";
-						// Связь = Связь + "<button id='_" + тУзел.Код + "' type='button' class='text-left btn1 btn-" + "secondary" + "' onclick='addcmd(this,event); return false' role='conf'>&#10004;</button>";
-						// Связь = Связь + "<button id='_" + тУзел.Код + "' type='button' class='text-left btn1 btn-" + "secondary" + "' onclick='addcmd(this,event); return false' role='excl'>&#10007;</button>";
+
+						Связь = Связь + "<button id='_" + тУзел.Код + "' type='button' class='text-left btn1 btn-" + "secondary" + "' onclick='addcmd(this,event); return false' role='conf'>&#10004;</button>";
+						Связь = Связь + "<button id='_" + тУзел.Код + "' type='button' class='text-left btn1 btn-" + "secondary" + "' onclick='addcmd(this,event); return false' role='excl'>&#10007;</button>";
 						Если НЕ тУзел.Дочерний = Неопределено Тогда
 							Если Лев(дУзел.Атрибут.Значение, 4) = "PREP" Тогда
 								зСвязь = ТокенВид(Свойства, тУзел.Дочерний, мУзел, дУзел);
