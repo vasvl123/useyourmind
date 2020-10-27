@@ -28,6 +28,13 @@
 	color: white;
 }
 
+.btn-shadow-p {
+	background-color: #484971;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	color: white;
+}
+
 .btn-node {
 	color: #73818f;
 	height: 1.75rem;
