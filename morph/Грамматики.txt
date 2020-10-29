@@ -1,0 +1,203 @@
+﻿NOUN anim masc plur nomn
+2
+какие
+что делают
+что делают
+1
+VERB impf intr plur 3per pres indc
+какие
+2
+PRTF impf intr pres actv plur nomn
+ADJF inan plur accs
+NOUN inan femn sing nomn
+3
+какая
+что делает
+которая
+что делает
+2
+VERB impf intr sing 3per pres indc
+VERB impf tran sing 3per pres indc
+какая
+2
+ADJF femn sing nomn
+ADJF Qual femn sing nomn
+NOUN anim masc sing nomn
+2
+что делает
+чего
+чего
+4
+NOUN inan masc sing gent
+NOUN inan neut sing gent
+NOUN inan femn sing gent
+NOUN inan neut plur gent
+NOUN inan neut sing nomn
+2
+что сделало
+какое
+что сделало
+1
+VERB perf intr neut sing past indc
+какое
+1
+ADJF neut sing nomn
+VERB impf intr sing 3per pres indc
+2
+где
+что сделать
+где
+3
+ADVB ПОВСЮДУ
+ADVB ВЕЗДЕ
+PREP В
+ADVB ВЕЗДЕ
+1
+на сколько
+на сколько
+1
+ADVB ПРАКТИЧЕСКИ
+VERB impf intr plur 3per pres indc
+1
+где
+ADJF Apro Anum masc sing ablt
+1
+из кого
+из кого
+2
+PREP ИЗ
+NOUN anim masc plur gent
+PREP ИЗ
+1
+из кого
+которая
+1
+PRTF impf intr pres actv femn sing nomn
+PRTF impf intr pres actv femn sing nomn
+1
+чем
+чем
+1
+NOUN inan neut Sgtm sing ablt
+NOUN inan neut Sgtm sing ablt
+1
+чего
+NOUN inan neut sing gent
+2
+какого
+чьего
+какого
+1
+ADJF Qual neut sing gent
+NOUN anim femn sing nomn
+2
+какая
+что делает
+VERB impf tran sing 3per pres indc
+3
+чего
+что делая
+что
+чьего
+1
+ADJF Apro Anph neut sing gent
+что делая
+2
+GRND perf intr past V-sh
+GRND impf tran pres
+GRND perf intr past V-sh
+1
+на что
+на что
+2
+PREP НА
+NOUN inan femn sing accs
+PREP НА
+1
+на что
+NOUN inan femn sing accs
+2
+какую
+чего
+какую
+2
+ADJF Qual femn sing accs
+ADJF femn sing accs
+NOUN inan femn Sgtm Geox sing nomn
+1
+что делает
+что
+3
+NOUN inan femn sing accs
+NOUN inan femn plur accs
+NOUN inan neut Sgtm sing accs
+NOUN inan femn sing gent
+3
+какой
+чего
+во что
+какой
+1
+ADJF femn sing gent
+NOUN inan neut plur gent
+1
+каких
+каких
+2
+ADJF plur gent
+ADJF Apro Anph plur gent
+во что
+4
+PREP В
+NOUN inan masc plur accs
+NOUN inan femn plur accs
+NOUN inan neut plur accs
+PREP В
+2
+во что
+где в
+NOUN inan masc plur accs
+1
+какие
+что сделать
+1
+INFN perf tran
+INFN perf tran
+3
+чему
+что
+что делая
+чему
+1
+NOUN inan neut plur datv
+NOUN inan neut plur datv
+1
+каким
+каким
+1
+ADJF Subx Apro Anph plur datv
+NOUN inan femn plur accs
+1
+какие
+GRND impf tran pres
+2
+кому
+что
+кому
+1
+NOUN inan masc sing datv
+NOUN inan masc plur gent
+1
+каких
+NOUN inan masc plur nomn
+1
+что делали
+что делали
+1
+VERB impf intr plur past indc
+VERB impf intr plur past indc
+1
+где
+где в
+1
+NOUN inan femn sing loct
