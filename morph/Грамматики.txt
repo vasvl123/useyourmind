@@ -1,106 +1,107 @@
 ﻿
 NOUN anim masc plur nomn
+какие
+что делают
 что делали
-что делают
-какие
 
 что делают
-VERB impf tran plur 3per pres indc
 VERB impf intr plur 3per pres indc
+VERB impf tran plur 3per pres indc
 
 какие
-ADJF plur nomn
-ADJF Qual plur nomn
-ADJF Qual inan plur accs
-ADJF inan plur accs
 PRTF impf intr pres actv plur nomn
+ADJF inan plur accs
+ADJF Qual inan plur accs
+ADJF Qual plur nomn
+ADJF plur nomn
 
 NOUN inan femn sing nomn
-с чем
-что делала
-чего
-что сделала
+какая
+что делает
 которая
-что делает
-какая
+что сделала
+чего
+что делала
+с чем
+чья
 
 что делает
-VERB impf tran sing 3per pres indc
 VERB impf intr sing 3per pres indc
+VERB impf tran sing 3per pres indc
 
 какая
-ADJF Subx Qual femn sing nomn
-ADJF Qual femn sing nomn
 ADJF femn sing nomn
+ADJF Qual femn sing nomn
+ADJF Subx Qual femn sing nomn
+ADJF Apro femn sing nomn
 
 NOUN anim masc sing nomn
-что сделал
-что делал
-чего
 что делает
+чего
+что делал
+что сделал
 
 чего
-NOUN inan femn plur gent
-ADJF Apro Anum masc sing gent
-NOUN inan neut plur gent
-NOUN inan femn sing gent
-NOUN inan neut sing gent
 NOUN inan masc sing gent
+NOUN inan neut sing gent
+NOUN inan femn sing gent
+NOUN inan neut plur gent
+ADJF Apro Anum masc sing gent
 
 NOUN inan neut sing nomn
+что сделало
+какое
 что делает
-какое
-что сделало
 
 что сделало
-VERB perf tran neut sing past indc
 VERB perf intr neut sing past indc
+VERB perf tran neut sing past indc
 
 какое
-ADJF neut sing accs
 ADJF neut sing nomn
+ADJF neut sing accs
 
 VERB impf intr sing 3per pres indc
-как
-чего
-кому
-не
-что делать
+где
 что сделать
-где
+что делать
+не
+кому
+чего
+как
 
 где
-PREP НА
-PREP В
-ADVB ВЕЗДЕ
 ADVB ПОВСЮДУ
+ADVB ВЕЗДЕ
+PREP В
+PREP НА
 
 ADVB ВЕЗДЕ
 на сколько
 
 на сколько
-ADJS neut sing
 ADVB ПРАКТИЧЕСКИ
+ADJS neut sing
 
 VERB impf intr plur 3per pres indc
-с чем
-во что
-как
-когда
-кому
 где
+кому
+когда
+как
+во что
+с чем
 
 ADJF Apro Anum masc sing ablt
 из кого
 
 из кого
-NOUN anim masc plur gent
 PREP ИЗ
+NOUN anim masc plur gent
 
 PREP ИЗ
-из чего
-из кого
 откуда из
+из кого
+из чего
 
 которая
 PRTF impf intr pres actv femn sing nomn
@@ -109,139 +110,141 @@ PRTF impf intr pres actv femn sing nomn
 чем
 
 чем
-NOUN inan masc sing ablt
-NOUN inan masc plur ablt
-NOUN inan femn sing ablt
-NOUN inan neut plur ablt
-NOUN inan neut sing ablt
-ADJF Apro Anum masc sing ablt
 NOUN inan neut Sgtm sing ablt
+ADJF Apro Anum masc sing ablt
+NOUN inan neut sing ablt
+NOUN inan neut plur ablt
+NOUN inan femn sing ablt
+NOUN inan masc plur ablt
+NOUN inan masc sing ablt
 
 NOUN inan neut Sgtm sing ablt
 чего
 
 NOUN inan neut sing gent
-что сделать
-у кого
-кого
-чего
-чьего
 какого
+чьего
+чего
+кого
+у кого
+что сделать
 
 какого
-ADJF Apro neut sing gent
 ADJF Qual neut sing gent
+ADJF Apro neut sing gent
 
 NOUN anim femn sing nomn
-что делала
-что делает
 какая
+что делает
+что делала
 
 VERB impf tran sing 3per pres indc
-кого
-что сделать
-что
-что делая
 чего
+что делая
+что
+что сделать
+кого
 
 чьего
 ADJF Apro Anph neut sing gent
 
 что делая
+GRND impf intr pres
+GRND perf intr past V-sh
 GRND impf tran pres
-GRND perf intr past V-sh
 
 GRND perf intr past V-sh
 на что
 
 на что
+PREP НА
 NOUN inan femn sing accs
-PREP НА
 
 PREP НА
+на что
 на чём
-на что
 
 NOUN inan femn sing accs
-чего
 какую
+чего
+чью
 
 какую
-ADJF femn sing accs
 ADJF Qual femn sing accs
+ADJF femn sing accs
 
 NOUN inan femn Sgtm Geox sing nomn
 что делает
 
 что
-NOUN inan masc plur accs
-INFN perf tran
-NOUN inan neut Fixd sing accs
-NOUN inan neut sing accs
-NOUN inan masc sing accs
-NOUN inan neut Sgtm sing accs
-NOUN inan femn plur accs
 NOUN inan femn sing accs
+NOUN inan femn plur accs
+NOUN inan neut Sgtm sing accs
+NOUN inan masc sing accs
+NOUN inan neut sing accs
+NOUN inan neut Fixd sing accs
+INFN perf tran
+NOUN inan masc plur accs
 
 NOUN inan femn sing gent
-во что
-чего
 какой
+чего
+во что
 
 какой
-ADJF Apro Anph femn sing ablt
-ADJF Anum femn sing gent
-ADJF Subx Qual femn sing gent
-ADJF Qual femn sing loct
-ADJF femn sing loct
-ADJF masc sing nomn
-ADJF Subx Apro Anph femn sing loct
-ADJF Qual femn sing datv
-ADJF Qual femn sing gent
-ADJF Qual femn sing ablt
 ADJF femn sing gent
+ADJF Qual femn sing ablt
+ADJF Qual femn sing gent
+ADJF Qual femn sing datv
+ADJF Subx Apro Anph femn sing loct
+ADJF masc sing nomn
+ADJF femn sing loct
+ADJF Qual femn sing loct
+ADJF Subx Qual femn sing gent
+ADJF Anum femn sing gent
+ADJF Apro Anph femn sing ablt
 
 NOUN inan neut plur gent
-чего
+каких
 которых
-каких
+чего
 
 каких
-ADJF Qual plur gent
-ADJF Apro plur gent
-ADJF Qual anim plur accs
-ADJF Apro Anph plur gent
 ADJF plur gent
+ADJF Apro Anph plur gent
+ADJF Qual anim plur accs
+ADJF Apro plur gent
+ADJF Qual plur gent
 
 во что
-NOUN inan femn sing accs
-NOUN inan neut plur accs
-NOUN inan femn plur accs
+PREP В
 NOUN inan masc plur accs
-PREP В
+NOUN inan femn plur accs
+NOUN inan neut plur accs
+NOUN inan femn sing accs
 
 PREP В
-куда в
-в кого
-когда в
-в чём
-где в
-во что
 как
+во что
+где в
+в чём
+когда в
+в кого
+куда в
 
 NOUN inan masc plur accs
 какие
 
 что сделать
+INFN perf tran
 INFN perf intr
-INFN perf tran
 
 INFN perf tran
-как
-кого
-что делая
+чему
 что
-чему
+что делая
+кого
+как
 
 чему
 NOUN inan neut plur datv
@@ -250,50 +253,51 @@ NOUN inan neut plur datv
 каким
 
 каким
-ADJF masc sing ablt
-PRTF impf intr pres actv plur datv
-ADJF Supr Qual neut sing ablt
-ADJF plur datv
 ADJF Subx Apro Anph plur datv
+ADJF plur datv
+ADJF Supr Qual neut sing ablt
+PRTF impf intr pres actv plur datv
+ADJF masc sing ablt
 
 NOUN inan femn plur accs
 какие
 
 GRND impf tran pres
-откуда
-что
 кому
+что
+откуда
 
 кому
-NPRO 1per sing datv
-NPRO 1per plur datv
-NOUN inan masc plur datv
 NOUN inan masc sing datv
+NOUN inan masc plur datv
+NPRO 1per plur datv
+NPRO 1per sing datv
 
 NOUN inan masc plur gent
-скольких
-которых
 каких
+которых
+скольких
 
 NOUN inan masc plur nomn
-что делают
+что делали
 какие
-что делали
+что делают
 
 что делали
+VERB impf intr plur past indc
 VERB impf tran plur past indc
-VERB impf intr plur past indc
 
 VERB impf intr plur past indc
-с кем
-что сделать
-чем
+что делая
 где
+чем
+что сделать
+с кем
 
 где в
-PREP В
-NOUN inan neut plur loct
 NOUN inan femn sing loct
+NOUN inan neut plur loct
+PREP В
 
 VERB perf intr neut sing past indc
 чем
@@ -305,8 +309,8 @@ NOUN inan neut sing accs
 чего
 
 INFN perf intr
-с чего
 какой
+с чего
 
 ADJF Qual femn sing ablt
 на сколько
@@ -318,43 +322,43 @@ NOUN inan femn sing ablt
 какой
 
 NOUN inan masc sing nomn
-что сделает
-какой
-что сделал
 чего
+что сделал
+какой
+что сделает
 
 что сделал
+VERB perf intr masc sing past indc
 VERB perf tran masc sing past indc
-VERB perf intr masc sing past indc
 
 VERB perf intr masc sing past indc
-до чего
+что делать
 где в
-что делать
+до чего
 
 что делать
-INFN impf tran
 INFN impf intr
+INFN impf tran
 
 NOUN inan masc plur datv
 каким
 
 NOUN inan neut sing ablt
-каким
 чего
+каким
 
 что сделала
-VERB perf tran femn sing past indc
 VERB perf intr femn sing past indc
+VERB perf tran femn sing past indc
 
 VERB perf intr femn sing past indc
-куда
-когда
 чем
+когда
+куда
 
 INFN impf intr
-с чем
 во что
+с чем
 
 не
 PRCL НЕ
@@ -363,104 +367,109 @@ NOUN inan femn sing datv
 какой
 
 INFN impf tran
-как
 что
+как
 
 как
-PREP В
-ADJS Qual neut sing
-ADVB Dmns
-COMP Qual
 NOUN inan masc sing loct
+COMP Qual
+ADVB Dmns
+ADJS Qual neut sing
+PREP В
+ADVB СЛИШКОМ
 
 VERB perf tran plur 3per futr indc
-что
 сколько
+что
 
 сколько
 NOUN inan femn sing accs
 
 NOUN inan femn plur gent
-в чём
-каких
 что делать
+каких
+в чём
 
 NOUN anim masc plur accs
 каких
 
 кого
-NOUN anim femn sing accs
-NOUN anim femn Name sing accs
-ADJF Subx Qual femn sing accs
-NPRO 2per plur accs
-NOUN anim masc sing accs
-NOUN anim masc plur gent
-NOUN anim femn sing gent
 NOUN anim masc plur accs
+NOUN anim femn sing gent
+NOUN anim masc plur gent
+NOUN anim masc sing accs
+NPRO 2per plur accs
+ADJF Subx Qual femn sing accs
+NOUN anim femn Name sing accs
+NOUN anim femn sing accs
 
 PREP ОТ
+чего
 от чего
 
 от чего
+PREP ОТ
 NOUN inan femn sing gent
 
 NPRO femn 3per Anph sing nomn
-что делает
-что делала
 что сделала
+что делала
+что делает
 
 NOUN inan femn plur datv
 каким
 
 с чего
-NOUN inan masc sing gent
 PREP С
+NOUN inan masc sing gent
 
 PREP С
-с кем
-с чем
 с чего
+с чем
+с кем
 
 NOUN inan GNdr Pltm plur nomn
 что сделали
 
 что сделали
-VERB perf intr plur past indc
 VERB perf tran plur past indc
+VERB perf intr plur past indc
 
 VERB perf tran plur past indc
 не
 
 VERB perf intr plur past indc
 чем
+как
+в чём
 
 NOUN inan neut plur ablt
 какими
 
 какими
-ADJF Subx Qual plur ablt
 ADJF Qual plur ablt
+ADJF Subx Qual plur ablt
 
 NOUN inan neut plur nomn
-какие
 что сделали
+какие
 
 VERB impf intr sing 3per futr indc
-не
 чего
+не
 
 NOUN inan femn sing loct
-чего
 какой
+чего
 
 VERB impf tran masc sing past indc
-на чём
-чем
-что
-кем
-кого
-чего
 не
+чего
+кого
+кем
+что
+чем
+на чём
 
 NPRO 3per Anph plur nomn
 что делают
@@ -475,44 +484,42 @@ NOUN inan femn Sgtm Geox sing gent
 какой
 
 NOUN inan femn plur nomn
-что сделать
-что делают
 какие
+что делают
+что сделать
 
 когда
-NOUN inan masc sing ablt
-PREP ПЕРЕД
-NOUN inan GNdr Pltm plur gent
-PREP ПОСЛЕ
-NOUN inan femn sing ablt
 PREP В
+NOUN inan femn sing ablt
+PREP ПОСЛЕ
+NOUN inan GNdr Pltm plur gent
+PREP ПЕРЕД
+NOUN inan masc sing ablt
 
 которых
-ADJF Apro Subx Anph anim plur accs
-PRTF impf intr past actv plur gent
 ADJF Apro Subx Anph plur nomn
+PRTF impf intr past actv plur gent
+ADJF Apro Subx Anph anim plur accs
 
 ADJF Apro Subx Anph plur nomn
 что делают
 
 NOUN inan neut sing loct
-кого
 чего
+кого
 
 NOUN anim femn sing gent
 какой
 
 с чем
-NOUN inan neut sing ablt
-PREP Vpre
-NOUN inan femn plur ablt
-NOUN inan femn sing ablt
 PREP С
+NOUN inan femn plur ablt
+NOUN inan neut sing ablt
 
 NOUN anim femn plur nomn
-что делали
-чьи
 что делают
+чьи
+что делали
 
 NOUN inan masc sing datv
 какому
@@ -524,9 +531,10 @@ NOUN inan femn plur ablt
 какими
 
 VERB impf tran plur 3per pres indc
-не
-чем
+от чего
 чего
+чем
+не
 
 VERB perf tran sing impr excl
 кому
@@ -535,8 +543,8 @@ NPRO 1per sing datv
 о чём
 
 о чём
-NOUN inan femn sing loct
 PREP О
+NOUN inan femn sing loct
 
 PREP О
 о чём
@@ -551,9 +559,9 @@ NOUN inan neut Fixd sing accs
 какое
 
 с кем
-NOUN anim femn sing ablt
-PREP С
 NOUN anim masc sing ablt
+PREP С
+NOUN anim femn sing ablt
 
 NPRO neut sing nomn
 что сделало
@@ -565,17 +573,18 @@ VERB perf tran neut sing past indc
 что сделать
 
 NOUN inan masc sing accs
-чего
 кого
+чего
 
 в чём
-NOUN inan femn sing loct
 PREP В
+NOUN inan femn sing loct
+NOUN inan neut sing loct
 
 VERB perf tran masc sing past indc
-что
-куда на
 откуда с
+куда на
+что
 
 откуда с
 PREP С
@@ -596,8 +605,8 @@ NOUN inan masc sing loct
 ADJF Qual masc sing loct
 
 VERB perf intr sing 3per futr indc
-ли
 когда
+ли
 
 ли
 PRCL ЛИ
@@ -612,8 +621,8 @@ VERB impf tran masc sing past indc
 NOUN anim masc sing ablt
 
 что делала
-VERB impf intr femn sing past indc
 VERB impf tran femn sing past indc
+VERB impf intr femn sing past indc
 
 VERB impf tran femn sing past indc
 чего
@@ -622,41 +631,42 @@ PREP Vpre
 с чем
 
 ADJF Subx Qual femn sing nomn
-что делала
 что сделала
+что делала
 
 VERB perf tran femn sing past indc
-чего
 не
+чего
 
 NOUN inan masc sing gent
 к чему
+которого
 
 к чему
-NOUN inan femn plur datv
 PREP К
+NOUN inan femn plur datv
 
 PREP К
 к чему
 
 когда в
-NOUN inan masc sing loct
 NOUN inan masc sing loc2
+NOUN inan masc sing loct
 
 чьи
 ADJF Apro plur nomn
 
 VERB impf tran plur past indc
-чем
-в кого
 не
+в кого
+чем
 
 VERB impf intr femn sing past indc
-какой
-где
-какова
-с кем
 когда
+с кем
+какова
+где
+какой
 
 PREP ПЕРЕД
 когда
@@ -665,8 +675,8 @@ NOUN anim masc sing ablt
 каким
 
 какова
-PRTS perf past pssv femn sing
 ADJS Qual femn sing
+PRTS perf past pssv femn sing
 
 VERB impf tran sing 1per pres indc
 кого
@@ -678,8 +688,8 @@ NPRO 1per plur nomn
 что делали
 
 в кого
-NOUN anim masc plur accs
 PREP В
+NOUN anim masc plur accs
 
 NOUN inan masc plur ablt
 какими
@@ -691,9 +701,9 @@ NOUN inan neut plur loct
 ADJF Apro Anph plur loct
 
 до чего
-NOUN inan femn plur gent
-NOUN inan femn sing gent
 PREP ДО
+NOUN inan femn sing gent
+NOUN inan femn plur gent
 
 PREP ДО
 до чего
@@ -714,8 +724,8 @@ NOUN anim masc plur gent
 NUMR gent
 
 у кого
-NOUN inan neut sing gent
 PREP У
+NOUN inan neut sing gent
 
 PREP У
 у кого
@@ -727,11 +737,29 @@ NPRO masc 3per Anph sing nomn
 что делал
 
 на чём
-NOUN inan masc sing loct
 PREP НА
+NOUN inan masc sing loct
 
 откуда
 PREP ИЗ
 
 откуда из
 NOUN inan masc plur gent
+
+чью
+ADJF Apro Anph femn sing accs
+
+чья
+NOUN inan femn plur gent
+
+которого
+CONJ КАК
+
+CONJ КАК
+какой
+
+GRND impf intr pres
+что сделать
+
+ADJF Qual femn sing nomn
+какая
