@@ -100,7 +100,7 @@
 		шСвойства = "
 		|*Формы
 		|*Вид
-		|	div	class=card mb-3 col-lg-7	style=background-color:rgba(255,255,255,0.4); min-height:20rem
+		|	div	class=card mb-3 col-lg-7	style=background-color:rgba(255,255,255,0.3); min-height:20rem
 		|		div	class=card-body
 		|			h4: OpenCorpora datasets
 		|			П: Содержимое

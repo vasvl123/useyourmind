@@ -8,11 +8,11 @@
 И	DIV	З		Д	10	А	9
 И	class	З	row justify-content-center
 И	DIV	З		Д	18	А	11
-И	class	З	col-md-8
+И	class	З	col-md-6
 
 
 И	Свойства.	З		С	8
-И	class	З	text-center display-3	С	68
+И	class	З	text-center display-4	С	68
 
 
 И	DIV	З		Д	20	А	19
@@ -65,7 +65,7 @@
 
 
 
-И	style	З	color: rgb(125, 125, 190); text-shadow: #fff -1px -1px 0; margin-bottom: 0rem;
+И	style	З	color: rgb(255, 255, 255); text-shadow: rgb(125, 125, 190) 1px 1px 0; margin-bottom: 0rem;
 
 И	P	З		Д	72	С	78	А	71
 И	class	З	lead	С	4

@@ -179,7 +179,7 @@ aside ul {
 
 .app-body {
 	background-image: url("/resource/bg.jpg") ;
-	background-color: rgb(125, 125, 190);
+	background-color: rgb(90, 150, 190);
 }
 
 .sidebar {
@@ -234,6 +234,6 @@ aside ul {
 }
 
 .navbar-light .navbar-brand {
-	color: rgb(125, 125, 190);
+	color: rgb(120, 175, 210);
 	font-size: 1.5rem;
 }
