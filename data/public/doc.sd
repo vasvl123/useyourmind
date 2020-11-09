@@ -6,30 +6,24 @@
 И	div	З		Д	11	А	9
 И	div	З		Д	3	С	23	А	8
 И	class	З	card-header
-И	class	З	col-md-10
+И	class	З	col-lg-10
 
 И	div	З		Д	7	А	12
-И	class	З	card
+И	class	З	card	С	14
 
-
-
-
-И	Файл	З	
-
-
-
-
-
-И	div	З		Д	25	А	24
+И	style	З	background-color:rgba(255,255,255,0.8); min-height:20rem
 И	class	З	card-body
+
+И	Файл	З
+
+
+
+
+
+И	div	З		Д	25	А	15
+
 И	О	З	markdown.Парсер	Д	26
 И	Свойства.	З		Д	27
 И	Текст	З		С	28
 И	Док	З		С	29
-И	Вид	З	
-
-
-
-
-
-
+И	Вид	З
