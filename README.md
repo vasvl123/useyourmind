@@ -42,14 +42,14 @@
 ##### **/morph**
 Связи.dat - файл данных морфологии
 Формируется скриптом morph5.os (необходим словарь dict.opcorpora.txt)
-Можно скачать архив по ссылке: https://uascript.net/resource/Связи.dat.zip
+Можно скачать архив по ссылке: <https://uascript.net/resource/Связи.dat.zip>
 
 ##### **/resource**
 Файлы веб-интерфейса
 
 ### Для запуска локально на своем компьютере необходимо:
 
-Скачать последнюю версию useyourmind + Uascript: https://github.com/vasvl123/useyourmind/releases
+Скачать последнюю версию useyourmind + Uascript: <https://github.com/vasvl123/useyourmind/releases>
 
 Под Windows:
 
@@ -57,7 +57,7 @@
 
 Перейти в папку useyourmind и выполнить команду: uascript starter.os
 
-Открыть в браузере ссылку: http://localhost:8888
+Открыть в браузере ссылку: <http://localhost:8888>
 
 Под Linux:
 
@@ -65,7 +65,7 @@
 
 Перейти в папку useyourmind и выполнить команду: mono uascript starter.os
 
-Открыть в браузере ссылку: http://localhost:8888
+Открыть в браузере ссылку: <http://localhost:8888>
 
 ### Описание:
 
