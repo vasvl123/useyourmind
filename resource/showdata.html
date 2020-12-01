@@ -31,15 +31,6 @@
   </button>
 
   <ul class="navbar-nav mr-auto" id="tabs">
-    <li class="nav-item px-2">
-      <a class="nav-link" href="/doc/useyourmind">use your.mind</a>
-    </li>
-    <li class="nav-item px-2">
-      <a class="nav-link" href="/opencorpora">NLP</a>
-    </li>
-    <li class="nav-item px-2">
-      <a class="nav-link" href="https://github.com/vasvl123/useyourmind">GitHub</a>
-    </li>
   </ul>
 
   <ul class="nav navbar-nav ml-auto" id="acc">
@@ -86,6 +77,20 @@
 
   </div>
 <!--/ОбластьПанельОкно-->
+
+<!--ОбластьВкладкиМеню-->
+<ul class="navbar-nav mr-auto" id="tabs">
+  <li class="nav-item px-2">
+    <a class="nav-link" href="/doc/useyourmind">use your.mind</a>
+  </li>
+  <li class="nav-item px-2">
+    <a class="nav-link" href="/opencorpora">NLP</a>
+  </li>
+  <li class="nav-item px-2">
+    <a class="nav-link" href="https://github.com/vasvl123/useyourmind">GitHub</a>
+  </li>
+</ul>
+<!--/ОбластьВкладкиМеню-->
 
 <!--ОбластьПанельМеню-->
   <div class="sidebar" id="sidebar">
@@ -512,7 +517,7 @@ function postcmd(cmd){
   var xhr = new XHR();
   xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
-    if (upddata.readyState==4) {
+    if (upddata.readyState==4 && aupd) {
       seq_add('cmd=upddata');
     }
     if (this.response) {
@@ -553,12 +558,12 @@ function seq_sendcmd(){
     var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
     var xhr = new XHR();
     var url = seq.shift();
-    if (url.indexOf('cmd=upddata', 0) > 0 && aupd) {
+    if (url.indexOf('cmd=upddata', 0) > 0) {
       upddata = xhr;
     }
     xhr.open('GET',url,true);
     xhr.onload = function() {
-      if (upddata.readyState==4) {
+      if (upddata.readyState==4 && aupd) {
         seq_add('cmd=upddata');
       }
       if (this.response) {
