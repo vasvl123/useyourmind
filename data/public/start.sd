@@ -1,83 +1,83 @@
-И	О	Д	14	З	Корень
-И	p	Д	24	С	44	А	15	З
-И	Э	З	body	А	4	Д	7
-И	class	З	app flex-row align-items-center  pace-done
-И	div	А	6	Д	7
-И	class	З	container
-И	Э	З	Фронт	Д	8
-И	DIV	Д	10	А	9
-И	class	З	row justify-content-center
-И	DIV	Д	18	А	11
-И	class	З	col-md-6
-И	a	З	Помощь	А	13
-И	href	З	/help
-И	Свойства.	С	8	З
-И	class	З	text-sm-nowrap text-center display-4 text-light
-И	a	З	Помощь	А	17
-И	href	З	/help
-И	DIV	Д	20	А	19
-И	class	З	card-group
-И	DIV	Д	118	А	21
-И	class	С	48	З	card p-4
-И	TEXT	Д	24
-И	class	З	docs-callout docs-callout-warning
-И	text	З	Uascript.Net
-И	H5	А	26	Д	27	С	28
-И	id	З	jquery-incompatibility
-И	text	З	jQuery incompatibility
-И	P	Д	29
-И	CODE	А	30	Д	31	С	32
-И	class	З	highlighter-rouge
-И	text	З	[hidden]
-И	CODE	А	33	Д	34	С	35
-И	class	З	highlighter-rouge
-И	text	З	$(...).hide()
-И	CODE	А	36	Д	37	С	38
-И	class	З	highlighter-rouge
-И	text	З	$(...).show()
-И	CODE	А	39	Д	40	С	41
-И	class	З	highlighter-rouge
-И	text	З	[hidden]
-И	CODE	А	42	Д	43
-И	class	З	highlighter-rouge
-И	text	З	display
-И	DIV	Д	70	С	136	А	45
-И	class	З	docs-callout docs-callout-warning text-light
+И	О	З	Корень	Д	14
+И	p	З		Д	24	С	46	А	15
+И	style	З	text-shadow:  rgb(125, 125, 190) 1px 1px 0;
+И	style	З	text-shadow:  rgb(125, 125, 190) 1px 1px 0;
+И	style	З	text-shadow:  rgb(125, 125, 190) 1px 1px 0;
+И	style	З	text-shadow:  rgb(125, 125, 190) 1px 1px 0;
 
-И	STRONG	Д	48
+И	DIV	З		Д	10	А	9
+И	class	З	row justify-content-center
+И	DIV	З		Д	18	А	11
+И	class	З	col-md-6
+
+
+И	Свойства.	З		С	8
+И	class	З	text-center display-4	С	68
+
+
+И	DIV	З		Д	20	А	19
+И	class	З	card-group
+И	DIV	З		Д	118	А	21
+И	class	З	card p-4	С	48
+
+
+И	text	З	uascript.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	DIV	З		Д	70	С	136	А	45
+И	class	З	docs-callout docs-callout-warning text-light
+И	h4	З		Д	61	С	44	А	62
+
 И	style	З	background-image: linear-gradient(rgba(230, 122, 213, 0.58), rgba(77, 85, 170, 0.9)),url(/resource/ra.jpg); background-size: cover;
 
-И	class	З	nav-item
-И	A	А	52	Д	54
-И	class	З	nav-link	С	53
-И	href	З	/help
-И	text	З	Описание
-И	class	З	lead
-И	STRONG	Д	60
-И	class	З	lead
-И	STRONG	Д	59
-И	text	З	серверный рендеринг на языке OneScript
-И	text	З	управление данными через панель разработчика
 
 
 
 
-И	class	З	mb-3 text-sm-nowrap
-И	text	З	Платформа для разработки web-приложений
 
 
 
-И	P	Д	72	С	78	А	71
-И	class	З	lead
-И	STRONG	Д	73
+
+
+
+
+И	text	З	Scripting language for User assistance 
+И	class	З	text-sm-nowrap text-center text-light	С	3
+
+
+
+
+
+И	style	З	color: rgb(255, 255, 255); text-shadow: rgb(125, 125, 190) 1px 1px 0; margin-bottom: 0rem;
+
+И	P	З		Д	72	С	78	А	71
+И	class	З	lead	С	4
+И	STRONG	З		Д	73
 И	text	З	платформа сообщества
-И	P	Д	76	А	75
-И	class	З	lead
-И	STRONG	Д	77
+И	P	З		Д	76	А	75
+И	class	З	lead	С	6
+И	STRONG	З		Д	77
 И	text	З	открытый исходный код
-И	P	Д	80	С	74	А	79
-И	class	З	lead
-И	STRONG	Д	81
+И	P	З		Д	80	С	74	А	79
+И	class	З	lead	С	5
+И	STRONG	З		Д	81
 И	text	З	база знаний проектов
 
 
@@ -115,55 +115,55 @@
 
 
 
-И	DIV	Д	2	А	119
+И	DIV	З		Д	2	А	119
 И	class	З	card-body text-left
 
 
-И	style	З	background-color:#1ea6d6
-И	class	З	navbar navbar-expand-lg navbar-dark	С	122
 
 
 
-И	class	З	mb-3 text-sm-nowrap
-И	text	З	Платформа для разработки web-приложений
 
-И	class	З	lead
-И	STRONG	Д	132
-И	text	З	управление данными через панель разработчика
 
-И	class	З	lead mb-4
-И	text	З	проект с открытым кодом на базе CoreUI и Bootstrap 4
-И	DIV	Д	138	А	137
+
+
+
+
+
+
+
+
+
+И	DIV	З		Д	138	А	137
 И	class	З	flex-column flex-md-row lead mb-3 text-center
-И	A	Д	164	С	165	А	162
-И	DIV	А	141	Д	142
-И	id	З	navbarSupportedContent
-И	class	З	collapse navbar-collapse	С	140
-И	UL	А	143	Д	144
-И	class	З	navbar-nav
-И	LI	А	145	Д	146	С	150
-И	class	З	nav-item
-И	A	А	148	Д	149
-И	href	З	/
-И	class	З	nav-link active	С	147
-И	text	З	Исходный код
-И	LI	А	151	Д	152	С	156
-И	class	З	nav-item
-И	A	А	154	Д	155
-И	href	З	https://gitter.im/OneScriptDB/Lobby
-И	class	З	nav-link	С	153
-И	text	З	Общение
-И	LI	А	157	Д	158
-И	class	З	nav-item
-И	A	А	160	Д	161
-И	href	З	/help
-И	class	З	nav-link	С	159
-И	text	З	Помощь
-И	href	С	163	З	/login
+И	A	З		Д	164	С	165	А	162
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+И	href	З	/login	С	163
 И	class	З	btn btn-lg btn-success mb-3 mb-md-0 mr-md-3
 И	text	З	Вход
-И	A	Д	168	А	166
-И	href	С	167	З	/register
+И	A	З		Д	168	А	166
+И	href	З	/register	С	167
 И	class	З	btn btn-lg btn-primary mb-3 mb-md-0 mr-md-3
 И	text	З	Регистрация
 
@@ -172,41 +172,6 @@
 
 
 
-И	class	З	navbar navbar-expand-lg navbar-dark	С	176
-И	style	З	background-color:#1ea6d6
-И	A	А	178	Д	181	С	187
-И	class	З	navbar-brand	С	179
-И	href	З	https://github.com/vasvl123/OneScriptDB/	С	180
-И	title	З	Объектно-ориентированная система управления базами данных в среде OneScript
-И	IMG	А	182
-И	class	З	navbar-brand-full	С	183
-И	src	З	/resource/osdb_i.png	С	184
-И	alt	З	OneScriptDB	С	185
-И	width	З	110	С	186
-И	height	З	37
-И	DIV	А	188	Д	190
-И	class	З	collapse navbar-collapse	С	189
-И	id	З	navbarSupportedContent
-И	UL	А	191	Д	192
-И	class	З	navbar-nav
-И	LI	А	193	Д	194	С	198
-И	class	З	nav-item
-И	A	А	195	Д	197
-И	class	З	nav-link active	С	196
-И	href	З	/
-И	text	З	Исходный код
-И	LI	А	199	Д	200	С	204
-И	class	З	nav-item
-И	A	А	201	Д	203
-И	class	З	nav-link	С	202
-И	href	З	https://gitter.im/OneScriptDB/Lobby
-И	text	З	Общение
-И	LI	А	205	Д	206
-И	class	З	nav-item
-И	A	А	207	Д	209
-И	class	З	nav-link	С	208
-И	href	З	/help
-И	text	З	Помощь
 
 
 
@@ -290,13 +255,48 @@
 
 
 
-С	139	И	A	А	296	Д	297
-И	title	З	Объектно-ориентированная система управления базами данных в среде OneScript
-И	href	З	https://github.com/vasvl123/OneScriptDB/	С	294
-И	class	З	navbar-brand	С	295
-И	IMG	А	302
-И	height	З	37
-И	width	З	110	С	298
-И	alt	З	OneScriptDB	С	299
-И	src	З	/resource/osdb_i.png	С	300
-И	class	З	navbar-brand-full	С	301
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3608 @@
+И	О	Д	6	З	Корень
+И	Э	Д	3	З	Фронт
+И	body	Д	4
+И	div	А	5	Д	7	С	3608
+И	class	З	container
+И	Свойства.	З		С	3
+И	comment	З	Navbar      ==================================================	С	9
+
+И	div	А	10	Д	12	С	278
+И	class	З	bs-docs-section clearfix
+
+И	div	А	13	Д	15
+И	class	З	row
+
+И	div	А	16	Д	18
+И	class	З	col-lg-12
+
+И	div	А	19	Д	21	С	26
+И	class	З	page-header
+
+И	h1	А	22	Д	23
+И	id	З	navbars
+И	text	З	Navbars
+
+
+И	div	А	27	Д	29	С	109
+И	class	З	bs-component
+
+И	nav	А	30	Д	31
+И	class	З	navbar navbar-expand-lg navbar-dark bg-primary
+И	a	А	32	Д	34	С	36
+И	class	З	navbar-brand	С	33
+И	href	З	#
+И	text	З	Navbar
+
+И	button	А	37	Д	45	С	49
+И	class	З	navbar-toggler	С	38
+И	type	З	button	С	39
+И	data_toggle	З	collapse	С	40
+И	data_target	З	#navbarColor01	С	41
+И	aria_controls	З	navbarColor01	С	42
+И	aria_expanded	З	false	С	43
+И	aria_label	З	Toggle navigation
+
+И	span	А	46
+И	class	З	navbar-toggler-icon
+
+
+И	div	А	50	Д	53
+И	class	З	collapse navbar-collapse	С	51
+И	id	З	navbarColor01
+
+И	ul	А	54	Д	55	С	94
+И	class	З	navbar-nav mr-auto
+И	li	А	56	Д	58	С	67
+И	class	З	nav-item active
+
+И	a	А	59	Д	61
+И	class	З	nav-link	С	60
+И	href	З	#
+И	text	З	Home	С	62
+И	span	А	63	Д	64
+И	class	З	sr-only
+И	text	З	(current)
+
+
+И	li	А	68	Д	70	С	76
+И	class	З	nav-item
+
+И	a	А	71	Д	73
+И	class	З	nav-link	С	72
+И	href	З	#
+И	text	З	Features
+
+
+И	li	А	77	Д	79	С	85
+И	class	З	nav-item
+
+И	a	А	80	Д	82
+И	class	З	nav-link	С	81
+И	href	З	#
+И	text	З	Pricing
+
+
+И	li	А	86	Д	88
+И	class	З	nav-item
+
+И	a	А	89	Д	91
+И	class	З	nav-link	С	90
+И	href	З	#
+И	text	З	About
+
+
+И	form	А	95	Д	97
+И	class	З	form-inline my-2 my-lg-0
+
+И	input	А	98	С	101
+И	class	З	form-control mr-sm-2	С	99
+И	type	З	text	С	100
+И	placeholder	З	Search
+И	button	А	102	Д	104
+И	class	З	btn btn-secondary my-2 my-sm-0	С	103
+И	type	З	submit
+И	text	З	Search
+
+
+
+
+И	div	А	110	Д	112	С	192
+И	class	З	bs-component
+
+И	nav	А	113	Д	114
+И	class	З	navbar navbar-expand-lg navbar-dark bg-dark
+И	a	А	115	Д	117	С	119
+И	class	З	navbar-brand	С	116
+И	href	З	#
+И	text	З	Navbar
+
+И	button	А	120	Д	128	С	132
+И	class	З	navbar-toggler	С	121
+И	type	З	button	С	122
+И	data_toggle	З	collapse	С	123
+И	data_target	З	#navbarColor02	С	124
+И	aria_controls	З	navbarColor02	С	125
+И	aria_expanded	З	false	С	126
+И	aria_label	З	Toggle navigation
+
+И	span	А	129
+И	class	З	navbar-toggler-icon
+
+
+И	div	А	133	Д	136
+И	class	З	collapse navbar-collapse	С	134
+И	id	З	navbarColor02
+
+И	ul	А	137	Д	138	С	177
+И	class	З	navbar-nav mr-auto
+И	li	А	139	Д	141	С	150
+И	class	З	nav-item active
+
+И	a	А	142	Д	144
+И	class	З	nav-link	С	143
+И	href	З	#
+И	text	З	Home	С	145
+И	span	А	146	Д	147
+И	class	З	sr-only
+И	text	З	(current)
+
+
+И	li	А	151	Д	153	С	159
+И	class	З	nav-item
+
+И	a	А	154	Д	156
+И	class	З	nav-link	С	155
+И	href	З	#
+И	text	З	Features
+
+
+И	li	А	160	Д	162	С	168
+И	class	З	nav-item
+
+И	a	А	163	Д	165
+И	class	З	nav-link	С	164
+И	href	З	#
+И	text	З	Pricing
+
+
+И	li	А	169	Д	171
+И	class	З	nav-item
+
+И	a	А	172	Д	174
+И	class	З	nav-link	С	173
+И	href	З	#
+И	text	З	About
+
+
+И	form	А	178	Д	180
+И	class	З	form-inline my-2 my-lg-0
+
+И	input	А	181	С	184
+И	class	З	form-control mr-sm-2	С	182
+И	type	З	text	С	183
+И	placeholder	З	Search
+И	button	А	185	Д	187
+И	class	З	btn btn-secondary my-2 my-sm-0	С	186
+И	type	З	submit
+И	text	З	Search
+
+
+
+
+И	div	А	193	Д	195
+И	class	З	bs-component
+
+И	nav	А	196	Д	197
+И	class	З	navbar navbar-expand-lg navbar-light bg-light
+И	a	А	198	Д	200	С	202
+И	class	З	navbar-brand	С	199
+И	href	З	#
+И	text	З	Navbar
+
+И	button	А	203	Д	211	С	215
+И	class	З	navbar-toggler	С	204
+И	type	З	button	С	205
+И	data_toggle	З	collapse	С	206
+И	data_target	З	#navbarColor03	С	207
+И	aria_controls	З	navbarColor03	С	208
+И	aria_expanded	З	false	С	209
+И	aria_label	З	Toggle navigation
+
+И	span	А	212
+И	class	З	navbar-toggler-icon
+
+
+И	div	А	216	Д	219
+И	class	З	collapse navbar-collapse	С	217
+И	id	З	navbarColor03
+
+И	ul	А	220	Д	221	С	260
+И	class	З	navbar-nav mr-auto
+И	li	А	222	Д	224	С	233
+И	class	З	nav-item active
+
+И	a	А	225	Д	227
+И	class	З	nav-link	С	226
+И	href	З	#
+И	text	З	Home	С	228
+И	span	А	229	Д	230
+И	class	З	sr-only
+И	text	З	(current)
+
+
+И	li	А	234	Д	236	С	242
+И	class	З	nav-item
+
+И	a	А	237	Д	239
+И	class	З	nav-link	С	238
+И	href	З	#
+И	text	З	Features
+
+
+И	li	А	243	Д	245	С	251
+И	class	З	nav-item
+
+И	a	А	246	Д	248
+И	class	З	nav-link	С	247
+И	href	З	#
+И	text	З	Pricing
+
+
+И	li	А	252	Д	254
+И	class	З	nav-item
+
+И	a	А	255	Д	257
+И	class	З	nav-link	С	256
+И	href	З	#
+И	text	З	About
+
+
+И	form	А	261	Д	263
+И	class	З	form-inline my-2 my-lg-0
+
+И	input	А	264	С	267
+И	class	З	form-control mr-sm-2	С	265
+И	type	З	text	С	266
+И	placeholder	З	Search
+И	button	А	268	Д	270
+И	class	З	btn btn-secondary my-2 my-sm-0	С	269
+И	type	З	submit
+И	text	З	Search
+
+
+
+
+
+
+
+И	comment	З	Buttons      ==================================================	С	280
+
+И	div	А	281	Д	283	С	816
+И	class	З	bs-docs-section
+
+И	div	А	284	Д	286	С	299
+И	class	З	page-header
+
+И	div	А	287	Д	289
+И	class	З	row
+
+И	div	А	290	Д	292
+И	class	З	col-lg-12
+
+И	h1	А	293	Д	294
+И	id	З	buttons
+И	text	З	Buttons
+
+
+
+
+И	div	А	300	Д	302
+И	class	З	row
+
+И	div	А	303	Д	305	С	597
+И	class	З	col-lg-7
+
+И	p	А	306	Д	308	С	344
+И	class	З	bs-component
+
+И	button	А	309	Д	311	С	313
+И	type	З	button	С	310
+И	class	З	btn btn-primary
+И	text	З	Primary
+
+И	button	А	314	Д	316	С	318
+И	type	З	button	С	315
+И	class	З	btn btn-secondary
+И	text	З	Secondary
+
+И	button	А	319	Д	321	С	323
+И	type	З	button	С	320
+И	class	З	btn btn-success
+И	text	З	Success
+
+И	button	А	324	Д	326	С	328
+И	type	З	button	С	325
+И	class	З	btn btn-info
+И	text	З	Info
+
+И	button	А	329	Д	331	С	333
+И	type	З	button	С	330
+И	class	З	btn btn-warning
+И	text	З	Warning
+
+И	button	А	334	Д	336	С	338
+И	type	З	button	С	335
+И	class	З	btn btn-danger
+И	text	З	Danger
+
+И	button	А	339	Д	341
+И	type	З	button	С	340
+И	class	З	btn btn-link
+И	text	З	Link
+
+
+И	p	А	345	Д	347	С	383
+И	class	З	bs-component
+
+И	button	А	348	Д	350	С	352
+И	type	З	button	С	349
+И	class	З	btn btn-primary disabled
+И	text	З	Primary
+
+И	button	А	353	Д	355	С	357
+И	type	З	button	С	354
+И	class	З	btn btn-secondary disabled
+И	text	З	Secondary
+
+И	button	А	358	Д	360	С	362
+И	type	З	button	С	359
+И	class	З	btn btn-success disabled
+И	text	З	Success
+
+И	button	А	363	Д	365	С	367
+И	type	З	button	С	364
+И	class	З	btn btn-info disabled
+И	text	З	Info
+
+И	button	А	368	Д	370	С	372
+И	type	З	button	С	369
+И	class	З	btn btn-warning disabled
+И	text	З	Warning
+
+И	button	А	373	Д	375	С	377
+И	type	З	button	С	374
+И	class	З	btn btn-danger disabled
+И	text	З	Danger
+
+И	button	А	378	Д	380
+И	type	З	button	С	379
+И	class	З	btn btn-link disabled
+И	text	З	Link
+
+
+И	p	А	384	Д	386	С	417
+И	class	З	bs-component
+
+И	button	А	387	Д	389	С	391
+И	type	З	button	С	388
+И	class	З	btn btn-outline-primary
+И	text	З	Primary
+
+И	button	А	392	Д	394	С	396
+И	type	З	button	С	393
+И	class	З	btn btn-outline-secondary
+И	text	З	Secondary
+
+И	button	А	397	Д	399	С	401
+И	type	З	button	С	398
+И	class	З	btn btn-outline-success
+И	text	З	Success
+
+И	button	А	402	Д	404	С	406
+И	type	З	button	С	403
+И	class	З	btn btn-outline-info
+И	text	З	Info
+
+И	button	А	407	Д	409	С	411
+И	type	З	button	С	408
+И	class	З	btn btn-outline-warning
+И	text	З	Warning
+
+И	button	А	412	Д	414
+И	type	З	button	С	413
+И	class	З	btn btn-outline-danger
+И	text	З	Danger
+
+
+И	div	А	418	Д	420	С	577
+И	class	З	bs-component
+
+И	div	А	421	Д	425	С	459
+И	class	З	btn-group	С	422
+И	role	З	group	С	423
+И	aria_label	З	Button group with nested dropdown
+
+И	button	А	426	Д	428	С	430
+И	type	З	button	С	427
+И	class	З	btn btn-primary
+И	text	З	Primary
+
+И	div	А	431	Д	434
+И	class	З	btn-group	С	432
+И	role	З	group
+
+И	button	А	435	С	442
+И	id	З	btnGroupDrop1	С	436
+И	type	З	button	С	437
+И	class	З	btn btn-primary dropdown-toggle	С	438
+И	data_toggle	З	dropdown	С	439
+И	aria_haspopup	З	true	С	440
+И	aria_expanded	З	false
+
+И	div	А	443	Д	446
+И	class	З	dropdown-menu	С	444
+И	aria_labelledby	З	btnGroupDrop1
+
+И	a	А	447	Д	449	С	451
+И	class	З	dropdown-item	С	448
+И	href	З	#
+И	text	З	Dropdown link
+
+И	a	А	452	Д	454
+И	class	З	dropdown-item	С	453
+И	href	З	#
+И	text	З	Dropdown link
+
+
+
+
+И	div	А	460	Д	464	С	498
+И	class	З	btn-group	С	461
+И	role	З	group	С	462
+И	aria_label	З	Button group with nested dropdown
+
+И	button	А	465	Д	467	С	469
+И	type	З	button	С	466
+И	class	З	btn btn-success
+И	text	З	Success
+
+И	div	А	470	Д	473
+И	class	З	btn-group	С	471
+И	role	З	group
+
+И	button	А	474	С	481
+И	id	З	btnGroupDrop2	С	475
+И	type	З	button	С	476
+И	class	З	btn btn-success dropdown-toggle	С	477
+И	data_toggle	З	dropdown	С	478
+И	aria_haspopup	З	true	С	479
+И	aria_expanded	З	false
+
+И	div	А	482	Д	485
+И	class	З	dropdown-menu	С	483
+И	aria_labelledby	З	btnGroupDrop2
+
+И	a	А	486	Д	488	С	490
+И	class	З	dropdown-item	С	487
+И	href	З	#
+И	text	З	Dropdown link
+
+И	a	А	491	Д	493
+И	class	З	dropdown-item	С	492
+И	href	З	#
+И	text	З	Dropdown link
+
+
+
+
+И	div	А	499	Д	503	С	537
+И	class	З	btn-group	С	500
+И	role	З	group	С	501
+И	aria_label	З	Button group with nested dropdown
+
+И	button	А	504	Д	506	С	508
+И	type	З	button	С	505
+И	class	З	btn btn-info
+И	text	З	Info
+
+И	div	А	509	Д	512
+И	class	З	btn-group	С	510
+И	role	З	group
+
+И	button	А	513	С	520
+И	id	З	btnGroupDrop3	С	514
+И	type	З	button	С	515
+И	class	З	btn btn-info dropdown-toggle	С	516
+И	data_toggle	З	dropdown	С	517
+И	aria_haspopup	З	true	С	518
+И	aria_expanded	З	false
+
+И	div	А	521	Д	524
+И	class	З	dropdown-menu	С	522
+И	aria_labelledby	З	btnGroupDrop3
+
+И	a	А	525	Д	527	С	529
+И	class	З	dropdown-item	С	526
+И	href	З	#
+И	text	З	Dropdown link
+
+И	a	А	530	Д	532
+И	class	З	dropdown-item	С	531
+И	href	З	#
+И	text	З	Dropdown link
+
+
+
+
+И	div	А	538	Д	542
+И	class	З	btn-group	С	539
+И	role	З	group	С	540
+И	aria_label	З	Button group with nested dropdown
+
+И	button	А	543	Д	545	С	547
+И	type	З	button	С	544
+И	class	З	btn btn-danger
+И	text	З	Danger
+
+И	div	А	548	Д	551
+И	class	З	btn-group	С	549
+И	role	З	group
+
+И	button	А	552	С	559
+И	id	З	btnGroupDrop4	С	553
+И	type	З	button	С	554
+И	class	З	btn btn-danger dropdown-toggle	С	555
+И	data_toggle	З	dropdown	С	556
+И	aria_haspopup	З	true	С	557
+И	aria_expanded	З	false
+
+И	div	А	560	Д	563
+И	class	З	dropdown-menu	С	561
+И	aria_labelledby	З	btnGroupDrop4
+
+И	a	А	564	Д	566	С	568
+И	class	З	dropdown-item	С	565
+И	href	З	#
+И	text	З	Dropdown link
+
+И	a	А	569	Д	571
+И	class	З	dropdown-item	С	570
+И	href	З	#
+И	text	З	Dropdown link
+
+
+
+
+
+И	div	А	578	Д	580
+И	class	З	bs-component
+
+И	button	А	581	Д	583	С	585
+И	type	З	button	С	582
+И	class	З	btn btn-primary btn-lg
+И	text	З	Large button
+
+И	button	А	586	Д	588	С	590
+И	type	З	button	С	587
+И	class	З	btn btn-primary
+И	text	З	Default button
+
+И	button	А	591	Д	593
+И	type	З	button	С	592
+И	class	З	btn btn-primary btn-sm
+И	text	З	Small button
+
+
+
+И	div	А	598	Д	600
+И	class	З	col-lg-5
+
+И	p	А	601	Д	603	С	609
+И	class	З	bs-component
+
+И	button	А	604	Д	606
+И	type	З	button	С	605
+И	class	З	btn btn-primary btn-lg btn-block
+И	text	З	Block level button
+
+
+И	div	А	610	Д	613	С	641
+И	class	З	bs-component	С	611
+И	style	З	margin-bottom: 15px;
+
+И	div	А	614	Д	617
+И	class	З	btn-group	С	615
+И	data_toggle	З	buttons
+
+И	label	А	618	Д	620	С	625
+И	class	З	btn btn-primary active
+
+И	input	А	621	С	623
+И	type	З	checkbox	С	622
+И	checked	З	checked
+И	text	З	Checkbox 1
+
+И	label	А	626	Д	628	С	632
+И	class	З	btn btn-primary
+
+И	input	А	629	С	630
+И	type	З	checkbox
+И	text	З	Checkbox 2
+
+И	label	А	633	Д	635
+И	class	З	btn btn-primary
+
+И	input	А	636	С	637
+И	type	З	checkbox
+И	text	З	Checkbox 3
+
+
+
+И	div	А	642	Д	645	С	679
+И	class	З	bs-component	С	643
+И	style	З	margin-bottom: 15px;
+
+И	div	А	646	Д	649
+И	class	З	btn-group	С	647
+И	data_toggle	З	buttons
+
+И	label	А	650	Д	652	С	659
+И	class	З	btn btn-primary active
+
+И	input	А	653	С	657
+И	type	З	radio	С	654
+И	name	З	options	С	655
+И	id	З	option1	С	656
+И	checked	З	checked
+И	text	З	Radio 1
+
+И	label	А	660	Д	662	С	668
+И	class	З	btn btn-primary
+
+И	input	А	663	С	666
+И	type	З	radio	С	664
+И	name	З	options	С	665
+И	id	З	option2
+И	text	З	Radio 2
+
+И	label	А	669	Д	671
+И	class	З	btn btn-primary
+
+И	input	А	672	С	675
+И	type	З	radio	С	673
+И	name	З	options	С	674
+И	id	З	option3
+И	text	З	Radio 3
+
+
+
+И	div	А	680	Д	682	С	718
+И	class	З	bs-component
+
+И	div	А	683	Д	686
+И	class	З	btn-group-vertical	С	684
+И	data_toggle	З	buttons
+
+И	button	А	687	Д	689	С	691
+И	type	З	button	С	688
+И	class	З	btn btn-primary
+И	text	З	Button
+
+И	button	А	692	Д	694	С	696
+И	type	З	button	С	693
+И	class	З	btn btn-primary
+И	text	З	Button
+
+И	button	А	697	Д	699	С	701
+И	type	З	button	С	698
+И	class	З	btn btn-primary
+И	text	З	Button
+
+И	button	А	702	Д	704	С	706
+И	type	З	button	С	703
+И	class	З	btn btn-primary
+И	text	З	Button
+
+И	button	А	707	Д	709	С	711
+И	type	З	button	С	708
+И	class	З	btn btn-primary
+И	text	З	Button
+
+И	button	А	712	Д	714
+И	type	З	button	С	713
+И	class	З	btn btn-primary
+И	text	З	Button
+
+
+
+И	div	А	719	Д	722	С	744
+И	class	З	bs-component	С	720
+И	style	З	margin-bottom: 15px;
+
+И	div	А	723	Д	727
+И	class	З	btn-group	С	724
+И	role	З	group	С	725
+И	aria_label	З	Basic example
+
+И	button	А	728	Д	730	С	732
+И	type	З	button	С	729
+И	class	З	btn btn-secondary
+И	text	З	Left
+
+И	button	А	733	Д	735	С	737
+И	type	З	button	С	734
+И	class	З	btn btn-secondary
+И	text	З	Middle
+
+И	button	А	738	Д	740
+И	type	З	button	С	739
+И	class	З	btn btn-secondary
+И	text	З	Right
+
+
+
+И	div	А	745	Д	748
+И	class	З	bs-component	С	746
+И	style	З	margin-bottom: 15px;
+
+И	div	А	749	Д	753
+И	class	З	btn-toolbar	С	750
+И	role	З	toolbar	С	751
+И	aria_label	З	Toolbar with button groups
+
+И	div	А	754	Д	758	С	779
+И	class	З	btn-group mr-2	С	755
+И	role	З	group	С	756
+И	aria_label	З	First group
+
+И	button	А	759	Д	761	С	763
+И	type	З	button	С	760
+И	class	З	btn btn-secondary
+И	text	З	1
+
+И	button	А	764	Д	766	С	768
+И	type	З	button	С	765
+И	class	З	btn btn-secondary
+И	text	З	2
+
+И	button	А	769	Д	771	С	773
+И	type	З	button	С	770
+И	class	З	btn btn-secondary
+И	text	З	3
+
+И	button	А	774	Д	776
+И	type	З	button	С	775
+И	class	З	btn btn-secondary
+И	text	З	4
+
+
+И	div	А	780	Д	784	С	800
+И	class	З	btn-group mr-2	С	781
+И	role	З	group	С	782
+И	aria_label	З	Second group
+
+И	button	А	785	Д	787	С	789
+И	type	З	button	С	786
+И	class	З	btn btn-secondary
+И	text	З	5
+
+И	button	А	790	Д	792	С	794
+И	type	З	button	С	791
+И	class	З	btn btn-secondary
+И	text	З	6
+
+И	button	А	795	Д	797
+И	type	З	button	С	796
+И	class	З	btn btn-secondary
+И	text	З	7
+
+
+И	div	А	801	Д	805
+И	class	З	btn-group	С	802
+И	role	З	group	С	803
+И	aria_label	З	Third group
+
+И	button	А	806	Д	808
+И	type	З	button	С	807
+И	class	З	btn btn-secondary
+И	text	З	8
+
+
+
+
+
+
+
+И	comment	З	Typography      ==================================================	С	818
+
+И	div	А	819	Д	821	С	1041
+И	class	З	bs-docs-section
+
+И	div	А	822	Д	824	С	837
+И	class	З	row
+
+И	div	А	825	Д	827
+И	class	З	col-lg-12
+
+И	div	А	828	Д	830
+И	class	З	page-header
+
+И	h1	А	831	Д	832
+И	id	З	typography
+И	text	З	Typography
+
+
+
+
+И	comment	З	Headings	С	839
+
+И	div	А	840	Д	842	С	956
+И	class	З	row
+
+И	div	А	843	Д	845	С	879
+И	class	З	col-lg-4
+
+И	div	А	846	Д	848
+И	class	З	bs-component
+
+И	h1	Д	849	С	851
+И	text	З	Heading 1
+
+И	h2	Д	852	С	854
+И	text	З	Heading 2
+
+И	h3	Д	855	С	857
+И	text	З	Heading 3
+
+И	h4	Д	858	С	860
+И	text	З	Heading 4
+
+И	h5	Д	861	С	863
+И	text	З	Heading 5
+
+И	h6	Д	864	С	866
+И	text	З	Heading 6
+
+И	h3	Д	867	С	873
+И	text	З	Heading	С	868
+И	small	А	869	Д	870
+И	class	З	text-muted
+И	text	З	with muted text
+
+
+И	p	А	874	Д	875
+И	class	З	lead
+И	text	З	Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+
+
+И	div	А	880	Д	882	С	920
+И	class	З	col-lg-4
+
+И	div	А	883	Д	885
+И	class	З	bs-component
+
+И	h2	Д	886	С	888
+И	text	З	Example body text
+
+И	p	Д	889	С	895
+И	text	З	Nullam quis risus eget	С	890
+И	a	А	891	Д	892	С	893
+И	href	З	#
+И	text	З	urna mollis ornare
+И	text	З	vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+
+И	p	Д	896	С	899
+И	small	Д	897
+И	text	З	This line of text is meant to be treated as fine print.
+
+И	p	Д	900	С	905
+И	text	З	The following is	С	901
+И	strong	Д	902	С	903
+И	text	З	rendered as bold text
+И	text	З	.
+
+И	p	Д	906	С	911
+И	text	З	The following is	С	907
+И	em	Д	908	С	909
+И	text	З	rendered as italicized text
+И	text	З	.
+
+И	p	Д	912
+И	text	З	An abbreviation of the word attribute is	С	913
+И	abbr	А	914	Д	915	С	916
+И	title	З	attribute
+И	text	З	attr
+И	text	З	.
+
+
+
+И	div	А	921	Д	923
+И	class	З	col-lg-4
+
+И	div	А	924	Д	926
+И	class	З	bs-component
+
+И	h2	Д	927	С	929
+И	text	З	Emphasis classes
+
+И	p	А	930	Д	931	С	933
+И	class	З	text-muted
+И	text	З	Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.
+
+И	p	А	934	Д	935	С	937
+И	class	З	text-primary
+И	text	З	Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+И	p	А	938	Д	939	С	941
+И	class	З	text-warning
+И	text	З	Etiam porta sem malesuada magna mollis euismod.
+
+И	p	А	942	Д	943	С	945
+И	class	З	text-danger
+И	text	З	Donec ullamcorper nulla non metus auctor fringilla.
+
+И	p	А	946	Д	947	С	949
+И	class	З	text-success
+И	text	З	Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+
+И	p	А	950	Д	951
+И	class	З	text-info
+И	text	З	Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+
+
+
+И	comment	З	Blockquotes	С	958
+
+И	div	А	959	Д	961	С	970
+И	class	З	row
+
+И	div	А	962	Д	964
+И	class	З	col-lg-12
+
+И	h2	А	965	Д	966
+И	id	З	type-blockquotes
+И	text	З	Blockquotes
+
+
+
+И	div	А	971	Д	973
+И	class	З	row
+
+И	div	А	974	Д	976	С	995
+И	class	З	col-lg-4
+
+И	div	А	977	Д	979
+И	class	З	bs-component
+
+И	blockquote	А	980	Д	982
+И	class	З	blockquote
+
+И	p	А	983	Д	984	С	986
+И	class	З	mb-0
+И	text	З	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+И	footer	А	987	Д	988
+И	class	З	blockquote-footer
+И	text	З	Someone famous in	С	989
+И	cite	А	990	Д	991
+И	title	З	Source Title
+И	text	З	Source Title
+
+
+
+И	div	А	996	Д	998	С	1017
+И	class	З	col-lg-4
+
+И	div	А	999	Д	1001
+И	class	З	bs-component
+
+И	blockquote	А	1002	Д	1004
+И	class	З	blockquote text-center
+
+И	p	А	1005	Д	1006	С	1008
+И	class	З	mb-0
+И	text	З	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+И	footer	А	1009	Д	1010
+И	class	З	blockquote-footer
+И	text	З	Someone famous in	С	1011
+И	cite	А	1012	Д	1013
+И	title	З	Source Title
+И	text	З	Source Title
+
+
+
+И	div	А	1018	Д	1020
+И	class	З	col-lg-4
+
+И	div	А	1021	Д	1023
+И	class	З	bs-component
+
+И	blockquote	А	1024	Д	1026
+И	class	З	blockquote text-right
+
+И	p	А	1027	Д	1028	С	1030
+И	class	З	mb-0
+И	text	З	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+И	footer	А	1031	Д	1032
+И	class	З	blockquote-footer
+И	text	З	Someone famous in	С	1033
+И	cite	А	1034	Д	1035
+И	title	З	Source Title
+И	text	З	Source Title
+
+
+
+
+
+И	comment	З	Tables      ==================================================	С	1043
+
+И	div	А	1044	Д	1046	С	1182
+И	class	З	bs-docs-section
+
+И	div	А	1047	Д	1049
+И	class	З	row
+
+И	div	А	1050	Д	1052
+И	class	З	col-lg-12
+
+И	div	А	1053	Д	1055	С	1060
+И	class	З	page-header
+
+И	h1	А	1056	Д	1057
+И	id	З	tables
+И	text	З	Tables
+
+
+И	div	А	1061	Д	1063	С	1177
+И	class	З	bs-component
+
+И	table	А	1064	Д	1065
+И	class	З	table table-striped table-hover table-bordered
+И	thead	А	1066	Д	1067	С	1080
+И	class	З	thead-dark
+И	tr	Д	1068
+И	th	Д	1069	С	1071
+И	text	З	#
+
+И	th	Д	1072	С	1074
+И	text	З	Column heading
+
+И	th	Д	1075	С	1077
+И	text	З	Column heading
+
+И	th	Д	1078
+И	text	З	Column heading
+
+И	tbody	Д	1081
+И	tr	Д	1082	С	1094
+И	td	Д	1083	С	1085
+И	text	З	1
+
+И	td	Д	1086	С	1088
+И	text	З	Column content
+
+И	td	Д	1089	С	1091
+И	text	З	Column content
+
+И	td	Д	1092
+И	text	З	Column content
+
+И	tr	Д	1095	С	1107
+И	td	Д	1096	С	1098
+И	text	З	2
+
+И	td	Д	1099	С	1101
+И	text	З	Column content
+
+И	td	Д	1102	С	1104
+И	text	З	Column content
+
+И	td	Д	1105
+И	text	З	Column content
+
+И	tr	А	1108	Д	1109	С	1121
+И	class	З	table-info
+И	td	Д	1110	С	1112
+И	text	З	3
+
+И	td	Д	1113	С	1115
+И	text	З	Column content
+
+И	td	Д	1116	С	1118
+И	text	З	Column content
+
+И	td	Д	1119
+И	text	З	Column content
+
+И	tr	А	1122	Д	1123	С	1135
+И	class	З	table-success
+И	td	Д	1124	С	1126
+И	text	З	4
+
+И	td	Д	1127	С	1129
+И	text	З	Column content
+
+И	td	Д	1130	С	1132
+И	text	З	Column content
+
+И	td	Д	1133
+И	text	З	Column content
+
+И	tr	А	1136	Д	1137	С	1149
+И	class	З	table-danger
+И	td	Д	1138	С	1140
+И	text	З	5
+
+И	td	Д	1141	С	1143
+И	text	З	Column content
+
+И	td	Д	1144	С	1146
+И	text	З	Column content
+
+И	td	Д	1147
+И	text	З	Column content
+
+И	tr	А	1150	Д	1151	С	1163
+И	class	З	table-warning
+И	td	Д	1152	С	1154
+И	text	З	6
+
+И	td	Д	1155	С	1157
+И	text	З	Column content
+
+И	td	Д	1158	С	1160
+И	text	З	Column content
+
+И	td	Д	1161
+И	text	З	Column content
+
+И	tr	А	1164	Д	1165
+И	class	З	table-active
+И	td	Д	1166	С	1168
+И	text	З	7
+
+И	td	Д	1169	С	1171
+И	text	З	Column content
+
+И	td	Д	1172	С	1174
+И	text	З	Column content
+
+И	td	Д	1175
+И	text	З	Column content
+
+И	comment	З	/example
+
+
+
+
+И	comment	З	Forms      ==================================================	С	1184
+
+И	div	А	1185	Д	1187	С	1719
+И	class	З	bs-docs-section
+
+И	div	А	1188	Д	1190	С	1203
+И	class	З	row
+
+И	div	А	1191	Д	1193
+И	class	З	col-lg-12
+
+И	div	А	1194	Д	1196
+И	class	З	page-header
+
+И	h1	А	1197	Д	1198
+И	id	З	forms
+И	text	З	Forms
+
+
+
+
+И	div	А	1204	Д	1206
+И	class	З	row
+
+И	div	А	1207	Д	1209	С	1435
+И	class	З	col-lg-6
+
+И	div	А	1210	Д	1212
+И	class	З	bs-component
+
+И	form	Д	1214
+
+И	fieldset	Д	1215
+И	legend	Д	1216	С	1218
+И	text	З	Legend
+
+И	div	А	1219	Д	1221	С	1237
+И	class	З	form-group row
+
+И	label	А	1222	Д	1224	С	1226
+И	for	З	staticEmail	С	1223
+И	class	З	col-sm-2 col-form-label
+И	text	З	Email
+
+И	div	А	1227	Д	1229
+И	class	З	col-sm-10
+
+И	input	А	1230
+И	type	З	text	С	1231
+И	readonly	З	readonly	С	1232
+И	class	З	form-control-plaintext	С	1233
+И	id	З	staticEmail	С	1234
+И	value	З	email@example.com
+
+
+И	div	А	1238	Д	1240	С	1256
+И	class	З	form-group
+
+И	label	А	1241	Д	1242	С	1244
+И	for	З	exampleInputEmail1
+И	text	З	Email address
+
+И	input	А	1245	С	1250
+И	type	З	email	С	1246
+И	class	З	form-control	С	1247
+И	id	З	exampleInputEmail1	С	1248
+И	aria_describedby	З	emailHelp	С	1249
+И	placeholder	З	Enter email
+И	small	А	1251	Д	1253
+И	id	З	emailHelp	С	1252
+И	class	З	form-text text-muted
+И	text	З	We'll never share your email with anyone else.
+
+
+И	div	А	1257	Д	1259	С	1269
+И	class	З	form-group
+
+И	label	А	1260	Д	1261	С	1263
+И	for	З	exampleInputPassword1
+И	text	З	Password
+
+И	input	А	1264
+И	type	З	password	С	1265
+И	class	З	form-control	С	1266
+И	id	З	exampleInputPassword1	С	1267
+И	placeholder	З	Password
+
+И	div	А	1270	Д	1272	С	1290
+И	class	З	form-group
+
+И	label	А	1273	Д	1274	С	1276
+И	for	З	exampleSelect1
+И	text	З	Example select
+
+И	select	А	1277	Д	1279
+И	class	З	form-control	С	1278
+И	id	З	exampleSelect1
+И	option	Д	1280	С	1281
+И	text	З	1
+И	option	Д	1282	С	1283
+И	text	З	2
+И	option	Д	1284	С	1285
+И	text	З	3
+И	option	Д	1286	С	1287
+И	text	З	4
+И	option	Д	1288
+И	text	З	5
+
+И	div	А	1291	Д	1293	С	1312
+И	class	З	form-group
+
+И	label	А	1294	Д	1295	С	1297
+И	for	З	exampleSelect2
+И	text	З	Example multiple select
+
+И	select	А	1298	Д	1301
+И	multiple	З	multiple	С	1299
+И	class	З	form-control	С	1300
+И	id	З	exampleSelect2
+И	option	Д	1302	С	1303
+И	text	З	1
+И	option	Д	1304	С	1305
+И	text	З	2
+И	option	Д	1306	С	1307
+И	text	З	3
+И	option	Д	1308	С	1309
+И	text	З	4
+И	option	Д	1310
+И	text	З	5
+
+И	div	А	1313	Д	1315	С	1324
+И	class	З	form-group
+
+И	label	А	1316	Д	1317	С	1319
+И	for	З	exampleTextarea
+И	text	З	Example textarea
+
+И	textarea	А	1320
+И	class	З	form-control	С	1321
+И	id	З	exampleTextarea	С	1322
+И	rows	З	3
+
+И	div	А	1325	Д	1327	С	1342
+И	class	З	form-group
+
+И	label	А	1328	Д	1329	С	1331
+И	for	З	exampleInputFile
+И	text	З	File input
+
+И	input	А	1332	С	1336
+И	type	З	file	С	1333
+И	class	З	form-control-file	С	1334
+И	id	З	exampleInputFile	С	1335
+И	aria_describedby	З	fileHelp
+И	small	А	1337	Д	1339
+И	id	З	fileHelp	С	1338
+И	class	З	form-text text-muted
+И	text	З	This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
+
+
+И	fieldset	А	1343	Д	1344	С	1394
+И	class	З	form-group
+И	legend	Д	1345	С	1347
+И	text	З	Radio buttons
+
+И	div	А	1348	Д	1350	С	1363
+И	class	З	form-check
+
+И	label	А	1351	Д	1353
+И	class	З	form-check-label
+
+И	input	А	1354	С	1360
+И	type	З	radio	С	1355
+И	class	З	form-check-input	С	1356
+И	name	З	optionsRadios	С	1357
+И	id	З	optionsRadios1	С	1358
+И	value	З	option1	С	1359
+И	checked	З	checked
+И	text	З	Option one is this and that—be sure to include why it's great
+
+
+И	div	А	1364	Д	1366	С	1378
+И	class	З	form-check
+
+И	label	А	1367	Д	1369
+И	class	З	form-check-label
+
+И	input	А	1370	С	1375
+И	type	З	radio	С	1371
+И	class	З	form-check-input	С	1372
+И	name	З	optionsRadios	С	1373
+И	id	З	optionsRadios2	С	1374
+И	value	З	option2
+И	text	З	Option two can be something else and selecting it will deselect option one
+
+
+И	div	А	1379	Д	1381
+И	class	З	form-check disabled
+
+И	label	А	1382	Д	1384
+И	class	З	form-check-label
+
+И	input	А	1385	С	1391
+И	type	З	radio	С	1386
+И	class	З	form-check-input	С	1387
+И	name	З	optionsRadios	С	1388
+И	id	З	optionsRadios3	С	1389
+И	value	З	option3	С	1390
+И	disabled	З	disabled
+И	text	З	Option three is disabled
+
+
+И	fieldset	А	1395	Д	1396	С	1427
+И	class	З	form-group
+И	legend	Д	1397	С	1399
+И	text	З	Checkboxes
+
+И	div	А	1400	Д	1402	С	1413
+И	class	З	form-check
+
+И	label	А	1403	Д	1405
+И	class	З	form-check-label
+
+И	input	А	1406	С	1410
+И	class	З	form-check-input	С	1407
+И	type	З	checkbox	С	1408
+И	value	З	 	С	1409
+И	checked	З	checked
+И	text	З	Option one is this and that—be sure to include why it's great
+
+
+И	div	А	1414	Д	1416
+И	class	З	form-check disabled
+
+И	label	А	1417	Д	1419
+И	class	З	form-check-label
+
+И	input	А	1420	С	1424
+И	class	З	form-check-input	С	1421
+И	type	З	checkbox	С	1422
+И	value	З	 	С	1423
+И	disabled	З	disabled
+И	text	З	Option two is disabled
+
+
+И	button	А	1428	Д	1430
+И	type	З	submit	С	1429
+И	class	З	btn btn-primary
+И	text	З	Submit
+
+
+
+
+И	div	А	1436	Д	1438
+И	class	З	col-lg-4 offset-lg-1
+
+И	form	А	1439	Д	1441	С	1587
+И	class	З	bs-component
+
+И	div	А	1442	Д	1444	С	1458
+И	class	З	form-group
+
+И	fieldset	А	1445	Д	1446
+И	disabled	З	disabled
+И	label	А	1447	Д	1449	С	1451
+И	class	З	control-label	С	1448
+И	for	З	disabledInput
+И	text	З	Disabled input
+
+И	input	А	1452
+И	class	З	form-control	С	1453
+И	id	З	disabledInput	С	1454
+И	type	З	text	С	1455
+И	placeholder	З	Disabled input here...	С	1456
+И	disabled
+
+И	div	А	1459	Д	1461	С	1474
+И	class	З	form-group
+
+И	fieldset	Д	1462
+И	label	А	1463	Д	1465	С	1467
+И	class	З	control-label	С	1464
+И	for	З	readOnlyInput
+И	text	З	Readonly input
+
+И	input	А	1468
+И	class	З	form-control	С	1469
+И	id	З	readOnlyInput	С	1470
+И	type	З	text	С	1471
+И	placeholder	З	Readonly input here…	С	1472
+И	readonly	З	readonly
+
+И	div	А	1475	Д	1477	С	1492
+И	class	З	form-group has-success
+
+И	label	А	1478	Д	1480	С	1482
+И	class	З	form-control-label	С	1479
+И	for	З	inputSuccess1
+И	text	З	Valid input
+
+И	input	А	1483	С	1487
+И	type	З	text	С	1484
+И	value	З	correct value	С	1485
+И	class	З	form-control is-valid	С	1486
+И	id	З	inputValid
+И	div	А	1488	Д	1489
+И	class	З	valid-feedback
+И	text	З	Success! You've done it.
+
+
+И	div	А	1493	Д	1495	С	1510
+И	class	З	form-group has-danger
+
+И	label	А	1496	Д	1498	С	1500
+И	class	З	form-control-label	С	1497
+И	for	З	inputDanger1
+И	text	З	Invalid input
+
+И	input	А	1501	С	1505
+И	type	З	text	С	1502
+И	value	З	wrong value	С	1503
+И	class	З	form-control is-invalid	С	1504
+И	id	З	inputInvalid
+И	div	А	1506	Д	1507
+И	class	З	invalid-feedback
+И	text	З	Sorry, that username's taken. Try another?
+
+
+И	div	А	1511	Д	1513	С	1524
+И	class	З	form-group
+
+И	label	А	1514	Д	1516	С	1518
+И	class	З	col-form-label col-form-label-lg	С	1515
+И	for	З	inputLarge
+И	text	З	Large input
+
+И	input	А	1519
+И	class	З	form-control form-control-lg	С	1520
+И	type	З	text	С	1521
+И	placeholder	З	.form-control-lg	С	1522
+И	id	З	inputLarge
+
+И	div	А	1525	Д	1527	С	1538
+И	class	З	form-group
+
+И	label	А	1528	Д	1530	С	1532
+И	class	З	col-form-label	С	1529
+И	for	З	inputDefault
+И	text	З	Default input
+
+И	input	А	1533
+И	type	З	text	С	1534
+И	class	З	form-control	С	1535
+И	placeholder	З	Default input	С	1536
+И	id	З	inputDefault
+
+И	div	А	1539	Д	1541	С	1552
+И	class	З	form-group
+
+И	label	А	1542	Д	1544	С	1546
+И	class	З	col-form-label col-form-label-sm	С	1543
+И	for	З	inputSmall
+И	text	З	Small input
+
+И	input	А	1547
+И	class	З	form-control form-control-sm	С	1548
+И	type	З	text	С	1549
+И	placeholder	З	.form-control-sm	С	1550
+И	id	З	inputSmall
+
+И	div	А	1553	Д	1555
+И	class	З	form-group
+
+И	label	А	1556	Д	1557	С	1559
+И	class	З	control-label
+И	text	З	Input addons
+
+И	div	А	1560	Д	1562
+И	class	З	form-group
+
+И	label	А	1563	Д	1565	С	1567
+И	class	З	sr-only	С	1564
+И	for	З	exampleInputAmount
+И	text	З	Amount (in dollars)
+
+И	div	А	1568	Д	1570
+И	class	З	input-group
+
+И	div	А	1571	Д	1572	С	1574
+И	class	З	input-group-addon
+И	text	З	$
+
+И	input	А	1575	С	1579
+И	type	З	text	С	1576
+И	class	З	form-control	С	1577
+И	id	З	exampleInputAmount	С	1578
+И	placeholder	З	Amount
+И	div	А	1580	Д	1581
+И	class	З	input-group-addon
+И	text	З	.00
+
+
+
+
+
+И	div	А	1588	Д	1590
+И	class	З	bs-component
+
+И	fieldset	Д	1591
+И	legend	Д	1592	С	1594
+И	text	З	Custom forms
+
+И	div	А	1595	Д	1597	С	1648
+И	class	З	form-group
+
+И	label	А	1598	Д	1600	С	1614
+И	class	З	custom-control custom-radio
+
+И	input	А	1601	С	1606
+И	id	З	radio1	С	1602
+И	name	З	radio	С	1603
+И	type	З	radio	С	1604
+И	class	З	custom-control-input	С	1605
+И	checked	З	checked
+И	span	А	1607	С	1609
+И	class	З	custom-control-indicator
+
+И	span	А	1610	Д	1611
+И	class	З	custom-control-description
+И	text	З	Toggle this custom radio
+
+
+И	label	А	1615	Д	1617	С	1630
+И	class	З	custom-control custom-radio
+
+И	input	А	1618	С	1622
+И	id	З	radio2	С	1619
+И	name	З	radio	С	1620
+И	type	З	radio	С	1621
+И	class	З	custom-control-input
+И	span	А	1623	С	1625
+И	class	З	custom-control-indicator
+
+И	span	А	1626	Д	1627
+И	class	З	custom-control-description
+И	text	З	Or toggle this other custom radio
+
+
+И	label	А	1631	Д	1633
+И	class	З	custom-control custom-radio
+
+И	input	А	1634	С	1639
+И	id	З	radio3	С	1635
+И	name	З	radio	С	1636
+И	type	З	radio	С	1637
+И	class	З	custom-control-input	С	1638
+И	disabled	З	disabled
+И	span	А	1640	С	1642
+И	class	З	custom-control-indicator
+
+И	span	А	1643	Д	1644
+И	class	З	custom-control-description
+И	text	З	Disabled custom radio
+
+
+
+И	div	А	1649	Д	1651	С	1682
+И	class	З	form-group
+
+И	label	А	1652	Д	1654	С	1666
+И	class	З	custom-control custom-checkbox
+
+И	input	А	1655	С	1658
+И	type	З	checkbox	С	1656
+И	class	З	custom-control-input	С	1657
+И	checked	З	checked
+И	span	А	1659	С	1661
+И	class	З	custom-control-indicator
+
+И	span	А	1662	Д	1663
+И	class	З	custom-control-description
+И	text	З	Check this custom checkbox
+
+
+И	label	А	1667	Д	1669
+И	class	З	custom-control custom-checkbox
+
+И	input	А	1670	С	1673
+И	type	З	checkbox	С	1671
+И	class	З	custom-control-input	С	1672
+И	disabled	З	disabled
+И	span	А	1674	С	1676
+И	class	З	custom-control-indicator
+
+И	span	А	1677	Д	1678
+И	class	З	custom-control-description
+И	text	З	Disabled custom checkbox
+
+
+
+И	div	А	1683	Д	1685	С	1700
+И	class	З	form-group
+
+И	select	А	1686	Д	1687
+И	class	З	custom-select
+И	option	А	1688	Д	1689	С	1690
+И	selected	З	selected
+И	text	З	Open this select menu
+И	option	А	1691	Д	1692	С	1693
+И	value	З	1
+И	text	З	One
+И	option	А	1694	Д	1695	С	1696
+И	value	З	2
+И	text	З	Two
+И	option	А	1697	Д	1698
+И	value	З	3
+И	text	З	Three
+
+И	div	А	1701	Д	1703
+И	class	З	form-group
+
+И	label	А	1704	Д	1706
+И	class	З	custom-file
+
+И	input	А	1707	С	1710
+И	type	З	file	С	1708
+И	id	З	file2	С	1709
+И	class	З	custom-file-input
+И	span	А	1711
+И	class	З	custom-file-control
+
+
+
+
+
+
+
+И	comment	З	Navs      ==================================================	С	1721
+
+И	div	А	1722	Д	1724	С	2289
+И	class	З	bs-docs-section
+
+И	div	А	1725	Д	1727	С	1740
+И	class	З	row
+
+И	div	А	1728	Д	1730
+И	class	З	col-lg-12
+
+И	div	А	1731	Д	1733
+И	class	З	page-header
+
+И	h1	А	1734	Д	1735
+И	id	З	navs
+И	text	З	Navs
+
+
+
+
+И	div	А	1741	Д	1744	С	2020
+И	class	З	row	С	1742
+И	style	З	margin-bottom: 2rem;
+
+И	div	А	1745	Д	1747	С	1864
+И	class	З	col-lg-6
+
+И	h2	А	1748	Д	1749	С	1751
+И	id	З	nav-tabs
+И	text	З	Tabs
+
+И	div	А	1752	Д	1754
+И	class	З	bs-component
+
+И	ul	А	1755	Д	1756	С	1825
+И	class	З	nav nav-tabs
+И	li	А	1757	Д	1759	С	1766
+И	class	З	nav-item
+
+И	a	А	1760	Д	1763
+И	class	З	nav-link active	С	1761
+И	data_toggle	З	tab	С	1762
+И	href	З	#home
+И	text	З	Home
+
+
+И	li	А	1767	Д	1769	С	1776
+И	class	З	nav-item
+
+И	a	А	1770	Д	1773
+И	class	З	nav-link	С	1771
+И	data_toggle	З	tab	С	1772
+И	href	З	#profile
+И	text	З	Profile
+
+
+И	li	А	1777	Д	1779	С	1785
+И	class	З	nav-item
+
+И	a	А	1780	Д	1782
+И	class	З	nav-link disabled	С	1781
+И	href	З	#
+И	text	З	Disabled
+
+
+И	li	А	1786	Д	1788
+И	class	З	nav-item dropdown
+
+И	a	А	1789	Д	1795	С	1797
+И	class	З	nav-link dropdown-toggle	С	1790
+И	data_toggle	З	dropdown	С	1791
+И	href	З	#	С	1792
+И	role	З	button	С	1793
+И	aria_haspopup	З	true	С	1794
+И	aria_expanded	З	false
+И	text	З	Dropdown
+
+И	div	А	1798	Д	1800
+И	class	З	dropdown-menu
+
+И	a	А	1801	Д	1803	С	1805
+И	class	З	dropdown-item	С	1802
+И	href	З	#
+И	text	З	Action
+
+И	a	А	1806	Д	1808	С	1810
+И	class	З	dropdown-item	С	1807
+И	href	З	#
+И	text	З	Another action
+
+И	a	А	1811	Д	1813	С	1815
+И	class	З	dropdown-item	С	1812
+И	href	З	#
+И	text	З	Something else here
+
+И	div	А	1816	С	1818
+И	class	З	dropdown-divider
+
+И	a	А	1819	Д	1821
+И	class	З	dropdown-item	С	1820
+И	href	З	#
+И	text	З	Separated link
+
+
+
+И	div	А	1826	Д	1829
+И	id	З	myTabContent	С	1827
+И	class	З	tab-content
+
+И	div	А	1830	Д	1833	С	1837
+И	class	З	tab-pane fade show active	С	1831
+И	id	З	home
+
+И	p	Д	1834
+И	text	З	Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+
+
+И	div	А	1838	Д	1841	С	1845
+И	class	З	tab-pane fade	С	1839
+И	id	З	profile
+
+И	p	Д	1842
+И	text	З	Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.
+
+
+И	div	А	1846	Д	1849	С	1853
+И	class	З	tab-pane fade	С	1847
+И	id	З	dropdown1
+
+И	p	Д	1850
+И	text	З	Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.
+
+
+И	div	А	1854	Д	1857
+И	class	З	tab-pane fade	С	1855
+И	id	З	dropdown2
+
+И	p	Д	1858
+И	text	З	Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.
+
+
+
+
+
+И	div	А	1865	Д	1867
+И	class	З	col-lg-6
+
+И	h2	А	1868	Д	1869	С	1871
+И	id	З	nav-pills
+И	text	З	Pills
+
+И	div	А	1872	Д	1874	С	1944
+И	class	З	bs-component
+
+И	ul	А	1875	Д	1876
+И	class	З	nav nav-pills
+И	li	А	1877	Д	1879	С	1885
+И	class	З	nav-item
+
+И	a	А	1880	Д	1882
+И	class	З	nav-link active	С	1881
+И	href	З	#
+И	text	З	Active
+
+
+И	li	А	1886	Д	1888	С	1925
+И	class	З	nav-item dropdown
+
+И	a	А	1889	Д	1895	С	1897
+И	class	З	nav-link dropdown-toggle	С	1890
+И	data_toggle	З	dropdown	С	1891
+И	href	З	#	С	1892
+И	role	З	button	С	1893
+И	aria_haspopup	З	true	С	1894
+И	aria_expanded	З	false
+И	text	З	Dropdown
+
+И	div	А	1898	Д	1900
+И	class	З	dropdown-menu
+
+И	a	А	1901	Д	1903	С	1905
+И	class	З	dropdown-item	С	1902
+И	href	З	#
+И	text	З	Action
+
+И	a	А	1906	Д	1908	С	1910
+И	class	З	dropdown-item	С	1907
+И	href	З	#
+И	text	З	Another action
+
+И	a	А	1911	Д	1913	С	1915
+И	class	З	dropdown-item	С	1912
+И	href	З	#
+И	text	З	Something else here
+
+И	div	А	1916	С	1918
+И	class	З	dropdown-divider
+
+И	a	А	1919	Д	1921
+И	class	З	dropdown-item	С	1920
+И	href	З	#
+И	text	З	Separated link
+
+
+
+И	li	А	1926	Д	1928	С	1934
+И	class	З	nav-item
+
+И	a	А	1929	Д	1931
+И	class	З	nav-link	С	1930
+И	href	З	#
+И	text	З	Link
+
+
+И	li	А	1935	Д	1937
+И	class	З	nav-item
+
+И	a	А	1938	Д	1940
+И	class	З	nav-link disabled	С	1939
+И	href	З	#
+И	text	З	Disabled
+
+
+
+И	br	С	1945
+И	div	А	1946	Д	1948
+И	class	З	bs-component
+
+И	ul	А	1949	Д	1950
+И	class	З	nav nav-pills flex-column
+И	li	А	1951	Д	1953	С	1959
+И	class	З	nav-item
+
+И	a	А	1954	Д	1956
+И	class	З	nav-link active	С	1955
+И	href	З	#
+И	text	З	Active
+
+
+И	li	А	1960	Д	1962	С	1999
+И	class	З	nav-item dropdown
+
+И	a	А	1963	Д	1969	С	1971
+И	class	З	nav-link dropdown-toggle	С	1964
+И	data_toggle	З	dropdown	С	1965
+И	href	З	#	С	1966
+И	role	З	button	С	1967
+И	aria_haspopup	З	true	С	1968
+И	aria_expanded	З	false
+И	text	З	Dropdown
+
+И	div	А	1972	Д	1974
+И	class	З	dropdown-menu
+
+И	a	А	1975	Д	1977	С	1979
+И	class	З	dropdown-item	С	1976
+И	href	З	#
+И	text	З	Action
+
+И	a	А	1980	Д	1982	С	1984
+И	class	З	dropdown-item	С	1981
+И	href	З	#
+И	text	З	Another action
+
+И	a	А	1985	Д	1987	С	1989
+И	class	З	dropdown-item	С	1986
+И	href	З	#
+И	text	З	Something else here
+
+И	div	А	1990	С	1992
+И	class	З	dropdown-divider
+
+И	a	А	1993	Д	1995
+И	class	З	dropdown-item	С	1994
+И	href	З	#
+И	text	З	Separated link
+
+
+
+И	li	А	2000	Д	2002	С	2008
+И	class	З	nav-item
+
+И	a	А	2003	Д	2005
+И	class	З	nav-link	С	2004
+И	href	З	#
+И	text	З	Link
+
+
+И	li	А	2009	Д	2011
+И	class	З	nav-item
+
+И	a	А	2012	Д	2014
+И	class	З	nav-link disabled	С	2013
+И	href	З	#
+И	text	З	Disabled
+
+
+
+
+
+И	div	А	2021	Д	2023
+И	class	З	row
+
+И	div	А	2024	Д	2026	С	2071
+И	class	З	col-lg-6
+
+И	h2	А	2027	Д	2028	С	2030
+И	id	З	nav-breadcrumbs
+И	text	З	Breadcrumbs
+
+И	div	А	2031	Д	2033
+И	class	З	bs-component
+
+И	ol	А	2034	Д	2035	С	2039
+И	class	З	breadcrumb
+И	li	А	2036	Д	2037
+И	class	З	breadcrumb-item active
+И	text	З	Home
+
+И	ol	А	2040	Д	2041	С	2051
+И	class	З	breadcrumb
+И	li	А	2042	Д	2043	С	2047
+И	class	З	breadcrumb-item
+И	a	А	2044	Д	2045
+И	href	З	#
+И	text	З	Home
+
+И	li	А	2048	Д	2049
+И	class	З	breadcrumb-item active
+И	text	З	Library
+
+И	ol	А	2052	Д	2053
+И	class	З	breadcrumb
+И	li	А	2054	Д	2055	С	2059
+И	class	З	breadcrumb-item
+И	a	А	2056	Д	2057
+И	href	З	#
+И	text	З	Home
+
+И	li	А	2060	Д	2061	С	2065
+И	class	З	breadcrumb-item
+И	a	А	2062	Д	2063
+И	href	З	#
+И	text	З	Library
+
+И	li	А	2066	Д	2067
+И	class	З	breadcrumb-item active
+И	text	З	Data
+
+
+
+И	div	А	2072	Д	2074
+И	class	З	col-lg-6
+
+И	h2	А	2075	Д	2076	С	2078
+И	id	З	pagination
+И	text	З	Pagination
+
+И	div	А	2079	Д	2081
+И	class	З	bs-component
+
+И	div	Д	2083	С	2149
+
+И	ul	А	2084	Д	2085
+И	class	З	pagination
+И	li	А	2086	Д	2088	С	2094
+И	class	З	page-item disabled
+
+И	a	А	2089	Д	2091
+И	class	З	page-link	С	2090
+И	href	З	#
+И	text	З	«
+
+
+И	li	А	2095	Д	2097	С	2103
+И	class	З	page-item active
+
+И	a	А	2098	Д	2100
+И	class	З	page-link	С	2099
+И	href	З	#
+И	text	З	1
+
+
+И	li	А	2104	Д	2106	С	2112
+И	class	З	page-item
+
+И	a	А	2107	Д	2109
+И	class	З	page-link	С	2108
+И	href	З	#
+И	text	З	2
+
+
+И	li	А	2113	Д	2115	С	2121
+И	class	З	page-item
+
+И	a	А	2116	Д	2118
+И	class	З	page-link	С	2117
+И	href	З	#
+И	text	З	3
+
+
+И	li	А	2122	Д	2124	С	2130
+И	class	З	page-item
+
+И	a	А	2125	Д	2127
+И	class	З	page-link	С	2126
+И	href	З	#
+И	text	З	4
+
+
+И	li	А	2131	Д	2133	С	2139
+И	class	З	page-item
+
+И	a	А	2134	Д	2136
+И	class	З	page-link	С	2135
+И	href	З	#
+И	text	З	5
+
+
+И	li	А	2140	Д	2142
+И	class	З	page-item
+
+И	a	А	2143	Д	2145
+И	class	З	page-link	С	2144
+И	href	З	#
+И	text	З	»
+
+
+
+И	div	Д	2151	С	2217
+
+И	ul	А	2152	Д	2153
+И	class	З	pagination pagination-lg
+И	li	А	2154	Д	2156	С	2162
+И	class	З	page-item disabled
+
+И	a	А	2157	Д	2159
+И	class	З	page-link	С	2158
+И	href	З	#
+И	text	З	«
+
+
+И	li	А	2163	Д	2165	С	2171
+И	class	З	page-item active
+
+И	a	А	2166	Д	2168
+И	class	З	page-link	С	2167
+И	href	З	#
+И	text	З	1
+
+
+И	li	А	2172	Д	2174	С	2180
+И	class	З	page-item
+
+И	a	А	2175	Д	2177
+И	class	З	page-link	С	2176
+И	href	З	#
+И	text	З	2
+
+
+И	li	А	2181	Д	2183	С	2189
+И	class	З	page-item
+
+И	a	А	2184	Д	2186
+И	class	З	page-link	С	2185
+И	href	З	#
+И	text	З	3
+
+
+И	li	А	2190	Д	2192	С	2198
+И	class	З	page-item
+
+И	a	А	2193	Д	2195
+И	class	З	page-link	С	2194
+И	href	З	#
+И	text	З	4
+
+
+И	li	А	2199	Д	2201	С	2207
+И	class	З	page-item
+
+И	a	А	2202	Д	2204
+И	class	З	page-link	С	2203
+И	href	З	#
+И	text	З	5
+
+
+И	li	А	2208	Д	2210
+И	class	З	page-item
+
+И	a	А	2211	Д	2213
+И	class	З	page-link	С	2212
+И	href	З	#
+И	text	З	»
+
+
+
+И	div	Д	2219
+
+И	ul	А	2220	Д	2221
+И	class	З	pagination pagination-sm
+И	li	А	2222	Д	2224	С	2230
+И	class	З	page-item disabled
+
+И	a	А	2225	Д	2227
+И	class	З	page-link	С	2226
+И	href	З	#
+И	text	З	«
+
+
+И	li	А	2231	Д	2233	С	2239
+И	class	З	page-item active
+
+И	a	А	2234	Д	2236
+И	class	З	page-link	С	2235
+И	href	З	#
+И	text	З	1
+
+
+И	li	А	2240	Д	2242	С	2248
+И	class	З	page-item
+
+И	a	А	2243	Д	2245
+И	class	З	page-link	С	2244
+И	href	З	#
+И	text	З	2
+
+
+И	li	А	2249	Д	2251	С	2257
+И	class	З	page-item
+
+И	a	А	2252	Д	2254
+И	class	З	page-link	С	2253
+И	href	З	#
+И	text	З	3
+
+
+И	li	А	2258	Д	2260	С	2266
+И	class	З	page-item
+
+И	a	А	2261	Д	2263
+И	class	З	page-link	С	2262
+И	href	З	#
+И	text	З	4
+
+
+И	li	А	2267	Д	2269	С	2275
+И	class	З	page-item
+
+И	a	А	2270	Д	2272
+И	class	З	page-link	С	2271
+И	href	З	#
+И	text	З	5
+
+
+И	li	А	2276	Д	2278
+И	class	З	page-item
+
+И	a	А	2279	Д	2281
+И	class	З	page-link	С	2280
+И	href	З	#
+И	text	З	»
+
+
+
+
+
+
+
+И	comment	З	Indicators      ==================================================	С	2291
+
+И	div	А	2292	Д	2294	С	2510
+И	class	З	bs-docs-section
+
+И	div	А	2295	Д	2297	С	2310
+И	class	З	row
+
+И	div	А	2298	Д	2300
+И	class	З	col-lg-12
+
+И	div	А	2301	Д	2303
+И	class	З	page-header
+
+И	h1	А	2304	Д	2305
+И	id	З	indicators
+И	text	З	Indicators
+
+
+
+
+И	div	А	2311	Д	2313	С	2348
+И	class	З	row
+
+И	div	А	2314	Д	2316
+И	class	З	col-lg-12
+
+И	h2	Д	2317	С	2319
+И	text	З	Alerts
+
+И	div	А	2320	Д	2322
+И	class	З	bs-component
+
+И	div	А	2323	Д	2325
+И	class	З	alert alert-dismissible alert-warning
+
+И	button	А	2326	Д	2329	С	2331
+И	type	З	button	С	2327
+И	class	З	close	С	2328
+И	data_dismiss	З	alert
+И	text	З	×
+
+И	h4	А	2332	Д	2333	С	2335
+И	class	З	alert-heading
+И	text	З	Warning!
+
+И	p	А	2336	Д	2337
+И	class	З	mb-0
+И	text	З	Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna,	С	2338
+И	a	А	2339	Д	2341	С	2342
+И	href	З	#	С	2340
+И	class	З	alert-link
+И	text	З	vel scelerisque nisl consectetur et
+И	text	З	.
+
+
+
+
+
+И	div	А	2349	Д	2351	С	2430
+И	class	З	row
+
+И	div	А	2352	Д	2354	С	2377
+И	class	З	col-lg-4
+
+И	div	А	2355	Д	2357
+И	class	З	bs-component
+
+И	div	А	2358	Д	2360
+И	class	З	alert alert-dismissible alert-danger
+
+И	button	А	2361	Д	2364	С	2366
+И	type	З	button	С	2362
+И	class	З	close	С	2363
+И	data_dismiss	З	alert
+И	text	З	×
+
+И	strong	Д	2367	С	2369
+И	text	З	Oh snap!
+
+И	a	А	2370	Д	2372	С	2373
+И	href	З	#	С	2371
+И	class	З	alert-link
+И	text	З	Change a few things up
+И	text	З	and try submitting again.
+
+
+
+И	div	А	2378	Д	2380	С	2403
+И	class	З	col-lg-4
+
+И	div	А	2381	Д	2383
+И	class	З	bs-component
+
+И	div	А	2384	Д	2386
+И	class	З	alert alert-dismissible alert-success
+
+И	button	А	2387	Д	2390	С	2392
+И	type	З	button	С	2388
+И	class	З	close	С	2389
+И	data_dismiss	З	alert
+И	text	З	×
+
+И	strong	Д	2393	С	2394
+И	text	З	Well done!
+И	text	З	You successfully read	С	2395
+И	a	А	2396	Д	2398	С	2399
+И	href	З	#	С	2397
+И	class	З	alert-link
+И	text	З	this important alert message
+И	text	З	.
+
+
+
+И	div	А	2404	Д	2406
+И	class	З	col-lg-4
+
+И	div	А	2407	Д	2409
+И	class	З	bs-component
+
+И	div	А	2410	Д	2412
+И	class	З	alert alert-dismissible alert-info
+
+И	button	А	2413	Д	2416	С	2418
+И	type	З	button	С	2414
+И	class	З	close	С	2415
+И	data_dismiss	З	alert
+И	text	З	×
+
+И	strong	Д	2419	С	2420
+И	text	З	Heads up!
+И	text	З	This	С	2421
+И	a	А	2422	Д	2424	С	2425
+И	href	З	#	С	2423
+И	class	З	alert-link
+И	text	З	alert needs your attention
+И	text	З	, but it's not super important.
+
+
+
+
+И	div	Д	2432
+
+И	h2	Д	2433	С	2435
+И	text	З	Badges
+
+И	div	А	2436	Д	2439	С	2472
+И	class	З	bs-component	С	2437
+И	style	З	margin-bottom: 40px;
+
+И	span	А	2440	Д	2441	С	2443
+И	class	З	badge badge-primary
+И	text	З	Primary
+
+И	span	А	2444	Д	2445	С	2447
+И	class	З	badge badge-secondary
+И	text	З	Secondary
+
+И	span	А	2448	Д	2449	С	2451
+И	class	З	badge badge-success
+И	text	З	Success
+
+И	span	А	2452	Д	2453	С	2455
+И	class	З	badge badge-danger
+И	text	З	Danger
+
+И	span	А	2456	Д	2457	С	2459
+И	class	З	badge badge-warning
+И	text	З	Warning
+
+И	span	А	2460	Д	2461	С	2463
+И	class	З	badge badge-info
+И	text	З	Info
+
+И	span	А	2464	Д	2465	С	2467
+И	class	З	badge badge-light
+И	text	З	Light
+
+И	span	А	2468	Д	2469
+И	class	З	badge badge-dark
+И	text	З	Dark
+
+
+И	div	А	2473	Д	2475
+И	class	З	bs-component
+
+И	span	А	2476	Д	2477	С	2479
+И	class	З	badge badge-pill badge-primary
+И	text	З	Primary
+
+И	span	А	2480	Д	2481	С	2483
+И	class	З	badge badge-pill badge-secondary
+И	text	З	Secondary
+
+И	span	А	2484	Д	2485	С	2487
+И	class	З	badge badge-pill badge-success
+И	text	З	Success
+
+И	span	А	2488	Д	2489	С	2491
+И	class	З	badge badge-pill badge-danger
+И	text	З	Danger
+
+И	span	А	2492	Д	2493	С	2495
+И	class	З	badge badge-pill badge-warning
+И	text	З	Warning
+
+И	span	А	2496	Д	2497	С	2499
+И	class	З	badge badge-pill badge-info
+И	text	З	Info
+
+И	span	А	2500	Д	2501	С	2503
+И	class	З	badge badge-pill badge-light
+И	text	З	Light
+
+И	span	А	2504	Д	2505
+И	class	З	badge badge-pill badge-dark
+И	text	З	Dark
+
+
+
+
+И	comment	З	Progress      ==================================================	С	2512
+
+И	div	А	2513	Д	2515	С	2732
+И	class	З	bs-docs-section
+
+И	div	А	2516	Д	2518
+И	class	З	row
+
+И	div	А	2519	Д	2521
+И	class	З	col-lg-12
+
+И	div	А	2522	Д	2524	С	2529
+И	class	З	page-header
+
+И	h1	А	2525	Д	2526
+И	id	З	progress
+И	text	З	Progress
+
+
+И	h3	А	2530	Д	2531	С	2533
+И	id	З	progress-basic
+И	text	З	Basic
+
+И	div	А	2534	Д	2536	С	2549
+И	class	З	bs-component
+
+И	div	А	2537	Д	2539
+И	class	З	progress
+
+И	div	А	2540
+И	class	З	progress-bar	С	2541
+И	role	З	progressbar	С	2542
+И	style	З	width: 25%;	С	2543
+И	aria_valuenow	З	25	С	2544
+И	aria_valuemin	З	0	С	2545
+И	aria_valuemax	З	100
+
+
+
+И	h3	А	2550	Д	2551	С	2553
+И	id	З	progress-alternatives
+И	text	З	Contextual alternatives
+
+И	div	А	2554	Д	2556	С	2605
+И	class	З	bs-component
+
+И	div	А	2557	Д	2559	С	2568
+И	class	З	progress
+
+И	div	А	2560
+И	class	З	progress-bar bg-success	С	2561
+И	role	З	progressbar	С	2562
+И	style	З	width: 25%	С	2563
+И	aria_valuenow	З	25	С	2564
+И	aria_valuemin	З	0	С	2565
+И	aria_valuemax	З	100
+
+
+И	div	А	2569	Д	2571	С	2580
+И	class	З	progress
+
+И	div	А	2572
+И	class	З	progress-bar bg-info	С	2573
+И	role	З	progressbar	С	2574
+И	style	З	width: 50%	С	2575
+И	aria_valuenow	З	50	С	2576
+И	aria_valuemin	З	0	С	2577
+И	aria_valuemax	З	100
+
+
+И	div	А	2581	Д	2583	С	2592
+И	class	З	progress
+
+И	div	А	2584
+И	class	З	progress-bar bg-warning	С	2585
+И	role	З	progressbar	С	2586
+И	style	З	width: 75%	С	2587
+И	aria_valuenow	З	75	С	2588
+И	aria_valuemin	З	0	С	2589
+И	aria_valuemax	З	100
+
+
+И	div	А	2593	Д	2595
+И	class	З	progress
+
+И	div	А	2596
+И	class	З	progress-bar bg-danger	С	2597
+И	role	З	progressbar	С	2598
+И	style	З	width: 100%	С	2599
+И	aria_valuenow	З	100	С	2600
+И	aria_valuemin	З	0	С	2601
+И	aria_valuemax	З	100
+
+
+
+И	h3	А	2606	Д	2607	С	2609
+И	id	З	progress-multiple
+И	text	З	Multiple bars
+
+И	div	А	2610	Д	2612	С	2641
+И	class	З	bs-component
+
+И	div	А	2613	Д	2615
+И	class	З	progress
+
+И	div	А	2616	С	2623
+И	class	З	progress-bar	С	2617
+И	role	З	progressbar	С	2618
+И	style	З	width: 15%	С	2619
+И	aria_valuenow	З	15	С	2620
+И	aria_valuemin	З	0	С	2621
+И	aria_valuemax	З	100
+
+И	div	А	2624	С	2631
+И	class	З	progress-bar bg-success	С	2625
+И	role	З	progressbar	С	2626
+И	style	З	width: 30%	С	2627
+И	aria_valuenow	З	30	С	2628
+И	aria_valuemin	З	0	С	2629
+И	aria_valuemax	З	100
+
+И	div	А	2632
+И	class	З	progress-bar bg-info	С	2633
+И	role	З	progressbar	С	2634
+И	style	З	width: 20%	С	2635
+И	aria_valuenow	З	20	С	2636
+И	aria_valuemin	З	0	С	2637
+И	aria_valuemax	З	100
+
+
+
+И	h3	А	2642	Д	2643	С	2645
+И	id	З	progress-striped
+И	text	З	Striped
+
+И	div	А	2646	Д	2648	С	2709
+И	class	З	bs-component
+
+И	div	А	2649	Д	2651	С	2660
+И	class	З	progress
+
+И	div	А	2652
+И	class	З	progress-bar progress-bar-striped	С	2653
+И	role	З	progressbar	С	2654
+И	style	З	width: 10%	С	2655
+И	aria_valuenow	З	10	С	2656
+И	aria_valuemin	З	0	С	2657
+И	aria_valuemax	З	100
+
+
+И	div	А	2661	Д	2663	С	2672
+И	class	З	progress
+
+И	div	А	2664
+И	class	З	progress-bar progress-bar-striped bg-success	С	2665
+И	role	З	progressbar	С	2666
+И	style	З	width: 25%	С	2667
+И	aria_valuenow	З	25	С	2668
+И	aria_valuemin	З	0	С	2669
+И	aria_valuemax	З	100
+
+
+И	div	А	2673	Д	2675	С	2684
+И	class	З	progress
+
+И	div	А	2676
+И	class	З	progress-bar progress-bar-striped bg-info	С	2677
+И	role	З	progressbar	С	2678
+И	style	З	width: 50%	С	2679
+И	aria_valuenow	З	50	С	2680
+И	aria_valuemin	З	0	С	2681
+И	aria_valuemax	З	100
+
+
+И	div	А	2685	Д	2687	С	2696
+И	class	З	progress
+
+И	div	А	2688
+И	class	З	progress-bar progress-bar-striped bg-warning	С	2689
+И	role	З	progressbar	С	2690
+И	style	З	width: 75%	С	2691
+И	aria_valuenow	З	75	С	2692
+И	aria_valuemin	З	0	С	2693
+И	aria_valuemax	З	100
+
+
+И	div	А	2697	Д	2699
+И	class	З	progress
+
+И	div	А	2700
+И	class	З	progress-bar progress-bar-striped bg-danger	С	2701
+И	role	З	progressbar	С	2702
+И	style	З	width: 100%	С	2703
+И	aria_valuenow	З	100	С	2704
+И	aria_valuemin	З	0	С	2705
+И	aria_valuemax	З	100
+
+
+
+И	h3	А	2710	Д	2711	С	2713
+И	id	З	progress-animated
+И	text	З	Animated
+
+И	div	А	2714	Д	2716
+И	class	З	bs-component
+
+И	div	А	2717	Д	2719
+И	class	З	progress
+
+И	div	А	2720
+И	class	З	progress-bar progress-bar-striped progress-bar-animated	С	2721
+И	role	З	progressbar	С	2722
+И	aria_valuenow	З	75	С	2723
+И	aria_valuemin	З	0	С	2724
+И	aria_valuemax	З	100	С	2725
+И	style	З	width: 75%
+
+
+
+
+
+
+И	comment	З	Containers      ==================================================	С	2734
+
+И	div	А	2735	Д	2737	С	3390
+И	class	З	bs-docs-section
+
+И	div	А	2738	Д	2740	С	2784
+И	class	З	row
+
+И	div	А	2741	Д	2743
+И	class	З	col-lg-12
+
+И	div	А	2744	Д	2746	С	2751
+И	class	З	page-header
+
+И	h1	А	2747	Д	2748
+И	id	З	containers
+И	text	З	Containers
+
+
+И	div	А	2752	Д	2754
+И	class	З	bs-component
+
+И	div	А	2755	Д	2757
+И	class	З	jumbotron
+
+И	h1	А	2758	Д	2759	С	2761
+И	class	З	display-3
+И	text	З	Hello, world!
+
+И	p	А	2762	Д	2763	С	2765
+И	class	З	lead
+И	text	З	This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+
+И	hr	А	2766	С	2767
+И	class	З	my-4
+И	p	Д	2768	С	2770
+И	text	З	It uses utility classes for typography and spacing to space content out within the larger container.
+
+И	p	А	2771	Д	2773
+И	class	З	lead
+
+И	a	А	2774	Д	2777
+И	class	З	btn btn-primary btn-lg	С	2775
+И	href	З	#	С	2776
+И	role	З	button
+И	text	З	Learn more
+
+
+
+
+
+
+И	div	А	2785	Д	2787	С	2795
+И	class	З	row
+
+И	div	А	2788	Д	2790
+И	class	З	col-lg-12
+
+И	h2	Д	2791
+И	text	З	List groups
+
+
+
+И	div	А	2796	Д	2798	С	2920
+И	class	З	row
+
+И	div	А	2799	Д	2801	С	2832
+И	class	З	col-lg-4
+
+И	div	А	2802	Д	2804
+И	class	З	bs-component
+
+И	ul	А	2805	Д	2806
+И	class	З	list-group
+И	li	А	2807	Д	2808	С	2814
+И	class	З	list-group-item d-flex justify-content-between align-items-center
+И	text	З	Cras justo odio	С	2809
+И	span	А	2810	Д	2811
+И	class	З	badge badge-primary badge-pill
+И	text	З	14
+
+
+И	li	А	2815	Д	2816	С	2822
+И	class	З	list-group-item d-flex justify-content-between align-items-center
+И	text	З	Dapibus ac facilisis in	С	2817
+И	span	А	2818	Д	2819
+И	class	З	badge badge-primary badge-pill
+И	text	З	2
+
+
+И	li	А	2823	Д	2824
+И	class	З	list-group-item d-flex justify-content-between align-items-center
+И	text	З	Morbi leo risus	С	2825
+И	span	А	2826	Д	2827
+И	class	З	badge badge-primary badge-pill
+И	text	З	1
+
+
+
+
+И	div	А	2833	Д	2835	С	2859
+И	class	З	col-lg-4
+
+И	div	А	2836	Д	2838
+И	class	З	bs-component
+
+И	div	А	2839	Д	2841
+И	class	З	list-group
+
+И	a	А	2842	Д	2844	С	2846
+И	href	З	#	С	2843
+И	class	З	list-group-item list-group-item-action active
+И	text	З	Cras justo odio
+
+И	a	А	2847	Д	2849	С	2851
+И	href	З	#	С	2848
+И	class	З	list-group-item list-group-item-action
+И	text	З	Dapibus ac facilisis in
+
+И	a	А	2852	Д	2854
+И	href	З	#	С	2853
+И	class	З	list-group-item list-group-item-action disabled
+И	text	З	Morbi leo risus
+
+
+
+
+И	div	А	2860	Д	2862
+И	class	З	col-lg-4
+
+И	div	А	2863	Д	2865
+И	class	З	bs-component
+
+И	div	А	2866	Д	2868
+И	class	З	list-group
+
+И	a	А	2869	Д	2872	С	2891
+И	href	З	#	С	2870
+И	class	З	list-group-item list-group-item-action flex-column align-items-start active
+
+И	div	А	2873	Д	2875	С	2883
+И	class	З	d-flex w-100 justify-content-between
+
+И	h5	А	2876	Д	2877	С	2879
+И	class	З	mb-1
+И	text	З	List group item heading
+
+И	small	Д	2880
+И	text	З	3 days ago
+
+
+И	p	А	2884	Д	2885	С	2887
+И	class	З	mb-1
+И	text	З	Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+И	small	Д	2888
+И	text	З	Donec id elit non mi porta.
+
+
+И	a	А	2892	Д	2895
+И	href	З	#	С	2893
+И	class	З	list-group-item list-group-item-action flex-column align-items-start
+
+И	div	А	2896	Д	2898	С	2907
+И	class	З	d-flex w-100 justify-content-between
+
+И	h5	А	2899	Д	2900	С	2902
+И	class	З	mb-1
+И	text	З	List group item heading
+
+И	small	А	2903	Д	2904
+И	class	З	text-muted
+И	text	З	3 days ago
+
+
+И	p	А	2908	Д	2909	С	2911
+И	class	З	mb-1
+И	text	З	Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+И	small	А	2912	Д	2913
+И	class	З	text-muted
+И	text	З	Donec id elit non mi porta.
+
+
+
+
+
+
+И	div	А	2921	Д	2923	С	2931
+И	class	З	row
+
+И	div	А	2924	Д	2926
+И	class	З	col-lg-12
+
+И	h2	Д	2927
+И	text	З	Cards
+
+
+
+И	div	А	2932	Д	2934
+И	class	З	row
+
+И	div	А	2935	Д	2937	С	3110
+И	class	З	col-lg-4
+
+И	div	А	2938	Д	2940
+И	class	З	bs-component
+
+И	div	А	2941	Д	2944	С	2961
+И	class	З	card text-white bg-primary mb-3	С	2942
+И	style	З	max-width: 20rem;
+
+И	div	А	2945	Д	2946	С	2948
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	2949	Д	2951
+И	class	З	card-body
+
+И	h4	А	2952	Д	2953	С	2955
+И	class	З	card-title
+И	text	З	Primary card title
+
+И	p	А	2956	Д	2957
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	2962	Д	2965	С	2982
+И	class	З	card text-white bg-secondary mb-3	С	2963
+И	style	З	max-width: 20rem;
+
+И	div	А	2966	Д	2967	С	2969
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	2970	Д	2972
+И	class	З	card-body
+
+И	h4	А	2973	Д	2974	С	2976
+И	class	З	card-title
+И	text	З	Secondary card title
+
+И	p	А	2977	Д	2978
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	2983	Д	2986	С	3003
+И	class	З	card text-white bg-success mb-3	С	2984
+И	style	З	max-width: 20rem;
+
+И	div	А	2987	Д	2988	С	2990
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	2991	Д	2993
+И	class	З	card-body
+
+И	h4	А	2994	Д	2995	С	2997
+И	class	З	card-title
+И	text	З	Success card title
+
+И	p	А	2998	Д	2999
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3004	Д	3007	С	3024
+И	class	З	card text-white bg-danger mb-3	С	3005
+И	style	З	max-width: 20rem;
+
+И	div	А	3008	Д	3009	С	3011
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3012	Д	3014
+И	class	З	card-body
+
+И	h4	А	3015	Д	3016	С	3018
+И	class	З	card-title
+И	text	З	Danger card title
+
+И	p	А	3019	Д	3020
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3025	Д	3028	С	3045
+И	class	З	card text-white bg-warning mb-3	С	3026
+И	style	З	max-width: 20rem;
+
+И	div	А	3029	Д	3030	С	3032
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3033	Д	3035
+И	class	З	card-body
+
+И	h4	А	3036	Д	3037	С	3039
+И	class	З	card-title
+И	text	З	Warning card title
+
+И	p	А	3040	Д	3041
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3046	Д	3049	С	3066
+И	class	З	card text-white bg-info mb-3	С	3047
+И	style	З	max-width: 20rem;
+
+И	div	А	3050	Д	3051	С	3053
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3054	Д	3056
+И	class	З	card-body
+
+И	h4	А	3057	Д	3058	С	3060
+И	class	З	card-title
+И	text	З	Info card title
+
+И	p	А	3061	Д	3062
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3067	Д	3070	С	3087
+И	class	З	card bg-light mb-3	С	3068
+И	style	З	max-width: 20rem;
+
+И	div	А	3071	Д	3072	С	3074
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3075	Д	3077
+И	class	З	card-body
+
+И	h4	А	3078	Д	3079	С	3081
+И	class	З	card-title
+И	text	З	Light card title
+
+И	p	А	3082	Д	3083
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3088	Д	3091
+И	class	З	card text-white bg-dark mb-3	С	3089
+И	style	З	max-width: 20rem;
+
+И	div	А	3092	Д	3093	С	3095
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3096	Д	3098
+И	class	З	card-body
+
+И	h4	А	3099	Д	3100	С	3102
+И	class	З	card-title
+И	text	З	Dark card title
+
+И	p	А	3103	Д	3104
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+
+
+И	div	А	3111	Д	3113	С	3286
+И	class	З	col-lg-4
+
+И	div	А	3114	Д	3116
+И	class	З	bs-component
+
+И	div	А	3117	Д	3120	С	3137
+И	class	З	card border-primary mb-3	С	3118
+И	style	З	max-width: 20rem;
+
+И	div	А	3121	Д	3122	С	3124
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3125	Д	3127
+И	class	З	card-body text-primary
+
+И	h4	А	3128	Д	3129	С	3131
+И	class	З	card-title
+И	text	З	Primary card title
+
+И	p	А	3132	Д	3133
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3138	Д	3141	С	3158
+И	class	З	card border-secondary mb-3	С	3139
+И	style	З	max-width: 20rem;
+
+И	div	А	3142	Д	3143	С	3145
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3146	Д	3148
+И	class	З	card-body text-secondary
+
+И	h4	А	3149	Д	3150	С	3152
+И	class	З	card-title
+И	text	З	Secondary card title
+
+И	p	А	3153	Д	3154
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3159	Д	3162	С	3179
+И	class	З	card border-success mb-3	С	3160
+И	style	З	max-width: 20rem;
+
+И	div	А	3163	Д	3164	С	3166
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3167	Д	3169
+И	class	З	card-body text-success
+
+И	h4	А	3170	Д	3171	С	3173
+И	class	З	card-title
+И	text	З	Success card title
+
+И	p	А	3174	Д	3175
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3180	Д	3183	С	3200
+И	class	З	card border-danger mb-3	С	3181
+И	style	З	max-width: 20rem;
+
+И	div	А	3184	Д	3185	С	3187
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3188	Д	3190
+И	class	З	card-body text-danger
+
+И	h4	А	3191	Д	3192	С	3194
+И	class	З	card-title
+И	text	З	Danger card title
+
+И	p	А	3195	Д	3196
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3201	Д	3204	С	3221
+И	class	З	card border-warning mb-3	С	3202
+И	style	З	max-width: 20rem;
+
+И	div	А	3205	Д	3206	С	3208
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3209	Д	3211
+И	class	З	card-body text-warning
+
+И	h4	А	3212	Д	3213	С	3215
+И	class	З	card-title
+И	text	З	Warning card title
+
+И	p	А	3216	Д	3217
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3222	Д	3225	С	3242
+И	class	З	card border-info mb-3	С	3223
+И	style	З	max-width: 20rem;
+
+И	div	А	3226	Д	3227	С	3229
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3230	Д	3232
+И	class	З	card-body text-info
+
+И	h4	А	3233	Д	3234	С	3236
+И	class	З	card-title
+И	text	З	Info card title
+
+И	p	А	3237	Д	3238
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3243	Д	3246	С	3263
+И	class	З	card border-light mb-3	С	3244
+И	style	З	max-width: 20rem;
+
+И	div	А	3247	Д	3248	С	3250
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3251	Д	3253
+И	class	З	card-body
+
+И	h4	А	3254	Д	3255	С	3257
+И	class	З	card-title
+И	text	З	Light card title
+
+И	p	А	3258	Д	3259
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+И	div	А	3264	Д	3267
+И	class	З	card border-dark mb-3	С	3265
+И	style	З	max-width: 20rem;
+
+И	div	А	3268	Д	3269	С	3271
+И	class	З	card-header
+И	text	З	Header
+
+И	div	А	3272	Д	3274
+И	class	З	card-body text-dark
+
+И	h4	А	3275	Д	3276	С	3278
+И	class	З	card-title
+И	text	З	Dark card title
+
+И	p	А	3279	Д	3280
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+
+
+
+И	div	А	3287	Д	3289
+И	class	З	col-lg-4
+
+И	div	А	3290	Д	3292
+И	class	З	bs-component
+
+И	div	А	3293	Д	3295	С	3356
+И	class	З	card mb-3
+
+И	h3	А	3296	Д	3297	С	3299
+И	class	З	card-header
+И	text	З	Card header
+
+И	div	А	3300	Д	3302	С	3311
+И	class	З	card-body
+
+И	h5	А	3303	Д	3304	С	3306
+И	class	З	card-title
+И	text	З	Special title treatment
+
+И	h6	А	3307	Д	3308
+И	class	З	card-subtitle text-muted
+И	text	З	Support card subtitle
+
+
+И	img	А	3312	С	3315
+И	style	З	height: 200px; width: 100%; display: block;	С	3313
+И	src	З	data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E	С	3314
+И	alt	З	Card image
+И	div	А	3316	Д	3318	С	3323
+И	class	З	card-body
+
+И	p	А	3319	Д	3320
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+
+И	ul	А	3324	Д	3325	С	3337
+И	class	З	list-group list-group-flush
+И	li	А	3326	Д	3327	С	3329
+И	class	З	list-group-item
+И	text	З	Cras justo odio
+
+И	li	А	3330	Д	3331	С	3333
+И	class	З	list-group-item
+И	text	З	Dapibus ac facilisis in
+
+И	li	А	3334	Д	3335
+И	class	З	list-group-item
+И	text	З	Vestibulum at eros
+
+И	div	А	3338	Д	3340	С	3351
+И	class	З	card-body
+
+И	a	А	3341	Д	3343	С	3345
+И	href	З	#	С	3342
+И	class	З	card-link
+И	text	З	Card link
+
+И	a	А	3346	Д	3348
+И	href	З	#	С	3347
+И	class	З	card-link
+И	text	З	Another link
+
+
+И	div	А	3352	Д	3353
+И	class	З	card-footer text-muted
+И	text	З	2 days ago
+
+
+И	div	А	3357	Д	3359
+И	class	З	card
+
+И	div	А	3360	Д	3362
+И	class	З	card-body
+
+И	h4	А	3363	Д	3364	С	3366
+И	class	З	card-title
+И	text	З	Card title
+
+И	h6	А	3367	Д	3368	С	3370
+И	class	З	card-subtitle mb-2 text-muted
+И	text	З	Card subtitle
+
+И	p	А	3371	Д	3372	С	3374
+И	class	З	card-text
+И	text	З	Some quick example text to build on the card title and make up the bulk of the card's content.
+
+И	a	А	3375	Д	3377	С	3379
+И	href	З	#	С	3376
+И	class	З	card-link
+И	text	З	Card link
+
+И	a	А	3380	Д	3382
+И	href	З	#	С	3381
+И	class	З	card-link
+И	text	З	Another link
+
+
+
+
+
+
+
+И	comment	З	Dialogs      ==================================================	С	3392
+
+И	div	А	3393	Д	3395	С	3572
+И	class	З	bs-docs-section
+
+И	div	А	3396	Д	3398	С	3411
+И	class	З	row
+
+И	div	А	3399	Д	3401
+И	class	З	col-lg-12
+
+И	div	А	3402	Д	3404
+И	class	З	page-header
+
+И	h1	А	3405	Д	3406
+И	id	З	dialogs
+И	text	З	Dialogs
+
+
+
+
+И	div	А	3412	Д	3414
+И	class	З	row
+
+И	div	А	3415	Д	3417	С	3479
+И	class	З	col-lg-6
+
+И	h2	Д	3418	С	3420
+И	text	З	Modals
+
+И	div	А	3421	Д	3423
+И	class	З	bs-component
+
+И	div	А	3424	Д	3426
+И	class	З	modal
+
+И	div	А	3427	Д	3430
+И	class	З	modal-dialog	С	3428
+И	role	З	document
+
+И	div	А	3431	Д	3433
+И	class	З	modal-content
+
+И	div	А	3434	Д	3436	С	3452
+И	class	З	modal-header
+
+И	h5	А	3437	Д	3438	С	3440
+И	class	З	modal-title
+И	text	З	Modal title
+
+И	button	А	3441	Д	3446
+И	type	З	button	С	3442
+И	class	З	close	С	3443
+И	data_dismiss	З	modal	С	3444
+И	aria_label	З	Close
+
+И	span	А	3447	Д	3448
+И	aria_hidden	З	true
+И	text	З	×
+
+
+
+И	div	А	3453	Д	3455	С	3459
+И	class	З	modal-body
+
+И	p	Д	3456
+И	text	З	Modal body text goes here.
+
+
+И	div	А	3460	Д	3462
+И	class	З	modal-footer
+
+И	button	А	3463	Д	3465	С	3467
+И	type	З	button	С	3464
+И	class	З	btn btn-primary
+И	text	З	Save changes
+
+И	button	А	3468	Д	3471
+И	type	З	button	С	3469
+И	class	З	btn btn-secondary	С	3470
+И	data_dismiss	З	modal
+И	text	З	Close
+
+
+
+
+
+
+
+И	div	А	3480	Д	3482
+И	class	З	col-lg-6
+
+И	h2	Д	3483	С	3485
+И	text	З	Popovers
+
+И	div	А	3486	Д	3489	С	3530
+И	class	З	bs-component	С	3487
+И	style	З	margin-bottom: 3em;
+
+И	button	А	3490	Д	3497	С	3499
+И	type	З	button	С	3491
+И	class	З	btn btn-secondary	С	3492
+И	title	З	Popover Title	С	3493
+И	data_container	З	body	С	3494
+И	data_toggle	З	popover	С	3495
+И	data_placement	З	left	С	3496
+И	data_content	З	Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+И	text	З	Left
+
+И	button	А	3500	Д	3507	С	3509
+И	type	З	button	С	3501
+И	class	З	btn btn-secondary	С	3502
+И	title	З	Popover Title	С	3503
+И	data_container	З	body	С	3504
+И	data_toggle	З	popover	С	3505
+И	data_placement	З	top	С	3506
+И	data_content	З	Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+И	text	З	Top
+
+И	button	А	3510	Д	3517	С	3519
+И	type	З	button	С	3511
+И	class	З	btn btn-secondary	С	3512
+И	title	З	Popover Title	С	3513
+И	data_container	З	body	С	3514
+И	data_toggle	З	popover	С	3515
+И	data_placement	З	bottom	С	3516
+И	data_content	З	Vivamus              sagittis lacus vel augue laoreet rutrum faucibus.
+И	text	З	Bottom
+
+И	button	А	3520	Д	3527
+И	type	З	button	С	3521
+И	class	З	btn btn-secondary	С	3522
+И	title	З	Popover Title	С	3523
+И	data_container	З	body	С	3524
+И	data_toggle	З	popover	С	3525
+И	data_placement	З	right	С	3526
+И	data_content	З	Vivamus sagittis lacus vel augue laoreet rutrum faucibus.
+И	text	З	Right
+
+
+И	h2	Д	3531	С	3533
+И	text	З	Tooltips
+
+И	div	А	3534	Д	3536
+И	class	З	bs-component
+
+И	button	А	3537	Д	3542	С	3544
+И	type	З	button	С	3538
+И	class	З	btn btn-secondary	С	3539
+И	data_toggle	З	tooltip	С	3540
+И	data_placement	З	left	С	3541
+И	title	З	Tooltip on left
+И	text	З	Left
+
+И	button	А	3545	Д	3550	С	3552
+И	type	З	button	С	3546
+И	class	З	btn btn-secondary	С	3547
+И	data_toggle	З	tooltip	С	3548
+И	data_placement	З	top	С	3549
+И	title	З	Tooltip on top
+И	text	З	Top
+
+И	button	А	3553	Д	3558	С	3560
+И	type	З	button	С	3554
+И	class	З	btn btn-secondary	С	3555
+И	data_toggle	З	tooltip	С	3556
+И	data_placement	З	bottom	С	3557
+И	title	З	Tooltip on bottom
+И	text	З	Bottom
+
+И	button	А	3561	Д	3566
+И	type	З	button	С	3562
+И	class	З	btn btn-secondary	С	3563
+И	data_toggle	З	tooltip	С	3564
+И	data_placement	З	right	С	3565
+И	title	З	Tooltip on right
+И	text	З	Right
+
+
+
+
+
+И	div	А	3573	Д	3576
+И	id	З	source-modal	С	3574
+И	class	З	modal fade
+
+И	div	А	3577	Д	3579
+И	class	З	modal-dialog modal-lg
+
+И	div	А	3580	Д	3582
+И	class	З	modal-content
+
+И	div	А	3583	Д	3585	С	3597
+И	class	З	modal-header
+
+И	h4	А	3586	Д	3587	С	3589
+И	class	З	modal-title
+И	text	З	Source Code
+
+И	button	А	3590	Д	3594
+И	type	З	button	С	3591
+И	class	З	close	С	3592
+И	data_dismiss	З	modal	С	3593
+И	aria_hidden	З	true
+И	text	З	×
+
+
+И	div	А	3598	Д	3600
+И	class	З	modal-body
+
+И	p	А	3601
+И	id	З	sourcecode
+
+
+
+
+
+
+И	comment	З	script src="/resource/custom.js"></script

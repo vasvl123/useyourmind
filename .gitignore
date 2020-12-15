@@ -1,9 +1,5 @@
-
-.files/*
-data/user/*
 *.sdb
 .vscode/*
-Мед/*
-Мед*.os
-med*.sd
+morph/ocorp/*
+*.dat
 *.txt

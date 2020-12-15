@@ -130,6 +130,7 @@
             ttip.remove();
           }
         });
+        renderer.domElement.addEventListener('touchmove', onDocumentTouchMove, false);
 
         // var gui = new GUI();
 				// gui.add( controls, 'screenSpacePanning' );
@@ -273,6 +274,15 @@
           }
         }
         render();
+      }
+
+      function onDocumentTouchMove(event) {
+          //event.preventDefault();
+
+          mouse.x = (event.changedTouches[0].clientX / window.innerWidth) * 2 - 1;
+          mouse.y = -(event.changedTouches[0].clientY / window.innerHeight) * 2 + 1;
+
+          render();
       }
 
       function mmove(event) {

@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /procid/
+Disallow: /resource/
+Disallow: /data
+Disallow: /log
+Disallow: /login
+Disallow: /register
+Disallow: /expldb

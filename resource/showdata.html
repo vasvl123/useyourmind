@@ -16,39 +16,42 @@
 
 <!--ОбластьПанельОкно-->
 <body class="app header-fixed sidebar-fixed aside-menu-fixed">
-<header class="app-header navbar" id="navbar">
+<nav class="app-header navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 
-  <!-- <a class="navbar-brand" href="/" title="Разумное проектирование">
-    <img class="navbar-brand-full" src=".ПараметрХост/resource/ra.jpg" width="37" height="37" alt="useyourmind"/>
-  </a> -->
+  <a class="navbar-brand" href="/">
+    <text>uascript.net</text>
+  </a>
 
-  <button id="menubuton" class="navbar-toggler sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
+  <button id="menubuton" class="hidden sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <button id="menubuton-sm" class="navbar-toggler sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
+  <button id="menubuton-sm" class="hidden sidebar-toggler d-lg-none" type="button" onclick="btn_bar('sidebar-show')">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <ul class="nav navbar-nav d-md-down" id="tabs">
+  <ul class="navbar-nav mr-auto" id="tabs">
   </ul>
 
   <ul class="nav navbar-nav ml-auto" id="acc">
+    <li class="nav-item px-2">
+      <a class="nav-link" href="/login">Вход</a>
+    </li>
   </ul>
 
   <!-- <button class="navbar-toggler aside-menu-toggler" type="button" onclick="btn_bar('aside-menu-show')">
     <span class="navbar-toggler-icon"></span>
   </button> -->
 
-</header>
+</nav>
 
-<div id="app-body">
+<div class="app-body" id="app-body">
 
   .ПараметрБокПанель
 
   <main class="main">
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="container">
 
       .ПараметрСодержимое
 
@@ -75,47 +78,27 @@
   </div>
 <!--/ОбластьПанельОкно-->
 
-<!--ОбластьПанельМеню1-->
-  <div class="sidebar" id="sidebar">
-    <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <nav class="sidebar-nav ps ps--active-y">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=start&cmd=newtab'); return false">
-          <i class="nav-icon icon-home "></i> Начало</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=login&cmd=newtab'); return false">
-          <i class="nav-icon icon-login "></i> Вход</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=useyourmind&cmd=newtab'); return false">
-          <i class="nav-icon icon-layers"></i> use your.mind</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/vasvl123/useyourmind">
-          <i class="nav-icon icon-docs"></i> Исходный код</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('cmd=stopserver'); return false">
-          <i class="nav-icon icon-ban"></i> Завершить</a>
-        </li>
-      </ul>
-    </nav>
-    <script>
-      document.body.classList.add("sidebar-lg-show");
-      document.getElementById("app-body").classList.add("app-body");
-    </script>
-  </div>
-<!--/ОбластьПанельМеню1-->
+<!--ОбластьВкладкиМеню-->
+<ul class="navbar-nav mr-auto" id="tabs">
+  <li class="nav-item px-2">
+    <a class="nav-link" href="/doc/useyourmind">use your.mind</a>
+  </li>
+  <li class="nav-item px-2">
+    <a class="nav-link" href="/opencorpora">NLP</a>
+  </li>
+  <li class="nav-item px-2">
+    <a class="nav-link" href="https://github.com/vasvl123/useyourmind">GitHub</a>
+  </li>
+</ul>
+<!--/ОбластьВкладкиМеню-->
 
-<!--ОбластьПанельМеню2-->
+<!--ОбластьПанельМеню-->
   <div class="sidebar" id="sidebar">
     <link href="/resource/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
     <nav class="sidebar-nav ps ps--active-y">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="" onclick="seq_add('sdata=public&sdb=&data=useyourmind&cmd=newtab'); return false;">
+          <a class="nav-link" href="" onclick="seq_add('sdata=doc&sdb=&data=useyourmind&cmd=newtab'); return false;">
           <i class="nav-icon icon-question "></i> Помощь</a>
         </li>
         <li class="nav-item">
@@ -158,17 +141,15 @@
     </nav>
     <script>
       document.body.classList.add("sidebar-lg-show");
-      document.getElementById("app-body").classList.add("app-body");
+      document.body.classList.add("sidebar-show");
+      document.getElementById("menubuton").classList.remove("hidden");
+      document.getElementById("menubuton-sm").classList.remove("hidden");
     </script>
   </div>
-<!--/ОбластьПанельМеню2-->
+<!--/ОбластьПанельМеню-->
 
 <!--ОбластьПанельНетМеню-->
 <div class="sidebar" id="sidebar">
-  <script>
-    document.getElementById("navbar").remove();
-    document.getElementById("app-body").style.marginTop = "0px";
-  </script>
 </div>
 <!--/ОбластьПанельНетМеню-->
 
@@ -319,7 +300,7 @@
 <!--ОбластьСкриптИзменитьИмяЗначение-->
 <script>
     el = $('#.ПараметрИдУзла.ПараметрКоманда')[0];
-    el.select();
+    el.focus();
     el.value = decodeURIComponent(".ПараметрИмяЗначение");
 </script>
 <!--/ОбластьСкриптИзменитьИмяЗначение-->
@@ -347,18 +328,25 @@
 
 <!--ОбластьНайтиУзел-->
 <div id='.ПараметрИдУзлаfind'>
-  <form onsubmit="return false;">
+  <form onsubmit="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode'); return false;">
     <div style='display: inline-block;'>
       <div class="btn-group" role="group">
         <input class="form-control form-control input-shadow" placeholder="Номер" id=".ПараметрИдУзлаnumber" />
         <input class="form-control form-control input-shadow" placeholder="Значение" id=".ПараметрИдУзлаvalue" />
-        <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;nodeid=.ПараметрИдУзла&amp;nodenumber='+$('#.ПараметрИдУзлаnumber')[0].value+'&amp;nodevalue='+$('#.ПараметрИдУзлаvalue')[0].value+'&amp;cmd=findnode');">Найти</button>
+        <button class="btn btn-outline-dark btn-shadow" type="submit">Найти</button>
         <button class="btn btn-outline-dark btn-shadow" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">Отмена</button>
       </div>
     </div>
   </form>
 </div>
 <!--/ОбластьНайтиУзел-->
+
+<!--ОбластьСкриптНайтиУзел-->
+<script>
+    el = $('#.ПараметрИдУзлаnumber')[0];
+    el.focus();
+</script>
+<!--/ОбластьСкриптНайтиУзел-->
 
 <!--ОбластьЗагрузитьHTML-->
 <script src='/resource/impdom.js'></script>
@@ -422,8 +410,8 @@
 <!--/ОбластьОкно-->
 
 <!--ОбластьПанель-->
-<div id='.ПараметрВкладка_0' class="row justify-content-center win p-4" style="display:none">
-  <div class="card text-white bg-dark mw60" style="opacity:.ПараметрПрозрачность">
+<div id='.ПараметрВкладка_0' class="win" style="display:none">
+  <div class="card text-white bg-dark" style="opacity:.ПараметрПрозрачность">
     <div class="card-header">
       <b class="modal-title">.ПараметрЗаголовокОкна</b>
       <button class="btn btn btn-outline-dark btn-sm" style="vertical-align: baseline; border-style: none; color:grey;" type="button" onclick="seq_add('tab=.ПараметрВкладка&amp;cmd=tabclose');">×</button>
@@ -529,10 +517,10 @@ function postcmd(cmd){
   var xhr = new XHR();
   xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
+    if (upddata.readyState==4 && aupd) {
+      seq_add('cmd=upddata');
+    }
     if (this.response) {
-      if (upddata.readyState==4) {
-        seq_add('cmd=upddata');
-      }
       $(this.response).each(function(index, value) {
         if (value.tagName == "SCRIPT") {
           eval(value.innerText);
@@ -551,13 +539,13 @@ function postcmd(cmd){
 function seq_add(cmd,delay=0) {
   var datascrolled=scrolled();
   var winscrolled="";
-  // if (wintab!=""&&wintab!=undefined) {
-  //   var t=$("#"+wintab+"_0");
-  //   if(t.css("display")!="none") {
-  //     winscrolled=datascrolled-(t.offset().top-50);
-  //   }
-  // }
-  $("body").removeClass("sidebar-show");
+  if (wintab) {
+    if (wintab==tab) {
+      var t=$("#"+wintab+"_0");
+      winscrolled=datascrolled-(t.offset().top-79);
+    }
+  }
+  document.body.classList.remove("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
 }
@@ -570,15 +558,15 @@ function seq_sendcmd(){
     var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
     var xhr = new XHR();
     var url = seq.shift();
-    if (url.indexOf('cmd=upddata', 0) > 0 && aupd) {
+    if (url.indexOf('cmd=upddata', 0) > 0) {
       upddata = xhr;
     }
     xhr.open('GET',url,true);
     xhr.onload = function() {
+      if (upddata.readyState==4 && aupd) {
+        seq_add('cmd=upddata');
+      }
       if (this.response) {
-        if (upddata.readyState==4) {
-          seq_add('cmd=upddata');
-        }
         $(this.response).each(function(index, value) {
           if (value.tagName == "SCRIPT") {
             eval(value.innerText);
@@ -597,10 +585,10 @@ function seq_sendcmd(){
 
 function newtab(ntab,tabtype,nodeid){
   if (tabtype == "prop") {
-    $('#'+tabtype).append('<div id='+ntab+'_0><div id='+ntab+'_'+nodeid+' /></div>');
+    $('#'+tabtype).append('<div id="'+ntab+'_0"><div id='+ntab+'_'+nodeid+' /></div>');
     showprop("#"+ntab+"_0");
   } else {
-    $('#'+tabtype).append('<div id='+ntab+'_0 class="my-4" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
+    $('#'+tabtype).append('<div id="'+ntab+'_0" class="'+tabtype+'" style="display: none;"><div id='+ntab+'_'+nodeid+' /></div>');
   }
 }
 
@@ -616,10 +604,8 @@ function tabselect(p_tabtype,p_tab,p_scroll){
     datatab=p_tab;
   }
   if (p_tabtype=="win") {
-    if (t[0].offsetTop==0) {
-      t.show();
-      t.css('top',scrolled()+50-t.offset().top-Number(p_scroll));
-    }
+    t.show();
+    t.css('top',scrolled()-p_scroll);
     t.css('z-index', zi++);
     wintab=p_tab;
   }
@@ -636,7 +622,7 @@ function btn_bar(cl) {
 }
 
 function showprop(ntab) {
-  $("body").addClass("aside-menu-show");
+  document.body.classList.add("aside-menu-show");
   var t = $(ntab);
   var a = $("aside");
   a.scrollTop(a.scrollTop()+t.position().top);

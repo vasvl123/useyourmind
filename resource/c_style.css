@@ -28,6 +28,13 @@
 	color: white;
 }
 
+.btn-shadow-p {
+	background-color: #484971;
+	border-bottom: 1px solid #23282c;
+	border-right: 1px solid #23282c;
+	color: white;
+}
+
 .btn-node {
 	color: #73818f;
 	height: 1.75rem;
@@ -172,19 +179,20 @@ aside ul {
 
 .app-body {
 	background-image: url("/resource/bg.jpg") ;
-	background-color: #645fb3;
+	background-color: rgb(90, 150, 190);
 }
 
 .sidebar {
 	opacity: .9;
 }
 
-.win {
-	position: relative;
+.data {
+	margin-top:1.5rem!important
 }
 
-.mw60 {
-	min-width: 60%;
+.win {
+	position: absolute;
+	min-width: 50%;
 }
 
 .app-body .main {
@@ -208,4 +216,24 @@ aside ul {
 	line-height: 1;
 	border-radius: .2rem;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.hidden {
+	display: none;
+}
+
+.sidebar-toggler {
+	color: rgba(0,0,0,.5);
+	border-color: rgba(0,0,0,.1);
+	padding: .25rem .75rem;
+	font-size: 1.09375rem;
+	line-height: 1;
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+}
+
+.navbar-light .navbar-brand {
+	color: rgb(120, 175, 210);
+	font-size: 1.5rem;
 }
