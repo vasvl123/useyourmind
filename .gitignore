@@ -5,3 +5,5 @@ morph/ocorp/*
 *.txt
 *.xml
 *.zip
+*.pdb
+*.config
