@@ -3,3 +3,7 @@
 morph/ocorp/*
 *.dat
 *.txt
+*.xml
+*.zip
+*.pdb
+*.config

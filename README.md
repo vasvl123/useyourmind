@@ -49,13 +49,13 @@
 
 ### Для запуска локально на своем компьютере необходимо:
 
-Скачать последнюю версию useyourmind + Uascript: <https://github.com/vasvl123/useyourmind/releases>
+Скачать последнюю версию useyourmind: <https://github.com/vasvl123/useyourmind/releases>
 
 ##### Под Windows:
 
-Установить библиотеку .Net версии не ниже 4.5 - для Windows, а для linux mono-complete не ниже 5.2.
+Установить библиотеку .Net версии не ниже 4.5
 
-Перейти в папку useyourmind и выполнить команду: uascript starter.os
+Перейти в папку useyourmind и выполнить команду: useyourmind.exe starter.os
 
 Открыть в браузере ссылку: <http://localhost:8888>
 
@@ -63,13 +63,13 @@
 
 Установить пакет mono-complete не ниже 5.2.
 
-Перейти в папку useyourmind и выполнить команду: mono uascript starter.os
+Перейти в папку useyourmind и выполнить команду: mono useyourmind.exe starter.os
 
 Открыть в браузере ссылку: <http://localhost:8888>
 
-Запустить в режиме сайта на порту 8080: mono uascript starter.os site 8080
+Запустить в режиме сайта на порту 8080: mono useyourmind.exe starter.os site 8080
 
-##### Демонстрация работы фреймворка: <https://uascript.net/>
+##### Демонстрация работы фреймворка: <https://onesharp.net/>
 
 ### Описание:
 
@@ -101,10 +101,47 @@
 
 Сервер морфологии (morphserver.os) выполняет поиск грамматических форм слов и их связей в предложении.
 Для доступа к иерархическому справочнику Связи.dat используется модуль treedb.os.
-Скачать архив справочника по ссылке: <https://uascript.net/resource/Связи.dat.zip>
+Скачать архив справочника по ссылке: <https://onesharp.net/resource/Связи.dat.zip>
 Формируется скриптом morph5.os (не быстро)
-
 Используется словарь OpenCorpora <http://opencorpora.org/files/export/dict/dict.opcorpora.txt.zip>
 
-Интерпретатор uascript.exe <https://github.com/vasvl123/uascript.net> является форком проекта OneScript <https://github.com/EvilBeaver/OneScript>
-Различия касаются объектов сетевого обмена.
+Демо: https://onesharp.net/opencorpora
+
+##### Структура справочника Связи.dat
+
+Иерархия элементов:
+
+0 (начало файла)
+
+2 (лемма)
+| КодСимвола 1
+| | КодСимвола 2
+| | | КодСимвола ...
+| | | | 1 (разделитель) - связь грамматических форм
+| | | | | | ПозицияЛеммы (р.2)
+| | | | | | | ПозицияСвязи (р.3)
+
+1 (форма)
+| КодСимвола 1
+| | КодСимвола 2
+| | | КодСимвола ...
+| | | | 1 (разделитель) - соответствие начальной форме
+| | | | | ПозицияЛеммы (р.2)
+| | | | | | Позиция н.ф. (р.1)
+| | | | | | | Позиция леммы н.ф. (р.2)
+| | | | 2 (разделитель) - связь понятий
+| | | | | | ПозицияФормы (р.1)
+| | | | | | | ПозицияСвязи (р.3)
+| | | | | | | | Символ + или -
+
+3 (отношения)
+| КодСимвола 1
+| | КодСимвола 2
+| | | КодСимвола ...
+
+https://onesharp.net/tree
+
+Интерпретатор useyourmind.exe <https://github.com/vasvl123/onesharp.net>
+Является форком проекта OneScript <https://github.com/EvilBeaver/OneScript>
+
+В настоящее время ведется работа по портированию фреймворка на C# в рамках проекта onesharp.net
