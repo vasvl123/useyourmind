@@ -105,6 +105,8 @@
 Формируется скриптом morph5.os (не быстро)
 Используется словарь OpenCorpora <http://opencorpora.org/files/export/dict/dict.opcorpora.txt.zip>
 
+Демо: https://onesharp.net/opencorpora
+
 ##### Структура справочника Связи.dat
 
 Иерархия элементов:
@@ -142,4 +144,4 @@ https://onesharp.net/tree
 Интерпретатор useyourmind.exe <https://github.com/vasvl123/onesharp.net>
 Является форком проекта OneScript <https://github.com/EvilBeaver/OneScript>
 
-В настоящее время работа над фреймворком ведется в рамках проекта onesharp.net
+В настоящее время ведется работа по портированию фреймворка на C# в рамках проекта onesharp.net
