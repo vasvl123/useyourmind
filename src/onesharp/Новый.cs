@@ -29,5 +29,10 @@ namespace onesharp
             return new Структура();
         }
 
+        public static Соответствие Соответствие()
+        {
+            return new Соответствие();
+        }
+
     }
 }
