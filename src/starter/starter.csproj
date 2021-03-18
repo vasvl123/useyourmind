@@ -37,9 +37,6 @@
     <Compile Include="starter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{D8094841-0114-44ED-8137-D38F8DA889C1}</Project>
       <Name>Onesharp</Name>

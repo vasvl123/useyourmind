@@ -51,9 +51,6 @@
     <Compile Include="Параметры.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{D8094841-0114-44ED-8137-D38F8DA889C1}</Project>
       <Name>Onesharp</Name>
