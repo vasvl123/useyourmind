@@ -49,6 +49,7 @@
     <Compile Include="Вкладка.cs" />
     <Compile Include="Задача.cs" />
     <Compile Include="Параметры.cs" />
+    <Compile Include="lib\parser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">

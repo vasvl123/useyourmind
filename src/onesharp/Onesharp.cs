@@ -60,7 +60,9 @@ namespace onesharp
 
         public static DateTime ТекущаяДата()
         {
-            return DateTime.Now;
+            var date = DateTime.Now;
+            date = date.AddTicks(-(date.Ticks % TimeSpan.TicksPerSecond));
+            return date;
         }
 
         public static string Лев(string str, int len)
@@ -313,6 +315,10 @@ namespace onesharp
             return "";
         }
 
+        public static string Тип(string arg)
+        {
+            return arg;
+        }
 
         public string ОписаниеОшибки(Exception e) { return ИмяМодуля + " ошибка!\n" + e.Message + "\n" + e.StackTrace; }
 
@@ -411,6 +417,77 @@ namespace onesharp
                         retCode = p.ExitCode;
                 }
         }
+
+        /// <summary>
+        /// Проверяет заполненность значения по принципу, заложенному в 1С:Предприятии
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static bool ЗначениеЗаполнено(object value)
+        {
+            if (value == null)
+            {
+                return false;
+            }
+            if (value is bool)
+                return true;
+            else if (value is string)
+                return !String.IsNullOrWhiteSpace(value as string);
+            else if (value is decimal)
+                return (decimal)value != 0;
+            else if (value is int)
+                return (int)value != 0;
+            else if (value is DateTime)
+            {
+                var emptyDate = new DateTime(1, 1, 1, 0, 0, 0);
+                return (DateTime)value != emptyDate;
+            }
+            else if (value is IEnumerable<object>)
+            {
+                var col = value as IEnumerable<object>;
+                return col.Count() != 0;
+            }
+            else
+                return true;
+
+        }
+
+        public static bool ПустаяСтрока(string str)
+        {
+            return String.IsNullOrWhiteSpace(str);
+        }
+
+        public static string Формат(object valueToFormat, string formatString)
+        {
+            return ValueFormatter.Format(valueToFormat, formatString);
+        }
+
+        public static DateTime Дата(object arg1, params int[] factArgs)
+        {
+            if (factArgs.Count() == 1)
+            {
+                return (DateTime)Parse((string)arg1, typeof(DateTime));
+            }
+            else if (factArgs.Count() >= 3 && factArgs.Count() <= 6)
+            {
+                var date = new DateTime(
+                                factArgs[0],
+                                factArgs[1],
+                                factArgs[2],
+                                factArgs[3],
+                                factArgs[4],
+                                factArgs[5]);
+
+                return date;
+
+            }
+            else
+            {
+                throw new RuntimeException("Неверное количество параметров");
+            }
+
+        }
+
 
     }
 }

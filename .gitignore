@@ -48,3 +48,5 @@ morph/ocorp/*
 *.config
 
 /src/morphserver/*
+
+parser.*

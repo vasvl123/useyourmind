@@ -18,6 +18,7 @@ namespace onesharp
         public Соответствие _с { get { return this["_с"] as Соответствие; } }
         public Структура _д { get { return this["д"] as Структура; } }
         public dynamic д { get { return this["д"]; } }
+        public Структура _п { get { return this["п"] as Структура; } }
         public dynamic п { get { return this["п"]; } }
 
         public string Код { get { return (string)Получить("Код"); } }

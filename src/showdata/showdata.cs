@@ -2119,6 +2119,9 @@ namespace onesharp
                     case "Сем":
                         Библиотека = new Сем();
                         break;
+                    case "parser":
+                        Библиотека = new parser();
+                        break;
                     default:
                         break;
                 }
