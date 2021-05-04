@@ -320,7 +320,7 @@ namespace onesharp
             return arg;
         }
 
-        public string ОписаниеОшибки(Exception e) { return ИмяМодуля + " ошибка!\n" + e.Message + "\n" + e.StackTrace; }
+        public string ОписаниеОшибки(Exception e) { return ИмяМодуля + " ошибка!\n" + e.InnerException + "\n" + e.Message + "\n" + e.StackTrace; }
 
 
         public string ТекущийКаталог()
