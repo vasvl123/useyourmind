@@ -368,9 +368,9 @@ namespace onesharp
             return GlobalBinaryData.ПолучитьБуферДвоичныхДанныхИзДвоичныхДанных(arg);
         }
 
-        public string ПолучитьСтрокуИзДвоичныхДанных(ДвоичныеДанные arg)
+        public string ПолучитьСтрокуИзДвоичныхДанных(ДвоичныеДанные arg, string encoding = null)
         {
-            return GlobalBinaryData.ПолучитьСтрокуИзДвоичныхДанных(arg);
+            return GlobalBinaryData.ПолучитьСтрокуИзДвоичныхДанных(arg, encoding);
         }
         public ДвоичныеДанные ПолучитьДвоичныеДанныеИзBase64Строки(string arg)
         {

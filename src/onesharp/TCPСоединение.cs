@@ -101,7 +101,7 @@ namespace onesharp
             var stream = _client.GetStream();
             data = new MemoryStream();
             m_Buffer = new byte[BUFFERSIZE];
-            status = "Занят";
+            status = "Ожидание";
             try
             {
                 stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(OnDataReceive), null);
@@ -124,22 +124,24 @@ namespace onesharp
                     int n = 0;
                     if (_readheaders)
                     {
-                        for (n = 0; n < ret; n++)
+                        if (status == "Ожидание")
                         {
-                            if (m_Buffer[n] == 10)
-                                if (n > 3)
-                                    if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
-                                    {
-                                        headers.Write(m_Buffer, 0, n);
-                                        _readheaders = false;
-                                        if (n < ret) n++;
-                                        break;
-                                    }
+                            for (n = 0; n < ret; n++)
+                            {
+                                if (m_Buffer[n] == 10)
+                                    if (n > 3)
+                                        if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
+                                        {
+                                            headers.Write(m_Buffer, 0, n);
+                                            //_readheaders = false;
+                                            if (n < ret) n++;
+                                            break;
+                                        }
+                            }
+                            status = "Заголовки";
+                            System.Threading.Thread.Sleep(25);
                         }
-                        status = "Заголовки";
-                        System.Threading.Thread.Sleep(3);
                     }
-
                     else if (numberOfBytes == 0 && data.Position == 0) // начало данных
                     {
                         numberOfBytes = BitConverter.ToInt64(m_Buffer, 0);
@@ -163,9 +165,9 @@ namespace onesharp
                         status = "Данные";
                 }
             }
-            catch
+            catch (Exception e)
             {
-                status = "Ошибка";
+                status = "Ошибка\n" + e.Message;
             }
 
         }
