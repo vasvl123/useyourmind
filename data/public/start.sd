@@ -20,10 +20,10 @@
 И	DIV	З		Д	118	А	21
 И	class	З	card p-4	С	48
 
-И	p	З		Д	26	С	44	А	24
-И	class	З	text-center display-4	С	25
+И	h1	З	onesharp.net	С	44	А	25
+
 И	style	З	color: rgb(255, 255, 255); text-shadow: rgb(125, 125, 190) 1px 1px 0; margin-bottom: 0rem;
-И	text	З	1# use your.mind
+
 
 
 
