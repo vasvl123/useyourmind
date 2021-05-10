@@ -312,6 +312,9 @@ namespace onesharp
             if (arg is string) return "Строка";
             if (arg is bool) return "Булево";
             if (arg is DateTime) return "Дата";
+            if (arg is Структура) return "Структура";
+            if (arg is Массив) return "Массив";
+            if (arg is Соответствие) return "Соответствие";
             return "";
         }
 

@@ -205,8 +205,8 @@ namespace onesharp
                     if (number < 1 || number > 11)
                         throw new Exception("Ошибка при вызове метода контекста (СтрШаблон): Ошибка синтаксиса шаблона в позиции " + (m.Index + 1));
 
-                    if (arguments[number] != null && !(arguments[number]is null))
-                        return arguments[number];
+                    if (arguments[number-1] != null && !(arguments[number-1]is null))
+                        return arguments[number-1];
                     else
                         return "";
                 }
