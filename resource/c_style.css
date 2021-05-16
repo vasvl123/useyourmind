@@ -237,3 +237,31 @@ aside ul {
 	color: rgb(120, 175, 210);
 	font-size: 1.5rem;
 }
+
+.color-white {
+	color: #abb2bf;
+}
+
+.color-pink {
+	color: #c678dd
+}
+
+.color-green {
+	color: #98c379
+}
+
+.color-blue {
+	color: #61afef
+}
+
+.color-red {
+	color: #e06c75
+}
+
+.color-blue2 {
+	color: #56b6c2
+}
+
+.color-orange {
+	color: #d19a66
+}
