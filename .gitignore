@@ -39,7 +39,7 @@ ipch/
 
 *.sdb
 .vscode/*
-morph/ocorp/*
+morph/*
 *.dat
 *.txt
 *.xml
