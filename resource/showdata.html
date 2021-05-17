@@ -18,9 +18,9 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed">
 <nav class="app-header navbar navbar-expand-lg navbar-light bg-light" id="navbar">
 
-  <a class="navbar-brand" href="/">
+  <!-- <a class="navbar-brand" href="/">
     <text>onesharp.net</text>
-  </a>
+  </a> -->
 
   <button id="menubuton" class="hidden sidebar-toggler d-md-down-none" type="button" onclick="btn_bar('sidebar-lg-show')">
     <span class="navbar-toggler-icon"></span>
@@ -81,13 +81,10 @@
 <!--ОбластьВкладкиМеню-->
 <ul class="navbar-nav mr-auto" id="tabs">
   <li class="nav-item px-2">
-    <a class="nav-link" href="https://github.com/vasvl123/onesharp.net">1#</a>
+    <a class="nav-link" href="https://onesharp.net">onesharp.net</a>
   </li>
   <li class="nav-item px-2">
-    <a class="nav-link" href="https://github.com/vasvl123/useyourmind">use your.mind</a>
-  </li>
-  <li class="nav-item px-2">
-    <a class="nav-link" href="/opencorpora">NLP</a>
+    <a class="nav-link" href="https://github.com/vasvl123/onesharp.net">GitHub</a>
   </li>
 </ul>
 <!--/ОбластьВкладкиМеню-->
@@ -459,7 +456,7 @@ function addcmd(el,ev) {
   // xpos = ev.pageX-5;
   if (el.tagName=='INPUT'&&el.type=="text"||el.tagName=='TEXTAREA') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
   if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
-  if (el.tagName=='BUTTON'||el.tagName=='A') {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
+  if (el.tagName=='BUTTON'||el.tagName=='A'||el.tagName=='CODE') {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
   if (el.tagName=='FORM') {sendform(el)}
 }
 

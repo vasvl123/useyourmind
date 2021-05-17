@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
+    <AssemblyName>onesharp</AssemblyName>
+    <RootNamespace>onesharp</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="GenericStreamImpl.cs" />
+    <Compile Remove="Binary\GenericStream.cs" />
+    <Compile Remove="Hash\HashFunctionEnum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hash\" />
+  </ItemGroup>
+</Project>
