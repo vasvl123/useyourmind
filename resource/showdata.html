@@ -531,7 +531,7 @@ function postcmd(cmd){
           if (value.id) {
             //$('#'+value.id).replaceWith(value);
             if (!updom($('#'+value.id)[0], value)) {
-              seq_add("nodeid="+value.id+"&cmd=nodereload");
+              //seq_add("nodeid="+value.id+"&cmd=nodereload");
             }
           }
         }
@@ -580,7 +580,7 @@ function seq_sendcmd(){
             if (value.id) {
               //$('#'+value.id).replaceWith(value);
               if (!updom($('#'+value.id)[0], value)) {
-                seq_add("nodeid="+value.id+"&cmd=nodereload");
+                //seq_add("nodeid="+value.id+"&cmd=nodereload");
               }
             }
           }
