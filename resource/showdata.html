@@ -488,7 +488,10 @@ function updom(d,s) {
         // });
       }
     }
+  } else {
+    return false;
   }
+  return true;
 }
 
 function sendform(el){
@@ -527,7 +530,9 @@ function postcmd(cmd){
         } else {
           if (value.id) {
             //$('#'+value.id).replaceWith(value);
-            updom($('#'+value.id)[0], value);
+            if (!updom($('#'+value.id)[0], value)) {
+              seq_add("nodeid="+value.id+"&cmd=nodereload");
+            }
           }
         }
       });
@@ -574,7 +579,9 @@ function seq_sendcmd(){
           } else {
             if (value.id) {
               //$('#'+value.id).replaceWith(value);
-              updom($('#'+value.id)[0], value);
+              if (!updom($('#'+value.id)[0], value)) {
+                seq_add("nodeid="+value.id+"&cmd=nodereload");
+              }
             }
           }
         });
