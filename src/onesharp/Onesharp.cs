@@ -291,6 +291,40 @@ namespace onesharp
             return result;
         }
 
+        public static double Мин(double arg1, double arg2)
+        {
+            return (arg1 > arg2 ? arg2 : arg1);
+        }       
+
+        public static double Макс(double arg1, double arg2)
+        {
+            return (arg1 > arg2 ? arg1 : arg2);
+        }       
+
+        public static int Мин(int arg1, int arg2)
+        {
+            return (arg1 > arg2 ? arg2 : arg1);
+        }       
+
+        public static int Макс(int arg1, int arg2)
+        {
+            return (arg1 > arg2 ? arg1 : arg2);
+        }       
+
+        public static double Pow(double arg1, int arg2)
+        {
+            return Math.Pow(arg1, arg2);
+        }
+
+        public static double Sqrt(double arg)
+        {
+            return Math.Sqrt(arg);
+        }
+
+        public static double Tan(double arg)
+        {
+            return Math.Tan(arg);
+        }
 
         public static object Число(object arg)
         {

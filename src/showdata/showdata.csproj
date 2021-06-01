@@ -50,6 +50,7 @@
     <Compile Include="Задача.cs" />
     <Compile Include="Параметры.cs" />
     <Compile Include="lib\parser.cs" />
+    <Compile Include="lib\tracer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">

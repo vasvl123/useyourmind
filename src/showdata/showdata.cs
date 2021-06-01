@@ -2213,6 +2213,9 @@ namespace onesharp
                     case "parser":
                         Библиотека = new parser();
                         break;
+                    case "tracer":
+                        Библиотека = new tracer();
+                        break;
                     default:
                         break;
                 }

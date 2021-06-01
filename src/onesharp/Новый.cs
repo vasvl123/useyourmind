@@ -9,6 +9,11 @@ namespace onesharp
             return new Массив(array);
         }
 
+        public static Массив Массив(params int[] dim)
+        {
+            return onesharp.Массив.Constructor(dim);
+        }
+
         public static Массив Массив()
         {
             return new Массив();
@@ -32,6 +37,11 @@ namespace onesharp
         public static Соответствие Соответствие()
         {
             return new Соответствие();
+        }
+
+        public static ТекстовыйДокумент ТекстовыйДокумент()
+        {
+            return new ТекстовыйДокумент();
         }
 
     }
