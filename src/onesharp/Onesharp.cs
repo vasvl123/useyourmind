@@ -42,17 +42,6 @@ namespace onesharp
             System.Threading.Thread.Sleep(delay);
         }
 
-        public static object Цел(object n)
-        {
-            if (n is int) return n;
-            var m = Math.Truncate((decimal)n);
-            try {
-                return Decimal.ToInt32(m);
-            } catch {
-                return m;
-            }
-        }
-
         public static decimal ТекущаяУниверсальнаяДатаВМиллисекундах()
         {
             return (decimal)DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
@@ -311,7 +300,7 @@ namespace onesharp
             return (arg1 > arg2 ? arg1 : arg2);
         }       
 
-        public static double Pow(double arg1, int arg2)
+        public static double Pow(double arg1, double arg2)
         {
             return Math.Pow(arg1, arg2);
         }
@@ -329,9 +318,21 @@ namespace onesharp
         public static object Число(object arg)
         {
             var n = (decimal)Parse(arg, typeof(decimal));
-            var m = Цел(n);
-            if (m is int) if ((int)m == n) return m;
-            return n;
+            var m = Math.Truncate((decimal)n);
+            try
+            {
+                return Decimal.ToInt32(m);
+            }
+            catch
+            {
+                return m;
+            }
+        }
+
+        public static int Цел(object n)
+        {
+            if (n is int) return (int)n;
+            return Decimal.ToInt32(Math.Truncate((decimal)Parse(n, typeof(decimal))));
         }
 
         public static string Строка(object arg)
