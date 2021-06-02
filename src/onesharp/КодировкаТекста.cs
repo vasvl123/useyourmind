@@ -20,6 +20,9 @@ namespace onesharp
             {
                 switch (encoding.ToUpper())
                 {
+                    case "ANSI":
+                        enc = Encoding.GetEncoding("windows-1251");
+                        break;
                     case "UTF-8":
                         enc = new UTF8Encoding(addBOM);
                         break;
