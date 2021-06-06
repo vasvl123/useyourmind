@@ -273,3 +273,10 @@ aside ul {
 .color-yellow {
 	color: #e5c07b
 }
+
+.frame:hover {
+  box-shadow: 0 0 0 1px white;
+}
+.frame {
+	padding:5px;
+}

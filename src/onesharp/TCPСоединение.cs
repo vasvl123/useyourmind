@@ -157,11 +157,11 @@ namespace onesharp
 
                     if (stream.DataAvailable || numberOfBytes > 0)
                     {
-                        status = "Занят";
+                        status = "Чтение";
                         m_Buffer = new byte[BUFFERSIZE];
                         stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(OnDataReceive), null);
                     }
-                    else
+                    else if (status == "Ожидание" || status == "Заголовки" || status == "Чтение")
                         status = "Данные";
                 }
             }
@@ -290,7 +290,7 @@ namespace onesharp
                 }
 
                 var stream = _client.GetStream();
-                status = "Занят";
+                status = "Запись";
 
                 if (sendlen) stream.Write(BitConverter.GetBytes((long)len), 0, 8); // сколько данных
                 stream.BeginWrite(buf, 0, len, new AsyncCallback(this.OnWriteComplete), null);

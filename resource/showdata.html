@@ -458,9 +458,9 @@ function addcmd(el,ev) {
   // ypos = ev.pageY;
   // xpos = ev.pageX-5;
   if (el.tagName=='INPUT'&&el.type=="text"||el.tagName=='TEXTAREA') {seq_add('nodeid='+el.id+'&cmd=onchange&value='+encodeURIComponent(el.value));}
-  if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
-  if (el.tagName=='BUTTON'||el.tagName=='A'||el.tagName=='CODE') {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
-  if (el.tagName=='FORM') {sendform(el)}
+  else if (el.tagName=='INPUT'&&el.type=="checkbox") {seq_add('nodeid='+el.id+'&cmd=onchange&value='+el.checked);}
+  else if (el.tagName=='FORM') {sendform(el)}
+  else {seq_add('nodeid='+el.id+'&cmd=onclick&role='+encodeURIComponent($(el).attr('role')));}
 }
 
 function updom(d,s) {
