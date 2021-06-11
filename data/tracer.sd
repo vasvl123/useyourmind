@@ -1,3 +1,20 @@
 И	О	З	Корень	Д	2
-И	Свойства.	З		С	3
+И	Свойства.	З		С	4
+
+И	div	З		Д	9	А	5
+И	class	З	card	С	6
+И	style	З	background-color:rgba(255,255,255,0.4); min-height:20rem
+И	div	З		Д	20	А	8
+И	class	З	card-body
+И	DIV	З		Д	11	С	7	А	10
+И	class	З	card-header
+И	B	З		Д	13	С	14	А	12
+И	class	З	modal-title
+И	text	З	tracer
+И	BUTTON	З		Д	19	А	15
+И	class	З	btn btn btn-outline-light btn-sm	С	16
+И	style	З	vertical-align: baseline; border-style: none; color:grey;	С	17
+И	type	З	button	С	18
+И	onclick	З	seq_add('tab='+tab+'&cmd=tabclose');
+И	text	З	×
 И	О	З	tracer.Страница
