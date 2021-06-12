@@ -520,9 +520,7 @@ function postcmd(cmd){
   var xhr = new XHR();
   xhr.open('POST','/procid/'+procid,true);
   xhr.onload = function() {
-    if (upddata.readyState==4 && aupd) {
-      seq_add('cmd=upddata');
-    }
+    updcon();
     if (this.response) {
       $(this.response).each(function(index, value) {
         if (value.tagName == "SCRIPT") {
@@ -555,23 +553,31 @@ function seq_add(cmd,delay=0) {
   setTimeout(function(){seq_sendcmd()},delay);
 }
 
-//seq_add('cmd=refresh');
-seq_add('cmd=upddata');
+function updcon() {
+  if (upddata) {
+    if (upddata.readyState==4) {
+      upddata = null;
+    }
+  }
+  if (!upddata && aupd) {
+    upddata = seq_sendcmd('/procid/'+procid+'?cmd=upddata');
+    upddata.timeout = 60000;
+  }
+}
 
-function seq_sendcmd(){
-  if(seq.length) {
+updcon();
+
+function seq_sendcmd(url = null){
+  if(seq.length || url) {
     var XHR = ("onload" in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest;
     var xhr = new XHR();
-    var url = seq.shift();
-    if (url.indexOf('cmd=upddata', 0) > 0) {
-      xhr.timeout = 180000;
-      upddata = xhr;
-    }
+    if (!url) url = seq.shift();
     xhr.open('GET',url,true);
+    xhr.ontimeout = function() {
+      updcon();
+    }
     xhr.onload = function() {
-      if (upddata.readyState==4 && aupd) {
-        seq_add('cmd=upddata');
-      }
+      updcon();
       if (this.response) {
         $(this.response).each(function(index, value) {
           if (value.tagName == "SCRIPT") {
@@ -589,6 +595,7 @@ function seq_sendcmd(){
     }
     xhr.send();
   }
+  return xhr;
 }
 
 function newtab(ntab,tabtype,nodeid){
