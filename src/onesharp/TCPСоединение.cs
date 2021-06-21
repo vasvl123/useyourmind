@@ -27,6 +27,7 @@ namespace onesharp
         private string status = "Готов";
         private const int BUFFERSIZE = 4096;
         private byte[] m_Buffer;
+        private byte[] l_Buffer = new byte[8];
         private MemoryStream data;
         private MemoryStream headers;
         private bool _http = false;
@@ -110,18 +111,18 @@ namespace onesharp
         public void ПрочитатьДвоичныеДанныеАсинхронно()
         {
             var stream = _client.GetStream();
-            m_Buffer = new byte[BUFFERSIZE];
-            if (_http) status = "Ожидание";
             try
             {
                 if (_http)
                 {
+                    status = "Ожидание";
                     headers = new MemoryStream();
                     data = new MemoryStream();
+                    m_Buffer = new byte[BUFFERSIZE];
                     stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(_OnDataReceive), null);
                 }
                 else
-                    stream.BeginRead(m_Buffer, 0, 8, new AsyncCallback(OnDataReceive), null);
+                    stream.BeginRead(l_Buffer, 0, 8, new AsyncCallback(OnDataReceive), null);
             }
             catch
             {
@@ -194,10 +195,12 @@ namespace onesharp
                 int ret = stream.EndRead(iar);
                 if (ret == 8)
                 {
-                    numberOfBytes = BitConverter.ToInt64(m_Buffer, 0);
+                    numberOfBytes = BitConverter.ToInt64(l_Buffer, 0);
                     _rdata.Enqueue(ReadAllData(stream, (int)numberOfBytes).ToArray());
                     status = "Данные";
                     _server.br = true;
+                    
+                    stream.BeginRead(l_Buffer, 0, 8, new AsyncCallback(OnDataReceive), null);
                 }
                 else status = "Ошибка";
             }
