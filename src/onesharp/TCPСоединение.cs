@@ -9,6 +9,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.IO;
 
+using System.Threading;
+using System.Collections.Generic;
+
 using onesharp.Binary;
 
 namespace onesharp
@@ -19,18 +22,24 @@ namespace onesharp
     public class TCPСоединение : IDisposable
     {
         private readonly TcpClient _client;
+        private readonly TCPСервер _server;
 
         private string status = "Готов";
         private const int BUFFERSIZE = 4096;
         private byte[] m_Buffer;
-        private MemoryStream data = new MemoryStream();
-        private MemoryStream headers = new MemoryStream();
-        private bool _readheaders = false;
+        private MemoryStream data;
+        private MemoryStream headers;
+        private bool _http = false;
         private Int64 numberOfBytes;
 
-        public TCPСоединение(TcpClient client)
+        private Thread th;
+        private readonly Queue<byte[]> _sdata = new Queue<byte[]>();
+        private readonly Queue<byte[]> _rdata = new Queue<byte[]>();
+
+        public TCPСоединение(TcpClient client, TCPСервер server)
         {
             this._client = client;
+            this._server = server;
         }
 
         /// <summary>
@@ -71,19 +80,21 @@ namespace onesharp
 
         private MemoryStream ReadAllData(NetworkStream source, int limit)
         {
-            const int BUF_SIZE = 1024;
-            byte[] readBuffer = new byte[BUF_SIZE];
+            byte[] readBuffer = new byte[BUFFERSIZE];
 
             bool useLimit = limit > 0;
             var ms = new MemoryStream();
 
             do
             {
-                int portion = useLimit ? Math.Min(limit, BUF_SIZE) : BUF_SIZE;
+                int portion = useLimit ? Math.Min(limit, BUFFERSIZE) : BUFFERSIZE;
                 int numberOfBytesRead = source.Read(readBuffer, 0, portion);
                 ms.Write(readBuffer, 0, numberOfBytesRead);
                 if (useLimit)
+                {
                     limit -= numberOfBytesRead;
+                    if (limit == 0) break;
+                }
             } while (source.DataAvailable);
 
             if (ms.Length > 0)
@@ -99,16 +110,78 @@ namespace onesharp
         public void ПрочитатьДвоичныеДанныеАсинхронно()
         {
             var stream = _client.GetStream();
-            data = new MemoryStream();
             m_Buffer = new byte[BUFFERSIZE];
-            status = "Ожидание";
+            if (_http) status = "Ожидание";
             try
             {
-                stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(OnDataReceive), null);
+                if (_http)
+                {
+                    headers = new MemoryStream();
+                    data = new MemoryStream();
+                    stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(_OnDataReceive), null);
+                }
+                else
+                    stream.BeginRead(m_Buffer, 0, 8, new AsyncCallback(OnDataReceive), null);
             }
             catch
             {
                 status = "Ошибка";
+            }
+
+        }
+
+        private void _OnDataReceive(IAsyncResult iar)
+        {
+            try
+            {
+                var stream = _client.GetStream();
+                int ret = stream.EndRead(iar);
+                if (ret > 0)
+                {
+                    int n = 0;
+                    if (status == "Ожидание")
+                    {
+                        for (n = 0; n < ret; n++)
+                        {
+                            if (m_Buffer[n] == 10)
+                                if (n > 3)
+                                    if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
+                                    {
+                                        headers.Write(m_Buffer, 0, n);
+                                        //_readheaders = false;
+                                        if (n < ret) n++;
+                                        break;
+                                    }
+                        }
+                        status = "Заголовки";
+                        _server.br = true;                        
+                        System.Threading.Thread.Sleep(25);
+                    }
+                    
+                    if (ret > n)
+                    {
+                        status = "Чтение";
+                        data.Write(m_Buffer, n, ret - n);
+                    }
+
+                    if (stream.DataAvailable)
+                    {
+                        status = "Чтение";
+                        m_Buffer = new byte[BUFFERSIZE];
+                        int numr = m_Buffer.Length;
+                        stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                    }
+                    else if (status == "Чтение")
+                    {
+                        status = "Данные";
+                        _server.br = true;
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                status = "Ошибка\n" + e.Message;
             }
 
         }
@@ -119,58 +192,21 @@ namespace onesharp
             {
                 var stream = _client.GetStream();
                 int ret = stream.EndRead(iar);
-                if (ret > 0)
+                if (ret == 8)
                 {
-                    int n = 0;
-                    if (_readheaders)
-                    {
-                        if (status == "Ожидание")
-                        {
-                            for (n = 0; n < ret; n++)
-                            {
-                                if (m_Buffer[n] == 10)
-                                    if (n > 3)
-                                        if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
-                                        {
-                                            headers.Write(m_Buffer, 0, n);
-                                            //_readheaders = false;
-                                            if (n < ret) n++;
-                                            break;
-                                        }
-                            }
-                            status = "Заголовки";
-                            System.Threading.Thread.Sleep(25);
-                        }
-                    }
-                    else if (numberOfBytes == 0 && data.Position == 0) // начало данных
-                    {
-                        numberOfBytes = BitConverter.ToInt64(m_Buffer, 0);
-                        n = 8;
-                    }
-
-                    if (numberOfBytes > 0)
-                    {
-                        numberOfBytes -= ret - n;
-                    }
-
-                    data.Write(m_Buffer, n, ret - n);
-
-                    if (stream.DataAvailable || numberOfBytes > 0)
-                    {
-                        status = "Чтение";
-                        m_Buffer = new byte[BUFFERSIZE];
-                        stream.BeginRead(m_Buffer, 0, m_Buffer.Length, new AsyncCallback(OnDataReceive), null);
-                    }
-                    else if (status == "Ожидание" || status == "Заголовки" || status == "Чтение")
-                        status = "Данные";
+                    numberOfBytes = BitConverter.ToInt64(m_Buffer, 0);
+                    _rdata.Enqueue(ReadAllData(stream, (int)numberOfBytes).ToArray());
+                    status = "Данные";
+                    _server.br = true;
                 }
+                else status = "Ошибка";
             }
             catch (Exception e)
             {
                 status = "Ошибка\n" + e.Message;
             }
-
         }
+
 
         /// <summary>
         /// Возвращает полученные сырые байты из сокета.
@@ -178,9 +214,18 @@ namespace onesharp
         /// <returns>ДвоичныеДанные</returns>
         public ДвоичныеДанные ПолучитьДвоичныеДанные()
         {
-            var a = data.ToArray();
-            data = new MemoryStream();
-            return new ДвоичныеДанные(a);
+            if (_http) 
+            { 
+                var a = data.ToArray();
+                data = null;
+                return new ДвоичныеДанные(a);
+            }
+            else
+            {
+                if (_rdata.Count == 0) return null;
+                if (_rdata.Count == 1) status = "Ожидание";
+                return new ДвоичныеДанные(_rdata.Dequeue());
+            }
         }
 
         /// <summary>
@@ -218,7 +263,7 @@ namespace onesharp
             using (var reader = new StreamReader(headers, enc))
             {
                 var str = reader.ReadToEnd();
-                headers = new MemoryStream();
+                headers = null;
                 return str;
             }
 
@@ -273,32 +318,48 @@ namespace onesharp
             }
         }
 
-        /// <summary>
-        /// Отправка сырых двоичных данных на удаленный хост асинхронно.
-        /// </summary>
-        /// <param name="data">ДвоичныеДанные которые нужно отправить.</param>
-        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data, bool sendlen = true)
+        void send_adata() 
         {
             try
             {
-                var buf = _data.Buffer;
-                var len = buf.Length;
-                if (len == 0)
+                while (_sdata.Count != 0)
                 {
-                    status = "Успех";
-                    return;
+                    var val = _sdata.Dequeue();
+        
+                    if (val.Length != 0) 
+                    { 
+                        var stream = _client.GetStream();
+                        stream.Write(val, 0, val.Length);
+                        stream.Flush();
+                    }
+
                 }
-
-                var stream = _client.GetStream();
-                status = "Запись";
-
-                if (sendlen) stream.Write(BitConverter.GetBytes((long)len), 0, 8); // сколько данных
-                stream.BeginWrite(buf, 0, len, new AsyncCallback(this.OnWriteComplete), null);
-                //stream.Flush();
+                status = "Успех";
             }
             catch
             {
                 status = "Ошибка";
+            }
+
+            th = null;
+
+        }
+
+        /// <summary>
+        /// Отправка сырых двоичных данных на удаленный хост асинхронно.
+        /// </summary>
+        /// <param name="data">ДвоичныеДанные которые нужно отправить.</param>
+        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data)
+        {
+            
+            status = "Запись";
+            if (!_http) _sdata.Enqueue(BitConverter.GetBytes((long)_data.Buffer.Length));
+            _sdata.Enqueue(_data.Buffer);
+            
+            if (th == null) 
+            { 
+                th = new Thread(new ThreadStart(send_adata));
+                th.Start();
             }
 
         }
@@ -346,10 +407,10 @@ namespace onesharp
         }
 
 
-        public bool ПриниматьЗаголовоки
+        public bool HTTP
         {
-            get { return _readheaders; }
-            set { _readheaders = value; }
+            get { return _http; }
+            set { _http = value; }
         }
 
 
@@ -395,7 +456,7 @@ namespace onesharp
         public static TCPСоединение Новый(string host, int port)
         {
             var client = new TcpClient(host, port);
-            return new TCPСоединение(client);
+            return new TCPСоединение(client, null);
         }
     }
 }

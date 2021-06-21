@@ -360,6 +360,8 @@ namespace onesharp
 
         public string ОписаниеОшибки(Exception e) { return ИмяМодуля + " ошибка!\n" + e.InnerException + "\n" + e.Message + "\n" + e.StackTrace; }
 
+        public void ЛогСообщить(string Сообщение) { Сообщить(ИмяМодуля + ": " + Сообщение); }
+
 
         public string ТекущийКаталог()
         {

@@ -8,9 +8,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>.ПараметрЗаголовок</title>
-<link id="favicon" rel="icon" type="image/png" href=".ПараметрХост/resource/favicon.ico" />
-<link href=".ПараметрХост/resource/style.css" rel="stylesheet">
-<link href=".ПараметрХост/resource/c_style.css" rel="stylesheet">
+<link id="favicon" rel="icon" type="image/png" href="/resource/favicon.ico" />
+<link href="/resource/style.css" rel="stylesheet">
+<link href="/resource/c_style.css" rel="stylesheet">
 </head>
 <!--/ОбластьШапка-->
 
@@ -81,13 +81,16 @@
 <!--ОбластьВкладкиМеню-->
 <ul class="navbar-nav mr-auto" id="tabs">
   <li class="nav-item px-2">
-    <a class="nav-link" href="https://onesharp.net">onesharp.net</a>
+    <a class="nav-link" href="/">onesharp.net</a>
   </li>
   <li class="nav-item px-2">
     <a class="nav-link" href="https://github.com/vasvl123/onesharp.net">GitHub</a>
   </li>
   <li class="nav-item px-2">
-    <a class="nav-link" href="https://onesharp.net/parser">parser</a>
+    <a class="nav-link" href="/parser">parser</a>
+  </li>
+  <li class="nav-item px-2">
+    <a class="nav-link" href="/tracer">tracer</a>
   </li>
 </ul>
 <!--/ОбластьВкладкиМеню-->
@@ -450,6 +453,22 @@ var aupd=true;
 var upddata;
 var zi=5;
 
+// const upddata = new EventSource('/procid/'+procid+'?cmd=upddata');
+//
+// upddata.onmessage = function(event) {
+//   $(event.data).each(function(index, value) {
+//     if (value.tagName == "SCRIPT") {
+//       eval(value.innerText);
+//     } else {
+//       if (value.id) {
+//         if (!updom($('#'+value.id)[0], value)) {
+//           //seq_add("nodeid="+value.id+"&cmd=nodereload");
+//         }
+//       }
+//     }
+//   });
+// }
+
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
 }
@@ -724,7 +743,7 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 
 <!-- <script src=".ПараметрХост/resource/popper.min.js"></script> -->
 <!-- <script src=".ПараметрХост/resource/bootstrap.min.js"></script> -->
-<script src=".ПараметрХост/resource/jquery-ui.min.js"></script>
+<script src="/resource/jquery-ui.min.js"></script>
 <!-- <script src=".ПараметрХост/resource/coreui.min.js"></script> -->
 
 </body>
@@ -732,11 +751,13 @@ document.body.onmouseover = document.body.onmouseout = document.body.onclick = h
 <!--/ОбластьПодвал-->
 
 <!--ОбластьОбновить-->
-<script>seq_add('cmd=upddata');</script>
+<script>
+  updcon();
+</script>
 <!--/ОбластьОбновить-->
 
 <!--ОбластьПеренаправить-->
-<script>setTimeout(function(){window.location.replace('.ПараметрПуть');},.ПараметрПауза);</script>
+<script>aupd = false; setTimeout(function(){window.location.replace('.ПараметрПуть');},.ПараметрПауза);</script>
 <!--/ОбластьПеренаправить-->
 
 <!--ОбластьИзменитьАдрес-->

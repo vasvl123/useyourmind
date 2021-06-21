@@ -21,11 +21,14 @@ namespace onesharp
         private Thread th;
         private string _Active = "none";
         private readonly Queue<TCPСоединение> _Conn = new Queue<TCPСоединение>();
-        private bool _readheaders = false;
+        private bool _http = false;
 
-        public TCPСервер(int port)
+        public bool br = false;
+
+        public TCPСервер(int port, bool http = false)
         {
             _listener = new TcpListener(IPAddress.Any, port);
+            _http = http;
         }
 
         /// <summary>
@@ -58,8 +61,8 @@ namespace onesharp
                 try
                 {
                     var client = _listener.AcceptTcpClient();
-                    var _client = new TCPСоединение(client);
-                    _client.ПриниматьЗаголовоки = _readheaders;
+                    var _client = new TCPСоединение(client, this);
+                    _client.HTTP = _http;
                     _client.ПрочитатьДвоичныеДанныеАсинхронно();
                     _Conn.Enqueue(_client);
                 }
@@ -97,16 +100,19 @@ namespace onesharp
                 return null;
 
             var client = _listener.AcceptTcpClient();
-            return new TCPСоединение(client);
+            return new TCPСоединение(client, this);
         }
 
         public TCPСоединение ПолучитьСоединение(int timeout = 0)
         {
-            while (5 < timeout && _Conn.Count == 0)
+            while (5 < timeout && _Conn.Count == 0 && !br)
             {
                 Thread.Sleep(5);
                 timeout -= 5;
             }
+
+            br = false;
+            
             if (_Conn.Count != 0)
             {
                 TCPСоединение val = _Conn.Dequeue();
@@ -114,12 +120,6 @@ namespace onesharp
             }
             
             return null;
-        }
-
-        public bool ПриниматьЗаголовки
-        {
-            get { return _readheaders; }
-            set { _readheaders = value; }
         }
 
         /// <summary>
