@@ -142,14 +142,17 @@
         </li>
       </ul>
     </nav>
-    <script>
-      document.body.classList.add("sidebar-lg-show");
-      document.body.classList.add("sidebar-show");
-      document.getElementById("menubuton").classList.remove("hidden");
-      document.getElementById("menubuton-sm").classList.remove("hidden");
-    </script>
   </div>
 <!--/ОбластьПанельМеню-->
+
+<!--ОбластьПанельМенюСкрипт-->
+<script>
+  document.body.classList.add("sidebar-lg-show");
+  //document.body.classList.add("sidebar-show");
+  document.getElementById("menubuton").classList.remove("hidden");
+  document.getElementById("menubuton-sm").classList.remove("hidden");
+</script>
+<!--/ОбластьПанельМенюСкрипт-->
 
 <!--ОбластьПанельНетМеню-->
 <div class="sidebar" id="sidebar">
@@ -209,6 +212,14 @@
   </li>
 </ul>
 <!--/ОбластьСубъект-->
+
+<!--ОбластьНеСубъект-->
+<ul class="nav navbar-nav ml-auto" id="acc">
+  <li class="nav-item px-2">
+    <a class="nav-link" href="" onclick="seq_add('cmd=restartserver'); return false">Выход</a>
+  </li>
+</ul>
+<!--/ОбластьНеСубъект-->
 
 <!--ОбластьСкрипт-->
 <script>
@@ -429,6 +440,26 @@
 </script>
 <!--/ОбластьПанель-->
 
+<!--ОбластьВыход-->
+<div id='container' class='container-fluid data'>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-4">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+          <h2 style="text-align:center">
+            завершение работы ...
+          </h2>
+          <br>
+          <button class="btn btn-block btn-success" onclick="window.location.replace('/')">
+            Выход
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ОбластьВыход-->
+
 <!--ОбластьСтатус-->
 <div class="ml-auto" id="status">
 <span>.ПараметрСтатусСообщение</span>
@@ -451,23 +482,55 @@ var mode='';
 var seq=new Array();
 var aupd=true;
 var zi=5;
+var upddata;
+var state;
 
-const upddata = new EventSource('/upddata/'+procid);
 
-upddata.onmessage = function(event) {
-  var ed = decodeURIComponent(event.data);
-  $(ed).each(function(index, value) {
-    if (value.tagName == "SCRIPT") {
-      eval(value.innerText);
-    } else {
-      if (value.id) {
-        if (!updom($('#'+value.id)[0], value)) {
-          //seq_add("nodeid="+value.id+"&cmd=nodereload");
-        }
-      }
+function conctrl() {
+  if (upddata)
+    if (upddata.readyState == 1)
+    {
+      if (aupd == "error") Notify.generate('Connected', 'Success', 1);
+      aupd = true;
     }
-  });
+    else
+    {
+      if (aupd == true) Notify.generate('Connection lost', 'Error', 3);
+      aupd = "error";
+      upddata.close();
+      upddata = null;
+    }
+
+  if (!upddata && aupd != false) {
+    upddata = new EventSource('/upddata/'+procid);
+    upddata.onmessage = function(event) {
+      var ed = decodeURIComponent(event.data);
+      $(ed).each(function(index, value) {
+        if (value.tagName == "SCRIPT") {
+          eval(value.innerText);
+        } else {
+          if (value.id) {
+            if (!updom($('#'+value.id)[0], value)) {
+              //seq_add("nodeid="+value.id+"&cmd=nodereload");
+            }
+          }
+        }
+      });
+    }
+  }
+  setTimeout(function(){conctrl()},2000);
 }
+
+conctrl();
+
+window.onpopstate = function(event) {
+  if (event.state) {
+    seq_add("tab=" + event.state.p_tab + "&cmd=tabselect");
+    seq_add("tab=" + tab + "&cmd=tabclose");
+    state = event.state;
+    tabselect(state.p_tabtype,state.p_tab,state.p_scroll);
+  }
+};
 
 function scrolled() {
   return (window.pageYOffset || document.documentElement.scrollTop);
@@ -607,7 +670,14 @@ function newtab(ntab,tabtype,nodeid){
   }
 }
 
-function tabselect(p_tabtype,p_tab,p_scroll){
+function tabselect(p_tabtype,p_tab,p_scroll) {
+  var n_state = {"p_tabtype": p_tabtype, "p_tab": p_tab, "p_scroll": scrolled()}
+  if (state && state.p_tab != p_tab) {
+    history.pushState(n_state, "");
+  } else {
+    history.replaceState(n_state, "");
+  }
+  state = n_state;
   var t=$("#"+p_tab+"_0");
   if (p_tabtype=="data") {
     $(".win").hide().css('top',0);

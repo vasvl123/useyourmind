@@ -7,7 +7,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>starter</RootNamespace>
     <AssemblyName>starter</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -38,7 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
-      <Project>{D8094841-0114-44ED-8137-D38F8DA889C1}</Project>
+      <Project>{9295451B-D5D3-4372-B80D-7C565659579E}</Project>
       <Name>Onesharp</Name>
     </ProjectReference>
   </ItemGroup>

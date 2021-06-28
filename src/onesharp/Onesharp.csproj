@@ -1,21 +1,80 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
-    <AssemblyName>onesharp</AssemblyName>
-    <RootNamespace>onesharp</RootNamespace>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9295451B-D5D3-4372-B80D-7C565659579E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Onesharp</RootNamespace>
+    <AssemblyName>Onesharp</AssemblyName>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>.</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="GenericStreamImpl.cs" />
-    <Compile Remove="Binary\GenericStream.cs" />
-    <Compile Remove="Hash\HashFunctionEnum.cs" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Hash\" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Binary\BitConversionFacility.cs" />
+    <Compile Include="Binary\МенеджерФайловыхПотоков.cs" />
+    <Compile Include="Binary\Поток.cs" />
+    <Compile Include="Binary\ReadDataResult.cs" />
+    <Compile Include="Binary\EndianBitConverter.cs" />
+    <Compile Include="Binary\БуферДвоичныхДанных.cs" />
+    <Compile Include="Binary\StreamEnums.cs" />
+    <Compile Include="Binary\MemoryStreamContext.cs" />
+    <Compile Include="Binary\ДвоичныеДанные.cs" />
+    <Compile Include="Binary\GenericStreamImpl.cs" />
+    <Compile Include="Binary\ФайловыйПоток.cs" />
+    <Compile Include="Hash\CombinedStream.cs" />
+    <Compile Include="Hash\Crc32.cs" />
+    <Compile Include="Hash\ХешированиеДанных.cs" />
+    <Compile Include="ЧтениеТекста.cs" />
+    <Compile Include="ФайловыеОперации.cs" />
+    <Compile Include="Файл.cs" />
+    <Compile Include="ТекстовыйДокумент.cs" />
+    <Compile Include="Структура.cs" />
+    <Compile Include="Стр.cs" />
+    <Compile Include="Соответствие.cs" />
+    <Compile Include="СистемнаяИнформация.cs" />
+    <Compile Include="Рефлектор.cs" />
+    <Compile Include="ПрочиеФункции.cs" />
+    <Compile Include="Процесс.cs" />
+    <Compile Include="Новый.cs" />
+    <Compile Include="Массив.cs" />
+    <Compile Include="КодировкаТекста.cs" />
+    <Compile Include="КлючИЗначение.cs" />
+    <Compile Include="ValueFormatter.cs" />
+    <Compile Include="TCPСоединение.cs" />
+    <Compile Include="TCPServer.cs" />
+    <Compile Include="RuntimeExceptions.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Onesharp.cs" />
+    <Compile Include="GlobalBinaryData.cs" />
+    <Compile Include="FormatParametersList.cs" />
+    <Compile Include="FileOpener.cs" />
+    <Compile Include="CustomLineFeedStreamReader.cs" />
+    <Compile Include="ConsoleHostImpl.cs" />
+    <Compile Include="useyourmind\functions.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="useyourmind\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

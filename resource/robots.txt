@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /procid/
+Disallow: /upddata/
 Disallow: /resource/
 Disallow: /data
 Disallow: /log
