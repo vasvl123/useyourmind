@@ -50,3 +50,4 @@ morph/*
 /src/morphserver/*
 
 parser.*
+tracer.*

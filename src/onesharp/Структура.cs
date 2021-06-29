@@ -41,6 +41,11 @@ namespace onesharp
             set { Вставить(key, value); }
         }
 
+        public T Получить<T>(string key)
+        {
+            return (T)Получить(key);
+        }
+        
         public Структура(string strProperties, params object[] values)
         {
             var props = strProperties.Split(',');
@@ -192,6 +197,21 @@ namespace onesharp
         private static RuntimeException InvalidPropertyNameException(string name )
         {
             return new RuntimeException($"Задано неправильное имя атрибута структуры '{name}'");
+        }
+        
+        public string ToClass()
+        {
+            string res = "";
+
+            foreach (КлючИЗначение keyValue in this) {
+                var зн = keyValue.Значение;
+                var тип = "string";
+                if (зн != null) тип = зн.GetType().ToString();
+                string имя = keyValue.Ключ.ToString();
+                res = res + "public " + тип + " " + имя + @"{ get { return Получить(""" + имя + @""") as " + тип + @"; } set { Вставить(""" + имя + @""", value); } }" + "\n";
+            }
+            
+            return res;
         }
 
     }

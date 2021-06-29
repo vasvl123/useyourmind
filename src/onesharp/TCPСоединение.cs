@@ -33,7 +33,6 @@ namespace onesharp
         private bool _http = false;
         private Int64 numberOfBytes;
 
-        private Thread th;
         private readonly Queue<byte[]> _sdata = new Queue<byte[]>();
         private readonly Queue<byte[]> _rdata = new Queue<byte[]>();
 
@@ -96,7 +95,7 @@ namespace onesharp
                     limit -= numberOfBytesRead;
                     if (limit == 0) break;
                 }
-            } while (source.DataAvailable);
+            } while (source.DataAvailable || useLimit);
 
             if (ms.Length > 0)
                 ms.Position = 0;
@@ -314,55 +313,48 @@ namespace onesharp
                 var stream = _client.GetStream();
                 stream.EndWrite(ar);
                 status = "Успех";
+
+                ОтправитьДвоичныеДанныеАсинхронно();
             }
             catch
             {
                 status = "Ошибка";
             }
-        }
-
-        void send_adata() 
-        {
-            try
-            {
-                while (_sdata.Count != 0)
-                {
-                    var val = _sdata.Dequeue();
-        
-                    if (val.Length != 0) 
-                    { 
-                        var stream = _client.GetStream();
-                        stream.Write(val, 0, val.Length);
-                        stream.Flush();
-                    }
-
-                }
-                status = "Успех";
-            }
-            catch
-            {
-                status = "Ошибка";
-            }
-
-            th = null;
-
         }
 
         /// <summary>
         /// Отправка сырых двоичных данных на удаленный хост асинхронно.
         /// </summary>
         /// <param name="data">ДвоичныеДанные которые нужно отправить.</param>
-        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data)
+        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data = null)
         {
             
-            status = "Запись";
-            if (!_http) _sdata.Enqueue(BitConverter.GetBytes((long)_data.Buffer.Length));
-            _sdata.Enqueue(_data.Buffer);
-            
-            if (th == null) 
-            { 
-                th = new Thread(new ThreadStart(send_adata));
-                th.Start();
+            if (_data != null)
+            {
+                if (!_http) _sdata.Enqueue(BitConverter.GetBytes((long)_data.Buffer.Length));
+                _sdata.Enqueue(_data.Buffer);
+            }
+
+            try
+            {
+                if (_sdata.Count != 0 && Статус != "Запись")
+                {
+                    var val = _sdata.Dequeue();
+
+                    if (val.Length != 0)
+                    {
+                        status = "Запись";
+                        var stream = _client.GetStream();
+                        stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
+                    }
+                    else
+                        ОтправитьДвоичныеДанныеАсинхронно();
+
+                } 
+            }
+            catch
+            {
+                status = "Ошибка";
             }
 
         }
