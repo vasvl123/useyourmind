@@ -47,6 +47,10 @@ morph/*
 *.pdb
 *.config
 
+os/*
+*.exe
+*.dll
+
 /src/morphserver/*
 
 parser.*

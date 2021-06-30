@@ -14,10 +14,10 @@ using onesharp.Binary;
 namespace onesharp
 {
 
-    public class functions : Onesharp
+    public class useyourmind : Onesharp
     {
 
-        public functions() : base("functions") { }
+        public useyourmind(string nm) : base("nm") { }
 
         Соответствие Соединения = Новый.Соответствие();
 

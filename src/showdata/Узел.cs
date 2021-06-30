@@ -15,11 +15,8 @@ namespace onesharp
  
         public Узел() : base() {}
 
-        public Соответствие _с { get { return this["_с"] as Соответствие; } }
-        public Структура _д { get { return this["д"] as Структура; } }
-        public dynamic д { get { return this["д"]; } }
-        public Структура _п { get { return this["п"] as Структура; } }
-        public dynamic п { get { return this["п"]; } }
+        public Структура д { get { return Получить<Структура>("д"); } }
+        public Структура п { get { return Получить<Структура>("п"); } }
 
         public string Код { get { return (string)Получить("Код"); } }
         public string Имя { get { return (string)Получить("Имя"); } }
@@ -35,23 +32,11 @@ namespace onesharp
 
         public Узел(string strProperties, params object[] values) : base(strProperties, values) { }
 
-
-        /// <summary>
-        /// Создает структуру по фиксированной структуре
-        /// </summary>
-        /// <param name="fixedStruct">Исходная структура</param>
-        //[ScriptConstructor(Name = "Из фиксированной структуры")]
         public new static Узел Новый(Структура fixedStruct)
         {
             return new Узел(fixedStruct);
         }
 
-        /// <summary>
-        /// Создает структуру по заданному перечню свойств и значений
-        /// </summary>
-        /// <param name="param1">Фиксированная структура либо строка с именами свойств, указанными через запятую.</param>
-        /// <param name="args">Только для перечня свойств:
-        /// Значения свойств. Каждое значение передается, как отдельный параметр.</param>
         public new static Узел Новый(string param1, params object[] args)
         {
             return new Узел(param1, args);
@@ -60,11 +45,6 @@ namespace onesharp
         public new static Узел Новый()
         {
             return new Узел();
-        }
-
-        private static RuntimeException InvalidPropertyNameException( string name )
-        {
-            return new RuntimeException($"Задано неправильное имя атрибута структуры '{name}'");
         }
 
     }

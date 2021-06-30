@@ -8,7 +8,7 @@
 using System;
 using System.Linq;
 
-namespace onesharp
+namespace starter
 {
 
     class MainClass

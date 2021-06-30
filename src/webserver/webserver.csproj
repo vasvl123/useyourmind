@@ -7,7 +7,6 @@
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>

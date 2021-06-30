@@ -7,8 +7,9 @@ at http://mozilla.org/MPL/2.0/.
 using System;
 using System.Dynamic;
 using System.Collections.Generic;
+using onesharp;
 
-namespace onesharp
+namespace webserver
 {
     public class Задача : Структура
     {
@@ -31,23 +32,11 @@ namespace onesharp
 
         public Задача(string strProperties, params object[] values) : base(strProperties, values) { }
 
-
-        /// <summary>
-        /// Создает структуру по фиксированной структуре
-        /// </summary>
-        /// <param name="fixedStruct">Исходная структура</param>
-        //[ScriptConstructor(Name = "Из фиксированной структуры")]
         private new static Задача Новый(Структура fixedStruct)
         {
             return new Задача(fixedStruct);
         }
 
-        /// <summary>
-        /// Создает структуру по заданному перечню свойств и значений
-        /// </summary>
-        /// <param name="param1">Фиксированная структура либо строка с именами свойств, указанными через запятую.</param>
-        /// <param name="args">Только для перечня свойств:
-        /// Значения свойств. Каждое значение передается, как отдельный параметр.</param>
         public new static Задача Новый(string param1, params object[] args)
         {
             return new Задача(param1, args);
@@ -56,11 +45,6 @@ namespace onesharp
         public new static Задача Новый()
         {
             return new Задача();
-        }
-
-        private static RuntimeException InvalidPropertyNameException( string name )
-        {
-            return new RuntimeException($"Задано неправильное имя атрибута структуры '{name}'");
         }
 
     }

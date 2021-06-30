@@ -10,17 +10,20 @@ using System.Collections.Generic;
 
 namespace onesharp
 {
-    public class Структура : DynamicObject, IEnumerable<object>
+    public class Свойства : DynamicObject
     {
-        private readonly Dictionary<string, object> _values = new Dictionary<string, object>();
-
-        public Структура() {}
-
+        private readonly Dictionary<string, object> _values;
+        
+        public Свойства(Dictionary<string, object> values) {
+            _values = values;
+        }
+        
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
             result = null;
-            if (Свойство(binder.Name, out result))
+            if (_values.ContainsKey(binder.Name))
             {
+                _values.TryGetValue(binder.Name, out result);
                 return true;
             }
             return false;
@@ -29,11 +32,29 @@ namespace onesharp
         // установить свойство
         public override bool TrySetMember(SetMemberBinder binder, object value)
         {
-            Вставить(binder.Name, value);
+            _values.Remove(binder.Name);
+            _values.Add(binder.Name, value);  
             return true;
         }
 
-        public dynamic с { get { return this; } }
+    }
+
+    public class Структура : IEnumerable<object>
+    {
+        private readonly Dictionary<string, object> _values = new Dictionary<string, object>();
+
+        private Свойства св;
+
+        public Структура() {}
+
+        public dynamic с 
+        { 
+            get 
+            {
+                if (св is null) св = new Свойства(_values);
+                return св; 
+            } 
+        }
 
         public object this[string key]
         {
@@ -203,7 +224,8 @@ namespace onesharp
         {
             string res = "";
 
-            foreach (КлючИЗначение keyValue in this) {
+            foreach (КлючИЗначение keyValue in this) 
+            {
                 var зн = keyValue.Значение;
                 var тип = "string";
                 if (зн != null) тип = зн.GetType().ToString();

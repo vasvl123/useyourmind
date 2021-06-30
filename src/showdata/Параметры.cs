@@ -31,22 +31,11 @@ namespace onesharp
         public Параметры(string strProperties, params object[] values) : base(strProperties, values) { }
 
 
-        /// <summary>
-        /// Создает структуру по фиксированной структуре
-        /// </summary>
-        /// <param name="fixedStruct">Исходная структура</param>
-        //[ScriptConstructor(Name = "Из фиксированной структуры")]
         public new static Параметры Новый(Структура fixedStruct)
         {
             return new Параметры(fixedStruct);
         }
 
-        /// <summary>
-        /// Создает структуру по заданному перечню свойств и значений
-        /// </summary>
-        /// <param name="param1">Фиксированная структура либо строка с именами свойств, указанными через запятую.</param>
-        /// <param name="args">Только для перечня свойств:
-        /// Значения свойств. Каждое значение передается, как отдельный параметр.</param>
         public new static Параметры Новый(string param1, params object[] args)
         {
             return new Параметры(param1, args);
@@ -55,11 +44,6 @@ namespace onesharp
         public new static Параметры Новый()
         {
             return new Параметры();
-        }
-
-        private static RuntimeException InvalidPropertyNameException( string name )
-        {
-            return new RuntimeException($"Задано неправильное имя атрибута структуры '{name}'");
         }
 
     }

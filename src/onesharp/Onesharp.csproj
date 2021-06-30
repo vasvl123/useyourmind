@@ -72,7 +72,7 @@
     <Compile Include="FileOpener.cs" />
     <Compile Include="CustomLineFeedStreamReader.cs" />
     <Compile Include="ConsoleHostImpl.cs" />
-    <Compile Include="useyourmind\functions.cs" />
+    <Compile Include="useyourmind\useyourmind.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="useyourmind\" />
