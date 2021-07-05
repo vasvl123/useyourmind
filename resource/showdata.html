@@ -487,35 +487,11 @@ var state;
 
 
 function conctrl() {
-  if (upddata)
-    if (upddata.readyState == 1)
-    {
-      if (aupd == "error") Notify.generate('Connected', 'Success', 1);
-      aupd = true;
-    }
-    else
-    {
-      if (aupd == true) Notify.generate('Connection lost', 'Error', 3);
-      aupd = "error";
-      upddata.close();
-      upddata = null;
-    }
-
-  if (!upddata && aupd != false) {
-    upddata = new EventSource('/upddata/'+procid);
-    upddata.onmessage = function(event) {
-      var ed = decodeURIComponent(event.data);
-      $(ed).each(function(index, value) {
-        if (value.tagName == "SCRIPT") {
-          eval(value.innerText);
-        } else {
-          if (value.id) {
-            if (!updom($('#'+value.id)[0], value)) {
-              //seq_add("nodeid="+value.id+"&cmd=nodereload");
-            }
-          }
-        }
-      });
+  if (aupd) {
+    if (upddata && upddata.readyState == 4) upddata = null;
+    if (!upddata) {
+      upddata = seq_sendcmd("/upddata/" + procid);
+      upddata.onerror = function() {upddata = null;}
     }
   }
   setTimeout(function(){conctrl()},2000);
@@ -655,6 +631,7 @@ function seq_sendcmd(url = null){
           }
         });
       }
+      conctrl();
     }
     xhr.send();
   }

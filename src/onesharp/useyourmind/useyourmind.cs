@@ -17,7 +17,7 @@ namespace onesharp
     public class useyourmind : Onesharp
     {
 
-        public useyourmind(string nm) : base("nm") { }
+        public useyourmind(string nm) : base(nm) { }
 
         Соответствие Соединения = Новый.Соответствие();
 
