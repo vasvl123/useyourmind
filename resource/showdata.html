@@ -488,13 +488,15 @@ var state;
 
 function conctrl() {
   if (aupd) {
-    if (upddata && upddata.readyState == 4) upddata = null;
+    if (upddata && upddata.readyState == 4) {
+      upddata.abort();
+      upddata = null;
+    }
     if (!upddata) {
       upddata = seq_sendcmd("/upddata/" + procid);
-      upddata.onerror = function() {upddata = null;}
+      upddata.onerror = function() {upddata = null; conctrl();}
     }
   }
-  setTimeout(function(){conctrl()},2000);
 }
 
 conctrl();
@@ -616,6 +618,7 @@ function seq_sendcmd(url = null){
     var xhr = new XHR();
     if (!url) url = seq.shift();
     xhr.open('GET',url,true);
+    xhr.upd = (url != null);
     xhr.onload = function() {
       if (this.response) {
         $(this.response).each(function(index, value) {
@@ -631,8 +634,9 @@ function seq_sendcmd(url = null){
           }
         });
       }
-      conctrl();
+      if (this.upd) conctrl();
     }
+    if (!xhr.upd) conctrl();
     xhr.send();
   }
   return xhr;
