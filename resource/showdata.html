@@ -482,31 +482,63 @@ var mode='';
 var seq=new Array();
 var aupd=true;
 var zi=5;
-var upddata;
 var state;
 
+async function conctrl() {
 
-function conctrl() {
-  if (aupd) {
-    if (upddata && upddata.readyState == 4) {
-      upddata.abort();
-      upddata = null;
+  if (!aupd) return;
+
+  try {
+
+    let response = await fetch("/upddata/" + procid);
+
+    if (response.status == 502) {
+      // Таймаут подключения
+      // случается, когда соединение ждало слишком долго.
+      // давайте восстановим связь
+      await conctrl();
+    } else if (response.status != 200) {
+      // Показать ошибку
+      console.log(response.statusText);
+      // Подключиться снова через секунду.
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await conctrl();
+    } else {
+      // Получить сообщение
+      let message = await response.text();
+
+      $(message).each(function(index, value) {
+        if (value.tagName == "SCRIPT") {
+          eval(value.innerText);
+        } else {
+          if (value.id) {
+            //$('#'+value.id).replaceWith(value);
+            if (!updom($('#'+value.id)[0], value)) {
+              //seq_add("nodeid="+value.id+"&cmd=nodereload");
+            }
+          }
+        }
+      });
+      await conctrl();
     }
-    if (!upddata) {
-      upddata = seq_sendcmd("/upddata/" + procid);
-      upddata.onerror = function() {upddata = null; conctrl();}
-    }
+
+  } catch (e) {
+    console.log(e);
+    setTimeout(function(){conctrl()},1000);
   }
+
 }
 
 conctrl();
 
 window.onpopstate = function(event) {
-  if (event.state) {
-    seq_add("tab=" + event.state.p_tab + "&cmd=tabselect");
-    seq_add("tab=" + tab + "&cmd=tabclose");
-    state = event.state;
-    tabselect(state.p_tabtype,state.p_tab,state.p_scroll);
+  if (event) {
+    if (event.state) {
+      seq_add("tab=" + event.state.p_tab + "&cmd=tabselect");
+      seq_add("tab=" + tab + "&cmd=tabclose");
+      state = event.state;
+      tabselect(state.p_tabtype,state.p_tab,state.p_scroll);
+    }
   }
 };
 
@@ -618,7 +650,6 @@ function seq_sendcmd(url = null){
     var xhr = new XHR();
     if (!url) url = seq.shift();
     xhr.open('GET',url,true);
-    xhr.upd = (url != null);
     xhr.onload = function() {
       if (this.response) {
         $(this.response).each(function(index, value) {
@@ -634,9 +665,7 @@ function seq_sendcmd(url = null){
           }
         });
       }
-      if (this.upd) conctrl();
     }
-    if (!xhr.upd) conctrl();
     xhr.send();
   }
   return xhr;

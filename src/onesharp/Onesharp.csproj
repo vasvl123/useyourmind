@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9295451B-D5D3-4372-B80D-7C565659579E}</ProjectGuid>
+    <ProjectGuid>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Onesharp</RootNamespace>
-    <AssemblyName>Onesharp</AssemblyName>
+    <RootNamespace>onesharp</RootNamespace>
+    <AssemblyName>onesharp</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -28,54 +28,50 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsoleHostImpl.cs" />
+    <Compile Include="CustomLineFeedStreamReader.cs" />
+    <Compile Include="FileOpener.cs" />
+    <Compile Include="FormatParametersList.cs" />
+    <Compile Include="GlobalBinaryData.cs" />
+    <Compile Include="Onesharp.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="RuntimeExceptions.cs" />
+    <Compile Include="TCPServer.cs" />
+    <Compile Include="TCPСоединение.cs" />
+    <Compile Include="ValueFormatter.cs" />
+    <Compile Include="КлючИЗначение.cs" />
+    <Compile Include="КодировкаТекста.cs" />
+    <Compile Include="Массив.cs" />
+    <Compile Include="Новый.cs" />
+    <Compile Include="Процесс.cs" />
+    <Compile Include="ПрочиеФункции.cs" />
+    <Compile Include="Рефлектор.cs" />
+    <Compile Include="СистемнаяИнформация.cs" />
+    <Compile Include="Соответствие.cs" />
+    <Compile Include="Стр.cs" />
+    <Compile Include="Структура.cs" />
+    <Compile Include="ТекстовыйДокумент.cs" />
+    <Compile Include="Файл.cs" />
+    <Compile Include="ФайловыеОперации.cs" />
+    <Compile Include="ЧтениеТекста.cs" />
     <Compile Include="Binary\BitConversionFacility.cs" />
+    <Compile Include="Binary\EndianBitConverter.cs" />
+    <Compile Include="Binary\GenericStreamImpl.cs" />
+    <Compile Include="Binary\MemoryStreamContext.cs" />
+    <Compile Include="Binary\ReadDataResult.cs" />
+    <Compile Include="Binary\StreamEnums.cs" />
+    <Compile Include="Binary\БуферДвоичныхДанных.cs" />
+    <Compile Include="Binary\ДвоичныеДанные.cs" />
     <Compile Include="Binary\МенеджерФайловыхПотоков.cs" />
     <Compile Include="Binary\Поток.cs" />
-    <Compile Include="Binary\ReadDataResult.cs" />
-    <Compile Include="Binary\EndianBitConverter.cs" />
-    <Compile Include="Binary\БуферДвоичныхДанных.cs" />
-    <Compile Include="Binary\StreamEnums.cs" />
-    <Compile Include="Binary\MemoryStreamContext.cs" />
-    <Compile Include="Binary\ДвоичныеДанные.cs" />
-    <Compile Include="Binary\GenericStreamImpl.cs" />
     <Compile Include="Binary\ФайловыйПоток.cs" />
     <Compile Include="Hash\CombinedStream.cs" />
     <Compile Include="Hash\Crc32.cs" />
     <Compile Include="Hash\ХешированиеДанных.cs" />
-    <Compile Include="ЧтениеТекста.cs" />
-    <Compile Include="ФайловыеОперации.cs" />
-    <Compile Include="Файл.cs" />
-    <Compile Include="ТекстовыйДокумент.cs" />
-    <Compile Include="Структура.cs" />
-    <Compile Include="Стр.cs" />
-    <Compile Include="Соответствие.cs" />
-    <Compile Include="СистемнаяИнформация.cs" />
-    <Compile Include="Рефлектор.cs" />
-    <Compile Include="ПрочиеФункции.cs" />
-    <Compile Include="Процесс.cs" />
-    <Compile Include="Новый.cs" />
-    <Compile Include="Массив.cs" />
-    <Compile Include="КодировкаТекста.cs" />
-    <Compile Include="КлючИЗначение.cs" />
-    <Compile Include="ValueFormatter.cs" />
-    <Compile Include="TCPСоединение.cs" />
-    <Compile Include="TCPServer.cs" />
-    <Compile Include="RuntimeExceptions.cs" />
-    <Compile Include="Output.cs" />
-    <Compile Include="Onesharp.cs" />
-    <Compile Include="GlobalBinaryData.cs" />
-    <Compile Include="FormatParametersList.cs" />
-    <Compile Include="FileOpener.cs" />
-    <Compile Include="CustomLineFeedStreamReader.cs" />
-    <Compile Include="ConsoleHostImpl.cs" />
     <Compile Include="useyourmind\useyourmind.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="useyourmind\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,15 +48,15 @@
     <Compile Include="showdata.cs" />
     <Compile Include="Вкладка.cs" />
     <Compile Include="Задача.cs" />
-    <Compile Include="lib\parser.cs" />
     <Compile Include="lib\tracer.cs" />
     <Compile Include="Узел.cs" />
     <Compile Include="Параметры.cs" />
+    <Compile Include="lib\parser.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
-      <Project>{9295451B-D5D3-4372-B80D-7C565659579E}</Project>
+      <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
     </ProjectReference>
   </ItemGroup>
