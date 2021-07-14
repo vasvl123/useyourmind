@@ -483,6 +483,7 @@ var seq=new Array();
 var aupd=true;
 var zi=5;
 var state;
+var response;
 
 async function conctrl() {
 
@@ -490,7 +491,9 @@ async function conctrl() {
 
   try {
 
-    let response = await fetch("/upddata/" + procid);
+    if (response) response.close();
+
+    response = await fetch("/upddata/" + procid);
 
     if (response.status == 502) {
       // Таймаут подключения
@@ -505,30 +508,35 @@ async function conctrl() {
       await conctrl();
     } else {
       // Получить сообщение
+      const utf8Decoder = new TextDecoder("utf-8");
       const reader = response.body.getReader();
-      while(true) {
-        const {done, message} = await reader.read();
-        if (done) {
-          break;
-        }
-        $(message).each(function(index, value) {
-          if (value.tagName == "SCRIPT") {
-            eval(value.innerText);
-          } else {
-            if (value.id) {
-              //$('#'+value.id).replaceWith(value);
-              if (!updom($('#'+value.id)[0], value)) {
-                //seq_add("nodeid="+value.id+"&cmd=nodereload");
+      let result;
+      let message = "";
+      while (!(result = await reader.read()).done) {
+        if (result.value) {
+          message += utf8Decoder.decode(result.value);
+          if (message.substr(-6) != "<end/>") continue;
+          $(message).each(function(index, value) {
+            if (value.tagName == "SCRIPT") {
+              eval(value.innerText);
+            } else {
+              if (value.id) {
+                //$('#'+value.id).replaceWith(value);
+                if (!updom($('#'+value.id)[0], value)) {
+                  //seq_add("nodeid="+value.id+"&cmd=nodereload");
+                }
               }
             }
-          }
-        });
+          });
+          message = "";
+          //console.log('chunk size:', result.value.byteLength);
+        }
       }
       await conctrl();
     }
   } catch (e) {
     console.log(e);
-    //setTimeout(function(){conctrl()},1000);
+    setTimeout(function(){conctrl()},1000);
   }
 }
 

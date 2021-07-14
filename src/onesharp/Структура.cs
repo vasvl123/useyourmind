@@ -62,11 +62,9 @@ namespace onesharp
             set { Вставить(key, value); }
         }
 
-        public T Получить<T>(string key)
-        {
-            return (T)Получить(key);
-        }
+        public T Получить<T>(string key) => (T)this[key];
         
+
         public Структура(string strProperties, params object[] values)
         {
             var props = strProperties.Split(',');
