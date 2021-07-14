@@ -505,28 +505,31 @@ async function conctrl() {
       await conctrl();
     } else {
       // Получить сообщение
-      let message = await response.text();
-
-      $(message).each(function(index, value) {
-        if (value.tagName == "SCRIPT") {
-          eval(value.innerText);
-        } else {
-          if (value.id) {
-            //$('#'+value.id).replaceWith(value);
-            if (!updom($('#'+value.id)[0], value)) {
-              //seq_add("nodeid="+value.id+"&cmd=nodereload");
+      const reader = response.body.getReader();
+      while(true) {
+        const {done, message} = await reader.read();
+        if (done) {
+          break;
+        }
+        $(message).each(function(index, value) {
+          if (value.tagName == "SCRIPT") {
+            eval(value.innerText);
+          } else {
+            if (value.id) {
+              //$('#'+value.id).replaceWith(value);
+              if (!updom($('#'+value.id)[0], value)) {
+                //seq_add("nodeid="+value.id+"&cmd=nodereload");
+              }
             }
           }
-        }
-      });
+        });
+      }
       await conctrl();
     }
-
   } catch (e) {
     console.log(e);
-    setTimeout(function(){conctrl()},1000);
+    //setTimeout(function(){conctrl()},1000);
   }
-
 }
 
 conctrl();
