@@ -496,7 +496,7 @@ async function conctrl() {
     controller = new AbortController();
     var signal = controller.signal;
 
-    response = await fetch("/upddata/" + procid, {signal});
+    response = await fetch("/procid/" + procid + "?cmd=upddata", {signal});
 
     if (response.status == 502) {
       // Таймаут подключения
