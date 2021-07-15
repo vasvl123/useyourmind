@@ -483,17 +483,20 @@ var seq=new Array();
 var aupd=true;
 var zi=5;
 var state;
-var response;
+var controller;
 
 async function conctrl() {
 
-  if (!aupd) return;
+  if (aupd == false) return;
 
   try {
 
-    if (response) response.close();
+    if (controller) controller.abort();
 
-    response = await fetch("/upddata/" + procid);
+    controller = new AbortController();
+    var signal = controller.signal;
+
+    response = await fetch("/upddata/" + procid, {signal});
 
     if (response.status == 502) {
       // Таймаут подключения
@@ -508,6 +511,10 @@ async function conctrl() {
       await conctrl();
     } else {
       // Получить сообщение
+      if (aupd == "error") {
+        Notify.generate('Connected', 'Success', 1);
+        aupd = true;
+      }
       const utf8Decoder = new TextDecoder("utf-8");
       const reader = response.body.getReader();
       let result;
@@ -532,11 +539,15 @@ async function conctrl() {
           //console.log('chunk size:', result.value.byteLength);
         }
       }
-      await conctrl();
+      if (procid != 1) await conctrl();
     }
   } catch (e) {
-    console.log(e);
-    setTimeout(function(){conctrl()},1000);
+    //console.log(e);
+    if (aupd != "error") {
+      aupd = "error";
+      Notify.generate('Connection lost', 'Error', 3);
+    }
+    setTimeout(function(){conctrl()},2000);
   }
 }
 
