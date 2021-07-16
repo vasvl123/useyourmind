@@ -543,7 +543,7 @@ namespace webserver
                         }
                         else
                         {
-                            Задача.Результат = "<div id='container' class='container-fluid data'>wrong session id</div><script>aupd=false; setTimeout(function(){window.location.replace('/');},1000);</script>";
+                            Задача.Результат = ПолучитьДвоичныеДанныеИзСтроки("<div id='container' class='container-fluid data'>wrong session id</div><script>aupd=false; setTimeout(function(){window.location.replace('/');},1000);</script><end/>");
                             Задача.Этап = "Обработка";
                         }
                     }
@@ -575,7 +575,11 @@ namespace webserver
 
                     if (!(Задача.Результат == Неопределено))
                     {
-                        if (Задача.Свойство("upddata")) 
+                        if (!Задача.Соединение.Активно)
+                        {
+                            Задача.Этап = "Завершить";
+                        }
+                        else if (Задача.Свойство("upddata")) 
                         {
                             var ПС = Символы.ВК + Символы.ПС;
                             var дРезультат = Новый.Массив();
@@ -595,6 +599,7 @@ namespace webserver
                             ((TCPСоединение)Задача.Соединение).ОтправитьДвоичныеДанныеАсинхронно(СоединитьДвоичныеДанные(дРезультат));
                             Задача.Результат = Неопределено;
                             Сообщить("webserver upddata " + Задача.ИдКонтроллера);
+                            if (Кусок.Размер() == 0) Задача.Этап = "Вернуть";
                        }
                         else
                             ОбработатьОтветСервера(Задача);
@@ -773,8 +778,6 @@ namespace webserver
                                     if (!(Задача == Неопределено))
                                     {
                                         if (КонтроллерЗапрос.Свойство("ContentType")) Задача.Вставить("ContentType", КонтроллерЗапрос["ContentType"] as string);
-                                        if (КонтроллерЗапрос.Свойство("TransferEncoding")) Задача.Вставить("TransferEncoding", КонтроллерЗапрос["TransferEncoding"] as string);
-                                        
                                         Задача.Результат = КонтроллерЗапрос["Результат"];
                                     }
                                 }
