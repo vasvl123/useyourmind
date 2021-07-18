@@ -539,7 +539,7 @@ async function conctrl() {
           //console.log('chunk size:', result.value.byteLength);
         }
       }
-      if (procid != 1) await conctrl();
+      conctrl();
     }
   } catch (e) {
     //console.log(e);
