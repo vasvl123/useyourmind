@@ -483,46 +483,49 @@ var seq=new Array();
 var aupd=true;
 var zi=5;
 var state;
-var controller;
+var response;
 
 async function conctrl() {
 
   if (aupd == false) return;
 
-  try {
+  response = await fetch("/procid/" + procid + "?cmd=upddata");
 
-    if (controller) controller.abort();
-
-    controller = new AbortController();
-    var signal = controller.signal;
-
-    response = await fetch("/procid/" + procid + "?cmd=upddata", {signal});
-
-    if (response.status == 502) {
-      // Таймаут подключения
-      // случается, когда соединение ждало слишком долго.
-      // давайте восстановим связь
-      await conctrl();
-    } else if (response.status != 200) {
-      // Показать ошибку
-      console.log(response.statusText);
-      // Подключиться снова через секунду.
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      await conctrl();
-    } else {
-      // Получить сообщение
-      if (aupd == "error") {
-        Notify.generate('Connected', 'Success', 1);
-        aupd = true;
+  if (response.status == 502) {
+    // Таймаут подключения
+    // случается, когда соединение ждало слишком долго.
+    // давайте восстановим связь
+    await conctrl();
+  } else if (response.status != 200) {
+    // Показать ошибку
+    console.log(response.statusText);
+    // Подключиться снова через секунду.
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    await conctrl();
+  } else {
+    // Получить сообщение
+    if (aupd == "error") {
+      Notify.generate('Connected', 'Success', 1);
+      aupd = true;
+    }
+    const utf8Decoder = new TextDecoder("utf-8");
+    const reader = response.body.getReader();
+    let result;
+    let message = "";
+    while (true) {
+      try {
+        result = await reader.read();
+      } catch (e) {
+        aupd = "error";
+        setTimeout(function(){Notify.generate('Connection lost', 'Error', 3)},1000);
+        break;
       }
-      const utf8Decoder = new TextDecoder("utf-8");
-      const reader = response.body.getReader();
-      let result;
-      let message = "";
-      while (!(result = await reader.read()).done) {
-        if (result.value) {
-          message += utf8Decoder.decode(result.value);
-          if (message.substr(-6) != "<end/>") continue;
+      if (result.done) break;
+      if (result.value) {
+        message += utf8Decoder.decode(result.value);
+        if (message.substr(-6) != "<end/>") continue;
+        try {
+          //console.log(message);
           $(message).each(function(index, value) {
             if (value.tagName == "SCRIPT") {
               eval(value.innerText);
@@ -535,19 +538,14 @@ async function conctrl() {
               }
             }
           });
-          message = "";
-          //console.log('chunk size:', result.value.byteLength);
+        } catch (e) {
+          // :(
         }
+        message = "";
+        //console.log('chunk size:', result.value.byteLength);
       }
-      conctrl();
     }
-  } catch (e) {
-    //console.log(e);
-    if (aupd != "error") {
-      aupd = "error";
-      Notify.generate('Connection lost', 'Error', 3);
-    }
-    setTimeout(function(){conctrl()},2000);
+    response = null;
   }
 }
 
@@ -664,6 +662,7 @@ function seq_add(cmd,delay=0) {
   document.body.classList.remove("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
+  if (response == null) {setTimeout(function(){conctrl()},delay);}
 }
 
 function seq_sendcmd(url = null){
