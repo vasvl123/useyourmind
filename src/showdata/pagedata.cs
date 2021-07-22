@@ -1739,7 +1739,7 @@ namespace onesharp
             return Узел;
         } // ПолучитьУзел()
 
-        Узел НовыйУзел(Узел Узел, bool Служебный = false)
+        public Узел НовыйУзел(Узел Узел, bool Служебный = false)
         {
             string НовыйКод;
 
