@@ -347,6 +347,8 @@ namespace onesharp
                         var stream = _client.GetStream();
                         stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
                     }
+                    else if (_sdata.Count == 0 && _http)
+                        ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
                     else
                         ОтправитьДвоичныеДанныеАсинхронно();
 
