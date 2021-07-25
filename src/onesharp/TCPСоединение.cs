@@ -148,35 +148,33 @@ namespace onesharp
                                     if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
                                     {
                                         headers.Write(m_Buffer, 0, n);
-                                        //_readheaders = false;
                                         if (n < ret) n++;
                                         break;
                                     }
                         }
-                        status = "Заголовки";
+                        status = "Данные";
                         _server.br = true;                        
-                        System.Threading.Thread.Sleep(25);
                     }
                     
                     if (ret > n)
                     {
-                        status = "Чтение";
                         data.Write(m_Buffer, n, ret - n);
                     }
 
-                    if (stream.DataAvailable)
+                    while (status == "Данные")
                     {
-                        status = "Чтение";
-                        m_Buffer = new byte[BUFFERSIZE];
-                        int numr = m_Buffer.Length;
-                        stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                        if (stream.DataAvailable)
+                        {
+                            m_Buffer = new byte[BUFFERSIZE];
+                            int numr = m_Buffer.Length;
+                            stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                            break;
+                        }
+                        
+                        System.Threading.Thread.Sleep(25);
                     }
-                    else if (status == "Чтение")
-                    {
-                        status = "Данные";
-                        _server.br = true;
+                    
 
-                    }
                 }
             }
             catch (Exception e)
@@ -220,6 +218,7 @@ namespace onesharp
             { 
                 var a = data.ToArray();
                 data = null;
+                status = "Готов";
                 return new ДвоичныеДанные(a);
             }
             else
@@ -337,22 +336,24 @@ namespace onesharp
 
             try
             {
-                if (_sdata.Count != 0 && Статус != "Запись")
+                if (Статус != "Запись")
                 {
-                    var val = _sdata.Dequeue();
-
-                    if (val.Length != 0)
+                    if (_sdata.Count != 0)
                     {
-                        status = "Запись";
-                        var stream = _client.GetStream();
-                        stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
-                    }
-                    else if (_sdata.Count == 0 && _http)
-                        ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
-                    else
-                        ОтправитьДвоичныеДанныеАсинхронно();
+                        var val = _sdata.Dequeue();
 
-                } 
+                        if (val.Length != 0)
+                        {
+                            status = "Запись";
+                            var stream = _client.GetStream();
+                            stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
+                        }
+                        else
+                            ОтправитьДвоичныеДанныеАсинхронно();
+                    }
+                    else if (_http)
+                        ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
+                }
             }
             catch
             {
@@ -367,6 +368,7 @@ namespace onesharp
         public string Статус
         {
             get { return status; }
+            set { status = value; }
         }
 
         /// <summary>
@@ -382,6 +384,14 @@ namespace onesharp
                 var socket = _client.Client;
 
                 return !((socket.Poll(POLL_INTERVAL, SelectMode.SelectRead) && (socket.Available == 0)) || !socket.Connected);
+            }
+        }
+        
+        public long Длина
+        {
+            get
+            {
+                return data.Position;
             }
         }
 
