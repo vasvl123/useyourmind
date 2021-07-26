@@ -483,13 +483,14 @@ var seq=new Array();
 var aupd=true;
 var zi=5;
 var state;
-var response;
+var upddata;
 
 async function conctrl() {
 
   if (aupd == false) return;
 
-  response = await fetch("/procid/" + procid + "?cmd=upddata");
+  var response = await fetch("/procid/" + procid + "?cmd=upddata");
+  upddata = response;
 
   if (response.status == 502) {
     // Таймаут подключения
@@ -545,7 +546,7 @@ async function conctrl() {
         //console.log('chunk size:', result.value.byteLength);
       }
     }
-    response = null;
+    if (upddata == response) upddata = null;
   }
 }
 
@@ -662,7 +663,7 @@ function seq_add(cmd,delay=0) {
   document.body.classList.remove("sidebar-show");
   seq.push('/procid/'+procid+'?datascrolled='+datascrolled+'&winscrolled='+winscrolled+'&'+cmd);
   setTimeout(function(){seq_sendcmd()},delay);
-  if (response == null) {setTimeout(function(){conctrl()},delay);}
+  if (upddata == null) {setTimeout(function(){conctrl()},delay);}
 }
 
 function seq_sendcmd(url = null){
