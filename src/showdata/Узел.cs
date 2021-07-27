@@ -28,6 +28,9 @@ namespace onesharp
         public Узел Старший { get { return Получить("Старший") as Узел; } set { Вставить("Старший", value); } }
         public Узел Родитель { get { return Получить("Родитель") as Узел; } set { Вставить("Родитель", value); } }
 
+        public string ТипОбъекта { get { return (string)Получить("ТипОбъекта"); } }
+        public Узел Свойства { get { return (Узел)Получить("Свойства"); } }
+
         public Узел(Структура structure) : base(structure) { }
 
         public Узел(string strProperties, params object[] values) : base(strProperties, values) { }
