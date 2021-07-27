@@ -52,6 +52,7 @@
     <Compile Include="Узел.cs" />
     <Compile Include="Параметры.cs" />
     <Compile Include="lib\parser.cs" />
+    <Compile Include="Запрос.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

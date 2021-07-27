@@ -40,6 +40,8 @@
     <Compile Include="dbaccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Задача.cs" />
+    <Compile Include="Запрос.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">

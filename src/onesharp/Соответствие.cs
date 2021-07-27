@@ -38,6 +38,8 @@ namespace onesharp
             return _content.ContainsKey(key);
         }
 
+        public T Получить<T>(object key) => (T)this[key];
+
         public object Получить(object key)
         {
             if (key is null) return null;

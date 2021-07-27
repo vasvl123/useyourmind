@@ -19,7 +19,7 @@ namespace onesharp
         public string Тип { get { return Получить("Тип") as string; } set { Вставить("Тип", value); } }
 
         public string Этап { get { return Получить("Этап") as string; } set { Вставить("Этап", value); } }
-        public Структура Запрос { get { return Получить("Запрос") as Структура; } set { Вставить("Запрос", value); } }
+        public Запрос Запрос { get { return Получить("Запрос") as Запрос; } set { Вставить("Запрос", value); } }
         public string Действие { get { return Получить("Действие") as string; } set { Вставить("Действие", value); } }
         public string Содержимое { get { return Получить("Содержимое") as string; } set { Вставить("Содержимое", value); } }
 
