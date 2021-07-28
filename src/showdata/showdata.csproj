@@ -35,23 +35,17 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\Объекты.cs" />
     <Compile Include="lib\Операторы.cs" />
-    <Compile Include="lib\Сем.cs" />
-    <Compile Include="pagedata.cs" />
     <Compile Include="lib\Функции.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="showdata.cs" />
     <Compile Include="Вкладка.cs" />
     <Compile Include="Задача.cs" />
-    <Compile Include="lib\tracer.cs" />
-    <Compile Include="Узел.cs" />
     <Compile Include="Параметры.cs" />
-    <Compile Include="lib\parser.cs" />
     <Compile Include="Запрос.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -59,6 +53,22 @@
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pagedata\pagedata.csproj">
+      <Project>{3F861DC5-E412-45DE-9C42-2944BFAE9C7B}</Project>
+      <Name>pagedata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\parser\parser.csproj">
+      <Project>{13DB5649-6058-4D74-B956-319C0BB8DA06}</Project>
+      <Name>parser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tracer\tracer.csproj">
+      <Project>{9E12A43D-3039-4759-9CBE-C67417CBDB40}</Project>
+      <Name>tracer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sem\sem.csproj">
+      <Project>{B7189EEF-5A91-48AA-8F5B-1D54B0B7B904}</Project>
+      <Name>sem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

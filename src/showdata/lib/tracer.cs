@@ -73,7 +73,7 @@ namespace onesharp.lib
     }
 
 
-    class tracer : Onesharp
+    public class tracer : Onesharp
     {
 
         public tracer ЭтотОбъект { get { return this; } }
