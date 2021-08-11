@@ -2183,7 +2183,7 @@ namespace onesharp
             return null;
         } // НайтиАтрибут()
 
-        public string СохранитьДанные()
+        public virtual string СохранитьДанные()
         {
             //ПроверитьДанные();
             foreach (КлючИЗначение элУзел in Узлы)
