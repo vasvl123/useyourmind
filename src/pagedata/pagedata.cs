@@ -22,9 +22,9 @@ namespace onesharp
 
         ТекстовыйДокумент Данные;
         int КодУзла;
-        Соответствие Узлы;
+        public Соответствие Узлы;
         bool Изменены;
-        int сКоличество;
+        public int сКоличество;
         public int Количество;
         public Узел Пустой = null;
         //Перем Очередь;
@@ -1625,7 +1625,7 @@ namespace onesharp
         }
 
 
-        public Узел ПолучитьУзел(object Код, Узел Старший = null)
+        public virtual Узел ПолучитьУзел(object Код, Узел Старший = null)
         {
             if (Код is null) return null;
             
@@ -1739,7 +1739,7 @@ namespace onesharp
             return Узел;
         } // ПолучитьУзел()
 
-        public Узел НовыйУзел(Узел Узел, bool Служебный = false)
+        public virtual Узел НовыйУзел(Узел Узел, bool Служебный = false)
         {
             string НовыйКод;
 
