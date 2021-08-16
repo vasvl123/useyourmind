@@ -77,6 +77,21 @@ namespace onesharp
             _values.Add(value);
         }
 
+        public void Объединить(object[] values)
+        {
+            _values.AddRange(values);
+        }
+
+        public void Объединить(IEnumerable<object> values)
+        {
+            _values.AddRange(values);
+        }        
+        
+        public void Объединить(Массив m)
+        {
+            _values.AddRange(m._values);
+        }
+
         public void Вставить(int index, object value = null)
         {
             if (index < 0)
@@ -141,12 +156,7 @@ namespace onesharp
 
         private static Массив CloneArray(Массив cloneable)
         {
-            Массив clone = new Массив();
-            foreach (var item in cloneable._values)
-            {
-                clone._values.Add(item);
-            }
-            return clone;
+            return new Массив(cloneable._values);
         }
 
         public static Массив Constructor()

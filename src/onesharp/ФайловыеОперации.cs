@@ -128,30 +128,36 @@ namespace onesharp
         /// <returns>Массив объектов Файл, которые были найдены.</returns>
         public static Массив НайтиФайлы(string dir, string mask = null, bool recursive = false)
         {
+            var res = Массив.Новый();
+            
             if (mask == null)
             {
                 // fix 225, 227, 228
                 var fObj = new Файл(dir);
                 if(fObj.Существует())
                 {
-                    return new Массив(new[] { fObj });
+                    res.Объединить(new[] { fObj });
+                    return res;
                 }
                 else
                 {
-                    return new Массив();
+                    return res;
                 }
             }
             else if (File.Exists(dir))
             {
-                return new Массив();
+                return res;
             }
 
             if(!Directory.Exists(dir))
-                return new Массив();
+                return res;
 
-            var filesFound = FindFilesV8Compatible(dir, mask, recursive);
+            // если несколько масок
+            var mmask = Стр.Разделить(mask, ";");
+            foreach (var emask in mmask)
+                res.Объединить(FindFilesV8Compatible(dir, emask, recursive));
 
-            return new Массив(filesFound);
+            return res;
 
         }
 

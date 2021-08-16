@@ -15,6 +15,7 @@ namespace onesharp
     {
 
         treedb Данные;
+        string ИстДанных;
 
         Массив МассивИзСтроки(string стр)
         {
@@ -187,9 +188,11 @@ namespace onesharp
             return "";
         } // СохранитьДанные()
 
-        public treedata(Ishowdata обПроцесс, string Текст = "", string знБазаДанных = "", string знИмяДанных = "", string знПозицияДанных = "") : base(обПроцесс)
+        public treedata(Ishowdata обПроцесс, string знИстДанных, string знИмяДанных) : base(обПроцесс)
         {
-            Данные = new treedb(знИмяДанных + ".tdb");
+            ИстДанных = знИстДанных;
+            ИмяДанных = знИмяДанных;
+            Данные = new treedb(ОбъединитьПути(ИстДанных, ИмяДанных + ".tdb"));
 
             Данные.ОткрытьПотокДанных();
             var п = Данные.Размер - 16;

@@ -48,6 +48,14 @@
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\pagedata\pagedata.csproj">
+      <Project>{3F861DC5-E412-45DE-9C42-2944BFAE9C7B}</Project>
+      <Name>pagedata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\treedata\treedata.csproj">
+      <Project>{5451EDA6-54C8-40FF-B440-286526069519}</Project>
+      <Name>treedata</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
