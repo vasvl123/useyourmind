@@ -15,7 +15,7 @@ namespace onesharp
     {
 
         treedb Данные;
-        string ИстДанных;
+        public string ИстДанных;
 
         Массив МассивИзСтроки(string стр)
         {
