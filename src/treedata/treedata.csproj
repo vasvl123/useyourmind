@@ -34,15 +34,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="treedb.cs" />
     <Compile Include="treedata.cs" />
+    <Compile Include="Узел.cs" />
+    <Compile Include="Ishowdata.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\pagedata\pagedata.csproj">
-      <Project>{3F861DC5-E412-45DE-9C42-2944BFAE9C7B}</Project>
-      <Name>pagedata</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

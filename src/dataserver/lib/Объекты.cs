@@ -28,7 +28,7 @@ namespace onesharp.lib
 			return Узел.Новый("Имя, Значение", Имя, Значение);
 		}
 
-        public void ОбработатьОтвет(string Действие, pagedata Данные, Узел Свойства, object Результат)
+        public void ОбработатьОтвет(string Действие, treedata Данные, Узел Свойства, object Результат)
         {
 
             if (Действие == "ВнешниеДанные")
@@ -67,7 +67,7 @@ namespace onesharp.lib
 		} // НоваяФорма()
 
 
-		public string Субъект_Свойства(pagedata Данные, Узел оУзел)
+		public string Субъект_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст = 
 			@"
@@ -83,7 +83,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Предмет_Свойства(pagedata Данные, Узел оУзел)
+		public string Предмет_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст = 
 			@"
@@ -95,7 +95,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Комната_Свойства(pagedata Данные, Узел оУзел)
+		public string Комната_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -109,7 +109,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Кнопка_Свойства(pagedata Данные, Узел оУзел)
+		public string Кнопка_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -123,7 +123,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Надпись_Свойства(pagedata Данные, Узел оУзел)
+		public string Надпись_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст = 
 			@"
@@ -135,7 +135,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Задача_Свойства(pagedata Данные, Узел оУзел)
+		public string Задача_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст = 
 			@"
@@ -147,7 +147,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void Задача_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void Задача_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 			var Условие = Данные.ЗначениеСвойства(Свойства.д.с.Условие) as bool?;
 			if (!(Изменения.Получить(Свойства.Родитель) as bool? == Истина))
@@ -169,7 +169,7 @@ namespace onesharp.lib
 
 
 		// Выполнить
-		public string Выполнить_Свойства(pagedata Данные, Узел оУзел)
+		public string Выполнить_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст = 
 			@"
@@ -182,7 +182,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void Выполнить_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void Выполнить_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 			var Инициализация = (Изменения.Получить(Свойства.Родитель) as bool? == Истина);
 			if (Инициализация || Изменения.Получить(Свойства.д.с.Условие) == Истина)
@@ -204,7 +204,7 @@ namespace onesharp.lib
 		}
 
 
-		public string ИсточникДанных_Свойства(pagedata Данные, Узел оУзел)
+		public string ИсточникДанных_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -223,7 +223,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void ИсточникДанных_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void ИсточникДанных_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 			var Инициализация = (Изменения.Получить(Свойства.Родитель) as bool? == Истина);
 			var НовыйЗапрос = Инициализация || (Изменения.Получить(Свойства.д.с.ЗапросДанных.д.с.БазаДанных) == Истина);
@@ -303,7 +303,7 @@ namespace onesharp.lib
 		} ///
 
 		// Панель данных
-		public string ПанельДанных_Свойства(pagedata Данные, Узел оУзел)
+		public string ПанельДанных_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -326,7 +326,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void ПанельДанных_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void ПанельДанных_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 
 			var ИсточникДанных = Данные.ЗначениеСвойства(Свойства.д.с.ИсточникДанных);
@@ -392,7 +392,7 @@ namespace onesharp.lib
 
 		// Таблица
 
-		public string Таблица_Свойства(pagedata Данные, Узел оУзел)
+		public string Таблица_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -405,7 +405,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void Таблица_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void Таблица_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 
 			var Инициализация = (Изменения.Получить(Свойства.Родитель) as bool? == Истина);
@@ -481,7 +481,7 @@ namespace onesharp.lib
 		}
 
 		// СтрокаТаблицы
-		public string СтрокаТаблицы_Свойства(pagedata Данные, Узел оУзел)
+		public string СтрокаТаблицы_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -492,7 +492,7 @@ namespace onesharp.lib
 			return ткст;
 		}
 
-		public void СтрокаТаблицы_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void СтрокаТаблицы_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 
 			var Инициализация = (Изменения.Получить(Свойства.Родитель) as bool? == Истина);
@@ -540,7 +540,7 @@ namespace onesharp.lib
 		}
 
 
-		public string Загрузить_Свойства(pagedata Данные, Узел оУзел)
+		public string Загрузить_Свойства(treedata Данные, Узел оУзел)
 		{
 			var ткст =
 			@"
@@ -552,7 +552,7 @@ namespace onesharp.lib
 		}
 
 
-		public void Загрузить_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+		public void Загрузить_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
 		{
 
 			if (Изменения.Получить(Свойства.д.с.События) == Истина)
@@ -581,7 +581,7 @@ namespace onesharp.lib
 
 
 
-        public string ВнешниеДанные_Свойства(pagedata Данные, Узел оУзел)
+        public string ВнешниеДанные_Свойства(treedata Данные, Узел оУзел)
         {
             object Свойства = null;
             var шСвойства = "";
@@ -614,7 +614,7 @@ namespace onesharp.lib
 
         }
 
-        public void ВнешниеДанные_Модель(pagedata Данные, Узел Свойства, Соответствие Изменения)
+        public void ВнешниеДанные_Модель(treedata Данные, Узел Свойства, Соответствие Изменения)
         {
 
             var оУзел = Свойства.Родитель;

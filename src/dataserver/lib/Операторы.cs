@@ -13,7 +13,7 @@ namespace onesharp.lib
 
         public Операторы() : base("Операторы") { }
 
-        public object Оператор_ЕСТЬЗНАЧЕНИЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ЕСТЬЗНАЧЕНИЕ(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -23,7 +23,7 @@ namespace onesharp.lib
             return (!("" + Значение == ""));
         } // ЕстьЗначение()
 
-        public object Оператор_ПУСТОЙ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ПУСТОЙ(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -33,7 +33,7 @@ namespace onesharp.lib
             return (_Аргумент == Данные.Пустой);
         } // Пустой()
 
-        public object Оператор_СУММА(pagedata Данные, Узел Аргумент)
+        public object Оператор_СУММА(treedata Данные, Узел Аргумент)
         {
             object Значение;
             if (Аргумент == Неопределено)
@@ -50,7 +50,7 @@ namespace onesharp.lib
             return Значение;
         } // Сумма()
 
-        public object Оператор_РАЗНОСТЬ(pagedata Данные, Узел Аргумент)
+        public object Оператор_РАЗНОСТЬ(treedata Данные, Узел Аргумент)
         {
             object Значение;
             if (Аргумент == Неопределено)
@@ -71,7 +71,7 @@ namespace onesharp.lib
             return Значение;
         } // Разность()
 
-        public object Оператор_ПРОИЗВЕДЕНИЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ПРОИЗВЕДЕНИЕ(treedata Данные, Узел Аргумент)
         {
             object Значение;
             if (Аргумент == Неопределено)
@@ -92,7 +92,7 @@ namespace onesharp.lib
             return Значение;
         } // Произведение()
 
-        public object Оператор_ЧАСТНОЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ЧАСТНОЕ(treedata Данные, Узел Аргумент)
         {
             object Значение;
             if (Аргумент == Неопределено)
@@ -113,7 +113,7 @@ namespace onesharp.lib
             return Значение;
         } // Частное()
 
-        public object Оператор_ОСТАТОК(pagedata Данные, Узел Аргумент)
+        public object Оператор_ОСТАТОК(treedata Данные, Узел Аргумент)
         {
             object Значение;
             if (Аргумент == Неопределено)
@@ -134,7 +134,7 @@ namespace onesharp.lib
             return Значение;
         } // Остаток()
 
-        public object Оператор_ЕСЛИ(pagedata Данные, Узел Узел)
+        public object Оператор_ЕСЛИ(treedata Данные, Узел Узел)
         {
             var СписокЕсли = Узел;
             var СписокТогда = СписокЕсли.Соседний;
@@ -158,7 +158,7 @@ namespace onesharp.lib
             }
         } // ЗначениеВыраженияЕсли()
 
-        public object Оператор_ВЫБОР(pagedata Данные, Узел Список)
+        public object Оператор_ВЫБОР(treedata Данные, Узел Список)
         {
             dynamic СписокТогда;
             var СписокКогда = Список;
@@ -183,7 +183,7 @@ namespace onesharp.lib
             return null;
         } // ЗначениеВыраженияВыбор()
 
-        public object Оператор_РАВНО(pagedata Данные, Узел Аргумент)
+        public object Оператор_РАВНО(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -205,7 +205,7 @@ namespace onesharp.lib
             return Результат;
         } // Равно()
 
-        public object Оператор_БОЛЬШЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_БОЛЬШЕ(treedata Данные, Узел Аргумент)
         {
             int Значение1, Значение2;
             if (Аргумент == Неопределено)
@@ -229,7 +229,7 @@ namespace onesharp.lib
             return Результат;
         } // Больше()
 
-        public object Оператор_МЕНЬШЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_МЕНЬШЕ(treedata Данные, Узел Аргумент)
         {
             int Значение1, Значение2;
             if (Аргумент == Неопределено)
@@ -253,7 +253,7 @@ namespace onesharp.lib
             return Результат;
         } // Меньше()
 
-        public object Оператор_БОЛЬШЕИЛИРАВНО(pagedata Данные, Узел Аргумент)
+        public object Оператор_БОЛЬШЕИЛИРАВНО(treedata Данные, Узел Аргумент)
         {
             int Значение1, Значение2;
             if (Аргумент == Неопределено)
@@ -277,7 +277,7 @@ namespace onesharp.lib
             return Результат;
         } // БольшеИлиРавно()
 
-        public object Оператор_МЕНЬШЕИЛИРАВНО(pagedata Данные, Узел Аргумент)
+        public object Оператор_МЕНЬШЕИЛИРАВНО(treedata Данные, Узел Аргумент)
         {
             int Значение1, Значение2;
             if (Аргумент == Неопределено)
@@ -301,7 +301,7 @@ namespace onesharp.lib
             return Результат;
         } // МеньшеИлиРавно()
 
-        public object Оператор_НЕРАВНО(pagedata Данные, Узел Аргумент)
+        public object Оператор_НЕРАВНО(treedata Данные, Узел Аргумент)
         {
             object Значение1, Значение2;
             if (Аргумент == Неопределено)
@@ -325,7 +325,7 @@ namespace onesharp.lib
             return Результат;
         } // НеРавно()
 
-        public object Оператор_И(pagedata Данные, Узел Аргумент)
+        public object Оператор_И(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -345,7 +345,7 @@ namespace onesharp.lib
             return Результат;
         } // ЛогическоеИ()
 
-        public object Оператор_ИЛИ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ИЛИ(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -365,7 +365,7 @@ namespace onesharp.lib
             return Результат;
         } // ЛогическоеИли()
 
-        public object Оператор_НЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_НЕ(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -385,7 +385,7 @@ namespace onesharp.lib
             return Результат;
         } // ЛогическоеНе()
 
-        public object Оператор_ВЫВЕСТИСООБЩЕНИЕ(pagedata Данные, Узел Аргумент)
+        public object Оператор_ВЫВЕСТИСООБЩЕНИЕ(treedata Данные, Узел Аргумент)
         {
             if (Аргумент == Неопределено)
             {
@@ -401,7 +401,7 @@ namespace onesharp.lib
             return Неопределено;
         } // ВывестиСообщение
 
-        public object Оператор_ВСТРУКТУРУ(pagedata Данные, Узел Аргумент, Структура Результат = null)
+        public object Оператор_ВСТРУКТУРУ(treedata Данные, Узел Аргумент, Структура Результат = null)
         {
             object Ключ = null;
             object Значение;
@@ -441,12 +441,12 @@ namespace onesharp.lib
             return Результат;
         }
 
-        public object Оператор_СУБЪЕКТ(pagedata Данные, Структура Аргумент)
+        public object Оператор_СУБЪЕКТ(treedata Данные, Структура Аргумент)
         {
             return Данные.Процесс.ПолучитьСубъект();
         }
 
-        public object Оператор_ТипСобытия(pagedata Данные, object Аргумент)
+        public object Оператор_ТипСобытия(treedata Данные, object Аргумент)
         {
             return  (Аргумент as string == "0") ? "Общее" :  (Аргумент as string == "1") ? "Успех" : (Аргумент as string == "2") ? "Внимание" : "Ошибка";
         } // ТипСобытия()

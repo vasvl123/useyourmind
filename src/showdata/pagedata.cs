@@ -22,9 +22,9 @@ namespace onesharp
 
         ТекстовыйДокумент Данные;
         int КодУзла;
-        Соответствие Узлы;
+        public Соответствие Узлы;
         bool Изменены;
-        int сКоличество;
+        public int сКоличество;
         public int Количество;
         public Узел Пустой = null;
         //Перем Очередь;
@@ -1309,11 +1309,11 @@ namespace onesharp
                 }
                 else if (Имя == "Источник")
                 {
-                    Состояние = Процесс.Субъект;
+                    Состояние = Процесс.ПолучитьСубъект();
                 }
                 else if (Имя == "Процесс")
                 {
-                    Состояние = Процесс.procid;
+                    Состояние = Процесс.get_procid();
                 }
                 else if (Имя == "Строка" && !(ЭтоАтрибут))
                 {
@@ -1625,7 +1625,7 @@ namespace onesharp
         }
 
 
-        public Узел ПолучитьУзел(object Код, Узел Старший = null)
+        public virtual Узел ПолучитьУзел(object Код, Узел Старший = null)
         {
             if (Код is null) return null;
             
@@ -1739,7 +1739,7 @@ namespace onesharp
             return Узел;
         } // ПолучитьУзел()
 
-        public Узел НовыйУзел(Узел Узел, bool Служебный = false)
+        public virtual Узел НовыйУзел(Узел Узел, bool Служебный = false)
         {
             string НовыйКод;
 
@@ -2183,7 +2183,7 @@ namespace onesharp
             return null;
         } // НайтиАтрибут()
 
-        public string СохранитьДанные()
+        public virtual string СохранитьДанные()
         {
             //ПроверитьДанные();
             foreach (КлючИЗначение элУзел in Узлы)
@@ -2318,6 +2318,7 @@ namespace onesharp
 
         public pagedata(showdata обПроцесс, string Текст = "", string знБазаДанных = "", string знИмяДанных = "", string знПозицияДанных = "") : base("pagedata")
         {
+
             БазаДанных = знБазаДанных;
             ИмяДанных = знИмяДанных;
             ПозицияДанных = знПозицияДанных;

@@ -14,7 +14,7 @@ using onesharp.Binary;
 
 namespace onesharp
 {
-    public class showdata : useyourmind , Ishowdata
+    public class showdata : useyourmind
     {
         public showdata() : base("showdata") { }
 
@@ -1137,7 +1137,7 @@ namespace onesharp
                     else
                     {
                         // новый формат хранения данных
-                        _Данные = new treedata(this, "", Запрос.ИмяДанных);
+                        //_Данные = new treedata(this, "", Запрос.ИмяДанных);
                         ОбработатьДанные(Запрос);
                     }
 
@@ -1267,7 +1267,7 @@ namespace onesharp
                 else if (!(Запрос.РезультатДанные == Неопределено))
                 { // получен ответ сервера
                     var РезультатДанные = Запрос.РезультатДанные;
-                    ((Сем)Запрос.Библиотека).ОбработатьОтвет(Запрос.Параметры.с.Действие, Запрос.Данные, Запрос.Свойства, РезультатДанные.с.Результат);
+                    //((Сем)Запрос.Библиотека).ОбработатьОтвет(Запрос.Параметры.с.Действие, Запрос.Данные, Запрос.Свойства, РезультатДанные.с.Результат);
                     Запрос.РезультатДанные = null;
                     return Истина;
                 }
@@ -2253,15 +2253,15 @@ namespace onesharp
                     case "Операторы":
                         Библиотека = new Операторы();
                         break;
-                    case "Сем":
-                        Библиотека = new Сем();
-                        break;
-                    case "parser":
-                        Библиотека = new parser();
-                        break;
-                    case "tracer":
-                        Библиотека = new tracer();
-                        break;
+                    //case "Сем":
+                    //    Библиотека = new Сем();
+                    //    break;
+                    //case "parser":
+                    //    Библиотека = new parser();
+                    //    break;
+                    //case "tracer":
+                        //Библиотека = new tracer();
+                        //break;
                     default:
                         break;
                 }

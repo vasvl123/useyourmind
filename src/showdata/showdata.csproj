@@ -47,32 +47,14 @@
     <Compile Include="Задача.cs" />
     <Compile Include="Параметры.cs" />
     <Compile Include="Запрос.cs" />
+    <Compile Include="pagedata.cs" />
+    <Compile Include="Узел.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\parser\parser.csproj">
-      <Project>{13DB5649-6058-4D74-B956-319C0BB8DA06}</Project>
-      <Name>parser</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\tracer\tracer.csproj">
-      <Project>{9E12A43D-3039-4759-9CBE-C67417CBDB40}</Project>
-      <Name>tracer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\sem\sem.csproj">
-      <Project>{B7189EEF-5A91-48AA-8F5B-1D54B0B7B904}</Project>
-      <Name>sem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\pagedata\pagedata.csproj">
-      <Project>{3F861DC5-E412-45DE-9C42-2944BFAE9C7B}</Project>
-      <Name>pagedata</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\treedata\treedata.csproj">
-      <Project>{5451EDA6-54C8-40FF-B440-286526069519}</Project>
-      <Name>treedata</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
