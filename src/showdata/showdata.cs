@@ -14,7 +14,7 @@ using onesharp.Binary;
 
 namespace onesharp
 {
-    public class showdata : useyourmind
+    public class showdata : useyourmind, Ishowdata
     {
         public showdata() : base("showdata") { }
 

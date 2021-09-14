@@ -47,14 +47,16 @@
     <Compile Include="Задача.cs" />
     <Compile Include="Параметры.cs" />
     <Compile Include="Запрос.cs" />
-    <Compile Include="pagedata.cs" />
-    <Compile Include="Узел.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\pagedata\pagedata.csproj">
+      <Project>{3F861DC5-E412-45DE-9C42-2944BFAE9C7B}</Project>
+      <Name>pagedata</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
