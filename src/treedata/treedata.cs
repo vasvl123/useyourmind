@@ -2176,7 +2176,7 @@ namespace onesharp
         } // СохранитьДанные()
 
 
-        public virtual Узел _ПолучитьУзел(ТекстовыйДокумент _Данные, object Код, Узел Старший = null)
+        public Узел _ПолучитьУзел(ТекстовыйДокумент _Данные, object Код, Узел Старший = null)
         {
             if (Код is null) return null;
 
