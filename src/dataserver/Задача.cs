@@ -24,6 +24,7 @@ namespace onesharp
         public System.DateTime ВремяСоздания { get { return (System.DateTime)Получить("ВремяСоздания"); } set { Вставить("ВремяСоздания", value); } }
 
         public object Данные { get { return Получить("Данные"); } set { Вставить("Данные", value); } }
+        public Массив Узлы { get { return Получить("Узлы") as Массив; } set { Вставить("Узлы", value); } }
         public TCPСоединение Соединение { get { return (TCPСоединение)Получить("Соединение"); } set { Вставить("Соединение", value); } }
 
         public Задача(Структура structure) : base(structure) { }

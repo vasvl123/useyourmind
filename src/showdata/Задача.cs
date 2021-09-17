@@ -27,6 +27,8 @@ namespace onesharp
         public decimal ВремяНачало { get { return (decimal)Получить("ВремяНачало"); } set { Вставить("ВремяНачало", value); } }
         public string ЗадачаВладелец { get { return Получить("ЗадачаВладелец") as string; } set { Вставить("ЗадачаВладелец", value); } }
 
+        public object Данные { get { return Получить("Данные"); } set { Вставить("Данные", value); } }
+
         public Задача(Структура structure) : base(structure) { }
 
         public Задача(string strProperties, params object[] values) : base(strProperties, values) { }
