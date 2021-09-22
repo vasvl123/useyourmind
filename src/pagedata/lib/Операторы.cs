@@ -8,7 +8,7 @@ using System;
 
 namespace onesharp.lib
 {
-    class Операторы : Onesharp
+    public class Операторы : Onesharp
     {
 
         public Операторы() : base("Операторы") { }

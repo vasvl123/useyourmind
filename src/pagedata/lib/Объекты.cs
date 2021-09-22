@@ -6,7 +6,7 @@ using System;
 
 namespace onesharp.lib
 {
-	class Объекты : Onesharp
+	public class Объекты : Onesharp
 	{
 
 		public Объекты() : base("Объекты") {}
