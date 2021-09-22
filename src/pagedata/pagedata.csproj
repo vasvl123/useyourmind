@@ -35,12 +35,18 @@
     <Compile Include="Узел.cs" />
     <Compile Include="pagedata.cs" />
     <Compile Include="Ishowdata.cs" />
+    <Compile Include="lib\Объекты.cs" />
+    <Compile Include="lib\Операторы.cs" />
+    <Compile Include="lib\Функции.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\onesharp\Onesharp.csproj">
       <Project>{377BDB2D-ADA9-4280-9E88-B40529BC3DD9}</Project>
       <Name>Onesharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
