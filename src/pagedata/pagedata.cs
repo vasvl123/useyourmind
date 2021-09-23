@@ -1624,7 +1624,7 @@ namespace onesharp
         }
 
 
-        public Узел ПолучитьУзел(object Код, Узел Старший = null)
+        virtual public Узел ПолучитьУзел(object Код, Узел Старший = null)
         {
             if (Код is null) return null;
             
