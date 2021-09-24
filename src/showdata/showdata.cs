@@ -2276,15 +2276,15 @@ namespace onesharp
                     case "Операторы":
                         Библиотека = new Операторы();
                         break;
-                    //case "Сем":
-                    //    Библиотека = new Сем();
-                    //    break;
-                    //case "parser":
-                    //    Библиотека = new parser();
-                    //    break;
-                    //case "tracer":
-                        //Библиотека = new tracer();
-                        //break;
+                    case "Сем":
+                        Библиотека = new Сем();
+                        break;
+                    case "parser":
+                        Библиотека = new parser();
+                        break;
+                    case "tracer":
+                        Библиотека = new tracer();
+                        break;
                     default:
                         break;
                 }
