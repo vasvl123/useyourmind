@@ -13,8 +13,6 @@ namespace onesharp
 {
     public class treedata : pagedata
     {
-        public treedata ЭтотОбъект { get { return this; } }
-
         treedb Данные;
 
 
