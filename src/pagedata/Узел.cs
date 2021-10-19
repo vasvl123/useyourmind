@@ -15,6 +15,13 @@ namespace onesharp
  
         public Узел() : base() {}
 
+        public override void Изменить()
+        {
+            Изменения = true;
+            if (!(Старший == null))
+                Старший.Изменить();
+        }
+
         public Структура д { get { return Получить<Структура>("д"); } }
         public Структура п { get { return Получить<Структура>("п"); } }
 

@@ -43,6 +43,11 @@ namespace onesharp
 
         public bool Изменения = true;
 
+        public virtual void Изменить()
+        {
+            Изменения = true;
+        }
+
         public dynamic с 
         { 
             get 
@@ -136,20 +141,20 @@ namespace onesharp
 
             _values.Remove(key);
             _values.Add(key, value);
-            Изменения = true;
+            Изменить();
         }
 
         public void Добавить(string key, object value = null)
         {
             _values.Remove(key);
             _values.Add(key, value);
-            Изменения = true;
+            Изменить();
         }
 
         public void Удалить(string key)
         {
             _values.Remove(key);
-            Изменения = true;
+            Изменить();
         }
 
         public int Количество()
@@ -160,7 +165,7 @@ namespace onesharp
         public void Очистить()
         {
             _values.Clear();
-            Изменения = true;
+            Изменить();
         }
 
         #region IEnumerable<IValue> Members
