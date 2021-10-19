@@ -12,28 +12,22 @@ namespace onesharp
 {
     public class Свойства : DynamicObject
     {
-        private readonly Dictionary<string, object> _values;
+        private readonly Структура Стр;
         
-        public Свойства(Dictionary<string, object> values) {
-            _values = values;
+        public Свойства(Структура _Стр) {
+            Стр = _Стр;
         }
         
         public override bool TryGetMember(GetMemberBinder binder, out object result)
         {
             result = null;
-            if (_values.ContainsKey(binder.Name))
-            {
-                _values.TryGetValue(binder.Name, out result);
-                return true;
-            }
-            return false;
+            return Стр.Свойство(binder.Name, out result);
         }
 
         // установить свойство
         public override bool TrySetMember(SetMemberBinder binder, object value)
         {
-            _values.Remove(binder.Name);
-            _values.Add(binder.Name, value);  
+            Стр.Вставить(binder.Name, value);  
             return true;
         }
 
@@ -47,11 +41,13 @@ namespace onesharp
 
         public Структура() {}
 
+        public bool Изменения = true;
+
         public dynamic с 
         { 
             get 
             {
-                if (св is null) св = new Свойства(_values);
+                if (св is null) св = new Свойства(this);
                 return св; 
             } 
         }
@@ -140,17 +136,20 @@ namespace onesharp
 
             _values.Remove(key);
             _values.Add(key, value);
+            Изменения = true;
         }
 
         public void Добавить(string key, object value = null)
         {
             _values.Remove(key);
             _values.Add(key, value);
+            Изменения = true;
         }
 
         public void Удалить(string key)
         {
             _values.Remove(key);
+            Изменения = true;
         }
 
         public int Количество()
@@ -161,6 +160,7 @@ namespace onesharp
         public void Очистить()
         {
             _values.Clear();
+            Изменения = true;
         }
 
         #region IEnumerable<IValue> Members
