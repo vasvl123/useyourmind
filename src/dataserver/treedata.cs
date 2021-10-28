@@ -273,7 +273,7 @@ namespace onesharp
         }
 
 
-        public treedata(Ishowdata обПроцесс, string знИстДанных, string знИмяДанных) : base(обПроцесс, знИстДанных,  знИмяДанных, "1")
+        public treedata(Ishowdata обПроцесс, string знИстДанных, string знИмяДанных) : base(обПроцесс, знИстДанных,  знИмяДанных)
         {
 
             Данные = new treedb(ОбъединитьПути(ОбъединитьПути(ТекущийКаталог(), "data"), ИстДанных, ИмяДанных + ".tdb"));
@@ -299,7 +299,7 @@ namespace onesharp
         }
 
         // pagedata
-        public treedata(Ishowdata обПроцесс, string Текст = "", string знИстДанных = "", string знИмяДанных = "") : base(обПроцесс, знИстДанных, знИмяДанных, "1")
+        public treedata(Ishowdata обПроцесс, string Текст = "", string знИстДанных = "", string знИмяДанных = "") : base(обПроцесс, знИстДанных, знИмяДанных)
         {
 
             var Данные = new ТекстовыйДокумент();
