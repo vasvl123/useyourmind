@@ -153,7 +153,8 @@ namespace onesharp
                                     }
                         }
                         status = "Данные";
-                        _server.br = true;                        
+                        _server.br = true;
+                        System.Threading.Thread.Sleep(10);
                     }
                     
                     if (ret > n)
@@ -161,25 +162,13 @@ namespace onesharp
                         data.Write(m_Buffer, n, ret - n);
                     }
 
-                    if (status == "Данные")
+                    if (stream.DataAvailable)
                     {
-                        var s = 100;
-                        while (!stream.DataAvailable && s > 0)
-                        {
-                            System.Threading.Thread.Sleep(25);
-                            s -= 25;
-                        }
-
-                        if (stream.DataAvailable)
-                        {
-                            m_Buffer = new byte[BUFFERSIZE];
-                            int numr = m_Buffer.Length;
-                            stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
-                        }
-                        
+                        m_Buffer = new byte[BUFFERSIZE];
+                        int numr = m_Buffer.Length;
+                        stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
                     }
-                    
-
+                        
                 }
             }
             catch (Exception e)
