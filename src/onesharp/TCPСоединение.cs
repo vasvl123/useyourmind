@@ -144,31 +144,40 @@ namespace onesharp
                         for (n = 0; n < ret; n++)
                         {
                             if (m_Buffer[n] == 10)
+                            {
                                 if (n > 3)
+                                {
                                     if (m_Buffer[n - 1] == 13 && m_Buffer[n - 2] == 10 && m_Buffer[n - 3] == 13) // конец заголовка
                                     {
                                         headers.Write(m_Buffer, 0, n);
                                         if (n < ret) n++;
+
+                                        status = "Заголовки";
+                                        _server.br = true;
                                         break;
                                     }
+                                }
+                            }
                         }
-                        status = "Данные";
-                        _server.br = true;
-                        System.Threading.Thread.Sleep(10);
                     }
-                    
+
                     if (ret > n)
                     {
                         data.Write(m_Buffer, n, ret - n);
-                    }
 
-                    if (stream.DataAvailable)
-                    {
-                        m_Buffer = new byte[BUFFERSIZE];
-                        int numr = m_Buffer.Length;
-                        stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                        if (stream.DataAvailable)
+                        {
+                            status = "Чтение";
+                            m_Buffer = new byte[BUFFERSIZE];
+                            int numr = m_Buffer.Length;
+                            stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                        }
+                        else
+                        {
+                            status = "Данные";
+                            _server.br = true;
+                        }
                     }
-                        
                 }
             }
             catch (Exception e)
@@ -176,6 +185,26 @@ namespace onesharp
                 status = "Ошибка\n" + e.Message;
             }
 
+        }
+
+        public bool ДочитатьДанные()
+        {
+            if (status == "Чтение")
+                return true;
+            else
+            {
+                var stream = _client.GetStream();
+                if (stream.DataAvailable)
+                {
+                    status = "Чтение";
+                    m_Buffer = new byte[BUFFERSIZE];
+                    int numr = m_Buffer.Length;
+                    stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void OnDataReceive(IAsyncResult iar)
@@ -249,12 +278,12 @@ namespace onesharp
 
         public string ПолучитьЗаголовки(string encoding = null)
         {
-            var enc = GetEncodingByName(encoding);
-            if (headers.Length == 0)
+            if (headers is null || headers.Length == 0)
                 return "";
 
             headers.Seek(0, SeekOrigin.Begin);
 
+            var enc = GetEncodingByName(encoding);
             using (var reader = new StreamReader(headers, enc))
             {
                 var str = reader.ReadToEnd();
