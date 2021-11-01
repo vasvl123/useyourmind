@@ -187,24 +187,17 @@ namespace onesharp
 
         }
 
-        public bool ДочитатьДанные()
+        public void ДочитатьДанные()
         {
-            if (status == "Чтение")
-                return true;
-            else
-            {
+            if (status != "Чтение")
+            { 
                 var stream = _client.GetStream();
-                if (stream.DataAvailable)
-                {
-                    status = "Чтение";
-                    m_Buffer = new byte[BUFFERSIZE];
-                    int numr = m_Buffer.Length;
-                    stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
-                    return true;
-                }
+                status = "Чтение";
+                m_Buffer = new byte[BUFFERSIZE];
+                int numr = m_Buffer.Length;
+                stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
             }
 
-            return false;
         }
 
         private void OnDataReceive(IAsyncResult iar)
