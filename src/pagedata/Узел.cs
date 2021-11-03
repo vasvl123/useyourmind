@@ -10,49 +10,124 @@ using System.Collections.Generic;
 
 namespace onesharp
 {
-    public class Узел : Структура
+    public class Узел
     {
- 
-        public Узел() : base() {}
 
-        public override void Изменить()
+        public bool Изменения = true;
+        Структура _п;
+        
+        public void Изменить()
         {
             Изменения = true;
             if (!(Старший == null))
                 Старший.Изменить();
         }
 
-        public Структура д { get { return Получить<Структура>("д"); } }
-        public Структура п { get { return Получить<Структура>("п"); } }
+        public Структура п
+        {
+            get
+            {
+                if (_п is null)
+                    _п = Структура.Новый();
+                return _п;
+            }
+        }
+        
+        public Узел д(string Имя) 
+        {
+            var Узел = Дочерний;
+            while (Узел != null)
+            {
+                if (Узел.Имя == Имя)
+                    return Узел;
+                Узел = Узел.Соседний;                
+            }
+            return null;
+        }
+        
+        public Узел а(string Имя) 
+        {
+            var Узел = Атрибут;
+            while (Узел != null)
+            {
+                if (Узел.Имя == Имя)
+                    return Узел;
+                Узел = Узел.Соседний;                
+            }
+            return null;
+        }
 
-        public string Код { get { return (string)Получить("Код"); } }
-        public string Имя { get { return (string)Получить("Имя"); } }
-        public object Значение { get { return Получить("Значение"); } set { Вставить("Значение", value); } }
+        public string Код;
+        public string Имя;
+        public object Значение;
 
-        public Узел Дочерний { get { return Получить("Дочерний") as Узел; } set { Вставить("Дочерний", value); } }
-        public Узел Соседний { get { return Получить("Соседний") as Узел; } set { Вставить("Соседний", value); } }
-        public Узел Атрибут { get { return Получить("Атрибут") as Узел; } set { Вставить("Атрибут", value); } }
-        public Узел Старший { get { return Получить("Старший") as Узел; } set { Вставить("Старший", value); } }
-        public Узел Родитель { get { return Получить("Родитель") as Узел; } set { Вставить("Родитель", value); } }
+        public Узел Дочерний;
+        public Узел Соседний;
+        public Узел Атрибут;
+        public Узел Старший;
+        public Узел Родитель;
 
-        public string ТипОбъекта { get { return (string)Получить("ТипОбъекта"); } }
-        public Узел Свойства { get { return (Узел)Получить("Свойства"); } }
+        public string _Соседний;
+        public string _Бывший;
 
-        public Узел(Структура structure) : base(structure) { }
+        public Узел() { }
 
-        public Узел(string strProperties, params object[] values) : base(strProperties, values) { }
+        public Узел(Структура structure)
+        {
+           foreach (КлючИЗначение keyValue in structure)
+            {
+                var prop = (string)keyValue.Ключ;
+                object v = keyValue.Значение;
+                if (prop == "Код") Код = (string)v;
+                else if (prop == "Имя") Имя = (string)v;
+                else if (prop == "Значение") Значение = v;
+                else if (prop == "Дочерний") Дочерний = (Узел)v;
+                else if (prop == "Соседний") Соседний = (Узел)v;
+                else if (prop == "Атрибут") Атрибут = (Узел)v;
+                else if (prop == "Старший") Старший = (Узел)v;
+                else if (prop == "_Соседний") _Соседний = (string)v;
+                else if (prop == "_Бывший") _Бывший = (string)v;
+           }
 
-        public new static Узел Новый(Структура fixedStruct)
+        }
+
+        public Узел(string strProperties, params object[] values) 
+        { 
+            var props = strProperties.Split(',');
+
+            for (int i = 0, nprop = 0; i < props.Length; i++)
+            {
+                var prop = props[i].Trim();
+                if (prop.Equals(string.Empty))
+                    continue;
+
+                object v = nprop < values.Length ? values[nprop] : null;
+
+                if (prop == "Код") Код = (string)v;
+                else if (prop == "Имя") Имя = (string)v;
+                else if (prop == "Значение") Значение = v;
+                else if (prop == "Дочерний") Дочерний = (Узел)v;
+                else if (prop == "Соседний") Соседний = (Узел)v;
+                else if (prop == "Атрибут") Атрибут = (Узел)v;
+                else if (prop == "Старший") Старший = (Узел)v;
+                else if (prop == "_Соседний") _Соседний = (string)v;
+                else if (prop == "_Бывший") _Бывший = (string)v;
+                
+                ++nprop;
+            }        
+        }
+
+        public static Узел Новый(Структура fixedStruct)
         {
             return new Узел(fixedStruct);
         }
 
-        public new static Узел Новый(string param1, params object[] args)
+        public static Узел Новый(string param1, params object[] args)
         {
             return new Узел(param1, args);
         }
 
-        public new static Узел Новый()
+        public static Узел Новый()
         {
             return new Узел();
         }
