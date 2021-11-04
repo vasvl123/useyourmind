@@ -10,11 +10,40 @@ using System.Collections.Generic;
 
 namespace onesharp
 {
+    
+    public class дСвойства : DynamicObject
+    {
+        private readonly Узел уз;
+        
+        public дСвойства(Узел _уз) 
+        {
+            уз = _уз;
+        }
+        
+        public override bool TryGetMember(GetMemberBinder binder, out object result)
+        {
+            result = null;
+            return уз.д(binder.Name, out result);
+        }
+
+        // установить свойство
+        public override bool TrySetMember(SetMemberBinder binder, object value)
+        {
+            var сУзел = уз.д(binder.Name);
+            if (сУзел == null) return false;
+            сУзел.Значение = value;
+            return true;
+        }
+
+    }
+
+    
     public class Узел
     {
 
         public bool Изменения = true;
         Структура _п;
+        дСвойства св;
         
         public void Изменить()
         {
@@ -32,6 +61,16 @@ namespace onesharp
                 return _п;
             }
         }
+        
+        public dynamic дс
+        { 
+            get 
+            {
+                if (св is null) 
+                    св = new дСвойства(this);
+                return св; 
+            } 
+        }        
         
         public bool д(string Имя, out object Знач)
         {
