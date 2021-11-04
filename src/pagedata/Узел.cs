@@ -33,6 +33,19 @@ namespace onesharp
             }
         }
         
+        public bool д(string Имя, out object Знач)
+        {
+            Знач = null;
+            var уз = this.д(Имя);
+            if (уз != null)
+            {
+                Знач = уз.Значение;
+                return true;
+            }
+
+            return false;
+        }
+
         public Узел д(string Имя) 
         {
             var Узел = Дочерний;
@@ -55,6 +68,13 @@ namespace onesharp
                 Узел = Узел.Соседний;                
             }
             return null;
+        }
+
+        public bool ЭтоАтрибут
+        { get
+            {
+                return (this.Родитель.Атрибут == this || this.Старший.ЭтоАтрибут && this.Старший.Соседний == this);
+            }
         }
 
         public string Код;
