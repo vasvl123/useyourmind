@@ -112,6 +112,7 @@ namespace onesharp
         public bool ЭтоАтрибут
         { get
             {
+                if (this.Старший is null) return false;
                 return (this.Родитель.Атрибут == this || this.Старший.ЭтоАтрибут && this.Старший.Соседний == this);
             }
         }
