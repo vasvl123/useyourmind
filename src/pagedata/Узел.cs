@@ -74,15 +74,8 @@ namespace onesharp
         
         public bool д(string Имя, out object Знач)
         {
-            Знач = null;
-            var уз = this.д(Имя);
-            if (уз != null)
-            {
-                Знач = уз.Значение;
-                return true;
-            }
-
-            return false;
+            Знач = this.д(Имя);
+            return (Знач != null);
         }
 
         public Узел д(string Имя) 
@@ -90,7 +83,7 @@ namespace onesharp
             var Узел = Дочерний;
             while (Узел != null)
             {
-                if (Узел.Имя == Имя)
+                if (Узел.Имя == Имя || Узел.Имя == Имя + ".")
                     return Узел;
                 Узел = Узел.Соседний;                
             }
@@ -112,7 +105,7 @@ namespace onesharp
         public bool ЭтоАтрибут
         { get
             {
-                if (this.Старший is null) return false;
+                if (this.Родитель is null) return false;
                 return (this.Родитель.Атрибут == this || this.Старший.ЭтоАтрибут && this.Старший.Соседний == this);
             }
         }
@@ -145,8 +138,16 @@ namespace onesharp
                 else if (prop == "Соседний") Соседний = (Узел)v;
                 else if (prop == "Атрибут") Атрибут = (Узел)v;
                 else if (prop == "Старший") Старший = (Узел)v;
+                else if (prop == "Родитель") Родитель = (Узел)v;
                 else if (prop == "_Соседний") _Соседний = (string)v;
                 else if (prop == "_Бывший") _Бывший = (string)v;
+                else if (prop == "Параметры")
+                {
+                    if (v is Структура)
+                        _п = v as Структура;
+                    else
+                        this.п.Добавить("Параметры", v);
+                }
            }
 
         }
@@ -170,9 +171,16 @@ namespace onesharp
                 else if (prop == "Соседний") Соседний = (Узел)v;
                 else if (prop == "Атрибут") Атрибут = (Узел)v;
                 else if (prop == "Старший") Старший = (Узел)v;
+                else if (prop == "Родитель") Родитель = (Узел)v;
                 else if (prop == "_Соседний") _Соседний = (string)v;
                 else if (prop == "_Бывший") _Бывший = (string)v;
-                
+                else if (prop == "Параметры")
+                {
+                    if (v is Структура)
+                        _п = v as Структура;
+                    else
+                        this.п.Добавить("Параметры", v);
+                }
                 ++nprop;
             }        
         }
