@@ -114,14 +114,16 @@ namespace onesharp
         public string Имя;
         public object Значение;
 
-        public Узел Дочерний;
-        public Узел Соседний;
-        public Узел Атрибут;
+        public object _Атрибут;
+        public object _Дочерний;
+        public object _Соседний;
+        public int _Бывший;
+
+        public Узел Дочерний { get { return _Дочерний as Узел; } set { _Дочерний = value; } }
+        public Узел Соседний { get { return _Соседний as Узел; } set { _Соседний = value; } }
+        public Узел Атрибут { get { return _Атрибут as Узел; } set { _Атрибут = value; } }
         public Узел Старший;
         public Узел Родитель;
-
-        public string _Соседний;
-        public string _Бывший;
 
         public Узел() { }
 
@@ -139,8 +141,8 @@ namespace onesharp
                 else if (prop == "Атрибут") Атрибут = (Узел)v;
                 else if (prop == "Старший") Старший = (Узел)v;
                 else if (prop == "Родитель") Родитель = (Узел)v;
-                else if (prop == "_Соседний") _Соседний = (string)v;
-                else if (prop == "_Бывший") _Бывший = (string)v;
+                else if (prop == "_Соседний") _Соседний = (int)v;
+                else if (prop == "_Бывший") _Бывший = (int)v;
                 else if (prop == "Параметры")
                 {
                     if (v is Структура)
@@ -172,8 +174,8 @@ namespace onesharp
                 else if (prop == "Атрибут") Атрибут = (Узел)v;
                 else if (prop == "Старший") Старший = (Узел)v;
                 else if (prop == "Родитель") Родитель = (Узел)v;
-                else if (prop == "_Соседний") _Соседний = (string)v;
-                else if (prop == "_Бывший") _Бывший = (string)v;
+                else if (prop == "_Соседний") _Соседний = (int)v;
+                else if (prop == "_Бывший") _Бывший = (int)v;
                 else if (prop == "Параметры")
                 {
                     if (v is Структура)
