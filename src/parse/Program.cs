@@ -5,7 +5,7 @@
 // at http://mozilla.org/MPL/2.0/.
 // ----------------------------------------------------------*/
 
-namespace onesharp
+namespace parse
 {
 
     class MainClass
@@ -13,9 +13,9 @@ namespace onesharp
 
         public static void Main(string[] args)
         {
-            var app = new dataserver();
+            var app = new parse();
             app.АргументыКоманднойСтроки = args;
-            app.Main();
+            app.parse_ruez();
         }
     }
 }
