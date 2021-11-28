@@ -212,8 +212,8 @@ namespace onesharp
                     _rdata.Enqueue(ReadAllData(stream, (int)numberOfBytes).ToArray());
                     status = "Данные";
                     _server.br = true;
-                    
-                    stream.BeginRead(l_Buffer, 0, 8, new AsyncCallback(OnDataReceive), null);
+
+                    ПрочитатьДвоичныеДанныеАсинхронно();
                 }
                 else status = "Ошибка";
             }
@@ -327,9 +327,11 @@ namespace onesharp
             {
                 var stream = _client.GetStream();
                 stream.EndWrite(ar);
-                status = "Успех";
 
-                ОтправитьДвоичныеДанныеАсинхронно();
+                if (_http) 
+                    ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
+                else
+                    ОтправитьДвоичныеДанныеАсинхронно();
             }
             catch
             {
@@ -343,18 +345,19 @@ namespace onesharp
         /// <param name="data">ДвоичныеДанные которые нужно отправить.</param>
         public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data = null)
         {
-            
+
             if (_data != null)
             {
+                var c = _sdata.Count;
                 if (!_http) _sdata.Enqueue(BitConverter.GetBytes((long)_data.Buffer.Length));
                 _sdata.Enqueue(_data.Buffer);
+                if (c == 0) ОтправитьДвоичныеДанныеАсинхронно();
             }
-
-            try
+            else
             {
-                if (Статус != "Запись")
+                try
                 {
-                    if (_sdata.Count != 0)
+                    if (_sdata.Count > 0)
                     {
                         var val = _sdata.Dequeue();
 
@@ -364,18 +367,15 @@ namespace onesharp
                             var stream = _client.GetStream();
                             stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
                         }
-                        else
-                            ОтправитьДвоичныеДанныеАсинхронно();
                     }
-                    else if (_http)
-                        ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
+                    else
+                        status = "Успех";
+                }
+                catch
+                {
+                    status = "Ошибка";
                 }
             }
-            catch
-            {
-                status = "Ошибка";
-            }
-
         }
 
         /// <summary>

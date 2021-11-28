@@ -45,13 +45,6 @@ namespace onesharp
         Структура _п;
         дСвойства св;
         
-        public void Изменить()
-        {
-            Изменения = true;
-            if (!(Старший == null))
-                Старший.Изменить();
-        }
-
         public Структура п
         {
             get
@@ -105,7 +98,7 @@ namespace onesharp
         public bool ЭтоАтрибут
         { get
             {
-                if (this.Родитель is null) return false;
+                if (this.Родитель is null || this.Старший is null) return false;
                 return (this.Родитель.Атрибут == this || this.Старший.ЭтоАтрибут && this.Старший.Соседний == this);
             }
         }
@@ -117,7 +110,6 @@ namespace onesharp
         public object _Атрибут;
         public object _Дочерний;
         public object _Соседний;
-        public int _Бывший;
 
         public Узел Дочерний { get { return _Дочерний as Узел; } set { _Дочерний = value; } }
         public Узел Соседний { get { return _Соседний as Узел; } set { _Соседний = value; } }
@@ -142,7 +134,6 @@ namespace onesharp
                 else if (prop == "Старший") Старший = (Узел)v;
                 else if (prop == "Родитель") Родитель = (Узел)v;
                 else if (prop == "_Соседний") _Соседний = (int)v;
-                else if (prop == "_Бывший") _Бывший = (int)v;
                 else if (prop == "Параметры")
                 {
                     if (v is Структура)
@@ -175,7 +166,6 @@ namespace onesharp
                 else if (prop == "Старший") Старший = (Узел)v;
                 else if (prop == "Родитель") Родитель = (Узел)v;
                 else if (prop == "_Соседний") _Соседний = (int)v;
-                else if (prop == "_Бывший") _Бывший = (int)v;
                 else if (prop == "Параметры")
                 {
                     if (v is Структура)
