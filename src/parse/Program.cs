@@ -16,7 +16,8 @@ namespace parse
             var app = new parse();
             app.АргументыКоманднойСтроки = args;
             //app.parse_ruez();
-            app.parse_slovar();
+            //app.parse_slovar();
+            app.test();
         }
     }
 }

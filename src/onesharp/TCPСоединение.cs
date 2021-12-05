@@ -31,9 +31,7 @@ namespace onesharp
         private MemoryStream data;
         private MemoryStream headers;
         private bool _http = false;
-        private Int64 numberOfBytes;
 
-        private readonly Queue<byte[]> _sdata = new Queue<byte[]>();
         private readonly Queue<byte[]> _rdata = new Queue<byte[]>();
 
         public TCPСоединение(TcpClient client, TCPСервер server)
@@ -208,7 +206,7 @@ namespace onesharp
                 int ret = stream.EndRead(iar);
                 if (ret == 8)
                 {
-                    numberOfBytes = BitConverter.ToInt64(l_Buffer, 0);
+                    var numberOfBytes = BitConverter.ToInt64(l_Buffer, 0);
                     _rdata.Enqueue(ReadAllData(stream, (int)numberOfBytes).ToArray());
                     status = "Данные";
                     _server.br = true;
@@ -330,8 +328,6 @@ namespace onesharp
 
                 if (_http) 
                     ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
-                else
-                    ОтправитьДвоичныеДанныеАсинхронно();
             }
             catch
             {
@@ -343,39 +339,34 @@ namespace onesharp
         /// Отправка сырых двоичных данных на удаленный хост асинхронно.
         /// </summary>
         /// <param name="data">ДвоичныеДанные которые нужно отправить.</param>
-        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data = null)
+        public void ОтправитьДвоичныеДанныеАсинхронно(ДвоичныеДанные _data)
         {
 
-            if (_data != null)
+            try
             {
-                var c = _sdata.Count;
-                if (!_http) _sdata.Enqueue(BitConverter.GetBytes((long)_data.Buffer.Length));
-                _sdata.Enqueue(_data.Buffer);
-                if (c == 0) ОтправитьДвоичныеДанныеАсинхронно();
-            }
-            else
-            {
-                try
+                if (_data.Размер() > 0)
                 {
-                    if (_sdata.Count > 0)
+                    byte[] val;
+                    if (_http)
+                        val = _data.Buffer;
+                     else
                     {
-                        var val = _sdata.Dequeue();
-
-                        if (val.Length != 0)
-                        {
-                            status = "Запись";
-                            var stream = _client.GetStream();
-                            stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
-                        }
+                        val = new byte[_data.Размер() + 8];
+                        BitConverter.GetBytes(_data.Размер()).CopyTo(val, 0);
+                        _data.Buffer.CopyTo(val, 8);
                     }
-                    else
-                        status = "Успех";
+                    status = "Запись";
+                    var stream = _client.GetStream();
+                    stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
                 }
-                catch
-                {
-                    status = "Ошибка";
-                }
+                else
+                    status = "Успех";
             }
+            catch
+            {
+                status = "Ошибка";
+            }
+
         }
 
         /// <summary>
