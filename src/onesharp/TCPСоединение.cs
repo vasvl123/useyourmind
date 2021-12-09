@@ -326,8 +326,11 @@ namespace onesharp
                 var stream = _client.GetStream();
                 stream.EndWrite(ar);
 
+                status = "Успех";
+
                 if (_http) 
                     ПрочитатьДвоичныеДанныеАсинхронно(); // передача окончена
+                    
             }
             catch
             {
@@ -359,8 +362,6 @@ namespace onesharp
                     var stream = _client.GetStream();
                     stream.BeginWrite(val, 0, val.Length, OnWriteComplete, null);
                 }
-                else
-                    status = "Успех";
             }
             catch
             {
