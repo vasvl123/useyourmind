@@ -190,10 +190,13 @@ namespace onesharp
             if (status != "Чтение")
             { 
                 var stream = _client.GetStream();
-                status = "Чтение";
-                m_Buffer = new byte[BUFFERSIZE];
-                int numr = m_Buffer.Length;
-                stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                if (stream.DataAvailable)
+                {
+                    status = "Чтение";
+                    m_Buffer = new byte[BUFFERSIZE];
+                    int numr = m_Buffer.Length;
+                    stream.BeginRead(m_Buffer, 0, numr, new AsyncCallback(_OnDataReceive), null);
+                }
             }
 
         }

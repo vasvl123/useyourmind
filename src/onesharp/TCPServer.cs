@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace onesharp
 {
@@ -45,26 +46,33 @@ namespace onesharp
         public void ЗапуститьАсинхронно()
         {
             _listener.Start();
-            th = new Thread(new ThreadStart(StartList));
-            th.Start();
+            StartList();
             while (_Active != "true")
             {
                 Thread.Sleep(5);
             }
         }
 
-        private void StartList()
+        private async void newclient(TcpClient client) 
+        { 
+            await Task.Run(() =>
+            {
+                var _client = new TCPСоединение(client, this);
+                _client.HTTP = _http;
+                _client.ПрочитатьДвоичныеДанныеАсинхронно();
+                _Conn.Enqueue(_client);
+            });
+        }
+
+        private async void StartList()
         {
             _Active = "true";
             while (_Active == "true")
             {
                 try
                 {
-                    var client = _listener.AcceptTcpClient();
-                    var _client = new TCPСоединение(client, this);
-                    _client.HTTP = _http;
-                    _client.ПрочитатьДвоичныеДанныеАсинхронно();
-                    _Conn.Enqueue(_client);
+                    var client = await _listener.AcceptTcpClientAsync();
+                    newclient(client);
                 }
                 catch
                 {
