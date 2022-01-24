@@ -252,7 +252,12 @@ namespace onesharp.lib
 
             // сформировать представление
             var ш = "<button id='_" + оУзел.Код + "' type='button' class='text-left btn1 btn-secondary' onclick='addcmd(this,event); return false' role='sent'>.текст</button>";
-            if (Свойства.д("Тип")?.Значение as string == "С") ш = Стр.Заменить(ш, "btn-secondary", "btn-primary");
+            {
+                var Тип = Свойства.д("Тип")?.Значение as string;
+                if (Тип == "С") ш = Стр.Заменить(ш, "btn-secondary", "btn-primary");
+                else if (Тип == "Ф") ш = Стр.Заменить(ш, "btn-secondary", "btn-info");
+                else if (Тип == "П") ш = Стр.Заменить(ш, "btn-secondary", "btn-success");
+            }
             var см = (Свойства.дс.Показать.Значение == "Нет") ? "&#9655;" : "&#9661;";
             var Вид = Стр.Заменить(ш, ".текст", см);
             Вид = "<div class='btn-group' role='group'>" + Вид + Стр.Заменить(ш, ".текст", Свойства.дс.Элемент.Значение) + "</div>";
